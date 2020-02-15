@@ -7,6 +7,9 @@ The purpose of this crate is to give embedded programs or libraries written Rust
 of EFM32PG1B MCUs.
 
 This PAC is closely based on Timo Kröger's [PAC for the efm32pg12](https://github.com/timokroeger/efm32pg12-pac) microcontrollers.
+
+The SVD file used is based on all the files in the [EFM32PG1B CMSIS-Pack]. The only difference between them are the `<name>`, `<description>` and `<flashSize>`. Here are the flash sizes for each MCU:
+
 | EFM32PG1B   | flashSize |
 | ----------- | :-------: |
 | `100F128GM32` | 0x20000  |
