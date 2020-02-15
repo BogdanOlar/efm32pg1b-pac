@@ -8,6 +8,21 @@ of EFM32PG1B MCUs.
 
 This PAC is closely based on Timo Kröger's [PAC for the efm32pg12](https://github.com/timokroeger/efm32pg12-pac) microcontrollers.
 
+| EFM32PG1B   | flashBaseAddress | flashSize   | flashAccessTypes | sramBaseAddress  | sramSize   | sramAccessTypes  |
+| ----------- | :--------------: | :---------: | :--------------: | :--------------: | :--------: | :--------------: |
+| 100F128GM32 | 0x00000000       | 0x00020000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 100F128IM32 | 0x00000000       | 0x00020000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 100F256GM32 | 0x00000000       | 0x00040000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 100F256IM32 | 0x00000000       | 0x00040000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 200F128GM32 | 0x00000000       | 0x00020000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 200F128GM48 | 0x00000000       | 0x00020000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 200F128IM32 | 0x00000000       | 0x00020000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 200F256GM32 | 0x00000000       | 0x00040000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 200F256GM48 | 0x00000000       | 0x00040000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 200F256IM32 | 0x00000000       | 0x00040000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+| 200F256IM48 | 0x00000000       | 0x00040000  | rx               | 0x20000000       | 0x00008000 | rwx              |
+
+
 ## Documentation
 
 SVD files are available in the [EFM32PG1B CMSIS-Pack](https://www.silabs.com/documents/public/cmsis-packs/SiliconLabs.EFM32PG1B_DFP.5.8.2.pack).
