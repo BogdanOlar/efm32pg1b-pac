@@ -1,6 +1,6 @@
 # EFM32PG1B PAC
 
-Low-level register mappings for the [Silicon Labs EFM32PG1B] family of ARM Cortex-M4 microcontrollers, written in Rust.
+Low-level register mappings for the [Silicon Labs EFM32PG1B](https://www.silabs.com/mcu/32-bit/efm32-pearl-gecko/device.EFM32PG1B200F256GM48) family of ARM Cortex-M4 microcontrollers, written in Rust.
 The code is generated automatically from a vendor-supplied SVD file, using [svd2rust](https://docs.rs/svd2rust).
 
 The purpose of this crate is to give embedded programs or libraries written Rust access to the complete functionality
