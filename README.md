@@ -7,21 +7,19 @@ The purpose of this crate is to give embedded programs or libraries written Rust
 of EFM32PG1B MCUs.
 
 This PAC is closely based on Timo Kröger's [PAC for the efm32pg12](https://github.com/timokroeger/efm32pg12-pac) microcontrollers.
-
 | EFM32PG1B   | flashSize |
 | ----------- | :-------: |
-| 100F128GM32 | 0x20000  |
-| 100F128IM32 | 0x20000  |
-| 100F256GM32 | 0x40000  |
-| 100F256IM32 | 0x40000  |
-| 200F128GM32 | 0x20000  |
-| 200F128GM48 | 0x20000  |
-| 200F128IM32 | 0x20000  |
-| 200F256GM32 | 0x40000  |
-| 200F256GM48 | 0x40000  |
-| 200F256IM32 | 0x40000  |
-| 200F256IM48 | 0x40000  |
-
+| `100F128GM32` | 0x20000  |
+| `100F128IM32` | 0x20000  |
+| `100F256GM32` | 0x40000  |
+| `100F256IM32` | 0x40000  |
+| `200F128GM32` | 0x20000  |
+| `200F128GM48` | 0x20000  |
+| `200F128IM32` | 0x20000  |
+| `200F256GM32` | 0x40000  |
+| `200F256GM48` | 0x40000  |
+| `200F256IM32` | 0x40000  |
+| `200F256IM48` | 0x40000  |
 
 ## Documentation
 
