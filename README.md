@@ -24,6 +24,10 @@ The SVD file used is based on all the files in the [EFM32PG1B CMSIS-Pack](https:
 | `200F256IM32` | 0x40000  |
 | `200F256IM48` | 0x40000  |
 
+The `flashSize` value used in the source `EFM32PG1B.svd` file was set to the lowest value (`0x20000`).
+
+The `ASYNC` (Asynchronous Reflex) field for all Channel Control Registers has been renamed to `ASYNCREFL` because `svd2rust` converted it to `async`, which is a rust keyword, and caused compilation errors.
+
 ## Documentation
 
 SVD files are available in the [EFM32PG1B CMSIS-Pack](https://www.silabs.com/documents/public/cmsis-packs/SiliconLabs.EFM32PG1B_DFP.5.8.2.pack).
