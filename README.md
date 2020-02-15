@@ -8,7 +8,7 @@ of EFM32PG1B MCUs.
 
 This PAC is closely based on Timo Kröger's [PAC for the efm32pg12](https://github.com/timokroeger/efm32pg12-pac) microcontrollers.
 
-The SVD file used is based on all the files in the [EFM32PG1B CMSIS-Pack](https://www.silabs.com/documents/public/cmsis-packs/SiliconLabs.EFM32PG1B_DFP.5.8.2.pack). The only difference between them are the `<name>`, `<description>` and `<flashSize>`. Here are the flash sizes for each MCU:
+The SVD file used is based on all the files in the [EFM32PG1B CMSIS-Pack](https://www.silabs.com/documents/public/cmsis-packs/SiliconLabs.EFM32PG1B_DFP.5.8.2.pack). The only differences between them are the `<name>`, `<description>` and `<flashSize>` field values. Here are the flash sizes for each MCU:
 
 | EFM32PG1B   | flashSize |
 | ----------- | :-------: |
