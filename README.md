@@ -20,4 +20,4 @@ Additional vendor supplied documents:
 
 ## License
 
-- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE)
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE))
