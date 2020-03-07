@@ -1,6 +1,7 @@
 # EFM32PG1B Peripheral Access Crate (PAC)
 
 [![crates.io](https://img.shields.io/crates/v/efm32pg1b-pac)](https://crates.io/crates/efm32pg1b-pac)
+[![docs.rs](https://docs.rs/efm32pg1b-pac/badge.svg)](https://docs.rs/efm32pg1b-pac)
 
 Low-level register mappings for the [Silicon Labs EFM32PG1B](https://www.silabs.com/mcu/32-bit/efm32-pearl-gecko/device.EFM32PG1B200F256GM48) family of ARM Cortex-M4 microcontrollers, written in Rust.
 The code is generated automatically from a vendor-supplied SVD file, using [svd2rust](https://docs.rs/svd2rust).
