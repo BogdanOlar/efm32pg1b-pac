@@ -1,17 +1,43 @@
-#[doc = "Reader of register ROUTELOC2"]
-pub type R = crate::R<u32, super::ROUTELOC2>;
-#[doc = "Writer for register ROUTELOC2"]
-pub type W = crate::W<u32, super::ROUTELOC2>;
-#[doc = "Register ROUTELOC2 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ROUTELOC2 {
-    type Type = u32;
+#[doc = "Register `ROUTELOC2` reader"]
+pub struct R(crate::R<ROUTELOC2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ROUTELOC2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ROUTELOC2_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ROUTELOC2_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ROUTELOC2` writer"]
+pub struct W(crate::W<ROUTELOC2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ROUTELOC2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ROUTELOC2_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ROUTELOC2_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CDTI0LOC` reader - I/O Location"]
+pub type CDTI0LOC_R = crate::FieldReader<u8, CDTI0LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDTI0LOC_A {
     #[doc = "0: Location 0"]
@@ -85,47 +111,44 @@ impl From<CDTI0LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CDTI0LOC`"]
-pub type CDTI0LOC_R = crate::R<u8, CDTI0LOC_A>;
 impl CDTI0LOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CDTI0LOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CDTI0LOC_A> {
         match self.bits {
-            0 => Val(CDTI0LOC_A::LOC0),
-            1 => Val(CDTI0LOC_A::LOC1),
-            2 => Val(CDTI0LOC_A::LOC2),
-            3 => Val(CDTI0LOC_A::LOC3),
-            4 => Val(CDTI0LOC_A::LOC4),
-            5 => Val(CDTI0LOC_A::LOC5),
-            6 => Val(CDTI0LOC_A::LOC6),
-            7 => Val(CDTI0LOC_A::LOC7),
-            8 => Val(CDTI0LOC_A::LOC8),
-            9 => Val(CDTI0LOC_A::LOC9),
-            10 => Val(CDTI0LOC_A::LOC10),
-            11 => Val(CDTI0LOC_A::LOC11),
-            12 => Val(CDTI0LOC_A::LOC12),
-            13 => Val(CDTI0LOC_A::LOC13),
-            14 => Val(CDTI0LOC_A::LOC14),
-            15 => Val(CDTI0LOC_A::LOC15),
-            16 => Val(CDTI0LOC_A::LOC16),
-            17 => Val(CDTI0LOC_A::LOC17),
-            18 => Val(CDTI0LOC_A::LOC18),
-            19 => Val(CDTI0LOC_A::LOC19),
-            20 => Val(CDTI0LOC_A::LOC20),
-            21 => Val(CDTI0LOC_A::LOC21),
-            22 => Val(CDTI0LOC_A::LOC22),
-            23 => Val(CDTI0LOC_A::LOC23),
-            24 => Val(CDTI0LOC_A::LOC24),
-            25 => Val(CDTI0LOC_A::LOC25),
-            26 => Val(CDTI0LOC_A::LOC26),
-            27 => Val(CDTI0LOC_A::LOC27),
-            28 => Val(CDTI0LOC_A::LOC28),
-            29 => Val(CDTI0LOC_A::LOC29),
-            30 => Val(CDTI0LOC_A::LOC30),
-            31 => Val(CDTI0LOC_A::LOC31),
-            i => Res(i),
+            0 => Some(CDTI0LOC_A::LOC0),
+            1 => Some(CDTI0LOC_A::LOC1),
+            2 => Some(CDTI0LOC_A::LOC2),
+            3 => Some(CDTI0LOC_A::LOC3),
+            4 => Some(CDTI0LOC_A::LOC4),
+            5 => Some(CDTI0LOC_A::LOC5),
+            6 => Some(CDTI0LOC_A::LOC6),
+            7 => Some(CDTI0LOC_A::LOC7),
+            8 => Some(CDTI0LOC_A::LOC8),
+            9 => Some(CDTI0LOC_A::LOC9),
+            10 => Some(CDTI0LOC_A::LOC10),
+            11 => Some(CDTI0LOC_A::LOC11),
+            12 => Some(CDTI0LOC_A::LOC12),
+            13 => Some(CDTI0LOC_A::LOC13),
+            14 => Some(CDTI0LOC_A::LOC14),
+            15 => Some(CDTI0LOC_A::LOC15),
+            16 => Some(CDTI0LOC_A::LOC16),
+            17 => Some(CDTI0LOC_A::LOC17),
+            18 => Some(CDTI0LOC_A::LOC18),
+            19 => Some(CDTI0LOC_A::LOC19),
+            20 => Some(CDTI0LOC_A::LOC20),
+            21 => Some(CDTI0LOC_A::LOC21),
+            22 => Some(CDTI0LOC_A::LOC22),
+            23 => Some(CDTI0LOC_A::LOC23),
+            24 => Some(CDTI0LOC_A::LOC24),
+            25 => Some(CDTI0LOC_A::LOC25),
+            26 => Some(CDTI0LOC_A::LOC26),
+            27 => Some(CDTI0LOC_A::LOC27),
+            28 => Some(CDTI0LOC_A::LOC28),
+            29 => Some(CDTI0LOC_A::LOC29),
+            30 => Some(CDTI0LOC_A::LOC30),
+            31 => Some(CDTI0LOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -289,16 +312,10 @@ impl CDTI0LOC_R {
         *self == CDTI0LOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `CDTI0LOC`"]
-pub struct CDTI0LOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDTI0LOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CDTI0LOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CDTI0LOC` writer - I/O Location"]
+pub type CDTI0LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI0LOC_A, 6, O>;
+impl<'a, const O: u8> CDTI0LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -459,15 +476,11 @@ impl<'a> CDTI0LOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(CDTI0LOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
-        self.w
-    }
 }
+#[doc = "Field `CDTI1LOC` reader - I/O Location"]
+pub type CDTI1LOC_R = crate::FieldReader<u8, CDTI1LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDTI1LOC_A {
     #[doc = "0: Location 0"]
@@ -541,47 +554,44 @@ impl From<CDTI1LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CDTI1LOC`"]
-pub type CDTI1LOC_R = crate::R<u8, CDTI1LOC_A>;
 impl CDTI1LOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CDTI1LOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CDTI1LOC_A> {
         match self.bits {
-            0 => Val(CDTI1LOC_A::LOC0),
-            1 => Val(CDTI1LOC_A::LOC1),
-            2 => Val(CDTI1LOC_A::LOC2),
-            3 => Val(CDTI1LOC_A::LOC3),
-            4 => Val(CDTI1LOC_A::LOC4),
-            5 => Val(CDTI1LOC_A::LOC5),
-            6 => Val(CDTI1LOC_A::LOC6),
-            7 => Val(CDTI1LOC_A::LOC7),
-            8 => Val(CDTI1LOC_A::LOC8),
-            9 => Val(CDTI1LOC_A::LOC9),
-            10 => Val(CDTI1LOC_A::LOC10),
-            11 => Val(CDTI1LOC_A::LOC11),
-            12 => Val(CDTI1LOC_A::LOC12),
-            13 => Val(CDTI1LOC_A::LOC13),
-            14 => Val(CDTI1LOC_A::LOC14),
-            15 => Val(CDTI1LOC_A::LOC15),
-            16 => Val(CDTI1LOC_A::LOC16),
-            17 => Val(CDTI1LOC_A::LOC17),
-            18 => Val(CDTI1LOC_A::LOC18),
-            19 => Val(CDTI1LOC_A::LOC19),
-            20 => Val(CDTI1LOC_A::LOC20),
-            21 => Val(CDTI1LOC_A::LOC21),
-            22 => Val(CDTI1LOC_A::LOC22),
-            23 => Val(CDTI1LOC_A::LOC23),
-            24 => Val(CDTI1LOC_A::LOC24),
-            25 => Val(CDTI1LOC_A::LOC25),
-            26 => Val(CDTI1LOC_A::LOC26),
-            27 => Val(CDTI1LOC_A::LOC27),
-            28 => Val(CDTI1LOC_A::LOC28),
-            29 => Val(CDTI1LOC_A::LOC29),
-            30 => Val(CDTI1LOC_A::LOC30),
-            31 => Val(CDTI1LOC_A::LOC31),
-            i => Res(i),
+            0 => Some(CDTI1LOC_A::LOC0),
+            1 => Some(CDTI1LOC_A::LOC1),
+            2 => Some(CDTI1LOC_A::LOC2),
+            3 => Some(CDTI1LOC_A::LOC3),
+            4 => Some(CDTI1LOC_A::LOC4),
+            5 => Some(CDTI1LOC_A::LOC5),
+            6 => Some(CDTI1LOC_A::LOC6),
+            7 => Some(CDTI1LOC_A::LOC7),
+            8 => Some(CDTI1LOC_A::LOC8),
+            9 => Some(CDTI1LOC_A::LOC9),
+            10 => Some(CDTI1LOC_A::LOC10),
+            11 => Some(CDTI1LOC_A::LOC11),
+            12 => Some(CDTI1LOC_A::LOC12),
+            13 => Some(CDTI1LOC_A::LOC13),
+            14 => Some(CDTI1LOC_A::LOC14),
+            15 => Some(CDTI1LOC_A::LOC15),
+            16 => Some(CDTI1LOC_A::LOC16),
+            17 => Some(CDTI1LOC_A::LOC17),
+            18 => Some(CDTI1LOC_A::LOC18),
+            19 => Some(CDTI1LOC_A::LOC19),
+            20 => Some(CDTI1LOC_A::LOC20),
+            21 => Some(CDTI1LOC_A::LOC21),
+            22 => Some(CDTI1LOC_A::LOC22),
+            23 => Some(CDTI1LOC_A::LOC23),
+            24 => Some(CDTI1LOC_A::LOC24),
+            25 => Some(CDTI1LOC_A::LOC25),
+            26 => Some(CDTI1LOC_A::LOC26),
+            27 => Some(CDTI1LOC_A::LOC27),
+            28 => Some(CDTI1LOC_A::LOC28),
+            29 => Some(CDTI1LOC_A::LOC29),
+            30 => Some(CDTI1LOC_A::LOC30),
+            31 => Some(CDTI1LOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -745,16 +755,10 @@ impl CDTI1LOC_R {
         *self == CDTI1LOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `CDTI1LOC`"]
-pub struct CDTI1LOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDTI1LOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CDTI1LOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CDTI1LOC` writer - I/O Location"]
+pub type CDTI1LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI1LOC_A, 6, O>;
+impl<'a, const O: u8> CDTI1LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -915,15 +919,11 @@ impl<'a> CDTI1LOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(CDTI1LOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
-        self.w
-    }
 }
+#[doc = "Field `CDTI2LOC` reader - I/O Location"]
+pub type CDTI2LOC_R = crate::FieldReader<u8, CDTI2LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDTI2LOC_A {
     #[doc = "0: Location 0"]
@@ -997,47 +997,44 @@ impl From<CDTI2LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CDTI2LOC`"]
-pub type CDTI2LOC_R = crate::R<u8, CDTI2LOC_A>;
 impl CDTI2LOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CDTI2LOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CDTI2LOC_A> {
         match self.bits {
-            0 => Val(CDTI2LOC_A::LOC0),
-            1 => Val(CDTI2LOC_A::LOC1),
-            2 => Val(CDTI2LOC_A::LOC2),
-            3 => Val(CDTI2LOC_A::LOC3),
-            4 => Val(CDTI2LOC_A::LOC4),
-            5 => Val(CDTI2LOC_A::LOC5),
-            6 => Val(CDTI2LOC_A::LOC6),
-            7 => Val(CDTI2LOC_A::LOC7),
-            8 => Val(CDTI2LOC_A::LOC8),
-            9 => Val(CDTI2LOC_A::LOC9),
-            10 => Val(CDTI2LOC_A::LOC10),
-            11 => Val(CDTI2LOC_A::LOC11),
-            12 => Val(CDTI2LOC_A::LOC12),
-            13 => Val(CDTI2LOC_A::LOC13),
-            14 => Val(CDTI2LOC_A::LOC14),
-            15 => Val(CDTI2LOC_A::LOC15),
-            16 => Val(CDTI2LOC_A::LOC16),
-            17 => Val(CDTI2LOC_A::LOC17),
-            18 => Val(CDTI2LOC_A::LOC18),
-            19 => Val(CDTI2LOC_A::LOC19),
-            20 => Val(CDTI2LOC_A::LOC20),
-            21 => Val(CDTI2LOC_A::LOC21),
-            22 => Val(CDTI2LOC_A::LOC22),
-            23 => Val(CDTI2LOC_A::LOC23),
-            24 => Val(CDTI2LOC_A::LOC24),
-            25 => Val(CDTI2LOC_A::LOC25),
-            26 => Val(CDTI2LOC_A::LOC26),
-            27 => Val(CDTI2LOC_A::LOC27),
-            28 => Val(CDTI2LOC_A::LOC28),
-            29 => Val(CDTI2LOC_A::LOC29),
-            30 => Val(CDTI2LOC_A::LOC30),
-            31 => Val(CDTI2LOC_A::LOC31),
-            i => Res(i),
+            0 => Some(CDTI2LOC_A::LOC0),
+            1 => Some(CDTI2LOC_A::LOC1),
+            2 => Some(CDTI2LOC_A::LOC2),
+            3 => Some(CDTI2LOC_A::LOC3),
+            4 => Some(CDTI2LOC_A::LOC4),
+            5 => Some(CDTI2LOC_A::LOC5),
+            6 => Some(CDTI2LOC_A::LOC6),
+            7 => Some(CDTI2LOC_A::LOC7),
+            8 => Some(CDTI2LOC_A::LOC8),
+            9 => Some(CDTI2LOC_A::LOC9),
+            10 => Some(CDTI2LOC_A::LOC10),
+            11 => Some(CDTI2LOC_A::LOC11),
+            12 => Some(CDTI2LOC_A::LOC12),
+            13 => Some(CDTI2LOC_A::LOC13),
+            14 => Some(CDTI2LOC_A::LOC14),
+            15 => Some(CDTI2LOC_A::LOC15),
+            16 => Some(CDTI2LOC_A::LOC16),
+            17 => Some(CDTI2LOC_A::LOC17),
+            18 => Some(CDTI2LOC_A::LOC18),
+            19 => Some(CDTI2LOC_A::LOC19),
+            20 => Some(CDTI2LOC_A::LOC20),
+            21 => Some(CDTI2LOC_A::LOC21),
+            22 => Some(CDTI2LOC_A::LOC22),
+            23 => Some(CDTI2LOC_A::LOC23),
+            24 => Some(CDTI2LOC_A::LOC24),
+            25 => Some(CDTI2LOC_A::LOC25),
+            26 => Some(CDTI2LOC_A::LOC26),
+            27 => Some(CDTI2LOC_A::LOC27),
+            28 => Some(CDTI2LOC_A::LOC28),
+            29 => Some(CDTI2LOC_A::LOC29),
+            30 => Some(CDTI2LOC_A::LOC30),
+            31 => Some(CDTI2LOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -1201,16 +1198,10 @@ impl CDTI2LOC_R {
         *self == CDTI2LOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `CDTI2LOC`"]
-pub struct CDTI2LOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDTI2LOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CDTI2LOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CDTI2LOC` writer - I/O Location"]
+pub type CDTI2LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI2LOC_A, 6, O>;
+impl<'a, const O: u8> CDTI2LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -1371,12 +1362,6 @@ impl<'a> CDTI2LOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(CDTI2LOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
@@ -1398,17 +1383,45 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn cdti0loc(&mut self) -> CDTI0LOC_W {
-        CDTI0LOC_W { w: self }
+    #[must_use]
+    pub fn cdti0loc(&mut self) -> CDTI0LOC_W<0> {
+        CDTI0LOC_W::new(self)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn cdti1loc(&mut self) -> CDTI1LOC_W {
-        CDTI1LOC_W { w: self }
+    #[must_use]
+    pub fn cdti1loc(&mut self) -> CDTI1LOC_W<8> {
+        CDTI1LOC_W::new(self)
     }
     #[doc = "Bits 16:21 - I/O Location"]
     #[inline(always)]
-    pub fn cdti2loc(&mut self) -> CDTI2LOC_W {
-        CDTI2LOC_W { w: self }
+    #[must_use]
+    pub fn cdti2loc(&mut self) -> CDTI2LOC_W<16> {
+        CDTI2LOC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I/O Routing Location Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routeloc2](index.html) module"]
+pub struct ROUTELOC2_SPEC;
+impl crate::RegisterSpec for ROUTELOC2_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [routeloc2::R](R) reader structure"]
+impl crate::Readable for ROUTELOC2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [routeloc2::W](W) writer structure"]
+impl crate::Writable for ROUTELOC2_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets ROUTELOC2 to value 0"]
+impl crate::Resettable for ROUTELOC2_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

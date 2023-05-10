@@ -1,53 +1,47 @@
-#[doc = "Reader of register OVSCFG"]
-pub type R = crate::R<u32, super::OVSCFG>;
-#[doc = "Writer for register OVSCFG"]
-pub type W = crate::W<u32, super::OVSCFG>;
-#[doc = "Register OVSCFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::OVSCFG {
-    type Type = u32;
+#[doc = "Register `OVSCFG` reader"]
+pub struct R(crate::R<OVSCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<OVSCFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `FILTLEN`"]
-pub type FILTLEN_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FILTLEN`"]
-pub struct FILTLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FILTLEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<OVSCFG_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
-        self.w
+    fn from(reader: crate::R<OVSCFG_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `FLUTTERRM`"]
-pub type FLUTTERRM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FLUTTERRM`"]
-pub struct FLUTTERRM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLUTTERRM_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `OVSCFG` writer"]
+pub struct W(crate::W<OVSCFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<OVSCFG_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<OVSCFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<OVSCFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FILTLEN` reader - Configure Filter Length for Inputs S0IN and S1IN"]
+pub type FILTLEN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `FILTLEN` writer - Configure Filter Length for Inputs S0IN and S1IN"]
+pub type FILTLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OVSCFG_SPEC, u8, u8, 8, O>;
+#[doc = "Field `FLUTTERRM` reader - Flutter Remove"]
+pub type FLUTTERRM_R = crate::BitReader<bool>;
+#[doc = "Field `FLUTTERRM` writer - Flutter Remove"]
+pub type FLUTTERRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVSCFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN"]
     #[inline(always)]
@@ -57,18 +51,45 @@ impl R {
     #[doc = "Bit 12 - Flutter Remove"]
     #[inline(always)]
     pub fn flutterrm(&self) -> FLUTTERRM_R {
-        FLUTTERRM_R::new(((self.bits >> 12) & 0x01) != 0)
+        FLUTTERRM_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN"]
     #[inline(always)]
-    pub fn filtlen(&mut self) -> FILTLEN_W {
-        FILTLEN_W { w: self }
+    #[must_use]
+    pub fn filtlen(&mut self) -> FILTLEN_W<0> {
+        FILTLEN_W::new(self)
     }
     #[doc = "Bit 12 - Flutter Remove"]
     #[inline(always)]
-    pub fn flutterrm(&mut self) -> FLUTTERRM_W {
-        FLUTTERRM_W { w: self }
+    #[must_use]
+    pub fn flutterrm(&mut self) -> FLUTTERRM_W<12> {
+        FLUTTERRM_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Oversampling Config Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ovscfg](index.html) module"]
+pub struct OVSCFG_SPEC;
+impl crate::RegisterSpec for OVSCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ovscfg::R](R) reader structure"]
+impl crate::Readable for OVSCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ovscfg::W](W) writer structure"]
+impl crate::Writable for OVSCFG_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets OVSCFG to value 0"]
+impl crate::Resettable for OVSCFG_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,17 +1,43 @@
-#[doc = "Reader of register CH0_CFG"]
-pub type R = crate::R<u32, super::CH0_CFG>;
-#[doc = "Writer for register CH0_CFG"]
-pub type W = crate::W<u32, super::CH0_CFG>;
-#[doc = "Register CH0_CFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::CH0_CFG {
-    type Type = u32;
+#[doc = "Register `CH0_CFG` reader"]
+pub struct R(crate::R<CH0_CFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CH0_CFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CH0_CFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CH0_CFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CH0_CFG` writer"]
+pub struct W(crate::W<CH0_CFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CH0_CFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CH0_CFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CH0_CFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ARBSLOTS` reader - Arbitration Slot Number Select"]
+pub type ARBSLOTS_R = crate::FieldReader<u8, ARBSLOTS_A>;
 #[doc = "Arbitration Slot Number Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ARBSLOTS_A {
     #[doc = "0: One arbitration slot selected"]
@@ -29,10 +55,8 @@ impl From<ARBSLOTS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ARBSLOTS`"]
-pub type ARBSLOTS_R = crate::R<u8, ARBSLOTS_A>;
 impl ARBSLOTS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ARBSLOTS_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl ARBSLOTS_R {
         *self == ARBSLOTS_A::EIGHT
     }
 }
-#[doc = "Write proxy for field `ARBSLOTS`"]
-pub struct ARBSLOTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ARBSLOTS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ARBSLOTS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ARBSLOTS` writer - Arbitration Slot Number Select"]
+pub type ARBSLOTS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CH0_CFG_SPEC, u8, ARBSLOTS_A, 2, O>;
+impl<'a, const O: u8> ARBSLOTS_W<'a, O> {
     #[doc = "One arbitration slot selected"]
     #[inline(always)]
     pub fn one(self) -> &'a mut W {
@@ -96,92 +112,74 @@ impl<'a> ARBSLOTS_W<'a> {
     pub fn eight(self) -> &'a mut W {
         self.variant(ARBSLOTS_A::EIGHT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
-        self.w
-    }
 }
-#[doc = "Reader of field `SRCINCSIGN`"]
-pub type SRCINCSIGN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SRCINCSIGN`"]
-pub struct SRCINCSIGN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRCINCSIGN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-        self.w
-    }
-}
-#[doc = "Reader of field `DSTINCSIGN`"]
-pub type DSTINCSIGN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSTINCSIGN`"]
-pub struct DSTINCSIGN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSTINCSIGN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-        self.w
-    }
-}
+#[doc = "Field `SRCINCSIGN` reader - Source Address Increment Sign"]
+pub type SRCINCSIGN_R = crate::BitReader<bool>;
+#[doc = "Field `SRCINCSIGN` writer - Source Address Increment Sign"]
+pub type SRCINCSIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH0_CFG_SPEC, bool, O>;
+#[doc = "Field `DSTINCSIGN` reader - Destination Address Increment Sign"]
+pub type DSTINCSIGN_R = crate::BitReader<bool>;
+#[doc = "Field `DSTINCSIGN` writer - Destination Address Increment Sign"]
+pub type DSTINCSIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH0_CFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 16:17 - Arbitration Slot Number Select"]
     #[inline(always)]
     pub fn arbslots(&self) -> ARBSLOTS_R {
-        ARBSLOTS_R::new(((self.bits >> 16) & 0x03) as u8)
+        ARBSLOTS_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bit 20 - Source Address Increment Sign"]
     #[inline(always)]
     pub fn srcincsign(&self) -> SRCINCSIGN_R {
-        SRCINCSIGN_R::new(((self.bits >> 20) & 0x01) != 0)
+        SRCINCSIGN_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Destination Address Increment Sign"]
     #[inline(always)]
     pub fn dstincsign(&self) -> DSTINCSIGN_R {
-        DSTINCSIGN_R::new(((self.bits >> 21) & 0x01) != 0)
+        DSTINCSIGN_R::new(((self.bits >> 21) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 16:17 - Arbitration Slot Number Select"]
     #[inline(always)]
-    pub fn arbslots(&mut self) -> ARBSLOTS_W {
-        ARBSLOTS_W { w: self }
+    #[must_use]
+    pub fn arbslots(&mut self) -> ARBSLOTS_W<16> {
+        ARBSLOTS_W::new(self)
     }
     #[doc = "Bit 20 - Source Address Increment Sign"]
     #[inline(always)]
-    pub fn srcincsign(&mut self) -> SRCINCSIGN_W {
-        SRCINCSIGN_W { w: self }
+    #[must_use]
+    pub fn srcincsign(&mut self) -> SRCINCSIGN_W<20> {
+        SRCINCSIGN_W::new(self)
     }
     #[doc = "Bit 21 - Destination Address Increment Sign"]
     #[inline(always)]
-    pub fn dstincsign(&mut self) -> DSTINCSIGN_W {
-        DSTINCSIGN_W { w: self }
+    #[must_use]
+    pub fn dstincsign(&mut self) -> DSTINCSIGN_W<21> {
+        DSTINCSIGN_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch0_cfg](index.html) module"]
+pub struct CH0_CFG_SPEC;
+impl crate::RegisterSpec for CH0_CFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ch0_cfg::R](R) reader structure"]
+impl crate::Readable for CH0_CFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ch0_cfg::W](W) writer structure"]
+impl crate::Writable for CH0_CFG_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CH0_CFG to value 0"]
+impl crate::Resettable for CH0_CFG_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

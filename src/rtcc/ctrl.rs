@@ -1,113 +1,59 @@
-#[doc = "Reader of register CTRL"]
-pub type R = crate::R<u32, super::CTRL>;
-#[doc = "Writer for register CTRL"]
-pub type W = crate::W<u32, super::CTRL>;
-#[doc = "Register CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CTRL {
-    type Type = u32;
+#[doc = "Register `CTRL` reader"]
+pub struct R(crate::R<CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ENABLE`"]
-pub type ENABLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENABLE`"]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<CTRL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `DEBUGRUN`"]
-pub type DEBUGRUN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DEBUGRUN`"]
-pub struct DEBUGRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUGRUN_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `CTRL` writer"]
+pub struct W(crate::W<CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CTRL_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PRECCV0TOP`"]
-pub type PRECCV0TOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PRECCV0TOP`"]
-pub struct PRECCV0TOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRECCV0TOP_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `CCV1TOP`"]
-pub type CCV1TOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CCV1TOP`"]
-pub struct CCV1TOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCV1TOP_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<CTRL_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
+    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
+#[doc = "Field `ENABLE` reader - RTCC Enable"]
+pub type ENABLE_R = crate::BitReader<bool>;
+#[doc = "Field `ENABLE` writer - RTCC Enable"]
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
+pub type DEBUGRUN_R = crate::BitReader<bool>;
+#[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `PRECCV0TOP` reader - Pre-counter CCV0 Top Value Enable"]
+pub type PRECCV0TOP_R = crate::BitReader<bool>;
+#[doc = "Field `PRECCV0TOP` writer - Pre-counter CCV0 Top Value Enable"]
+pub type PRECCV0TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CCV1TOP` reader - CCV1 Top Value Enable"]
+pub type CCV1TOP_R = crate::BitReader<bool>;
+#[doc = "Field `CCV1TOP` writer - CCV1 Top Value Enable"]
+pub type CCV1TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CNTPRESC` reader - Counter Prescaler Value"]
+pub type CNTPRESC_R = crate::FieldReader<u8, CNTPRESC_A>;
 #[doc = "Counter Prescaler Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CNTPRESC_A {
     #[doc = "0: CLKCNT = LFECLKRTCC/1"]
@@ -149,10 +95,8 @@ impl From<CNTPRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CNTPRESC`"]
-pub type CNTPRESC_R = crate::R<u8, CNTPRESC_A>;
 impl CNTPRESC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CNTPRESC_A {
         match self.bits {
@@ -256,18 +200,10 @@ impl CNTPRESC_R {
         *self == CNTPRESC_A::DIV32768
     }
 }
-#[doc = "Write proxy for field `CNTPRESC`"]
-pub struct CNTPRESC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNTPRESC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CNTPRESC_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CNTPRESC` writer - Counter Prescaler Value"]
+pub type CNTPRESC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, CNTPRESC_A, 4, O>;
+impl<'a, const O: u8> CNTPRESC_W<'a, O> {
     #[doc = "CLKCNT = LFECLKRTCC/1"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -348,129 +284,43 @@ impl<'a> CNTPRESC_W<'a> {
     pub fn div32768(self) -> &'a mut W {
         self.variant(CNTPRESC_A::DIV32768)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
-        self.w
-    }
 }
-#[doc = "Reader of field `CNTTICK`"]
-pub type CNTTICK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CNTTICK`"]
-pub struct CNTTICK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNTTICK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
-#[doc = "Reader of field `OSCFDETEN`"]
-pub type OSCFDETEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OSCFDETEN`"]
-pub struct OSCFDETEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCFDETEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-        self.w
-    }
-}
-#[doc = "Reader of field `CNTMODE`"]
-pub type CNTMODE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CNTMODE`"]
-pub struct CNTMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNTMODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `LYEARCORRDIS`"]
-pub type LYEARCORRDIS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LYEARCORRDIS`"]
-pub struct LYEARCORRDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LYEARCORRDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-        self.w
-    }
-}
+#[doc = "Field `CNTTICK` reader - Counter Prescaler Mode"]
+pub type CNTTICK_R = crate::BitReader<bool>;
+#[doc = "Field `CNTTICK` writer - Counter Prescaler Mode"]
+pub type CNTTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `OSCFDETEN` reader - Oscillator Failure Detection Enable"]
+pub type OSCFDETEN_R = crate::BitReader<bool>;
+#[doc = "Field `OSCFDETEN` writer - Oscillator Failure Detection Enable"]
+pub type OSCFDETEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CNTMODE` reader - Main Counter Mode"]
+pub type CNTMODE_R = crate::BitReader<bool>;
+#[doc = "Field `CNTMODE` writer - Main Counter Mode"]
+pub type CNTMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `LYEARCORRDIS` reader - Leap Year Correction Disabled"]
+pub type LYEARCORRDIS_R = crate::BitReader<bool>;
+#[doc = "Field `LYEARCORRDIS` writer - Leap Year Correction Disabled"]
+pub type LYEARCORRDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - RTCC Enable"]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new((self.bits & 0x01) != 0)
+        ENABLE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - Debug Mode Run Enable"]
     #[inline(always)]
     pub fn debugrun(&self) -> DEBUGRUN_R {
-        DEBUGRUN_R::new(((self.bits >> 2) & 0x01) != 0)
+        DEBUGRUN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - Pre-counter CCV0 Top Value Enable"]
     #[inline(always)]
     pub fn preccv0top(&self) -> PRECCV0TOP_R {
-        PRECCV0TOP_R::new(((self.bits >> 4) & 0x01) != 0)
+        PRECCV0TOP_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - CCV1 Top Value Enable"]
     #[inline(always)]
     pub fn ccv1top(&self) -> CCV1TOP_R {
-        CCV1TOP_R::new(((self.bits >> 5) & 0x01) != 0)
+        CCV1TOP_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 8:11 - Counter Prescaler Value"]
     #[inline(always)]
@@ -480,68 +330,102 @@ impl R {
     #[doc = "Bit 12 - Counter Prescaler Mode"]
     #[inline(always)]
     pub fn cnttick(&self) -> CNTTICK_R {
-        CNTTICK_R::new(((self.bits >> 12) & 0x01) != 0)
+        CNTTICK_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 15 - Oscillator Failure Detection Enable"]
     #[inline(always)]
     pub fn oscfdeten(&self) -> OSCFDETEN_R {
-        OSCFDETEN_R::new(((self.bits >> 15) & 0x01) != 0)
+        OSCFDETEN_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Main Counter Mode"]
     #[inline(always)]
     pub fn cntmode(&self) -> CNTMODE_R {
-        CNTMODE_R::new(((self.bits >> 16) & 0x01) != 0)
+        CNTMODE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Leap Year Correction Disabled"]
     #[inline(always)]
     pub fn lyearcorrdis(&self) -> LYEARCORRDIS_R {
-        LYEARCORRDIS_R::new(((self.bits >> 17) & 0x01) != 0)
+        LYEARCORRDIS_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - RTCC Enable"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    #[must_use]
+    pub fn enable(&mut self) -> ENABLE_W<0> {
+        ENABLE_W::new(self)
     }
     #[doc = "Bit 2 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
-        DEBUGRUN_W { w: self }
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<2> {
+        DEBUGRUN_W::new(self)
     }
     #[doc = "Bit 4 - Pre-counter CCV0 Top Value Enable"]
     #[inline(always)]
-    pub fn preccv0top(&mut self) -> PRECCV0TOP_W {
-        PRECCV0TOP_W { w: self }
+    #[must_use]
+    pub fn preccv0top(&mut self) -> PRECCV0TOP_W<4> {
+        PRECCV0TOP_W::new(self)
     }
     #[doc = "Bit 5 - CCV1 Top Value Enable"]
     #[inline(always)]
-    pub fn ccv1top(&mut self) -> CCV1TOP_W {
-        CCV1TOP_W { w: self }
+    #[must_use]
+    pub fn ccv1top(&mut self) -> CCV1TOP_W<5> {
+        CCV1TOP_W::new(self)
     }
     #[doc = "Bits 8:11 - Counter Prescaler Value"]
     #[inline(always)]
-    pub fn cntpresc(&mut self) -> CNTPRESC_W {
-        CNTPRESC_W { w: self }
+    #[must_use]
+    pub fn cntpresc(&mut self) -> CNTPRESC_W<8> {
+        CNTPRESC_W::new(self)
     }
     #[doc = "Bit 12 - Counter Prescaler Mode"]
     #[inline(always)]
-    pub fn cnttick(&mut self) -> CNTTICK_W {
-        CNTTICK_W { w: self }
+    #[must_use]
+    pub fn cnttick(&mut self) -> CNTTICK_W<12> {
+        CNTTICK_W::new(self)
     }
     #[doc = "Bit 15 - Oscillator Failure Detection Enable"]
     #[inline(always)]
-    pub fn oscfdeten(&mut self) -> OSCFDETEN_W {
-        OSCFDETEN_W { w: self }
+    #[must_use]
+    pub fn oscfdeten(&mut self) -> OSCFDETEN_W<15> {
+        OSCFDETEN_W::new(self)
     }
     #[doc = "Bit 16 - Main Counter Mode"]
     #[inline(always)]
-    pub fn cntmode(&mut self) -> CNTMODE_W {
-        CNTMODE_W { w: self }
+    #[must_use]
+    pub fn cntmode(&mut self) -> CNTMODE_W<16> {
+        CNTMODE_W::new(self)
     }
     #[doc = "Bit 17 - Leap Year Correction Disabled"]
     #[inline(always)]
-    pub fn lyearcorrdis(&mut self) -> LYEARCORRDIS_W {
-        LYEARCORRDIS_W { w: self }
+    #[must_use]
+    pub fn lyearcorrdis(&mut self) -> LYEARCORRDIS_W<17> {
+        LYEARCORRDIS_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+pub struct CTRL_SPEC;
+impl crate::RegisterSpec for CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+impl crate::Writable for CTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CTRL to value 0"]
+impl crate::Resettable for CTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,50 +1,80 @@
-#[doc = "Reader of register PWRCTRL"]
-pub type R = crate::R<u32, super::PWRCTRL>;
-#[doc = "Writer for register PWRCTRL"]
-pub type W = crate::W<u32, super::PWRCTRL>;
-#[doc = "Register PWRCTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::PWRCTRL {
-    type Type = u32;
+#[doc = "Register `PWRCTRL` reader"]
+pub struct R(crate::R<PWRCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PWRCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ANASW`"]
-pub type ANASW_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ANASW`"]
-pub struct ANASW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ANASW_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<PWRCTRL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
+    fn from(reader: crate::R<PWRCTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `PWRCTRL` writer"]
+pub struct W(crate::W<PWRCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PWRCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PWRCTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PWRCTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ANASW` reader - Analog Switch Selection"]
+pub type ANASW_R = crate::BitReader<bool>;
+#[doc = "Field `ANASW` writer - Analog Switch Selection"]
+pub type ANASW_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 5 - Analog Switch Selection"]
     #[inline(always)]
     pub fn anasw(&self) -> ANASW_R {
-        ANASW_R::new(((self.bits >> 5) & 0x01) != 0)
+        ANASW_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 5 - Analog Switch Selection"]
     #[inline(always)]
-    pub fn anasw(&mut self) -> ANASW_W {
-        ANASW_W { w: self }
+    #[must_use]
+    pub fn anasw(&mut self) -> ANASW_W<5> {
+        ANASW_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Power Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwrctrl](index.html) module"]
+pub struct PWRCTRL_SPEC;
+impl crate::RegisterSpec for PWRCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pwrctrl::R](R) reader structure"]
+impl crate::Readable for PWRCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pwrctrl::W](W) writer structure"]
+impl crate::Writable for PWRCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets PWRCTRL to value 0"]
+impl crate::Resettable for PWRCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

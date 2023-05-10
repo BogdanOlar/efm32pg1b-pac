@@ -1,40 +1,80 @@
-#[doc = "Reader of register RET25_REG"]
-pub type R = crate::R<u32, super::RET25_REG>;
-#[doc = "Writer for register RET25_REG"]
-pub type W = crate::W<u32, super::RET25_REG>;
-#[doc = "Register RET25_REG `reset()`'s with value 0"]
-impl crate::ResetValue for super::RET25_REG {
-    type Type = u32;
+#[doc = "Register `RET25_REG` reader"]
+pub struct R(crate::R<RET25_REG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RET25_REG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `REG`"]
-pub type REG_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `REG`"]
-pub struct REG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<RET25_REG_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
-        self.w
+    fn from(reader: crate::R<RET25_REG_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `RET25_REG` writer"]
+pub struct W(crate::W<RET25_REG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RET25_REG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RET25_REG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RET25_REG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `REG` reader - General Purpose Retention Register"]
+pub type REG_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `REG` writer - General Purpose Retention Register"]
+pub type REG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RET25_REG_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - General Purpose Retention Register"]
     #[inline(always)]
     pub fn reg(&self) -> REG_R {
-        REG_R::new((self.bits & 0xffff_ffff) as u32)
+        REG_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - General Purpose Retention Register"]
     #[inline(always)]
-    pub fn reg(&mut self) -> REG_W {
-        REG_W { w: self }
+    #[must_use]
+    pub fn reg(&mut self) -> REG_W<0> {
+        REG_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Retention Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ret25_reg](index.html) module"]
+pub struct RET25_REG_SPEC;
+impl crate::RegisterSpec for RET25_REG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ret25_reg::R](R) reader structure"]
+impl crate::Readable for RET25_REG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ret25_reg::W](W) writer structure"]
+impl crate::Writable for RET25_REG_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets RET25_REG to value 0"]
+impl crate::Resettable for RET25_REG_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

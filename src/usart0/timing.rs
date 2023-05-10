@@ -1,17 +1,43 @@
-#[doc = "Reader of register TIMING"]
-pub type R = crate::R<u32, super::TIMING>;
-#[doc = "Writer for register TIMING"]
-pub type W = crate::W<u32, super::TIMING>;
-#[doc = "Register TIMING `reset()`'s with value 0"]
-impl crate::ResetValue for super::TIMING {
-    type Type = u32;
+#[doc = "Register `TIMING` reader"]
+pub struct R(crate::R<TIMING_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TIMING_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<TIMING_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TIMING_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TIMING` writer"]
+pub struct W(crate::W<TIMING_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TIMING_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TIMING_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TIMING_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TXDELAY` reader - TX Frame Start Delay"]
+pub type TXDELAY_R = crate::FieldReader<u8, TXDELAY_A>;
 #[doc = "TX Frame Start Delay\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TXDELAY_A {
     #[doc = "0: Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
@@ -37,10 +63,8 @@ impl From<TXDELAY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TXDELAY`"]
-pub type TXDELAY_R = crate::R<u8, TXDELAY_A>;
 impl TXDELAY_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXDELAY_A {
         match self.bits {
@@ -96,18 +120,10 @@ impl TXDELAY_R {
         *self == TXDELAY_A::TCMP2
     }
 }
-#[doc = "Write proxy for field `TXDELAY`"]
-pub struct TXDELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDELAY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXDELAY_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `TXDELAY` writer - TX Frame Start Delay"]
+pub type TXDELAY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, TXDELAY_A, 3, O>;
+impl<'a, const O: u8> TXDELAY_W<'a, O> {
     #[doc = "Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -148,15 +164,11 @@ impl<'a> TXDELAY_W<'a> {
     pub fn tcmp2(self) -> &'a mut W {
         self.variant(TXDELAY_A::TCMP2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
-        self.w
-    }
 }
+#[doc = "Field `CSSETUP` reader - Chip Select Setup"]
+pub type CSSETUP_R = crate::FieldReader<u8, CSSETUP_A>;
 #[doc = "Chip Select Setup\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSSETUP_A {
     #[doc = "0: CS is not asserted before start of transmission"]
@@ -182,10 +194,8 @@ impl From<CSSETUP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CSSETUP`"]
-pub type CSSETUP_R = crate::R<u8, CSSETUP_A>;
 impl CSSETUP_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSSETUP_A {
         match self.bits {
@@ -241,18 +251,10 @@ impl CSSETUP_R {
         *self == CSSETUP_A::TCMP2
     }
 }
-#[doc = "Write proxy for field `CSSETUP`"]
-pub struct CSSETUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSSETUP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSSETUP_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CSSETUP` writer - Chip Select Setup"]
+pub type CSSETUP_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, CSSETUP_A, 3, O>;
+impl<'a, const O: u8> CSSETUP_W<'a, O> {
     #[doc = "CS is not asserted before start of transmission"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut W {
@@ -293,20 +295,16 @@ impl<'a> CSSETUP_W<'a> {
     pub fn tcmp2(self) -> &'a mut W {
         self.variant(CSSETUP_A::TCMP2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
-        self.w
-    }
 }
+#[doc = "Field `ICS` reader - Inter-character Spacing"]
+pub type ICS_R = crate::FieldReader<u8, ICS_A>;
 #[doc = "Inter-character Spacing\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICS_A {
     #[doc = "0: There is no space between charcters"]
     ZERO = 0,
-    #[doc = "1: Create a space of 1 baud-times before start of transmission "]
+    #[doc = "1: Create a space of 1 baud-times before start of transmission"]
     ONE = 1,
     #[doc = "2: Create a space of 2 baud-times before start of transmission"]
     TWO = 2,
@@ -327,10 +325,8 @@ impl From<ICS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ICS`"]
-pub type ICS_R = crate::R<u8, ICS_A>;
 impl ICS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ICS_A {
         match self.bits {
@@ -386,18 +382,9 @@ impl ICS_R {
         *self == ICS_A::TCMP2
     }
 }
-#[doc = "Write proxy for field `ICS`"]
-pub struct ICS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ICS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ICS` writer - Inter-character Spacing"]
+pub type ICS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, ICS_A, 3, O>;
+impl<'a, const O: u8> ICS_W<'a, O> {
     #[doc = "There is no space between charcters"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut W {
@@ -438,15 +425,11 @@ impl<'a> ICS_W<'a> {
     pub fn tcmp2(self) -> &'a mut W {
         self.variant(ICS_A::TCMP2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
-        self.w
-    }
 }
+#[doc = "Field `CSHOLD` reader - Chip Select Hold"]
+pub type CSHOLD_R = crate::FieldReader<u8, CSHOLD_A>;
 #[doc = "Chip Select Hold\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSHOLD_A {
     #[doc = "0: Disable CS being asserted after the end of transmission"]
@@ -472,10 +455,8 @@ impl From<CSHOLD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CSHOLD`"]
-pub type CSHOLD_R = crate::R<u8, CSHOLD_A>;
 impl CSHOLD_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSHOLD_A {
         match self.bits {
@@ -531,18 +512,10 @@ impl CSHOLD_R {
         *self == CSHOLD_A::TCMP2
     }
 }
-#[doc = "Write proxy for field `CSHOLD`"]
-pub struct CSHOLD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSHOLD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSHOLD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CSHOLD` writer - Chip Select Hold"]
+pub type CSHOLD_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, CSHOLD_A, 3, O>;
+impl<'a, const O: u8> CSHOLD_W<'a, O> {
     #[doc = "Disable CS being asserted after the end of transmission"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut W {
@@ -583,54 +556,77 @@ impl<'a> CSHOLD_W<'a> {
     pub fn tcmp2(self) -> &'a mut W {
         self.variant(CSHOLD_A::TCMP2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | (((value as u32) & 0x07) << 28);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 16:18 - TX Frame Start Delay"]
     #[inline(always)]
     pub fn txdelay(&self) -> TXDELAY_R {
-        TXDELAY_R::new(((self.bits >> 16) & 0x07) as u8)
+        TXDELAY_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - Chip Select Setup"]
     #[inline(always)]
     pub fn cssetup(&self) -> CSSETUP_R {
-        CSSETUP_R::new(((self.bits >> 20) & 0x07) as u8)
+        CSSETUP_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 24:26 - Inter-character Spacing"]
     #[inline(always)]
     pub fn ics(&self) -> ICS_R {
-        ICS_R::new(((self.bits >> 24) & 0x07) as u8)
+        ICS_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 28:30 - Chip Select Hold"]
     #[inline(always)]
     pub fn cshold(&self) -> CSHOLD_R {
-        CSHOLD_R::new(((self.bits >> 28) & 0x07) as u8)
+        CSHOLD_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 16:18 - TX Frame Start Delay"]
     #[inline(always)]
-    pub fn txdelay(&mut self) -> TXDELAY_W {
-        TXDELAY_W { w: self }
+    #[must_use]
+    pub fn txdelay(&mut self) -> TXDELAY_W<16> {
+        TXDELAY_W::new(self)
     }
     #[doc = "Bits 20:22 - Chip Select Setup"]
     #[inline(always)]
-    pub fn cssetup(&mut self) -> CSSETUP_W {
-        CSSETUP_W { w: self }
+    #[must_use]
+    pub fn cssetup(&mut self) -> CSSETUP_W<20> {
+        CSSETUP_W::new(self)
     }
     #[doc = "Bits 24:26 - Inter-character Spacing"]
     #[inline(always)]
-    pub fn ics(&mut self) -> ICS_W {
-        ICS_W { w: self }
+    #[must_use]
+    pub fn ics(&mut self) -> ICS_W<24> {
+        ICS_W::new(self)
     }
     #[doc = "Bits 28:30 - Chip Select Hold"]
     #[inline(always)]
-    pub fn cshold(&mut self) -> CSHOLD_W {
-        CSHOLD_W { w: self }
+    #[must_use]
+    pub fn cshold(&mut self) -> CSHOLD_W<28> {
+        CSHOLD_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Timing Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timing](index.html) module"]
+pub struct TIMING_SPEC;
+impl crate::RegisterSpec for TIMING_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [timing::R](R) reader structure"]
+impl crate::Readable for TIMING_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [timing::W](W) writer structure"]
+impl crate::Writable for TIMING_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets TIMING to value 0"]
+impl crate::Resettable for TIMING_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

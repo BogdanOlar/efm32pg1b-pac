@@ -18,83 +18,35 @@ pub struct RegisterBlock {
     #[doc = "0x1c - Interrupt Enable Register"]
     pub ien: IEN,
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](ctrl) module"]
-pub type CTRL = crate::Reg<u32, _CTRL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CTRL;
-#[doc = "`read()` method returns [ctrl::R](ctrl::R) reader structure"]
-impl crate::Readable for CTRL {}
-#[doc = "`write(|w| ..)` method takes [ctrl::W](ctrl::W) writer structure"]
-impl crate::Writable for CTRL {}
+#[doc = "CTRL (rw) register accessor: an alias for `Reg<CTRL_SPEC>`"]
+pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "Control Register"]
 pub mod ctrl;
-#[doc = "Interrupt Duration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [periodsel](periodsel) module"]
-pub type PERIODSEL = crate::Reg<u32, _PERIODSEL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PERIODSEL;
-#[doc = "`read()` method returns [periodsel::R](periodsel::R) reader structure"]
-impl crate::Readable for PERIODSEL {}
-#[doc = "`write(|w| ..)` method takes [periodsel::W](periodsel::W) writer structure"]
-impl crate::Writable for PERIODSEL {}
+#[doc = "PERIODSEL (rw) register accessor: an alias for `Reg<PERIODSEL_SPEC>`"]
+pub type PERIODSEL = crate::Reg<periodsel::PERIODSEL_SPEC>;
 #[doc = "Interrupt Duration"]
 pub mod periodsel;
-#[doc = "Counter Value\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cnt](cnt) module"]
-pub type CNT = crate::Reg<u32, _CNT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CNT;
-#[doc = "`read()` method returns [cnt::R](cnt::R) reader structure"]
-impl crate::Readable for CNT {}
+#[doc = "CNT (r) register accessor: an alias for `Reg<CNT_SPEC>`"]
+pub type CNT = crate::Reg<cnt::CNT_SPEC>;
 #[doc = "Counter Value"]
 pub mod cnt;
-#[doc = "Wake Up Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [em4wuen](em4wuen) module"]
-pub type EM4WUEN = crate::Reg<u32, _EM4WUEN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _EM4WUEN;
-#[doc = "`read()` method returns [em4wuen::R](em4wuen::R) reader structure"]
-impl crate::Readable for EM4WUEN {}
-#[doc = "`write(|w| ..)` method takes [em4wuen::W](em4wuen::W) writer structure"]
-impl crate::Writable for EM4WUEN {}
+#[doc = "EM4WUEN (rw) register accessor: an alias for `Reg<EM4WUEN_SPEC>`"]
+pub type EM4WUEN = crate::Reg<em4wuen::EM4WUEN_SPEC>;
 #[doc = "Wake Up Enable"]
 pub mod em4wuen;
-#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](if_) module"]
-pub type IF = crate::Reg<u32, _IF>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IF;
-#[doc = "`read()` method returns [if_::R](if_::R) reader structure"]
-impl crate::Readable for IF {}
+#[doc = "IF (r) register accessor: an alias for `Reg<IF_SPEC>`"]
+pub type IF = crate::Reg<if_::IF_SPEC>;
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
-#[doc = "Interrupt Flag Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifs](ifs) module"]
-pub type IFS = crate::Reg<u32, _IFS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IFS;
-#[doc = "`write(|w| ..)` method takes [ifs::W](ifs::W) writer structure"]
-impl crate::Writable for IFS {}
+#[doc = "IFS (w) register accessor: an alias for `Reg<IFS_SPEC>`"]
+pub type IFS = crate::Reg<ifs::IFS_SPEC>;
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
-#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifc](ifc) module"]
-pub type IFC = crate::Reg<u32, _IFC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IFC;
-#[doc = "`write(|w| ..)` method takes [ifc::W](ifc::W) writer structure"]
-impl crate::Writable for IFC {}
+#[doc = "IFC (w) register accessor: an alias for `Reg<IFC_SPEC>`"]
+pub type IFC = crate::Reg<ifc::IFC_SPEC>;
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ien](ien) module"]
-pub type IEN = crate::Reg<u32, _IEN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IEN;
-#[doc = "`read()` method returns [ien::R](ien::R) reader structure"]
-impl crate::Readable for IEN {}
-#[doc = "`write(|w| ..)` method takes [ien::W](ien::W) writer structure"]
-impl crate::Writable for IEN {}
+#[doc = "IEN (rw) register accessor: an alias for `Reg<IEN_SPEC>`"]
+pub type IEN = crate::Reg<ien::IEN_SPEC>;
 #[doc = "Interrupt Enable Register"]
 pub mod ien;

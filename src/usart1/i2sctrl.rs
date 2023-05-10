@@ -1,137 +1,63 @@
-#[doc = "Reader of register I2SCTRL"]
-pub type R = crate::R<u32, super::I2SCTRL>;
-#[doc = "Writer for register I2SCTRL"]
-pub type W = crate::W<u32, super::I2SCTRL>;
-#[doc = "Register I2SCTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::I2SCTRL {
-    type Type = u32;
+#[doc = "Register `I2SCTRL` reader"]
+pub struct R(crate::R<I2SCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<I2SCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EN`"]
-pub type EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EN`"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<I2SCTRL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<I2SCTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `MONO`"]
-pub type MONO_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MONO`"]
-pub struct MONO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONO_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `I2SCTRL` writer"]
+pub struct W(crate::W<I2SCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<I2SCTRL_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `JUSTIFY`"]
-pub type JUSTIFY_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `JUSTIFY`"]
-pub struct JUSTIFY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JUSTIFY_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `DMASPLIT`"]
-pub type DMASPLIT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DMASPLIT`"]
-pub struct DMASPLIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMASPLIT_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<I2SCTRL_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<I2SCTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `DELAY`"]
-pub type DELAY_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DELAY`"]
-pub struct DELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
+#[doc = "Field `EN` reader - Enable I2S Mode"]
+pub type EN_R = crate::BitReader<bool>;
+#[doc = "Field `EN` writer - Enable I2S Mode"]
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+#[doc = "Field `MONO` reader - Stero or Mono"]
+pub type MONO_R = crate::BitReader<bool>;
+#[doc = "Field `MONO` writer - Stero or Mono"]
+pub type MONO_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+#[doc = "Field `JUSTIFY` reader - Justification of I2S Data"]
+pub type JUSTIFY_R = crate::BitReader<bool>;
+#[doc = "Field `JUSTIFY` writer - Justification of I2S Data"]
+pub type JUSTIFY_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+#[doc = "Field `DMASPLIT` reader - Separate DMA Request for Left/Right Data"]
+pub type DMASPLIT_R = crate::BitReader<bool>;
+#[doc = "Field `DMASPLIT` writer - Separate DMA Request for Left/Right Data"]
+pub type DMASPLIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+#[doc = "Field `DELAY` reader - Delay on I2S Data"]
+pub type DELAY_R = crate::BitReader<bool>;
+#[doc = "Field `DELAY` writer - Delay on I2S Data"]
+pub type DELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+#[doc = "Field `FORMAT` reader - I2S Word Format"]
+pub type FORMAT_R = crate::FieldReader<u8, FORMAT_A>;
 #[doc = "I2S Word Format\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FORMAT_A {
     #[doc = "0: 32-bit word, 32-bit data"]
@@ -157,10 +83,8 @@ impl From<FORMAT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FORMAT`"]
-pub type FORMAT_R = crate::R<u8, FORMAT_A>;
 impl FORMAT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FORMAT_A {
         match self.bits {
@@ -216,18 +140,10 @@ impl FORMAT_R {
         *self == FORMAT_A::W8D8
     }
 }
-#[doc = "Write proxy for field `FORMAT`"]
-pub struct FORMAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORMAT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FORMAT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `FORMAT` writer - I2S Word Format"]
+pub type FORMAT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, I2SCTRL_SPEC, u8, FORMAT_A, 3, O>;
+impl<'a, const O: u8> FORMAT_W<'a, O> {
     #[doc = "32-bit word, 32-bit data"]
     #[inline(always)]
     pub fn w32d32(self) -> &'a mut W {
@@ -268,74 +184,99 @@ impl<'a> FORMAT_W<'a> {
     pub fn w8d8(self) -> &'a mut W {
         self.variant(FORMAT_A::W8D8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable I2S Mode"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Stero or Mono"]
     #[inline(always)]
     pub fn mono(&self) -> MONO_R {
-        MONO_R::new(((self.bits >> 1) & 0x01) != 0)
+        MONO_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Justification of I2S Data"]
     #[inline(always)]
     pub fn justify(&self) -> JUSTIFY_R {
-        JUSTIFY_R::new(((self.bits >> 2) & 0x01) != 0)
+        JUSTIFY_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Separate DMA Request for Left/Right Data"]
     #[inline(always)]
     pub fn dmasplit(&self) -> DMASPLIT_R {
-        DMASPLIT_R::new(((self.bits >> 3) & 0x01) != 0)
+        DMASPLIT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Delay on I2S Data"]
     #[inline(always)]
     pub fn delay(&self) -> DELAY_R {
-        DELAY_R::new(((self.bits >> 4) & 0x01) != 0)
+        DELAY_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:10 - I2S Word Format"]
     #[inline(always)]
     pub fn format(&self) -> FORMAT_R {
-        FORMAT_R::new(((self.bits >> 8) & 0x07) as u8)
+        FORMAT_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable I2S Mode"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Stero or Mono"]
     #[inline(always)]
-    pub fn mono(&mut self) -> MONO_W {
-        MONO_W { w: self }
+    #[must_use]
+    pub fn mono(&mut self) -> MONO_W<1> {
+        MONO_W::new(self)
     }
     #[doc = "Bit 2 - Justification of I2S Data"]
     #[inline(always)]
-    pub fn justify(&mut self) -> JUSTIFY_W {
-        JUSTIFY_W { w: self }
+    #[must_use]
+    pub fn justify(&mut self) -> JUSTIFY_W<2> {
+        JUSTIFY_W::new(self)
     }
     #[doc = "Bit 3 - Separate DMA Request for Left/Right Data"]
     #[inline(always)]
-    pub fn dmasplit(&mut self) -> DMASPLIT_W {
-        DMASPLIT_W { w: self }
+    #[must_use]
+    pub fn dmasplit(&mut self) -> DMASPLIT_W<3> {
+        DMASPLIT_W::new(self)
     }
     #[doc = "Bit 4 - Delay on I2S Data"]
     #[inline(always)]
-    pub fn delay(&mut self) -> DELAY_W {
-        DELAY_W { w: self }
+    #[must_use]
+    pub fn delay(&mut self) -> DELAY_W<4> {
+        DELAY_W::new(self)
     }
     #[doc = "Bits 8:10 - I2S Word Format"]
     #[inline(always)]
-    pub fn format(&mut self) -> FORMAT_W {
-        FORMAT_W { w: self }
+    #[must_use]
+    pub fn format(&mut self) -> FORMAT_W<8> {
+        FORMAT_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I2S Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2sctrl](index.html) module"]
+pub struct I2SCTRL_SPEC;
+impl crate::RegisterSpec for I2SCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [i2sctrl::R](R) reader structure"]
+impl crate::Readable for I2SCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [i2sctrl::W](W) writer structure"]
+impl crate::Writable for I2SCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets I2SCTRL to value 0"]
+impl crate::Resettable for I2SCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

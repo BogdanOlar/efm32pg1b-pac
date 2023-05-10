@@ -1,67 +1,51 @@
-#[doc = "Reader of register TEMPLIMITS"]
-pub type R = crate::R<u32, super::TEMPLIMITS>;
-#[doc = "Writer for register TEMPLIMITS"]
-pub type W = crate::W<u32, super::TEMPLIMITS>;
-#[doc = "Register TEMPLIMITS `reset()`'s with value 0xff00"]
-impl crate::ResetValue for super::TEMPLIMITS {
-    type Type = u32;
+#[doc = "Register `TEMPLIMITS` reader"]
+pub struct R(crate::R<TEMPLIMITS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TEMPLIMITS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xff00
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TEMPLOW`"]
-pub type TEMPLOW_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TEMPLOW`"]
-pub struct TEMPLOW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TEMPLOW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<TEMPLIMITS_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
-        self.w
+    fn from(reader: crate::R<TEMPLIMITS_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `TEMPHIGH`"]
-pub type TEMPHIGH_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TEMPHIGH`"]
-pub struct TEMPHIGH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TEMPHIGH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `TEMPLIMITS` writer"]
+pub struct W(crate::W<TEMPLIMITS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TEMPLIMITS_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EM4WUEN`"]
-pub type EM4WUEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EM4WUEN`"]
-pub struct EM4WUEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EM4WUEN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
+impl From<crate::W<TEMPLIMITS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TEMPLIMITS_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TEMPLOW` reader - Temperature Low Limit"]
+pub type TEMPLOW_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TEMPLOW` writer - Temperature Low Limit"]
+pub type TEMPLOW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u8, u8, 8, O>;
+#[doc = "Field `TEMPHIGH` reader - Temperature High Limit"]
+pub type TEMPHIGH_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TEMPHIGH` writer - Temperature High Limit"]
+pub type TEMPHIGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u8, u8, 8, O>;
+#[doc = "Field `EM4WUEN` reader - Enable EM4 Wakeup Due to Low/high Temperature"]
+pub type EM4WUEN_R = crate::BitReader<bool>;
+#[doc = "Field `EM4WUEN` writer - Enable EM4 Wakeup Due to Low/high Temperature"]
+pub type EM4WUEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEMPLIMITS_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Temperature Low Limit"]
     #[inline(always)]
@@ -76,23 +60,51 @@ impl R {
     #[doc = "Bit 16 - Enable EM4 Wakeup Due to Low/high Temperature"]
     #[inline(always)]
     pub fn em4wuen(&self) -> EM4WUEN_R {
-        EM4WUEN_R::new(((self.bits >> 16) & 0x01) != 0)
+        EM4WUEN_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Temperature Low Limit"]
     #[inline(always)]
-    pub fn templow(&mut self) -> TEMPLOW_W {
-        TEMPLOW_W { w: self }
+    #[must_use]
+    pub fn templow(&mut self) -> TEMPLOW_W<0> {
+        TEMPLOW_W::new(self)
     }
     #[doc = "Bits 8:15 - Temperature High Limit"]
     #[inline(always)]
-    pub fn temphigh(&mut self) -> TEMPHIGH_W {
-        TEMPHIGH_W { w: self }
+    #[must_use]
+    pub fn temphigh(&mut self) -> TEMPHIGH_W<8> {
+        TEMPHIGH_W::new(self)
     }
     #[doc = "Bit 16 - Enable EM4 Wakeup Due to Low/high Temperature"]
     #[inline(always)]
-    pub fn em4wuen(&mut self) -> EM4WUEN_W {
-        EM4WUEN_W { w: self }
+    #[must_use]
+    pub fn em4wuen(&mut self) -> EM4WUEN_W<16> {
+        EM4WUEN_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Temperature Limits for Interrupt Generation\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [templimits](index.html) module"]
+pub struct TEMPLIMITS_SPEC;
+impl crate::RegisterSpec for TEMPLIMITS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [templimits::R](R) reader structure"]
+impl crate::Readable for TEMPLIMITS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [templimits::W](W) writer structure"]
+impl crate::Writable for TEMPLIMITS_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets TEMPLIMITS to value 0xff00"]
+impl crate::Resettable for TEMPLIMITS_SPEC {
+    const RESET_VALUE: Self::Ux = 0xff00;
 }

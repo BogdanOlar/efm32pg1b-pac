@@ -1,17 +1,43 @@
-#[doc = "Reader of register INPUT"]
-pub type R = crate::R<u32, super::INPUT>;
-#[doc = "Writer for register INPUT"]
-pub type W = crate::W<u32, super::INPUT>;
-#[doc = "Register INPUT `reset()`'s with value 0"]
-impl crate::ResetValue for super::INPUT {
-    type Type = u32;
+#[doc = "Register `INPUT` reader"]
+pub struct R(crate::R<INPUT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INPUT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<INPUT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<INPUT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `INPUT` writer"]
+pub struct W(crate::W<INPUT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INPUT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<INPUT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<INPUT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RXPRSSEL` reader - RX PRS Channel Select"]
+pub type RXPRSSEL_R = crate::FieldReader<u8, RXPRSSEL_A>;
 #[doc = "RX PRS Channel Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXPRSSEL_A {
     #[doc = "0: PRS Channel 0 selected"]
@@ -45,27 +71,24 @@ impl From<RXPRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RXPRSSEL`"]
-pub type RXPRSSEL_R = crate::R<u8, RXPRSSEL_A>;
 impl RXPRSSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, RXPRSSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RXPRSSEL_A> {
         match self.bits {
-            0 => Val(RXPRSSEL_A::PRSCH0),
-            1 => Val(RXPRSSEL_A::PRSCH1),
-            2 => Val(RXPRSSEL_A::PRSCH2),
-            3 => Val(RXPRSSEL_A::PRSCH3),
-            4 => Val(RXPRSSEL_A::PRSCH4),
-            5 => Val(RXPRSSEL_A::PRSCH5),
-            6 => Val(RXPRSSEL_A::PRSCH6),
-            7 => Val(RXPRSSEL_A::PRSCH7),
-            8 => Val(RXPRSSEL_A::PRSCH8),
-            9 => Val(RXPRSSEL_A::PRSCH9),
-            10 => Val(RXPRSSEL_A::PRSCH10),
-            11 => Val(RXPRSSEL_A::PRSCH11),
-            i => Res(i),
+            0 => Some(RXPRSSEL_A::PRSCH0),
+            1 => Some(RXPRSSEL_A::PRSCH1),
+            2 => Some(RXPRSSEL_A::PRSCH2),
+            3 => Some(RXPRSSEL_A::PRSCH3),
+            4 => Some(RXPRSSEL_A::PRSCH4),
+            5 => Some(RXPRSSEL_A::PRSCH5),
+            6 => Some(RXPRSSEL_A::PRSCH6),
+            7 => Some(RXPRSSEL_A::PRSCH7),
+            8 => Some(RXPRSSEL_A::PRSCH8),
+            9 => Some(RXPRSSEL_A::PRSCH9),
+            10 => Some(RXPRSSEL_A::PRSCH10),
+            11 => Some(RXPRSSEL_A::PRSCH11),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
@@ -129,16 +152,10 @@ impl RXPRSSEL_R {
         *self == RXPRSSEL_A::PRSCH11
     }
 }
-#[doc = "Write proxy for field `RXPRSSEL`"]
-pub struct RXPRSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXPRSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXPRSSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `RXPRSSEL` writer - RX PRS Channel Select"]
+pub type RXPRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, INPUT_SPEC, u8, RXPRSSEL_A, 4, O>;
+impl<'a, const O: u8> RXPRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -199,39 +216,15 @@ impl<'a> RXPRSSEL_W<'a> {
     pub fn prsch11(self) -> &'a mut W {
         self.variant(RXPRSSEL_A::PRSCH11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
-    }
 }
-#[doc = "Reader of field `RXPRS`"]
-pub type RXPRS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXPRS`"]
-pub struct RXPRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXPRS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
+#[doc = "Field `RXPRS` reader - PRS RX Enable"]
+pub type RXPRS_R = crate::BitReader<bool>;
+#[doc = "Field `RXPRS` writer - PRS RX Enable"]
+pub type RXPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUT_SPEC, bool, O>;
+#[doc = "Field `CLKPRSSEL` reader - CLK PRS Channel Select"]
+pub type CLKPRSSEL_R = crate::FieldReader<u8, CLKPRSSEL_A>;
 #[doc = "CLK PRS Channel Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKPRSSEL_A {
     #[doc = "0: PRS Channel 0 selected"]
@@ -265,27 +258,24 @@ impl From<CLKPRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CLKPRSSEL`"]
-pub type CLKPRSSEL_R = crate::R<u8, CLKPRSSEL_A>;
 impl CLKPRSSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CLKPRSSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CLKPRSSEL_A> {
         match self.bits {
-            0 => Val(CLKPRSSEL_A::PRSCH0),
-            1 => Val(CLKPRSSEL_A::PRSCH1),
-            2 => Val(CLKPRSSEL_A::PRSCH2),
-            3 => Val(CLKPRSSEL_A::PRSCH3),
-            4 => Val(CLKPRSSEL_A::PRSCH4),
-            5 => Val(CLKPRSSEL_A::PRSCH5),
-            6 => Val(CLKPRSSEL_A::PRSCH6),
-            7 => Val(CLKPRSSEL_A::PRSCH7),
-            8 => Val(CLKPRSSEL_A::PRSCH8),
-            9 => Val(CLKPRSSEL_A::PRSCH9),
-            10 => Val(CLKPRSSEL_A::PRSCH10),
-            11 => Val(CLKPRSSEL_A::PRSCH11),
-            i => Res(i),
+            0 => Some(CLKPRSSEL_A::PRSCH0),
+            1 => Some(CLKPRSSEL_A::PRSCH1),
+            2 => Some(CLKPRSSEL_A::PRSCH2),
+            3 => Some(CLKPRSSEL_A::PRSCH3),
+            4 => Some(CLKPRSSEL_A::PRSCH4),
+            5 => Some(CLKPRSSEL_A::PRSCH5),
+            6 => Some(CLKPRSSEL_A::PRSCH6),
+            7 => Some(CLKPRSSEL_A::PRSCH7),
+            8 => Some(CLKPRSSEL_A::PRSCH8),
+            9 => Some(CLKPRSSEL_A::PRSCH9),
+            10 => Some(CLKPRSSEL_A::PRSCH10),
+            11 => Some(CLKPRSSEL_A::PRSCH11),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
@@ -349,16 +339,10 @@ impl CLKPRSSEL_R {
         *self == CLKPRSSEL_A::PRSCH11
     }
 }
-#[doc = "Write proxy for field `CLKPRSSEL`"]
-pub struct CLKPRSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKPRSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLKPRSSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CLKPRSSEL` writer - CLK PRS Channel Select"]
+pub type CLKPRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, INPUT_SPEC, u8, CLKPRSSEL_A, 4, O>;
+impl<'a, const O: u8> CLKPRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -419,37 +403,11 @@ impl<'a> CLKPRSSEL_W<'a> {
     pub fn prsch11(self) -> &'a mut W {
         self.variant(CLKPRSSEL_A::PRSCH11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
-        self.w
-    }
 }
-#[doc = "Reader of field `CLKPRS`"]
-pub type CLKPRS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CLKPRS`"]
-pub struct CLKPRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKPRS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-        self.w
-    }
-}
+#[doc = "Field `CLKPRS` reader - PRS CLK Enable"]
+pub type CLKPRS_R = crate::BitReader<bool>;
+#[doc = "Field `CLKPRS` writer - PRS CLK Enable"]
+pub type CLKPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUT_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - RX PRS Channel Select"]
     #[inline(always)]
@@ -459,7 +417,7 @@ impl R {
     #[doc = "Bit 7 - PRS RX Enable"]
     #[inline(always)]
     pub fn rxprs(&self) -> RXPRS_R {
-        RXPRS_R::new(((self.bits >> 7) & 0x01) != 0)
+        RXPRS_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:11 - CLK PRS Channel Select"]
     #[inline(always)]
@@ -469,28 +427,57 @@ impl R {
     #[doc = "Bit 15 - PRS CLK Enable"]
     #[inline(always)]
     pub fn clkprs(&self) -> CLKPRS_R {
-        CLKPRS_R::new(((self.bits >> 15) & 0x01) != 0)
+        CLKPRS_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - RX PRS Channel Select"]
     #[inline(always)]
-    pub fn rxprssel(&mut self) -> RXPRSSEL_W {
-        RXPRSSEL_W { w: self }
+    #[must_use]
+    pub fn rxprssel(&mut self) -> RXPRSSEL_W<0> {
+        RXPRSSEL_W::new(self)
     }
     #[doc = "Bit 7 - PRS RX Enable"]
     #[inline(always)]
-    pub fn rxprs(&mut self) -> RXPRS_W {
-        RXPRS_W { w: self }
+    #[must_use]
+    pub fn rxprs(&mut self) -> RXPRS_W<7> {
+        RXPRS_W::new(self)
     }
     #[doc = "Bits 8:11 - CLK PRS Channel Select"]
     #[inline(always)]
-    pub fn clkprssel(&mut self) -> CLKPRSSEL_W {
-        CLKPRSSEL_W { w: self }
+    #[must_use]
+    pub fn clkprssel(&mut self) -> CLKPRSSEL_W<8> {
+        CLKPRSSEL_W::new(self)
     }
     #[doc = "Bit 15 - PRS CLK Enable"]
     #[inline(always)]
-    pub fn clkprs(&mut self) -> CLKPRS_W {
-        CLKPRS_W { w: self }
+    #[must_use]
+    pub fn clkprs(&mut self) -> CLKPRS_W<15> {
+        CLKPRS_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USART Input Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [input](index.html) module"]
+pub struct INPUT_SPEC;
+impl crate::RegisterSpec for INPUT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [input::R](R) reader structure"]
+impl crate::Readable for INPUT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [input::W](W) writer structure"]
+impl crate::Writable for INPUT_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets INPUT to value 0"]
+impl crate::Resettable for INPUT_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

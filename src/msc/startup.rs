@@ -1,129 +1,63 @@
-#[doc = "Reader of register STARTUP"]
-pub type R = crate::R<u32, super::STARTUP>;
-#[doc = "Writer for register STARTUP"]
-pub type W = crate::W<u32, super::STARTUP>;
-#[doc = "Register STARTUP `reset()`'s with value 0x1300_104d"]
-impl crate::ResetValue for super::STARTUP {
-    type Type = u32;
+#[doc = "Register `STARTUP` reader"]
+pub struct R(crate::R<STARTUP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STARTUP_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x1300_104d
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `STDLY0`"]
-pub type STDLY0_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `STDLY0`"]
-pub struct STDLY0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STDLY0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<STARTUP_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | ((value as u32) & 0x03ff);
-        self.w
+    fn from(reader: crate::R<STARTUP_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `STDLY1`"]
-pub type STDLY1_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `STDLY1`"]
-pub struct STDLY1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STDLY1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `STARTUP` writer"]
+pub struct W(crate::W<STARTUP_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<STARTUP_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 12)) | (((value as u32) & 0x03ff) << 12);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ASTWAIT`"]
-pub type ASTWAIT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ASTWAIT`"]
-pub struct ASTWAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ASTWAIT_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `STWSEN`"]
-pub type STWSEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STWSEN`"]
-pub struct STWSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STWSEN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<STARTUP_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-        self.w
+    fn from(writer: crate::W<STARTUP_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `STWSAEN`"]
-pub type STWSAEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STWSAEN`"]
-pub struct STWSAEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STWSAEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-        self.w
-    }
-}
-#[doc = "Reader of field `STWS`"]
-pub type STWS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `STWS`"]
-pub struct STWS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STWS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | (((value as u32) & 0x07) << 28);
-        self.w
-    }
-}
+#[doc = "Field `STDLY0` reader - Startup Delay 0"]
+pub type STDLY0_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `STDLY0` writer - Startup Delay 0"]
+pub type STDLY0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u16, u16, 10, O>;
+#[doc = "Field `STDLY1` reader - Startup Delay 0"]
+pub type STDLY1_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `STDLY1` writer - Startup Delay 0"]
+pub type STDLY1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u16, u16, 10, O>;
+#[doc = "Field `ASTWAIT` reader - Active Startup Wait"]
+pub type ASTWAIT_R = crate::BitReader<bool>;
+#[doc = "Field `ASTWAIT` writer - Active Startup Wait"]
+pub type ASTWAIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
+#[doc = "Field `STWSEN` reader - Startup Waitstates Enable"]
+pub type STWSEN_R = crate::BitReader<bool>;
+#[doc = "Field `STWSEN` writer - Startup Waitstates Enable"]
+pub type STWSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
+#[doc = "Field `STWSAEN` reader - Startup Waitstates Always Enable"]
+pub type STWSAEN_R = crate::BitReader<bool>;
+#[doc = "Field `STWSAEN` writer - Startup Waitstates Always Enable"]
+pub type STWSAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
+#[doc = "Field `STWS` reader - Startup Waitstates"]
+pub type STWS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `STWS` writer - Startup Waitstates"]
+pub type STWS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:9 - Startup Delay 0"]
     #[inline(always)]
@@ -138,53 +72,84 @@ impl R {
     #[doc = "Bit 24 - Active Startup Wait"]
     #[inline(always)]
     pub fn astwait(&self) -> ASTWAIT_R {
-        ASTWAIT_R::new(((self.bits >> 24) & 0x01) != 0)
+        ASTWAIT_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Startup Waitstates Enable"]
     #[inline(always)]
     pub fn stwsen(&self) -> STWSEN_R {
-        STWSEN_R::new(((self.bits >> 25) & 0x01) != 0)
+        STWSEN_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Startup Waitstates Always Enable"]
     #[inline(always)]
     pub fn stwsaen(&self) -> STWSAEN_R {
-        STWSAEN_R::new(((self.bits >> 26) & 0x01) != 0)
+        STWSAEN_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bits 28:30 - Startup Waitstates"]
     #[inline(always)]
     pub fn stws(&self) -> STWS_R {
-        STWS_R::new(((self.bits >> 28) & 0x07) as u8)
+        STWS_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:9 - Startup Delay 0"]
     #[inline(always)]
-    pub fn stdly0(&mut self) -> STDLY0_W {
-        STDLY0_W { w: self }
+    #[must_use]
+    pub fn stdly0(&mut self) -> STDLY0_W<0> {
+        STDLY0_W::new(self)
     }
     #[doc = "Bits 12:21 - Startup Delay 0"]
     #[inline(always)]
-    pub fn stdly1(&mut self) -> STDLY1_W {
-        STDLY1_W { w: self }
+    #[must_use]
+    pub fn stdly1(&mut self) -> STDLY1_W<12> {
+        STDLY1_W::new(self)
     }
     #[doc = "Bit 24 - Active Startup Wait"]
     #[inline(always)]
-    pub fn astwait(&mut self) -> ASTWAIT_W {
-        ASTWAIT_W { w: self }
+    #[must_use]
+    pub fn astwait(&mut self) -> ASTWAIT_W<24> {
+        ASTWAIT_W::new(self)
     }
     #[doc = "Bit 25 - Startup Waitstates Enable"]
     #[inline(always)]
-    pub fn stwsen(&mut self) -> STWSEN_W {
-        STWSEN_W { w: self }
+    #[must_use]
+    pub fn stwsen(&mut self) -> STWSEN_W<25> {
+        STWSEN_W::new(self)
     }
     #[doc = "Bit 26 - Startup Waitstates Always Enable"]
     #[inline(always)]
-    pub fn stwsaen(&mut self) -> STWSAEN_W {
-        STWSAEN_W { w: self }
+    #[must_use]
+    pub fn stwsaen(&mut self) -> STWSAEN_W<26> {
+        STWSAEN_W::new(self)
     }
     #[doc = "Bits 28:30 - Startup Waitstates"]
     #[inline(always)]
-    pub fn stws(&mut self) -> STWS_W {
-        STWS_W { w: self }
+    #[must_use]
+    pub fn stws(&mut self) -> STWS_W<28> {
+        STWS_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Startup Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [startup](index.html) module"]
+pub struct STARTUP_SPEC;
+impl crate::RegisterSpec for STARTUP_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [startup::R](R) reader structure"]
+impl crate::Readable for STARTUP_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [startup::W](W) writer structure"]
+impl crate::Writable for STARTUP_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets STARTUP to value 0x1300_104d"]
+impl crate::Resettable for STARTUP_SPEC {
+    const RESET_VALUE: Self::Ux = 0x1300_104d;
 }

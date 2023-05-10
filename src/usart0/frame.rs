@@ -1,17 +1,43 @@
-#[doc = "Reader of register FRAME"]
-pub type R = crate::R<u32, super::FRAME>;
-#[doc = "Writer for register FRAME"]
-pub type W = crate::W<u32, super::FRAME>;
-#[doc = "Register FRAME `reset()`'s with value 0x1005"]
-impl crate::ResetValue for super::FRAME {
-    type Type = u32;
+#[doc = "Register `FRAME` reader"]
+pub struct R(crate::R<FRAME_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FRAME_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x1005
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<FRAME_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FRAME_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FRAME` writer"]
+pub struct W(crate::W<FRAME_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FRAME_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FRAME_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FRAME_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DATABITS` reader - Data-Bit Mode"]
+pub type DATABITS_R = crate::FieldReader<u8, DATABITS_A>;
 #[doc = "Data-Bit Mode\n\nValue on reset: 5"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DATABITS_A {
     #[doc = "1: Each frame contains 4 data bits"]
@@ -47,28 +73,25 @@ impl From<DATABITS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DATABITS`"]
-pub type DATABITS_R = crate::R<u8, DATABITS_A>;
 impl DATABITS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DATABITS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DATABITS_A> {
         match self.bits {
-            1 => Val(DATABITS_A::FOUR),
-            2 => Val(DATABITS_A::FIVE),
-            3 => Val(DATABITS_A::SIX),
-            4 => Val(DATABITS_A::SEVEN),
-            5 => Val(DATABITS_A::EIGHT),
-            6 => Val(DATABITS_A::NINE),
-            7 => Val(DATABITS_A::TEN),
-            8 => Val(DATABITS_A::ELEVEN),
-            9 => Val(DATABITS_A::TWELVE),
-            10 => Val(DATABITS_A::THIRTEEN),
-            11 => Val(DATABITS_A::FOURTEEN),
-            12 => Val(DATABITS_A::FIFTEEN),
-            13 => Val(DATABITS_A::SIXTEEN),
-            i => Res(i),
+            1 => Some(DATABITS_A::FOUR),
+            2 => Some(DATABITS_A::FIVE),
+            3 => Some(DATABITS_A::SIX),
+            4 => Some(DATABITS_A::SEVEN),
+            5 => Some(DATABITS_A::EIGHT),
+            6 => Some(DATABITS_A::NINE),
+            7 => Some(DATABITS_A::TEN),
+            8 => Some(DATABITS_A::ELEVEN),
+            9 => Some(DATABITS_A::TWELVE),
+            10 => Some(DATABITS_A::THIRTEEN),
+            11 => Some(DATABITS_A::FOURTEEN),
+            12 => Some(DATABITS_A::FIFTEEN),
+            13 => Some(DATABITS_A::SIXTEEN),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `FOUR`"]
@@ -137,16 +160,10 @@ impl DATABITS_R {
         *self == DATABITS_A::SIXTEEN
     }
 }
-#[doc = "Write proxy for field `DATABITS`"]
-pub struct DATABITS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATABITS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DATABITS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `DATABITS` writer - Data-Bit Mode"]
+pub type DATABITS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FRAME_SPEC, u8, DATABITS_A, 4, O>;
+impl<'a, const O: u8> DATABITS_W<'a, O> {
     #[doc = "Each frame contains 4 data bits"]
     #[inline(always)]
     pub fn four(self) -> &'a mut W {
@@ -212,15 +229,11 @@ impl<'a> DATABITS_W<'a> {
     pub fn sixteen(self) -> &'a mut W {
         self.variant(DATABITS_A::SIXTEEN)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
-    }
 }
+#[doc = "Field `PARITY` reader - Parity-Bit Mode"]
+pub type PARITY_R = crate::FieldReader<u8, PARITY_A>;
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PARITY_A {
     #[doc = "0: Parity bits are not used"]
@@ -236,18 +249,15 @@ impl From<PARITY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PARITY`"]
-pub type PARITY_R = crate::R<u8, PARITY_A>;
 impl PARITY_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PARITY_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PARITY_A> {
         match self.bits {
-            0 => Val(PARITY_A::NONE),
-            2 => Val(PARITY_A::EVEN),
-            3 => Val(PARITY_A::ODD),
-            i => Res(i),
+            0 => Some(PARITY_A::NONE),
+            2 => Some(PARITY_A::EVEN),
+            3 => Some(PARITY_A::ODD),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
@@ -266,16 +276,9 @@ impl PARITY_R {
         *self == PARITY_A::ODD
     }
 }
-#[doc = "Write proxy for field `PARITY`"]
-pub struct PARITY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PARITY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PARITY_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `PARITY` writer - Parity-Bit Mode"]
+pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FRAME_SPEC, u8, PARITY_A, 2, O>;
+impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Parity bits are not used"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -291,15 +294,11 @@ impl<'a> PARITY_W<'a> {
     pub fn odd(self) -> &'a mut W {
         self.variant(PARITY_A::ODD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
+pub type STOPBITS_R = crate::FieldReader<u8, STOPBITS_A>;
 #[doc = "Stop-Bit Mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STOPBITS_A {
     #[doc = "0: The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
@@ -317,10 +316,8 @@ impl From<STOPBITS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `STOPBITS`"]
-pub type STOPBITS_R = crate::R<u8, STOPBITS_A>;
 impl STOPBITS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STOPBITS_A {
         match self.bits {
@@ -352,18 +349,10 @@ impl STOPBITS_R {
         *self == STOPBITS_A::TWO
     }
 }
-#[doc = "Write proxy for field `STOPBITS`"]
-pub struct STOPBITS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOPBITS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STOPBITS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `STOPBITS` writer - Stop-Bit Mode"]
+pub type STOPBITS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, FRAME_SPEC, u8, STOPBITS_A, 2, O>;
+impl<'a, const O: u8> STOPBITS_W<'a, O> {
     #[doc = "The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
     #[inline(always)]
     pub fn half(self) -> &'a mut W {
@@ -384,12 +373,6 @@ impl<'a> STOPBITS_W<'a> {
     pub fn two(self) -> &'a mut W {
         self.variant(STOPBITS_A::TWO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Data-Bit Mode"]
@@ -400,28 +383,56 @@ impl R {
     #[doc = "Bits 8:9 - Parity-Bit Mode"]
     #[inline(always)]
     pub fn parity(&self) -> PARITY_R {
-        PARITY_R::new(((self.bits >> 8) & 0x03) as u8)
+        PARITY_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Stop-Bit Mode"]
     #[inline(always)]
     pub fn stopbits(&self) -> STOPBITS_R {
-        STOPBITS_R::new(((self.bits >> 12) & 0x03) as u8)
+        STOPBITS_R::new(((self.bits >> 12) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Data-Bit Mode"]
     #[inline(always)]
-    pub fn databits(&mut self) -> DATABITS_W {
-        DATABITS_W { w: self }
+    #[must_use]
+    pub fn databits(&mut self) -> DATABITS_W<0> {
+        DATABITS_W::new(self)
     }
     #[doc = "Bits 8:9 - Parity-Bit Mode"]
     #[inline(always)]
-    pub fn parity(&mut self) -> PARITY_W {
-        PARITY_W { w: self }
+    #[must_use]
+    pub fn parity(&mut self) -> PARITY_W<8> {
+        PARITY_W::new(self)
     }
     #[doc = "Bits 12:13 - Stop-Bit Mode"]
     #[inline(always)]
-    pub fn stopbits(&mut self) -> STOPBITS_W {
-        STOPBITS_W { w: self }
+    #[must_use]
+    pub fn stopbits(&mut self) -> STOPBITS_W<12> {
+        STOPBITS_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USART Frame Format Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [frame](index.html) module"]
+pub struct FRAME_SPEC;
+impl crate::RegisterSpec for FRAME_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [frame::R](R) reader structure"]
+impl crate::Readable for FRAME_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [frame::W](W) writer structure"]
+impl crate::Writable for FRAME_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets FRAME to value 0x1005"]
+impl crate::Resettable for FRAME_SPEC {
+    const RESET_VALUE: Self::Ux = 0x1005;
 }

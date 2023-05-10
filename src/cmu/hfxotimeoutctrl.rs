@@ -1,17 +1,43 @@
-#[doc = "Reader of register HFXOTIMEOUTCTRL"]
-pub type R = crate::R<u32, super::HFXOTIMEOUTCTRL>;
-#[doc = "Writer for register HFXOTIMEOUTCTRL"]
-pub type W = crate::W<u32, super::HFXOTIMEOUTCTRL>;
-#[doc = "Register HFXOTIMEOUTCTRL `reset()`'s with value 0x0002_6667"]
-impl crate::ResetValue for super::HFXOTIMEOUTCTRL {
-    type Type = u32;
+#[doc = "Register `HFXOTIMEOUTCTRL` reader"]
+pub struct R(crate::R<HFXOTIMEOUTCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HFXOTIMEOUTCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0002_6667
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<HFXOTIMEOUTCTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<HFXOTIMEOUTCTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `HFXOTIMEOUTCTRL` writer"]
+pub struct W(crate::W<HFXOTIMEOUTCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<HFXOTIMEOUTCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<HFXOTIMEOUTCTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<HFXOTIMEOUTCTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `STARTUPTIMEOUT` reader - Wait Duration in HFXO Startup Enable Wait State"]
+pub type STARTUPTIMEOUT_R = crate::FieldReader<u8, STARTUPTIMEOUT_A>;
 #[doc = "Wait Duration in HFXO Startup Enable Wait State\n\nValue on reset: 7"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STARTUPTIMEOUT_A {
     #[doc = "0: Timeout period of 2 cycles"]
@@ -43,26 +69,23 @@ impl From<STARTUPTIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `STARTUPTIMEOUT`"]
-pub type STARTUPTIMEOUT_R = crate::R<u8, STARTUPTIMEOUT_A>;
 impl STARTUPTIMEOUT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, STARTUPTIMEOUT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<STARTUPTIMEOUT_A> {
         match self.bits {
-            0 => Val(STARTUPTIMEOUT_A::_2CYCLES),
-            1 => Val(STARTUPTIMEOUT_A::_4CYCLES),
-            2 => Val(STARTUPTIMEOUT_A::_16CYCLES),
-            3 => Val(STARTUPTIMEOUT_A::_32CYCLES),
-            4 => Val(STARTUPTIMEOUT_A::_256CYCLES),
-            5 => Val(STARTUPTIMEOUT_A::_1KCYCLES),
-            6 => Val(STARTUPTIMEOUT_A::_2KCYCLES),
-            7 => Val(STARTUPTIMEOUT_A::_4KCYCLES),
-            8 => Val(STARTUPTIMEOUT_A::_8KCYCLES),
-            9 => Val(STARTUPTIMEOUT_A::_16KCYCLES),
-            10 => Val(STARTUPTIMEOUT_A::_32KCYCLES),
-            i => Res(i),
+            0 => Some(STARTUPTIMEOUT_A::_2CYCLES),
+            1 => Some(STARTUPTIMEOUT_A::_4CYCLES),
+            2 => Some(STARTUPTIMEOUT_A::_16CYCLES),
+            3 => Some(STARTUPTIMEOUT_A::_32CYCLES),
+            4 => Some(STARTUPTIMEOUT_A::_256CYCLES),
+            5 => Some(STARTUPTIMEOUT_A::_1KCYCLES),
+            6 => Some(STARTUPTIMEOUT_A::_2KCYCLES),
+            7 => Some(STARTUPTIMEOUT_A::_4KCYCLES),
+            8 => Some(STARTUPTIMEOUT_A::_8KCYCLES),
+            9 => Some(STARTUPTIMEOUT_A::_16KCYCLES),
+            10 => Some(STARTUPTIMEOUT_A::_32KCYCLES),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
@@ -121,16 +144,10 @@ impl STARTUPTIMEOUT_R {
         *self == STARTUPTIMEOUT_A::_32KCYCLES
     }
 }
-#[doc = "Write proxy for field `STARTUPTIMEOUT`"]
-pub struct STARTUPTIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STARTUPTIMEOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STARTUPTIMEOUT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `STARTUPTIMEOUT` writer - Wait Duration in HFXO Startup Enable Wait State"]
+pub type STARTUPTIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, STARTUPTIMEOUT_A, 4, O>;
+impl<'a, const O: u8> STARTUPTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
     pub fn _2cycles(self) -> &'a mut W {
@@ -186,15 +203,11 @@ impl<'a> STARTUPTIMEOUT_W<'a> {
     pub fn _32kcycles(self) -> &'a mut W {
         self.variant(STARTUPTIMEOUT_A::_32KCYCLES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
-    }
 }
+#[doc = "Field `STEADYTIMEOUT` reader - Wait Duration in HFXO Startup Steady Wait State"]
+pub type STEADYTIMEOUT_R = crate::FieldReader<u8, STEADYTIMEOUT_A>;
 #[doc = "Wait Duration in HFXO Startup Steady Wait State\n\nValue on reset: 6"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STEADYTIMEOUT_A {
     #[doc = "0: Timeout period of 2 cycles"]
@@ -226,26 +239,23 @@ impl From<STEADYTIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `STEADYTIMEOUT`"]
-pub type STEADYTIMEOUT_R = crate::R<u8, STEADYTIMEOUT_A>;
 impl STEADYTIMEOUT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, STEADYTIMEOUT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<STEADYTIMEOUT_A> {
         match self.bits {
-            0 => Val(STEADYTIMEOUT_A::_2CYCLES),
-            1 => Val(STEADYTIMEOUT_A::_4CYCLES),
-            2 => Val(STEADYTIMEOUT_A::_16CYCLES),
-            3 => Val(STEADYTIMEOUT_A::_32CYCLES),
-            4 => Val(STEADYTIMEOUT_A::_256CYCLES),
-            5 => Val(STEADYTIMEOUT_A::_1KCYCLES),
-            6 => Val(STEADYTIMEOUT_A::_2KCYCLES),
-            7 => Val(STEADYTIMEOUT_A::_4KCYCLES),
-            8 => Val(STEADYTIMEOUT_A::_8KCYCLES),
-            9 => Val(STEADYTIMEOUT_A::_16KCYCLES),
-            10 => Val(STEADYTIMEOUT_A::_32KCYCLES),
-            i => Res(i),
+            0 => Some(STEADYTIMEOUT_A::_2CYCLES),
+            1 => Some(STEADYTIMEOUT_A::_4CYCLES),
+            2 => Some(STEADYTIMEOUT_A::_16CYCLES),
+            3 => Some(STEADYTIMEOUT_A::_32CYCLES),
+            4 => Some(STEADYTIMEOUT_A::_256CYCLES),
+            5 => Some(STEADYTIMEOUT_A::_1KCYCLES),
+            6 => Some(STEADYTIMEOUT_A::_2KCYCLES),
+            7 => Some(STEADYTIMEOUT_A::_4KCYCLES),
+            8 => Some(STEADYTIMEOUT_A::_8KCYCLES),
+            9 => Some(STEADYTIMEOUT_A::_16KCYCLES),
+            10 => Some(STEADYTIMEOUT_A::_32KCYCLES),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
@@ -304,16 +314,10 @@ impl STEADYTIMEOUT_R {
         *self == STEADYTIMEOUT_A::_32KCYCLES
     }
 }
-#[doc = "Write proxy for field `STEADYTIMEOUT`"]
-pub struct STEADYTIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STEADYTIMEOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STEADYTIMEOUT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `STEADYTIMEOUT` writer - Wait Duration in HFXO Startup Steady Wait State"]
+pub type STEADYTIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, STEADYTIMEOUT_A, 4, O>;
+impl<'a, const O: u8> STEADYTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
     pub fn _2cycles(self) -> &'a mut W {
@@ -369,29 +373,16 @@ impl<'a> STEADYTIMEOUT_W<'a> {
     pub fn _32kcycles(self) -> &'a mut W {
         self.variant(STEADYTIMEOUT_A::_32KCYCLES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
-        self.w
-    }
 }
-#[doc = "Reader of field `RESERVED2`"]
-pub type RESERVED2_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `RESERVED2`"]
-pub struct RESERVED2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESERVED2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
-        self.w
-    }
-}
+#[doc = "Field `RESERVED2` reader - Wait Duration in HFXO Warm Startup Steady Wait State"]
+pub type RESERVED2_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `RESERVED2` writer - Wait Duration in HFXO Warm Startup Steady Wait State"]
+pub type RESERVED2_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `PEAKDETTIMEOUT` reader - Wait Duration in HFXO Peak Detection Wait State"]
+pub type PEAKDETTIMEOUT_R = crate::FieldReader<u8, PEAKDETTIMEOUT_A>;
 #[doc = "Wait Duration in HFXO Peak Detection Wait State\n\nValue on reset: 6"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PEAKDETTIMEOUT_A {
     #[doc = "0: Timeout period of 2 cycles"]
@@ -423,26 +414,23 @@ impl From<PEAKDETTIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PEAKDETTIMEOUT`"]
-pub type PEAKDETTIMEOUT_R = crate::R<u8, PEAKDETTIMEOUT_A>;
 impl PEAKDETTIMEOUT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PEAKDETTIMEOUT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PEAKDETTIMEOUT_A> {
         match self.bits {
-            0 => Val(PEAKDETTIMEOUT_A::_2CYCLES),
-            1 => Val(PEAKDETTIMEOUT_A::_4CYCLES),
-            2 => Val(PEAKDETTIMEOUT_A::_16CYCLES),
-            3 => Val(PEAKDETTIMEOUT_A::_32CYCLES),
-            4 => Val(PEAKDETTIMEOUT_A::_256CYCLES),
-            5 => Val(PEAKDETTIMEOUT_A::_1KCYCLES),
-            6 => Val(PEAKDETTIMEOUT_A::_2KCYCLES),
-            7 => Val(PEAKDETTIMEOUT_A::_4KCYCLES),
-            8 => Val(PEAKDETTIMEOUT_A::_8KCYCLES),
-            9 => Val(PEAKDETTIMEOUT_A::_16KCYCLES),
-            10 => Val(PEAKDETTIMEOUT_A::_32KCYCLES),
-            i => Res(i),
+            0 => Some(PEAKDETTIMEOUT_A::_2CYCLES),
+            1 => Some(PEAKDETTIMEOUT_A::_4CYCLES),
+            2 => Some(PEAKDETTIMEOUT_A::_16CYCLES),
+            3 => Some(PEAKDETTIMEOUT_A::_32CYCLES),
+            4 => Some(PEAKDETTIMEOUT_A::_256CYCLES),
+            5 => Some(PEAKDETTIMEOUT_A::_1KCYCLES),
+            6 => Some(PEAKDETTIMEOUT_A::_2KCYCLES),
+            7 => Some(PEAKDETTIMEOUT_A::_4KCYCLES),
+            8 => Some(PEAKDETTIMEOUT_A::_8KCYCLES),
+            9 => Some(PEAKDETTIMEOUT_A::_16KCYCLES),
+            10 => Some(PEAKDETTIMEOUT_A::_32KCYCLES),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
@@ -501,16 +489,10 @@ impl PEAKDETTIMEOUT_R {
         *self == PEAKDETTIMEOUT_A::_32KCYCLES
     }
 }
-#[doc = "Write proxy for field `PEAKDETTIMEOUT`"]
-pub struct PEAKDETTIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PEAKDETTIMEOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PEAKDETTIMEOUT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `PEAKDETTIMEOUT` writer - Wait Duration in HFXO Peak Detection Wait State"]
+pub type PEAKDETTIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, PEAKDETTIMEOUT_A, 4, O>;
+impl<'a, const O: u8> PEAKDETTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
     pub fn _2cycles(self) -> &'a mut W {
@@ -566,15 +548,11 @@ impl<'a> PEAKDETTIMEOUT_W<'a> {
     pub fn _32kcycles(self) -> &'a mut W {
         self.variant(PEAKDETTIMEOUT_A::_32KCYCLES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
-        self.w
-    }
 }
+#[doc = "Field `SHUNTOPTTIMEOUT` reader - Wait Duration in HFXO Shunt Current Optimization Wait State"]
+pub type SHUNTOPTTIMEOUT_R = crate::FieldReader<u8, SHUNTOPTTIMEOUT_A>;
 #[doc = "Wait Duration in HFXO Shunt Current Optimization Wait State\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SHUNTOPTTIMEOUT_A {
     #[doc = "0: Timeout period of 2 cycles"]
@@ -606,26 +584,23 @@ impl From<SHUNTOPTTIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SHUNTOPTTIMEOUT`"]
-pub type SHUNTOPTTIMEOUT_R = crate::R<u8, SHUNTOPTTIMEOUT_A>;
 impl SHUNTOPTTIMEOUT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SHUNTOPTTIMEOUT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SHUNTOPTTIMEOUT_A> {
         match self.bits {
-            0 => Val(SHUNTOPTTIMEOUT_A::_2CYCLES),
-            1 => Val(SHUNTOPTTIMEOUT_A::_4CYCLES),
-            2 => Val(SHUNTOPTTIMEOUT_A::_16CYCLES),
-            3 => Val(SHUNTOPTTIMEOUT_A::_32CYCLES),
-            4 => Val(SHUNTOPTTIMEOUT_A::_256CYCLES),
-            5 => Val(SHUNTOPTTIMEOUT_A::_1KCYCLES),
-            6 => Val(SHUNTOPTTIMEOUT_A::_2KCYCLES),
-            7 => Val(SHUNTOPTTIMEOUT_A::_4KCYCLES),
-            8 => Val(SHUNTOPTTIMEOUT_A::_8KCYCLES),
-            9 => Val(SHUNTOPTTIMEOUT_A::_16KCYCLES),
-            10 => Val(SHUNTOPTTIMEOUT_A::_32KCYCLES),
-            i => Res(i),
+            0 => Some(SHUNTOPTTIMEOUT_A::_2CYCLES),
+            1 => Some(SHUNTOPTTIMEOUT_A::_4CYCLES),
+            2 => Some(SHUNTOPTTIMEOUT_A::_16CYCLES),
+            3 => Some(SHUNTOPTTIMEOUT_A::_32CYCLES),
+            4 => Some(SHUNTOPTTIMEOUT_A::_256CYCLES),
+            5 => Some(SHUNTOPTTIMEOUT_A::_1KCYCLES),
+            6 => Some(SHUNTOPTTIMEOUT_A::_2KCYCLES),
+            7 => Some(SHUNTOPTTIMEOUT_A::_4KCYCLES),
+            8 => Some(SHUNTOPTTIMEOUT_A::_8KCYCLES),
+            9 => Some(SHUNTOPTTIMEOUT_A::_16KCYCLES),
+            10 => Some(SHUNTOPTTIMEOUT_A::_32KCYCLES),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_2CYCLES`"]
@@ -684,16 +659,10 @@ impl SHUNTOPTTIMEOUT_R {
         *self == SHUNTOPTTIMEOUT_A::_32KCYCLES
     }
 }
-#[doc = "Write proxy for field `SHUNTOPTTIMEOUT`"]
-pub struct SHUNTOPTTIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SHUNTOPTTIMEOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SHUNTOPTTIMEOUT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `SHUNTOPTTIMEOUT` writer - Wait Duration in HFXO Shunt Current Optimization Wait State"]
+pub type SHUNTOPTTIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, SHUNTOPTTIMEOUT_A, 4, O>;
+impl<'a, const O: u8> SHUNTOPTTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
     pub fn _2cycles(self) -> &'a mut W {
@@ -749,12 +718,6 @@ impl<'a> SHUNTOPTTIMEOUT_W<'a> {
     pub fn _32kcycles(self) -> &'a mut W {
         self.variant(SHUNTOPTTIMEOUT_A::_32KCYCLES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State"]
@@ -786,27 +749,57 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State"]
     #[inline(always)]
-    pub fn startuptimeout(&mut self) -> STARTUPTIMEOUT_W {
-        STARTUPTIMEOUT_W { w: self }
+    #[must_use]
+    pub fn startuptimeout(&mut self) -> STARTUPTIMEOUT_W<0> {
+        STARTUPTIMEOUT_W::new(self)
     }
     #[doc = "Bits 4:7 - Wait Duration in HFXO Startup Steady Wait State"]
     #[inline(always)]
-    pub fn steadytimeout(&mut self) -> STEADYTIMEOUT_W {
-        STEADYTIMEOUT_W { w: self }
+    #[must_use]
+    pub fn steadytimeout(&mut self) -> STEADYTIMEOUT_W<4> {
+        STEADYTIMEOUT_W::new(self)
     }
     #[doc = "Bits 8:11 - Wait Duration in HFXO Warm Startup Steady Wait State"]
     #[inline(always)]
-    pub fn reserved2(&mut self) -> RESERVED2_W {
-        RESERVED2_W { w: self }
+    #[must_use]
+    pub fn reserved2(&mut self) -> RESERVED2_W<8> {
+        RESERVED2_W::new(self)
     }
     #[doc = "Bits 12:15 - Wait Duration in HFXO Peak Detection Wait State"]
     #[inline(always)]
-    pub fn peakdettimeout(&mut self) -> PEAKDETTIMEOUT_W {
-        PEAKDETTIMEOUT_W { w: self }
+    #[must_use]
+    pub fn peakdettimeout(&mut self) -> PEAKDETTIMEOUT_W<12> {
+        PEAKDETTIMEOUT_W::new(self)
     }
     #[doc = "Bits 16:19 - Wait Duration in HFXO Shunt Current Optimization Wait State"]
     #[inline(always)]
-    pub fn shuntopttimeout(&mut self) -> SHUNTOPTTIMEOUT_W {
-        SHUNTOPTTIMEOUT_W { w: self }
+    #[must_use]
+    pub fn shuntopttimeout(&mut self) -> SHUNTOPTTIMEOUT_W<16> {
+        SHUNTOPTTIMEOUT_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "HFXO Timeout Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfxotimeoutctrl](index.html) module"]
+pub struct HFXOTIMEOUTCTRL_SPEC;
+impl crate::RegisterSpec for HFXOTIMEOUTCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [hfxotimeoutctrl::R](R) reader structure"]
+impl crate::Readable for HFXOTIMEOUTCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [hfxotimeoutctrl::W](W) writer structure"]
+impl crate::Writable for HFXOTIMEOUTCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets HFXOTIMEOUTCTRL to value 0x0002_6667"]
+impl crate::Resettable for HFXOTIMEOUTCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0x0002_6667;
 }

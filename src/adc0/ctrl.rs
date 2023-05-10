@@ -1,17 +1,43 @@
-#[doc = "Reader of register CTRL"]
-pub type R = crate::R<u32, super::CTRL>;
-#[doc = "Writer for register CTRL"]
-pub type W = crate::W<u32, super::CTRL>;
-#[doc = "Register CTRL `reset()`'s with value 0x001f_0000"]
-impl crate::ResetValue for super::CTRL {
-    type Type = u32;
+#[doc = "Register `CTRL` reader"]
+pub struct R(crate::R<CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x001f_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CTRL` writer"]
+pub struct W(crate::W<CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `WARMUPMODE` reader - Warm-up Mode"]
+pub type WARMUPMODE_R = crate::FieldReader<u8, WARMUPMODE_A>;
 #[doc = "Warm-up Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WARMUPMODE_A {
     #[doc = "0: ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
@@ -29,10 +55,8 @@ impl From<WARMUPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `WARMUPMODE`"]
-pub type WARMUPMODE_R = crate::R<u8, WARMUPMODE_A>;
 impl WARMUPMODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WARMUPMODE_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl WARMUPMODE_R {
         *self == WARMUPMODE_A::KEEPADCWARM
     }
 }
-#[doc = "Write proxy for field `WARMUPMODE`"]
-pub struct WARMUPMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WARMUPMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WARMUPMODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `WARMUPMODE` writer - Warm-up Mode"]
+pub type WARMUPMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, WARMUPMODE_A, 2, O>;
+impl<'a, const O: u8> WARMUPMODE_W<'a, O> {
     #[doc = "ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -96,135 +112,31 @@ impl<'a> WARMUPMODE_W<'a> {
     pub fn keepadcwarm(self) -> &'a mut W {
         self.variant(WARMUPMODE_A::KEEPADCWARM)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
-    }
 }
-#[doc = "Reader of field `SINGLEDMAWU`"]
-pub type SINGLEDMAWU_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SINGLEDMAWU`"]
-pub struct SINGLEDMAWU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLEDMAWU_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
-    }
-}
-#[doc = "Reader of field `SCANDMAWU`"]
-pub type SCANDMAWU_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCANDMAWU`"]
-pub struct SCANDMAWU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCANDMAWU_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "Reader of field `TAILGATE`"]
-pub type TAILGATE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TAILGATE`"]
-pub struct TAILGATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAILGATE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `ASYNCCLKEN`"]
-pub type ASYNCCLKEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ASYNCCLKEN`"]
-pub struct ASYNCCLKEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ASYNCCLKEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `ADCCLKMODE`"]
-pub type ADCCLKMODE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADCCLKMODE`"]
-pub struct ADCCLKMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCCLKMODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
+#[doc = "Field `SINGLEDMAWU` reader - SINGLEFIFO DMA Wakeup"]
+pub type SINGLEDMAWU_R = crate::BitReader<bool>;
+#[doc = "Field `SINGLEDMAWU` writer - SINGLEFIFO DMA Wakeup"]
+pub type SINGLEDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `SCANDMAWU` reader - SCANFIFO DMA Wakeup"]
+pub type SCANDMAWU_R = crate::BitReader<bool>;
+#[doc = "Field `SCANDMAWU` writer - SCANFIFO DMA Wakeup"]
+pub type SCANDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `TAILGATE` reader - Conversion Tailgating"]
+pub type TAILGATE_R = crate::BitReader<bool>;
+#[doc = "Field `TAILGATE` writer - Conversion Tailgating"]
+pub type TAILGATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `ASYNCCLKEN` reader - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
+pub type ASYNCCLKEN_R = crate::BitReader<bool>;
+#[doc = "Field `ASYNCCLKEN` writer - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
+pub type ASYNCCLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `ADCCLKMODE` reader - ADC Clock Mode"]
+pub type ADCCLKMODE_R = crate::BitReader<bool>;
+#[doc = "Field `ADCCLKMODE` writer - ADC Clock Mode"]
+pub type ADCCLKMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `PRESC` reader - Prescalar Setting for ADC Sample and Conversion Clock"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 #[doc = "Prescalar Setting for ADC Sample and Conversion Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: `0`"]
@@ -236,16 +148,13 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRESC`"]
-pub type PRESC_R = crate::R<u8, PRESC_A>;
 impl PRESC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PRESC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PRESC_A> {
         match self.bits {
-            0 => Val(PRESC_A::NODIVISION),
-            i => Res(i),
+            0 => Some(PRESC_A::NODIVISION),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NODIVISION`"]
@@ -254,44 +163,23 @@ impl PRESC_R {
         *self == PRESC_A::NODIVISION
     }
 }
-#[doc = "Write proxy for field `PRESC`"]
-pub struct PRESC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `PRESC` writer - Prescalar Setting for ADC Sample and Conversion Clock"]
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRESC_A, 7, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn nodivision(self) -> &'a mut W {
         self.variant(PRESC_A::NODIVISION)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | (((value as u32) & 0x7f) << 8);
-        self.w
-    }
 }
-#[doc = "Reader of field `TIMEBASE`"]
-pub type TIMEBASE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TIMEBASE`"]
-pub struct TIMEBASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEBASE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | (((value as u32) & 0x7f) << 16);
-        self.w
-    }
-}
+#[doc = "Field `TIMEBASE` reader - 1us Time Base"]
+pub type TIMEBASE_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TIMEBASE` writer - 1us Time Base"]
+pub type TIMEBASE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 7, O>;
+#[doc = "Field `OVSRSEL` reader - Oversample Rate Select"]
+pub type OVSRSEL_R = crate::FieldReader<u8, OVSRSEL_A>;
 #[doc = "Oversample Rate Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OVSRSEL_A {
     #[doc = "0: 2 samples for each conversion result"]
@@ -325,27 +213,24 @@ impl From<OVSRSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `OVSRSEL`"]
-pub type OVSRSEL_R = crate::R<u8, OVSRSEL_A>;
 impl OVSRSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, OVSRSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<OVSRSEL_A> {
         match self.bits {
-            0 => Val(OVSRSEL_A::X2),
-            1 => Val(OVSRSEL_A::X4),
-            2 => Val(OVSRSEL_A::X8),
-            3 => Val(OVSRSEL_A::X16),
-            4 => Val(OVSRSEL_A::X32),
-            5 => Val(OVSRSEL_A::X64),
-            6 => Val(OVSRSEL_A::X128),
-            7 => Val(OVSRSEL_A::X256),
-            8 => Val(OVSRSEL_A::X512),
-            9 => Val(OVSRSEL_A::X1024),
-            10 => Val(OVSRSEL_A::X2048),
-            11 => Val(OVSRSEL_A::X4096),
-            i => Res(i),
+            0 => Some(OVSRSEL_A::X2),
+            1 => Some(OVSRSEL_A::X4),
+            2 => Some(OVSRSEL_A::X8),
+            3 => Some(OVSRSEL_A::X16),
+            4 => Some(OVSRSEL_A::X32),
+            5 => Some(OVSRSEL_A::X64),
+            6 => Some(OVSRSEL_A::X128),
+            7 => Some(OVSRSEL_A::X256),
+            8 => Some(OVSRSEL_A::X512),
+            9 => Some(OVSRSEL_A::X1024),
+            10 => Some(OVSRSEL_A::X2048),
+            11 => Some(OVSRSEL_A::X4096),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `X2`"]
@@ -409,16 +294,9 @@ impl OVSRSEL_R {
         *self == OVSRSEL_A::X4096
     }
 }
-#[doc = "Write proxy for field `OVSRSEL`"]
-pub struct OVSRSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVSRSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVSRSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `OVSRSEL` writer - Oversample Rate Select"]
+pub type OVSRSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, OVSRSEL_A, 4, O>;
+impl<'a, const O: u8> OVSRSEL_W<'a, O> {
     #[doc = "2 samples for each conversion result"]
     #[inline(always)]
     pub fn x2(self) -> &'a mut W {
@@ -479,67 +357,41 @@ impl<'a> OVSRSEL_W<'a> {
     pub fn x4096(self) -> &'a mut W {
         self.variant(OVSRSEL_A::X4096)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
-        self.w
-    }
 }
-#[doc = "Reader of field `CHCONMODE`"]
-pub type CHCONMODE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CHCONMODE`"]
-pub struct CHCONMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHCONMODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-        self.w
-    }
-}
+#[doc = "Field `CHCONMODE` reader - Channel Connect"]
+pub type CHCONMODE_R = crate::BitReader<bool>;
+#[doc = "Field `CHCONMODE` writer - Channel Connect"]
+pub type CHCONMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Warm-up Mode"]
     #[inline(always)]
     pub fn warmupmode(&self) -> WARMUPMODE_R {
-        WARMUPMODE_R::new((self.bits & 0x03) as u8)
+        WARMUPMODE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - SINGLEFIFO DMA Wakeup"]
     #[inline(always)]
     pub fn singledmawu(&self) -> SINGLEDMAWU_R {
-        SINGLEDMAWU_R::new(((self.bits >> 2) & 0x01) != 0)
+        SINGLEDMAWU_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - SCANFIFO DMA Wakeup"]
     #[inline(always)]
     pub fn scandmawu(&self) -> SCANDMAWU_R {
-        SCANDMAWU_R::new(((self.bits >> 3) & 0x01) != 0)
+        SCANDMAWU_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Conversion Tailgating"]
     #[inline(always)]
     pub fn tailgate(&self) -> TAILGATE_R {
-        TAILGATE_R::new(((self.bits >> 4) & 0x01) != 0)
+        TAILGATE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 6 - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
     #[inline(always)]
     pub fn asyncclken(&self) -> ASYNCCLKEN_R {
-        ASYNCCLKEN_R::new(((self.bits >> 6) & 0x01) != 0)
+        ASYNCCLKEN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - ADC Clock Mode"]
     #[inline(always)]
     pub fn adcclkmode(&self) -> ADCCLKMODE_R {
-        ADCCLKMODE_R::new(((self.bits >> 7) & 0x01) != 0)
+        ADCCLKMODE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:14 - Prescalar Setting for ADC Sample and Conversion Clock"]
     #[inline(always)]
@@ -559,58 +411,93 @@ impl R {
     #[doc = "Bit 29 - Channel Connect"]
     #[inline(always)]
     pub fn chconmode(&self) -> CHCONMODE_R {
-        CHCONMODE_R::new(((self.bits >> 29) & 0x01) != 0)
+        CHCONMODE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Warm-up Mode"]
     #[inline(always)]
-    pub fn warmupmode(&mut self) -> WARMUPMODE_W {
-        WARMUPMODE_W { w: self }
+    #[must_use]
+    pub fn warmupmode(&mut self) -> WARMUPMODE_W<0> {
+        WARMUPMODE_W::new(self)
     }
     #[doc = "Bit 2 - SINGLEFIFO DMA Wakeup"]
     #[inline(always)]
-    pub fn singledmawu(&mut self) -> SINGLEDMAWU_W {
-        SINGLEDMAWU_W { w: self }
+    #[must_use]
+    pub fn singledmawu(&mut self) -> SINGLEDMAWU_W<2> {
+        SINGLEDMAWU_W::new(self)
     }
     #[doc = "Bit 3 - SCANFIFO DMA Wakeup"]
     #[inline(always)]
-    pub fn scandmawu(&mut self) -> SCANDMAWU_W {
-        SCANDMAWU_W { w: self }
+    #[must_use]
+    pub fn scandmawu(&mut self) -> SCANDMAWU_W<3> {
+        SCANDMAWU_W::new(self)
     }
     #[doc = "Bit 4 - Conversion Tailgating"]
     #[inline(always)]
-    pub fn tailgate(&mut self) -> TAILGATE_W {
-        TAILGATE_W { w: self }
+    #[must_use]
+    pub fn tailgate(&mut self) -> TAILGATE_W<4> {
+        TAILGATE_W::new(self)
     }
     #[doc = "Bit 6 - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
     #[inline(always)]
-    pub fn asyncclken(&mut self) -> ASYNCCLKEN_W {
-        ASYNCCLKEN_W { w: self }
+    #[must_use]
+    pub fn asyncclken(&mut self) -> ASYNCCLKEN_W<6> {
+        ASYNCCLKEN_W::new(self)
     }
     #[doc = "Bit 7 - ADC Clock Mode"]
     #[inline(always)]
-    pub fn adcclkmode(&mut self) -> ADCCLKMODE_W {
-        ADCCLKMODE_W { w: self }
+    #[must_use]
+    pub fn adcclkmode(&mut self) -> ADCCLKMODE_W<7> {
+        ADCCLKMODE_W::new(self)
     }
     #[doc = "Bits 8:14 - Prescalar Setting for ADC Sample and Conversion Clock"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
-        PRESC_W { w: self }
+    #[must_use]
+    pub fn presc(&mut self) -> PRESC_W<8> {
+        PRESC_W::new(self)
     }
     #[doc = "Bits 16:22 - 1us Time Base"]
     #[inline(always)]
-    pub fn timebase(&mut self) -> TIMEBASE_W {
-        TIMEBASE_W { w: self }
+    #[must_use]
+    pub fn timebase(&mut self) -> TIMEBASE_W<16> {
+        TIMEBASE_W::new(self)
     }
     #[doc = "Bits 24:27 - Oversample Rate Select"]
     #[inline(always)]
-    pub fn ovsrsel(&mut self) -> OVSRSEL_W {
-        OVSRSEL_W { w: self }
+    #[must_use]
+    pub fn ovsrsel(&mut self) -> OVSRSEL_W<24> {
+        OVSRSEL_W::new(self)
     }
     #[doc = "Bit 29 - Channel Connect"]
     #[inline(always)]
-    pub fn chconmode(&mut self) -> CHCONMODE_W {
-        CHCONMODE_W { w: self }
+    #[must_use]
+    pub fn chconmode(&mut self) -> CHCONMODE_W<29> {
+        CHCONMODE_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+pub struct CTRL_SPEC;
+impl crate::RegisterSpec for CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+impl crate::Writable for CTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CTRL to value 0x001f_0000"]
+impl crate::Resettable for CTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0x001f_0000;
 }

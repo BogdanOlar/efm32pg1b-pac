@@ -1,17 +1,43 @@
-#[doc = "Reader of register CURPROG"]
-pub type R = crate::R<u32, super::CURPROG>;
-#[doc = "Writer for register CURPROG"]
-pub type W = crate::W<u32, super::CURPROG>;
-#[doc = "Register CURPROG `reset()`'s with value 0x009b_0000"]
-impl crate::ResetValue for super::CURPROG {
-    type Type = u32;
+#[doc = "Register `CURPROG` reader"]
+pub struct R(crate::R<CURPROG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CURPROG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x009b_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CURPROG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CURPROG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CURPROG` writer"]
+pub struct W(crate::W<CURPROG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CURPROG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CURPROG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CURPROG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RANGESEL` reader - Current Range Select"]
+pub type RANGESEL_R = crate::FieldReader<u8, RANGESEL_A>;
 #[doc = "Current Range Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RANGESEL_A {
     #[doc = "0: Current range set to 0 - 1.6 uA."]
@@ -29,10 +55,8 @@ impl From<RANGESEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RANGESEL`"]
-pub type RANGESEL_R = crate::R<u8, RANGESEL_A>;
 impl RANGESEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RANGESEL_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl RANGESEL_R {
         *self == RANGESEL_A::RANGE3
     }
 }
-#[doc = "Write proxy for field `RANGESEL`"]
-pub struct RANGESEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RANGESEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RANGESEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `RANGESEL` writer - Current Range Select"]
+pub type RANGESEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CURPROG_SPEC, u8, RANGESEL_A, 2, O>;
+impl<'a, const O: u8> RANGESEL_W<'a, O> {
     #[doc = "Current range set to 0 - 1.6 uA."]
     #[inline(always)]
     pub fn range0(self) -> &'a mut W {
@@ -96,46 +112,20 @@ impl<'a> RANGESEL_W<'a> {
     pub fn range3(self) -> &'a mut W {
         self.variant(RANGESEL_A::RANGE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
-    }
 }
-#[doc = "Reader of field `STEPSEL`"]
-pub type STEPSEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `STEPSEL`"]
-pub struct STEPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STEPSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | (((value as u32) & 0x1f) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `TUNING`"]
-pub type TUNING_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TUNING`"]
-pub struct TUNING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TUNING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
-        self.w
-    }
-}
+#[doc = "Field `STEPSEL` reader - Current Step Size Select"]
+pub type STEPSEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `STEPSEL` writer - Current Step Size Select"]
+pub type STEPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CURPROG_SPEC, u8, u8, 5, O>;
+#[doc = "Field `TUNING` reader - Tune the Current to Given Accuracy"]
+pub type TUNING_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TUNING` writer - Tune the Current to Given Accuracy"]
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CURPROG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:1 - Current Range Select"]
     #[inline(always)]
     pub fn rangesel(&self) -> RANGESEL_R {
-        RANGESEL_R::new((self.bits & 0x03) as u8)
+        RANGESEL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 8:12 - Current Step Size Select"]
     #[inline(always)]
@@ -151,17 +141,45 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Current Range Select"]
     #[inline(always)]
-    pub fn rangesel(&mut self) -> RANGESEL_W {
-        RANGESEL_W { w: self }
+    #[must_use]
+    pub fn rangesel(&mut self) -> RANGESEL_W<0> {
+        RANGESEL_W::new(self)
     }
     #[doc = "Bits 8:12 - Current Step Size Select"]
     #[inline(always)]
-    pub fn stepsel(&mut self) -> STEPSEL_W {
-        STEPSEL_W { w: self }
+    #[must_use]
+    pub fn stepsel(&mut self) -> STEPSEL_W<8> {
+        STEPSEL_W::new(self)
     }
     #[doc = "Bits 16:23 - Tune the Current to Given Accuracy"]
     #[inline(always)]
-    pub fn tuning(&mut self) -> TUNING_W {
-        TUNING_W { w: self }
+    #[must_use]
+    pub fn tuning(&mut self) -> TUNING_W<16> {
+        TUNING_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Current Programming Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [curprog](index.html) module"]
+pub struct CURPROG_SPEC;
+impl crate::RegisterSpec for CURPROG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [curprog::R](R) reader structure"]
+impl crate::Readable for CURPROG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [curprog::W](W) writer structure"]
+impl crate::Writable for CURPROG_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CURPROG to value 0x009b_0000"]
+impl crate::Resettable for CURPROG_SPEC {
+    const RESET_VALUE: Self::Ux = 0x009b_0000;
 }

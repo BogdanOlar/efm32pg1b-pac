@@ -1,17 +1,43 @@
-#[doc = "Reader of register PWRCFG"]
-pub type R = crate::R<u32, super::PWRCFG>;
-#[doc = "Writer for register PWRCFG"]
-pub type W = crate::W<u32, super::PWRCFG>;
-#[doc = "Register PWRCFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::PWRCFG {
-    type Type = u32;
+#[doc = "Register `PWRCFG` reader"]
+pub struct R(crate::R<PWRCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PWRCFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<PWRCFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PWRCFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PWRCFG` writer"]
+pub struct W(crate::W<PWRCFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PWRCFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PWRCFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PWRCFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PWRCFG` reader - Power Configuration"]
+pub type PWRCFG_R = crate::FieldReader<u8, PWRCFG_A>;
 #[doc = "Power Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PWRCFG_A {
     #[doc = "0: Power up configuration. Works with any external configuration."]
@@ -25,17 +51,14 @@ impl From<PWRCFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PWRCFG`"]
-pub type PWRCFG_R = crate::R<u8, PWRCFG_A>;
 impl PWRCFG_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PWRCFG_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PWRCFG_A> {
         match self.bits {
-            0 => Val(PWRCFG_A::STARTUP),
-            2 => Val(PWRCFG_A::DCDCTODVDD),
-            i => Res(i),
+            0 => Some(PWRCFG_A::STARTUP),
+            2 => Some(PWRCFG_A::DCDCTODVDD),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `STARTUP`"]
@@ -49,16 +72,9 @@ impl PWRCFG_R {
         *self == PWRCFG_A::DCDCTODVDD
     }
 }
-#[doc = "Write proxy for field `PWRCFG`"]
-pub struct PWRCFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWRCFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PWRCFG_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `PWRCFG` writer - Power Configuration"]
+pub type PWRCFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PWRCFG_SPEC, u8, PWRCFG_A, 4, O>;
+impl<'a, const O: u8> PWRCFG_W<'a, O> {
     #[doc = "Power up configuration. Works with any external configuration."]
     #[inline(always)]
     pub fn startup(self) -> &'a mut W {
@@ -68,12 +84,6 @@ impl<'a> PWRCFG_W<'a> {
     #[inline(always)]
     pub fn dcdctodvdd(self) -> &'a mut W {
         self.variant(PWRCFG_A::DCDCTODVDD)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
     }
 }
 impl R {
@@ -86,7 +96,33 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Power Configuration"]
     #[inline(always)]
-    pub fn pwrcfg(&mut self) -> PWRCFG_W {
-        PWRCFG_W { w: self }
+    #[must_use]
+    pub fn pwrcfg(&mut self) -> PWRCFG_W<0> {
+        PWRCFG_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Power Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwrcfg](index.html) module"]
+pub struct PWRCFG_SPEC;
+impl crate::RegisterSpec for PWRCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pwrcfg::R](R) reader structure"]
+impl crate::Readable for PWRCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pwrcfg::W](W) writer structure"]
+impl crate::Writable for PWRCFG_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets PWRCFG to value 0"]
+impl crate::Resettable for PWRCFG_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,17 +1,43 @@
-#[doc = "Reader of register CTRL"]
-pub type R = crate::R<u32, super::CTRL>;
-#[doc = "Writer for register CTRL"]
-pub type W = crate::W<u32, super::CTRL>;
-#[doc = "Register CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CTRL {
-    type Type = u32;
+#[doc = "Register `CTRL` reader"]
+pub struct R(crate::R<CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CTRL` writer"]
+pub struct W(crate::W<CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MODE` reader - Mode Select"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: The module is disabled."]
@@ -35,22 +61,19 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE`"]
-pub type MODE_R = crate::R<u8, MODE_A>;
 impl MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, MODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<MODE_A> {
         match self.bits {
-            0 => Val(MODE_A::DISABLE),
-            1 => Val(MODE_A::OVSSINGLE),
-            2 => Val(MODE_A::EXTCLKSINGLE),
-            3 => Val(MODE_A::EXTCLKQUAD),
-            4 => Val(MODE_A::OVSQUAD1X),
-            5 => Val(MODE_A::OVSQUAD2X),
-            6 => Val(MODE_A::OVSQUAD4X),
-            i => Res(i),
+            0 => Some(MODE_A::DISABLE),
+            1 => Some(MODE_A::OVSSINGLE),
+            2 => Some(MODE_A::EXTCLKSINGLE),
+            3 => Some(MODE_A::EXTCLKQUAD),
+            4 => Some(MODE_A::OVSQUAD1X),
+            5 => Some(MODE_A::OVSQUAD2X),
+            6 => Some(MODE_A::OVSQUAD4X),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
@@ -89,16 +112,9 @@ impl MODE_R {
         *self == MODE_A::OVSQUAD4X
     }
 }
-#[doc = "Write proxy for field `MODE`"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `MODE` writer - Mode Select"]
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, MODE_A, 3, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "The module is disabled."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -134,183 +150,39 @@ impl<'a> MODE_W<'a> {
     pub fn ovsquad4x(self) -> &'a mut W {
         self.variant(MODE_A::OVSQUAD4X)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
-        self.w
-    }
 }
-#[doc = "Reader of field `FILT`"]
-pub type FILT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FILT`"]
-pub struct FILT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FILT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "Reader of field `RSTEN`"]
-pub type RSTEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RSTEN`"]
-pub struct RSTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `CNTRSTEN`"]
-pub type CNTRSTEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CNTRSTEN`"]
-pub struct CNTRSTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNTRSTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `AUXCNTRSTEN`"]
-pub type AUXCNTRSTEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AUXCNTRSTEN`"]
-pub struct AUXCNTRSTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUXCNTRSTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `DEBUGHALT`"]
-pub type DEBUGHALT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DEBUGHALT`"]
-pub struct DEBUGHALT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUGHALT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Reader of field `HYST`"]
-pub type HYST_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HYST`"]
-pub struct HYST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HYST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `S1CDIR`"]
-pub type S1CDIR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `S1CDIR`"]
-pub struct S1CDIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S1CDIR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
-    }
-}
+#[doc = "Field `FILT` reader - Enable Digital Pulse Width Filter"]
+pub type FILT_R = crate::BitReader<bool>;
+#[doc = "Field `FILT` writer - Enable Digital Pulse Width Filter"]
+pub type FILT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `RSTEN` reader - Enable PCNT Clock Domain Reset"]
+pub type RSTEN_R = crate::BitReader<bool>;
+#[doc = "Field `RSTEN` writer - Enable PCNT Clock Domain Reset"]
+pub type RSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CNTRSTEN` reader - Enable CNT Reset"]
+pub type CNTRSTEN_R = crate::BitReader<bool>;
+#[doc = "Field `CNTRSTEN` writer - Enable CNT Reset"]
+pub type CNTRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `AUXCNTRSTEN` reader - Enable AUXCNT Reset"]
+pub type AUXCNTRSTEN_R = crate::BitReader<bool>;
+#[doc = "Field `AUXCNTRSTEN` writer - Enable AUXCNT Reset"]
+pub type AUXCNTRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `DEBUGHALT` reader - Debug Mode Halt Enable"]
+pub type DEBUGHALT_R = crate::BitReader<bool>;
+#[doc = "Field `DEBUGHALT` writer - Debug Mode Halt Enable"]
+pub type DEBUGHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `HYST` reader - Enable Hysteresis"]
+pub type HYST_R = crate::BitReader<bool>;
+#[doc = "Field `HYST` writer - Enable Hysteresis"]
+pub type HYST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `S1CDIR` reader - Count Direction Determined By S1"]
+pub type S1CDIR_R = crate::BitReader<bool>;
+#[doc = "Field `S1CDIR` writer - Count Direction Determined By S1"]
+pub type S1CDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CNTEV` reader - Controls When the Counter Counts"]
+pub type CNTEV_R = crate::FieldReader<u8, CNTEV_A>;
 #[doc = "Controls When the Counter Counts\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CNTEV_A {
     #[doc = "0: Counts up on up-count and down on down-count events."]
@@ -328,10 +200,8 @@ impl From<CNTEV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CNTEV`"]
-pub type CNTEV_R = crate::R<u8, CNTEV_A>;
 impl CNTEV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CNTEV_A {
         match self.bits {
@@ -363,18 +233,9 @@ impl CNTEV_R {
         *self == CNTEV_A::NONE
     }
 }
-#[doc = "Write proxy for field `CNTEV`"]
-pub struct CNTEV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNTEV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CNTEV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CNTEV` writer - Controls When the Counter Counts"]
+pub type CNTEV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, CNTEV_A, 2, O>;
+impl<'a, const O: u8> CNTEV_W<'a, O> {
     #[doc = "Counts up on up-count and down on down-count events."]
     #[inline(always)]
     pub fn both(self) -> &'a mut W {
@@ -395,15 +256,11 @@ impl<'a> CNTEV_W<'a> {
     pub fn none(self) -> &'a mut W {
         self.variant(CNTEV_A::NONE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
-        self.w
-    }
 }
+#[doc = "Field `AUXCNTEV` reader - Controls When the Auxiliary Counter Counts"]
+pub type AUXCNTEV_R = crate::FieldReader<u8, AUXCNTEV_A>;
 #[doc = "Controls When the Auxiliary Counter Counts\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AUXCNTEV_A {
     #[doc = "0: Never counts."]
@@ -421,10 +278,8 @@ impl From<AUXCNTEV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `AUXCNTEV`"]
-pub type AUXCNTEV_R = crate::R<u8, AUXCNTEV_A>;
 impl AUXCNTEV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AUXCNTEV_A {
         match self.bits {
@@ -456,18 +311,10 @@ impl AUXCNTEV_R {
         *self == AUXCNTEV_A::BOTH
     }
 }
-#[doc = "Write proxy for field `AUXCNTEV`"]
-pub struct AUXCNTEV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUXCNTEV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AUXCNTEV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `AUXCNTEV` writer - Controls When the Auxiliary Counter Counts"]
+pub type AUXCNTEV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, AUXCNTEV_A, 2, O>;
+impl<'a, const O: u8> AUXCNTEV_W<'a, O> {
     #[doc = "Never counts."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -488,63 +335,19 @@ impl<'a> AUXCNTEV_W<'a> {
     pub fn both(self) -> &'a mut W {
         self.variant(AUXCNTEV_A::BOTH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
-        self.w
-    }
 }
-#[doc = "Reader of field `CNTDIR`"]
-pub type CNTDIR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CNTDIR`"]
-pub struct CNTDIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNTDIR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-        self.w
-    }
-}
-#[doc = "Reader of field `EDGE`"]
-pub type EDGE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE`"]
-pub struct EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-        self.w
-    }
-}
+#[doc = "Field `CNTDIR` reader - Non-Quadrature Mode Counter Direction Control"]
+pub type CNTDIR_R = crate::BitReader<bool>;
+#[doc = "Field `CNTDIR` writer - Non-Quadrature Mode Counter Direction Control"]
+pub type CNTDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `EDGE` reader - Edge Select"]
+pub type EDGE_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE` writer - Edge Select"]
+pub type EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `TCCMODE` reader - Sets the Mode for Triggered Compare and Clear"]
+pub type TCCMODE_R = crate::FieldReader<u8, TCCMODE_A>;
 #[doc = "Sets the Mode for Triggered Compare and Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TCCMODE_A {
     #[doc = "0: Triggered compare and clear not enabled."]
@@ -560,18 +363,15 @@ impl From<TCCMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TCCMODE`"]
-pub type TCCMODE_R = crate::R<u8, TCCMODE_A>;
 impl TCCMODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TCCMODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TCCMODE_A> {
         match self.bits {
-            0 => Val(TCCMODE_A::DISABLED),
-            1 => Val(TCCMODE_A::LFA),
-            2 => Val(TCCMODE_A::PRS),
-            i => Res(i),
+            0 => Some(TCCMODE_A::DISABLED),
+            1 => Some(TCCMODE_A::LFA),
+            2 => Some(TCCMODE_A::PRS),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
@@ -590,16 +390,9 @@ impl TCCMODE_R {
         *self == TCCMODE_A::PRS
     }
 }
-#[doc = "Write proxy for field `TCCMODE`"]
-pub struct TCCMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCCMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TCCMODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `TCCMODE` writer - Sets the Mode for Triggered Compare and Clear"]
+pub type TCCMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, TCCMODE_A, 2, O>;
+impl<'a, const O: u8> TCCMODE_W<'a, O> {
     #[doc = "Triggered compare and clear not enabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -615,15 +408,11 @@ impl<'a> TCCMODE_W<'a> {
     pub fn prs(self) -> &'a mut W {
         self.variant(TCCMODE_A::PRS)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
-        self.w
-    }
 }
+#[doc = "Field `TCCPRESC` reader - Set the LFA Prescaler for Triggered Compare and Clear"]
+pub type TCCPRESC_R = crate::FieldReader<u8, TCCPRESC_A>;
 #[doc = "Set the LFA Prescaler for Triggered Compare and Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TCCPRESC_A {
     #[doc = "0: Compare and clear event each LFA cycle."]
@@ -641,10 +430,8 @@ impl From<TCCPRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TCCPRESC`"]
-pub type TCCPRESC_R = crate::R<u8, TCCPRESC_A>;
 impl TCCPRESC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TCCPRESC_A {
         match self.bits {
@@ -676,18 +463,10 @@ impl TCCPRESC_R {
         *self == TCCPRESC_A::DIV8
     }
 }
-#[doc = "Write proxy for field `TCCPRESC`"]
-pub struct TCCPRESC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCCPRESC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TCCPRESC_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `TCCPRESC` writer - Set the LFA Prescaler for Triggered Compare and Clear"]
+pub type TCCPRESC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, TCCPRESC_A, 2, O>;
+impl<'a, const O: u8> TCCPRESC_W<'a, O> {
     #[doc = "Compare and clear event each LFA cycle."]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -708,15 +487,11 @@ impl<'a> TCCPRESC_W<'a> {
     pub fn div8(self) -> &'a mut W {
         self.variant(TCCPRESC_A::DIV8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 19)) | (((value as u32) & 0x03) << 19);
-        self.w
-    }
 }
+#[doc = "Field `TCCCOMP` reader - Triggered Compare and Clear Compare Mode"]
+pub type TCCCOMP_R = crate::FieldReader<u8, TCCCOMP_A>;
 #[doc = "Triggered Compare and Clear Compare Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TCCCOMP_A {
     #[doc = "0: Compare match if PCNT_CNT is less than, or equal to PCNT_TOP."]
@@ -732,18 +507,15 @@ impl From<TCCCOMP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TCCCOMP`"]
-pub type TCCCOMP_R = crate::R<u8, TCCCOMP_A>;
 impl TCCCOMP_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TCCCOMP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TCCCOMP_A> {
         match self.bits {
-            0 => Val(TCCCOMP_A::LTOE),
-            1 => Val(TCCCOMP_A::GTOE),
-            2 => Val(TCCCOMP_A::RANGE),
-            i => Res(i),
+            0 => Some(TCCCOMP_A::LTOE),
+            1 => Some(TCCCOMP_A::GTOE),
+            2 => Some(TCCCOMP_A::RANGE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LTOE`"]
@@ -762,16 +534,9 @@ impl TCCCOMP_R {
         *self == TCCCOMP_A::RANGE
     }
 }
-#[doc = "Write proxy for field `TCCCOMP`"]
-pub struct TCCCOMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCCCOMP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TCCCOMP_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `TCCCOMP` writer - Triggered Compare and Clear Compare Mode"]
+pub type TCCCOMP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, TCCCOMP_A, 2, O>;
+impl<'a, const O: u8> TCCCOMP_W<'a, O> {
     #[doc = "Compare match if PCNT_CNT is less than, or equal to PCNT_TOP."]
     #[inline(always)]
     pub fn ltoe(self) -> &'a mut W {
@@ -787,63 +552,19 @@ impl<'a> TCCCOMP_W<'a> {
     pub fn range(self) -> &'a mut W {
         self.variant(TCCCOMP_A::RANGE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
-        self.w
-    }
 }
-#[doc = "Reader of field `PRSGATEEN`"]
-pub type PRSGATEEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PRSGATEEN`"]
-pub struct PRSGATEEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSGATEEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `TCCPRSPOL`"]
-pub type TCCPRSPOL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TCCPRSPOL`"]
-pub struct TCCPRSPOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCCPRSPOL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-        self.w
-    }
-}
+#[doc = "Field `PRSGATEEN` reader - PRS Gate Enable"]
+pub type PRSGATEEN_R = crate::BitReader<bool>;
+#[doc = "Field `PRSGATEEN` writer - PRS Gate Enable"]
+pub type PRSGATEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `TCCPRSPOL` reader - TCC PRS Polarity Select"]
+pub type TCCPRSPOL_R = crate::BitReader<bool>;
+#[doc = "Field `TCCPRSPOL` writer - TCC PRS Polarity Select"]
+pub type TCCPRSPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `TCCPRSSEL` reader - TCC PRS Channel Select"]
+pub type TCCPRSSEL_R = crate::FieldReader<u8, TCCPRSSEL_A>;
 #[doc = "TCC PRS Channel Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TCCPRSSEL_A {
     #[doc = "0: PRS Channel 0 selected."]
@@ -877,27 +598,24 @@ impl From<TCCPRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TCCPRSSEL`"]
-pub type TCCPRSSEL_R = crate::R<u8, TCCPRSSEL_A>;
 impl TCCPRSSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TCCPRSSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TCCPRSSEL_A> {
         match self.bits {
-            0 => Val(TCCPRSSEL_A::PRSCH0),
-            1 => Val(TCCPRSSEL_A::PRSCH1),
-            2 => Val(TCCPRSSEL_A::PRSCH2),
-            3 => Val(TCCPRSSEL_A::PRSCH3),
-            4 => Val(TCCPRSSEL_A::PRSCH4),
-            5 => Val(TCCPRSSEL_A::PRSCH5),
-            6 => Val(TCCPRSSEL_A::PRSCH6),
-            7 => Val(TCCPRSSEL_A::PRSCH7),
-            8 => Val(TCCPRSSEL_A::PRSCH8),
-            9 => Val(TCCPRSSEL_A::PRSCH9),
-            10 => Val(TCCPRSSEL_A::PRSCH10),
-            11 => Val(TCCPRSSEL_A::PRSCH11),
-            i => Res(i),
+            0 => Some(TCCPRSSEL_A::PRSCH0),
+            1 => Some(TCCPRSSEL_A::PRSCH1),
+            2 => Some(TCCPRSSEL_A::PRSCH2),
+            3 => Some(TCCPRSSEL_A::PRSCH3),
+            4 => Some(TCCPRSSEL_A::PRSCH4),
+            5 => Some(TCCPRSSEL_A::PRSCH5),
+            6 => Some(TCCPRSSEL_A::PRSCH6),
+            7 => Some(TCCPRSSEL_A::PRSCH7),
+            8 => Some(TCCPRSSEL_A::PRSCH8),
+            9 => Some(TCCPRSSEL_A::PRSCH9),
+            10 => Some(TCCPRSSEL_A::PRSCH10),
+            11 => Some(TCCPRSSEL_A::PRSCH11),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
@@ -961,16 +679,10 @@ impl TCCPRSSEL_R {
         *self == TCCPRSSEL_A::PRSCH11
     }
 }
-#[doc = "Write proxy for field `TCCPRSSEL`"]
-pub struct TCCPRSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCCPRSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TCCPRSSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `TCCPRSSEL` writer - TCC PRS Channel Select"]
+pub type TCCPRSSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, TCCPRSSEL_A, 4, O>;
+impl<'a, const O: u8> TCCPRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -1031,122 +743,96 @@ impl<'a> TCCPRSSEL_W<'a> {
     pub fn prsch11(self) -> &'a mut W {
         self.variant(TCCPRSSEL_A::PRSCH11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 26)) | (((value as u32) & 0x0f) << 26);
-        self.w
-    }
 }
-#[doc = "Reader of field `TOPBHFSEL`"]
-pub type TOPBHFSEL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TOPBHFSEL`"]
-pub struct TOPBHFSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOPBHFSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `TOPBHFSEL` reader - TOPB High Frequency Value Select"]
+pub type TOPBHFSEL_R = crate::BitReader<bool>;
+#[doc = "Field `TOPBHFSEL` writer - TOPB High Frequency Value Select"]
+pub type TOPBHFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Mode Select"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 0x07) as u8)
+        MODE_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Enable Digital Pulse Width Filter"]
     #[inline(always)]
     pub fn filt(&self) -> FILT_R {
-        FILT_R::new(((self.bits >> 3) & 0x01) != 0)
+        FILT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable PCNT Clock Domain Reset"]
     #[inline(always)]
     pub fn rsten(&self) -> RSTEN_R {
-        RSTEN_R::new(((self.bits >> 4) & 0x01) != 0)
+        RSTEN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Enable CNT Reset"]
     #[inline(always)]
     pub fn cntrsten(&self) -> CNTRSTEN_R {
-        CNTRSTEN_R::new(((self.bits >> 5) & 0x01) != 0)
+        CNTRSTEN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable AUXCNT Reset"]
     #[inline(always)]
     pub fn auxcntrsten(&self) -> AUXCNTRSTEN_R {
-        AUXCNTRSTEN_R::new(((self.bits >> 6) & 0x01) != 0)
+        AUXCNTRSTEN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Debug Mode Halt Enable"]
     #[inline(always)]
     pub fn debughalt(&self) -> DEBUGHALT_R {
-        DEBUGHALT_R::new(((self.bits >> 7) & 0x01) != 0)
+        DEBUGHALT_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable Hysteresis"]
     #[inline(always)]
     pub fn hyst(&self) -> HYST_R {
-        HYST_R::new(((self.bits >> 8) & 0x01) != 0)
+        HYST_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Count Direction Determined By S1"]
     #[inline(always)]
     pub fn s1cdir(&self) -> S1CDIR_R {
-        S1CDIR_R::new(((self.bits >> 9) & 0x01) != 0)
+        S1CDIR_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 10:11 - Controls When the Counter Counts"]
     #[inline(always)]
     pub fn cntev(&self) -> CNTEV_R {
-        CNTEV_R::new(((self.bits >> 10) & 0x03) as u8)
+        CNTEV_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Controls When the Auxiliary Counter Counts"]
     #[inline(always)]
     pub fn auxcntev(&self) -> AUXCNTEV_R {
-        AUXCNTEV_R::new(((self.bits >> 12) & 0x03) as u8)
+        AUXCNTEV_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 14 - Non-Quadrature Mode Counter Direction Control"]
     #[inline(always)]
     pub fn cntdir(&self) -> CNTDIR_R {
-        CNTDIR_R::new(((self.bits >> 14) & 0x01) != 0)
+        CNTDIR_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Edge Select"]
     #[inline(always)]
     pub fn edge(&self) -> EDGE_R {
-        EDGE_R::new(((self.bits >> 15) & 0x01) != 0)
+        EDGE_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:17 - Sets the Mode for Triggered Compare and Clear"]
     #[inline(always)]
     pub fn tccmode(&self) -> TCCMODE_R {
-        TCCMODE_R::new(((self.bits >> 16) & 0x03) as u8)
+        TCCMODE_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 19:20 - Set the LFA Prescaler for Triggered Compare and Clear"]
     #[inline(always)]
     pub fn tccpresc(&self) -> TCCPRESC_R {
-        TCCPRESC_R::new(((self.bits >> 19) & 0x03) as u8)
+        TCCPRESC_R::new(((self.bits >> 19) & 3) as u8)
     }
     #[doc = "Bits 22:23 - Triggered Compare and Clear Compare Mode"]
     #[inline(always)]
     pub fn tcccomp(&self) -> TCCCOMP_R {
-        TCCCOMP_R::new(((self.bits >> 22) & 0x03) as u8)
+        TCCCOMP_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bit 24 - PRS Gate Enable"]
     #[inline(always)]
     pub fn prsgateen(&self) -> PRSGATEEN_R {
-        PRSGATEEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        PRSGATEEN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - TCC PRS Polarity Select"]
     #[inline(always)]
     pub fn tccprspol(&self) -> TCCPRSPOL_R {
-        TCCPRSPOL_R::new(((self.bits >> 25) & 0x01) != 0)
+        TCCPRSPOL_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bits 26:29 - TCC PRS Channel Select"]
     #[inline(always)]
@@ -1156,103 +842,147 @@ impl R {
     #[doc = "Bit 31 - TOPB High Frequency Value Select"]
     #[inline(always)]
     pub fn topbhfsel(&self) -> TOPBHFSEL_R {
-        TOPBHFSEL_R::new(((self.bits >> 31) & 0x01) != 0)
+        TOPBHFSEL_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Mode Select"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
+        MODE_W::new(self)
     }
     #[doc = "Bit 3 - Enable Digital Pulse Width Filter"]
     #[inline(always)]
-    pub fn filt(&mut self) -> FILT_W {
-        FILT_W { w: self }
+    #[must_use]
+    pub fn filt(&mut self) -> FILT_W<3> {
+        FILT_W::new(self)
     }
     #[doc = "Bit 4 - Enable PCNT Clock Domain Reset"]
     #[inline(always)]
-    pub fn rsten(&mut self) -> RSTEN_W {
-        RSTEN_W { w: self }
+    #[must_use]
+    pub fn rsten(&mut self) -> RSTEN_W<4> {
+        RSTEN_W::new(self)
     }
     #[doc = "Bit 5 - Enable CNT Reset"]
     #[inline(always)]
-    pub fn cntrsten(&mut self) -> CNTRSTEN_W {
-        CNTRSTEN_W { w: self }
+    #[must_use]
+    pub fn cntrsten(&mut self) -> CNTRSTEN_W<5> {
+        CNTRSTEN_W::new(self)
     }
     #[doc = "Bit 6 - Enable AUXCNT Reset"]
     #[inline(always)]
-    pub fn auxcntrsten(&mut self) -> AUXCNTRSTEN_W {
-        AUXCNTRSTEN_W { w: self }
+    #[must_use]
+    pub fn auxcntrsten(&mut self) -> AUXCNTRSTEN_W<6> {
+        AUXCNTRSTEN_W::new(self)
     }
     #[doc = "Bit 7 - Debug Mode Halt Enable"]
     #[inline(always)]
-    pub fn debughalt(&mut self) -> DEBUGHALT_W {
-        DEBUGHALT_W { w: self }
+    #[must_use]
+    pub fn debughalt(&mut self) -> DEBUGHALT_W<7> {
+        DEBUGHALT_W::new(self)
     }
     #[doc = "Bit 8 - Enable Hysteresis"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HYST_W {
-        HYST_W { w: self }
+    #[must_use]
+    pub fn hyst(&mut self) -> HYST_W<8> {
+        HYST_W::new(self)
     }
     #[doc = "Bit 9 - Count Direction Determined By S1"]
     #[inline(always)]
-    pub fn s1cdir(&mut self) -> S1CDIR_W {
-        S1CDIR_W { w: self }
+    #[must_use]
+    pub fn s1cdir(&mut self) -> S1CDIR_W<9> {
+        S1CDIR_W::new(self)
     }
     #[doc = "Bits 10:11 - Controls When the Counter Counts"]
     #[inline(always)]
-    pub fn cntev(&mut self) -> CNTEV_W {
-        CNTEV_W { w: self }
+    #[must_use]
+    pub fn cntev(&mut self) -> CNTEV_W<10> {
+        CNTEV_W::new(self)
     }
     #[doc = "Bits 12:13 - Controls When the Auxiliary Counter Counts"]
     #[inline(always)]
-    pub fn auxcntev(&mut self) -> AUXCNTEV_W {
-        AUXCNTEV_W { w: self }
+    #[must_use]
+    pub fn auxcntev(&mut self) -> AUXCNTEV_W<12> {
+        AUXCNTEV_W::new(self)
     }
     #[doc = "Bit 14 - Non-Quadrature Mode Counter Direction Control"]
     #[inline(always)]
-    pub fn cntdir(&mut self) -> CNTDIR_W {
-        CNTDIR_W { w: self }
+    #[must_use]
+    pub fn cntdir(&mut self) -> CNTDIR_W<14> {
+        CNTDIR_W::new(self)
     }
     #[doc = "Bit 15 - Edge Select"]
     #[inline(always)]
-    pub fn edge(&mut self) -> EDGE_W {
-        EDGE_W { w: self }
+    #[must_use]
+    pub fn edge(&mut self) -> EDGE_W<15> {
+        EDGE_W::new(self)
     }
     #[doc = "Bits 16:17 - Sets the Mode for Triggered Compare and Clear"]
     #[inline(always)]
-    pub fn tccmode(&mut self) -> TCCMODE_W {
-        TCCMODE_W { w: self }
+    #[must_use]
+    pub fn tccmode(&mut self) -> TCCMODE_W<16> {
+        TCCMODE_W::new(self)
     }
     #[doc = "Bits 19:20 - Set the LFA Prescaler for Triggered Compare and Clear"]
     #[inline(always)]
-    pub fn tccpresc(&mut self) -> TCCPRESC_W {
-        TCCPRESC_W { w: self }
+    #[must_use]
+    pub fn tccpresc(&mut self) -> TCCPRESC_W<19> {
+        TCCPRESC_W::new(self)
     }
     #[doc = "Bits 22:23 - Triggered Compare and Clear Compare Mode"]
     #[inline(always)]
-    pub fn tcccomp(&mut self) -> TCCCOMP_W {
-        TCCCOMP_W { w: self }
+    #[must_use]
+    pub fn tcccomp(&mut self) -> TCCCOMP_W<22> {
+        TCCCOMP_W::new(self)
     }
     #[doc = "Bit 24 - PRS Gate Enable"]
     #[inline(always)]
-    pub fn prsgateen(&mut self) -> PRSGATEEN_W {
-        PRSGATEEN_W { w: self }
+    #[must_use]
+    pub fn prsgateen(&mut self) -> PRSGATEEN_W<24> {
+        PRSGATEEN_W::new(self)
     }
     #[doc = "Bit 25 - TCC PRS Polarity Select"]
     #[inline(always)]
-    pub fn tccprspol(&mut self) -> TCCPRSPOL_W {
-        TCCPRSPOL_W { w: self }
+    #[must_use]
+    pub fn tccprspol(&mut self) -> TCCPRSPOL_W<25> {
+        TCCPRSPOL_W::new(self)
     }
     #[doc = "Bits 26:29 - TCC PRS Channel Select"]
     #[inline(always)]
-    pub fn tccprssel(&mut self) -> TCCPRSSEL_W {
-        TCCPRSSEL_W { w: self }
+    #[must_use]
+    pub fn tccprssel(&mut self) -> TCCPRSSEL_W<26> {
+        TCCPRSSEL_W::new(self)
     }
     #[doc = "Bit 31 - TOPB High Frequency Value Select"]
     #[inline(always)]
-    pub fn topbhfsel(&mut self) -> TOPBHFSEL_W {
-        TOPBHFSEL_W { w: self }
+    #[must_use]
+    pub fn topbhfsel(&mut self) -> TOPBHFSEL_W<31> {
+        TOPBHFSEL_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+pub struct CTRL_SPEC;
+impl crate::RegisterSpec for CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+impl crate::Writable for CTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CTRL to value 0"]
+impl crate::Resettable for CTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,7 +1,22 @@
-#[doc = "Reader of register DSTATUS"]
-pub type R = crate::R<u32, super::DSTATUS>;
+#[doc = "Register `DSTATUS` reader"]
+pub struct R(crate::R<DSTATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DSTATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DSTATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DSTATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `DATA0ZERO` reader - Data 0 Zero"]
+pub type DATA0ZERO_R = crate::FieldReader<u8, DATA0ZERO_A>;
 #[doc = "Data 0 Zero\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DATA0ZERO_A {
     #[doc = "1: In DATA0 bits 0 to 31 are all zero."]
@@ -19,19 +34,16 @@ impl From<DATA0ZERO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DATA0ZERO`"]
-pub type DATA0ZERO_R = crate::R<u8, DATA0ZERO_A>;
 impl DATA0ZERO_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DATA0ZERO_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DATA0ZERO_A> {
         match self.bits {
-            1 => Val(DATA0ZERO_A::ZERO0TO31),
-            2 => Val(DATA0ZERO_A::ZERO32TO63),
-            4 => Val(DATA0ZERO_A::ZERO64TO95),
-            8 => Val(DATA0ZERO_A::ZERO96TO127),
-            i => Res(i),
+            1 => Some(DATA0ZERO_A::ZERO0TO31),
+            2 => Some(DATA0ZERO_A::ZERO32TO63),
+            4 => Some(DATA0ZERO_A::ZERO64TO95),
+            8 => Some(DATA0ZERO_A::ZERO96TO127),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ZERO0TO31`"]
@@ -55,14 +67,14 @@ impl DATA0ZERO_R {
         *self == DATA0ZERO_A::ZERO96TO127
     }
 }
-#[doc = "Reader of field `DDATA0LSBS`"]
-pub type DDATA0LSBS_R = crate::R<u8, u8>;
-#[doc = "Reader of field `DDATA0MSBS`"]
-pub type DDATA0MSBS_R = crate::R<u8, u8>;
-#[doc = "Reader of field `DDATA1MSB`"]
-pub type DDATA1MSB_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CARRY`"]
-pub type CARRY_R = crate::R<bool, bool>;
+#[doc = "Field `DDATA0LSBS` reader - LSBs in DDATA0"]
+pub type DDATA0LSBS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DDATA0MSBS` reader - MSB in DDATA0"]
+pub type DDATA0MSBS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DDATA1MSB` reader - MSB in DDATA1"]
+pub type DDATA1MSB_R = crate::BitReader<bool>;
+#[doc = "Field `CARRY` reader - Carry From Arithmetic Operation"]
+pub type CARRY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:3 - Data 0 Zero"]
     #[inline(always)]
@@ -82,11 +94,24 @@ impl R {
     #[doc = "Bit 20 - MSB in DDATA1"]
     #[inline(always)]
     pub fn ddata1msb(&self) -> DDATA1MSB_R {
-        DDATA1MSB_R::new(((self.bits >> 20) & 0x01) != 0)
+        DDATA1MSB_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 24 - Carry From Arithmetic Operation"]
     #[inline(always)]
     pub fn carry(&self) -> CARRY_R {
-        CARRY_R::new(((self.bits >> 24) & 0x01) != 0)
+        CARRY_R::new(((self.bits >> 24) & 1) != 0)
     }
+}
+#[doc = "Data Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dstatus](index.html) module"]
+pub struct DSTATUS_SPEC;
+impl crate::RegisterSpec for DSTATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dstatus::R](R) reader structure"]
+impl crate::Readable for DSTATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets DSTATUS to value 0"]
+impl crate::Resettable for DSTATUS_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

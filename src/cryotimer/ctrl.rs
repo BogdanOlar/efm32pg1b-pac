@@ -1,65 +1,51 @@
-#[doc = "Reader of register CTRL"]
-pub type R = crate::R<u32, super::CTRL>;
-#[doc = "Writer for register CTRL"]
-pub type W = crate::W<u32, super::CTRL>;
-#[doc = "Register CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CTRL {
-    type Type = u32;
+#[doc = "Register `CTRL` reader"]
+pub struct R(crate::R<CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EN`"]
-pub type EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EN`"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<CTRL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `DEBUGRUN`"]
-pub type DEBUGRUN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DEBUGRUN`"]
-pub struct DEBUGRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUGRUN_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `CTRL` writer"]
+pub struct W(crate::W<CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CTRL_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `EN` reader - Enable CRYOTIMER"]
+pub type EN_R = crate::BitReader<bool>;
+#[doc = "Field `EN` writer - Enable CRYOTIMER"]
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
+pub type DEBUGRUN_R = crate::BitReader<bool>;
+#[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `OSCSEL` reader - Select Low Frequency Oscillator"]
+pub type OSCSEL_R = crate::FieldReader<u8, OSCSEL_A>;
 #[doc = "Select Low Frequency Oscillator\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OSCSEL_A {
     #[doc = "0: Select Low Frequency RC Oscillator"]
@@ -75,18 +61,15 @@ impl From<OSCSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `OSCSEL`"]
-pub type OSCSEL_R = crate::R<u8, OSCSEL_A>;
 impl OSCSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, OSCSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<OSCSEL_A> {
         match self.bits {
-            0 => Val(OSCSEL_A::LFRCO),
-            1 => Val(OSCSEL_A::LFXO),
-            2 => Val(OSCSEL_A::ULFRCO),
-            i => Res(i),
+            0 => Some(OSCSEL_A::LFRCO),
+            1 => Some(OSCSEL_A::LFXO),
+            2 => Some(OSCSEL_A::ULFRCO),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LFRCO`"]
@@ -105,16 +88,9 @@ impl OSCSEL_R {
         *self == OSCSEL_A::ULFRCO
     }
 }
-#[doc = "Write proxy for field `OSCSEL`"]
-pub struct OSCSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSCSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OSCSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `OSCSEL` writer - Select Low Frequency Oscillator"]
+pub type OSCSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, OSCSEL_A, 2, O>;
+impl<'a, const O: u8> OSCSEL_W<'a, O> {
     #[doc = "Select Low Frequency RC Oscillator"]
     #[inline(always)]
     pub fn lfrco(self) -> &'a mut W {
@@ -130,15 +106,11 @@ impl<'a> OSCSEL_W<'a> {
     pub fn ulfrco(self) -> &'a mut W {
         self.variant(OSCSEL_A::ULFRCO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `PRESC` reader - Prescaler Setting"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: LF Oscillator frequency undivided"]
@@ -164,10 +136,8 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRESC`"]
-pub type PRESC_R = crate::R<u8, PRESC_A>;
 impl PRESC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRESC_A {
         match self.bits {
@@ -223,18 +193,9 @@ impl PRESC_R {
         *self == PRESC_A::DIV128
     }
 }
-#[doc = "Write proxy for field `PRESC`"]
-pub struct PRESC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `PRESC` writer - Prescaler Setting"]
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, PRESC_A, 3, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "LF Oscillator frequency undivided"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -275,54 +236,77 @@ impl<'a> PRESC_W<'a> {
     pub fn div128(self) -> &'a mut W {
         self.variant(PRESC_A::DIV128)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u32) & 0x07) << 5);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable CRYOTIMER"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Debug Mode Run Enable"]
     #[inline(always)]
     pub fn debugrun(&self) -> DEBUGRUN_R {
-        DEBUGRUN_R::new(((self.bits >> 1) & 0x01) != 0)
+        DEBUGRUN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - Select Low Frequency Oscillator"]
     #[inline(always)]
     pub fn oscsel(&self) -> OSCSEL_R {
-        OSCSEL_R::new(((self.bits >> 2) & 0x03) as u8)
+        OSCSEL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 5:7 - Prescaler Setting"]
     #[inline(always)]
     pub fn presc(&self) -> PRESC_R {
-        PRESC_R::new(((self.bits >> 5) & 0x07) as u8)
+        PRESC_R::new(((self.bits >> 5) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable CRYOTIMER"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
-        DEBUGRUN_W { w: self }
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<1> {
+        DEBUGRUN_W::new(self)
     }
     #[doc = "Bits 2:3 - Select Low Frequency Oscillator"]
     #[inline(always)]
-    pub fn oscsel(&mut self) -> OSCSEL_W {
-        OSCSEL_W { w: self }
+    #[must_use]
+    pub fn oscsel(&mut self) -> OSCSEL_W<2> {
+        OSCSEL_W::new(self)
     }
     #[doc = "Bits 5:7 - Prescaler Setting"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
-        PRESC_W { w: self }
+    #[must_use]
+    pub fn presc(&mut self) -> PRESC_W<5> {
+        PRESC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+pub struct CTRL_SPEC;
+impl crate::RegisterSpec for CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+impl crate::Writable for CTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CTRL to value 0"]
+impl crate::Resettable for CTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

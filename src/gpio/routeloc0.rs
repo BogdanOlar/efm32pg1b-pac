@@ -1,17 +1,43 @@
-#[doc = "Reader of register ROUTELOC0"]
-pub type R = crate::R<u32, super::ROUTELOC0>;
-#[doc = "Writer for register ROUTELOC0"]
-pub type W = crate::W<u32, super::ROUTELOC0>;
-#[doc = "Register ROUTELOC0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ROUTELOC0 {
-    type Type = u32;
+#[doc = "Register `ROUTELOC0` reader"]
+pub struct R(crate::R<ROUTELOC0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ROUTELOC0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ROUTELOC0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ROUTELOC0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ROUTELOC0` writer"]
+pub struct W(crate::W<ROUTELOC0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ROUTELOC0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ROUTELOC0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ROUTELOC0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SWVLOC` reader - I/O Location"]
+pub type SWVLOC_R = crate::FieldReader<u8, SWVLOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SWVLOC_A {
     #[doc = "0: Location 0"]
@@ -29,19 +55,16 @@ impl From<SWVLOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SWVLOC`"]
-pub type SWVLOC_R = crate::R<u8, SWVLOC_A>;
 impl SWVLOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SWVLOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SWVLOC_A> {
         match self.bits {
-            0 => Val(SWVLOC_A::LOC0),
-            1 => Val(SWVLOC_A::LOC1),
-            2 => Val(SWVLOC_A::LOC2),
-            3 => Val(SWVLOC_A::LOC3),
-            i => Res(i),
+            0 => Some(SWVLOC_A::LOC0),
+            1 => Some(SWVLOC_A::LOC1),
+            2 => Some(SWVLOC_A::LOC2),
+            3 => Some(SWVLOC_A::LOC3),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -65,16 +88,10 @@ impl SWVLOC_R {
         *self == SWVLOC_A::LOC3
     }
 }
-#[doc = "Write proxy for field `SWVLOC`"]
-pub struct SWVLOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWVLOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SWVLOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `SWVLOC` writer - I/O Location"]
+pub type SWVLOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, SWVLOC_A, 6, O>;
+impl<'a, const O: u8> SWVLOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -95,12 +112,6 @@ impl<'a> SWVLOC_W<'a> {
     pub fn loc3(self) -> &'a mut W {
         self.variant(SWVLOC_A::LOC3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
@@ -112,7 +123,33 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn swvloc(&mut self) -> SWVLOC_W {
-        SWVLOC_W { w: self }
+    #[must_use]
+    pub fn swvloc(&mut self) -> SWVLOC_W<0> {
+        SWVLOC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I/O Routing Location Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routeloc0](index.html) module"]
+pub struct ROUTELOC0_SPEC;
+impl crate::RegisterSpec for ROUTELOC0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [routeloc0::R](R) reader structure"]
+impl crate::Readable for ROUTELOC0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [routeloc0::W](W) writer structure"]
+impl crate::Writable for ROUTELOC0_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets ROUTELOC0 to value 0"]
+impl crate::Resettable for ROUTELOC0_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

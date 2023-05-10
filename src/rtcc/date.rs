@@ -1,123 +1,67 @@
-#[doc = "Reader of register DATE"]
-pub type R = crate::R<u32, super::DATE>;
-#[doc = "Writer for register DATE"]
-pub type W = crate::W<u32, super::DATE>;
-#[doc = "Register DATE `reset()`'s with value 0"]
-impl crate::ResetValue for super::DATE {
-    type Type = u32;
+#[doc = "Register `DATE` reader"]
+pub struct R(crate::R<DATE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DATE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DAYOMU`"]
-pub type DAYOMU_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DAYOMU`"]
-pub struct DAYOMU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAYOMU_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<DATE_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
+    fn from(reader: crate::R<DATE_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `DAYOMT`"]
-pub type DAYOMT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DAYOMT`"]
-pub struct DAYOMT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAYOMT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `DATE` writer"]
+pub struct W(crate::W<DATE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DATE_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `MONTHU`"]
-pub type MONTHU_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `MONTHU`"]
-pub struct MONTHU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONTHU_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `MONTHT`"]
-pub type MONTHT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MONTHT`"]
-pub struct MONTHT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONTHT_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<DATE_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
+    fn from(writer: crate::W<DATE_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `YEARU`"]
-pub type YEARU_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `YEARU`"]
-pub struct YEARU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> YEARU_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `YEART`"]
-pub type YEART_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `YEART`"]
-pub struct YEART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> YEART_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | (((value as u32) & 0x0f) << 20);
-        self.w
-    }
-}
-#[doc = "Reader of field `DAYOW`"]
-pub type DAYOW_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DAYOW`"]
-pub struct DAYOW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAYOW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
-        self.w
-    }
-}
+#[doc = "Field `DAYOMU` reader - Day of Month, Units"]
+pub type DAYOMU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DAYOMU` writer - Day of Month, Units"]
+pub type DAYOMU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATE_SPEC, u8, u8, 4, O>;
+#[doc = "Field `DAYOMT` reader - Day of Month, Tens"]
+pub type DAYOMT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DAYOMT` writer - Day of Month, Tens"]
+pub type DAYOMT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATE_SPEC, u8, u8, 2, O>;
+#[doc = "Field `MONTHU` reader - Month, Units"]
+pub type MONTHU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `MONTHU` writer - Month, Units"]
+pub type MONTHU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATE_SPEC, u8, u8, 4, O>;
+#[doc = "Field `MONTHT` reader - Month, Tens"]
+pub type MONTHT_R = crate::BitReader<bool>;
+#[doc = "Field `MONTHT` writer - Month, Tens"]
+pub type MONTHT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DATE_SPEC, bool, O>;
+#[doc = "Field `YEARU` reader - Year, Units"]
+pub type YEARU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `YEARU` writer - Year, Units"]
+pub type YEARU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATE_SPEC, u8, u8, 4, O>;
+#[doc = "Field `YEART` reader - Year, Tens"]
+pub type YEART_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `YEART` writer - Year, Tens"]
+pub type YEART_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATE_SPEC, u8, u8, 4, O>;
+#[doc = "Field `DAYOW` reader - Day of Week"]
+pub type DAYOW_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DAYOW` writer - Day of Week"]
+pub type DAYOW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATE_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:3 - Day of Month, Units"]
     #[inline(always)]
@@ -127,7 +71,7 @@ impl R {
     #[doc = "Bits 4:5 - Day of Month, Tens"]
     #[inline(always)]
     pub fn dayomt(&self) -> DAYOMT_R {
-        DAYOMT_R::new(((self.bits >> 4) & 0x03) as u8)
+        DAYOMT_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:11 - Month, Units"]
     #[inline(always)]
@@ -137,7 +81,7 @@ impl R {
     #[doc = "Bit 12 - Month, Tens"]
     #[inline(always)]
     pub fn montht(&self) -> MONTHT_R {
-        MONTHT_R::new(((self.bits >> 12) & 0x01) != 0)
+        MONTHT_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 16:19 - Year, Units"]
     #[inline(always)]
@@ -152,43 +96,75 @@ impl R {
     #[doc = "Bits 24:26 - Day of Week"]
     #[inline(always)]
     pub fn dayow(&self) -> DAYOW_R {
-        DAYOW_R::new(((self.bits >> 24) & 0x07) as u8)
+        DAYOW_R::new(((self.bits >> 24) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Day of Month, Units"]
     #[inline(always)]
-    pub fn dayomu(&mut self) -> DAYOMU_W {
-        DAYOMU_W { w: self }
+    #[must_use]
+    pub fn dayomu(&mut self) -> DAYOMU_W<0> {
+        DAYOMU_W::new(self)
     }
     #[doc = "Bits 4:5 - Day of Month, Tens"]
     #[inline(always)]
-    pub fn dayomt(&mut self) -> DAYOMT_W {
-        DAYOMT_W { w: self }
+    #[must_use]
+    pub fn dayomt(&mut self) -> DAYOMT_W<4> {
+        DAYOMT_W::new(self)
     }
     #[doc = "Bits 8:11 - Month, Units"]
     #[inline(always)]
-    pub fn monthu(&mut self) -> MONTHU_W {
-        MONTHU_W { w: self }
+    #[must_use]
+    pub fn monthu(&mut self) -> MONTHU_W<8> {
+        MONTHU_W::new(self)
     }
     #[doc = "Bit 12 - Month, Tens"]
     #[inline(always)]
-    pub fn montht(&mut self) -> MONTHT_W {
-        MONTHT_W { w: self }
+    #[must_use]
+    pub fn montht(&mut self) -> MONTHT_W<12> {
+        MONTHT_W::new(self)
     }
     #[doc = "Bits 16:19 - Year, Units"]
     #[inline(always)]
-    pub fn yearu(&mut self) -> YEARU_W {
-        YEARU_W { w: self }
+    #[must_use]
+    pub fn yearu(&mut self) -> YEARU_W<16> {
+        YEARU_W::new(self)
     }
     #[doc = "Bits 20:23 - Year, Tens"]
     #[inline(always)]
-    pub fn yeart(&mut self) -> YEART_W {
-        YEART_W { w: self }
+    #[must_use]
+    pub fn yeart(&mut self) -> YEART_W<20> {
+        YEART_W::new(self)
     }
     #[doc = "Bits 24:26 - Day of Week"]
     #[inline(always)]
-    pub fn dayow(&mut self) -> DAYOW_W {
-        DAYOW_W { w: self }
+    #[must_use]
+    pub fn dayow(&mut self) -> DAYOW_W<24> {
+        DAYOW_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Date Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [date](index.html) module"]
+pub struct DATE_SPEC;
+impl crate::RegisterSpec for DATE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [date::R](R) reader structure"]
+impl crate::Readable for DATE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [date::W](W) writer structure"]
+impl crate::Writable for DATE_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets DATE to value 0"]
+impl crate::Resettable for DATE_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

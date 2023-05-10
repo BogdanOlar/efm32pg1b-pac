@@ -1,130 +1,76 @@
-#[doc = "Reader of register VMONALTAVDDCTRL"]
-pub type R = crate::R<u32, super::VMONALTAVDDCTRL>;
-#[doc = "Writer for register VMONALTAVDDCTRL"]
-pub type W = crate::W<u32, super::VMONALTAVDDCTRL>;
-#[doc = "Register VMONALTAVDDCTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::VMONALTAVDDCTRL {
-    type Type = u32;
+#[doc = "Register `VMONALTAVDDCTRL` reader"]
+pub struct R(crate::R<VMONALTAVDDCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<VMONALTAVDDCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EN`"]
-pub type EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EN`"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<VMONALTAVDDCTRL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<VMONALTAVDDCTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `RISEWU`"]
-pub type RISEWU_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RISEWU`"]
-pub struct RISEWU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RISEWU_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `VMONALTAVDDCTRL` writer"]
+pub struct W(crate::W<VMONALTAVDDCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<VMONALTAVDDCTRL_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `FALLWU`"]
-pub type FALLWU_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FALLWU`"]
-pub struct FALLWU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FALLWU_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `THRESFINE`"]
-pub type THRESFINE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `THRESFINE`"]
-pub struct THRESFINE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THRESFINE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::W<VMONALTAVDDCTRL_SPEC>> for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
-        self.w
+    fn from(writer: crate::W<VMONALTAVDDCTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `THRESCOARSE`"]
-pub type THRESCOARSE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `THRESCOARSE`"]
-pub struct THRESCOARSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THRESCOARSE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
-        self.w
-    }
-}
+#[doc = "Field `EN` reader - Enable"]
+pub type EN_R = crate::BitReader<bool>;
+#[doc = "Field `EN` writer - Enable"]
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONALTAVDDCTRL_SPEC, bool, O>;
+#[doc = "Field `RISEWU` reader - Rise Wakeup"]
+pub type RISEWU_R = crate::BitReader<bool>;
+#[doc = "Field `RISEWU` writer - Rise Wakeup"]
+pub type RISEWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONALTAVDDCTRL_SPEC, bool, O>;
+#[doc = "Field `FALLWU` reader - Fall Wakeup"]
+pub type FALLWU_R = crate::BitReader<bool>;
+#[doc = "Field `FALLWU` writer - Fall Wakeup"]
+pub type FALLWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONALTAVDDCTRL_SPEC, bool, O>;
+#[doc = "Field `THRESFINE` reader - Threshold Fine Adjust"]
+pub type THRESFINE_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `THRESFINE` writer - Threshold Fine Adjust"]
+pub type THRESFINE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, VMONALTAVDDCTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `THRESCOARSE` reader - Threshold Coarse Adjust"]
+pub type THRESCOARSE_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `THRESCOARSE` writer - Threshold Coarse Adjust"]
+pub type THRESCOARSE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, VMONALTAVDDCTRL_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - Rise Wakeup"]
     #[inline(always)]
     pub fn risewu(&self) -> RISEWU_R {
-        RISEWU_R::new(((self.bits >> 2) & 0x01) != 0)
+        RISEWU_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Fall Wakeup"]
     #[inline(always)]
     pub fn fallwu(&self) -> FALLWU_R {
-        FALLWU_R::new(((self.bits >> 3) & 0x01) != 0)
+        FALLWU_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 8:11 - Threshold Fine Adjust"]
     #[inline(always)]
@@ -140,27 +86,57 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 2 - Rise Wakeup"]
     #[inline(always)]
-    pub fn risewu(&mut self) -> RISEWU_W {
-        RISEWU_W { w: self }
+    #[must_use]
+    pub fn risewu(&mut self) -> RISEWU_W<2> {
+        RISEWU_W::new(self)
     }
     #[doc = "Bit 3 - Fall Wakeup"]
     #[inline(always)]
-    pub fn fallwu(&mut self) -> FALLWU_W {
-        FALLWU_W { w: self }
+    #[must_use]
+    pub fn fallwu(&mut self) -> FALLWU_W<3> {
+        FALLWU_W::new(self)
     }
     #[doc = "Bits 8:11 - Threshold Fine Adjust"]
     #[inline(always)]
-    pub fn thresfine(&mut self) -> THRESFINE_W {
-        THRESFINE_W { w: self }
+    #[must_use]
+    pub fn thresfine(&mut self) -> THRESFINE_W<8> {
+        THRESFINE_W::new(self)
     }
     #[doc = "Bits 12:15 - Threshold Coarse Adjust"]
     #[inline(always)]
-    pub fn threscoarse(&mut self) -> THRESCOARSE_W {
-        THRESCOARSE_W { w: self }
+    #[must_use]
+    pub fn threscoarse(&mut self) -> THRESCOARSE_W<12> {
+        THRESCOARSE_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Alternate VMON AVDD Channel Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vmonaltavddctrl](index.html) module"]
+pub struct VMONALTAVDDCTRL_SPEC;
+impl crate::RegisterSpec for VMONALTAVDDCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [vmonaltavddctrl::R](R) reader structure"]
+impl crate::Readable for VMONALTAVDDCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [vmonaltavddctrl::W](W) writer structure"]
+impl crate::Writable for VMONALTAVDDCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets VMONALTAVDDCTRL to value 0"]
+impl crate::Resettable for VMONALTAVDDCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

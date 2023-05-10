@@ -1,186 +1,140 @@
-#[doc = "Reader of register ROUTEPEN"]
-pub type R = crate::R<u32, super::ROUTEPEN>;
-#[doc = "Writer for register ROUTEPEN"]
-pub type W = crate::W<u32, super::ROUTEPEN>;
-#[doc = "Register ROUTEPEN `reset()`'s with value 0x0f"]
-impl crate::ResetValue for super::ROUTEPEN {
-    type Type = u32;
+#[doc = "Register `ROUTEPEN` reader"]
+pub struct R(crate::R<ROUTEPEN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ROUTEPEN_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0f
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SWCLKTCKPEN`"]
-pub type SWCLKTCKPEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SWCLKTCKPEN`"]
-pub struct SWCLKTCKPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWCLKTCKPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<ROUTEPEN_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<ROUTEPEN_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `SWDIOTMSPEN`"]
-pub type SWDIOTMSPEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SWDIOTMSPEN`"]
-pub struct SWDIOTMSPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWDIOTMSPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `ROUTEPEN` writer"]
+pub struct W(crate::W<ROUTEPEN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ROUTEPEN_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TDOPEN`"]
-pub type TDOPEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TDOPEN`"]
-pub struct TDOPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDOPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `TDIPEN`"]
-pub type TDIPEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TDIPEN`"]
-pub struct TDIPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDIPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<ROUTEPEN_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<ROUTEPEN_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `SWVPEN`"]
-pub type SWVPEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SWVPEN`"]
-pub struct SWVPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWVPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
+#[doc = "Field `SWCLKTCKPEN` reader - Serial Wire Clock and JTAG Test Clock Pin Enable"]
+pub type SWCLKTCKPEN_R = crate::BitReader<bool>;
+#[doc = "Field `SWCLKTCKPEN` writer - Serial Wire Clock and JTAG Test Clock Pin Enable"]
+pub type SWCLKTCKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+#[doc = "Field `SWDIOTMSPEN` reader - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
+pub type SWDIOTMSPEN_R = crate::BitReader<bool>;
+#[doc = "Field `SWDIOTMSPEN` writer - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
+pub type SWDIOTMSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+#[doc = "Field `TDOPEN` reader - JTAG Test Debug Output Pin Enable"]
+pub type TDOPEN_R = crate::BitReader<bool>;
+#[doc = "Field `TDOPEN` writer - JTAG Test Debug Output Pin Enable"]
+pub type TDOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+#[doc = "Field `TDIPEN` reader - JTAG Test Debug Input Pin Enable"]
+pub type TDIPEN_R = crate::BitReader<bool>;
+#[doc = "Field `TDIPEN` writer - JTAG Test Debug Input Pin Enable"]
+pub type TDIPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+#[doc = "Field `SWVPEN` reader - Serial Wire Viewer Output Pin Enable"]
+pub type SWVPEN_R = crate::BitReader<bool>;
+#[doc = "Field `SWVPEN` writer - Serial Wire Viewer Output Pin Enable"]
+pub type SWVPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Serial Wire Clock and JTAG Test Clock Pin Enable"]
     #[inline(always)]
     pub fn swclktckpen(&self) -> SWCLKTCKPEN_R {
-        SWCLKTCKPEN_R::new((self.bits & 0x01) != 0)
+        SWCLKTCKPEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
     #[inline(always)]
     pub fn swdiotmspen(&self) -> SWDIOTMSPEN_R {
-        SWDIOTMSPEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        SWDIOTMSPEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - JTAG Test Debug Output Pin Enable"]
     #[inline(always)]
     pub fn tdopen(&self) -> TDOPEN_R {
-        TDOPEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        TDOPEN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - JTAG Test Debug Input Pin Enable"]
     #[inline(always)]
     pub fn tdipen(&self) -> TDIPEN_R {
-        TDIPEN_R::new(((self.bits >> 3) & 0x01) != 0)
+        TDIPEN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Serial Wire Viewer Output Pin Enable"]
     #[inline(always)]
     pub fn swvpen(&self) -> SWVPEN_R {
-        SWVPEN_R::new(((self.bits >> 4) & 0x01) != 0)
+        SWVPEN_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Serial Wire Clock and JTAG Test Clock Pin Enable"]
     #[inline(always)]
-    pub fn swclktckpen(&mut self) -> SWCLKTCKPEN_W {
-        SWCLKTCKPEN_W { w: self }
+    #[must_use]
+    pub fn swclktckpen(&mut self) -> SWCLKTCKPEN_W<0> {
+        SWCLKTCKPEN_W::new(self)
     }
     #[doc = "Bit 1 - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
     #[inline(always)]
-    pub fn swdiotmspen(&mut self) -> SWDIOTMSPEN_W {
-        SWDIOTMSPEN_W { w: self }
+    #[must_use]
+    pub fn swdiotmspen(&mut self) -> SWDIOTMSPEN_W<1> {
+        SWDIOTMSPEN_W::new(self)
     }
     #[doc = "Bit 2 - JTAG Test Debug Output Pin Enable"]
     #[inline(always)]
-    pub fn tdopen(&mut self) -> TDOPEN_W {
-        TDOPEN_W { w: self }
+    #[must_use]
+    pub fn tdopen(&mut self) -> TDOPEN_W<2> {
+        TDOPEN_W::new(self)
     }
     #[doc = "Bit 3 - JTAG Test Debug Input Pin Enable"]
     #[inline(always)]
-    pub fn tdipen(&mut self) -> TDIPEN_W {
-        TDIPEN_W { w: self }
+    #[must_use]
+    pub fn tdipen(&mut self) -> TDIPEN_W<3> {
+        TDIPEN_W::new(self)
     }
     #[doc = "Bit 4 - Serial Wire Viewer Output Pin Enable"]
     #[inline(always)]
-    pub fn swvpen(&mut self) -> SWVPEN_W {
-        SWVPEN_W { w: self }
+    #[must_use]
+    pub fn swvpen(&mut self) -> SWVPEN_W<4> {
+        SWVPEN_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I/O Routing Pin Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routepen](index.html) module"]
+pub struct ROUTEPEN_SPEC;
+impl crate::RegisterSpec for ROUTEPEN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [routepen::R](R) reader structure"]
+impl crate::Readable for ROUTEPEN_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [routepen::W](W) writer structure"]
+impl crate::Writable for ROUTEPEN_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets ROUTEPEN to value 0x0f"]
+impl crate::Resettable for ROUTEPEN_SPEC {
+    const RESET_VALUE: Self::Ux = 0x0f;
 }

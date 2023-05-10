@@ -1,45 +1,51 @@
-#[doc = "Reader of register INPUTSEL"]
-pub type R = crate::R<u32, super::INPUTSEL>;
-#[doc = "Writer for register INPUTSEL"]
-pub type W = crate::W<u32, super::INPUTSEL>;
-#[doc = "Register INPUTSEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::INPUTSEL {
-    type Type = u32;
+#[doc = "Register `INPUTSEL` reader"]
+pub struct R(crate::R<INPUTSEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INPUTSEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `POSSEL`"]
-pub type POSSEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `POSSEL`"]
-pub struct POSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POSSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<INPUTSEL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
-        self.w
+    fn from(reader: crate::R<INPUTSEL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `NEGSEL`"]
-pub type NEGSEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `NEGSEL`"]
-pub struct NEGSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NEGSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `INPUTSEL` writer"]
+pub struct W(crate::W<INPUTSEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INPUTSEL_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<INPUTSEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<INPUTSEL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `POSSEL` reader - Positive Input Select"]
+pub type POSSEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `POSSEL` writer - Positive Input Select"]
+pub type POSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPUTSEL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `NEGSEL` reader - Negative Input Select"]
+pub type NEGSEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `NEGSEL` writer - Negative Input Select"]
+pub type NEGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPUTSEL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `VASEL` reader - VA Selection"]
+pub type VASEL_R = crate::FieldReader<u8, VASEL_A>;
 #[doc = "VA Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VASEL_A {
     #[doc = "0: ACMPVDD"]
@@ -147,64 +153,61 @@ impl From<VASEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `VASEL`"]
-pub type VASEL_R = crate::R<u8, VASEL_A>;
 impl VASEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, VASEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<VASEL_A> {
         match self.bits {
-            0 => Val(VASEL_A::VDD),
-            1 => Val(VASEL_A::APORT2YCH0),
-            3 => Val(VASEL_A::APORT2YCH2),
-            5 => Val(VASEL_A::APORT2YCH4),
-            7 => Val(VASEL_A::APORT2YCH6),
-            9 => Val(VASEL_A::APORT2YCH8),
-            11 => Val(VASEL_A::APORT2YCH10),
-            13 => Val(VASEL_A::APORT2YCH12),
-            15 => Val(VASEL_A::APORT2YCH14),
-            17 => Val(VASEL_A::APORT2YCH16),
-            19 => Val(VASEL_A::APORT2YCH18),
-            21 => Val(VASEL_A::APORT2YCH20),
-            23 => Val(VASEL_A::APORT2YCH22),
-            25 => Val(VASEL_A::APORT2YCH24),
-            27 => Val(VASEL_A::APORT2YCH26),
-            29 => Val(VASEL_A::APORT2YCH28),
-            31 => Val(VASEL_A::APORT2YCH30),
-            32 => Val(VASEL_A::APORT1XCH0),
-            33 => Val(VASEL_A::APORT1YCH1),
-            34 => Val(VASEL_A::APORT1XCH2),
-            35 => Val(VASEL_A::APORT1YCH3),
-            36 => Val(VASEL_A::APORT1XCH4),
-            37 => Val(VASEL_A::APORT1YCH5),
-            38 => Val(VASEL_A::APORT1XCH6),
-            39 => Val(VASEL_A::APORT1YCH7),
-            40 => Val(VASEL_A::APORT1XCH8),
-            41 => Val(VASEL_A::APORT1YCH9),
-            42 => Val(VASEL_A::APORT1XCH10),
-            43 => Val(VASEL_A::APORT1YCH11),
-            44 => Val(VASEL_A::APORT1XCH12),
-            45 => Val(VASEL_A::APORT1YCH13),
-            46 => Val(VASEL_A::APORT1XCH14),
-            47 => Val(VASEL_A::APORT1YCH15),
-            48 => Val(VASEL_A::APORT1XCH16),
-            49 => Val(VASEL_A::APORT1YCH17),
-            50 => Val(VASEL_A::APORT1XCH18),
-            51 => Val(VASEL_A::APORT1YCH19),
-            52 => Val(VASEL_A::APORT1XCH20),
-            53 => Val(VASEL_A::APORT1YCH21),
-            54 => Val(VASEL_A::APORT1XCH22),
-            55 => Val(VASEL_A::APORT1YCH23),
-            56 => Val(VASEL_A::APORT1XCH24),
-            57 => Val(VASEL_A::APORT1YCH25),
-            58 => Val(VASEL_A::APORT1XCH26),
-            59 => Val(VASEL_A::APORT1YCH27),
-            60 => Val(VASEL_A::APORT1XCH28),
-            61 => Val(VASEL_A::APORT1YCH29),
-            62 => Val(VASEL_A::APORT1XCH30),
-            63 => Val(VASEL_A::APORT1YCH31),
-            i => Res(i),
+            0 => Some(VASEL_A::VDD),
+            1 => Some(VASEL_A::APORT2YCH0),
+            3 => Some(VASEL_A::APORT2YCH2),
+            5 => Some(VASEL_A::APORT2YCH4),
+            7 => Some(VASEL_A::APORT2YCH6),
+            9 => Some(VASEL_A::APORT2YCH8),
+            11 => Some(VASEL_A::APORT2YCH10),
+            13 => Some(VASEL_A::APORT2YCH12),
+            15 => Some(VASEL_A::APORT2YCH14),
+            17 => Some(VASEL_A::APORT2YCH16),
+            19 => Some(VASEL_A::APORT2YCH18),
+            21 => Some(VASEL_A::APORT2YCH20),
+            23 => Some(VASEL_A::APORT2YCH22),
+            25 => Some(VASEL_A::APORT2YCH24),
+            27 => Some(VASEL_A::APORT2YCH26),
+            29 => Some(VASEL_A::APORT2YCH28),
+            31 => Some(VASEL_A::APORT2YCH30),
+            32 => Some(VASEL_A::APORT1XCH0),
+            33 => Some(VASEL_A::APORT1YCH1),
+            34 => Some(VASEL_A::APORT1XCH2),
+            35 => Some(VASEL_A::APORT1YCH3),
+            36 => Some(VASEL_A::APORT1XCH4),
+            37 => Some(VASEL_A::APORT1YCH5),
+            38 => Some(VASEL_A::APORT1XCH6),
+            39 => Some(VASEL_A::APORT1YCH7),
+            40 => Some(VASEL_A::APORT1XCH8),
+            41 => Some(VASEL_A::APORT1YCH9),
+            42 => Some(VASEL_A::APORT1XCH10),
+            43 => Some(VASEL_A::APORT1YCH11),
+            44 => Some(VASEL_A::APORT1XCH12),
+            45 => Some(VASEL_A::APORT1YCH13),
+            46 => Some(VASEL_A::APORT1XCH14),
+            47 => Some(VASEL_A::APORT1YCH15),
+            48 => Some(VASEL_A::APORT1XCH16),
+            49 => Some(VASEL_A::APORT1YCH17),
+            50 => Some(VASEL_A::APORT1XCH18),
+            51 => Some(VASEL_A::APORT1YCH19),
+            52 => Some(VASEL_A::APORT1XCH20),
+            53 => Some(VASEL_A::APORT1YCH21),
+            54 => Some(VASEL_A::APORT1XCH22),
+            55 => Some(VASEL_A::APORT1YCH23),
+            56 => Some(VASEL_A::APORT1XCH24),
+            57 => Some(VASEL_A::APORT1YCH25),
+            58 => Some(VASEL_A::APORT1XCH26),
+            59 => Some(VASEL_A::APORT1YCH27),
+            60 => Some(VASEL_A::APORT1XCH28),
+            61 => Some(VASEL_A::APORT1YCH29),
+            62 => Some(VASEL_A::APORT1XCH30),
+            63 => Some(VASEL_A::APORT1YCH31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VDD`"]
@@ -453,16 +456,9 @@ impl VASEL_R {
         *self == VASEL_A::APORT1YCH31
     }
 }
-#[doc = "Write proxy for field `VASEL`"]
-pub struct VASEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VASEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VASEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `VASEL` writer - VA Selection"]
+pub type VASEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPUTSEL_SPEC, u8, VASEL_A, 6, O>;
+impl<'a, const O: u8> VASEL_W<'a, O> {
     #[doc = "ACMPVDD"]
     #[inline(always)]
     pub fn vdd(self) -> &'a mut W {
@@ -708,87 +704,23 @@ impl<'a> VASEL_W<'a> {
     pub fn aport1ych31(self) -> &'a mut W {
         self.variant(VASEL_A::APORT1YCH31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
-        self.w
-    }
 }
-#[doc = "Reader of field `VBSEL`"]
-pub type VBSEL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VBSEL`"]
-pub struct VBSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VBSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-        self.w
-    }
-}
-#[doc = "Reader of field `VLPSEL`"]
-pub type VLPSEL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VLPSEL`"]
-pub struct VLPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VLPSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `CSRESEN`"]
-pub type CSRESEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CSRESEN`"]
-pub struct CSRESEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSRESEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-        self.w
-    }
-}
+#[doc = "Field `VBSEL` reader - VB Selection"]
+pub type VBSEL_R = crate::BitReader<bool>;
+#[doc = "Field `VBSEL` writer - VB Selection"]
+pub type VBSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUTSEL_SPEC, bool, O>;
+#[doc = "Field `VLPSEL` reader - Low-Power Sampled Voltage Selection"]
+pub type VLPSEL_R = crate::BitReader<bool>;
+#[doc = "Field `VLPSEL` writer - Low-Power Sampled Voltage Selection"]
+pub type VLPSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUTSEL_SPEC, bool, O>;
+#[doc = "Field `CSRESEN` reader - Capacitive Sense Mode Internal Resistor Enable"]
+pub type CSRESEN_R = crate::BitReader<bool>;
+#[doc = "Field `CSRESEN` writer - Capacitive Sense Mode Internal Resistor Enable"]
+pub type CSRESEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUTSEL_SPEC, bool, O>;
+#[doc = "Field `CSRESSEL` reader - Capacitive Sense Mode Internal Resistor Select"]
+pub type CSRESSEL_R = crate::FieldReader<u8, CSRESSEL_A>;
 #[doc = "Capacitive Sense Mode Internal Resistor Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSRESSEL_A {
     #[doc = "0: Internal capacitive sense resistor value 0"]
@@ -814,10 +746,8 @@ impl From<CSRESSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CSRESSEL`"]
-pub type CSRESSEL_R = crate::R<u8, CSRESSEL_A>;
 impl CSRESSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSRESSEL_A {
         match self.bits {
@@ -873,18 +803,10 @@ impl CSRESSEL_R {
         *self == CSRESSEL_A::RES7
     }
 }
-#[doc = "Write proxy for field `CSRESSEL`"]
-pub struct CSRESSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSRESSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSRESSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CSRESSEL` writer - Capacitive Sense Mode Internal Resistor Select"]
+pub type CSRESSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, INPUTSEL_SPEC, u8, CSRESSEL_A, 3, O>;
+impl<'a, const O: u8> CSRESSEL_W<'a, O> {
     #[doc = "Internal capacitive sense resistor value 0"]
     #[inline(always)]
     pub fn res0(self) -> &'a mut W {
@@ -925,12 +847,6 @@ impl<'a> CSRESSEL_W<'a> {
     pub fn res7(self) -> &'a mut W {
         self.variant(CSRESSEL_A::RES7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | (((value as u32) & 0x07) << 28);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:7 - Positive Input Select"]
@@ -951,58 +867,90 @@ impl R {
     #[doc = "Bit 22 - VB Selection"]
     #[inline(always)]
     pub fn vbsel(&self) -> VBSEL_R {
-        VBSEL_R::new(((self.bits >> 22) & 0x01) != 0)
+        VBSEL_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 24 - Low-Power Sampled Voltage Selection"]
     #[inline(always)]
     pub fn vlpsel(&self) -> VLPSEL_R {
-        VLPSEL_R::new(((self.bits >> 24) & 0x01) != 0)
+        VLPSEL_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 26 - Capacitive Sense Mode Internal Resistor Enable"]
     #[inline(always)]
     pub fn csresen(&self) -> CSRESEN_R {
-        CSRESEN_R::new(((self.bits >> 26) & 0x01) != 0)
+        CSRESEN_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bits 28:30 - Capacitive Sense Mode Internal Resistor Select"]
     #[inline(always)]
     pub fn csressel(&self) -> CSRESSEL_R {
-        CSRESSEL_R::new(((self.bits >> 28) & 0x07) as u8)
+        CSRESSEL_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Positive Input Select"]
     #[inline(always)]
-    pub fn possel(&mut self) -> POSSEL_W {
-        POSSEL_W { w: self }
+    #[must_use]
+    pub fn possel(&mut self) -> POSSEL_W<0> {
+        POSSEL_W::new(self)
     }
     #[doc = "Bits 8:15 - Negative Input Select"]
     #[inline(always)]
-    pub fn negsel(&mut self) -> NEGSEL_W {
-        NEGSEL_W { w: self }
+    #[must_use]
+    pub fn negsel(&mut self) -> NEGSEL_W<8> {
+        NEGSEL_W::new(self)
     }
     #[doc = "Bits 16:21 - VA Selection"]
     #[inline(always)]
-    pub fn vasel(&mut self) -> VASEL_W {
-        VASEL_W { w: self }
+    #[must_use]
+    pub fn vasel(&mut self) -> VASEL_W<16> {
+        VASEL_W::new(self)
     }
     #[doc = "Bit 22 - VB Selection"]
     #[inline(always)]
-    pub fn vbsel(&mut self) -> VBSEL_W {
-        VBSEL_W { w: self }
+    #[must_use]
+    pub fn vbsel(&mut self) -> VBSEL_W<22> {
+        VBSEL_W::new(self)
     }
     #[doc = "Bit 24 - Low-Power Sampled Voltage Selection"]
     #[inline(always)]
-    pub fn vlpsel(&mut self) -> VLPSEL_W {
-        VLPSEL_W { w: self }
+    #[must_use]
+    pub fn vlpsel(&mut self) -> VLPSEL_W<24> {
+        VLPSEL_W::new(self)
     }
     #[doc = "Bit 26 - Capacitive Sense Mode Internal Resistor Enable"]
     #[inline(always)]
-    pub fn csresen(&mut self) -> CSRESEN_W {
-        CSRESEN_W { w: self }
+    #[must_use]
+    pub fn csresen(&mut self) -> CSRESEN_W<26> {
+        CSRESEN_W::new(self)
     }
     #[doc = "Bits 28:30 - Capacitive Sense Mode Internal Resistor Select"]
     #[inline(always)]
-    pub fn csressel(&mut self) -> CSRESSEL_W {
-        CSRESSEL_W { w: self }
+    #[must_use]
+    pub fn csressel(&mut self) -> CSRESSEL_W<28> {
+        CSRESSEL_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Input Selection Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inputsel](index.html) module"]
+pub struct INPUTSEL_SPEC;
+impl crate::RegisterSpec for INPUTSEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [inputsel::R](R) reader structure"]
+impl crate::Readable for INPUTSEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [inputsel::W](W) writer structure"]
+impl crate::Writable for INPUTSEL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets INPUTSEL to value 0"]
+impl crate::Resettable for INPUTSEL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

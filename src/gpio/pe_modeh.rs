@@ -1,17 +1,43 @@
-#[doc = "Reader of register PE_MODEH"]
-pub type R = crate::R<u32, super::PE_MODEH>;
-#[doc = "Writer for register PE_MODEH"]
-pub type W = crate::W<u32, super::PE_MODEH>;
-#[doc = "Register PE_MODEH `reset()`'s with value 0"]
-impl crate::ResetValue for super::PE_MODEH {
-    type Type = u32;
+#[doc = "Register `PE_MODEH` reader"]
+pub struct R(crate::R<PE_MODEH_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PE_MODEH_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<PE_MODEH_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PE_MODEH_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PE_MODEH` writer"]
+pub struct W(crate::W<PE_MODEH_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PE_MODEH_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PE_MODEH_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PE_MODEH_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MODE8` reader - Pin 8 Mode"]
+pub type MODE8_R = crate::FieldReader<u8, MODE8_A>;
 #[doc = "Pin 8 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE8_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -53,10 +79,8 @@ impl From<MODE8_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE8`"]
-pub type MODE8_R = crate::R<u8, MODE8_A>;
 impl MODE8_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE8_A {
         match self.bits {
@@ -160,18 +184,10 @@ impl MODE8_R {
         *self == MODE8_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Write proxy for field `MODE8`"]
-pub struct MODE8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE8_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE8_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE8` writer - Pin 8 Mode"]
+pub type MODE8_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_MODEH_SPEC, u8, MODE8_A, 4, O>;
+impl<'a, const O: u8> MODE8_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -252,15 +268,11 @@ impl<'a> MODE8_W<'a> {
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
         self.variant(MODE8_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
-    }
 }
+#[doc = "Field `MODE9` reader - Pin 9 Mode"]
+pub type MODE9_R = crate::FieldReader<u8, MODE9_A>;
 #[doc = "Pin 9 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE9_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -302,10 +314,8 @@ impl From<MODE9_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE9`"]
-pub type MODE9_R = crate::R<u8, MODE9_A>;
 impl MODE9_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE9_A {
         match self.bits {
@@ -409,18 +419,10 @@ impl MODE9_R {
         *self == MODE9_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Write proxy for field `MODE9`"]
-pub struct MODE9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE9_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE9_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE9` writer - Pin 9 Mode"]
+pub type MODE9_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_MODEH_SPEC, u8, MODE9_A, 4, O>;
+impl<'a, const O: u8> MODE9_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -501,15 +503,11 @@ impl<'a> MODE9_W<'a> {
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
         self.variant(MODE9_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
-        self.w
-    }
 }
+#[doc = "Field `MODE10` reader - Pin 10 Mode"]
+pub type MODE10_R = crate::FieldReader<u8, MODE10_A>;
 #[doc = "Pin 10 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE10_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -551,10 +549,8 @@ impl From<MODE10_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE10`"]
-pub type MODE10_R = crate::R<u8, MODE10_A>;
 impl MODE10_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE10_A {
         match self.bits {
@@ -658,18 +654,10 @@ impl MODE10_R {
         *self == MODE10_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Write proxy for field `MODE10`"]
-pub struct MODE10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE10_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE10_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE10` writer - Pin 10 Mode"]
+pub type MODE10_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_MODEH_SPEC, u8, MODE10_A, 4, O>;
+impl<'a, const O: u8> MODE10_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -750,15 +738,11 @@ impl<'a> MODE10_W<'a> {
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
         self.variant(MODE10_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
-        self.w
-    }
 }
+#[doc = "Field `MODE11` reader - Pin 11 Mode"]
+pub type MODE11_R = crate::FieldReader<u8, MODE11_A>;
 #[doc = "Pin 11 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE11_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -800,10 +784,8 @@ impl From<MODE11_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE11`"]
-pub type MODE11_R = crate::R<u8, MODE11_A>;
 impl MODE11_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE11_A {
         match self.bits {
@@ -907,18 +889,10 @@ impl MODE11_R {
         *self == MODE11_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Write proxy for field `MODE11`"]
-pub struct MODE11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE11_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE11_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE11` writer - Pin 11 Mode"]
+pub type MODE11_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_MODEH_SPEC, u8, MODE11_A, 4, O>;
+impl<'a, const O: u8> MODE11_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -999,15 +973,11 @@ impl<'a> MODE11_W<'a> {
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
         self.variant(MODE11_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
-        self.w
-    }
 }
+#[doc = "Field `MODE12` reader - Pin 12 Mode"]
+pub type MODE12_R = crate::FieldReader<u8, MODE12_A>;
 #[doc = "Pin 12 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE12_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -1049,10 +1019,8 @@ impl From<MODE12_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE12`"]
-pub type MODE12_R = crate::R<u8, MODE12_A>;
 impl MODE12_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE12_A {
         match self.bits {
@@ -1156,18 +1124,10 @@ impl MODE12_R {
         *self == MODE12_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Write proxy for field `MODE12`"]
-pub struct MODE12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE12_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE12_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE12` writer - Pin 12 Mode"]
+pub type MODE12_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_MODEH_SPEC, u8, MODE12_A, 4, O>;
+impl<'a, const O: u8> MODE12_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1248,15 +1208,11 @@ impl<'a> MODE12_W<'a> {
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
         self.variant(MODE12_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
-        self.w
-    }
 }
+#[doc = "Field `MODE13` reader - Pin 13 Mode"]
+pub type MODE13_R = crate::FieldReader<u8, MODE13_A>;
 #[doc = "Pin 13 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE13_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -1298,10 +1254,8 @@ impl From<MODE13_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE13`"]
-pub type MODE13_R = crate::R<u8, MODE13_A>;
 impl MODE13_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE13_A {
         match self.bits {
@@ -1405,18 +1359,10 @@ impl MODE13_R {
         *self == MODE13_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Write proxy for field `MODE13`"]
-pub struct MODE13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE13_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE13_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE13` writer - Pin 13 Mode"]
+pub type MODE13_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_MODEH_SPEC, u8, MODE13_A, 4, O>;
+impl<'a, const O: u8> MODE13_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1497,15 +1443,11 @@ impl<'a> MODE13_W<'a> {
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
         self.variant(MODE13_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | (((value as u32) & 0x0f) << 20);
-        self.w
-    }
 }
+#[doc = "Field `MODE14` reader - Pin 14 Mode"]
+pub type MODE14_R = crate::FieldReader<u8, MODE14_A>;
 #[doc = "Pin 14 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE14_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -1547,10 +1489,8 @@ impl From<MODE14_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE14`"]
-pub type MODE14_R = crate::R<u8, MODE14_A>;
 impl MODE14_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE14_A {
         match self.bits {
@@ -1654,18 +1594,10 @@ impl MODE14_R {
         *self == MODE14_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Write proxy for field `MODE14`"]
-pub struct MODE14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE14_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE14_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE14` writer - Pin 14 Mode"]
+pub type MODE14_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_MODEH_SPEC, u8, MODE14_A, 4, O>;
+impl<'a, const O: u8> MODE14_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1746,15 +1678,11 @@ impl<'a> MODE14_W<'a> {
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
         self.variant(MODE14_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
-        self.w
-    }
 }
+#[doc = "Field `MODE15` reader - Pin 15 Mode"]
+pub type MODE15_R = crate::FieldReader<u8, MODE15_A>;
 #[doc = "Pin 15 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE15_A {
     #[doc = "0: Input disabled. Pullup if DOUT is set."]
@@ -1796,10 +1724,8 @@ impl From<MODE15_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE15`"]
-pub type MODE15_R = crate::R<u8, MODE15_A>;
 impl MODE15_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE15_A {
         match self.bits {
@@ -1903,18 +1829,10 @@ impl MODE15_R {
         *self == MODE15_A::WIREDANDALTPULLUPFILTER
     }
 }
-#[doc = "Write proxy for field `MODE15`"]
-pub struct MODE15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE15_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE15_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE15` writer - Pin 15 Mode"]
+pub type MODE15_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_MODEH_SPEC, u8, MODE15_A, 4, O>;
+impl<'a, const O: u8> MODE15_W<'a, O> {
     #[doc = "Input disabled. Pullup if DOUT is set."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -1995,12 +1913,6 @@ impl<'a> MODE15_W<'a> {
     pub fn wiredandaltpullupfilter(self) -> &'a mut W {
         self.variant(MODE15_A::WIREDANDALTPULLUPFILTER)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | (((value as u32) & 0x0f) << 28);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Pin 8 Mode"]
@@ -2047,42 +1959,75 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Pin 8 Mode"]
     #[inline(always)]
-    pub fn mode8(&mut self) -> MODE8_W {
-        MODE8_W { w: self }
+    #[must_use]
+    pub fn mode8(&mut self) -> MODE8_W<0> {
+        MODE8_W::new(self)
     }
     #[doc = "Bits 4:7 - Pin 9 Mode"]
     #[inline(always)]
-    pub fn mode9(&mut self) -> MODE9_W {
-        MODE9_W { w: self }
+    #[must_use]
+    pub fn mode9(&mut self) -> MODE9_W<4> {
+        MODE9_W::new(self)
     }
     #[doc = "Bits 8:11 - Pin 10 Mode"]
     #[inline(always)]
-    pub fn mode10(&mut self) -> MODE10_W {
-        MODE10_W { w: self }
+    #[must_use]
+    pub fn mode10(&mut self) -> MODE10_W<8> {
+        MODE10_W::new(self)
     }
     #[doc = "Bits 12:15 - Pin 11 Mode"]
     #[inline(always)]
-    pub fn mode11(&mut self) -> MODE11_W {
-        MODE11_W { w: self }
+    #[must_use]
+    pub fn mode11(&mut self) -> MODE11_W<12> {
+        MODE11_W::new(self)
     }
     #[doc = "Bits 16:19 - Pin 12 Mode"]
     #[inline(always)]
-    pub fn mode12(&mut self) -> MODE12_W {
-        MODE12_W { w: self }
+    #[must_use]
+    pub fn mode12(&mut self) -> MODE12_W<16> {
+        MODE12_W::new(self)
     }
     #[doc = "Bits 20:23 - Pin 13 Mode"]
     #[inline(always)]
-    pub fn mode13(&mut self) -> MODE13_W {
-        MODE13_W { w: self }
+    #[must_use]
+    pub fn mode13(&mut self) -> MODE13_W<20> {
+        MODE13_W::new(self)
     }
     #[doc = "Bits 24:27 - Pin 14 Mode"]
     #[inline(always)]
-    pub fn mode14(&mut self) -> MODE14_W {
-        MODE14_W { w: self }
+    #[must_use]
+    pub fn mode14(&mut self) -> MODE14_W<24> {
+        MODE14_W::new(self)
     }
     #[doc = "Bits 28:31 - Pin 15 Mode"]
     #[inline(always)]
-    pub fn mode15(&mut self) -> MODE15_W {
-        MODE15_W { w: self }
+    #[must_use]
+    pub fn mode15(&mut self) -> MODE15_W<28> {
+        MODE15_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port Pin Mode High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_modeh](index.html) module"]
+pub struct PE_MODEH_SPEC;
+impl crate::RegisterSpec for PE_MODEH_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pe_modeh::R](R) reader structure"]
+impl crate::Readable for PE_MODEH_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pe_modeh::W](W) writer structure"]
+impl crate::Writable for PE_MODEH_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets PE_MODEH to value 0"]
+impl crate::Resettable for PE_MODEH_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

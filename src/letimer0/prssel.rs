@@ -1,17 +1,43 @@
-#[doc = "Reader of register PRSSEL"]
-pub type R = crate::R<u32, super::PRSSEL>;
-#[doc = "Writer for register PRSSEL"]
-pub type W = crate::W<u32, super::PRSSEL>;
-#[doc = "Register PRSSEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::PRSSEL {
-    type Type = u32;
+#[doc = "Register `PRSSEL` reader"]
+pub struct R(crate::R<PRSSEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PRSSEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<PRSSEL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PRSSEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PRSSEL` writer"]
+pub struct W(crate::W<PRSSEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PRSSEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PRSSEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PRSSEL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PRSSTARTSEL` reader - PRS Start Select"]
+pub type PRSSTARTSEL_R = crate::FieldReader<u8, PRSSTARTSEL_A>;
 #[doc = "PRS Start Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSTARTSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
@@ -45,27 +71,24 @@ impl From<PRSSTARTSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRSSTARTSEL`"]
-pub type PRSSTARTSEL_R = crate::R<u8, PRSSTARTSEL_A>;
 impl PRSSTARTSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PRSSTARTSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PRSSTARTSEL_A> {
         match self.bits {
-            0 => Val(PRSSTARTSEL_A::PRSCH0),
-            1 => Val(PRSSTARTSEL_A::PRSCH1),
-            2 => Val(PRSSTARTSEL_A::PRSCH2),
-            3 => Val(PRSSTARTSEL_A::PRSCH3),
-            4 => Val(PRSSTARTSEL_A::PRSCH4),
-            5 => Val(PRSSTARTSEL_A::PRSCH5),
-            6 => Val(PRSSTARTSEL_A::PRSCH6),
-            7 => Val(PRSSTARTSEL_A::PRSCH7),
-            8 => Val(PRSSTARTSEL_A::PRSCH8),
-            9 => Val(PRSSTARTSEL_A::PRSCH9),
-            10 => Val(PRSSTARTSEL_A::PRSCH10),
-            11 => Val(PRSSTARTSEL_A::PRSCH11),
-            i => Res(i),
+            0 => Some(PRSSTARTSEL_A::PRSCH0),
+            1 => Some(PRSSTARTSEL_A::PRSCH1),
+            2 => Some(PRSSTARTSEL_A::PRSCH2),
+            3 => Some(PRSSTARTSEL_A::PRSCH3),
+            4 => Some(PRSSTARTSEL_A::PRSCH4),
+            5 => Some(PRSSTARTSEL_A::PRSCH5),
+            6 => Some(PRSSTARTSEL_A::PRSCH6),
+            7 => Some(PRSSTARTSEL_A::PRSCH7),
+            8 => Some(PRSSTARTSEL_A::PRSCH8),
+            9 => Some(PRSSTARTSEL_A::PRSCH9),
+            10 => Some(PRSSTARTSEL_A::PRSCH10),
+            11 => Some(PRSSTARTSEL_A::PRSCH11),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
@@ -129,16 +152,10 @@ impl PRSSTARTSEL_R {
         *self == PRSSTARTSEL_A::PRSCH11
     }
 }
-#[doc = "Write proxy for field `PRSSTARTSEL`"]
-pub struct PRSSTARTSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSSTARTSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRSSTARTSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `PRSSTARTSEL` writer - PRS Start Select"]
+pub type PRSSTARTSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PRSSEL_SPEC, u8, PRSSTARTSEL_A, 4, O>;
+impl<'a, const O: u8> PRSSTARTSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -199,15 +216,11 @@ impl<'a> PRSSTARTSEL_W<'a> {
     pub fn prsch11(self) -> &'a mut W {
         self.variant(PRSSTARTSEL_A::PRSCH11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
-    }
 }
+#[doc = "Field `PRSSTOPSEL` reader - PRS Stop Select"]
+pub type PRSSTOPSEL_R = crate::FieldReader<u8, PRSSTOPSEL_A>;
 #[doc = "PRS Stop Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSTOPSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
@@ -241,27 +254,24 @@ impl From<PRSSTOPSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRSSTOPSEL`"]
-pub type PRSSTOPSEL_R = crate::R<u8, PRSSTOPSEL_A>;
 impl PRSSTOPSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PRSSTOPSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PRSSTOPSEL_A> {
         match self.bits {
-            0 => Val(PRSSTOPSEL_A::PRSCH0),
-            1 => Val(PRSSTOPSEL_A::PRSCH1),
-            2 => Val(PRSSTOPSEL_A::PRSCH2),
-            3 => Val(PRSSTOPSEL_A::PRSCH3),
-            4 => Val(PRSSTOPSEL_A::PRSCH4),
-            5 => Val(PRSSTOPSEL_A::PRSCH5),
-            6 => Val(PRSSTOPSEL_A::PRSCH6),
-            7 => Val(PRSSTOPSEL_A::PRSCH7),
-            8 => Val(PRSSTOPSEL_A::PRSCH8),
-            9 => Val(PRSSTOPSEL_A::PRSCH9),
-            10 => Val(PRSSTOPSEL_A::PRSCH10),
-            11 => Val(PRSSTOPSEL_A::PRSCH11),
-            i => Res(i),
+            0 => Some(PRSSTOPSEL_A::PRSCH0),
+            1 => Some(PRSSTOPSEL_A::PRSCH1),
+            2 => Some(PRSSTOPSEL_A::PRSCH2),
+            3 => Some(PRSSTOPSEL_A::PRSCH3),
+            4 => Some(PRSSTOPSEL_A::PRSCH4),
+            5 => Some(PRSSTOPSEL_A::PRSCH5),
+            6 => Some(PRSSTOPSEL_A::PRSCH6),
+            7 => Some(PRSSTOPSEL_A::PRSCH7),
+            8 => Some(PRSSTOPSEL_A::PRSCH8),
+            9 => Some(PRSSTOPSEL_A::PRSCH9),
+            10 => Some(PRSSTOPSEL_A::PRSCH10),
+            11 => Some(PRSSTOPSEL_A::PRSCH11),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
@@ -325,16 +335,10 @@ impl PRSSTOPSEL_R {
         *self == PRSSTOPSEL_A::PRSCH11
     }
 }
-#[doc = "Write proxy for field `PRSSTOPSEL`"]
-pub struct PRSSTOPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSSTOPSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRSSTOPSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `PRSSTOPSEL` writer - PRS Stop Select"]
+pub type PRSSTOPSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PRSSEL_SPEC, u8, PRSSTOPSEL_A, 4, O>;
+impl<'a, const O: u8> PRSSTOPSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -395,15 +399,11 @@ impl<'a> PRSSTOPSEL_W<'a> {
     pub fn prsch11(self) -> &'a mut W {
         self.variant(PRSSTOPSEL_A::PRSCH11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 6)) | (((value as u32) & 0x0f) << 6);
-        self.w
-    }
 }
+#[doc = "Field `PRSCLEARSEL` reader - PRS Clear Select"]
+pub type PRSCLEARSEL_R = crate::FieldReader<u8, PRSCLEARSEL_A>;
 #[doc = "PRS Clear Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSCLEARSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
@@ -437,27 +437,24 @@ impl From<PRSCLEARSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRSCLEARSEL`"]
-pub type PRSCLEARSEL_R = crate::R<u8, PRSCLEARSEL_A>;
 impl PRSCLEARSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PRSCLEARSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PRSCLEARSEL_A> {
         match self.bits {
-            0 => Val(PRSCLEARSEL_A::PRSCH0),
-            1 => Val(PRSCLEARSEL_A::PRSCH1),
-            2 => Val(PRSCLEARSEL_A::PRSCH2),
-            3 => Val(PRSCLEARSEL_A::PRSCH3),
-            4 => Val(PRSCLEARSEL_A::PRSCH4),
-            5 => Val(PRSCLEARSEL_A::PRSCH5),
-            6 => Val(PRSCLEARSEL_A::PRSCH6),
-            7 => Val(PRSCLEARSEL_A::PRSCH7),
-            8 => Val(PRSCLEARSEL_A::PRSCH8),
-            9 => Val(PRSCLEARSEL_A::PRSCH9),
-            10 => Val(PRSCLEARSEL_A::PRSCH10),
-            11 => Val(PRSCLEARSEL_A::PRSCH11),
-            i => Res(i),
+            0 => Some(PRSCLEARSEL_A::PRSCH0),
+            1 => Some(PRSCLEARSEL_A::PRSCH1),
+            2 => Some(PRSCLEARSEL_A::PRSCH2),
+            3 => Some(PRSCLEARSEL_A::PRSCH3),
+            4 => Some(PRSCLEARSEL_A::PRSCH4),
+            5 => Some(PRSCLEARSEL_A::PRSCH5),
+            6 => Some(PRSCLEARSEL_A::PRSCH6),
+            7 => Some(PRSCLEARSEL_A::PRSCH7),
+            8 => Some(PRSCLEARSEL_A::PRSCH8),
+            9 => Some(PRSCLEARSEL_A::PRSCH9),
+            10 => Some(PRSCLEARSEL_A::PRSCH10),
+            11 => Some(PRSCLEARSEL_A::PRSCH11),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
@@ -521,16 +518,10 @@ impl PRSCLEARSEL_R {
         *self == PRSCLEARSEL_A::PRSCH11
     }
 }
-#[doc = "Write proxy for field `PRSCLEARSEL`"]
-pub struct PRSCLEARSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSCLEARSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRSCLEARSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `PRSCLEARSEL` writer - PRS Clear Select"]
+pub type PRSCLEARSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PRSSEL_SPEC, u8, PRSCLEARSEL_A, 4, O>;
+impl<'a, const O: u8> PRSCLEARSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -591,15 +582,11 @@ impl<'a> PRSCLEARSEL_W<'a> {
     pub fn prsch11(self) -> &'a mut W {
         self.variant(PRSCLEARSEL_A::PRSCH11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
-        self.w
-    }
 }
+#[doc = "Field `PRSSTARTMODE` reader - PRS Start Mode"]
+pub type PRSSTARTMODE_R = crate::FieldReader<u8, PRSSTARTMODE_A>;
 #[doc = "PRS Start Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSTARTMODE_A {
     #[doc = "0: PRS cannot start the LETIMER"]
@@ -617,10 +604,8 @@ impl From<PRSSTARTMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRSSTARTMODE`"]
-pub type PRSSTARTMODE_R = crate::R<u8, PRSSTARTMODE_A>;
 impl PRSSTARTMODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRSSTARTMODE_A {
         match self.bits {
@@ -652,18 +637,10 @@ impl PRSSTARTMODE_R {
         *self == PRSSTARTMODE_A::BOTH
     }
 }
-#[doc = "Write proxy for field `PRSSTARTMODE`"]
-pub struct PRSSTARTMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSSTARTMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRSSTARTMODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `PRSSTARTMODE` writer - PRS Start Mode"]
+pub type PRSSTARTMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PRSSEL_SPEC, u8, PRSSTARTMODE_A, 2, O>;
+impl<'a, const O: u8> PRSSTARTMODE_W<'a, O> {
     #[doc = "PRS cannot start the LETIMER"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -684,15 +661,11 @@ impl<'a> PRSSTARTMODE_W<'a> {
     pub fn both(self) -> &'a mut W {
         self.variant(PRSSTARTMODE_A::BOTH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
-        self.w
-    }
 }
+#[doc = "Field `PRSSTOPMODE` reader - PRS Stop Mode"]
+pub type PRSSTOPMODE_R = crate::FieldReader<u8, PRSSTOPMODE_A>;
 #[doc = "PRS Stop Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSTOPMODE_A {
     #[doc = "0: PRS cannot stop the LETIMER"]
@@ -710,10 +683,8 @@ impl From<PRSSTOPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRSSTOPMODE`"]
-pub type PRSSTOPMODE_R = crate::R<u8, PRSSTOPMODE_A>;
 impl PRSSTOPMODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRSSTOPMODE_A {
         match self.bits {
@@ -745,18 +716,10 @@ impl PRSSTOPMODE_R {
         *self == PRSSTOPMODE_A::BOTH
     }
 }
-#[doc = "Write proxy for field `PRSSTOPMODE`"]
-pub struct PRSSTOPMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSSTOPMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRSSTOPMODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `PRSSTOPMODE` writer - PRS Stop Mode"]
+pub type PRSSTOPMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PRSSEL_SPEC, u8, PRSSTOPMODE_A, 2, O>;
+impl<'a, const O: u8> PRSSTOPMODE_W<'a, O> {
     #[doc = "PRS cannot stop the LETIMER"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -777,15 +740,11 @@ impl<'a> PRSSTOPMODE_W<'a> {
     pub fn both(self) -> &'a mut W {
         self.variant(PRSSTOPMODE_A::BOTH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
-        self.w
-    }
 }
+#[doc = "Field `PRSCLEARMODE` reader - PRS Clear Mode"]
+pub type PRSCLEARMODE_R = crate::FieldReader<u8, PRSCLEARMODE_A>;
 #[doc = "PRS Clear Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSCLEARMODE_A {
     #[doc = "0: PRS cannot clear the LETIMER"]
@@ -803,10 +762,8 @@ impl From<PRSCLEARMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRSCLEARMODE`"]
-pub type PRSCLEARMODE_R = crate::R<u8, PRSCLEARMODE_A>;
 impl PRSCLEARMODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRSCLEARMODE_A {
         match self.bits {
@@ -838,18 +795,10 @@ impl PRSCLEARMODE_R {
         *self == PRSCLEARMODE_A::BOTH
     }
 }
-#[doc = "Write proxy for field `PRSCLEARMODE`"]
-pub struct PRSCLEARMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSCLEARMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRSCLEARMODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `PRSCLEARMODE` writer - PRS Clear Mode"]
+pub type PRSCLEARMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PRSSEL_SPEC, u8, PRSCLEARMODE_A, 2, O>;
+impl<'a, const O: u8> PRSCLEARMODE_W<'a, O> {
     #[doc = "PRS cannot clear the LETIMER"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -869,12 +818,6 @@ impl<'a> PRSCLEARMODE_W<'a> {
     #[inline(always)]
     pub fn both(self) -> &'a mut W {
         self.variant(PRSCLEARMODE_A::BOTH)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
-        self.w
     }
 }
 impl R {
@@ -896,48 +839,79 @@ impl R {
     #[doc = "Bits 18:19 - PRS Start Mode"]
     #[inline(always)]
     pub fn prsstartmode(&self) -> PRSSTARTMODE_R {
-        PRSSTARTMODE_R::new(((self.bits >> 18) & 0x03) as u8)
+        PRSSTARTMODE_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 22:23 - PRS Stop Mode"]
     #[inline(always)]
     pub fn prsstopmode(&self) -> PRSSTOPMODE_R {
-        PRSSTOPMODE_R::new(((self.bits >> 22) & 0x03) as u8)
+        PRSSTOPMODE_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 26:27 - PRS Clear Mode"]
     #[inline(always)]
     pub fn prsclearmode(&self) -> PRSCLEARMODE_R {
-        PRSCLEARMODE_R::new(((self.bits >> 26) & 0x03) as u8)
+        PRSCLEARMODE_R::new(((self.bits >> 26) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - PRS Start Select"]
     #[inline(always)]
-    pub fn prsstartsel(&mut self) -> PRSSTARTSEL_W {
-        PRSSTARTSEL_W { w: self }
+    #[must_use]
+    pub fn prsstartsel(&mut self) -> PRSSTARTSEL_W<0> {
+        PRSSTARTSEL_W::new(self)
     }
     #[doc = "Bits 6:9 - PRS Stop Select"]
     #[inline(always)]
-    pub fn prsstopsel(&mut self) -> PRSSTOPSEL_W {
-        PRSSTOPSEL_W { w: self }
+    #[must_use]
+    pub fn prsstopsel(&mut self) -> PRSSTOPSEL_W<6> {
+        PRSSTOPSEL_W::new(self)
     }
     #[doc = "Bits 12:15 - PRS Clear Select"]
     #[inline(always)]
-    pub fn prsclearsel(&mut self) -> PRSCLEARSEL_W {
-        PRSCLEARSEL_W { w: self }
+    #[must_use]
+    pub fn prsclearsel(&mut self) -> PRSCLEARSEL_W<12> {
+        PRSCLEARSEL_W::new(self)
     }
     #[doc = "Bits 18:19 - PRS Start Mode"]
     #[inline(always)]
-    pub fn prsstartmode(&mut self) -> PRSSTARTMODE_W {
-        PRSSTARTMODE_W { w: self }
+    #[must_use]
+    pub fn prsstartmode(&mut self) -> PRSSTARTMODE_W<18> {
+        PRSSTARTMODE_W::new(self)
     }
     #[doc = "Bits 22:23 - PRS Stop Mode"]
     #[inline(always)]
-    pub fn prsstopmode(&mut self) -> PRSSTOPMODE_W {
-        PRSSTOPMODE_W { w: self }
+    #[must_use]
+    pub fn prsstopmode(&mut self) -> PRSSTOPMODE_W<22> {
+        PRSSTOPMODE_W::new(self)
     }
     #[doc = "Bits 26:27 - PRS Clear Mode"]
     #[inline(always)]
-    pub fn prsclearmode(&mut self) -> PRSCLEARMODE_W {
-        PRSCLEARMODE_W { w: self }
+    #[must_use]
+    pub fn prsclearmode(&mut self) -> PRSCLEARMODE_W<26> {
+        PRSCLEARMODE_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PRS Input Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prssel](index.html) module"]
+pub struct PRSSEL_SPEC;
+impl crate::RegisterSpec for PRSSEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [prssel::R](R) reader structure"]
+impl crate::Readable for PRSSEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [prssel::W](W) writer structure"]
+impl crate::Writable for PRSSEL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets PRSSEL to value 0"]
+impl crate::Resettable for PRSSEL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

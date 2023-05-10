@@ -1,7 +1,22 @@
-#[doc = "Reader of register HFCLKSTATUS"]
-pub type R = crate::R<u32, super::HFCLKSTATUS>;
+#[doc = "Register `HFCLKSTATUS` reader"]
+pub struct R(crate::R<HFCLKSTATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HFCLKSTATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<HFCLKSTATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<HFCLKSTATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `SELECTED` reader - HFCLK Selected"]
+pub type SELECTED_R = crate::FieldReader<u8, SELECTED_A>;
 #[doc = "HFCLK Selected\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELECTED_A {
     #[doc = "1: HFRCO is selected as HFCLK clock source"]
@@ -19,19 +34,16 @@ impl From<SELECTED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SELECTED`"]
-pub type SELECTED_R = crate::R<u8, SELECTED_A>;
 impl SELECTED_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SELECTED_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SELECTED_A> {
         match self.bits {
-            1 => Val(SELECTED_A::HFRCO),
-            2 => Val(SELECTED_A::HFXO),
-            3 => Val(SELECTED_A::LFRCO),
-            4 => Val(SELECTED_A::LFXO),
-            i => Res(i),
+            1 => Some(SELECTED_A::HFRCO),
+            2 => Some(SELECTED_A::HFXO),
+            3 => Some(SELECTED_A::LFRCO),
+            4 => Some(SELECTED_A::LFXO),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `HFRCO`"]
@@ -59,6 +71,19 @@ impl R {
     #[doc = "Bits 0:2 - HFCLK Selected"]
     #[inline(always)]
     pub fn selected(&self) -> SELECTED_R {
-        SELECTED_R::new((self.bits & 0x07) as u8)
+        SELECTED_R::new((self.bits & 7) as u8)
     }
+}
+#[doc = "HFCLK Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfclkstatus](index.html) module"]
+pub struct HFCLKSTATUS_SPEC;
+impl crate::RegisterSpec for HFCLKSTATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [hfclkstatus::R](R) reader structure"]
+impl crate::Readable for HFCLKSTATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets HFCLKSTATUS to value 0x01"]
+impl crate::Resettable for HFCLKSTATUS_SPEC {
+    const RESET_VALUE: Self::Ux = 0x01;
 }

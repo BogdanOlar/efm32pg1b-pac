@@ -1,40 +1,80 @@
-#[doc = "Reader of register CH6_SRC"]
-pub type R = crate::R<u32, super::CH6_SRC>;
-#[doc = "Writer for register CH6_SRC"]
-pub type W = crate::W<u32, super::CH6_SRC>;
-#[doc = "Register CH6_SRC `reset()`'s with value 0"]
-impl crate::ResetValue for super::CH6_SRC {
-    type Type = u32;
+#[doc = "Register `CH6_SRC` reader"]
+pub struct R(crate::R<CH6_SRC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CH6_SRC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SRCADDR`"]
-pub type SRCADDR_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `SRCADDR`"]
-pub struct SRCADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRCADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CH6_SRC_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
-        self.w
+    fn from(reader: crate::R<CH6_SRC_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `CH6_SRC` writer"]
+pub struct W(crate::W<CH6_SRC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CH6_SRC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CH6_SRC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CH6_SRC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SRCADDR` reader - Source Data Address"]
+pub type SRCADDR_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `SRCADDR` writer - Source Data Address"]
+pub type SRCADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH6_SRC_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Source Data Address"]
     #[inline(always)]
     pub fn srcaddr(&self) -> SRCADDR_R {
-        SRCADDR_R::new((self.bits & 0xffff_ffff) as u32)
+        SRCADDR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Source Data Address"]
     #[inline(always)]
-    pub fn srcaddr(&mut self) -> SRCADDR_W {
-        SRCADDR_W { w: self }
+    #[must_use]
+    pub fn srcaddr(&mut self) -> SRCADDR_W<0> {
+        SRCADDR_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Descriptor Source Data Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch6_src](index.html) module"]
+pub struct CH6_SRC_SPEC;
+impl crate::RegisterSpec for CH6_SRC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ch6_src::R](R) reader structure"]
+impl crate::Readable for CH6_SRC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ch6_src::W](W) writer structure"]
+impl crate::Writable for CH6_SRC_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CH6_SRC to value 0"]
+impl crate::Resettable for CH6_SRC_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

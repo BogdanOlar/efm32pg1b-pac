@@ -1,17 +1,43 @@
-#[doc = "Reader of register ROUTELOC0"]
-pub type R = crate::R<u32, super::ROUTELOC0>;
-#[doc = "Writer for register ROUTELOC0"]
-pub type W = crate::W<u32, super::ROUTELOC0>;
-#[doc = "Register ROUTELOC0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ROUTELOC0 {
-    type Type = u32;
+#[doc = "Register `ROUTELOC0` reader"]
+pub struct R(crate::R<ROUTELOC0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ROUTELOC0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ROUTELOC0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ROUTELOC0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ROUTELOC0` writer"]
+pub struct W(crate::W<ROUTELOC0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ROUTELOC0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ROUTELOC0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ROUTELOC0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CC0LOC` reader - I/O Location"]
+pub type CC0LOC_R = crate::FieldReader<u8, CC0LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CC0LOC_A {
     #[doc = "0: Location 0"]
@@ -85,47 +111,44 @@ impl From<CC0LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CC0LOC`"]
-pub type CC0LOC_R = crate::R<u8, CC0LOC_A>;
 impl CC0LOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CC0LOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CC0LOC_A> {
         match self.bits {
-            0 => Val(CC0LOC_A::LOC0),
-            1 => Val(CC0LOC_A::LOC1),
-            2 => Val(CC0LOC_A::LOC2),
-            3 => Val(CC0LOC_A::LOC3),
-            4 => Val(CC0LOC_A::LOC4),
-            5 => Val(CC0LOC_A::LOC5),
-            6 => Val(CC0LOC_A::LOC6),
-            7 => Val(CC0LOC_A::LOC7),
-            8 => Val(CC0LOC_A::LOC8),
-            9 => Val(CC0LOC_A::LOC9),
-            10 => Val(CC0LOC_A::LOC10),
-            11 => Val(CC0LOC_A::LOC11),
-            12 => Val(CC0LOC_A::LOC12),
-            13 => Val(CC0LOC_A::LOC13),
-            14 => Val(CC0LOC_A::LOC14),
-            15 => Val(CC0LOC_A::LOC15),
-            16 => Val(CC0LOC_A::LOC16),
-            17 => Val(CC0LOC_A::LOC17),
-            18 => Val(CC0LOC_A::LOC18),
-            19 => Val(CC0LOC_A::LOC19),
-            20 => Val(CC0LOC_A::LOC20),
-            21 => Val(CC0LOC_A::LOC21),
-            22 => Val(CC0LOC_A::LOC22),
-            23 => Val(CC0LOC_A::LOC23),
-            24 => Val(CC0LOC_A::LOC24),
-            25 => Val(CC0LOC_A::LOC25),
-            26 => Val(CC0LOC_A::LOC26),
-            27 => Val(CC0LOC_A::LOC27),
-            28 => Val(CC0LOC_A::LOC28),
-            29 => Val(CC0LOC_A::LOC29),
-            30 => Val(CC0LOC_A::LOC30),
-            31 => Val(CC0LOC_A::LOC31),
-            i => Res(i),
+            0 => Some(CC0LOC_A::LOC0),
+            1 => Some(CC0LOC_A::LOC1),
+            2 => Some(CC0LOC_A::LOC2),
+            3 => Some(CC0LOC_A::LOC3),
+            4 => Some(CC0LOC_A::LOC4),
+            5 => Some(CC0LOC_A::LOC5),
+            6 => Some(CC0LOC_A::LOC6),
+            7 => Some(CC0LOC_A::LOC7),
+            8 => Some(CC0LOC_A::LOC8),
+            9 => Some(CC0LOC_A::LOC9),
+            10 => Some(CC0LOC_A::LOC10),
+            11 => Some(CC0LOC_A::LOC11),
+            12 => Some(CC0LOC_A::LOC12),
+            13 => Some(CC0LOC_A::LOC13),
+            14 => Some(CC0LOC_A::LOC14),
+            15 => Some(CC0LOC_A::LOC15),
+            16 => Some(CC0LOC_A::LOC16),
+            17 => Some(CC0LOC_A::LOC17),
+            18 => Some(CC0LOC_A::LOC18),
+            19 => Some(CC0LOC_A::LOC19),
+            20 => Some(CC0LOC_A::LOC20),
+            21 => Some(CC0LOC_A::LOC21),
+            22 => Some(CC0LOC_A::LOC22),
+            23 => Some(CC0LOC_A::LOC23),
+            24 => Some(CC0LOC_A::LOC24),
+            25 => Some(CC0LOC_A::LOC25),
+            26 => Some(CC0LOC_A::LOC26),
+            27 => Some(CC0LOC_A::LOC27),
+            28 => Some(CC0LOC_A::LOC28),
+            29 => Some(CC0LOC_A::LOC29),
+            30 => Some(CC0LOC_A::LOC30),
+            31 => Some(CC0LOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -289,16 +312,10 @@ impl CC0LOC_R {
         *self == CC0LOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `CC0LOC`"]
-pub struct CC0LOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC0LOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CC0LOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CC0LOC` writer - I/O Location"]
+pub type CC0LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CC0LOC_A, 6, O>;
+impl<'a, const O: u8> CC0LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -459,15 +476,11 @@ impl<'a> CC0LOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(CC0LOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
-        self.w
-    }
 }
+#[doc = "Field `CC1LOC` reader - I/O Location"]
+pub type CC1LOC_R = crate::FieldReader<u8, CC1LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CC1LOC_A {
     #[doc = "0: Location 0"]
@@ -541,47 +554,44 @@ impl From<CC1LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CC1LOC`"]
-pub type CC1LOC_R = crate::R<u8, CC1LOC_A>;
 impl CC1LOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CC1LOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CC1LOC_A> {
         match self.bits {
-            0 => Val(CC1LOC_A::LOC0),
-            1 => Val(CC1LOC_A::LOC1),
-            2 => Val(CC1LOC_A::LOC2),
-            3 => Val(CC1LOC_A::LOC3),
-            4 => Val(CC1LOC_A::LOC4),
-            5 => Val(CC1LOC_A::LOC5),
-            6 => Val(CC1LOC_A::LOC6),
-            7 => Val(CC1LOC_A::LOC7),
-            8 => Val(CC1LOC_A::LOC8),
-            9 => Val(CC1LOC_A::LOC9),
-            10 => Val(CC1LOC_A::LOC10),
-            11 => Val(CC1LOC_A::LOC11),
-            12 => Val(CC1LOC_A::LOC12),
-            13 => Val(CC1LOC_A::LOC13),
-            14 => Val(CC1LOC_A::LOC14),
-            15 => Val(CC1LOC_A::LOC15),
-            16 => Val(CC1LOC_A::LOC16),
-            17 => Val(CC1LOC_A::LOC17),
-            18 => Val(CC1LOC_A::LOC18),
-            19 => Val(CC1LOC_A::LOC19),
-            20 => Val(CC1LOC_A::LOC20),
-            21 => Val(CC1LOC_A::LOC21),
-            22 => Val(CC1LOC_A::LOC22),
-            23 => Val(CC1LOC_A::LOC23),
-            24 => Val(CC1LOC_A::LOC24),
-            25 => Val(CC1LOC_A::LOC25),
-            26 => Val(CC1LOC_A::LOC26),
-            27 => Val(CC1LOC_A::LOC27),
-            28 => Val(CC1LOC_A::LOC28),
-            29 => Val(CC1LOC_A::LOC29),
-            30 => Val(CC1LOC_A::LOC30),
-            31 => Val(CC1LOC_A::LOC31),
-            i => Res(i),
+            0 => Some(CC1LOC_A::LOC0),
+            1 => Some(CC1LOC_A::LOC1),
+            2 => Some(CC1LOC_A::LOC2),
+            3 => Some(CC1LOC_A::LOC3),
+            4 => Some(CC1LOC_A::LOC4),
+            5 => Some(CC1LOC_A::LOC5),
+            6 => Some(CC1LOC_A::LOC6),
+            7 => Some(CC1LOC_A::LOC7),
+            8 => Some(CC1LOC_A::LOC8),
+            9 => Some(CC1LOC_A::LOC9),
+            10 => Some(CC1LOC_A::LOC10),
+            11 => Some(CC1LOC_A::LOC11),
+            12 => Some(CC1LOC_A::LOC12),
+            13 => Some(CC1LOC_A::LOC13),
+            14 => Some(CC1LOC_A::LOC14),
+            15 => Some(CC1LOC_A::LOC15),
+            16 => Some(CC1LOC_A::LOC16),
+            17 => Some(CC1LOC_A::LOC17),
+            18 => Some(CC1LOC_A::LOC18),
+            19 => Some(CC1LOC_A::LOC19),
+            20 => Some(CC1LOC_A::LOC20),
+            21 => Some(CC1LOC_A::LOC21),
+            22 => Some(CC1LOC_A::LOC22),
+            23 => Some(CC1LOC_A::LOC23),
+            24 => Some(CC1LOC_A::LOC24),
+            25 => Some(CC1LOC_A::LOC25),
+            26 => Some(CC1LOC_A::LOC26),
+            27 => Some(CC1LOC_A::LOC27),
+            28 => Some(CC1LOC_A::LOC28),
+            29 => Some(CC1LOC_A::LOC29),
+            30 => Some(CC1LOC_A::LOC30),
+            31 => Some(CC1LOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -745,16 +755,10 @@ impl CC1LOC_R {
         *self == CC1LOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `CC1LOC`"]
-pub struct CC1LOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1LOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CC1LOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CC1LOC` writer - I/O Location"]
+pub type CC1LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CC1LOC_A, 6, O>;
+impl<'a, const O: u8> CC1LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -915,15 +919,11 @@ impl<'a> CC1LOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(CC1LOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
-        self.w
-    }
 }
+#[doc = "Field `CC2LOC` reader - I/O Location"]
+pub type CC2LOC_R = crate::FieldReader<u8, CC2LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CC2LOC_A {
     #[doc = "0: Location 0"]
@@ -997,47 +997,44 @@ impl From<CC2LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CC2LOC`"]
-pub type CC2LOC_R = crate::R<u8, CC2LOC_A>;
 impl CC2LOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CC2LOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CC2LOC_A> {
         match self.bits {
-            0 => Val(CC2LOC_A::LOC0),
-            1 => Val(CC2LOC_A::LOC1),
-            2 => Val(CC2LOC_A::LOC2),
-            3 => Val(CC2LOC_A::LOC3),
-            4 => Val(CC2LOC_A::LOC4),
-            5 => Val(CC2LOC_A::LOC5),
-            6 => Val(CC2LOC_A::LOC6),
-            7 => Val(CC2LOC_A::LOC7),
-            8 => Val(CC2LOC_A::LOC8),
-            9 => Val(CC2LOC_A::LOC9),
-            10 => Val(CC2LOC_A::LOC10),
-            11 => Val(CC2LOC_A::LOC11),
-            12 => Val(CC2LOC_A::LOC12),
-            13 => Val(CC2LOC_A::LOC13),
-            14 => Val(CC2LOC_A::LOC14),
-            15 => Val(CC2LOC_A::LOC15),
-            16 => Val(CC2LOC_A::LOC16),
-            17 => Val(CC2LOC_A::LOC17),
-            18 => Val(CC2LOC_A::LOC18),
-            19 => Val(CC2LOC_A::LOC19),
-            20 => Val(CC2LOC_A::LOC20),
-            21 => Val(CC2LOC_A::LOC21),
-            22 => Val(CC2LOC_A::LOC22),
-            23 => Val(CC2LOC_A::LOC23),
-            24 => Val(CC2LOC_A::LOC24),
-            25 => Val(CC2LOC_A::LOC25),
-            26 => Val(CC2LOC_A::LOC26),
-            27 => Val(CC2LOC_A::LOC27),
-            28 => Val(CC2LOC_A::LOC28),
-            29 => Val(CC2LOC_A::LOC29),
-            30 => Val(CC2LOC_A::LOC30),
-            31 => Val(CC2LOC_A::LOC31),
-            i => Res(i),
+            0 => Some(CC2LOC_A::LOC0),
+            1 => Some(CC2LOC_A::LOC1),
+            2 => Some(CC2LOC_A::LOC2),
+            3 => Some(CC2LOC_A::LOC3),
+            4 => Some(CC2LOC_A::LOC4),
+            5 => Some(CC2LOC_A::LOC5),
+            6 => Some(CC2LOC_A::LOC6),
+            7 => Some(CC2LOC_A::LOC7),
+            8 => Some(CC2LOC_A::LOC8),
+            9 => Some(CC2LOC_A::LOC9),
+            10 => Some(CC2LOC_A::LOC10),
+            11 => Some(CC2LOC_A::LOC11),
+            12 => Some(CC2LOC_A::LOC12),
+            13 => Some(CC2LOC_A::LOC13),
+            14 => Some(CC2LOC_A::LOC14),
+            15 => Some(CC2LOC_A::LOC15),
+            16 => Some(CC2LOC_A::LOC16),
+            17 => Some(CC2LOC_A::LOC17),
+            18 => Some(CC2LOC_A::LOC18),
+            19 => Some(CC2LOC_A::LOC19),
+            20 => Some(CC2LOC_A::LOC20),
+            21 => Some(CC2LOC_A::LOC21),
+            22 => Some(CC2LOC_A::LOC22),
+            23 => Some(CC2LOC_A::LOC23),
+            24 => Some(CC2LOC_A::LOC24),
+            25 => Some(CC2LOC_A::LOC25),
+            26 => Some(CC2LOC_A::LOC26),
+            27 => Some(CC2LOC_A::LOC27),
+            28 => Some(CC2LOC_A::LOC28),
+            29 => Some(CC2LOC_A::LOC29),
+            30 => Some(CC2LOC_A::LOC30),
+            31 => Some(CC2LOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -1201,16 +1198,10 @@ impl CC2LOC_R {
         *self == CC2LOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `CC2LOC`"]
-pub struct CC2LOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC2LOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CC2LOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CC2LOC` writer - I/O Location"]
+pub type CC2LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CC2LOC_A, 6, O>;
+impl<'a, const O: u8> CC2LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -1371,15 +1362,11 @@ impl<'a> CC2LOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(CC2LOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
-        self.w
-    }
 }
+#[doc = "Field `CC3LOC` reader - I/O Location"]
+pub type CC3LOC_R = crate::FieldReader<u8, CC3LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CC3LOC_A {
     #[doc = "0: Location 0"]
@@ -1453,47 +1440,44 @@ impl From<CC3LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CC3LOC`"]
-pub type CC3LOC_R = crate::R<u8, CC3LOC_A>;
 impl CC3LOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CC3LOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CC3LOC_A> {
         match self.bits {
-            0 => Val(CC3LOC_A::LOC0),
-            1 => Val(CC3LOC_A::LOC1),
-            2 => Val(CC3LOC_A::LOC2),
-            3 => Val(CC3LOC_A::LOC3),
-            4 => Val(CC3LOC_A::LOC4),
-            5 => Val(CC3LOC_A::LOC5),
-            6 => Val(CC3LOC_A::LOC6),
-            7 => Val(CC3LOC_A::LOC7),
-            8 => Val(CC3LOC_A::LOC8),
-            9 => Val(CC3LOC_A::LOC9),
-            10 => Val(CC3LOC_A::LOC10),
-            11 => Val(CC3LOC_A::LOC11),
-            12 => Val(CC3LOC_A::LOC12),
-            13 => Val(CC3LOC_A::LOC13),
-            14 => Val(CC3LOC_A::LOC14),
-            15 => Val(CC3LOC_A::LOC15),
-            16 => Val(CC3LOC_A::LOC16),
-            17 => Val(CC3LOC_A::LOC17),
-            18 => Val(CC3LOC_A::LOC18),
-            19 => Val(CC3LOC_A::LOC19),
-            20 => Val(CC3LOC_A::LOC20),
-            21 => Val(CC3LOC_A::LOC21),
-            22 => Val(CC3LOC_A::LOC22),
-            23 => Val(CC3LOC_A::LOC23),
-            24 => Val(CC3LOC_A::LOC24),
-            25 => Val(CC3LOC_A::LOC25),
-            26 => Val(CC3LOC_A::LOC26),
-            27 => Val(CC3LOC_A::LOC27),
-            28 => Val(CC3LOC_A::LOC28),
-            29 => Val(CC3LOC_A::LOC29),
-            30 => Val(CC3LOC_A::LOC30),
-            31 => Val(CC3LOC_A::LOC31),
-            i => Res(i),
+            0 => Some(CC3LOC_A::LOC0),
+            1 => Some(CC3LOC_A::LOC1),
+            2 => Some(CC3LOC_A::LOC2),
+            3 => Some(CC3LOC_A::LOC3),
+            4 => Some(CC3LOC_A::LOC4),
+            5 => Some(CC3LOC_A::LOC5),
+            6 => Some(CC3LOC_A::LOC6),
+            7 => Some(CC3LOC_A::LOC7),
+            8 => Some(CC3LOC_A::LOC8),
+            9 => Some(CC3LOC_A::LOC9),
+            10 => Some(CC3LOC_A::LOC10),
+            11 => Some(CC3LOC_A::LOC11),
+            12 => Some(CC3LOC_A::LOC12),
+            13 => Some(CC3LOC_A::LOC13),
+            14 => Some(CC3LOC_A::LOC14),
+            15 => Some(CC3LOC_A::LOC15),
+            16 => Some(CC3LOC_A::LOC16),
+            17 => Some(CC3LOC_A::LOC17),
+            18 => Some(CC3LOC_A::LOC18),
+            19 => Some(CC3LOC_A::LOC19),
+            20 => Some(CC3LOC_A::LOC20),
+            21 => Some(CC3LOC_A::LOC21),
+            22 => Some(CC3LOC_A::LOC22),
+            23 => Some(CC3LOC_A::LOC23),
+            24 => Some(CC3LOC_A::LOC24),
+            25 => Some(CC3LOC_A::LOC25),
+            26 => Some(CC3LOC_A::LOC26),
+            27 => Some(CC3LOC_A::LOC27),
+            28 => Some(CC3LOC_A::LOC28),
+            29 => Some(CC3LOC_A::LOC29),
+            30 => Some(CC3LOC_A::LOC30),
+            31 => Some(CC3LOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -1657,16 +1641,10 @@ impl CC3LOC_R {
         *self == CC3LOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `CC3LOC`"]
-pub struct CC3LOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC3LOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CC3LOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CC3LOC` writer - I/O Location"]
+pub type CC3LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CC3LOC_A, 6, O>;
+impl<'a, const O: u8> CC3LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -1827,12 +1805,6 @@ impl<'a> CC3LOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(CC3LOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
@@ -1859,22 +1831,51 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn cc0loc(&mut self) -> CC0LOC_W {
-        CC0LOC_W { w: self }
+    #[must_use]
+    pub fn cc0loc(&mut self) -> CC0LOC_W<0> {
+        CC0LOC_W::new(self)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn cc1loc(&mut self) -> CC1LOC_W {
-        CC1LOC_W { w: self }
+    #[must_use]
+    pub fn cc1loc(&mut self) -> CC1LOC_W<8> {
+        CC1LOC_W::new(self)
     }
     #[doc = "Bits 16:21 - I/O Location"]
     #[inline(always)]
-    pub fn cc2loc(&mut self) -> CC2LOC_W {
-        CC2LOC_W { w: self }
+    #[must_use]
+    pub fn cc2loc(&mut self) -> CC2LOC_W<16> {
+        CC2LOC_W::new(self)
     }
     #[doc = "Bits 24:29 - I/O Location"]
     #[inline(always)]
-    pub fn cc3loc(&mut self) -> CC3LOC_W {
-        CC3LOC_W { w: self }
+    #[must_use]
+    pub fn cc3loc(&mut self) -> CC3LOC_W<24> {
+        CC3LOC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I/O Routing Location Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routeloc0](index.html) module"]
+pub struct ROUTELOC0_SPEC;
+impl crate::RegisterSpec for ROUTELOC0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [routeloc0::R](R) reader structure"]
+impl crate::Readable for ROUTELOC0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [routeloc0::W](W) writer structure"]
+impl crate::Writable for ROUTELOC0_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets ROUTELOC0 to value 0"]
+impl crate::Resettable for ROUTELOC0_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,137 +1,63 @@
-#[doc = "Reader of register READCTRL"]
-pub type R = crate::R<u32, super::READCTRL>;
-#[doc = "Writer for register READCTRL"]
-pub type W = crate::W<u32, super::READCTRL>;
-#[doc = "Register READCTRL `reset()`'s with value 0x0100_0100"]
-impl crate::ResetValue for super::READCTRL {
-    type Type = u32;
+#[doc = "Register `READCTRL` reader"]
+pub struct R(crate::R<READCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<READCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0100_0100
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `IFCDIS`"]
-pub type IFCDIS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IFCDIS`"]
-pub struct IFCDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IFCDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<READCTRL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(reader: crate::R<READCTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `AIDIS`"]
-pub type AIDIS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AIDIS`"]
-pub struct AIDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AIDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `READCTRL` writer"]
+pub struct W(crate::W<READCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<READCTRL_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ICCDIS`"]
-pub type ICCDIS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ICCDIS`"]
-pub struct ICCDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICCDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `PREFETCH`"]
-pub type PREFETCH_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PREFETCH`"]
-pub struct PREFETCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PREFETCH_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<READCTRL_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
+    fn from(writer: crate::W<READCTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `USEHPROT`"]
-pub type USEHPROT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `USEHPROT`"]
-pub struct USEHPROT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USEHPROT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
-    }
-}
+#[doc = "Field `IFCDIS` reader - Internal Flash Cache Disable"]
+pub type IFCDIS_R = crate::BitReader<bool>;
+#[doc = "Field `IFCDIS` writer - Internal Flash Cache Disable"]
+pub type IFCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+#[doc = "Field `AIDIS` reader - Automatic Invalidate Disable"]
+pub type AIDIS_R = crate::BitReader<bool>;
+#[doc = "Field `AIDIS` writer - Automatic Invalidate Disable"]
+pub type AIDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+#[doc = "Field `ICCDIS` reader - Interrupt Context Cache Disable"]
+pub type ICCDIS_R = crate::BitReader<bool>;
+#[doc = "Field `ICCDIS` writer - Interrupt Context Cache Disable"]
+pub type ICCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+#[doc = "Field `PREFETCH` reader - Prefetch Mode"]
+pub type PREFETCH_R = crate::BitReader<bool>;
+#[doc = "Field `PREFETCH` writer - Prefetch Mode"]
+pub type PREFETCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+#[doc = "Field `USEHPROT` reader - AHB_HPROT Mode"]
+pub type USEHPROT_R = crate::BitReader<bool>;
+#[doc = "Field `USEHPROT` writer - AHB_HPROT Mode"]
+pub type USEHPROT_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+#[doc = "Field `MODE` reader - Read Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Read Mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Zero wait-states inserted in fetch or read transfers"]
@@ -145,17 +71,14 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE`"]
-pub type MODE_R = crate::R<u8, MODE_A>;
 impl MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, MODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<MODE_A> {
         match self.bits {
-            0 => Val(MODE_A::WS0),
-            1 => Val(MODE_A::WS1),
-            i => Res(i),
+            0 => Some(MODE_A::WS0),
+            1 => Some(MODE_A::WS1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `WS0`"]
@@ -169,16 +92,9 @@ impl MODE_R {
         *self == MODE_A::WS1
     }
 }
-#[doc = "Write proxy for field `MODE`"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `MODE` writer - Read Mode"]
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, READCTRL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Zero wait-states inserted in fetch or read transfers"]
     #[inline(always)]
     pub fn ws0(self) -> &'a mut W {
@@ -189,108 +105,114 @@ impl<'a> MODE_W<'a> {
     pub fn ws1(self) -> &'a mut W {
         self.variant(MODE_A::WS1)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
-        self.w
-    }
 }
-#[doc = "Reader of field `SCBTP`"]
-pub type SCBTP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCBTP`"]
-pub struct SCBTP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCBTP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-        self.w
-    }
-}
+#[doc = "Field `SCBTP` reader - Suppress Conditional Branch Target Perfetch"]
+pub type SCBTP_R = crate::BitReader<bool>;
+#[doc = "Field `SCBTP` writer - Suppress Conditional Branch Target Perfetch"]
+pub type SCBTP_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 3 - Internal Flash Cache Disable"]
     #[inline(always)]
     pub fn ifcdis(&self) -> IFCDIS_R {
-        IFCDIS_R::new(((self.bits >> 3) & 0x01) != 0)
+        IFCDIS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Automatic Invalidate Disable"]
     #[inline(always)]
     pub fn aidis(&self) -> AIDIS_R {
-        AIDIS_R::new(((self.bits >> 4) & 0x01) != 0)
+        AIDIS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Interrupt Context Cache Disable"]
     #[inline(always)]
     pub fn iccdis(&self) -> ICCDIS_R {
-        ICCDIS_R::new(((self.bits >> 5) & 0x01) != 0)
+        ICCDIS_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 8 - Prefetch Mode"]
     #[inline(always)]
     pub fn prefetch(&self) -> PREFETCH_R {
-        PREFETCH_R::new(((self.bits >> 8) & 0x01) != 0)
+        PREFETCH_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - AHB_HPROT Mode"]
     #[inline(always)]
     pub fn usehprot(&self) -> USEHPROT_R {
-        USEHPROT_R::new(((self.bits >> 9) & 0x01) != 0)
+        USEHPROT_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 24:25 - Read Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 24) & 0x03) as u8)
+        MODE_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bit 28 - Suppress Conditional Branch Target Perfetch"]
     #[inline(always)]
     pub fn scbtp(&self) -> SCBTP_R {
-        SCBTP_R::new(((self.bits >> 28) & 0x01) != 0)
+        SCBTP_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 3 - Internal Flash Cache Disable"]
     #[inline(always)]
-    pub fn ifcdis(&mut self) -> IFCDIS_W {
-        IFCDIS_W { w: self }
+    #[must_use]
+    pub fn ifcdis(&mut self) -> IFCDIS_W<3> {
+        IFCDIS_W::new(self)
     }
     #[doc = "Bit 4 - Automatic Invalidate Disable"]
     #[inline(always)]
-    pub fn aidis(&mut self) -> AIDIS_W {
-        AIDIS_W { w: self }
+    #[must_use]
+    pub fn aidis(&mut self) -> AIDIS_W<4> {
+        AIDIS_W::new(self)
     }
     #[doc = "Bit 5 - Interrupt Context Cache Disable"]
     #[inline(always)]
-    pub fn iccdis(&mut self) -> ICCDIS_W {
-        ICCDIS_W { w: self }
+    #[must_use]
+    pub fn iccdis(&mut self) -> ICCDIS_W<5> {
+        ICCDIS_W::new(self)
     }
     #[doc = "Bit 8 - Prefetch Mode"]
     #[inline(always)]
-    pub fn prefetch(&mut self) -> PREFETCH_W {
-        PREFETCH_W { w: self }
+    #[must_use]
+    pub fn prefetch(&mut self) -> PREFETCH_W<8> {
+        PREFETCH_W::new(self)
     }
     #[doc = "Bit 9 - AHB_HPROT Mode"]
     #[inline(always)]
-    pub fn usehprot(&mut self) -> USEHPROT_W {
-        USEHPROT_W { w: self }
+    #[must_use]
+    pub fn usehprot(&mut self) -> USEHPROT_W<9> {
+        USEHPROT_W::new(self)
     }
     #[doc = "Bits 24:25 - Read Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<24> {
+        MODE_W::new(self)
     }
     #[doc = "Bit 28 - Suppress Conditional Branch Target Perfetch"]
     #[inline(always)]
-    pub fn scbtp(&mut self) -> SCBTP_W {
-        SCBTP_W { w: self }
+    #[must_use]
+    pub fn scbtp(&mut self) -> SCBTP_W<28> {
+        SCBTP_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Read Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [readctrl](index.html) module"]
+pub struct READCTRL_SPEC;
+impl crate::RegisterSpec for READCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [readctrl::R](R) reader structure"]
+impl crate::Readable for READCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [readctrl::W](W) writer structure"]
+impl crate::Writable for READCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets READCTRL to value 0x0100_0100"]
+impl crate::Resettable for READCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0x0100_0100;
 }

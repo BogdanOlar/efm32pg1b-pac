@@ -1,99 +1,63 @@
-#[doc = "Reader of register CC2_TIME"]
-pub type R = crate::R<u32, super::CC2_TIME>;
-#[doc = "Writer for register CC2_TIME"]
-pub type W = crate::W<u32, super::CC2_TIME>;
-#[doc = "Register CC2_TIME `reset()`'s with value 0"]
-impl crate::ResetValue for super::CC2_TIME {
-    type Type = u32;
+#[doc = "Register `CC2_TIME` reader"]
+pub struct R(crate::R<CC2_TIME_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CC2_TIME_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SECU`"]
-pub type SECU_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SECU`"]
-pub struct SECU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SECU_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CC2_TIME_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
+    fn from(reader: crate::R<CC2_TIME_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `SECT`"]
-pub type SECT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SECT`"]
-pub struct SECT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SECT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `CC2_TIME` writer"]
+pub struct W(crate::W<CC2_TIME_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CC2_TIME_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `MINU`"]
-pub type MINU_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `MINU`"]
-pub struct MINU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MINU_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `MINT`"]
-pub type MINT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `MINT`"]
-pub struct MINT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MINT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::W<CC2_TIME_SPEC>> for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
-        self.w
+    fn from(writer: crate::W<CC2_TIME_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `HOURU`"]
-pub type HOURU_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `HOURU`"]
-pub struct HOURU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOURU_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `HOURT`"]
-pub type HOURT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `HOURT`"]
-pub struct HOURT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOURT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
-        self.w
-    }
-}
+#[doc = "Field `SECU` reader - Seconds, Units"]
+pub type SECU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SECU` writer - Seconds, Units"]
+pub type SECU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC2_TIME_SPEC, u8, u8, 4, O>;
+#[doc = "Field `SECT` reader - Seconds, Tens"]
+pub type SECT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SECT` writer - Seconds, Tens"]
+pub type SECT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC2_TIME_SPEC, u8, u8, 3, O>;
+#[doc = "Field `MINU` reader - Minutes, Units"]
+pub type MINU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `MINU` writer - Minutes, Units"]
+pub type MINU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC2_TIME_SPEC, u8, u8, 4, O>;
+#[doc = "Field `MINT` reader - Minutes, Tens"]
+pub type MINT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `MINT` writer - Minutes, Tens"]
+pub type MINT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC2_TIME_SPEC, u8, u8, 3, O>;
+#[doc = "Field `HOURU` reader - Hours, Units"]
+pub type HOURU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HOURU` writer - Hours, Units"]
+pub type HOURU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC2_TIME_SPEC, u8, u8, 4, O>;
+#[doc = "Field `HOURT` reader - Hours, Tens"]
+pub type HOURT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HOURT` writer - Hours, Tens"]
+pub type HOURT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC2_TIME_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:3 - Seconds, Units"]
     #[inline(always)]
@@ -103,7 +67,7 @@ impl R {
     #[doc = "Bits 4:6 - Seconds, Tens"]
     #[inline(always)]
     pub fn sect(&self) -> SECT_R {
-        SECT_R::new(((self.bits >> 4) & 0x07) as u8)
+        SECT_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 8:11 - Minutes, Units"]
     #[inline(always)]
@@ -113,7 +77,7 @@ impl R {
     #[doc = "Bits 12:14 - Minutes, Tens"]
     #[inline(always)]
     pub fn mint(&self) -> MINT_R {
-        MINT_R::new(((self.bits >> 12) & 0x07) as u8)
+        MINT_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 16:19 - Hours, Units"]
     #[inline(always)]
@@ -123,38 +87,69 @@ impl R {
     #[doc = "Bits 20:21 - Hours, Tens"]
     #[inline(always)]
     pub fn hourt(&self) -> HOURT_R {
-        HOURT_R::new(((self.bits >> 20) & 0x03) as u8)
+        HOURT_R::new(((self.bits >> 20) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Seconds, Units"]
     #[inline(always)]
-    pub fn secu(&mut self) -> SECU_W {
-        SECU_W { w: self }
+    #[must_use]
+    pub fn secu(&mut self) -> SECU_W<0> {
+        SECU_W::new(self)
     }
     #[doc = "Bits 4:6 - Seconds, Tens"]
     #[inline(always)]
-    pub fn sect(&mut self) -> SECT_W {
-        SECT_W { w: self }
+    #[must_use]
+    pub fn sect(&mut self) -> SECT_W<4> {
+        SECT_W::new(self)
     }
     #[doc = "Bits 8:11 - Minutes, Units"]
     #[inline(always)]
-    pub fn minu(&mut self) -> MINU_W {
-        MINU_W { w: self }
+    #[must_use]
+    pub fn minu(&mut self) -> MINU_W<8> {
+        MINU_W::new(self)
     }
     #[doc = "Bits 12:14 - Minutes, Tens"]
     #[inline(always)]
-    pub fn mint(&mut self) -> MINT_W {
-        MINT_W { w: self }
+    #[must_use]
+    pub fn mint(&mut self) -> MINT_W<12> {
+        MINT_W::new(self)
     }
     #[doc = "Bits 16:19 - Hours, Units"]
     #[inline(always)]
-    pub fn houru(&mut self) -> HOURU_W {
-        HOURU_W { w: self }
+    #[must_use]
+    pub fn houru(&mut self) -> HOURU_W<16> {
+        HOURU_W::new(self)
     }
     #[doc = "Bits 20:21 - Hours, Tens"]
     #[inline(always)]
-    pub fn hourt(&mut self) -> HOURT_W {
-        HOURT_W { w: self }
+    #[must_use]
+    pub fn hourt(&mut self) -> HOURT_W<20> {
+        HOURT_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Capture/Compare Time Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc2_time](index.html) module"]
+pub struct CC2_TIME_SPEC;
+impl crate::RegisterSpec for CC2_TIME_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cc2_time::R](R) reader structure"]
+impl crate::Readable for CC2_TIME_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cc2_time::W](W) writer structure"]
+impl crate::Writable for CC2_TIME_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CC2_TIME to value 0"]
+impl crate::Resettable for CC2_TIME_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

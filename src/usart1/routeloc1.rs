@@ -1,17 +1,43 @@
-#[doc = "Reader of register ROUTELOC1"]
-pub type R = crate::R<u32, super::ROUTELOC1>;
-#[doc = "Writer for register ROUTELOC1"]
-pub type W = crate::W<u32, super::ROUTELOC1>;
-#[doc = "Register ROUTELOC1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ROUTELOC1 {
-    type Type = u32;
+#[doc = "Register `ROUTELOC1` reader"]
+pub struct R(crate::R<ROUTELOC1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ROUTELOC1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ROUTELOC1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ROUTELOC1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ROUTELOC1` writer"]
+pub struct W(crate::W<ROUTELOC1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ROUTELOC1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ROUTELOC1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ROUTELOC1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CTSLOC` reader - I/O Location"]
+pub type CTSLOC_R = crate::FieldReader<u8, CTSLOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CTSLOC_A {
     #[doc = "0: Location 0"]
@@ -85,47 +111,44 @@ impl From<CTSLOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CTSLOC`"]
-pub type CTSLOC_R = crate::R<u8, CTSLOC_A>;
 impl CTSLOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CTSLOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CTSLOC_A> {
         match self.bits {
-            0 => Val(CTSLOC_A::LOC0),
-            1 => Val(CTSLOC_A::LOC1),
-            2 => Val(CTSLOC_A::LOC2),
-            3 => Val(CTSLOC_A::LOC3),
-            4 => Val(CTSLOC_A::LOC4),
-            5 => Val(CTSLOC_A::LOC5),
-            6 => Val(CTSLOC_A::LOC6),
-            7 => Val(CTSLOC_A::LOC7),
-            8 => Val(CTSLOC_A::LOC8),
-            9 => Val(CTSLOC_A::LOC9),
-            10 => Val(CTSLOC_A::LOC10),
-            11 => Val(CTSLOC_A::LOC11),
-            12 => Val(CTSLOC_A::LOC12),
-            13 => Val(CTSLOC_A::LOC13),
-            14 => Val(CTSLOC_A::LOC14),
-            15 => Val(CTSLOC_A::LOC15),
-            16 => Val(CTSLOC_A::LOC16),
-            17 => Val(CTSLOC_A::LOC17),
-            18 => Val(CTSLOC_A::LOC18),
-            19 => Val(CTSLOC_A::LOC19),
-            20 => Val(CTSLOC_A::LOC20),
-            21 => Val(CTSLOC_A::LOC21),
-            22 => Val(CTSLOC_A::LOC22),
-            23 => Val(CTSLOC_A::LOC23),
-            24 => Val(CTSLOC_A::LOC24),
-            25 => Val(CTSLOC_A::LOC25),
-            26 => Val(CTSLOC_A::LOC26),
-            27 => Val(CTSLOC_A::LOC27),
-            28 => Val(CTSLOC_A::LOC28),
-            29 => Val(CTSLOC_A::LOC29),
-            30 => Val(CTSLOC_A::LOC30),
-            31 => Val(CTSLOC_A::LOC31),
-            i => Res(i),
+            0 => Some(CTSLOC_A::LOC0),
+            1 => Some(CTSLOC_A::LOC1),
+            2 => Some(CTSLOC_A::LOC2),
+            3 => Some(CTSLOC_A::LOC3),
+            4 => Some(CTSLOC_A::LOC4),
+            5 => Some(CTSLOC_A::LOC5),
+            6 => Some(CTSLOC_A::LOC6),
+            7 => Some(CTSLOC_A::LOC7),
+            8 => Some(CTSLOC_A::LOC8),
+            9 => Some(CTSLOC_A::LOC9),
+            10 => Some(CTSLOC_A::LOC10),
+            11 => Some(CTSLOC_A::LOC11),
+            12 => Some(CTSLOC_A::LOC12),
+            13 => Some(CTSLOC_A::LOC13),
+            14 => Some(CTSLOC_A::LOC14),
+            15 => Some(CTSLOC_A::LOC15),
+            16 => Some(CTSLOC_A::LOC16),
+            17 => Some(CTSLOC_A::LOC17),
+            18 => Some(CTSLOC_A::LOC18),
+            19 => Some(CTSLOC_A::LOC19),
+            20 => Some(CTSLOC_A::LOC20),
+            21 => Some(CTSLOC_A::LOC21),
+            22 => Some(CTSLOC_A::LOC22),
+            23 => Some(CTSLOC_A::LOC23),
+            24 => Some(CTSLOC_A::LOC24),
+            25 => Some(CTSLOC_A::LOC25),
+            26 => Some(CTSLOC_A::LOC26),
+            27 => Some(CTSLOC_A::LOC27),
+            28 => Some(CTSLOC_A::LOC28),
+            29 => Some(CTSLOC_A::LOC29),
+            30 => Some(CTSLOC_A::LOC30),
+            31 => Some(CTSLOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -289,16 +312,10 @@ impl CTSLOC_R {
         *self == CTSLOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `CTSLOC`"]
-pub struct CTSLOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTSLOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTSLOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CTSLOC` writer - I/O Location"]
+pub type CTSLOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, CTSLOC_A, 6, O>;
+impl<'a, const O: u8> CTSLOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -459,15 +476,11 @@ impl<'a> CTSLOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(CTSLOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
-        self.w
-    }
 }
+#[doc = "Field `RTSLOC` reader - I/O Location"]
+pub type RTSLOC_R = crate::FieldReader<u8, RTSLOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTSLOC_A {
     #[doc = "0: Location 0"]
@@ -541,47 +554,44 @@ impl From<RTSLOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RTSLOC`"]
-pub type RTSLOC_R = crate::R<u8, RTSLOC_A>;
 impl RTSLOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, RTSLOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RTSLOC_A> {
         match self.bits {
-            0 => Val(RTSLOC_A::LOC0),
-            1 => Val(RTSLOC_A::LOC1),
-            2 => Val(RTSLOC_A::LOC2),
-            3 => Val(RTSLOC_A::LOC3),
-            4 => Val(RTSLOC_A::LOC4),
-            5 => Val(RTSLOC_A::LOC5),
-            6 => Val(RTSLOC_A::LOC6),
-            7 => Val(RTSLOC_A::LOC7),
-            8 => Val(RTSLOC_A::LOC8),
-            9 => Val(RTSLOC_A::LOC9),
-            10 => Val(RTSLOC_A::LOC10),
-            11 => Val(RTSLOC_A::LOC11),
-            12 => Val(RTSLOC_A::LOC12),
-            13 => Val(RTSLOC_A::LOC13),
-            14 => Val(RTSLOC_A::LOC14),
-            15 => Val(RTSLOC_A::LOC15),
-            16 => Val(RTSLOC_A::LOC16),
-            17 => Val(RTSLOC_A::LOC17),
-            18 => Val(RTSLOC_A::LOC18),
-            19 => Val(RTSLOC_A::LOC19),
-            20 => Val(RTSLOC_A::LOC20),
-            21 => Val(RTSLOC_A::LOC21),
-            22 => Val(RTSLOC_A::LOC22),
-            23 => Val(RTSLOC_A::LOC23),
-            24 => Val(RTSLOC_A::LOC24),
-            25 => Val(RTSLOC_A::LOC25),
-            26 => Val(RTSLOC_A::LOC26),
-            27 => Val(RTSLOC_A::LOC27),
-            28 => Val(RTSLOC_A::LOC28),
-            29 => Val(RTSLOC_A::LOC29),
-            30 => Val(RTSLOC_A::LOC30),
-            31 => Val(RTSLOC_A::LOC31),
-            i => Res(i),
+            0 => Some(RTSLOC_A::LOC0),
+            1 => Some(RTSLOC_A::LOC1),
+            2 => Some(RTSLOC_A::LOC2),
+            3 => Some(RTSLOC_A::LOC3),
+            4 => Some(RTSLOC_A::LOC4),
+            5 => Some(RTSLOC_A::LOC5),
+            6 => Some(RTSLOC_A::LOC6),
+            7 => Some(RTSLOC_A::LOC7),
+            8 => Some(RTSLOC_A::LOC8),
+            9 => Some(RTSLOC_A::LOC9),
+            10 => Some(RTSLOC_A::LOC10),
+            11 => Some(RTSLOC_A::LOC11),
+            12 => Some(RTSLOC_A::LOC12),
+            13 => Some(RTSLOC_A::LOC13),
+            14 => Some(RTSLOC_A::LOC14),
+            15 => Some(RTSLOC_A::LOC15),
+            16 => Some(RTSLOC_A::LOC16),
+            17 => Some(RTSLOC_A::LOC17),
+            18 => Some(RTSLOC_A::LOC18),
+            19 => Some(RTSLOC_A::LOC19),
+            20 => Some(RTSLOC_A::LOC20),
+            21 => Some(RTSLOC_A::LOC21),
+            22 => Some(RTSLOC_A::LOC22),
+            23 => Some(RTSLOC_A::LOC23),
+            24 => Some(RTSLOC_A::LOC24),
+            25 => Some(RTSLOC_A::LOC25),
+            26 => Some(RTSLOC_A::LOC26),
+            27 => Some(RTSLOC_A::LOC27),
+            28 => Some(RTSLOC_A::LOC28),
+            29 => Some(RTSLOC_A::LOC29),
+            30 => Some(RTSLOC_A::LOC30),
+            31 => Some(RTSLOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -745,16 +755,10 @@ impl RTSLOC_R {
         *self == RTSLOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `RTSLOC`"]
-pub struct RTSLOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTSLOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RTSLOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `RTSLOC` writer - I/O Location"]
+pub type RTSLOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, RTSLOC_A, 6, O>;
+impl<'a, const O: u8> RTSLOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -915,12 +919,6 @@ impl<'a> RTSLOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(RTSLOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
@@ -937,12 +935,39 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn ctsloc(&mut self) -> CTSLOC_W {
-        CTSLOC_W { w: self }
+    #[must_use]
+    pub fn ctsloc(&mut self) -> CTSLOC_W<0> {
+        CTSLOC_W::new(self)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn rtsloc(&mut self) -> RTSLOC_W {
-        RTSLOC_W { w: self }
+    #[must_use]
+    pub fn rtsloc(&mut self) -> RTSLOC_W<8> {
+        RTSLOC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I/O Routing Location Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routeloc1](index.html) module"]
+pub struct ROUTELOC1_SPEC;
+impl crate::RegisterSpec for ROUTELOC1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [routeloc1::R](R) reader structure"]
+impl crate::Readable for ROUTELOC1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [routeloc1::W](W) writer structure"]
+impl crate::Writable for ROUTELOC1_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets ROUTELOC1 to value 0"]
+impl crate::Resettable for ROUTELOC1_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

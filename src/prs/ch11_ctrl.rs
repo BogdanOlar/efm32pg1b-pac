@@ -1,31 +1,47 @@
-#[doc = "Reader of register CH11_CTRL"]
-pub type R = crate::R<u32, super::CH11_CTRL>;
-#[doc = "Writer for register CH11_CTRL"]
-pub type W = crate::W<u32, super::CH11_CTRL>;
-#[doc = "Register CH11_CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CH11_CTRL {
-    type Type = u32;
+#[doc = "Register `CH11_CTRL` reader"]
+pub struct R(crate::R<CH11_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CH11_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SIGSEL`"]
-pub type SIGSEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SIGSEL`"]
-pub struct SIGSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIGSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CH11_CTRL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
-        self.w
+    fn from(reader: crate::R<CH11_CTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `CH11_CTRL` writer"]
+pub struct W(crate::W<CH11_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CH11_CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CH11_CTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CH11_CTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SIGSEL` reader - Signal Select"]
+pub type SIGSEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SIGSEL` writer - Signal Select"]
+pub type SIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH11_CTRL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `SOURCESEL` reader - Source Select"]
+pub type SOURCESEL_R = crate::FieldReader<u8, SOURCESEL_A>;
 #[doc = "Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SOURCESEL_A {
     #[doc = "0: No source selected"]
@@ -71,33 +87,30 @@ impl From<SOURCESEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SOURCESEL`"]
-pub type SOURCESEL_R = crate::R<u8, SOURCESEL_A>;
 impl SOURCESEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SOURCESEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SOURCESEL_A> {
         match self.bits {
-            0 => Val(SOURCESEL_A::NONE),
-            1 => Val(SOURCESEL_A::PRSL),
-            2 => Val(SOURCESEL_A::PRSH),
-            6 => Val(SOURCESEL_A::ACMP0),
-            7 => Val(SOURCESEL_A::ACMP1),
-            8 => Val(SOURCESEL_A::ADC0),
-            16 => Val(SOURCESEL_A::USART0),
-            17 => Val(SOURCESEL_A::USART1),
-            28 => Val(SOURCESEL_A::TIMER0),
-            29 => Val(SOURCESEL_A::TIMER1),
-            41 => Val(SOURCESEL_A::RTCC),
-            48 => Val(SOURCESEL_A::GPIOL),
-            49 => Val(SOURCESEL_A::GPIOH),
-            52 => Val(SOURCESEL_A::LETIMER0),
-            54 => Val(SOURCESEL_A::PCNT0),
-            60 => Val(SOURCESEL_A::CRYOTIMER),
-            61 => Val(SOURCESEL_A::CMU),
-            67 => Val(SOURCESEL_A::CM4),
-            i => Res(i),
+            0 => Some(SOURCESEL_A::NONE),
+            1 => Some(SOURCESEL_A::PRSL),
+            2 => Some(SOURCESEL_A::PRSH),
+            6 => Some(SOURCESEL_A::ACMP0),
+            7 => Some(SOURCESEL_A::ACMP1),
+            8 => Some(SOURCESEL_A::ADC0),
+            16 => Some(SOURCESEL_A::USART0),
+            17 => Some(SOURCESEL_A::USART1),
+            28 => Some(SOURCESEL_A::TIMER0),
+            29 => Some(SOURCESEL_A::TIMER1),
+            41 => Some(SOURCESEL_A::RTCC),
+            48 => Some(SOURCESEL_A::GPIOL),
+            49 => Some(SOURCESEL_A::GPIOH),
+            52 => Some(SOURCESEL_A::LETIMER0),
+            54 => Some(SOURCESEL_A::PCNT0),
+            60 => Some(SOURCESEL_A::CRYOTIMER),
+            61 => Some(SOURCESEL_A::CMU),
+            67 => Some(SOURCESEL_A::CM4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
@@ -191,16 +204,10 @@ impl SOURCESEL_R {
         *self == SOURCESEL_A::CM4
     }
 }
-#[doc = "Write proxy for field `SOURCESEL`"]
-pub struct SOURCESEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOURCESEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SOURCESEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `SOURCESEL` writer - Source Select"]
+pub type SOURCESEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CH11_CTRL_SPEC, u8, SOURCESEL_A, 7, O>;
+impl<'a, const O: u8> SOURCESEL_W<'a, O> {
     #[doc = "No source selected"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -291,15 +298,11 @@ impl<'a> SOURCESEL_W<'a> {
     pub fn cm4(self) -> &'a mut W {
         self.variant(SOURCESEL_A::CM4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | (((value as u32) & 0x7f) << 8);
-        self.w
-    }
 }
+#[doc = "Field `EDSEL` reader - Edge Detect Select"]
+pub type EDSEL_R = crate::FieldReader<u8, EDSEL_A>;
 #[doc = "Edge Detect Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EDSEL_A {
     #[doc = "0: Signal is left as it is"]
@@ -317,10 +320,8 @@ impl From<EDSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EDSEL`"]
-pub type EDSEL_R = crate::R<u8, EDSEL_A>;
 impl EDSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EDSEL_A {
         match self.bits {
@@ -352,18 +353,10 @@ impl EDSEL_R {
         *self == EDSEL_A::BOTHEDGES
     }
 }
-#[doc = "Write proxy for field `EDSEL`"]
-pub struct EDSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EDSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `EDSEL` writer - Edge Detect Select"]
+pub type EDSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CH11_CTRL_SPEC, u8, EDSEL_A, 2, O>;
+impl<'a, const O: u8> EDSEL_W<'a, O> {
     #[doc = "Signal is left as it is"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -384,138 +377,32 @@ impl<'a> EDSEL_W<'a> {
     pub fn bothedges(self) -> &'a mut W {
         self.variant(EDSEL_A::BOTHEDGES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
-        self.w
-    }
 }
-#[doc = "Reader of field `STRETCH`"]
-pub type STRETCH_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STRETCH`"]
-pub struct STRETCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STRETCH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-        self.w
-    }
-}
-#[doc = "Reader of field `INV`"]
-pub type INV_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INV`"]
-pub struct INV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INV_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-        self.w
-    }
-}
-#[doc = "Reader of field `ORPREV`"]
-pub type ORPREV_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ORPREV`"]
-pub struct ORPREV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ORPREV_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-        self.w
-    }
-}
-#[doc = "Reader of field `ANDNEXT`"]
-pub type ANDNEXT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ANDNEXT`"]
-pub struct ANDNEXT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ANDNEXT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-        self.w
-    }
-}
-#[doc = "Reader of field `ASYNCREFL`"]
-pub type ASYNCREFL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ASYNCREFL`"]
-pub struct ASYNCREFL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ASYNCREFL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-        self.w
-    }
-}
+#[doc = "Field `STRETCH` reader - Stretch Channel Output"]
+pub type STRETCH_R = crate::BitReader<bool>;
+#[doc = "Field `STRETCH` writer - Stretch Channel Output"]
+pub type STRETCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH11_CTRL_SPEC, bool, O>;
+#[doc = "Field `INV` reader - Invert Channel"]
+pub type INV_R = crate::BitReader<bool>;
+#[doc = "Field `INV` writer - Invert Channel"]
+pub type INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH11_CTRL_SPEC, bool, O>;
+#[doc = "Field `ORPREV` reader - Or Previous"]
+pub type ORPREV_R = crate::BitReader<bool>;
+#[doc = "Field `ORPREV` writer - Or Previous"]
+pub type ORPREV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH11_CTRL_SPEC, bool, O>;
+#[doc = "Field `ANDNEXT` reader - And Next"]
+pub type ANDNEXT_R = crate::BitReader<bool>;
+#[doc = "Field `ANDNEXT` writer - And Next"]
+pub type ANDNEXT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH11_CTRL_SPEC, bool, O>;
+#[doc = "Field `ASYNCREFL` reader - Asynchronous Reflex"]
+pub type ASYNCREFL_R = crate::BitReader<bool>;
+#[doc = "Field `ASYNCREFL` writer - Asynchronous Reflex"]
+pub type ASYNCREFL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH11_CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
     pub fn sigsel(&self) -> SIGSEL_R {
-        SIGSEL_R::new((self.bits & 0x07) as u8)
+        SIGSEL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 8:14 - Source Select"]
     #[inline(always)]
@@ -525,73 +412,106 @@ impl R {
     #[doc = "Bits 20:21 - Edge Detect Select"]
     #[inline(always)]
     pub fn edsel(&self) -> EDSEL_R {
-        EDSEL_R::new(((self.bits >> 20) & 0x03) as u8)
+        EDSEL_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bit 25 - Stretch Channel Output"]
     #[inline(always)]
     pub fn stretch(&self) -> STRETCH_R {
-        STRETCH_R::new(((self.bits >> 25) & 0x01) != 0)
+        STRETCH_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Invert Channel"]
     #[inline(always)]
     pub fn inv(&self) -> INV_R {
-        INV_R::new(((self.bits >> 26) & 0x01) != 0)
+        INV_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Or Previous"]
     #[inline(always)]
     pub fn orprev(&self) -> ORPREV_R {
-        ORPREV_R::new(((self.bits >> 27) & 0x01) != 0)
+        ORPREV_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - And Next"]
     #[inline(always)]
     pub fn andnext(&self) -> ANDNEXT_R {
-        ANDNEXT_R::new(((self.bits >> 28) & 0x01) != 0)
+        ANDNEXT_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 30 - Asynchronous Reflex"]
     #[inline(always)]
     pub fn asyncrefl(&self) -> ASYNCREFL_R {
-        ASYNCREFL_R::new(((self.bits >> 30) & 0x01) != 0)
+        ASYNCREFL_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
-    pub fn sigsel(&mut self) -> SIGSEL_W {
-        SIGSEL_W { w: self }
+    #[must_use]
+    pub fn sigsel(&mut self) -> SIGSEL_W<0> {
+        SIGSEL_W::new(self)
     }
     #[doc = "Bits 8:14 - Source Select"]
     #[inline(always)]
-    pub fn sourcesel(&mut self) -> SOURCESEL_W {
-        SOURCESEL_W { w: self }
+    #[must_use]
+    pub fn sourcesel(&mut self) -> SOURCESEL_W<8> {
+        SOURCESEL_W::new(self)
     }
     #[doc = "Bits 20:21 - Edge Detect Select"]
     #[inline(always)]
-    pub fn edsel(&mut self) -> EDSEL_W {
-        EDSEL_W { w: self }
+    #[must_use]
+    pub fn edsel(&mut self) -> EDSEL_W<20> {
+        EDSEL_W::new(self)
     }
     #[doc = "Bit 25 - Stretch Channel Output"]
     #[inline(always)]
-    pub fn stretch(&mut self) -> STRETCH_W {
-        STRETCH_W { w: self }
+    #[must_use]
+    pub fn stretch(&mut self) -> STRETCH_W<25> {
+        STRETCH_W::new(self)
     }
     #[doc = "Bit 26 - Invert Channel"]
     #[inline(always)]
-    pub fn inv(&mut self) -> INV_W {
-        INV_W { w: self }
+    #[must_use]
+    pub fn inv(&mut self) -> INV_W<26> {
+        INV_W::new(self)
     }
     #[doc = "Bit 27 - Or Previous"]
     #[inline(always)]
-    pub fn orprev(&mut self) -> ORPREV_W {
-        ORPREV_W { w: self }
+    #[must_use]
+    pub fn orprev(&mut self) -> ORPREV_W<27> {
+        ORPREV_W::new(self)
     }
     #[doc = "Bit 28 - And Next"]
     #[inline(always)]
-    pub fn andnext(&mut self) -> ANDNEXT_W {
-        ANDNEXT_W { w: self }
+    #[must_use]
+    pub fn andnext(&mut self) -> ANDNEXT_W<28> {
+        ANDNEXT_W::new(self)
     }
     #[doc = "Bit 30 - Asynchronous Reflex"]
     #[inline(always)]
-    pub fn asyncrefl(&mut self) -> ASYNCREFL_W {
-        ASYNCREFL_W { w: self }
+    #[must_use]
+    pub fn asyncrefl(&mut self) -> ASYNCREFL_W<30> {
+        ASYNCREFL_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch11_ctrl](index.html) module"]
+pub struct CH11_CTRL_SPEC;
+impl crate::RegisterSpec for CH11_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ch11_ctrl::R](R) reader structure"]
+impl crate::Readable for CH11_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ch11_ctrl::W](W) writer structure"]
+impl crate::Writable for CH11_CTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CH11_CTRL to value 0"]
+impl crate::Resettable for CH11_CTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,31 +1,47 @@
-#[doc = "Reader of register SEQCTRL"]
-pub type R = crate::R<u32, super::SEQCTRL>;
-#[doc = "Writer for register SEQCTRL"]
-pub type W = crate::W<u32, super::SEQCTRL>;
-#[doc = "Register SEQCTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::SEQCTRL {
-    type Type = u32;
+#[doc = "Register `SEQCTRL` reader"]
+pub struct R(crate::R<SEQCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEQCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LENGTHA`"]
-pub type LENGTHA_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `LENGTHA`"]
-pub struct LENGTHA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LENGTHA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<SEQCTRL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3fff) | ((value as u32) & 0x3fff);
-        self.w
+    fn from(reader: crate::R<SEQCTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `SEQCTRL` writer"]
+pub struct W(crate::W<SEQCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SEQCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SEQCTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SEQCTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LENGTHA` reader - Buffer Length a in Bytes"]
+pub type LENGTHA_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `LENGTHA` writer - Buffer Length a in Bytes"]
+pub type LENGTHA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQCTRL_SPEC, u16, u16, 14, O>;
+#[doc = "Field `BLOCKSIZE` reader - Size of Data Blocks"]
+pub type BLOCKSIZE_R = crate::FieldReader<u8, BLOCKSIZE_A>;
 #[doc = "Size of Data Blocks\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BLOCKSIZE_A {
     #[doc = "0: A block is 16 bytes long"]
@@ -41,18 +57,15 @@ impl From<BLOCKSIZE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BLOCKSIZE`"]
-pub type BLOCKSIZE_R = crate::R<u8, BLOCKSIZE_A>;
 impl BLOCKSIZE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, BLOCKSIZE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<BLOCKSIZE_A> {
         match self.bits {
-            0 => Val(BLOCKSIZE_A::_16BYTES),
-            1 => Val(BLOCKSIZE_A::_32BYTES),
-            2 => Val(BLOCKSIZE_A::_64BYTES),
-            i => Res(i),
+            0 => Some(BLOCKSIZE_A::_16BYTES),
+            1 => Some(BLOCKSIZE_A::_32BYTES),
+            2 => Some(BLOCKSIZE_A::_64BYTES),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_16BYTES`"]
@@ -71,16 +84,10 @@ impl BLOCKSIZE_R {
         *self == BLOCKSIZE_A::_64BYTES
     }
 }
-#[doc = "Write proxy for field `BLOCKSIZE`"]
-pub struct BLOCKSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BLOCKSIZE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BLOCKSIZE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `BLOCKSIZE` writer - Size of Data Blocks"]
+pub type BLOCKSIZE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SEQCTRL_SPEC, u8, BLOCKSIZE_A, 2, O>;
+impl<'a, const O: u8> BLOCKSIZE_W<'a, O> {
     #[doc = "A block is 16 bytes long"]
     #[inline(always)]
     pub fn _16bytes(self) -> &'a mut W {
@@ -96,113 +103,27 @@ impl<'a> BLOCKSIZE_W<'a> {
     pub fn _64bytes(self) -> &'a mut W {
         self.variant(BLOCKSIZE_A::_64BYTES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
-        self.w
-    }
 }
-#[doc = "Reader of field `DMA0SKIP`"]
-pub type DMA0SKIP_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DMA0SKIP`"]
-pub struct DMA0SKIP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA0SKIP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `DMA1SKIP`"]
-pub type DMA1SKIP_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DMA1SKIP`"]
-pub struct DMA1SKIP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA1SKIP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
-        self.w
-    }
-}
-#[doc = "Reader of field `DMA0PRESA`"]
-pub type DMA0PRESA_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DMA0PRESA`"]
-pub struct DMA0PRESA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA0PRESA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-        self.w
-    }
-}
-#[doc = "Reader of field `DMA1PRESA`"]
-pub type DMA1PRESA_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DMA1PRESA`"]
-pub struct DMA1PRESA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA1PRESA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-        self.w
-    }
-}
-#[doc = "Reader of field `HALT`"]
-pub type HALT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HALT`"]
-pub struct HALT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HALT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `DMA0SKIP` reader - DMA0 Skip"]
+pub type DMA0SKIP_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DMA0SKIP` writer - DMA0 Skip"]
+pub type DMA0SKIP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQCTRL_SPEC, u8, u8, 2, O>;
+#[doc = "Field `DMA1SKIP` reader - DMA1 Skip"]
+pub type DMA1SKIP_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DMA1SKIP` writer - DMA1 Skip"]
+pub type DMA1SKIP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQCTRL_SPEC, u8, u8, 2, O>;
+#[doc = "Field `DMA0PRESA` reader - DMA0 Preserve a"]
+pub type DMA0PRESA_R = crate::BitReader<bool>;
+#[doc = "Field `DMA0PRESA` writer - DMA0 Preserve a"]
+pub type DMA0PRESA_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQCTRL_SPEC, bool, O>;
+#[doc = "Field `DMA1PRESA` reader - DMA1 Preserve a"]
+pub type DMA1PRESA_R = crate::BitReader<bool>;
+#[doc = "Field `DMA1PRESA` writer - DMA1 Preserve a"]
+pub type DMA1PRESA_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQCTRL_SPEC, bool, O>;
+#[doc = "Field `HALT` reader - Halt Sequence"]
+pub type HALT_R = crate::BitReader<bool>;
+#[doc = "Field `HALT` writer - Halt Sequence"]
+pub type HALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:13 - Buffer Length a in Bytes"]
     #[inline(always)]
@@ -212,68 +133,100 @@ impl R {
     #[doc = "Bits 20:21 - Size of Data Blocks"]
     #[inline(always)]
     pub fn blocksize(&self) -> BLOCKSIZE_R {
-        BLOCKSIZE_R::new(((self.bits >> 20) & 0x03) as u8)
+        BLOCKSIZE_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 24:25 - DMA0 Skip"]
     #[inline(always)]
     pub fn dma0skip(&self) -> DMA0SKIP_R {
-        DMA0SKIP_R::new(((self.bits >> 24) & 0x03) as u8)
+        DMA0SKIP_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 26:27 - DMA1 Skip"]
     #[inline(always)]
     pub fn dma1skip(&self) -> DMA1SKIP_R {
-        DMA1SKIP_R::new(((self.bits >> 26) & 0x03) as u8)
+        DMA1SKIP_R::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bit 28 - DMA0 Preserve a"]
     #[inline(always)]
     pub fn dma0presa(&self) -> DMA0PRESA_R {
-        DMA0PRESA_R::new(((self.bits >> 28) & 0x01) != 0)
+        DMA0PRESA_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - DMA1 Preserve a"]
     #[inline(always)]
     pub fn dma1presa(&self) -> DMA1PRESA_R {
-        DMA1PRESA_R::new(((self.bits >> 29) & 0x01) != 0)
+        DMA1PRESA_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 31 - Halt Sequence"]
     #[inline(always)]
     pub fn halt(&self) -> HALT_R {
-        HALT_R::new(((self.bits >> 31) & 0x01) != 0)
+        HALT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:13 - Buffer Length a in Bytes"]
     #[inline(always)]
-    pub fn lengtha(&mut self) -> LENGTHA_W {
-        LENGTHA_W { w: self }
+    #[must_use]
+    pub fn lengtha(&mut self) -> LENGTHA_W<0> {
+        LENGTHA_W::new(self)
     }
     #[doc = "Bits 20:21 - Size of Data Blocks"]
     #[inline(always)]
-    pub fn blocksize(&mut self) -> BLOCKSIZE_W {
-        BLOCKSIZE_W { w: self }
+    #[must_use]
+    pub fn blocksize(&mut self) -> BLOCKSIZE_W<20> {
+        BLOCKSIZE_W::new(self)
     }
     #[doc = "Bits 24:25 - DMA0 Skip"]
     #[inline(always)]
-    pub fn dma0skip(&mut self) -> DMA0SKIP_W {
-        DMA0SKIP_W { w: self }
+    #[must_use]
+    pub fn dma0skip(&mut self) -> DMA0SKIP_W<24> {
+        DMA0SKIP_W::new(self)
     }
     #[doc = "Bits 26:27 - DMA1 Skip"]
     #[inline(always)]
-    pub fn dma1skip(&mut self) -> DMA1SKIP_W {
-        DMA1SKIP_W { w: self }
+    #[must_use]
+    pub fn dma1skip(&mut self) -> DMA1SKIP_W<26> {
+        DMA1SKIP_W::new(self)
     }
     #[doc = "Bit 28 - DMA0 Preserve a"]
     #[inline(always)]
-    pub fn dma0presa(&mut self) -> DMA0PRESA_W {
-        DMA0PRESA_W { w: self }
+    #[must_use]
+    pub fn dma0presa(&mut self) -> DMA0PRESA_W<28> {
+        DMA0PRESA_W::new(self)
     }
     #[doc = "Bit 29 - DMA1 Preserve a"]
     #[inline(always)]
-    pub fn dma1presa(&mut self) -> DMA1PRESA_W {
-        DMA1PRESA_W { w: self }
+    #[must_use]
+    pub fn dma1presa(&mut self) -> DMA1PRESA_W<29> {
+        DMA1PRESA_W::new(self)
     }
     #[doc = "Bit 31 - Halt Sequence"]
     #[inline(always)]
-    pub fn halt(&mut self) -> HALT_W {
-        HALT_W { w: self }
+    #[must_use]
+    pub fn halt(&mut self) -> HALT_W<31> {
+        HALT_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Sequence Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seqctrl](index.html) module"]
+pub struct SEQCTRL_SPEC;
+impl crate::RegisterSpec for SEQCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [seqctrl::R](R) reader structure"]
+impl crate::Readable for SEQCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [seqctrl::W](W) writer structure"]
+impl crate::Writable for SEQCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets SEQCTRL to value 0"]
+impl crate::Resettable for SEQCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

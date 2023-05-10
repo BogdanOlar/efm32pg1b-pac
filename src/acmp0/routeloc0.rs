@@ -1,17 +1,43 @@
-#[doc = "Reader of register ROUTELOC0"]
-pub type R = crate::R<u32, super::ROUTELOC0>;
-#[doc = "Writer for register ROUTELOC0"]
-pub type W = crate::W<u32, super::ROUTELOC0>;
-#[doc = "Register ROUTELOC0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ROUTELOC0 {
-    type Type = u32;
+#[doc = "Register `ROUTELOC0` reader"]
+pub struct R(crate::R<ROUTELOC0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ROUTELOC0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<ROUTELOC0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ROUTELOC0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ROUTELOC0` writer"]
+pub struct W(crate::W<ROUTELOC0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ROUTELOC0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ROUTELOC0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ROUTELOC0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `OUTLOC` reader - I/O Location"]
+pub type OUTLOC_R = crate::FieldReader<u8, OUTLOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OUTLOC_A {
     #[doc = "0: Location 0"]
@@ -85,47 +111,44 @@ impl From<OUTLOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `OUTLOC`"]
-pub type OUTLOC_R = crate::R<u8, OUTLOC_A>;
 impl OUTLOC_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, OUTLOC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<OUTLOC_A> {
         match self.bits {
-            0 => Val(OUTLOC_A::LOC0),
-            1 => Val(OUTLOC_A::LOC1),
-            2 => Val(OUTLOC_A::LOC2),
-            3 => Val(OUTLOC_A::LOC3),
-            4 => Val(OUTLOC_A::LOC4),
-            5 => Val(OUTLOC_A::LOC5),
-            6 => Val(OUTLOC_A::LOC6),
-            7 => Val(OUTLOC_A::LOC7),
-            8 => Val(OUTLOC_A::LOC8),
-            9 => Val(OUTLOC_A::LOC9),
-            10 => Val(OUTLOC_A::LOC10),
-            11 => Val(OUTLOC_A::LOC11),
-            12 => Val(OUTLOC_A::LOC12),
-            13 => Val(OUTLOC_A::LOC13),
-            14 => Val(OUTLOC_A::LOC14),
-            15 => Val(OUTLOC_A::LOC15),
-            16 => Val(OUTLOC_A::LOC16),
-            17 => Val(OUTLOC_A::LOC17),
-            18 => Val(OUTLOC_A::LOC18),
-            19 => Val(OUTLOC_A::LOC19),
-            20 => Val(OUTLOC_A::LOC20),
-            21 => Val(OUTLOC_A::LOC21),
-            22 => Val(OUTLOC_A::LOC22),
-            23 => Val(OUTLOC_A::LOC23),
-            24 => Val(OUTLOC_A::LOC24),
-            25 => Val(OUTLOC_A::LOC25),
-            26 => Val(OUTLOC_A::LOC26),
-            27 => Val(OUTLOC_A::LOC27),
-            28 => Val(OUTLOC_A::LOC28),
-            29 => Val(OUTLOC_A::LOC29),
-            30 => Val(OUTLOC_A::LOC30),
-            31 => Val(OUTLOC_A::LOC31),
-            i => Res(i),
+            0 => Some(OUTLOC_A::LOC0),
+            1 => Some(OUTLOC_A::LOC1),
+            2 => Some(OUTLOC_A::LOC2),
+            3 => Some(OUTLOC_A::LOC3),
+            4 => Some(OUTLOC_A::LOC4),
+            5 => Some(OUTLOC_A::LOC5),
+            6 => Some(OUTLOC_A::LOC6),
+            7 => Some(OUTLOC_A::LOC7),
+            8 => Some(OUTLOC_A::LOC8),
+            9 => Some(OUTLOC_A::LOC9),
+            10 => Some(OUTLOC_A::LOC10),
+            11 => Some(OUTLOC_A::LOC11),
+            12 => Some(OUTLOC_A::LOC12),
+            13 => Some(OUTLOC_A::LOC13),
+            14 => Some(OUTLOC_A::LOC14),
+            15 => Some(OUTLOC_A::LOC15),
+            16 => Some(OUTLOC_A::LOC16),
+            17 => Some(OUTLOC_A::LOC17),
+            18 => Some(OUTLOC_A::LOC18),
+            19 => Some(OUTLOC_A::LOC19),
+            20 => Some(OUTLOC_A::LOC20),
+            21 => Some(OUTLOC_A::LOC21),
+            22 => Some(OUTLOC_A::LOC22),
+            23 => Some(OUTLOC_A::LOC23),
+            24 => Some(OUTLOC_A::LOC24),
+            25 => Some(OUTLOC_A::LOC25),
+            26 => Some(OUTLOC_A::LOC26),
+            27 => Some(OUTLOC_A::LOC27),
+            28 => Some(OUTLOC_A::LOC28),
+            29 => Some(OUTLOC_A::LOC29),
+            30 => Some(OUTLOC_A::LOC30),
+            31 => Some(OUTLOC_A::LOC31),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOC0`"]
@@ -289,16 +312,10 @@ impl OUTLOC_R {
         *self == OUTLOC_A::LOC31
     }
 }
-#[doc = "Write proxy for field `OUTLOC`"]
-pub struct OUTLOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTLOC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OUTLOC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `OUTLOC` writer - I/O Location"]
+pub type OUTLOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, OUTLOC_A, 6, O>;
+impl<'a, const O: u8> OUTLOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -459,12 +476,6 @@ impl<'a> OUTLOC_W<'a> {
     pub fn loc31(self) -> &'a mut W {
         self.variant(OUTLOC_A::LOC31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
@@ -476,7 +487,33 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn outloc(&mut self) -> OUTLOC_W {
-        OUTLOC_W { w: self }
+    #[must_use]
+    pub fn outloc(&mut self) -> OUTLOC_W<0> {
+        OUTLOC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I/O Routing Location Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routeloc0](index.html) module"]
+pub struct ROUTELOC0_SPEC;
+impl crate::RegisterSpec for ROUTELOC0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [routeloc0::R](R) reader structure"]
+impl crate::Readable for ROUTELOC0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [routeloc0::W](W) writer structure"]
+impl crate::Writable for ROUTELOC0_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets ROUTELOC0 to value 0"]
+impl crate::Resettable for ROUTELOC0_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

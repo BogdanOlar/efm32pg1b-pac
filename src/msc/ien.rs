@@ -1,220 +1,155 @@
-#[doc = "Reader of register IEN"]
-pub type R = crate::R<u32, super::IEN>;
-#[doc = "Writer for register IEN"]
-pub type W = crate::W<u32, super::IEN>;
-#[doc = "Register IEN `reset()`'s with value 0"]
-impl crate::ResetValue for super::IEN {
-    type Type = u32;
+#[doc = "Register `IEN` reader"]
+pub struct R(crate::R<IEN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IEN_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ERASE`"]
-pub type ERASE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ERASE`"]
-pub struct ERASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASE_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<IEN_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<IEN_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `WRITE`"]
-pub type WRITE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WRITE`"]
-pub struct WRITE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITE_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `IEN` writer"]
+pub struct W(crate::W<IEN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IEN_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CHOF`"]
-pub type CHOF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CHOF`"]
-pub struct CHOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOF_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `CMOF`"]
-pub type CMOF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CMOF`"]
-pub struct CMOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMOF_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<IEN_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<IEN_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `PWRUPF`"]
-pub type PWRUPF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PWRUPF`"]
-pub struct PWRUPF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWRUPF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `ICACHERR`"]
-pub type ICACHERR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ICACHERR`"]
-pub struct ICACHERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICACHERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
+#[doc = "Field `ERASE` reader - ERASE Interrupt Enable"]
+pub type ERASE_R = crate::BitReader<bool>;
+#[doc = "Field `ERASE` writer - ERASE Interrupt Enable"]
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+#[doc = "Field `WRITE` reader - WRITE Interrupt Enable"]
+pub type WRITE_R = crate::BitReader<bool>;
+#[doc = "Field `WRITE` writer - WRITE Interrupt Enable"]
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+#[doc = "Field `CHOF` reader - CHOF Interrupt Enable"]
+pub type CHOF_R = crate::BitReader<bool>;
+#[doc = "Field `CHOF` writer - CHOF Interrupt Enable"]
+pub type CHOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+#[doc = "Field `CMOF` reader - CMOF Interrupt Enable"]
+pub type CMOF_R = crate::BitReader<bool>;
+#[doc = "Field `CMOF` writer - CMOF Interrupt Enable"]
+pub type CMOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+#[doc = "Field `PWRUPF` reader - PWRUPF Interrupt Enable"]
+pub type PWRUPF_R = crate::BitReader<bool>;
+#[doc = "Field `PWRUPF` writer - PWRUPF Interrupt Enable"]
+pub type PWRUPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+#[doc = "Field `ICACHERR` reader - ICACHERR Interrupt Enable"]
+pub type ICACHERR_R = crate::BitReader<bool>;
+#[doc = "Field `ICACHERR` writer - ICACHERR Interrupt Enable"]
+pub type ICACHERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - ERASE Interrupt Enable"]
     #[inline(always)]
     pub fn erase(&self) -> ERASE_R {
-        ERASE_R::new((self.bits & 0x01) != 0)
+        ERASE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - WRITE Interrupt Enable"]
     #[inline(always)]
     pub fn write(&self) -> WRITE_R {
-        WRITE_R::new(((self.bits >> 1) & 0x01) != 0)
+        WRITE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - CHOF Interrupt Enable"]
     #[inline(always)]
     pub fn chof(&self) -> CHOF_R {
-        CHOF_R::new(((self.bits >> 2) & 0x01) != 0)
+        CHOF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - CMOF Interrupt Enable"]
     #[inline(always)]
     pub fn cmof(&self) -> CMOF_R {
-        CMOF_R::new(((self.bits >> 3) & 0x01) != 0)
+        CMOF_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - PWRUPF Interrupt Enable"]
     #[inline(always)]
     pub fn pwrupf(&self) -> PWRUPF_R {
-        PWRUPF_R::new(((self.bits >> 4) & 0x01) != 0)
+        PWRUPF_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - ICACHERR Interrupt Enable"]
     #[inline(always)]
     pub fn icacherr(&self) -> ICACHERR_R {
-        ICACHERR_R::new(((self.bits >> 5) & 0x01) != 0)
+        ICACHERR_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - ERASE Interrupt Enable"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
-        ERASE_W { w: self }
+    #[must_use]
+    pub fn erase(&mut self) -> ERASE_W<0> {
+        ERASE_W::new(self)
     }
     #[doc = "Bit 1 - WRITE Interrupt Enable"]
     #[inline(always)]
-    pub fn write(&mut self) -> WRITE_W {
-        WRITE_W { w: self }
+    #[must_use]
+    pub fn write(&mut self) -> WRITE_W<1> {
+        WRITE_W::new(self)
     }
     #[doc = "Bit 2 - CHOF Interrupt Enable"]
     #[inline(always)]
-    pub fn chof(&mut self) -> CHOF_W {
-        CHOF_W { w: self }
+    #[must_use]
+    pub fn chof(&mut self) -> CHOF_W<2> {
+        CHOF_W::new(self)
     }
     #[doc = "Bit 3 - CMOF Interrupt Enable"]
     #[inline(always)]
-    pub fn cmof(&mut self) -> CMOF_W {
-        CMOF_W { w: self }
+    #[must_use]
+    pub fn cmof(&mut self) -> CMOF_W<3> {
+        CMOF_W::new(self)
     }
     #[doc = "Bit 4 - PWRUPF Interrupt Enable"]
     #[inline(always)]
-    pub fn pwrupf(&mut self) -> PWRUPF_W {
-        PWRUPF_W { w: self }
+    #[must_use]
+    pub fn pwrupf(&mut self) -> PWRUPF_W<4> {
+        PWRUPF_W::new(self)
     }
     #[doc = "Bit 5 - ICACHERR Interrupt Enable"]
     #[inline(always)]
-    pub fn icacherr(&mut self) -> ICACHERR_W {
-        ICACHERR_W { w: self }
+    #[must_use]
+    pub fn icacherr(&mut self) -> ICACHERR_W<5> {
+        ICACHERR_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ien](index.html) module"]
+pub struct IEN_SPEC;
+impl crate::RegisterSpec for IEN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ien::R](R) reader structure"]
+impl crate::Readable for IEN_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
+impl crate::Writable for IEN_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets IEN to value 0"]
+impl crate::Resettable for IEN_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

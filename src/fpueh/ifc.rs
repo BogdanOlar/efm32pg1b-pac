@@ -1,174 +1,92 @@
-#[doc = "Writer for register IFC"]
-pub type W = crate::W<u32, super::IFC>;
-#[doc = "Register IFC `reset()`'s with value 0"]
-impl crate::ResetValue for super::IFC {
-    type Type = u32;
+#[doc = "Register `IFC` writer"]
+pub struct W(crate::W<IFC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IFC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `FPIOC`"]
-pub struct FPIOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPIOC_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Write proxy for field `FPDZC`"]
-pub struct FPDZC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPDZC_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<IFC_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn from(writer: crate::W<IFC_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Write proxy for field `FPUFC`"]
-pub struct FPUFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPUFC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
-    }
-}
-#[doc = "Write proxy for field `FPOFC`"]
-pub struct FPOFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPOFC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "Write proxy for field `FPIDC`"]
-pub struct FPIDC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPIDC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Write proxy for field `FPIXC`"]
-pub struct FPIXC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPIXC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
+#[doc = "Field `FPIOC` writer - Clear FPIOC Interrupt Flag"]
+pub type FPIOC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+#[doc = "Field `FPDZC` writer - Clear FPDZC Interrupt Flag"]
+pub type FPDZC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+#[doc = "Field `FPUFC` writer - Clear FPUFC Interrupt Flag"]
+pub type FPUFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+#[doc = "Field `FPOFC` writer - Clear FPOFC Interrupt Flag"]
+pub type FPOFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+#[doc = "Field `FPIDC` writer - Clear FPIDC Interrupt Flag"]
+pub type FPIDC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+#[doc = "Field `FPIXC` writer - Clear FPIXC Interrupt Flag"]
+pub type FPIXC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear FPIOC Interrupt Flag"]
     #[inline(always)]
-    pub fn fpioc(&mut self) -> FPIOC_W {
-        FPIOC_W { w: self }
+    #[must_use]
+    pub fn fpioc(&mut self) -> FPIOC_W<0> {
+        FPIOC_W::new(self)
     }
     #[doc = "Bit 1 - Clear FPDZC Interrupt Flag"]
     #[inline(always)]
-    pub fn fpdzc(&mut self) -> FPDZC_W {
-        FPDZC_W { w: self }
+    #[must_use]
+    pub fn fpdzc(&mut self) -> FPDZC_W<1> {
+        FPDZC_W::new(self)
     }
     #[doc = "Bit 2 - Clear FPUFC Interrupt Flag"]
     #[inline(always)]
-    pub fn fpufc(&mut self) -> FPUFC_W {
-        FPUFC_W { w: self }
+    #[must_use]
+    pub fn fpufc(&mut self) -> FPUFC_W<2> {
+        FPUFC_W::new(self)
     }
     #[doc = "Bit 3 - Clear FPOFC Interrupt Flag"]
     #[inline(always)]
-    pub fn fpofc(&mut self) -> FPOFC_W {
-        FPOFC_W { w: self }
+    #[must_use]
+    pub fn fpofc(&mut self) -> FPOFC_W<3> {
+        FPOFC_W::new(self)
     }
     #[doc = "Bit 4 - Clear FPIDC Interrupt Flag"]
     #[inline(always)]
-    pub fn fpidc(&mut self) -> FPIDC_W {
-        FPIDC_W { w: self }
+    #[must_use]
+    pub fn fpidc(&mut self) -> FPIDC_W<4> {
+        FPIDC_W::new(self)
     }
     #[doc = "Bit 5 - Clear FPIXC Interrupt Flag"]
     #[inline(always)]
-    pub fn fpixc(&mut self) -> FPIXC_W {
-        FPIXC_W { w: self }
+    #[must_use]
+    pub fn fpixc(&mut self) -> FPIXC_W<5> {
+        FPIXC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Flag Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifc](index.html) module"]
+pub struct IFC_SPEC;
+impl crate::RegisterSpec for IFC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [ifc::W](W) writer structure"]
+impl crate::Writable for IFC_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets IFC to value 0"]
+impl crate::Resettable for IFC_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

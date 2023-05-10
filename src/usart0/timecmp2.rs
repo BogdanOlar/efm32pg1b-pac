@@ -1,31 +1,47 @@
-#[doc = "Reader of register TIMECMP2"]
-pub type R = crate::R<u32, super::TIMECMP2>;
-#[doc = "Writer for register TIMECMP2"]
-pub type W = crate::W<u32, super::TIMECMP2>;
-#[doc = "Register TIMECMP2 `reset()`'s with value 0"]
-impl crate::ResetValue for super::TIMECMP2 {
-    type Type = u32;
+#[doc = "Register `TIMECMP2` reader"]
+pub struct R(crate::R<TIMECMP2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TIMECMP2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TCMPVAL`"]
-pub type TCMPVAL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TCMPVAL`"]
-pub struct TCMPVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCMPVAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<TIMECMP2_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
-        self.w
+    fn from(reader: crate::R<TIMECMP2_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `TIMECMP2` writer"]
+pub struct W(crate::W<TIMECMP2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TIMECMP2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TIMECMP2_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TIMECMP2_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TCMPVAL` reader - Timer Comparator 2"]
+pub type TCMPVAL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TCMPVAL` writer - Timer Comparator 2"]
+pub type TCMPVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMECMP2_SPEC, u8, u8, 8, O>;
+#[doc = "Field `TSTART` reader - Timer Start Source"]
+pub type TSTART_R = crate::FieldReader<u8, TSTART_A>;
 #[doc = "Timer Start Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TSTART_A {
     #[doc = "0: Comparator 2 is disabled"]
@@ -45,20 +61,17 @@ impl From<TSTART_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TSTART`"]
-pub type TSTART_R = crate::R<u8, TSTART_A>;
 impl TSTART_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TSTART_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TSTART_A> {
         match self.bits {
-            0 => Val(TSTART_A::DISABLE),
-            1 => Val(TSTART_A::TXEOF),
-            2 => Val(TSTART_A::TXC),
-            3 => Val(TSTART_A::RXACT),
-            4 => Val(TSTART_A::RXEOF),
-            i => Res(i),
+            0 => Some(TSTART_A::DISABLE),
+            1 => Some(TSTART_A::TXEOF),
+            2 => Some(TSTART_A::TXC),
+            3 => Some(TSTART_A::RXACT),
+            4 => Some(TSTART_A::RXEOF),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
@@ -87,16 +100,9 @@ impl TSTART_R {
         *self == TSTART_A::RXEOF
     }
 }
-#[doc = "Write proxy for field `TSTART`"]
-pub struct TSTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSTART_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TSTART_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `TSTART` writer - Timer Start Source"]
+pub type TSTART_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMECMP2_SPEC, u8, TSTART_A, 3, O>;
+impl<'a, const O: u8> TSTART_W<'a, O> {
     #[doc = "Comparator 2 is disabled"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -122,15 +128,11 @@ impl<'a> TSTART_W<'a> {
     pub fn rxeof(self) -> &'a mut W {
         self.variant(TSTART_A::RXEOF)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
-        self.w
-    }
 }
+#[doc = "Field `TSTOP` reader - Source Used to Disable Comparator 2"]
+pub type TSTOP_R = crate::FieldReader<u8, TSTOP_A>;
 #[doc = "Source Used to Disable Comparator 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TSTOP_A {
     #[doc = "0: Comparator 2 is disabled when the counter equals TCMPVAL and triggers a TCMP2 event"]
@@ -148,19 +150,16 @@ impl From<TSTOP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TSTOP`"]
-pub type TSTOP_R = crate::R<u8, TSTOP_A>;
 impl TSTOP_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TSTOP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TSTOP_A> {
         match self.bits {
-            0 => Val(TSTOP_A::TCMP2),
-            1 => Val(TSTOP_A::TXST),
-            2 => Val(TSTOP_A::RXACT),
-            3 => Val(TSTOP_A::RXACTN),
-            i => Res(i),
+            0 => Some(TSTOP_A::TCMP2),
+            1 => Some(TSTOP_A::TXST),
+            2 => Some(TSTOP_A::RXACT),
+            3 => Some(TSTOP_A::RXACTN),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `TCMP2`"]
@@ -184,16 +183,9 @@ impl TSTOP_R {
         *self == TSTOP_A::RXACTN
     }
 }
-#[doc = "Write proxy for field `TSTOP`"]
-pub struct TSTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSTOP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TSTOP_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `TSTOP` writer - Source Used to Disable Comparator 2"]
+pub type TSTOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMECMP2_SPEC, u8, TSTOP_A, 3, O>;
+impl<'a, const O: u8> TSTOP_W<'a, O> {
     #[doc = "Comparator 2 is disabled when the counter equals TCMPVAL and triggers a TCMP2 event"]
     #[inline(always)]
     pub fn tcmp2(self) -> &'a mut W {
@@ -214,37 +206,11 @@ impl<'a> TSTOP_W<'a> {
     pub fn rxactn(self) -> &'a mut W {
         self.variant(TSTOP_A::RXACTN)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
-        self.w
-    }
 }
-#[doc = "Reader of field `RESTARTEN`"]
-pub type RESTARTEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESTARTEN`"]
-pub struct RESTARTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESTARTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
-}
+#[doc = "Field `RESTARTEN` reader - Restart Timer on TCMP2"]
+pub type RESTARTEN_R = crate::BitReader<bool>;
+#[doc = "Field `RESTARTEN` writer - Restart Timer on TCMP2"]
+pub type RESTARTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMECMP2_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Timer Comparator 2"]
     #[inline(always)]
@@ -254,38 +220,67 @@ impl R {
     #[doc = "Bits 16:18 - Timer Start Source"]
     #[inline(always)]
     pub fn tstart(&self) -> TSTART_R {
-        TSTART_R::new(((self.bits >> 16) & 0x07) as u8)
+        TSTART_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - Source Used to Disable Comparator 2"]
     #[inline(always)]
     pub fn tstop(&self) -> TSTOP_R {
-        TSTOP_R::new(((self.bits >> 20) & 0x07) as u8)
+        TSTOP_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bit 24 - Restart Timer on TCMP2"]
     #[inline(always)]
     pub fn restarten(&self) -> RESTARTEN_R {
-        RESTARTEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        RESTARTEN_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Timer Comparator 2"]
     #[inline(always)]
-    pub fn tcmpval(&mut self) -> TCMPVAL_W {
-        TCMPVAL_W { w: self }
+    #[must_use]
+    pub fn tcmpval(&mut self) -> TCMPVAL_W<0> {
+        TCMPVAL_W::new(self)
     }
     #[doc = "Bits 16:18 - Timer Start Source"]
     #[inline(always)]
-    pub fn tstart(&mut self) -> TSTART_W {
-        TSTART_W { w: self }
+    #[must_use]
+    pub fn tstart(&mut self) -> TSTART_W<16> {
+        TSTART_W::new(self)
     }
     #[doc = "Bits 20:22 - Source Used to Disable Comparator 2"]
     #[inline(always)]
-    pub fn tstop(&mut self) -> TSTOP_W {
-        TSTOP_W { w: self }
+    #[must_use]
+    pub fn tstop(&mut self) -> TSTOP_W<20> {
+        TSTOP_W::new(self)
     }
     #[doc = "Bit 24 - Restart Timer on TCMP2"]
     #[inline(always)]
-    pub fn restarten(&mut self) -> RESTARTEN_W {
-        RESTARTEN_W { w: self }
+    #[must_use]
+    pub fn restarten(&mut self) -> RESTARTEN_W<24> {
+        RESTARTEN_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Used to Generate Interrupts and Various Delays\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timecmp2](index.html) module"]
+pub struct TIMECMP2_SPEC;
+impl crate::RegisterSpec for TIMECMP2_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [timecmp2::R](R) reader structure"]
+impl crate::Readable for TIMECMP2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [timecmp2::W](W) writer structure"]
+impl crate::Writable for TIMECMP2_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets TIMECMP2 to value 0"]
+impl crate::Resettable for TIMECMP2_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

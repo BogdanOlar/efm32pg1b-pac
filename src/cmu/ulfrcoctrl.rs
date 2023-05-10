@@ -1,31 +1,47 @@
-#[doc = "Reader of register ULFRCOCTRL"]
-pub type R = crate::R<u32, super::ULFRCOCTRL>;
-#[doc = "Writer for register ULFRCOCTRL"]
-pub type W = crate::W<u32, super::ULFRCOCTRL>;
-#[doc = "Register ULFRCOCTRL `reset()`'s with value 0x0002_0020"]
-impl crate::ResetValue for super::ULFRCOCTRL {
-    type Type = u32;
+#[doc = "Register `ULFRCOCTRL` reader"]
+pub struct R(crate::R<ULFRCOCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ULFRCOCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0002_0020
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TUNING`"]
-pub type TUNING_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TUNING`"]
-pub struct TUNING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TUNING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<ULFRCOCTRL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
-        self.w
+    fn from(reader: crate::R<ULFRCOCTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `ULFRCOCTRL` writer"]
+pub struct W(crate::W<ULFRCOCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ULFRCOCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ULFRCOCTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ULFRCOCTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TUNING` reader - ULFRCO TUNING Value"]
+pub type TUNING_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TUNING` writer - ULFRCO TUNING Value"]
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ULFRCOCTRL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `MODE` reader - ULFRCO Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "ULFRCO Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: ULFRCO = 1 kHz"]
@@ -43,10 +59,8 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE`"]
-pub type MODE_R = crate::R<u8, MODE_A>;
 impl MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE_A {
         match self.bits {
@@ -78,18 +92,10 @@ impl MODE_R {
         *self == MODE_A::_32KHZ
     }
 }
-#[doc = "Write proxy for field `MODE`"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE` writer - ULFRCO Mode"]
+pub type MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, ULFRCOCTRL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "ULFRCO = 1 kHz"]
     #[inline(always)]
     pub fn _1khz(self) -> &'a mut W {
@@ -110,27 +116,11 @@ impl<'a> MODE_W<'a> {
     pub fn _32khz(self) -> &'a mut W {
         self.variant(MODE_A::_32KHZ)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
-        self.w
-    }
 }
-#[doc = "Reader of field `RESTRIM`"]
-pub type RESTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `RESTRIM`"]
-pub struct RESTRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESTRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
-        self.w
-    }
-}
+#[doc = "Field `RESTRIM` reader - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
+pub type RESTRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `RESTRIM` writer - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
+pub type RESTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ULFRCOCTRL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:5 - ULFRCO TUNING Value"]
     #[inline(always)]
@@ -140,28 +130,56 @@ impl R {
     #[doc = "Bits 10:11 - ULFRCO Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 10) & 0x03) as u8)
+        MODE_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 16:17 - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
     #[inline(always)]
     pub fn restrim(&self) -> RESTRIM_R {
-        RESTRIM_R::new(((self.bits >> 16) & 0x03) as u8)
+        RESTRIM_R::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - ULFRCO TUNING Value"]
     #[inline(always)]
-    pub fn tuning(&mut self) -> TUNING_W {
-        TUNING_W { w: self }
+    #[must_use]
+    pub fn tuning(&mut self) -> TUNING_W<0> {
+        TUNING_W::new(self)
     }
     #[doc = "Bits 10:11 - ULFRCO Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<10> {
+        MODE_W::new(self)
     }
     #[doc = "Bits 16:17 - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
     #[inline(always)]
-    pub fn restrim(&mut self) -> RESTRIM_W {
-        RESTRIM_W { w: self }
+    #[must_use]
+    pub fn restrim(&mut self) -> RESTRIM_W<16> {
+        RESTRIM_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ULFRCO Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ulfrcoctrl](index.html) module"]
+pub struct ULFRCOCTRL_SPEC;
+impl crate::RegisterSpec for ULFRCOCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ulfrcoctrl::R](R) reader structure"]
+impl crate::Readable for ULFRCOCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ulfrcoctrl::W](W) writer structure"]
+impl crate::Writable for ULFRCOCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets ULFRCOCTRL to value 0x0002_0020"]
+impl crate::Resettable for ULFRCOCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0x0002_0020;
 }

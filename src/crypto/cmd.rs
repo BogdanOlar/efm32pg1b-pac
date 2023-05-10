@@ -1,95 +1,49 @@
-#[doc = "Reader of register CMD"]
-pub type R = crate::R<u32, super::CMD>;
-#[doc = "Writer for register CMD"]
-pub type W = crate::W<u32, super::CMD>;
-#[doc = "Register CMD `reset()`'s with value 0"]
-impl crate::ResetValue for super::CMD {
-    type Type = u32;
+#[doc = "Register `CMD` reader"]
+pub struct R(crate::R<CMD_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CMD_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `INSTR`"]
-pub type INSTR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `INSTR`"]
-pub struct INSTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INSTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CMD_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
-        self.w
+    fn from(reader: crate::R<CMD_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Write proxy for field `SEQSTART`"]
-pub struct SEQSTART_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEQSTART_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `CMD` writer"]
+pub struct W(crate::W<CMD_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CMD_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `SEQSTOP`"]
-pub struct SEQSTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEQSTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Write proxy for field `SEQSTEP`"]
-pub struct SEQSTEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEQSTEP_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<CMD_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
+    fn from(writer: crate::W<CMD_SPEC>) -> Self {
+        W(writer)
     }
 }
+#[doc = "Field `INSTR` reader - Execute Instruction"]
+pub type INSTR_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `INSTR` writer - Execute Instruction"]
+pub type INSTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMD_SPEC, u8, u8, 8, O>;
+#[doc = "Field `SEQSTART` writer - Encryption/Decryption SEQUENCE Start"]
+pub type SEQSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+#[doc = "Field `SEQSTOP` writer - Sequence Stop"]
+pub type SEQSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+#[doc = "Field `SEQSTEP` writer - Sequence Step"]
+pub type SEQSTEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Execute Instruction"]
     #[inline(always)]
@@ -100,22 +54,51 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Execute Instruction"]
     #[inline(always)]
-    pub fn instr(&mut self) -> INSTR_W {
-        INSTR_W { w: self }
+    #[must_use]
+    pub fn instr(&mut self) -> INSTR_W<0> {
+        INSTR_W::new(self)
     }
     #[doc = "Bit 9 - Encryption/Decryption SEQUENCE Start"]
     #[inline(always)]
-    pub fn seqstart(&mut self) -> SEQSTART_W {
-        SEQSTART_W { w: self }
+    #[must_use]
+    pub fn seqstart(&mut self) -> SEQSTART_W<9> {
+        SEQSTART_W::new(self)
     }
     #[doc = "Bit 10 - Sequence Stop"]
     #[inline(always)]
-    pub fn seqstop(&mut self) -> SEQSTOP_W {
-        SEQSTOP_W { w: self }
+    #[must_use]
+    pub fn seqstop(&mut self) -> SEQSTOP_W<10> {
+        SEQSTOP_W::new(self)
     }
     #[doc = "Bit 11 - Sequence Step"]
     #[inline(always)]
-    pub fn seqstep(&mut self) -> SEQSTEP_W {
-        SEQSTEP_W { w: self }
+    #[must_use]
+    pub fn seqstep(&mut self) -> SEQSTEP_W<11> {
+        SEQSTEP_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Command Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd](index.html) module"]
+pub struct CMD_SPEC;
+impl crate::RegisterSpec for CMD_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cmd::R](R) reader structure"]
+impl crate::Readable for CMD_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
+impl crate::Writable for CMD_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CMD to value 0"]
+impl crate::Resettable for CMD_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

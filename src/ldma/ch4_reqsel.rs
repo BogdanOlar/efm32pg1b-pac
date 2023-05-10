@@ -1,31 +1,47 @@
-#[doc = "Reader of register CH4_REQSEL"]
-pub type R = crate::R<u32, super::CH4_REQSEL>;
-#[doc = "Writer for register CH4_REQSEL"]
-pub type W = crate::W<u32, super::CH4_REQSEL>;
-#[doc = "Register CH4_REQSEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CH4_REQSEL {
-    type Type = u32;
+#[doc = "Register `CH4_REQSEL` reader"]
+pub struct R(crate::R<CH4_REQSEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CH4_REQSEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SIGSEL`"]
-pub type SIGSEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SIGSEL`"]
-pub struct SIGSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIGSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CH4_REQSEL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
+    fn from(reader: crate::R<CH4_REQSEL_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `CH4_REQSEL` writer"]
+pub struct W(crate::W<CH4_REQSEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CH4_REQSEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CH4_REQSEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CH4_REQSEL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SIGSEL` reader - Signal Select"]
+pub type SIGSEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SIGSEL` writer - Signal Select"]
+pub type SIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH4_REQSEL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `SOURCESEL` reader - Source Select"]
+pub type SOURCESEL_R = crate::FieldReader<u8, SOURCESEL_A>;
 #[doc = "Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SOURCESEL_A {
     #[doc = "0: No source selected"]
@@ -57,26 +73,23 @@ impl From<SOURCESEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SOURCESEL`"]
-pub type SOURCESEL_R = crate::R<u8, SOURCESEL_A>;
 impl SOURCESEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SOURCESEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SOURCESEL_A> {
         match self.bits {
-            0 => Val(SOURCESEL_A::NONE),
-            1 => Val(SOURCESEL_A::PRS),
-            8 => Val(SOURCESEL_A::ADC0),
-            12 => Val(SOURCESEL_A::USART0),
-            13 => Val(SOURCESEL_A::USART1),
-            16 => Val(SOURCESEL_A::LEUART0),
-            20 => Val(SOURCESEL_A::I2C0),
-            24 => Val(SOURCESEL_A::TIMER0),
-            25 => Val(SOURCESEL_A::TIMER1),
-            48 => Val(SOURCESEL_A::MSC),
-            49 => Val(SOURCESEL_A::CRYPTO),
-            i => Res(i),
+            0 => Some(SOURCESEL_A::NONE),
+            1 => Some(SOURCESEL_A::PRS),
+            8 => Some(SOURCESEL_A::ADC0),
+            12 => Some(SOURCESEL_A::USART0),
+            13 => Some(SOURCESEL_A::USART1),
+            16 => Some(SOURCESEL_A::LEUART0),
+            20 => Some(SOURCESEL_A::I2C0),
+            24 => Some(SOURCESEL_A::TIMER0),
+            25 => Some(SOURCESEL_A::TIMER1),
+            48 => Some(SOURCESEL_A::MSC),
+            49 => Some(SOURCESEL_A::CRYPTO),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
@@ -135,16 +148,10 @@ impl SOURCESEL_R {
         *self == SOURCESEL_A::CRYPTO
     }
 }
-#[doc = "Write proxy for field `SOURCESEL`"]
-pub struct SOURCESEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOURCESEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SOURCESEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `SOURCESEL` writer - Source Select"]
+pub type SOURCESEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CH4_REQSEL_SPEC, u8, SOURCESEL_A, 6, O>;
+impl<'a, const O: u8> SOURCESEL_W<'a, O> {
     #[doc = "No source selected"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -200,12 +207,6 @@ impl<'a> SOURCESEL_W<'a> {
     pub fn crypto(self) -> &'a mut W {
         self.variant(SOURCESEL_A::CRYPTO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Signal Select"]
@@ -222,12 +223,39 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Signal Select"]
     #[inline(always)]
-    pub fn sigsel(&mut self) -> SIGSEL_W {
-        SIGSEL_W { w: self }
+    #[must_use]
+    pub fn sigsel(&mut self) -> SIGSEL_W<0> {
+        SIGSEL_W::new(self)
     }
     #[doc = "Bits 16:21 - Source Select"]
     #[inline(always)]
-    pub fn sourcesel(&mut self) -> SOURCESEL_W {
-        SOURCESEL_W { w: self }
+    #[must_use]
+    pub fn sourcesel(&mut self) -> SOURCESEL_W<16> {
+        SOURCESEL_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Peripheral Request Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch4_reqsel](index.html) module"]
+pub struct CH4_REQSEL_SPEC;
+impl crate::RegisterSpec for CH4_REQSEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ch4_reqsel::R](R) reader structure"]
+impl crate::Readable for CH4_REQSEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ch4_reqsel::W](W) writer structure"]
+impl crate::Writable for CH4_REQSEL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CH4_REQSEL to value 0"]
+impl crate::Resettable for CH4_REQSEL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

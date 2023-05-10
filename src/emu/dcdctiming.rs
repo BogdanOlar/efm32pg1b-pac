@@ -1,95 +1,59 @@
-#[doc = "Reader of register DCDCTIMING"]
-pub type R = crate::R<u32, super::DCDCTIMING>;
-#[doc = "Writer for register DCDCTIMING"]
-pub type W = crate::W<u32, super::DCDCTIMING>;
-#[doc = "Register DCDCTIMING `reset()`'s with value 0x0ff1_f8ff"]
-impl crate::ResetValue for super::DCDCTIMING {
-    type Type = u32;
+#[doc = "Register `DCDCTIMING` reader"]
+pub struct R(crate::R<DCDCTIMING_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DCDCTIMING_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0ff1_f8ff
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LPINITWAIT`"]
-pub type LPINITWAIT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LPINITWAIT`"]
-pub struct LPINITWAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPINITWAIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<DCDCTIMING_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
-        self.w
+    fn from(reader: crate::R<DCDCTIMING_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `COMPENPRCHGEN`"]
-pub type COMPENPRCHGEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `COMPENPRCHGEN`"]
-pub struct COMPENPRCHGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMPENPRCHGEN_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `DCDCTIMING` writer"]
+pub struct W(crate::W<DCDCTIMING_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DCDCTIMING_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LNWAIT`"]
-pub type LNWAIT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LNWAIT`"]
-pub struct LNWAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LNWAIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 12)) | (((value as u32) & 0x1f) << 12);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `BYPWAIT`"]
-pub type BYPWAIT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BYPWAIT`"]
-pub struct BYPWAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BYPWAIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::W<DCDCTIMING_SPEC>> for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 20)) | (((value as u32) & 0xff) << 20);
-        self.w
+    fn from(writer: crate::W<DCDCTIMING_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `DUTYSCALE`"]
-pub type DUTYSCALE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DUTYSCALE`"]
-pub struct DUTYSCALE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DUTYSCALE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 29)) | (((value as u32) & 0x03) << 29);
-        self.w
-    }
-}
+#[doc = "Field `LPINITWAIT` reader - Low Power Initialization Wait Time"]
+pub type LPINITWAIT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LPINITWAIT` writer - Low Power Initialization Wait Time"]
+pub type LPINITWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCTIMING_SPEC, u8, u8, 8, O>;
+#[doc = "Field `COMPENPRCHGEN` reader - LN Mode Precharge Enable"]
+pub type COMPENPRCHGEN_R = crate::BitReader<bool>;
+#[doc = "Field `COMPENPRCHGEN` writer - LN Mode Precharge Enable"]
+pub type COMPENPRCHGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCTIMING_SPEC, bool, O>;
+#[doc = "Field `LNWAIT` reader - Low Noise Controller Initialization Wait Time"]
+pub type LNWAIT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LNWAIT` writer - Low Noise Controller Initialization Wait Time"]
+pub type LNWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCTIMING_SPEC, u8, u8, 5, O>;
+#[doc = "Field `BYPWAIT` reader - Bypass Mode Transition From Low Power or Low Noise Modes Wait Wait"]
+pub type BYPWAIT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `BYPWAIT` writer - Bypass Mode Transition From Low Power or Low Noise Modes Wait Wait"]
+pub type BYPWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCTIMING_SPEC, u8, u8, 8, O>;
+#[doc = "Field `DUTYSCALE` reader - Select Bias Duty Cycle Clock"]
+pub type DUTYSCALE_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DUTYSCALE` writer - Select Bias Duty Cycle Clock"]
+pub type DUTYSCALE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCTIMING_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:7 - Low Power Initialization Wait Time"]
     #[inline(always)]
@@ -99,7 +63,7 @@ impl R {
     #[doc = "Bit 11 - LN Mode Precharge Enable"]
     #[inline(always)]
     pub fn compenprchgen(&self) -> COMPENPRCHGEN_R {
-        COMPENPRCHGEN_R::new(((self.bits >> 11) & 0x01) != 0)
+        COMPENPRCHGEN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bits 12:16 - Low Noise Controller Initialization Wait Time"]
     #[inline(always)]
@@ -114,33 +78,63 @@ impl R {
     #[doc = "Bits 29:30 - Select Bias Duty Cycle Clock"]
     #[inline(always)]
     pub fn dutyscale(&self) -> DUTYSCALE_R {
-        DUTYSCALE_R::new(((self.bits >> 29) & 0x03) as u8)
+        DUTYSCALE_R::new(((self.bits >> 29) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Low Power Initialization Wait Time"]
     #[inline(always)]
-    pub fn lpinitwait(&mut self) -> LPINITWAIT_W {
-        LPINITWAIT_W { w: self }
+    #[must_use]
+    pub fn lpinitwait(&mut self) -> LPINITWAIT_W<0> {
+        LPINITWAIT_W::new(self)
     }
     #[doc = "Bit 11 - LN Mode Precharge Enable"]
     #[inline(always)]
-    pub fn compenprchgen(&mut self) -> COMPENPRCHGEN_W {
-        COMPENPRCHGEN_W { w: self }
+    #[must_use]
+    pub fn compenprchgen(&mut self) -> COMPENPRCHGEN_W<11> {
+        COMPENPRCHGEN_W::new(self)
     }
     #[doc = "Bits 12:16 - Low Noise Controller Initialization Wait Time"]
     #[inline(always)]
-    pub fn lnwait(&mut self) -> LNWAIT_W {
-        LNWAIT_W { w: self }
+    #[must_use]
+    pub fn lnwait(&mut self) -> LNWAIT_W<12> {
+        LNWAIT_W::new(self)
     }
     #[doc = "Bits 20:27 - Bypass Mode Transition From Low Power or Low Noise Modes Wait Wait"]
     #[inline(always)]
-    pub fn bypwait(&mut self) -> BYPWAIT_W {
-        BYPWAIT_W { w: self }
+    #[must_use]
+    pub fn bypwait(&mut self) -> BYPWAIT_W<20> {
+        BYPWAIT_W::new(self)
     }
     #[doc = "Bits 29:30 - Select Bias Duty Cycle Clock"]
     #[inline(always)]
-    pub fn dutyscale(&mut self) -> DUTYSCALE_W {
-        DUTYSCALE_W { w: self }
+    #[must_use]
+    pub fn dutyscale(&mut self) -> DUTYSCALE_W<29> {
+        DUTYSCALE_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "DCDC Controller Timing Value Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcdctiming](index.html) module"]
+pub struct DCDCTIMING_SPEC;
+impl crate::RegisterSpec for DCDCTIMING_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dcdctiming::R](R) reader structure"]
+impl crate::Readable for DCDCTIMING_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dcdctiming::W](W) writer structure"]
+impl crate::Writable for DCDCTIMING_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets DCDCTIMING to value 0x0ff1_f8ff"]
+impl crate::Resettable for DCDCTIMING_SPEC {
+    const RESET_VALUE: Self::Ux = 0x0ff1_f8ff;
 }

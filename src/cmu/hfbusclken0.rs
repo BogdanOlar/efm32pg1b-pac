@@ -1,220 +1,155 @@
-#[doc = "Reader of register HFBUSCLKEN0"]
-pub type R = crate::R<u32, super::HFBUSCLKEN0>;
-#[doc = "Writer for register HFBUSCLKEN0"]
-pub type W = crate::W<u32, super::HFBUSCLKEN0>;
-#[doc = "Register HFBUSCLKEN0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::HFBUSCLKEN0 {
-    type Type = u32;
+#[doc = "Register `HFBUSCLKEN0` reader"]
+pub struct R(crate::R<HFBUSCLKEN0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HFBUSCLKEN0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LE`"]
-pub type LE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LE`"]
-pub struct LE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LE_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<HFBUSCLKEN0_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<HFBUSCLKEN0_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `CRYPTO`"]
-pub type CRYPTO_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CRYPTO`"]
-pub struct CRYPTO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRYPTO_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `HFBUSCLKEN0` writer"]
+pub struct W(crate::W<HFBUSCLKEN0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<HFBUSCLKEN0_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `GPIO`"]
-pub type GPIO_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `GPIO`"]
-pub struct GPIO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIO_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `PRS`"]
-pub type PRS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PRS`"]
-pub struct PRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRS_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<HFBUSCLKEN0_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<HFBUSCLKEN0_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `LDMA`"]
-pub type LDMA_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LDMA`"]
-pub struct LDMA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LDMA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `GPCRC`"]
-pub type GPCRC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `GPCRC`"]
-pub struct GPCRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPCRC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
+#[doc = "Field `LE` reader - Low Energy Peripheral Interface Clock Enable"]
+pub type LE_R = crate::BitReader<bool>;
+#[doc = "Field `LE` writer - Low Energy Peripheral Interface Clock Enable"]
+pub type LE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+#[doc = "Field `CRYPTO` reader - Advanced Encryption Standard Accelerator Clock Enable"]
+pub type CRYPTO_R = crate::BitReader<bool>;
+#[doc = "Field `CRYPTO` writer - Advanced Encryption Standard Accelerator Clock Enable"]
+pub type CRYPTO_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+#[doc = "Field `GPIO` reader - General purpose Input/Output Clock Enable"]
+pub type GPIO_R = crate::BitReader<bool>;
+#[doc = "Field `GPIO` writer - General purpose Input/Output Clock Enable"]
+pub type GPIO_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+#[doc = "Field `PRS` reader - Peripheral Reflex System Clock Enable"]
+pub type PRS_R = crate::BitReader<bool>;
+#[doc = "Field `PRS` writer - Peripheral Reflex System Clock Enable"]
+pub type PRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+#[doc = "Field `LDMA` reader - Linked Direct Memory Access Controller Clock Enable"]
+pub type LDMA_R = crate::BitReader<bool>;
+#[doc = "Field `LDMA` writer - Linked Direct Memory Access Controller Clock Enable"]
+pub type LDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+#[doc = "Field `GPCRC` reader - General Purpose CRC Clock Enable"]
+pub type GPCRC_R = crate::BitReader<bool>;
+#[doc = "Field `GPCRC` writer - General Purpose CRC Clock Enable"]
+pub type GPCRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Low Energy Peripheral Interface Clock Enable"]
     #[inline(always)]
     pub fn le(&self) -> LE_R {
-        LE_R::new((self.bits & 0x01) != 0)
+        LE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Advanced Encryption Standard Accelerator Clock Enable"]
     #[inline(always)]
     pub fn crypto(&self) -> CRYPTO_R {
-        CRYPTO_R::new(((self.bits >> 1) & 0x01) != 0)
+        CRYPTO_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - General purpose Input/Output Clock Enable"]
     #[inline(always)]
     pub fn gpio(&self) -> GPIO_R {
-        GPIO_R::new(((self.bits >> 2) & 0x01) != 0)
+        GPIO_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Peripheral Reflex System Clock Enable"]
     #[inline(always)]
     pub fn prs(&self) -> PRS_R {
-        PRS_R::new(((self.bits >> 3) & 0x01) != 0)
+        PRS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Linked Direct Memory Access Controller Clock Enable"]
     #[inline(always)]
     pub fn ldma(&self) -> LDMA_R {
-        LDMA_R::new(((self.bits >> 4) & 0x01) != 0)
+        LDMA_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - General Purpose CRC Clock Enable"]
     #[inline(always)]
     pub fn gpcrc(&self) -> GPCRC_R {
-        GPCRC_R::new(((self.bits >> 5) & 0x01) != 0)
+        GPCRC_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Low Energy Peripheral Interface Clock Enable"]
     #[inline(always)]
-    pub fn le(&mut self) -> LE_W {
-        LE_W { w: self }
+    #[must_use]
+    pub fn le(&mut self) -> LE_W<0> {
+        LE_W::new(self)
     }
     #[doc = "Bit 1 - Advanced Encryption Standard Accelerator Clock Enable"]
     #[inline(always)]
-    pub fn crypto(&mut self) -> CRYPTO_W {
-        CRYPTO_W { w: self }
+    #[must_use]
+    pub fn crypto(&mut self) -> CRYPTO_W<1> {
+        CRYPTO_W::new(self)
     }
     #[doc = "Bit 2 - General purpose Input/Output Clock Enable"]
     #[inline(always)]
-    pub fn gpio(&mut self) -> GPIO_W {
-        GPIO_W { w: self }
+    #[must_use]
+    pub fn gpio(&mut self) -> GPIO_W<2> {
+        GPIO_W::new(self)
     }
     #[doc = "Bit 3 - Peripheral Reflex System Clock Enable"]
     #[inline(always)]
-    pub fn prs(&mut self) -> PRS_W {
-        PRS_W { w: self }
+    #[must_use]
+    pub fn prs(&mut self) -> PRS_W<3> {
+        PRS_W::new(self)
     }
     #[doc = "Bit 4 - Linked Direct Memory Access Controller Clock Enable"]
     #[inline(always)]
-    pub fn ldma(&mut self) -> LDMA_W {
-        LDMA_W { w: self }
+    #[must_use]
+    pub fn ldma(&mut self) -> LDMA_W<4> {
+        LDMA_W::new(self)
     }
     #[doc = "Bit 5 - General Purpose CRC Clock Enable"]
     #[inline(always)]
-    pub fn gpcrc(&mut self) -> GPCRC_W {
-        GPCRC_W { w: self }
+    #[must_use]
+    pub fn gpcrc(&mut self) -> GPCRC_W<5> {
+        GPCRC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "High Frequency Bus Clock Enable Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfbusclken0](index.html) module"]
+pub struct HFBUSCLKEN0_SPEC;
+impl crate::RegisterSpec for HFBUSCLKEN0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [hfbusclken0::R](R) reader structure"]
+impl crate::Readable for HFBUSCLKEN0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [hfbusclken0::W](W) writer structure"]
+impl crate::Writable for HFBUSCLKEN0_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets HFBUSCLKEN0 to value 0"]
+impl crate::Resettable for HFBUSCLKEN0_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

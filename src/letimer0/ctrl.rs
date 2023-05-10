@@ -1,17 +1,43 @@
-#[doc = "Reader of register CTRL"]
-pub type R = crate::R<u32, super::CTRL>;
-#[doc = "Writer for register CTRL"]
-pub type W = crate::W<u32, super::CTRL>;
-#[doc = "Register CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CTRL {
-    type Type = u32;
+#[doc = "Register `CTRL` reader"]
+pub struct R(crate::R<CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CTRL` writer"]
+pub struct W(crate::W<CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `REPMODE` reader - Repeat Mode"]
+pub type REPMODE_R = crate::FieldReader<u8, REPMODE_A>;
 #[doc = "Repeat Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REPMODE_A {
     #[doc = "0: When started, the LETIMER counts down until it is stopped by software"]
@@ -29,10 +55,8 @@ impl From<REPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `REPMODE`"]
-pub type REPMODE_R = crate::R<u8, REPMODE_A>;
 impl REPMODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REPMODE_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl REPMODE_R {
         *self == REPMODE_A::DOUBLE
     }
 }
-#[doc = "Write proxy for field `REPMODE`"]
-pub struct REPMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REPMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: REPMODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `REPMODE` writer - Repeat Mode"]
+pub type REPMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, REPMODE_A, 2, O>;
+impl<'a, const O: u8> REPMODE_W<'a, O> {
     #[doc = "When started, the LETIMER counts down until it is stopped by software"]
     #[inline(always)]
     pub fn free(self) -> &'a mut W {
@@ -96,15 +112,11 @@ impl<'a> REPMODE_W<'a> {
     pub fn double(self) -> &'a mut W {
         self.variant(REPMODE_A::DOUBLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `UFOA0` reader - Underflow Output Action 0"]
+pub type UFOA0_R = crate::FieldReader<u8, UFOA0_A>;
 #[doc = "Underflow Output Action 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UFOA0_A {
     #[doc = "0: LETn_O0 is held at its idle value as defined by OPOL0"]
@@ -122,10 +134,8 @@ impl From<UFOA0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `UFOA0`"]
-pub type UFOA0_R = crate::R<u8, UFOA0_A>;
 impl UFOA0_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UFOA0_A {
         match self.bits {
@@ -157,18 +167,9 @@ impl UFOA0_R {
         *self == UFOA0_A::PWM
     }
 }
-#[doc = "Write proxy for field `UFOA0`"]
-pub struct UFOA0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UFOA0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UFOA0_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `UFOA0` writer - Underflow Output Action 0"]
+pub type UFOA0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, UFOA0_A, 2, O>;
+impl<'a, const O: u8> UFOA0_W<'a, O> {
     #[doc = "LETn_O0 is held at its idle value as defined by OPOL0"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -189,15 +190,11 @@ impl<'a> UFOA0_W<'a> {
     pub fn pwm(self) -> &'a mut W {
         self.variant(UFOA0_A::PWM)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `UFOA1` reader - Underflow Output Action 1"]
+pub type UFOA1_R = crate::FieldReader<u8, UFOA1_A>;
 #[doc = "Underflow Output Action 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UFOA1_A {
     #[doc = "0: LETn_O1 is held at its idle value as defined by OPOL1"]
@@ -215,10 +212,8 @@ impl From<UFOA1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `UFOA1`"]
-pub type UFOA1_R = crate::R<u8, UFOA1_A>;
 impl UFOA1_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UFOA1_A {
         match self.bits {
@@ -250,18 +245,9 @@ impl UFOA1_R {
         *self == UFOA1_A::PWM
     }
 }
-#[doc = "Write proxy for field `UFOA1`"]
-pub struct UFOA1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UFOA1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UFOA1_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `UFOA1` writer - Underflow Output Action 1"]
+pub type UFOA1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, UFOA1_A, 2, O>;
+impl<'a, const O: u8> UFOA1_W<'a, O> {
     #[doc = "LETn_O1 is held at its idle value as defined by OPOL1"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -282,214 +268,141 @@ impl<'a> UFOA1_W<'a> {
     pub fn pwm(self) -> &'a mut W {
         self.variant(UFOA1_A::PWM)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
-        self.w
-    }
 }
-#[doc = "Reader of field `OPOL0`"]
-pub type OPOL0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OPOL0`"]
-pub struct OPOL0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OPOL0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `OPOL1`"]
-pub type OPOL1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OPOL1`"]
-pub struct OPOL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OPOL1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Reader of field `BUFTOP`"]
-pub type BUFTOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BUFTOP`"]
-pub struct BUFTOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUFTOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `COMP0TOP`"]
-pub type COMP0TOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `COMP0TOP`"]
-pub struct COMP0TOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMP0TOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
-    }
-}
-#[doc = "Reader of field `DEBUGRUN`"]
-pub type DEBUGRUN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DEBUGRUN`"]
-pub struct DEBUGRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUGRUN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
+#[doc = "Field `OPOL0` reader - Output 0 Polarity"]
+pub type OPOL0_R = crate::BitReader<bool>;
+#[doc = "Field `OPOL0` writer - Output 0 Polarity"]
+pub type OPOL0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `OPOL1` reader - Output 1 Polarity"]
+pub type OPOL1_R = crate::BitReader<bool>;
+#[doc = "Field `OPOL1` writer - Output 1 Polarity"]
+pub type OPOL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `BUFTOP` reader - Buffered Top"]
+pub type BUFTOP_R = crate::BitReader<bool>;
+#[doc = "Field `BUFTOP` writer - Buffered Top"]
+pub type BUFTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `COMP0TOP` reader - Compare Value 0 is Top Value"]
+pub type COMP0TOP_R = crate::BitReader<bool>;
+#[doc = "Field `COMP0TOP` writer - Compare Value 0 is Top Value"]
+pub type COMP0TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
+pub type DEBUGRUN_R = crate::BitReader<bool>;
+#[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Repeat Mode"]
     #[inline(always)]
     pub fn repmode(&self) -> REPMODE_R {
-        REPMODE_R::new((self.bits & 0x03) as u8)
+        REPMODE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Underflow Output Action 0"]
     #[inline(always)]
     pub fn ufoa0(&self) -> UFOA0_R {
-        UFOA0_R::new(((self.bits >> 2) & 0x03) as u8)
+        UFOA0_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - Underflow Output Action 1"]
     #[inline(always)]
     pub fn ufoa1(&self) -> UFOA1_R {
-        UFOA1_R::new(((self.bits >> 4) & 0x03) as u8)
+        UFOA1_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 6 - Output 0 Polarity"]
     #[inline(always)]
     pub fn opol0(&self) -> OPOL0_R {
-        OPOL0_R::new(((self.bits >> 6) & 0x01) != 0)
+        OPOL0_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Output 1 Polarity"]
     #[inline(always)]
     pub fn opol1(&self) -> OPOL1_R {
-        OPOL1_R::new(((self.bits >> 7) & 0x01) != 0)
+        OPOL1_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Buffered Top"]
     #[inline(always)]
     pub fn buftop(&self) -> BUFTOP_R {
-        BUFTOP_R::new(((self.bits >> 8) & 0x01) != 0)
+        BUFTOP_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Compare Value 0 is Top Value"]
     #[inline(always)]
     pub fn comp0top(&self) -> COMP0TOP_R {
-        COMP0TOP_R::new(((self.bits >> 9) & 0x01) != 0)
+        COMP0TOP_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 12 - Debug Mode Run Enable"]
     #[inline(always)]
     pub fn debugrun(&self) -> DEBUGRUN_R {
-        DEBUGRUN_R::new(((self.bits >> 12) & 0x01) != 0)
+        DEBUGRUN_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Repeat Mode"]
     #[inline(always)]
-    pub fn repmode(&mut self) -> REPMODE_W {
-        REPMODE_W { w: self }
+    #[must_use]
+    pub fn repmode(&mut self) -> REPMODE_W<0> {
+        REPMODE_W::new(self)
     }
     #[doc = "Bits 2:3 - Underflow Output Action 0"]
     #[inline(always)]
-    pub fn ufoa0(&mut self) -> UFOA0_W {
-        UFOA0_W { w: self }
+    #[must_use]
+    pub fn ufoa0(&mut self) -> UFOA0_W<2> {
+        UFOA0_W::new(self)
     }
     #[doc = "Bits 4:5 - Underflow Output Action 1"]
     #[inline(always)]
-    pub fn ufoa1(&mut self) -> UFOA1_W {
-        UFOA1_W { w: self }
+    #[must_use]
+    pub fn ufoa1(&mut self) -> UFOA1_W<4> {
+        UFOA1_W::new(self)
     }
     #[doc = "Bit 6 - Output 0 Polarity"]
     #[inline(always)]
-    pub fn opol0(&mut self) -> OPOL0_W {
-        OPOL0_W { w: self }
+    #[must_use]
+    pub fn opol0(&mut self) -> OPOL0_W<6> {
+        OPOL0_W::new(self)
     }
     #[doc = "Bit 7 - Output 1 Polarity"]
     #[inline(always)]
-    pub fn opol1(&mut self) -> OPOL1_W {
-        OPOL1_W { w: self }
+    #[must_use]
+    pub fn opol1(&mut self) -> OPOL1_W<7> {
+        OPOL1_W::new(self)
     }
     #[doc = "Bit 8 - Buffered Top"]
     #[inline(always)]
-    pub fn buftop(&mut self) -> BUFTOP_W {
-        BUFTOP_W { w: self }
+    #[must_use]
+    pub fn buftop(&mut self) -> BUFTOP_W<8> {
+        BUFTOP_W::new(self)
     }
     #[doc = "Bit 9 - Compare Value 0 is Top Value"]
     #[inline(always)]
-    pub fn comp0top(&mut self) -> COMP0TOP_W {
-        COMP0TOP_W { w: self }
+    #[must_use]
+    pub fn comp0top(&mut self) -> COMP0TOP_W<9> {
+        COMP0TOP_W::new(self)
     }
     #[doc = "Bit 12 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
-        DEBUGRUN_W { w: self }
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<12> {
+        DEBUGRUN_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+pub struct CTRL_SPEC;
+impl crate::RegisterSpec for CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+impl crate::Writable for CTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets CTRL to value 0"]
+impl crate::Resettable for CTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,17 +1,43 @@
-#[doc = "Reader of register WAC"]
-pub type R = crate::R<u32, super::WAC>;
-#[doc = "Writer for register WAC"]
-pub type W = crate::W<u32, super::WAC>;
-#[doc = "Register WAC `reset()`'s with value 0"]
-impl crate::ResetValue for super::WAC {
-    type Type = u32;
+#[doc = "Register `WAC` reader"]
+pub struct R(crate::R<WAC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<WAC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<WAC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<WAC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `WAC` writer"]
+pub struct W(crate::W<WAC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<WAC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<WAC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<WAC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MODULUS` reader - Modular Operation Modulus"]
+pub type MODULUS_R = crate::FieldReader<u8, MODULUS_A>;
 #[doc = "Modular Operation Modulus\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODULUS_A {
     #[doc = "0: Generic modulus. p = 2^256"]
@@ -51,30 +77,27 @@ impl From<MODULUS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODULUS`"]
-pub type MODULUS_R = crate::R<u8, MODULUS_A>;
 impl MODULUS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, MODULUS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<MODULUS_A> {
         match self.bits {
-            0 => Val(MODULUS_A::BIN256),
-            1 => Val(MODULUS_A::BIN128),
-            2 => Val(MODULUS_A::ECCBIN233P),
-            3 => Val(MODULUS_A::ECCBIN163P),
-            4 => Val(MODULUS_A::GCMBIN128),
-            5 => Val(MODULUS_A::ECCPRIME256P),
-            6 => Val(MODULUS_A::ECCPRIME224P),
-            7 => Val(MODULUS_A::ECCPRIME192P),
-            8 => Val(MODULUS_A::ECCBIN233N),
-            9 => Val(MODULUS_A::ECCBIN233KN),
-            10 => Val(MODULUS_A::ECCBIN163N),
-            11 => Val(MODULUS_A::ECCBIN163KN),
-            12 => Val(MODULUS_A::ECCPRIME256N),
-            13 => Val(MODULUS_A::ECCPRIME224N),
-            14 => Val(MODULUS_A::ECCPRIME192N),
-            i => Res(i),
+            0 => Some(MODULUS_A::BIN256),
+            1 => Some(MODULUS_A::BIN128),
+            2 => Some(MODULUS_A::ECCBIN233P),
+            3 => Some(MODULUS_A::ECCBIN163P),
+            4 => Some(MODULUS_A::GCMBIN128),
+            5 => Some(MODULUS_A::ECCPRIME256P),
+            6 => Some(MODULUS_A::ECCPRIME224P),
+            7 => Some(MODULUS_A::ECCPRIME192P),
+            8 => Some(MODULUS_A::ECCBIN233N),
+            9 => Some(MODULUS_A::ECCBIN233KN),
+            10 => Some(MODULUS_A::ECCBIN163N),
+            11 => Some(MODULUS_A::ECCBIN163KN),
+            12 => Some(MODULUS_A::ECCPRIME256N),
+            13 => Some(MODULUS_A::ECCPRIME224N),
+            14 => Some(MODULUS_A::ECCPRIME192N),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BIN256`"]
@@ -153,16 +176,9 @@ impl MODULUS_R {
         *self == MODULUS_A::ECCPRIME192N
     }
 }
-#[doc = "Write proxy for field `MODULUS`"]
-pub struct MODULUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODULUS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODULUS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `MODULUS` writer - Modular Operation Modulus"]
+pub type MODULUS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WAC_SPEC, u8, MODULUS_A, 4, O>;
+impl<'a, const O: u8> MODULUS_W<'a, O> {
     #[doc = "Generic modulus. p = 2^256"]
     #[inline(always)]
     pub fn bin256(self) -> &'a mut W {
@@ -238,39 +254,15 @@ impl<'a> MODULUS_W<'a> {
     pub fn eccprime192n(self) -> &'a mut W {
         self.variant(MODULUS_A::ECCPRIME192N)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
-    }
 }
-#[doc = "Reader of field `MODOP`"]
-pub type MODOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MODOP`"]
-pub struct MODOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
+#[doc = "Field `MODOP` reader - Modular Operation Field Type"]
+pub type MODOP_R = crate::BitReader<bool>;
+#[doc = "Field `MODOP` writer - Modular Operation Field Type"]
+pub type MODOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, WAC_SPEC, bool, O>;
+#[doc = "Field `MULWIDTH` reader - Multiply Width"]
+pub type MULWIDTH_R = crate::FieldReader<u8, MULWIDTH_A>;
 #[doc = "Multiply Width\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MULWIDTH_A {
     #[doc = "0: Multiply 256 bits"]
@@ -286,18 +278,15 @@ impl From<MULWIDTH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MULWIDTH`"]
-pub type MULWIDTH_R = crate::R<u8, MULWIDTH_A>;
 impl MULWIDTH_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, MULWIDTH_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<MULWIDTH_A> {
         match self.bits {
-            0 => Val(MULWIDTH_A::MUL256),
-            1 => Val(MULWIDTH_A::MUL128),
-            2 => Val(MULWIDTH_A::MULMOD),
-            i => Res(i),
+            0 => Some(MULWIDTH_A::MUL256),
+            1 => Some(MULWIDTH_A::MUL128),
+            2 => Some(MULWIDTH_A::MULMOD),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `MUL256`"]
@@ -316,16 +305,9 @@ impl MULWIDTH_R {
         *self == MULWIDTH_A::MULMOD
     }
 }
-#[doc = "Write proxy for field `MULWIDTH`"]
-pub struct MULWIDTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MULWIDTH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MULWIDTH_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `MULWIDTH` writer - Multiply Width"]
+pub type MULWIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WAC_SPEC, u8, MULWIDTH_A, 2, O>;
+impl<'a, const O: u8> MULWIDTH_W<'a, O> {
     #[doc = "Multiply 256 bits"]
     #[inline(always)]
     pub fn mul256(self) -> &'a mut W {
@@ -341,15 +323,11 @@ impl<'a> MULWIDTH_W<'a> {
     pub fn mulmod(self) -> &'a mut W {
         self.variant(MULWIDTH_A::MULMOD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `RESULTWIDTH` reader - Result Width"]
+pub type RESULTWIDTH_R = crate::FieldReader<u8, RESULTWIDTH_A>;
 #[doc = "Result Width\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RESULTWIDTH_A {
     #[doc = "0: Results have 256 bits"]
@@ -365,18 +343,15 @@ impl From<RESULTWIDTH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RESULTWIDTH`"]
-pub type RESULTWIDTH_R = crate::R<u8, RESULTWIDTH_A>;
 impl RESULTWIDTH_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, RESULTWIDTH_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RESULTWIDTH_A> {
         match self.bits {
-            0 => Val(RESULTWIDTH_A::_256BIT),
-            1 => Val(RESULTWIDTH_A::_128BIT),
-            2 => Val(RESULTWIDTH_A::_260BIT),
-            i => Res(i),
+            0 => Some(RESULTWIDTH_A::_256BIT),
+            1 => Some(RESULTWIDTH_A::_128BIT),
+            2 => Some(RESULTWIDTH_A::_260BIT),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_256BIT`"]
@@ -395,16 +370,10 @@ impl RESULTWIDTH_R {
         *self == RESULTWIDTH_A::_260BIT
     }
 }
-#[doc = "Write proxy for field `RESULTWIDTH`"]
-pub struct RESULTWIDTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESULTWIDTH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RESULTWIDTH_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `RESULTWIDTH` writer - Result Width"]
+pub type RESULTWIDTH_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WAC_SPEC, u8, RESULTWIDTH_A, 2, O>;
+impl<'a, const O: u8> RESULTWIDTH_W<'a, O> {
     #[doc = "Results have 256 bits"]
     #[inline(always)]
     pub fn _256bit(self) -> &'a mut W {
@@ -420,12 +389,6 @@ impl<'a> RESULTWIDTH_W<'a> {
     pub fn _260bit(self) -> &'a mut W {
         self.variant(RESULTWIDTH_A::_260BIT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Modular Operation Modulus"]
@@ -436,38 +399,67 @@ impl R {
     #[doc = "Bit 4 - Modular Operation Field Type"]
     #[inline(always)]
     pub fn modop(&self) -> MODOP_R {
-        MODOP_R::new(((self.bits >> 4) & 0x01) != 0)
+        MODOP_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Multiply Width"]
     #[inline(always)]
     pub fn mulwidth(&self) -> MULWIDTH_R {
-        MULWIDTH_R::new(((self.bits >> 8) & 0x03) as u8)
+        MULWIDTH_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Result Width"]
     #[inline(always)]
     pub fn resultwidth(&self) -> RESULTWIDTH_R {
-        RESULTWIDTH_R::new(((self.bits >> 10) & 0x03) as u8)
+        RESULTWIDTH_R::new(((self.bits >> 10) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Modular Operation Modulus"]
     #[inline(always)]
-    pub fn modulus(&mut self) -> MODULUS_W {
-        MODULUS_W { w: self }
+    #[must_use]
+    pub fn modulus(&mut self) -> MODULUS_W<0> {
+        MODULUS_W::new(self)
     }
     #[doc = "Bit 4 - Modular Operation Field Type"]
     #[inline(always)]
-    pub fn modop(&mut self) -> MODOP_W {
-        MODOP_W { w: self }
+    #[must_use]
+    pub fn modop(&mut self) -> MODOP_W<4> {
+        MODOP_W::new(self)
     }
     #[doc = "Bits 8:9 - Multiply Width"]
     #[inline(always)]
-    pub fn mulwidth(&mut self) -> MULWIDTH_W {
-        MULWIDTH_W { w: self }
+    #[must_use]
+    pub fn mulwidth(&mut self) -> MULWIDTH_W<8> {
+        MULWIDTH_W::new(self)
     }
     #[doc = "Bits 10:11 - Result Width"]
     #[inline(always)]
-    pub fn resultwidth(&mut self) -> RESULTWIDTH_W {
-        RESULTWIDTH_W { w: self }
+    #[must_use]
+    pub fn resultwidth(&mut self) -> RESULTWIDTH_W<10> {
+        RESULTWIDTH_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Wide Arithmetic Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wac](index.html) module"]
+pub struct WAC_SPEC;
+impl crate::RegisterSpec for WAC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [wac::R](R) reader structure"]
+impl crate::Readable for WAC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [wac::W](W) writer structure"]
+impl crate::Writable for WAC_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets WAC to value 0"]
+impl crate::Resettable for WAC_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

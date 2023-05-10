@@ -1,97 +1,65 @@
-#[doc = "Reader of register AUXHFRCOCTRL"]
-pub type R = crate::R<u32, super::AUXHFRCOCTRL>;
-#[doc = "Writer for register AUXHFRCOCTRL"]
-pub type W = crate::W<u32, super::AUXHFRCOCTRL>;
-#[doc = "Register AUXHFRCOCTRL `reset()`'s with value 0xb148_1f3c"]
-impl crate::ResetValue for super::AUXHFRCOCTRL {
-    type Type = u32;
+#[doc = "Register `AUXHFRCOCTRL` reader"]
+pub struct R(crate::R<AUXHFRCOCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<AUXHFRCOCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xb148_1f3c
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TUNING`"]
-pub type TUNING_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TUNING`"]
-pub struct TUNING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TUNING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<AUXHFRCOCTRL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | ((value as u32) & 0x7f);
-        self.w
+    fn from(reader: crate::R<AUXHFRCOCTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `FINETUNING`"]
-pub type FINETUNING_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FINETUNING`"]
-pub struct FINETUNING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FINETUNING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `AUXHFRCOCTRL` writer"]
+pub struct W(crate::W<AUXHFRCOCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<AUXHFRCOCTRL_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `FREQRANGE`"]
-pub type FREQRANGE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FREQRANGE`"]
-pub struct FREQRANGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FREQRANGE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `CMPBIAS`"]
-pub type CMPBIAS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CMPBIAS`"]
-pub struct CMPBIAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPBIAS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::W<AUXHFRCOCTRL_SPEC>> for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 21)) | (((value as u32) & 0x07) << 21);
-        self.w
+    fn from(writer: crate::W<AUXHFRCOCTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `LDOHP`"]
-pub type LDOHP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LDOHP`"]
-pub struct LDOHP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LDOHP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
-}
+#[doc = "Field `TUNING` reader - AUXHFRCO Tuning Value"]
+pub type TUNING_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TUNING` writer - AUXHFRCO Tuning Value"]
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 7, O>;
+#[doc = "Field `FINETUNING` reader - AUXHFRCO Fine Tuning Value"]
+pub type FINETUNING_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `FINETUNING` writer - AUXHFRCO Fine Tuning Value"]
+pub type FINETUNING_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `FREQRANGE` reader - AUXHFRCO Frequency Range"]
+pub type FREQRANGE_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `FREQRANGE` writer - AUXHFRCO Frequency Range"]
+pub type FREQRANGE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 5, O>;
+#[doc = "Field `CMPBIAS` reader - AUXHFRCO Comparator Bias Current"]
+pub type CMPBIAS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CMPBIAS` writer - AUXHFRCO Comparator Bias Current"]
+pub type CMPBIAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `LDOHP` reader - AUXHFRCO LDO High Power Mode"]
+pub type LDOHP_R = crate::BitReader<bool>;
+#[doc = "Field `LDOHP` writer - AUXHFRCO LDO High Power Mode"]
+pub type LDOHP_W<'a, const O: u8> = crate::BitWriter<'a, u32, AUXHFRCOCTRL_SPEC, bool, O>;
+#[doc = "Field `CLKDIV` reader - Locally Divide AUXHFRCO Clock Output"]
+pub type CLKDIV_R = crate::FieldReader<u8, CLKDIV_A>;
 #[doc = "Locally Divide AUXHFRCO Clock Output\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKDIV_A {
     #[doc = "0: Divide by 1."]
@@ -107,18 +75,15 @@ impl From<CLKDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CLKDIV`"]
-pub type CLKDIV_R = crate::R<u8, CLKDIV_A>;
 impl CLKDIV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CLKDIV_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CLKDIV_A> {
         match self.bits {
-            0 => Val(CLKDIV_A::DIV1),
-            1 => Val(CLKDIV_A::DIV2),
-            2 => Val(CLKDIV_A::DIV4),
-            i => Res(i),
+            0 => Some(CLKDIV_A::DIV1),
+            1 => Some(CLKDIV_A::DIV2),
+            2 => Some(CLKDIV_A::DIV4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DIV1`"]
@@ -137,16 +102,10 @@ impl CLKDIV_R {
         *self == CLKDIV_A::DIV4
     }
 }
-#[doc = "Write proxy for field `CLKDIV`"]
-pub struct CLKDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKDIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLKDIV_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CLKDIV` writer - Locally Divide AUXHFRCO Clock Output"]
+pub type CLKDIV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, CLKDIV_A, 2, O>;
+impl<'a, const O: u8> CLKDIV_W<'a, O> {
     #[doc = "Divide by 1."]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -162,51 +121,15 @@ impl<'a> CLKDIV_W<'a> {
     pub fn div4(self) -> &'a mut W {
         self.variant(CLKDIV_A::DIV4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 25)) | (((value as u32) & 0x03) << 25);
-        self.w
-    }
 }
-#[doc = "Reader of field `FINETUNINGEN`"]
-pub type FINETUNINGEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FINETUNINGEN`"]
-pub struct FINETUNINGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FINETUNINGEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-        self.w
-    }
-}
-#[doc = "Reader of field `VREFTC`"]
-pub type VREFTC_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `VREFTC`"]
-pub struct VREFTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VREFTC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | (((value as u32) & 0x0f) << 28);
-        self.w
-    }
-}
+#[doc = "Field `FINETUNINGEN` reader - Enable Reference for Fine Tuning"]
+pub type FINETUNINGEN_R = crate::BitReader<bool>;
+#[doc = "Field `FINETUNINGEN` writer - Enable Reference for Fine Tuning"]
+pub type FINETUNINGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AUXHFRCOCTRL_SPEC, bool, O>;
+#[doc = "Field `VREFTC` reader - AUXHFRCO Temperature Coefficient Trim on Comparator Reference"]
+pub type VREFTC_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `VREFTC` writer - AUXHFRCO Temperature Coefficient Trim on Comparator Reference"]
+pub type VREFTC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:6 - AUXHFRCO Tuning Value"]
     #[inline(always)]
@@ -226,22 +149,22 @@ impl R {
     #[doc = "Bits 21:23 - AUXHFRCO Comparator Bias Current"]
     #[inline(always)]
     pub fn cmpbias(&self) -> CMPBIAS_R {
-        CMPBIAS_R::new(((self.bits >> 21) & 0x07) as u8)
+        CMPBIAS_R::new(((self.bits >> 21) & 7) as u8)
     }
     #[doc = "Bit 24 - AUXHFRCO LDO High Power Mode"]
     #[inline(always)]
     pub fn ldohp(&self) -> LDOHP_R {
-        LDOHP_R::new(((self.bits >> 24) & 0x01) != 0)
+        LDOHP_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bits 25:26 - Locally Divide AUXHFRCO Clock Output"]
     #[inline(always)]
     pub fn clkdiv(&self) -> CLKDIV_R {
-        CLKDIV_R::new(((self.bits >> 25) & 0x03) as u8)
+        CLKDIV_R::new(((self.bits >> 25) & 3) as u8)
     }
     #[doc = "Bit 27 - Enable Reference for Fine Tuning"]
     #[inline(always)]
     pub fn finetuningen(&self) -> FINETUNINGEN_R {
-        FINETUNINGEN_R::new(((self.bits >> 27) & 0x01) != 0)
+        FINETUNINGEN_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bits 28:31 - AUXHFRCO Temperature Coefficient Trim on Comparator Reference"]
     #[inline(always)]
@@ -252,42 +175,75 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - AUXHFRCO Tuning Value"]
     #[inline(always)]
-    pub fn tuning(&mut self) -> TUNING_W {
-        TUNING_W { w: self }
+    #[must_use]
+    pub fn tuning(&mut self) -> TUNING_W<0> {
+        TUNING_W::new(self)
     }
     #[doc = "Bits 8:13 - AUXHFRCO Fine Tuning Value"]
     #[inline(always)]
-    pub fn finetuning(&mut self) -> FINETUNING_W {
-        FINETUNING_W { w: self }
+    #[must_use]
+    pub fn finetuning(&mut self) -> FINETUNING_W<8> {
+        FINETUNING_W::new(self)
     }
     #[doc = "Bits 16:20 - AUXHFRCO Frequency Range"]
     #[inline(always)]
-    pub fn freqrange(&mut self) -> FREQRANGE_W {
-        FREQRANGE_W { w: self }
+    #[must_use]
+    pub fn freqrange(&mut self) -> FREQRANGE_W<16> {
+        FREQRANGE_W::new(self)
     }
     #[doc = "Bits 21:23 - AUXHFRCO Comparator Bias Current"]
     #[inline(always)]
-    pub fn cmpbias(&mut self) -> CMPBIAS_W {
-        CMPBIAS_W { w: self }
+    #[must_use]
+    pub fn cmpbias(&mut self) -> CMPBIAS_W<21> {
+        CMPBIAS_W::new(self)
     }
     #[doc = "Bit 24 - AUXHFRCO LDO High Power Mode"]
     #[inline(always)]
-    pub fn ldohp(&mut self) -> LDOHP_W {
-        LDOHP_W { w: self }
+    #[must_use]
+    pub fn ldohp(&mut self) -> LDOHP_W<24> {
+        LDOHP_W::new(self)
     }
     #[doc = "Bits 25:26 - Locally Divide AUXHFRCO Clock Output"]
     #[inline(always)]
-    pub fn clkdiv(&mut self) -> CLKDIV_W {
-        CLKDIV_W { w: self }
+    #[must_use]
+    pub fn clkdiv(&mut self) -> CLKDIV_W<25> {
+        CLKDIV_W::new(self)
     }
     #[doc = "Bit 27 - Enable Reference for Fine Tuning"]
     #[inline(always)]
-    pub fn finetuningen(&mut self) -> FINETUNINGEN_W {
-        FINETUNINGEN_W { w: self }
+    #[must_use]
+    pub fn finetuningen(&mut self) -> FINETUNINGEN_W<27> {
+        FINETUNINGEN_W::new(self)
     }
     #[doc = "Bits 28:31 - AUXHFRCO Temperature Coefficient Trim on Comparator Reference"]
     #[inline(always)]
-    pub fn vreftc(&mut self) -> VREFTC_W {
-        VREFTC_W { w: self }
+    #[must_use]
+    pub fn vreftc(&mut self) -> VREFTC_W<28> {
+        VREFTC_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "AUXHFRCO Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [auxhfrcoctrl](index.html) module"]
+pub struct AUXHFRCOCTRL_SPEC;
+impl crate::RegisterSpec for AUXHFRCOCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [auxhfrcoctrl::R](R) reader structure"]
+impl crate::Readable for AUXHFRCOCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [auxhfrcoctrl::W](W) writer structure"]
+impl crate::Writable for AUXHFRCOCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets AUXHFRCOCTRL to value 0xb148_1f3c"]
+impl crate::Resettable for AUXHFRCOCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0xb148_1f3c;
 }

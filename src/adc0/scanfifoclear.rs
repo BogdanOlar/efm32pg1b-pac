@@ -1,39 +1,52 @@
-#[doc = "Writer for register SCANFIFOCLEAR"]
-pub type W = crate::W<u32, super::SCANFIFOCLEAR>;
-#[doc = "Register SCANFIFOCLEAR `reset()`'s with value 0"]
-impl crate::ResetValue for super::SCANFIFOCLEAR {
-    type Type = u32;
+#[doc = "Register `SCANFIFOCLEAR` writer"]
+pub struct W(crate::W<SCANFIFOCLEAR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SCANFIFOCLEAR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `SCANFIFOCLEAR`"]
-pub struct SCANFIFOCLEAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCANFIFOCLEAR_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
+impl From<crate::W<SCANFIFOCLEAR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SCANFIFOCLEAR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SCANFIFOCLEAR` writer - Clear Scan FIFO Content"]
+pub type SCANFIFOCLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCANFIFOCLEAR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear Scan FIFO Content"]
     #[inline(always)]
-    pub fn scanfifoclear(&mut self) -> SCANFIFOCLEAR_W {
-        SCANFIFOCLEAR_W { w: self }
+    #[must_use]
+    pub fn scanfifoclear(&mut self) -> SCANFIFOCLEAR_W<0> {
+        SCANFIFOCLEAR_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Scan FIFO Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scanfifoclear](index.html) module"]
+pub struct SCANFIFOCLEAR_SPEC;
+impl crate::RegisterSpec for SCANFIFOCLEAR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [scanfifoclear::W](W) writer structure"]
+impl crate::Writable for SCANFIFOCLEAR_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets SCANFIFOCLEAR to value 0"]
+impl crate::Resettable for SCANFIFOCLEAR_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

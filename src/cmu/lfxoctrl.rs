@@ -1,31 +1,47 @@
-#[doc = "Reader of register LFXOCTRL"]
-pub type R = crate::R<u32, super::LFXOCTRL>;
-#[doc = "Writer for register LFXOCTRL"]
-pub type W = crate::W<u32, super::LFXOCTRL>;
-#[doc = "Register LFXOCTRL `reset()`'s with value 0x0700_9000"]
-impl crate::ResetValue for super::LFXOCTRL {
-    type Type = u32;
+#[doc = "Register `LFXOCTRL` reader"]
+pub struct R(crate::R<LFXOCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LFXOCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0700_9000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TUNING`"]
-pub type TUNING_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TUNING`"]
-pub struct TUNING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TUNING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<LFXOCTRL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | ((value as u32) & 0x7f);
-        self.w
+    fn from(reader: crate::R<LFXOCTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `LFXOCTRL` writer"]
+pub struct W(crate::W<LFXOCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LFXOCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LFXOCTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LFXOCTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TUNING` reader - LFXO Internal Capacitor Array Tuning Value"]
+pub type TUNING_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TUNING` writer - LFXO Internal Capacitor Array Tuning Value"]
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFXOCTRL_SPEC, u8, u8, 7, O>;
+#[doc = "Field `MODE` reader - LFXO Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "LFXO Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: 32768 Hz crystal oscillator"]
@@ -41,18 +57,15 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE`"]
-pub type MODE_R = crate::R<u8, MODE_A>;
 impl MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, MODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<MODE_A> {
         match self.bits {
-            0 => Val(MODE_A::XTAL),
-            1 => Val(MODE_A::BUFEXTCLK),
-            2 => Val(MODE_A::DIGEXTCLK),
-            i => Res(i),
+            0 => Some(MODE_A::XTAL),
+            1 => Some(MODE_A::BUFEXTCLK),
+            2 => Some(MODE_A::DIGEXTCLK),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `XTAL`"]
@@ -71,16 +84,9 @@ impl MODE_R {
         *self == MODE_A::DIGEXTCLK
     }
 }
-#[doc = "Write proxy for field `MODE`"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `MODE` writer - LFXO Mode"]
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFXOCTRL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "32768 Hz crystal oscillator"]
     #[inline(always)]
     pub fn xtal(self) -> &'a mut W {
@@ -96,115 +102,31 @@ impl<'a> MODE_W<'a> {
     pub fn digextclk(self) -> &'a mut W {
         self.variant(MODE_A::DIGEXTCLK)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
 }
-#[doc = "Reader of field `GAIN`"]
-pub type GAIN_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `GAIN`"]
-pub struct GAIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GAIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 11)) | (((value as u32) & 0x03) << 11);
-        self.w
-    }
-}
-#[doc = "Reader of field `HIGHAMPL`"]
-pub type HIGHAMPL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HIGHAMPL`"]
-pub struct HIGHAMPL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIGHAMPL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-        self.w
-    }
-}
-#[doc = "Reader of field `AGC`"]
-pub type AGC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AGC`"]
-pub struct AGC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AGC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-        self.w
-    }
-}
-#[doc = "Reader of field `CUR`"]
-pub type CUR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CUR`"]
-pub struct CUR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CUR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `BUFCUR`"]
-pub type BUFCUR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BUFCUR`"]
-pub struct BUFCUR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUFCUR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-        self.w
-    }
-}
+#[doc = "Field `GAIN` reader - LFXO Startup Gain"]
+pub type GAIN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `GAIN` writer - LFXO Startup Gain"]
+pub type GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFXOCTRL_SPEC, u8, u8, 2, O>;
+#[doc = "Field `HIGHAMPL` reader - LFXO High XTAL Oscillation Amplitude Enable"]
+pub type HIGHAMPL_R = crate::BitReader<bool>;
+#[doc = "Field `HIGHAMPL` writer - LFXO High XTAL Oscillation Amplitude Enable"]
+pub type HIGHAMPL_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFXOCTRL_SPEC, bool, O>;
+#[doc = "Field `AGC` reader - LFXO AGC Enable"]
+pub type AGC_R = crate::BitReader<bool>;
+#[doc = "Field `AGC` writer - LFXO AGC Enable"]
+pub type AGC_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFXOCTRL_SPEC, bool, O>;
+#[doc = "Field `CUR` reader - LFXO Current Trim"]
+pub type CUR_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CUR` writer - LFXO Current Trim"]
+pub type CUR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFXOCTRL_SPEC, u8, u8, 2, O>;
+#[doc = "Field `BUFCUR` reader - LFXO Buffer Bias Current"]
+pub type BUFCUR_R = crate::BitReader<bool>;
+#[doc = "Field `BUFCUR` writer - LFXO Buffer Bias Current"]
+pub type BUFCUR_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFXOCTRL_SPEC, bool, O>;
+#[doc = "Field `TIMEOUT` reader - LFXO Timeout"]
+pub type TIMEOUT_R = crate::FieldReader<u8, TIMEOUT_A>;
 #[doc = "LFXO Timeout\n\nValue on reset: 7"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TIMEOUT_A {
     #[doc = "0: Timeout period of 2 cycles"]
@@ -230,10 +152,8 @@ impl From<TIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TIMEOUT`"]
-pub type TIMEOUT_R = crate::R<u8, TIMEOUT_A>;
 impl TIMEOUT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMEOUT_A {
         match self.bits {
@@ -289,18 +209,10 @@ impl TIMEOUT_R {
         *self == TIMEOUT_A::_32KCYCLES
     }
 }
-#[doc = "Write proxy for field `TIMEOUT`"]
-pub struct TIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TIMEOUT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `TIMEOUT` writer - LFXO Timeout"]
+pub type TIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, LFXOCTRL_SPEC, u8, TIMEOUT_A, 3, O>;
+impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
     pub fn _2cycles(self) -> &'a mut W {
@@ -341,12 +253,6 @@ impl<'a> TIMEOUT_W<'a> {
     pub fn _32kcycles(self) -> &'a mut W {
         self.variant(TIMEOUT_A::_32KCYCLES)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:6 - LFXO Internal Capacitor Array Tuning Value"]
@@ -357,78 +263,111 @@ impl R {
     #[doc = "Bits 8:9 - LFXO Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 8) & 0x03) as u8)
+        MODE_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 11:12 - LFXO Startup Gain"]
     #[inline(always)]
     pub fn gain(&self) -> GAIN_R {
-        GAIN_R::new(((self.bits >> 11) & 0x03) as u8)
+        GAIN_R::new(((self.bits >> 11) & 3) as u8)
     }
     #[doc = "Bit 14 - LFXO High XTAL Oscillation Amplitude Enable"]
     #[inline(always)]
     pub fn highampl(&self) -> HIGHAMPL_R {
-        HIGHAMPL_R::new(((self.bits >> 14) & 0x01) != 0)
+        HIGHAMPL_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - LFXO AGC Enable"]
     #[inline(always)]
     pub fn agc(&self) -> AGC_R {
-        AGC_R::new(((self.bits >> 15) & 0x01) != 0)
+        AGC_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:17 - LFXO Current Trim"]
     #[inline(always)]
     pub fn cur(&self) -> CUR_R {
-        CUR_R::new(((self.bits >> 16) & 0x03) as u8)
+        CUR_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bit 20 - LFXO Buffer Bias Current"]
     #[inline(always)]
     pub fn bufcur(&self) -> BUFCUR_R {
-        BUFCUR_R::new(((self.bits >> 20) & 0x01) != 0)
+        BUFCUR_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bits 24:26 - LFXO Timeout"]
     #[inline(always)]
     pub fn timeout(&self) -> TIMEOUT_R {
-        TIMEOUT_R::new(((self.bits >> 24) & 0x07) as u8)
+        TIMEOUT_R::new(((self.bits >> 24) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - LFXO Internal Capacitor Array Tuning Value"]
     #[inline(always)]
-    pub fn tuning(&mut self) -> TUNING_W {
-        TUNING_W { w: self }
+    #[must_use]
+    pub fn tuning(&mut self) -> TUNING_W<0> {
+        TUNING_W::new(self)
     }
     #[doc = "Bits 8:9 - LFXO Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<8> {
+        MODE_W::new(self)
     }
     #[doc = "Bits 11:12 - LFXO Startup Gain"]
     #[inline(always)]
-    pub fn gain(&mut self) -> GAIN_W {
-        GAIN_W { w: self }
+    #[must_use]
+    pub fn gain(&mut self) -> GAIN_W<11> {
+        GAIN_W::new(self)
     }
     #[doc = "Bit 14 - LFXO High XTAL Oscillation Amplitude Enable"]
     #[inline(always)]
-    pub fn highampl(&mut self) -> HIGHAMPL_W {
-        HIGHAMPL_W { w: self }
+    #[must_use]
+    pub fn highampl(&mut self) -> HIGHAMPL_W<14> {
+        HIGHAMPL_W::new(self)
     }
     #[doc = "Bit 15 - LFXO AGC Enable"]
     #[inline(always)]
-    pub fn agc(&mut self) -> AGC_W {
-        AGC_W { w: self }
+    #[must_use]
+    pub fn agc(&mut self) -> AGC_W<15> {
+        AGC_W::new(self)
     }
     #[doc = "Bits 16:17 - LFXO Current Trim"]
     #[inline(always)]
-    pub fn cur(&mut self) -> CUR_W {
-        CUR_W { w: self }
+    #[must_use]
+    pub fn cur(&mut self) -> CUR_W<16> {
+        CUR_W::new(self)
     }
     #[doc = "Bit 20 - LFXO Buffer Bias Current"]
     #[inline(always)]
-    pub fn bufcur(&mut self) -> BUFCUR_W {
-        BUFCUR_W { w: self }
+    #[must_use]
+    pub fn bufcur(&mut self) -> BUFCUR_W<20> {
+        BUFCUR_W::new(self)
     }
     #[doc = "Bits 24:26 - LFXO Timeout"]
     #[inline(always)]
-    pub fn timeout(&mut self) -> TIMEOUT_W {
-        TIMEOUT_W { w: self }
+    #[must_use]
+    pub fn timeout(&mut self) -> TIMEOUT_W<24> {
+        TIMEOUT_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "LFXO Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lfxoctrl](index.html) module"]
+pub struct LFXOCTRL_SPEC;
+impl crate::RegisterSpec for LFXOCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [lfxoctrl::R](R) reader structure"]
+impl crate::Readable for LFXOCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lfxoctrl::W](W) writer structure"]
+impl crate::Writable for LFXOCTRL_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets LFXOCTRL to value 0x0700_9000"]
+impl crate::Resettable for LFXOCTRL_SPEC {
+    const RESET_VALUE: Self::Ux = 0x0700_9000;
 }

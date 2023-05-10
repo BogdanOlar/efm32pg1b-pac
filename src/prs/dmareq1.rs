@@ -1,17 +1,43 @@
-#[doc = "Reader of register DMAREQ1"]
-pub type R = crate::R<u32, super::DMAREQ1>;
-#[doc = "Writer for register DMAREQ1"]
-pub type W = crate::W<u32, super::DMAREQ1>;
-#[doc = "Register DMAREQ1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::DMAREQ1 {
-    type Type = u32;
+#[doc = "Register `DMAREQ1` reader"]
+pub struct R(crate::R<DMAREQ1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DMAREQ1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl From<crate::R<DMAREQ1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DMAREQ1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DMAREQ1` writer"]
+pub struct W(crate::W<DMAREQ1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DMAREQ1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DMAREQ1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DMAREQ1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PRSSEL` reader - DMA Request 1 PRS Channel Select"]
+pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
 #[doc = "DMA Request 1 PRS Channel Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS Channel 0 selected"]
@@ -45,27 +71,24 @@ impl From<PRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PRSSEL`"]
-pub type PRSSEL_R = crate::R<u8, PRSSEL_A>;
 impl PRSSEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PRSSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PRSSEL_A> {
         match self.bits {
-            0 => Val(PRSSEL_A::PRSCH0),
-            1 => Val(PRSSEL_A::PRSCH1),
-            2 => Val(PRSSEL_A::PRSCH2),
-            3 => Val(PRSSEL_A::PRSCH3),
-            4 => Val(PRSSEL_A::PRSCH4),
-            5 => Val(PRSSEL_A::PRSCH5),
-            6 => Val(PRSSEL_A::PRSCH6),
-            7 => Val(PRSSEL_A::PRSCH7),
-            8 => Val(PRSSEL_A::PRSCH8),
-            9 => Val(PRSSEL_A::PRSCH9),
-            10 => Val(PRSSEL_A::PRSCH10),
-            11 => Val(PRSSEL_A::PRSCH11),
-            i => Res(i),
+            0 => Some(PRSSEL_A::PRSCH0),
+            1 => Some(PRSSEL_A::PRSCH1),
+            2 => Some(PRSSEL_A::PRSCH2),
+            3 => Some(PRSSEL_A::PRSCH3),
+            4 => Some(PRSSEL_A::PRSCH4),
+            5 => Some(PRSSEL_A::PRSCH5),
+            6 => Some(PRSSEL_A::PRSCH6),
+            7 => Some(PRSSEL_A::PRSCH7),
+            8 => Some(PRSSEL_A::PRSCH8),
+            9 => Some(PRSSEL_A::PRSCH9),
+            10 => Some(PRSSEL_A::PRSCH10),
+            11 => Some(PRSSEL_A::PRSCH11),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PRSCH0`"]
@@ -129,16 +152,9 @@ impl PRSSEL_R {
         *self == PRSSEL_A::PRSCH11
     }
 }
-#[doc = "Write proxy for field `PRSSEL`"]
-pub struct PRSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRSSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `PRSSEL` writer - DMA Request 1 PRS Channel Select"]
+pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DMAREQ1_SPEC, u8, PRSSEL_A, 4, O>;
+impl<'a, const O: u8> PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -199,12 +215,6 @@ impl<'a> PRSSEL_W<'a> {
     pub fn prsch11(self) -> &'a mut W {
         self.variant(PRSSEL_A::PRSCH11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 6)) | (((value as u32) & 0x0f) << 6);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 6:9 - DMA Request 1 PRS Channel Select"]
@@ -216,7 +226,33 @@ impl R {
 impl W {
     #[doc = "Bits 6:9 - DMA Request 1 PRS Channel Select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
-        PRSSEL_W { w: self }
+    #[must_use]
+    pub fn prssel(&mut self) -> PRSSEL_W<6> {
+        PRSSEL_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "DMA Request 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmareq1](index.html) module"]
+pub struct DMAREQ1_SPEC;
+impl crate::RegisterSpec for DMAREQ1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dmareq1::R](R) reader structure"]
+impl crate::Readable for DMAREQ1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dmareq1::W](W) writer structure"]
+impl crate::Writable for DMAREQ1_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets DMAREQ1 to value 0"]
+impl crate::Resettable for DMAREQ1_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }

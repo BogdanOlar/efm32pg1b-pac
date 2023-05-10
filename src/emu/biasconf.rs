@@ -1,220 +1,155 @@
-#[doc = "Reader of register BIASCONF"]
-pub type R = crate::R<u32, super::BIASCONF>;
-#[doc = "Writer for register BIASCONF"]
-pub type W = crate::W<u32, super::BIASCONF>;
-#[doc = "Register BIASCONF `reset()`'s with value 0xf8"]
-impl crate::ResetValue for super::BIASCONF {
-    type Type = u32;
+#[doc = "Register `BIASCONF` reader"]
+pub struct R(crate::R<BIASCONF_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BIASCONF_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xf8
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `NADUTYEM01`"]
-pub type NADUTYEM01_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `NADUTYEM01`"]
-pub struct NADUTYEM01_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NADUTYEM01_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<BIASCONF_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn from(reader: crate::R<BIASCONF_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `LPEM01`"]
-pub type LPEM01_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LPEM01`"]
-pub struct LPEM01_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPEM01_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `BIASCONF` writer"]
+pub struct W(crate::W<BIASCONF_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BIASCONF_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `GMCEM23`"]
-pub type GMCEM23_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `GMCEM23`"]
-pub struct GMCEM23_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GMCEM23_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `UADUTYEM23`"]
-pub type UADUTYEM23_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UADUTYEM23`"]
-pub struct UADUTYEM23_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UADUTYEM23_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<BIASCONF_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
+    fn from(writer: crate::W<BIASCONF_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `NADUTYEM23`"]
-pub type NADUTYEM23_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `NADUTYEM23`"]
-pub struct NADUTYEM23_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NADUTYEM23_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `LPEM23`"]
-pub type LPEM23_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LPEM23`"]
-pub struct LPEM23_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPEM23_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
+#[doc = "Field `NADUTYEM01` reader - NA DUTY in EM01"]
+pub type NADUTYEM01_R = crate::BitReader<bool>;
+#[doc = "Field `NADUTYEM01` writer - NA DUTY in EM01"]
+pub type NADUTYEM01_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+#[doc = "Field `LPEM01` reader - LP in EM01"]
+pub type LPEM01_R = crate::BitReader<bool>;
+#[doc = "Field `LPEM01` writer - LP in EM01"]
+pub type LPEM01_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+#[doc = "Field `GMCEM23` reader - GMC in EM234"]
+pub type GMCEM23_R = crate::BitReader<bool>;
+#[doc = "Field `GMCEM23` writer - GMC in EM234"]
+pub type GMCEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+#[doc = "Field `UADUTYEM23` reader - UADUTY in EM234"]
+pub type UADUTYEM23_R = crate::BitReader<bool>;
+#[doc = "Field `UADUTYEM23` writer - UADUTY in EM234"]
+pub type UADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+#[doc = "Field `NADUTYEM23` reader - NA DUTY in EM234"]
+pub type NADUTYEM23_R = crate::BitReader<bool>;
+#[doc = "Field `NADUTYEM23` writer - NA DUTY in EM234"]
+pub type NADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+#[doc = "Field `LPEM23` reader - LP in EM234"]
+pub type LPEM23_R = crate::BitReader<bool>;
+#[doc = "Field `LPEM23` writer - LP in EM234"]
+pub type LPEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 2 - NA DUTY in EM01"]
     #[inline(always)]
     pub fn nadutyem01(&self) -> NADUTYEM01_R {
-        NADUTYEM01_R::new(((self.bits >> 2) & 0x01) != 0)
+        NADUTYEM01_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - LP in EM01"]
     #[inline(always)]
     pub fn lpem01(&self) -> LPEM01_R {
-        LPEM01_R::new(((self.bits >> 3) & 0x01) != 0)
+        LPEM01_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - GMC in EM234"]
     #[inline(always)]
     pub fn gmcem23(&self) -> GMCEM23_R {
-        GMCEM23_R::new(((self.bits >> 4) & 0x01) != 0)
+        GMCEM23_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - UADUTY in EM234"]
     #[inline(always)]
     pub fn uadutyem23(&self) -> UADUTYEM23_R {
-        UADUTYEM23_R::new(((self.bits >> 5) & 0x01) != 0)
+        UADUTYEM23_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - NA DUTY in EM234"]
     #[inline(always)]
     pub fn nadutyem23(&self) -> NADUTYEM23_R {
-        NADUTYEM23_R::new(((self.bits >> 6) & 0x01) != 0)
+        NADUTYEM23_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - LP in EM234"]
     #[inline(always)]
     pub fn lpem23(&self) -> LPEM23_R {
-        LPEM23_R::new(((self.bits >> 7) & 0x01) != 0)
+        LPEM23_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 2 - NA DUTY in EM01"]
     #[inline(always)]
-    pub fn nadutyem01(&mut self) -> NADUTYEM01_W {
-        NADUTYEM01_W { w: self }
+    #[must_use]
+    pub fn nadutyem01(&mut self) -> NADUTYEM01_W<2> {
+        NADUTYEM01_W::new(self)
     }
     #[doc = "Bit 3 - LP in EM01"]
     #[inline(always)]
-    pub fn lpem01(&mut self) -> LPEM01_W {
-        LPEM01_W { w: self }
+    #[must_use]
+    pub fn lpem01(&mut self) -> LPEM01_W<3> {
+        LPEM01_W::new(self)
     }
     #[doc = "Bit 4 - GMC in EM234"]
     #[inline(always)]
-    pub fn gmcem23(&mut self) -> GMCEM23_W {
-        GMCEM23_W { w: self }
+    #[must_use]
+    pub fn gmcem23(&mut self) -> GMCEM23_W<4> {
+        GMCEM23_W::new(self)
     }
     #[doc = "Bit 5 - UADUTY in EM234"]
     #[inline(always)]
-    pub fn uadutyem23(&mut self) -> UADUTYEM23_W {
-        UADUTYEM23_W { w: self }
+    #[must_use]
+    pub fn uadutyem23(&mut self) -> UADUTYEM23_W<5> {
+        UADUTYEM23_W::new(self)
     }
     #[doc = "Bit 6 - NA DUTY in EM234"]
     #[inline(always)]
-    pub fn nadutyem23(&mut self) -> NADUTYEM23_W {
-        NADUTYEM23_W { w: self }
+    #[must_use]
+    pub fn nadutyem23(&mut self) -> NADUTYEM23_W<6> {
+        NADUTYEM23_W::new(self)
     }
     #[doc = "Bit 7 - LP in EM234"]
     #[inline(always)]
-    pub fn lpem23(&mut self) -> LPEM23_W {
-        LPEM23_W { w: self }
+    #[must_use]
+    pub fn lpem23(&mut self) -> LPEM23_W<7> {
+        LPEM23_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Configurations Related to the Bias\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [biasconf](index.html) module"]
+pub struct BIASCONF_SPEC;
+impl crate::RegisterSpec for BIASCONF_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [biasconf::R](R) reader structure"]
+impl crate::Readable for BIASCONF_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [biasconf::W](W) writer structure"]
+impl crate::Writable for BIASCONF_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets BIASCONF to value 0xf8"]
+impl crate::Resettable for BIASCONF_SPEC {
+    const RESET_VALUE: Self::Ux = 0xf8;
 }

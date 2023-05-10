@@ -1,50 +1,80 @@
-#[doc = "Reader of register POWERDOWN"]
-pub type R = crate::R<u32, super::POWERDOWN>;
-#[doc = "Writer for register POWERDOWN"]
-pub type W = crate::W<u32, super::POWERDOWN>;
-#[doc = "Register POWERDOWN `reset()`'s with value 0"]
-impl crate::ResetValue for super::POWERDOWN {
-    type Type = u32;
+#[doc = "Register `POWERDOWN` reader"]
+pub struct R(crate::R<POWERDOWN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<POWERDOWN_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RAM`"]
-pub type RAM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RAM`"]
-pub struct RAM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RAM_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<POWERDOWN_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<POWERDOWN_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `POWERDOWN` writer"]
+pub struct W(crate::W<POWERDOWN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<POWERDOWN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<POWERDOWN_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<POWERDOWN_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RAM` reader - Retention RAM Power-down"]
+pub type RAM_R = crate::BitReader<bool>;
+#[doc = "Field `RAM` writer - Retention RAM Power-down"]
+pub type RAM_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERDOWN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Retention RAM Power-down"]
     #[inline(always)]
     pub fn ram(&self) -> RAM_R {
-        RAM_R::new((self.bits & 0x01) != 0)
+        RAM_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Retention RAM Power-down"]
     #[inline(always)]
-    pub fn ram(&mut self) -> RAM_W {
-        RAM_W { w: self }
+    #[must_use]
+    pub fn ram(&mut self) -> RAM_W<0> {
+        RAM_W::new(self)
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Retention RAM Power-down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [powerdown](index.html) module"]
+pub struct POWERDOWN_SPEC;
+impl crate::RegisterSpec for POWERDOWN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [powerdown::R](R) reader structure"]
+impl crate::Readable for POWERDOWN_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [powerdown::W](W) writer structure"]
+impl crate::Writable for POWERDOWN_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
+#[doc = "`reset()` method sets POWERDOWN to value 0"]
+impl crate::Resettable for POWERDOWN_SPEC {
+    const RESET_VALUE: Self::Ux = 0;
 }
