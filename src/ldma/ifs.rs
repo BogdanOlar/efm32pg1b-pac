@@ -20,9 +20,9 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `DONE` writer - Set DONE Interrupt Flag"]
-pub type DONE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFS_SPEC, u8, u8, 8, O>;
+pub type DONE_W<'a, const O: u8> = crate::FieldWriter<'a, IFS_SPEC, 8, O>;
 #[doc = "Field `ERROR` writer - Set ERROR Interrupt Flag"]
-pub type ERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type ERROR_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bits 0:7 - Set DONE Interrupt Flag"]
     #[inline(always)]

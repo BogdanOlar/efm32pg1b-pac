@@ -35,7 +35,7 @@ impl From<crate::W<PCH1_PRSCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `PRSSEL` reader - PRS Channel PRS Select"]
-pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
+pub type PRSSEL_R = crate::FieldReader<PRSSEL_A>;
 #[doc = "PRS Channel PRS Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -70,6 +70,9 @@ impl From<PRSSEL_A> for u8 {
     fn from(variant: PRSSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRSSEL_A {
+    type Ux = u8;
 }
 impl PRSSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -153,8 +156,7 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - PRS Channel PRS Select"]
-pub type PRSSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PCH1_PRSCTRL_SPEC, u8, PRSSEL_A, 4, O>;
+pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, PCH1_PRSCTRL_SPEC, 4, O, PRSSEL_A>;
 impl<'a, const O: u8> PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
@@ -218,9 +220,9 @@ impl<'a, const O: u8> PRSSEL_W<'a, O> {
     }
 }
 #[doc = "Field `PRSMISSRSTEN` reader - PRS Missing Event Will Trigger a Watchdog Reset"]
-pub type PRSMISSRSTEN_R = crate::BitReader<bool>;
+pub type PRSMISSRSTEN_R = crate::BitReader;
 #[doc = "Field `PRSMISSRSTEN` writer - PRS Missing Event Will Trigger a Watchdog Reset"]
-pub type PRSMISSRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCH1_PRSCTRL_SPEC, bool, O>;
+pub type PRSMISSRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, PCH1_PRSCTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - PRS Channel PRS Select"]
     #[inline(always)]

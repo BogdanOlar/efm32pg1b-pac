@@ -14,29 +14,29 @@ impl From<crate::R<PEEK_SPEC>> for R {
     }
 }
 #[doc = "Field `CH0VAL` reader - Channel 0 Current Value"]
-pub type CH0VAL_R = crate::BitReader<bool>;
+pub type CH0VAL_R = crate::BitReader;
 #[doc = "Field `CH1VAL` reader - Channel 1 Current Value"]
-pub type CH1VAL_R = crate::BitReader<bool>;
+pub type CH1VAL_R = crate::BitReader;
 #[doc = "Field `CH2VAL` reader - Channel 2 Current Value"]
-pub type CH2VAL_R = crate::BitReader<bool>;
+pub type CH2VAL_R = crate::BitReader;
 #[doc = "Field `CH3VAL` reader - Channel 3 Current Value"]
-pub type CH3VAL_R = crate::BitReader<bool>;
+pub type CH3VAL_R = crate::BitReader;
 #[doc = "Field `CH4VAL` reader - Channel 4 Current Value"]
-pub type CH4VAL_R = crate::BitReader<bool>;
+pub type CH4VAL_R = crate::BitReader;
 #[doc = "Field `CH5VAL` reader - Channel 5 Current Value"]
-pub type CH5VAL_R = crate::BitReader<bool>;
+pub type CH5VAL_R = crate::BitReader;
 #[doc = "Field `CH6VAL` reader - Channel 6 Current Value"]
-pub type CH6VAL_R = crate::BitReader<bool>;
+pub type CH6VAL_R = crate::BitReader;
 #[doc = "Field `CH7VAL` reader - Channel 7 Current Value"]
-pub type CH7VAL_R = crate::BitReader<bool>;
+pub type CH7VAL_R = crate::BitReader;
 #[doc = "Field `CH8VAL` reader - Channel 8 Current Value"]
-pub type CH8VAL_R = crate::BitReader<bool>;
+pub type CH8VAL_R = crate::BitReader;
 #[doc = "Field `CH9VAL` reader - Channel 9 Current Value"]
-pub type CH9VAL_R = crate::BitReader<bool>;
+pub type CH9VAL_R = crate::BitReader;
 #[doc = "Field `CH10VAL` reader - Channel 10 Current Value"]
-pub type CH10VAL_R = crate::BitReader<bool>;
+pub type CH10VAL_R = crate::BitReader;
 #[doc = "Field `CH11VAL` reader - Channel 11 Current Value"]
-pub type CH11VAL_R = crate::BitReader<bool>;
+pub type CH11VAL_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Channel 0 Current Value"]
     #[inline(always)]

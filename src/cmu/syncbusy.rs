@@ -14,29 +14,29 @@ impl From<crate::R<SYNCBUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `LFACLKEN0` reader - Low Frequency a Clock Enable 0 Busy"]
-pub type LFACLKEN0_R = crate::BitReader<bool>;
+pub type LFACLKEN0_R = crate::BitReader;
 #[doc = "Field `LFAPRESC0` reader - Low Frequency a Prescaler 0 Busy"]
-pub type LFAPRESC0_R = crate::BitReader<bool>;
+pub type LFAPRESC0_R = crate::BitReader;
 #[doc = "Field `LFBCLKEN0` reader - Low Frequency B Clock Enable 0 Busy"]
-pub type LFBCLKEN0_R = crate::BitReader<bool>;
+pub type LFBCLKEN0_R = crate::BitReader;
 #[doc = "Field `LFBPRESC0` reader - Low Frequency B Prescaler 0 Busy"]
-pub type LFBPRESC0_R = crate::BitReader<bool>;
+pub type LFBPRESC0_R = crate::BitReader;
 #[doc = "Field `LFECLKEN0` reader - Low Frequency E Clock Enable 0 Busy"]
-pub type LFECLKEN0_R = crate::BitReader<bool>;
+pub type LFECLKEN0_R = crate::BitReader;
 #[doc = "Field `LFEPRESC0` reader - Low Frequency E Prescaler 0 Busy"]
-pub type LFEPRESC0_R = crate::BitReader<bool>;
+pub type LFEPRESC0_R = crate::BitReader;
 #[doc = "Field `HFRCOBSY` reader - HFRCO Busy"]
-pub type HFRCOBSY_R = crate::BitReader<bool>;
+pub type HFRCOBSY_R = crate::BitReader;
 #[doc = "Field `AUXHFRCOBSY` reader - AUXHFRCO Busy"]
-pub type AUXHFRCOBSY_R = crate::BitReader<bool>;
+pub type AUXHFRCOBSY_R = crate::BitReader;
 #[doc = "Field `LFRCOBSY` reader - LFRCO Busy"]
-pub type LFRCOBSY_R = crate::BitReader<bool>;
+pub type LFRCOBSY_R = crate::BitReader;
 #[doc = "Field `LFRCOVREFBSY` reader - LFRCO VREF Busy"]
-pub type LFRCOVREFBSY_R = crate::BitReader<bool>;
+pub type LFRCOVREFBSY_R = crate::BitReader;
 #[doc = "Field `HFXOBSY` reader - HFXO Busy"]
-pub type HFXOBSY_R = crate::BitReader<bool>;
+pub type HFXOBSY_R = crate::BitReader;
 #[doc = "Field `LFXOBSY` reader - LFXO Busy"]
-pub type LFXOBSY_R = crate::BitReader<bool>;
+pub type LFXOBSY_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Low Frequency a Clock Enable 0 Busy"]
     #[inline(always)]

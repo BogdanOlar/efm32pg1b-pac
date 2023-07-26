@@ -35,9 +35,9 @@ impl From<crate::W<PERIODSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `PERIODSEL` reader - Interrupts/Wakeup Events Period Setting"]
-pub type PERIODSEL_R = crate::FieldReader<u8, u8>;
+pub type PERIODSEL_R = crate::FieldReader;
 #[doc = "Field `PERIODSEL` writer - Interrupts/Wakeup Events Period Setting"]
-pub type PERIODSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PERIODSEL_SPEC, u8, u8, 6, O>;
+pub type PERIODSEL_W<'a, const O: u8> = crate::FieldWriter<'a, PERIODSEL_SPEC, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Interrupts/Wakeup Events Period Setting"]
     #[inline(always)]

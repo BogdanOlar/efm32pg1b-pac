@@ -20,7 +20,7 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `CLRSTATUS` writer - Clear RTCC_STATUS Register"]
-pub type CLRSTATUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type CLRSTATUS_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Clear RTCC_STATUS Register"]
     #[inline(always)]

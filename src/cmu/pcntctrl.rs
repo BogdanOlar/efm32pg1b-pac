@@ -35,13 +35,13 @@ impl From<crate::W<PCNTCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `PCNT0CLKEN` reader - PCNT0 Clock Enable"]
-pub type PCNT0CLKEN_R = crate::BitReader<bool>;
+pub type PCNT0CLKEN_R = crate::BitReader;
 #[doc = "Field `PCNT0CLKEN` writer - PCNT0 Clock Enable"]
-pub type PCNT0CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCNTCTRL_SPEC, bool, O>;
+pub type PCNT0CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, PCNTCTRL_SPEC, O>;
 #[doc = "Field `PCNT0CLKSEL` reader - PCNT0 Clock Select"]
-pub type PCNT0CLKSEL_R = crate::BitReader<bool>;
+pub type PCNT0CLKSEL_R = crate::BitReader;
 #[doc = "Field `PCNT0CLKSEL` writer - PCNT0 Clock Select"]
-pub type PCNT0CLKSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCNTCTRL_SPEC, bool, O>;
+pub type PCNT0CLKSEL_W<'a, const O: u8> = crate::BitWriter<'a, PCNTCTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
     #[inline(always)]

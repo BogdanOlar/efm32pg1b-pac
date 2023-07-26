@@ -35,9 +35,9 @@ impl From<crate::W<SIGFRAME_SPEC>> for W {
     }
 }
 #[doc = "Field `SIGFRAME` reader - Signal Frame"]
-pub type SIGFRAME_R = crate::FieldReader<u16, u16>;
+pub type SIGFRAME_R = crate::FieldReader<u16>;
 #[doc = "Field `SIGFRAME` writer - Signal Frame"]
-pub type SIGFRAME_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SIGFRAME_SPEC, u16, u16, 9, O>;
+pub type SIGFRAME_W<'a, const O: u8> = crate::FieldWriter<'a, SIGFRAME_SPEC, 9, O, u16>;
 impl R {
     #[doc = "Bits 0:8 - Signal Frame"]
     #[inline(always)]

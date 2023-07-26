@@ -14,39 +14,39 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `TXC` reader - TX Complete Interrupt Flag"]
-pub type TXC_R = crate::BitReader<bool>;
+pub type TXC_R = crate::BitReader;
 #[doc = "Field `TXBL` reader - TX Buffer Level Interrupt Flag"]
-pub type TXBL_R = crate::BitReader<bool>;
+pub type TXBL_R = crate::BitReader;
 #[doc = "Field `RXDATAV` reader - RX Data Valid Interrupt Flag"]
-pub type RXDATAV_R = crate::BitReader<bool>;
+pub type RXDATAV_R = crate::BitReader;
 #[doc = "Field `RXFULL` reader - RX Buffer Full Interrupt Flag"]
-pub type RXFULL_R = crate::BitReader<bool>;
+pub type RXFULL_R = crate::BitReader;
 #[doc = "Field `RXOF` reader - RX Overflow Interrupt Flag"]
-pub type RXOF_R = crate::BitReader<bool>;
+pub type RXOF_R = crate::BitReader;
 #[doc = "Field `RXUF` reader - RX Underflow Interrupt Flag"]
-pub type RXUF_R = crate::BitReader<bool>;
+pub type RXUF_R = crate::BitReader;
 #[doc = "Field `TXOF` reader - TX Overflow Interrupt Flag"]
-pub type TXOF_R = crate::BitReader<bool>;
+pub type TXOF_R = crate::BitReader;
 #[doc = "Field `TXUF` reader - TX Underflow Interrupt Flag"]
-pub type TXUF_R = crate::BitReader<bool>;
+pub type TXUF_R = crate::BitReader;
 #[doc = "Field `PERR` reader - Parity Error Interrupt Flag"]
-pub type PERR_R = crate::BitReader<bool>;
+pub type PERR_R = crate::BitReader;
 #[doc = "Field `FERR` reader - Framing Error Interrupt Flag"]
-pub type FERR_R = crate::BitReader<bool>;
+pub type FERR_R = crate::BitReader;
 #[doc = "Field `MPAF` reader - Multi-Processor Address Frame Interrupt Flag"]
-pub type MPAF_R = crate::BitReader<bool>;
+pub type MPAF_R = crate::BitReader;
 #[doc = "Field `SSM` reader - Slave-Select in Master Mode Interrupt Flag"]
-pub type SSM_R = crate::BitReader<bool>;
+pub type SSM_R = crate::BitReader;
 #[doc = "Field `CCF` reader - Collision Check Fail Interrupt Flag"]
-pub type CCF_R = crate::BitReader<bool>;
+pub type CCF_R = crate::BitReader;
 #[doc = "Field `TXIDLE` reader - TX Idle Interrupt Flag"]
-pub type TXIDLE_R = crate::BitReader<bool>;
+pub type TXIDLE_R = crate::BitReader;
 #[doc = "Field `TCMP0` reader - Timer Comparator 0 Interrupt Flag"]
-pub type TCMP0_R = crate::BitReader<bool>;
+pub type TCMP0_R = crate::BitReader;
 #[doc = "Field `TCMP1` reader - Timer Comparator 1 Interrupt Flag"]
-pub type TCMP1_R = crate::BitReader<bool>;
+pub type TCMP1_R = crate::BitReader;
 #[doc = "Field `TCMP2` reader - Timer Comparator 2 Interrupt Flag"]
-pub type TCMP2_R = crate::BitReader<bool>;
+pub type TCMP2_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - TX Complete Interrupt Flag"]
     #[inline(always)]

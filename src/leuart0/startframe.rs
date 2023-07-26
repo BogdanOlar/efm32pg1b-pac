@@ -35,10 +35,9 @@ impl From<crate::W<STARTFRAME_SPEC>> for W {
     }
 }
 #[doc = "Field `STARTFRAME` reader - Start Frame"]
-pub type STARTFRAME_R = crate::FieldReader<u16, u16>;
+pub type STARTFRAME_R = crate::FieldReader<u16>;
 #[doc = "Field `STARTFRAME` writer - Start Frame"]
-pub type STARTFRAME_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, STARTFRAME_SPEC, u16, u16, 9, O>;
+pub type STARTFRAME_W<'a, const O: u8> = crate::FieldWriter<'a, STARTFRAME_SPEC, 9, O, u16>;
 impl R {
     #[doc = "Bits 0:8 - Start Frame"]
     #[inline(always)]

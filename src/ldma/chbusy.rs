@@ -14,7 +14,7 @@ impl From<crate::R<CHBUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `BUSY` reader - Channels Busy"]
-pub type BUSY_R = crate::FieldReader<u8, u8>;
+pub type BUSY_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Channels Busy"]
     #[inline(always)]

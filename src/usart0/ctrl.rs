@@ -35,27 +35,27 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SYNC` reader - USART Synchronous Mode"]
-pub type SYNC_R = crate::BitReader<bool>;
+pub type SYNC_R = crate::BitReader;
 #[doc = "Field `SYNC` writer - USART Synchronous Mode"]
-pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `LOOPBK` reader - Loopback Enable"]
-pub type LOOPBK_R = crate::BitReader<bool>;
+pub type LOOPBK_R = crate::BitReader;
 #[doc = "Field `LOOPBK` writer - Loopback Enable"]
-pub type LOOPBK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type LOOPBK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CCEN` reader - Collision Check Enable"]
-pub type CCEN_R = crate::BitReader<bool>;
+pub type CCEN_R = crate::BitReader;
 #[doc = "Field `CCEN` writer - Collision Check Enable"]
-pub type CCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CCEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `MPM` reader - Multi-Processor Mode"]
-pub type MPM_R = crate::BitReader<bool>;
+pub type MPM_R = crate::BitReader;
 #[doc = "Field `MPM` writer - Multi-Processor Mode"]
-pub type MPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type MPM_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `MPAB` reader - Multi-Processor Address-Bit"]
-pub type MPAB_R = crate::BitReader<bool>;
+pub type MPAB_R = crate::BitReader;
 #[doc = "Field `MPAB` writer - Multi-Processor Address-Bit"]
-pub type MPAB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type MPAB_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `OVS` reader - Oversampling"]
-pub type OVS_R = crate::FieldReader<u8, OVS_A>;
+pub type OVS_R = crate::FieldReader<OVS_A>;
 #[doc = "Oversampling\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -74,6 +74,9 @@ impl From<OVS_A> for u8 {
     fn from(variant: OVS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for OVS_A {
+    type Ux = u8;
 }
 impl OVS_R {
     #[doc = "Get enumerated values variant"]
@@ -109,7 +112,7 @@ impl OVS_R {
     }
 }
 #[doc = "Field `OVS` writer - Oversampling"]
-pub type OVS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, OVS_A, 2, O>;
+pub type OVS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, OVS_A>;
 impl<'a, const O: u8> OVS_W<'a, O> {
     #[doc = "Regular UART mode with 16X oversampling in asynchronous mode"]
     #[inline(always)]
@@ -133,93 +136,93 @@ impl<'a, const O: u8> OVS_W<'a, O> {
     }
 }
 #[doc = "Field `CLKPOL` reader - Clock Polarity"]
-pub type CLKPOL_R = crate::BitReader<bool>;
+pub type CLKPOL_R = crate::BitReader;
 #[doc = "Field `CLKPOL` writer - Clock Polarity"]
-pub type CLKPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CLKPOL_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CLKPHA` reader - Clock Edge for Setup/Sample"]
-pub type CLKPHA_R = crate::BitReader<bool>;
+pub type CLKPHA_R = crate::BitReader;
 #[doc = "Field `CLKPHA` writer - Clock Edge for Setup/Sample"]
-pub type CLKPHA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CLKPHA_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `MSBF` reader - Most Significant Bit First"]
-pub type MSBF_R = crate::BitReader<bool>;
+pub type MSBF_R = crate::BitReader;
 #[doc = "Field `MSBF` writer - Most Significant Bit First"]
-pub type MSBF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type MSBF_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CSMA` reader - Action on Slave-Select in Master Mode"]
-pub type CSMA_R = crate::BitReader<bool>;
+pub type CSMA_R = crate::BitReader;
 #[doc = "Field `CSMA` writer - Action on Slave-Select in Master Mode"]
-pub type CSMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CSMA_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `TXBIL` reader - TX Buffer Interrupt Level"]
-pub type TXBIL_R = crate::BitReader<bool>;
+pub type TXBIL_R = crate::BitReader;
 #[doc = "Field `TXBIL` writer - TX Buffer Interrupt Level"]
-pub type TXBIL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type TXBIL_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `RXINV` reader - Receiver Input Invert"]
-pub type RXINV_R = crate::BitReader<bool>;
+pub type RXINV_R = crate::BitReader;
 #[doc = "Field `RXINV` writer - Receiver Input Invert"]
-pub type RXINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type RXINV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `TXINV` reader - Transmitter Output Invert"]
-pub type TXINV_R = crate::BitReader<bool>;
+pub type TXINV_R = crate::BitReader;
 #[doc = "Field `TXINV` writer - Transmitter Output Invert"]
-pub type TXINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type TXINV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CSINV` reader - Chip Select Invert"]
-pub type CSINV_R = crate::BitReader<bool>;
+pub type CSINV_R = crate::BitReader;
 #[doc = "Field `CSINV` writer - Chip Select Invert"]
-pub type CSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CSINV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `AUTOCS` reader - Automatic Chip Select"]
-pub type AUTOCS_R = crate::BitReader<bool>;
+pub type AUTOCS_R = crate::BitReader;
 #[doc = "Field `AUTOCS` writer - Automatic Chip Select"]
-pub type AUTOCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type AUTOCS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `AUTOTRI` reader - Automatic TX Tristate"]
-pub type AUTOTRI_R = crate::BitReader<bool>;
+pub type AUTOTRI_R = crate::BitReader;
 #[doc = "Field `AUTOTRI` writer - Automatic TX Tristate"]
-pub type AUTOTRI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type AUTOTRI_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SCMODE` reader - SmartCard Mode"]
-pub type SCMODE_R = crate::BitReader<bool>;
+pub type SCMODE_R = crate::BitReader;
 #[doc = "Field `SCMODE` writer - SmartCard Mode"]
-pub type SCMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SCMODE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SCRETRANS` reader - SmartCard Retransmit"]
-pub type SCRETRANS_R = crate::BitReader<bool>;
+pub type SCRETRANS_R = crate::BitReader;
 #[doc = "Field `SCRETRANS` writer - SmartCard Retransmit"]
-pub type SCRETRANS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SCRETRANS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SKIPPERRF` reader - Skip Parity Error Frames"]
-pub type SKIPPERRF_R = crate::BitReader<bool>;
+pub type SKIPPERRF_R = crate::BitReader;
 #[doc = "Field `SKIPPERRF` writer - Skip Parity Error Frames"]
-pub type SKIPPERRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SKIPPERRF_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `BIT8DV` reader - Bit 8 Default Value"]
-pub type BIT8DV_R = crate::BitReader<bool>;
+pub type BIT8DV_R = crate::BitReader;
 #[doc = "Field `BIT8DV` writer - Bit 8 Default Value"]
-pub type BIT8DV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type BIT8DV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `ERRSDMA` reader - Halt DMA on Error"]
-pub type ERRSDMA_R = crate::BitReader<bool>;
+pub type ERRSDMA_R = crate::BitReader;
 #[doc = "Field `ERRSDMA` writer - Halt DMA on Error"]
-pub type ERRSDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type ERRSDMA_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `ERRSRX` reader - Disable RX on Error"]
-pub type ERRSRX_R = crate::BitReader<bool>;
+pub type ERRSRX_R = crate::BitReader;
 #[doc = "Field `ERRSRX` writer - Disable RX on Error"]
-pub type ERRSRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type ERRSRX_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `ERRSTX` reader - Disable TX on Error"]
-pub type ERRSTX_R = crate::BitReader<bool>;
+pub type ERRSTX_R = crate::BitReader;
 #[doc = "Field `ERRSTX` writer - Disable TX on Error"]
-pub type ERRSTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type ERRSTX_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SSSEARLY` reader - Synchronous Slave Setup Early"]
-pub type SSSEARLY_R = crate::BitReader<bool>;
+pub type SSSEARLY_R = crate::BitReader;
 #[doc = "Field `SSSEARLY` writer - Synchronous Slave Setup Early"]
-pub type SSSEARLY_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SSSEARLY_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `BYTESWAP` reader - Byteswap in Double Accesses"]
-pub type BYTESWAP_R = crate::BitReader<bool>;
+pub type BYTESWAP_R = crate::BitReader;
 #[doc = "Field `BYTESWAP` writer - Byteswap in Double Accesses"]
-pub type BYTESWAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type BYTESWAP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `AUTOTX` reader - Always Transmit When RX Not Full"]
-pub type AUTOTX_R = crate::BitReader<bool>;
+pub type AUTOTX_R = crate::BitReader;
 #[doc = "Field `AUTOTX` writer - Always Transmit When RX Not Full"]
-pub type AUTOTX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type AUTOTX_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `MVDIS` reader - Majority Vote Disable"]
-pub type MVDIS_R = crate::BitReader<bool>;
+pub type MVDIS_R = crate::BitReader;
 #[doc = "Field `MVDIS` writer - Majority Vote Disable"]
-pub type MVDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type MVDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SMSDELAY` reader - Synchronous Master Sample Delay"]
-pub type SMSDELAY_R = crate::BitReader<bool>;
+pub type SMSDELAY_R = crate::BitReader;
 #[doc = "Field `SMSDELAY` writer - Synchronous Master Sample Delay"]
-pub type SMSDELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SMSDELAY_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - USART Synchronous Mode"]
     #[inline(always)]

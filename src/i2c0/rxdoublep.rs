@@ -14,9 +14,9 @@ impl From<crate::R<RXDOUBLEP_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATAP0` reader - RX Data 0 Peek"]
-pub type RXDATAP0_R = crate::FieldReader<u8, u8>;
+pub type RXDATAP0_R = crate::FieldReader;
 #[doc = "Field `RXDATAP1` reader - RX Data 1 Peek"]
-pub type RXDATAP1_R = crate::FieldReader<u8, u8>;
+pub type RXDATAP1_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - RX Data 0 Peek"]
     #[inline(always)]

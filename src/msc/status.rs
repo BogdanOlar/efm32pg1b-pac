@@ -14,19 +14,19 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `BUSY` reader - Erase/Write Busy"]
-pub type BUSY_R = crate::BitReader<bool>;
+pub type BUSY_R = crate::BitReader;
 #[doc = "Field `LOCKED` reader - Access Locked"]
-pub type LOCKED_R = crate::BitReader<bool>;
+pub type LOCKED_R = crate::BitReader;
 #[doc = "Field `INVADDR` reader - Invalid Write Address or Erase Page"]
-pub type INVADDR_R = crate::BitReader<bool>;
+pub type INVADDR_R = crate::BitReader;
 #[doc = "Field `WDATAREADY` reader - WDATA Write Ready"]
-pub type WDATAREADY_R = crate::BitReader<bool>;
+pub type WDATAREADY_R = crate::BitReader;
 #[doc = "Field `WORDTIMEOUT` reader - Flash Write Word Timeout"]
-pub type WORDTIMEOUT_R = crate::BitReader<bool>;
+pub type WORDTIMEOUT_R = crate::BitReader;
 #[doc = "Field `ERASEABORTED` reader - The Current Flash Erase Operation Aborted"]
-pub type ERASEABORTED_R = crate::BitReader<bool>;
+pub type ERASEABORTED_R = crate::BitReader;
 #[doc = "Field `PCRUNNING` reader - Performance Counters Running"]
-pub type PCRUNNING_R = crate::BitReader<bool>;
+pub type PCRUNNING_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Erase/Write Busy"]
     #[inline(always)]

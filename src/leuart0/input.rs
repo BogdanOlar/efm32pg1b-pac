@@ -35,7 +35,7 @@ impl From<crate::W<INPUT_SPEC>> for W {
     }
 }
 #[doc = "Field `RXPRSSEL` reader - RX PRS Channel Select"]
-pub type RXPRSSEL_R = crate::FieldReader<u8, RXPRSSEL_A>;
+pub type RXPRSSEL_R = crate::FieldReader<RXPRSSEL_A>;
 #[doc = "RX PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -70,6 +70,9 @@ impl From<RXPRSSEL_A> for u8 {
     fn from(variant: RXPRSSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RXPRSSEL_A {
+    type Ux = u8;
 }
 impl RXPRSSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -153,8 +156,7 @@ impl RXPRSSEL_R {
     }
 }
 #[doc = "Field `RXPRSSEL` writer - RX PRS Channel Select"]
-pub type RXPRSSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, INPUT_SPEC, u8, RXPRSSEL_A, 4, O>;
+pub type RXPRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, INPUT_SPEC, 4, O, RXPRSSEL_A>;
 impl<'a, const O: u8> RXPRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
@@ -218,9 +220,9 @@ impl<'a, const O: u8> RXPRSSEL_W<'a, O> {
     }
 }
 #[doc = "Field `RXPRS` reader - PRS RX Enable"]
-pub type RXPRS_R = crate::BitReader<bool>;
+pub type RXPRS_R = crate::BitReader;
 #[doc = "Field `RXPRS` writer - PRS RX Enable"]
-pub type RXPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUT_SPEC, bool, O>;
+pub type RXPRS_W<'a, const O: u8> = crate::BitWriter<'a, INPUT_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - RX PRS Channel Select"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<LFEPRESC0_SPEC>> for W {
     }
 }
 #[doc = "Field `RTCC` reader - Real-Time Counter and Calendar Prescaler"]
-pub type RTCC_R = crate::FieldReader<u8, RTCC_A>;
+pub type RTCC_R = crate::FieldReader<RTCC_A>;
 #[doc = "Real-Time Counter and Calendar Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -48,6 +48,9 @@ impl From<RTCC_A> for u8 {
     fn from(variant: RTCC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RTCC_A {
+    type Ux = u8;
 }
 impl RTCC_R {
     #[doc = "Get enumerated values variant"]

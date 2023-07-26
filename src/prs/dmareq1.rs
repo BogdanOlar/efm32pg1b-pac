@@ -35,7 +35,7 @@ impl From<crate::W<DMAREQ1_SPEC>> for W {
     }
 }
 #[doc = "Field `PRSSEL` reader - DMA Request 1 PRS Channel Select"]
-pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
+pub type PRSSEL_R = crate::FieldReader<PRSSEL_A>;
 #[doc = "DMA Request 1 PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -70,6 +70,9 @@ impl From<PRSSEL_A> for u8 {
     fn from(variant: PRSSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRSSEL_A {
+    type Ux = u8;
 }
 impl PRSSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -153,7 +156,7 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - DMA Request 1 PRS Channel Select"]
-pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DMAREQ1_SPEC, u8, PRSSEL_A, 4, O>;
+pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DMAREQ1_SPEC, 4, O, PRSSEL_A>;
 impl<'a, const O: u8> PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]

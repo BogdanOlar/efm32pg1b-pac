@@ -20,7 +20,7 @@ impl From<crate::W<LINKLOAD_SPEC>> for W {
     }
 }
 #[doc = "Field `LINKLOAD` writer - DMA Link Loads"]
-pub type LINKLOAD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINKLOAD_SPEC, u8, u8, 8, O>;
+pub type LINKLOAD_W<'a, const O: u8> = crate::FieldWriter<'a, LINKLOAD_SPEC, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - DMA Link Loads"]
     #[inline(always)]

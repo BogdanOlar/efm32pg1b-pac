@@ -35,13 +35,13 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `EXT` reader - EXT Interrupt Enable"]
-pub type EXT_R = crate::FieldReader<u16, u16>;
+pub type EXT_R = crate::FieldReader<u16>;
 #[doc = "Field `EXT` writer - EXT Interrupt Enable"]
-pub type EXT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IEN_SPEC, u16, u16, 16, O>;
+pub type EXT_W<'a, const O: u8> = crate::FieldWriter<'a, IEN_SPEC, 16, O, u16>;
 #[doc = "Field `EM4WU` reader - EM4WU Interrupt Enable"]
-pub type EM4WU_R = crate::FieldReader<u16, u16>;
+pub type EM4WU_R = crate::FieldReader<u16>;
 #[doc = "Field `EM4WU` writer - EM4WU Interrupt Enable"]
-pub type EM4WU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IEN_SPEC, u16, u16, 16, O>;
+pub type EM4WU_W<'a, const O: u8> = crate::FieldWriter<'a, IEN_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - EXT Interrupt Enable"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `PERIOD` reader - PERIOD Interrupt Enable"]
-pub type PERIOD_R = crate::BitReader<bool>;
+pub type PERIOD_R = crate::BitReader;
 #[doc = "Field `PERIOD` writer - PERIOD Interrupt Enable"]
-pub type PERIOD_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type PERIOD_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - PERIOD Interrupt Enable"]
     #[inline(always)]

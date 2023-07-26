@@ -20,7 +20,7 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `APORTCONFLICT` writer - Set APORTCONFLICT Interrupt Flag"]
-pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bit 1 - Set APORTCONFLICT Interrupt Flag"]
     #[inline(always)]

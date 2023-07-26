@@ -14,15 +14,15 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `SINGLEACT` reader - Single Channel Conversion Active"]
-pub type SINGLEACT_R = crate::BitReader<bool>;
+pub type SINGLEACT_R = crate::BitReader;
 #[doc = "Field `SCANACT` reader - Scan Conversion Active"]
-pub type SCANACT_R = crate::BitReader<bool>;
+pub type SCANACT_R = crate::BitReader;
 #[doc = "Field `SINGLEREFWARM` reader - Single Channel Reference Warmed Up"]
-pub type SINGLEREFWARM_R = crate::BitReader<bool>;
+pub type SINGLEREFWARM_R = crate::BitReader;
 #[doc = "Field `SCANREFWARM` reader - Scan Reference Warmed Up"]
-pub type SCANREFWARM_R = crate::BitReader<bool>;
+pub type SCANREFWARM_R = crate::BitReader;
 #[doc = "Field `PROGERR` reader - Programming Error Status"]
-pub type PROGERR_R = crate::FieldReader<u8, PROGERR_A>;
+pub type PROGERR_R = crate::FieldReader<PROGERR_A>;
 #[doc = "Programming Error Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -37,6 +37,9 @@ impl From<PROGERR_A> for u8 {
     fn from(variant: PROGERR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PROGERR_A {
+    type Ux = u8;
 }
 impl PROGERR_R {
     #[doc = "Get enumerated values variant"]
@@ -60,11 +63,11 @@ impl PROGERR_R {
     }
 }
 #[doc = "Field `WARM` reader - ADC Warmed Up"]
-pub type WARM_R = crate::BitReader<bool>;
+pub type WARM_R = crate::BitReader;
 #[doc = "Field `SINGLEDV` reader - Single Channel Data Valid"]
-pub type SINGLEDV_R = crate::BitReader<bool>;
+pub type SINGLEDV_R = crate::BitReader;
 #[doc = "Field `SCANDV` reader - Scan Data Valid"]
-pub type SCANDV_R = crate::BitReader<bool>;
+pub type SCANDV_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Single Channel Conversion Active"]
     #[inline(always)]

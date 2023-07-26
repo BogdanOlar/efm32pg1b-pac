@@ -35,9 +35,9 @@ impl From<crate::W<POWERDOWN_SPEC>> for W {
     }
 }
 #[doc = "Field `RAM` reader - Retention RAM Power-down"]
-pub type RAM_R = crate::BitReader<bool>;
+pub type RAM_R = crate::BitReader;
 #[doc = "Field `RAM` writer - Retention RAM Power-down"]
-pub type RAM_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWERDOWN_SPEC, bool, O>;
+pub type RAM_W<'a, const O: u8> = crate::BitWriter<'a, POWERDOWN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Retention RAM Power-down"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<DATABYTEREV_SPEC>> for R {
     }
 }
 #[doc = "Field `DATABYTEREV` reader - Data Byte Reverse Value"]
-pub type DATABYTEREV_R = crate::FieldReader<u32, u32>;
+pub type DATABYTEREV_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Data Byte Reverse Value"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<PB_DIN_SPEC>> for R {
     }
 }
 #[doc = "Field `DIN` reader - Data in"]
-pub type DIN_R = crate::FieldReader<u16, u16>;
+pub type DIN_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Data in"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<ROUTELOC0_SPEC>> for W {
     }
 }
 #[doc = "Field `SWVLOC` reader - I/O Location"]
-pub type SWVLOC_R = crate::FieldReader<u8, SWVLOC_A>;
+pub type SWVLOC_R = crate::FieldReader<SWVLOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<SWVLOC_A> for u8 {
     fn from(variant: SWVLOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SWVLOC_A {
+    type Ux = u8;
 }
 impl SWVLOC_R {
     #[doc = "Get enumerated values variant"]
@@ -89,8 +92,7 @@ impl SWVLOC_R {
     }
 }
 #[doc = "Field `SWVLOC` writer - I/O Location"]
-pub type SWVLOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, SWVLOC_A, 6, O>;
+pub type SWVLOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC0_SPEC, 6, O, SWVLOC_A>;
 impl<'a, const O: u8> SWVLOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]

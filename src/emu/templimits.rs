@@ -35,17 +35,17 @@ impl From<crate::W<TEMPLIMITS_SPEC>> for W {
     }
 }
 #[doc = "Field `TEMPLOW` reader - Temperature Low Limit"]
-pub type TEMPLOW_R = crate::FieldReader<u8, u8>;
+pub type TEMPLOW_R = crate::FieldReader;
 #[doc = "Field `TEMPLOW` writer - Temperature Low Limit"]
-pub type TEMPLOW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u8, u8, 8, O>;
+pub type TEMPLOW_W<'a, const O: u8> = crate::FieldWriter<'a, TEMPLIMITS_SPEC, 8, O>;
 #[doc = "Field `TEMPHIGH` reader - Temperature High Limit"]
-pub type TEMPHIGH_R = crate::FieldReader<u8, u8>;
+pub type TEMPHIGH_R = crate::FieldReader;
 #[doc = "Field `TEMPHIGH` writer - Temperature High Limit"]
-pub type TEMPHIGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u8, u8, 8, O>;
+pub type TEMPHIGH_W<'a, const O: u8> = crate::FieldWriter<'a, TEMPLIMITS_SPEC, 8, O>;
 #[doc = "Field `EM4WUEN` reader - Enable EM4 Wakeup Due to Low/high Temperature"]
-pub type EM4WUEN_R = crate::BitReader<bool>;
+pub type EM4WUEN_R = crate::BitReader;
 #[doc = "Field `EM4WUEN` writer - Enable EM4 Wakeup Due to Low/high Temperature"]
-pub type EM4WUEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEMPLIMITS_SPEC, bool, O>;
+pub type EM4WUEN_W<'a, const O: u8> = crate::BitWriter<'a, TEMPLIMITS_SPEC, O>;
 impl R {
     #[doc = "Bits 0:7 - Temperature Low Limit"]
     #[inline(always)]

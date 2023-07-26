@@ -35,10 +35,9 @@ impl From<crate::W<DDATA0BIG_SPEC>> for W {
     }
 }
 #[doc = "Field `DDATA0BIG` reader - Double Data 0 Big Endian Access"]
-pub type DDATA0BIG_R = crate::FieldReader<u32, u32>;
+pub type DDATA0BIG_R = crate::FieldReader<u32>;
 #[doc = "Field `DDATA0BIG` writer - Double Data 0 Big Endian Access"]
-pub type DDATA0BIG_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DDATA0BIG_SPEC, u32, u32, 32, O>;
+pub type DDATA0BIG_W<'a, const O: u8> = crate::FieldWriter<'a, DDATA0BIG_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Double Data 0 Big Endian Access"]
     #[inline(always)]

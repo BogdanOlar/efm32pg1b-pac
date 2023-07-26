@@ -35,9 +35,9 @@ impl From<crate::W<SADDRMASK_SPEC>> for W {
     }
 }
 #[doc = "Field `MASK` reader - Slave Address Mask"]
-pub type MASK_R = crate::FieldReader<u8, u8>;
+pub type MASK_R = crate::FieldReader;
 #[doc = "Field `MASK` writer - Slave Address Mask"]
-pub type MASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SADDRMASK_SPEC, u8, u8, 7, O>;
+pub type MASK_W<'a, const O: u8> = crate::FieldWriter<'a, SADDRMASK_SPEC, 7, O>;
 impl R {
     #[doc = "Bits 1:7 - Slave Address Mask"]
     #[inline(always)]

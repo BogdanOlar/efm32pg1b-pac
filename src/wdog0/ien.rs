@@ -35,25 +35,25 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `TOUT` reader - TOUT Interrupt Enable"]
-pub type TOUT_R = crate::BitReader<bool>;
+pub type TOUT_R = crate::BitReader;
 #[doc = "Field `TOUT` writer - TOUT Interrupt Enable"]
-pub type TOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type TOUT_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `WARN` reader - WARN Interrupt Enable"]
-pub type WARN_R = crate::BitReader<bool>;
+pub type WARN_R = crate::BitReader;
 #[doc = "Field `WARN` writer - WARN Interrupt Enable"]
-pub type WARN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type WARN_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `WIN` reader - WIN Interrupt Enable"]
-pub type WIN_R = crate::BitReader<bool>;
+pub type WIN_R = crate::BitReader;
 #[doc = "Field `WIN` writer - WIN Interrupt Enable"]
-pub type WIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type WIN_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `PEM0` reader - PEM0 Interrupt Enable"]
-pub type PEM0_R = crate::BitReader<bool>;
+pub type PEM0_R = crate::BitReader;
 #[doc = "Field `PEM0` writer - PEM0 Interrupt Enable"]
-pub type PEM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type PEM0_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `PEM1` reader - PEM1 Interrupt Enable"]
-pub type PEM1_R = crate::BitReader<bool>;
+pub type PEM1_R = crate::BitReader;
 #[doc = "Field `PEM1` writer - PEM1 Interrupt Enable"]
-pub type PEM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type PEM1_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - TOUT Interrupt Enable"]
     #[inline(always)]

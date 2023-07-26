@@ -35,23 +35,23 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `ENABLE` reader - RTCC Enable"]
-pub type ENABLE_R = crate::BitReader<bool>;
+pub type ENABLE_R = crate::BitReader;
 #[doc = "Field `ENABLE` writer - RTCC Enable"]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<bool>;
+pub type DEBUGRUN_R = crate::BitReader;
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `PRECCV0TOP` reader - Pre-counter CCV0 Top Value Enable"]
-pub type PRECCV0TOP_R = crate::BitReader<bool>;
+pub type PRECCV0TOP_R = crate::BitReader;
 #[doc = "Field `PRECCV0TOP` writer - Pre-counter CCV0 Top Value Enable"]
-pub type PRECCV0TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type PRECCV0TOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CCV1TOP` reader - CCV1 Top Value Enable"]
-pub type CCV1TOP_R = crate::BitReader<bool>;
+pub type CCV1TOP_R = crate::BitReader;
 #[doc = "Field `CCV1TOP` writer - CCV1 Top Value Enable"]
-pub type CCV1TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CCV1TOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CNTPRESC` reader - Counter Prescaler Value"]
-pub type CNTPRESC_R = crate::FieldReader<u8, CNTPRESC_A>;
+pub type CNTPRESC_R = crate::FieldReader<CNTPRESC_A>;
 #[doc = "Counter Prescaler Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -94,6 +94,9 @@ impl From<CNTPRESC_A> for u8 {
     fn from(variant: CNTPRESC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CNTPRESC_A {
+    type Ux = u8;
 }
 impl CNTPRESC_R {
     #[doc = "Get enumerated values variant"]
@@ -201,8 +204,7 @@ impl CNTPRESC_R {
     }
 }
 #[doc = "Field `CNTPRESC` writer - Counter Prescaler Value"]
-pub type CNTPRESC_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, CNTPRESC_A, 4, O>;
+pub type CNTPRESC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 4, O, CNTPRESC_A>;
 impl<'a, const O: u8> CNTPRESC_W<'a, O> {
     #[doc = "CLKCNT = LFECLKRTCC/1"]
     #[inline(always)]
@@ -286,21 +288,21 @@ impl<'a, const O: u8> CNTPRESC_W<'a, O> {
     }
 }
 #[doc = "Field `CNTTICK` reader - Counter Prescaler Mode"]
-pub type CNTTICK_R = crate::BitReader<bool>;
+pub type CNTTICK_R = crate::BitReader;
 #[doc = "Field `CNTTICK` writer - Counter Prescaler Mode"]
-pub type CNTTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CNTTICK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `OSCFDETEN` reader - Oscillator Failure Detection Enable"]
-pub type OSCFDETEN_R = crate::BitReader<bool>;
+pub type OSCFDETEN_R = crate::BitReader;
 #[doc = "Field `OSCFDETEN` writer - Oscillator Failure Detection Enable"]
-pub type OSCFDETEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type OSCFDETEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CNTMODE` reader - Main Counter Mode"]
-pub type CNTMODE_R = crate::BitReader<bool>;
+pub type CNTMODE_R = crate::BitReader;
 #[doc = "Field `CNTMODE` writer - Main Counter Mode"]
-pub type CNTMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CNTMODE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `LYEARCORRDIS` reader - Leap Year Correction Disabled"]
-pub type LYEARCORRDIS_R = crate::BitReader<bool>;
+pub type LYEARCORRDIS_R = crate::BitReader;
 #[doc = "Field `LYEARCORRDIS` writer - Leap Year Correction Disabled"]
-pub type LYEARCORRDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type LYEARCORRDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - RTCC Enable"]
     #[inline(always)]

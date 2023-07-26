@@ -35,7 +35,7 @@ impl From<crate::W<LFAPRESC0_SPEC>> for W {
     }
 }
 #[doc = "Field `LETIMER0` reader - Low Energy Timer 0 Prescaler"]
-pub type LETIMER0_R = crate::FieldReader<u8, LETIMER0_A>;
+pub type LETIMER0_R = crate::FieldReader<LETIMER0_A>;
 #[doc = "Low Energy Timer 0 Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -78,6 +78,9 @@ impl From<LETIMER0_A> for u8 {
     fn from(variant: LETIMER0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LETIMER0_A {
+    type Ux = u8;
 }
 impl LETIMER0_R {
     #[doc = "Get enumerated values variant"]
@@ -185,8 +188,7 @@ impl LETIMER0_R {
     }
 }
 #[doc = "Field `LETIMER0` writer - Low Energy Timer 0 Prescaler"]
-pub type LETIMER0_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, LFAPRESC0_SPEC, u8, LETIMER0_A, 4, O>;
+pub type LETIMER0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, LFAPRESC0_SPEC, 4, O, LETIMER0_A>;
 impl<'a, const O: u8> LETIMER0_W<'a, O> {
     #[doc = "LFACLKLETIMER0 = LFACLK"]
     #[inline(always)]

@@ -35,25 +35,25 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
     }
 }
 #[doc = "Field `SWCLKTCKPEN` reader - Serial Wire Clock and JTAG Test Clock Pin Enable"]
-pub type SWCLKTCKPEN_R = crate::BitReader<bool>;
+pub type SWCLKTCKPEN_R = crate::BitReader;
 #[doc = "Field `SWCLKTCKPEN` writer - Serial Wire Clock and JTAG Test Clock Pin Enable"]
-pub type SWCLKTCKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type SWCLKTCKPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `SWDIOTMSPEN` reader - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
-pub type SWDIOTMSPEN_R = crate::BitReader<bool>;
+pub type SWDIOTMSPEN_R = crate::BitReader;
 #[doc = "Field `SWDIOTMSPEN` writer - Serial Wire Data and JTAG Test Mode Select Pin Enable"]
-pub type SWDIOTMSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type SWDIOTMSPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `TDOPEN` reader - JTAG Test Debug Output Pin Enable"]
-pub type TDOPEN_R = crate::BitReader<bool>;
+pub type TDOPEN_R = crate::BitReader;
 #[doc = "Field `TDOPEN` writer - JTAG Test Debug Output Pin Enable"]
-pub type TDOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type TDOPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `TDIPEN` reader - JTAG Test Debug Input Pin Enable"]
-pub type TDIPEN_R = crate::BitReader<bool>;
+pub type TDIPEN_R = crate::BitReader;
 #[doc = "Field `TDIPEN` writer - JTAG Test Debug Input Pin Enable"]
-pub type TDIPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type TDIPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `SWVPEN` reader - Serial Wire Viewer Output Pin Enable"]
-pub type SWVPEN_R = crate::BitReader<bool>;
+pub type SWVPEN_R = crate::BitReader;
 #[doc = "Field `SWVPEN` writer - Serial Wire Viewer Output Pin Enable"]
-pub type SWVPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type SWVPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Serial Wire Clock and JTAG Test Clock Pin Enable"]
     #[inline(always)]

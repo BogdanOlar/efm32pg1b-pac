@@ -35,9 +35,9 @@ impl From<crate::W<PB_DOUT_SPEC>> for W {
     }
 }
 #[doc = "Field `DOUT` reader - Data Out"]
-pub type DOUT_R = crate::FieldReader<u16, u16>;
+pub type DOUT_R = crate::FieldReader<u16>;
 #[doc = "Field `DOUT` writer - Data Out"]
-pub type DOUT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PB_DOUT_SPEC, u16, u16, 16, O>;
+pub type DOUT_W<'a, const O: u8> = crate::FieldWriter<'a, PB_DOUT_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Data Out"]
     #[inline(always)]

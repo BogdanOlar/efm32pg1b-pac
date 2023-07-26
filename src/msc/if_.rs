@@ -14,17 +14,17 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `ERASE` reader - Erase Done Interrupt Read Flag"]
-pub type ERASE_R = crate::BitReader<bool>;
+pub type ERASE_R = crate::BitReader;
 #[doc = "Field `WRITE` reader - Write Done Interrupt Read Flag"]
-pub type WRITE_R = crate::BitReader<bool>;
+pub type WRITE_R = crate::BitReader;
 #[doc = "Field `CHOF` reader - Cache Hits Overflow Interrupt Flag"]
-pub type CHOF_R = crate::BitReader<bool>;
+pub type CHOF_R = crate::BitReader;
 #[doc = "Field `CMOF` reader - Cache Misses Overflow Interrupt Flag"]
-pub type CMOF_R = crate::BitReader<bool>;
+pub type CMOF_R = crate::BitReader;
 #[doc = "Field `PWRUPF` reader - Flash Power Up Sequence Complete Flag"]
-pub type PWRUPF_R = crate::BitReader<bool>;
+pub type PWRUPF_R = crate::BitReader;
 #[doc = "Field `ICACHERR` reader - ICache RAM Parity Error Flag"]
-pub type ICACHERR_R = crate::BitReader<bool>;
+pub type ICACHERR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Erase Done Interrupt Read Flag"]
     #[inline(always)]

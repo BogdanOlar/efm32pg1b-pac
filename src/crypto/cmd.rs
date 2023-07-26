@@ -35,15 +35,15 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `INSTR` reader - Execute Instruction"]
-pub type INSTR_R = crate::FieldReader<u8, u8>;
+pub type INSTR_R = crate::FieldReader;
 #[doc = "Field `INSTR` writer - Execute Instruction"]
-pub type INSTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMD_SPEC, u8, u8, 8, O>;
+pub type INSTR_W<'a, const O: u8> = crate::FieldWriter<'a, CMD_SPEC, 8, O>;
 #[doc = "Field `SEQSTART` writer - Encryption/Decryption SEQUENCE Start"]
-pub type SEQSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type SEQSTART_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `SEQSTOP` writer - Sequence Stop"]
-pub type SEQSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type SEQSTOP_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `SEQSTEP` writer - Sequence Step"]
-pub type SEQSTEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type SEQSTEP_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 impl R {
     #[doc = "Bits 0:7 - Execute Instruction"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `APORTCONFLICT` reader - APORTCONFLICT Interrupt Enable"]
-pub type APORTCONFLICT_R = crate::BitReader<bool>;
+pub type APORTCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORTCONFLICT` writer - APORTCONFLICT Interrupt Enable"]
-pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 1 - APORTCONFLICT Interrupt Enable"]
     #[inline(always)]

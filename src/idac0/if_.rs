@@ -14,7 +14,7 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `APORTCONFLICT` reader - APORT Conflict Interrupt Flag"]
-pub type APORTCONFLICT_R = crate::BitReader<bool>;
+pub type APORTCONFLICT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 1 - APORT Conflict Interrupt Flag"]
     #[inline(always)]

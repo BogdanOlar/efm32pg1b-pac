@@ -35,19 +35,19 @@ impl From<crate::W<SINGLECTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `REP` reader - Single Channel Repetitive Mode"]
-pub type REP_R = crate::BitReader<bool>;
+pub type REP_R = crate::BitReader;
 #[doc = "Field `REP` writer - Single Channel Repetitive Mode"]
-pub type REP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
+pub type REP_W<'a, const O: u8> = crate::BitWriter<'a, SINGLECTRL_SPEC, O>;
 #[doc = "Field `DIFF` reader - Single Channel Differential Mode"]
-pub type DIFF_R = crate::BitReader<bool>;
+pub type DIFF_R = crate::BitReader;
 #[doc = "Field `DIFF` writer - Single Channel Differential Mode"]
-pub type DIFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
+pub type DIFF_W<'a, const O: u8> = crate::BitWriter<'a, SINGLECTRL_SPEC, O>;
 #[doc = "Field `ADJ` reader - Single Channel Result Adjustment"]
-pub type ADJ_R = crate::BitReader<bool>;
+pub type ADJ_R = crate::BitReader;
 #[doc = "Field `ADJ` writer - Single Channel Result Adjustment"]
-pub type ADJ_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
+pub type ADJ_W<'a, const O: u8> = crate::BitWriter<'a, SINGLECTRL_SPEC, O>;
 #[doc = "Field `RES` reader - Single Channel Resolution Select"]
-pub type RES_R = crate::FieldReader<u8, RES_A>;
+pub type RES_R = crate::FieldReader<RES_A>;
 #[doc = "Single Channel Resolution Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -66,6 +66,9 @@ impl From<RES_A> for u8 {
     fn from(variant: RES_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RES_A {
+    type Ux = u8;
 }
 impl RES_R {
     #[doc = "Get enumerated values variant"]
@@ -101,7 +104,7 @@ impl RES_R {
     }
 }
 #[doc = "Field `RES` writer - Single Channel Resolution Select"]
-pub type RES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SINGLECTRL_SPEC, u8, RES_A, 2, O>;
+pub type RES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SINGLECTRL_SPEC, 2, O, RES_A>;
 impl<'a, const O: u8> RES_W<'a, O> {
     #[doc = "12-bit resolution."]
     #[inline(always)]
@@ -125,7 +128,7 @@ impl<'a, const O: u8> RES_W<'a, O> {
     }
 }
 #[doc = "Field `REF` reader - Single Channel Reference Selection"]
-pub type REF_R = crate::FieldReader<u8, REF_A>;
+pub type REF_R = crate::FieldReader<REF_A>;
 #[doc = "Single Channel Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -152,6 +155,9 @@ impl From<REF_A> for u8 {
     fn from(variant: REF_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REF_A {
+    type Ux = u8;
 }
 impl REF_R {
     #[doc = "Get enumerated values variant"]
@@ -211,7 +217,7 @@ impl REF_R {
     }
 }
 #[doc = "Field `REF` writer - Single Channel Reference Selection"]
-pub type REF_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SINGLECTRL_SPEC, u8, REF_A, 3, O>;
+pub type REF_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SINGLECTRL_SPEC, 3, O, REF_A>;
 impl<'a, const O: u8> REF_W<'a, O> {
     #[doc = "VFS = 1.25V with internal VBGR reference"]
     #[inline(always)]
@@ -255,15 +261,15 @@ impl<'a, const O: u8> REF_W<'a, O> {
     }
 }
 #[doc = "Field `POSSEL` reader - Single Channel Positive Input Selection"]
-pub type POSSEL_R = crate::FieldReader<u8, u8>;
+pub type POSSEL_R = crate::FieldReader;
 #[doc = "Field `POSSEL` writer - Single Channel Positive Input Selection"]
-pub type POSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, u8, 8, O>;
+pub type POSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, SINGLECTRL_SPEC, 8, O>;
 #[doc = "Field `NEGSEL` reader - Single Channel Negative Input Selection"]
-pub type NEGSEL_R = crate::FieldReader<u8, u8>;
+pub type NEGSEL_R = crate::FieldReader;
 #[doc = "Field `NEGSEL` writer - Single Channel Negative Input Selection"]
-pub type NEGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, u8, 8, O>;
+pub type NEGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, SINGLECTRL_SPEC, 8, O>;
 #[doc = "Field `AT` reader - Single Channel Acquisition Time"]
-pub type AT_R = crate::FieldReader<u8, AT_A>;
+pub type AT_R = crate::FieldReader<AT_A>;
 #[doc = "Single Channel Acquisition Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -294,6 +300,9 @@ impl From<AT_A> for u8 {
     fn from(variant: AT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for AT_A {
+    type Ux = u8;
 }
 impl AT_R {
     #[doc = "Get enumerated values variant"]
@@ -365,7 +374,7 @@ impl AT_R {
     }
 }
 #[doc = "Field `AT` writer - Single Channel Acquisition Time"]
-pub type AT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, AT_A, 4, O>;
+pub type AT_W<'a, const O: u8> = crate::FieldWriter<'a, SINGLECTRL_SPEC, 4, O, AT_A>;
 impl<'a, const O: u8> AT_W<'a, O> {
     #[doc = "1 conversion clock cycle acquisition time for single channel"]
     #[inline(always)]
@@ -419,13 +428,13 @@ impl<'a, const O: u8> AT_W<'a, O> {
     }
 }
 #[doc = "Field `PRSEN` reader - Single Channel PRS Trigger Enable"]
-pub type PRSEN_R = crate::BitReader<bool>;
+pub type PRSEN_R = crate::BitReader;
 #[doc = "Field `PRSEN` writer - Single Channel PRS Trigger Enable"]
-pub type PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
+pub type PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, SINGLECTRL_SPEC, O>;
 #[doc = "Field `CMPEN` reader - Compare Logic Enable for Single Channel"]
-pub type CMPEN_R = crate::BitReader<bool>;
+pub type CMPEN_R = crate::BitReader;
 #[doc = "Field `CMPEN` writer - Compare Logic Enable for Single Channel"]
-pub type CMPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SINGLECTRL_SPEC, bool, O>;
+pub type CMPEN_W<'a, const O: u8> = crate::BitWriter<'a, SINGLECTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Single Channel Repetitive Mode"]
     #[inline(always)]

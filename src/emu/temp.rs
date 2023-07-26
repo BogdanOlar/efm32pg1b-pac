@@ -14,7 +14,7 @@ impl From<crate::R<TEMP_SPEC>> for R {
     }
 }
 #[doc = "Field `TEMP` reader - Temperature Measurement"]
-pub type TEMP_R = crate::FieldReader<u8, u8>;
+pub type TEMP_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Temperature Measurement"]
     #[inline(always)]

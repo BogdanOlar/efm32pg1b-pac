@@ -35,9 +35,9 @@ impl From<crate::W<CH3_SRC_SPEC>> for W {
     }
 }
 #[doc = "Field `SRCADDR` reader - Source Data Address"]
-pub type SRCADDR_R = crate::FieldReader<u32, u32>;
+pub type SRCADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `SRCADDR` writer - Source Data Address"]
-pub type SRCADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH3_SRC_SPEC, u32, u32, 32, O>;
+pub type SRCADDR_W<'a, const O: u8> = crate::FieldWriter<'a, CH3_SRC_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Source Data Address"]
     #[inline(always)]

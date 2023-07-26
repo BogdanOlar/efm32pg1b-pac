@@ -35,9 +35,9 @@ impl From<crate::W<CLKDIV_SPEC>> for W {
     }
 }
 #[doc = "Field `DIV` reader - Clock Divider"]
-pub type DIV_R = crate::FieldReader<u16, u16>;
+pub type DIV_R = crate::FieldReader<u16>;
 #[doc = "Field `DIV` writer - Clock Divider"]
-pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u16, u16, 9, O>;
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, CLKDIV_SPEC, 9, O, u16>;
 impl R {
     #[doc = "Bits 0:8 - Clock Divider"]
     #[inline(always)]

@@ -14,35 +14,35 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `HFRCORDY` reader - HFRCO Ready Interrupt Flag"]
-pub type HFRCORDY_R = crate::BitReader<bool>;
+pub type HFRCORDY_R = crate::BitReader;
 #[doc = "Field `HFXORDY` reader - HFXO Ready Interrupt Flag"]
-pub type HFXORDY_R = crate::BitReader<bool>;
+pub type HFXORDY_R = crate::BitReader;
 #[doc = "Field `LFRCORDY` reader - LFRCO Ready Interrupt Flag"]
-pub type LFRCORDY_R = crate::BitReader<bool>;
+pub type LFRCORDY_R = crate::BitReader;
 #[doc = "Field `LFXORDY` reader - LFXO Ready Interrupt Flag"]
-pub type LFXORDY_R = crate::BitReader<bool>;
+pub type LFXORDY_R = crate::BitReader;
 #[doc = "Field `AUXHFRCORDY` reader - AUXHFRCO Ready Interrupt Flag"]
-pub type AUXHFRCORDY_R = crate::BitReader<bool>;
+pub type AUXHFRCORDY_R = crate::BitReader;
 #[doc = "Field `CALRDY` reader - Calibration Ready Interrupt Flag"]
-pub type CALRDY_R = crate::BitReader<bool>;
+pub type CALRDY_R = crate::BitReader;
 #[doc = "Field `CALOF` reader - Calibration Overflow Interrupt Flag"]
-pub type CALOF_R = crate::BitReader<bool>;
+pub type CALOF_R = crate::BitReader;
 #[doc = "Field `HFXODISERR` reader - HFXO Disable Error Interrupt Flag"]
-pub type HFXODISERR_R = crate::BitReader<bool>;
+pub type HFXODISERR_R = crate::BitReader;
 #[doc = "Field `HFXOAUTOSW` reader - HFXO Automatic Switch Interrupt Flag"]
-pub type HFXOAUTOSW_R = crate::BitReader<bool>;
+pub type HFXOAUTOSW_R = crate::BitReader;
 #[doc = "Field `HFXOPEAKDETERR` reader - HFXO Automatic Peak Detection Error Interrupt Flag"]
-pub type HFXOPEAKDETERR_R = crate::BitReader<bool>;
+pub type HFXOPEAKDETERR_R = crate::BitReader;
 #[doc = "Field `HFXOPEAKDETRDY` reader - HFXO Automatic Peak Detection Ready Interrupt Flag"]
-pub type HFXOPEAKDETRDY_R = crate::BitReader<bool>;
+pub type HFXOPEAKDETRDY_R = crate::BitReader;
 #[doc = "Field `HFXOSHUNTOPTRDY` reader - HFXO Automatic Shunt Current Optimization Ready Interrupt Flag"]
-pub type HFXOSHUNTOPTRDY_R = crate::BitReader<bool>;
+pub type HFXOSHUNTOPTRDY_R = crate::BitReader;
 #[doc = "Field `HFRCODIS` reader - HFRCO Disable Interrupt Flag"]
-pub type HFRCODIS_R = crate::BitReader<bool>;
+pub type HFRCODIS_R = crate::BitReader;
 #[doc = "Field `LFTIMEOUTERR` reader - Low Frequency Timeout Error Interrupt Flag"]
-pub type LFTIMEOUTERR_R = crate::BitReader<bool>;
+pub type LFTIMEOUTERR_R = crate::BitReader;
 #[doc = "Field `CMUERR` reader - CMU Error Interrupt Flag"]
-pub type CMUERR_R = crate::BitReader<bool>;
+pub type CMUERR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - HFRCO Ready Interrupt Flag"]
     #[inline(always)]

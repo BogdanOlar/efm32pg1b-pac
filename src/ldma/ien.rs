@@ -35,13 +35,13 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `DONE` reader - DONE Interrupt Enable"]
-pub type DONE_R = crate::FieldReader<u8, u8>;
+pub type DONE_R = crate::FieldReader;
 #[doc = "Field `DONE` writer - DONE Interrupt Enable"]
-pub type DONE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IEN_SPEC, u8, u8, 8, O>;
+pub type DONE_W<'a, const O: u8> = crate::FieldWriter<'a, IEN_SPEC, 8, O>;
 #[doc = "Field `ERROR` reader - ERROR Interrupt Enable"]
-pub type ERROR_R = crate::BitReader<bool>;
+pub type ERROR_R = crate::BitReader;
 #[doc = "Field `ERROR` writer - ERROR Interrupt Enable"]
-pub type ERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type ERROR_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bits 0:7 - DONE Interrupt Enable"]
     #[inline(always)]

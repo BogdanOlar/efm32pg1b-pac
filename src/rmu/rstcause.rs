@@ -14,23 +14,23 @@ impl From<crate::R<RSTCAUSE_SPEC>> for R {
     }
 }
 #[doc = "Field `PORST` reader - Power on Reset"]
-pub type PORST_R = crate::BitReader<bool>;
+pub type PORST_R = crate::BitReader;
 #[doc = "Field `AVDDBOD` reader - Brown Out Detector AVDD Reset"]
-pub type AVDDBOD_R = crate::BitReader<bool>;
+pub type AVDDBOD_R = crate::BitReader;
 #[doc = "Field `DVDDBOD` reader - Brown Out Detector DVDD Reset"]
-pub type DVDDBOD_R = crate::BitReader<bool>;
+pub type DVDDBOD_R = crate::BitReader;
 #[doc = "Field `DECBOD` reader - Brown Out Detector Decouple Domain Reset"]
-pub type DECBOD_R = crate::BitReader<bool>;
+pub type DECBOD_R = crate::BitReader;
 #[doc = "Field `EXTRST` reader - External Pin Reset"]
-pub type EXTRST_R = crate::BitReader<bool>;
+pub type EXTRST_R = crate::BitReader;
 #[doc = "Field `LOCKUPRST` reader - LOCKUP Reset"]
-pub type LOCKUPRST_R = crate::BitReader<bool>;
+pub type LOCKUPRST_R = crate::BitReader;
 #[doc = "Field `SYSREQRST` reader - System Request Reset"]
-pub type SYSREQRST_R = crate::BitReader<bool>;
+pub type SYSREQRST_R = crate::BitReader;
 #[doc = "Field `WDOGRST` reader - Watchdog Reset"]
-pub type WDOGRST_R = crate::BitReader<bool>;
+pub type WDOGRST_R = crate::BitReader;
 #[doc = "Field `EM4RST` reader - EM4 Reset"]
-pub type EM4RST_R = crate::BitReader<bool>;
+pub type EM4RST_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Power on Reset"]
     #[inline(always)]

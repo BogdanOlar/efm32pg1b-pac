@@ -35,23 +35,23 @@ impl From<crate::W<DTCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `DTEN` reader - DTI Enable"]
-pub type DTEN_R = crate::BitReader<bool>;
+pub type DTEN_R = crate::BitReader;
 #[doc = "Field `DTEN` writer - DTI Enable"]
-pub type DTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCTRL_SPEC, bool, O>;
+pub type DTEN_W<'a, const O: u8> = crate::BitWriter<'a, DTCTRL_SPEC, O>;
 #[doc = "Field `DTDAS` reader - DTI Automatic Start-up Functionality"]
-pub type DTDAS_R = crate::BitReader<bool>;
+pub type DTDAS_R = crate::BitReader;
 #[doc = "Field `DTDAS` writer - DTI Automatic Start-up Functionality"]
-pub type DTDAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCTRL_SPEC, bool, O>;
+pub type DTDAS_W<'a, const O: u8> = crate::BitWriter<'a, DTCTRL_SPEC, O>;
 #[doc = "Field `DTIPOL` reader - DTI Inactive Polarity"]
-pub type DTIPOL_R = crate::BitReader<bool>;
+pub type DTIPOL_R = crate::BitReader;
 #[doc = "Field `DTIPOL` writer - DTI Inactive Polarity"]
-pub type DTIPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCTRL_SPEC, bool, O>;
+pub type DTIPOL_W<'a, const O: u8> = crate::BitWriter<'a, DTCTRL_SPEC, O>;
 #[doc = "Field `DTCINV` reader - DTI Complementary Output Invert"]
-pub type DTCINV_R = crate::BitReader<bool>;
+pub type DTCINV_R = crate::BitReader;
 #[doc = "Field `DTCINV` writer - DTI Complementary Output Invert"]
-pub type DTCINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCTRL_SPEC, bool, O>;
+pub type DTCINV_W<'a, const O: u8> = crate::BitWriter<'a, DTCTRL_SPEC, O>;
 #[doc = "Field `DTPRSSEL` reader - DTI PRS Source Channel Select"]
-pub type DTPRSSEL_R = crate::FieldReader<u8, DTPRSSEL_A>;
+pub type DTPRSSEL_R = crate::FieldReader<DTPRSSEL_A>;
 #[doc = "DTI PRS Source Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -86,6 +86,9 @@ impl From<DTPRSSEL_A> for u8 {
     fn from(variant: DTPRSSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DTPRSSEL_A {
+    type Ux = u8;
 }
 impl DTPRSSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -169,8 +172,7 @@ impl DTPRSSEL_R {
     }
 }
 #[doc = "Field `DTPRSSEL` writer - DTI PRS Source Channel Select"]
-pub type DTPRSSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DTCTRL_SPEC, u8, DTPRSSEL_A, 4, O>;
+pub type DTPRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DTCTRL_SPEC, 4, O, DTPRSSEL_A>;
 impl<'a, const O: u8> DTPRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
@@ -234,17 +236,17 @@ impl<'a, const O: u8> DTPRSSEL_W<'a, O> {
     }
 }
 #[doc = "Field `DTAR` reader - DTI Always Run"]
-pub type DTAR_R = crate::BitReader<bool>;
+pub type DTAR_R = crate::BitReader;
 #[doc = "Field `DTAR` writer - DTI Always Run"]
-pub type DTAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCTRL_SPEC, bool, O>;
+pub type DTAR_W<'a, const O: u8> = crate::BitWriter<'a, DTCTRL_SPEC, O>;
 #[doc = "Field `DTFATS` reader - DTI Fault Action on Timer Stop"]
-pub type DTFATS_R = crate::BitReader<bool>;
+pub type DTFATS_R = crate::BitReader;
 #[doc = "Field `DTFATS` writer - DTI Fault Action on Timer Stop"]
-pub type DTFATS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCTRL_SPEC, bool, O>;
+pub type DTFATS_W<'a, const O: u8> = crate::BitWriter<'a, DTCTRL_SPEC, O>;
 #[doc = "Field `DTPRSEN` reader - DTI PRS Source Enable"]
-pub type DTPRSEN_R = crate::BitReader<bool>;
+pub type DTPRSEN_R = crate::BitReader;
 #[doc = "Field `DTPRSEN` writer - DTI PRS Source Enable"]
-pub type DTPRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTCTRL_SPEC, bool, O>;
+pub type DTPRSEN_W<'a, const O: u8> = crate::BitWriter<'a, DTCTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - DTI Enable"]
     #[inline(always)]

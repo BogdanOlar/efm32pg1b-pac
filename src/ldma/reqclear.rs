@@ -20,7 +20,7 @@ impl From<crate::W<REQCLEAR_SPEC>> for W {
     }
 }
 #[doc = "Field `REQCLEAR` writer - DMA Request Clear"]
-pub type REQCLEAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REQCLEAR_SPEC, u8, u8, 8, O>;
+pub type REQCLEAR_W<'a, const O: u8> = crate::FieldWriter<'a, REQCLEAR_SPEC, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - DMA Request Clear"]
     #[inline(always)]

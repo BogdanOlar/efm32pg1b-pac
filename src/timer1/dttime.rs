@@ -35,7 +35,7 @@ impl From<crate::W<DTTIME_SPEC>> for W {
     }
 }
 #[doc = "Field `DTPRESC` reader - DTI Prescaler Setting"]
-pub type DTPRESC_R = crate::FieldReader<u8, DTPRESC_A>;
+pub type DTPRESC_R = crate::FieldReader<DTPRESC_A>;
 #[doc = "DTI Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -68,6 +68,9 @@ impl From<DTPRESC_A> for u8 {
     fn from(variant: DTPRESC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DTPRESC_A {
+    type Ux = u8;
 }
 impl DTPRESC_R {
     #[doc = "Get enumerated values variant"]
@@ -145,7 +148,7 @@ impl DTPRESC_R {
     }
 }
 #[doc = "Field `DTPRESC` writer - DTI Prescaler Setting"]
-pub type DTPRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIME_SPEC, u8, DTPRESC_A, 4, O>;
+pub type DTPRESC_W<'a, const O: u8> = crate::FieldWriter<'a, DTTIME_SPEC, 4, O, DTPRESC_A>;
 impl<'a, const O: u8> DTPRESC_W<'a, O> {
     #[doc = "The HFPERCLK is undivided"]
     #[inline(always)]
@@ -204,13 +207,13 @@ impl<'a, const O: u8> DTPRESC_W<'a, O> {
     }
 }
 #[doc = "Field `DTRISET` reader - DTI Rise-time"]
-pub type DTRISET_R = crate::FieldReader<u8, u8>;
+pub type DTRISET_R = crate::FieldReader;
 #[doc = "Field `DTRISET` writer - DTI Rise-time"]
-pub type DTRISET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIME_SPEC, u8, u8, 6, O>;
+pub type DTRISET_W<'a, const O: u8> = crate::FieldWriter<'a, DTTIME_SPEC, 6, O>;
 #[doc = "Field `DTFALLT` reader - DTI Fall-time"]
-pub type DTFALLT_R = crate::FieldReader<u8, u8>;
+pub type DTFALLT_R = crate::FieldReader;
 #[doc = "Field `DTFALLT` writer - DTI Fall-time"]
-pub type DTFALLT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTTIME_SPEC, u8, u8, 6, O>;
+pub type DTFALLT_W<'a, const O: u8> = crate::FieldWriter<'a, DTTIME_SPEC, 6, O>;
 impl R {
     #[doc = "Bits 0:3 - DTI Prescaler Setting"]
     #[inline(always)]

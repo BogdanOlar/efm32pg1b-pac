@@ -14,35 +14,35 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `RUNNING` reader - Running"]
-pub type RUNNING_R = crate::BitReader<bool>;
+pub type RUNNING_R = crate::BitReader;
 #[doc = "Field `DIR` reader - Direction"]
-pub type DIR_R = crate::BitReader<bool>;
+pub type DIR_R = crate::BitReader;
 #[doc = "Field `TOPBV` reader - TOPB Valid"]
-pub type TOPBV_R = crate::BitReader<bool>;
+pub type TOPBV_R = crate::BitReader;
 #[doc = "Field `CCVBV0` reader - CC0 CCVB Valid"]
-pub type CCVBV0_R = crate::BitReader<bool>;
+pub type CCVBV0_R = crate::BitReader;
 #[doc = "Field `CCVBV1` reader - CC1 CCVB Valid"]
-pub type CCVBV1_R = crate::BitReader<bool>;
+pub type CCVBV1_R = crate::BitReader;
 #[doc = "Field `CCVBV2` reader - CC2 CCVB Valid"]
-pub type CCVBV2_R = crate::BitReader<bool>;
+pub type CCVBV2_R = crate::BitReader;
 #[doc = "Field `CCVBV3` reader - CC3 CCVB Valid"]
-pub type CCVBV3_R = crate::BitReader<bool>;
+pub type CCVBV3_R = crate::BitReader;
 #[doc = "Field `ICV0` reader - CC0 Input Capture Valid"]
-pub type ICV0_R = crate::BitReader<bool>;
+pub type ICV0_R = crate::BitReader;
 #[doc = "Field `ICV1` reader - CC1 Input Capture Valid"]
-pub type ICV1_R = crate::BitReader<bool>;
+pub type ICV1_R = crate::BitReader;
 #[doc = "Field `ICV2` reader - CC2 Input Capture Valid"]
-pub type ICV2_R = crate::BitReader<bool>;
+pub type ICV2_R = crate::BitReader;
 #[doc = "Field `ICV3` reader - CC3 Input Capture Valid"]
-pub type ICV3_R = crate::BitReader<bool>;
+pub type ICV3_R = crate::BitReader;
 #[doc = "Field `CCPOL0` reader - CC0 Polarity"]
-pub type CCPOL0_R = crate::BitReader<bool>;
+pub type CCPOL0_R = crate::BitReader;
 #[doc = "Field `CCPOL1` reader - CC1 Polarity"]
-pub type CCPOL1_R = crate::BitReader<bool>;
+pub type CCPOL1_R = crate::BitReader;
 #[doc = "Field `CCPOL2` reader - CC2 Polarity"]
-pub type CCPOL2_R = crate::BitReader<bool>;
+pub type CCPOL2_R = crate::BitReader;
 #[doc = "Field `CCPOL3` reader - CC3 Polarity"]
-pub type CCPOL3_R = crate::BitReader<bool>;
+pub type CCPOL3_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Running"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<CH4_DST_SPEC>> for W {
     }
 }
 #[doc = "Field `DSTADDR` reader - Destination Data Address"]
-pub type DSTADDR_R = crate::FieldReader<u32, u32>;
+pub type DSTADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `DSTADDR` writer - Destination Data Address"]
-pub type DSTADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH4_DST_SPEC, u32, u32, 32, O>;
+pub type DSTADDR_W<'a, const O: u8> = crate::FieldWriter<'a, CH4_DST_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Destination Data Address"]
     #[inline(always)]

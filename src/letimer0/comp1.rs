@@ -35,9 +35,9 @@ impl From<crate::W<COMP1_SPEC>> for W {
     }
 }
 #[doc = "Field `COMP1` reader - Compare Value 1"]
-pub type COMP1_R = crate::FieldReader<u16, u16>;
+pub type COMP1_R = crate::FieldReader<u16>;
 #[doc = "Field `COMP1` writer - Compare Value 1"]
-pub type COMP1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, COMP1_SPEC, u16, u16, 16, O>;
+pub type COMP1_W<'a, const O: u8> = crate::FieldWriter<'a, COMP1_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Value 1"]
     #[inline(always)]

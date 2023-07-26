@@ -14,7 +14,7 @@ impl From<crate::R<CNT_SPEC>> for R {
     }
 }
 #[doc = "Field `CNT` reader - Counter Value"]
-pub type CNT_R = crate::FieldReader<u32, u32>;
+pub type CNT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Counter Value"]
     #[inline(always)]

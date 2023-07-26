@@ -35,11 +35,11 @@ impl From<crate::W<LFXOCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TUNING` reader - LFXO Internal Capacitor Array Tuning Value"]
-pub type TUNING_R = crate::FieldReader<u8, u8>;
+pub type TUNING_R = crate::FieldReader;
 #[doc = "Field `TUNING` writer - LFXO Internal Capacitor Array Tuning Value"]
-pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFXOCTRL_SPEC, u8, u8, 7, O>;
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, LFXOCTRL_SPEC, 7, O>;
 #[doc = "Field `MODE` reader - LFXO Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "LFXO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -85,7 +88,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - LFXO Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFXOCTRL_SPEC, u8, MODE_A, 2, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, LFXOCTRL_SPEC, 2, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "32768 Hz crystal oscillator"]
     #[inline(always)]
@@ -104,27 +107,27 @@ impl<'a, const O: u8> MODE_W<'a, O> {
     }
 }
 #[doc = "Field `GAIN` reader - LFXO Startup Gain"]
-pub type GAIN_R = crate::FieldReader<u8, u8>;
+pub type GAIN_R = crate::FieldReader;
 #[doc = "Field `GAIN` writer - LFXO Startup Gain"]
-pub type GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFXOCTRL_SPEC, u8, u8, 2, O>;
+pub type GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, LFXOCTRL_SPEC, 2, O>;
 #[doc = "Field `HIGHAMPL` reader - LFXO High XTAL Oscillation Amplitude Enable"]
-pub type HIGHAMPL_R = crate::BitReader<bool>;
+pub type HIGHAMPL_R = crate::BitReader;
 #[doc = "Field `HIGHAMPL` writer - LFXO High XTAL Oscillation Amplitude Enable"]
-pub type HIGHAMPL_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFXOCTRL_SPEC, bool, O>;
+pub type HIGHAMPL_W<'a, const O: u8> = crate::BitWriter<'a, LFXOCTRL_SPEC, O>;
 #[doc = "Field `AGC` reader - LFXO AGC Enable"]
-pub type AGC_R = crate::BitReader<bool>;
+pub type AGC_R = crate::BitReader;
 #[doc = "Field `AGC` writer - LFXO AGC Enable"]
-pub type AGC_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFXOCTRL_SPEC, bool, O>;
+pub type AGC_W<'a, const O: u8> = crate::BitWriter<'a, LFXOCTRL_SPEC, O>;
 #[doc = "Field `CUR` reader - LFXO Current Trim"]
-pub type CUR_R = crate::FieldReader<u8, u8>;
+pub type CUR_R = crate::FieldReader;
 #[doc = "Field `CUR` writer - LFXO Current Trim"]
-pub type CUR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFXOCTRL_SPEC, u8, u8, 2, O>;
+pub type CUR_W<'a, const O: u8> = crate::FieldWriter<'a, LFXOCTRL_SPEC, 2, O>;
 #[doc = "Field `BUFCUR` reader - LFXO Buffer Bias Current"]
-pub type BUFCUR_R = crate::BitReader<bool>;
+pub type BUFCUR_R = crate::BitReader;
 #[doc = "Field `BUFCUR` writer - LFXO Buffer Bias Current"]
-pub type BUFCUR_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFXOCTRL_SPEC, bool, O>;
+pub type BUFCUR_W<'a, const O: u8> = crate::BitWriter<'a, LFXOCTRL_SPEC, O>;
 #[doc = "Field `TIMEOUT` reader - LFXO Timeout"]
-pub type TIMEOUT_R = crate::FieldReader<u8, TIMEOUT_A>;
+pub type TIMEOUT_R = crate::FieldReader<TIMEOUT_A>;
 #[doc = "LFXO Timeout\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -151,6 +154,9 @@ impl From<TIMEOUT_A> for u8 {
     fn from(variant: TIMEOUT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TIMEOUT_A {
+    type Ux = u8;
 }
 impl TIMEOUT_R {
     #[doc = "Get enumerated values variant"]
@@ -210,8 +216,7 @@ impl TIMEOUT_R {
     }
 }
 #[doc = "Field `TIMEOUT` writer - LFXO Timeout"]
-pub type TIMEOUT_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, LFXOCTRL_SPEC, u8, TIMEOUT_A, 3, O>;
+pub type TIMEOUT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, LFXOCTRL_SPEC, 3, O, TIMEOUT_A>;
 impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]

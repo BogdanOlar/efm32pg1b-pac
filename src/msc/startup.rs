@@ -35,29 +35,29 @@ impl From<crate::W<STARTUP_SPEC>> for W {
     }
 }
 #[doc = "Field `STDLY0` reader - Startup Delay 0"]
-pub type STDLY0_R = crate::FieldReader<u16, u16>;
+pub type STDLY0_R = crate::FieldReader<u16>;
 #[doc = "Field `STDLY0` writer - Startup Delay 0"]
-pub type STDLY0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u16, u16, 10, O>;
+pub type STDLY0_W<'a, const O: u8> = crate::FieldWriter<'a, STARTUP_SPEC, 10, O, u16>;
 #[doc = "Field `STDLY1` reader - Startup Delay 0"]
-pub type STDLY1_R = crate::FieldReader<u16, u16>;
+pub type STDLY1_R = crate::FieldReader<u16>;
 #[doc = "Field `STDLY1` writer - Startup Delay 0"]
-pub type STDLY1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u16, u16, 10, O>;
+pub type STDLY1_W<'a, const O: u8> = crate::FieldWriter<'a, STARTUP_SPEC, 10, O, u16>;
 #[doc = "Field `ASTWAIT` reader - Active Startup Wait"]
-pub type ASTWAIT_R = crate::BitReader<bool>;
+pub type ASTWAIT_R = crate::BitReader;
 #[doc = "Field `ASTWAIT` writer - Active Startup Wait"]
-pub type ASTWAIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
+pub type ASTWAIT_W<'a, const O: u8> = crate::BitWriter<'a, STARTUP_SPEC, O>;
 #[doc = "Field `STWSEN` reader - Startup Waitstates Enable"]
-pub type STWSEN_R = crate::BitReader<bool>;
+pub type STWSEN_R = crate::BitReader;
 #[doc = "Field `STWSEN` writer - Startup Waitstates Enable"]
-pub type STWSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
+pub type STWSEN_W<'a, const O: u8> = crate::BitWriter<'a, STARTUP_SPEC, O>;
 #[doc = "Field `STWSAEN` reader - Startup Waitstates Always Enable"]
-pub type STWSAEN_R = crate::BitReader<bool>;
+pub type STWSAEN_R = crate::BitReader;
 #[doc = "Field `STWSAEN` writer - Startup Waitstates Always Enable"]
-pub type STWSAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
+pub type STWSAEN_W<'a, const O: u8> = crate::BitWriter<'a, STARTUP_SPEC, O>;
 #[doc = "Field `STWS` reader - Startup Waitstates"]
-pub type STWS_R = crate::FieldReader<u8, u8>;
+pub type STWS_R = crate::FieldReader;
 #[doc = "Field `STWS` writer - Startup Waitstates"]
-pub type STWS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u8, u8, 3, O>;
+pub type STWS_W<'a, const O: u8> = crate::FieldWriter<'a, STARTUP_SPEC, 3, O>;
 impl R {
     #[doc = "Bits 0:9 - Startup Delay 0"]
     #[inline(always)]

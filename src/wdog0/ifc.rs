@@ -20,15 +20,15 @@ impl From<crate::W<IFC_SPEC>> for W {
     }
 }
 #[doc = "Field `TOUT` writer - Clear TOUT Interrupt Flag"]
-pub type TOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type TOUT_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `WARN` writer - Clear WARN Interrupt Flag"]
-pub type WARN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type WARN_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `WIN` writer - Clear WIN Interrupt Flag"]
-pub type WIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type WIN_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `PEM0` writer - Clear PEM0 Interrupt Flag"]
-pub type PEM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type PEM0_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `PEM1` writer - Clear PEM1 Interrupt Flag"]
-pub type PEM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type PEM1_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Clear TOUT Interrupt Flag"]
     #[inline(always)]

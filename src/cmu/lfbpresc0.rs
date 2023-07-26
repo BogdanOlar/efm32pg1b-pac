@@ -35,7 +35,7 @@ impl From<crate::W<LFBPRESC0_SPEC>> for W {
     }
 }
 #[doc = "Field `LEUART0` reader - Low Energy UART 0 Prescaler"]
-pub type LEUART0_R = crate::FieldReader<u8, LEUART0_A>;
+pub type LEUART0_R = crate::FieldReader<LEUART0_A>;
 #[doc = "Low Energy UART 0 Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<LEUART0_A> for u8 {
     fn from(variant: LEUART0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LEUART0_A {
+    type Ux = u8;
 }
 impl LEUART0_R {
     #[doc = "Get enumerated values variant"]
@@ -89,8 +92,7 @@ impl LEUART0_R {
     }
 }
 #[doc = "Field `LEUART0` writer - Low Energy UART 0 Prescaler"]
-pub type LEUART0_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, LFBPRESC0_SPEC, u8, LEUART0_A, 2, O>;
+pub type LEUART0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, LFBPRESC0_SPEC, 2, O, LEUART0_A>;
 impl<'a, const O: u8> LEUART0_W<'a, O> {
     #[doc = "LFBCLKLEUART0 = LFBCLK"]
     #[inline(always)]

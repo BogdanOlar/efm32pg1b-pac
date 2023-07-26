@@ -14,25 +14,25 @@ impl From<crate::R<APORTCONFLICT_SPEC>> for R {
     }
 }
 #[doc = "Field `APORT0XCONFLICT` reader - 1 If the Bus Connected to APORT0X is in Conflict With Another Peripheral"]
-pub type APORT0XCONFLICT_R = crate::BitReader<bool>;
+pub type APORT0XCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT0YCONFLICT` reader - 1 If the Bus Connected to APORT0Y is in Conflict With Another Peripheral"]
-pub type APORT0YCONFLICT_R = crate::BitReader<bool>;
+pub type APORT0YCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT1XCONFLICT` reader - 1 If the Bus Connected to APORT1X is in Conflict With Another Peripheral"]
-pub type APORT1XCONFLICT_R = crate::BitReader<bool>;
+pub type APORT1XCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT1YCONFLICT` reader - 1 If the Bus Connected to APORT1X is in Conflict With Another Peripheral"]
-pub type APORT1YCONFLICT_R = crate::BitReader<bool>;
+pub type APORT1YCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT2XCONFLICT` reader - 1 If the Bus Connected to APORT2X is in Conflict With Another Peripheral"]
-pub type APORT2XCONFLICT_R = crate::BitReader<bool>;
+pub type APORT2XCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT2YCONFLICT` reader - 1 If the Bus Connected to APORT2Y is in Conflict With Another Peripheral"]
-pub type APORT2YCONFLICT_R = crate::BitReader<bool>;
+pub type APORT2YCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT3XCONFLICT` reader - 1 If the Bus Connected to APORT3X is in Conflict With Another Peripheral"]
-pub type APORT3XCONFLICT_R = crate::BitReader<bool>;
+pub type APORT3XCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT3YCONFLICT` reader - 1 If the Bus Connected to APORT3Y is in Conflict With Another Peripheral"]
-pub type APORT3YCONFLICT_R = crate::BitReader<bool>;
+pub type APORT3YCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT4XCONFLICT` reader - 1 If the Bus Connected to APORT4X is in Conflict With Another Peripheral"]
-pub type APORT4XCONFLICT_R = crate::BitReader<bool>;
+pub type APORT4XCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT4YCONFLICT` reader - 1 If the Bus Connected to APORT4Y is in Conflict With Another Peripheral"]
-pub type APORT4YCONFLICT_R = crate::BitReader<bool>;
+pub type APORT4YCONFLICT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - 1 If the Bus Connected to APORT0X is in Conflict With Another Peripheral"]
     #[inline(always)]

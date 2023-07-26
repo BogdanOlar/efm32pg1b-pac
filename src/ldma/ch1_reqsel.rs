@@ -35,11 +35,11 @@ impl From<crate::W<CH1_REQSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `SIGSEL` reader - Signal Select"]
-pub type SIGSEL_R = crate::FieldReader<u8, u8>;
+pub type SIGSEL_R = crate::FieldReader;
 #[doc = "Field `SIGSEL` writer - Signal Select"]
-pub type SIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH1_REQSEL_SPEC, u8, u8, 4, O>;
+pub type SIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CH1_REQSEL_SPEC, 4, O>;
 #[doc = "Field `SOURCESEL` reader - Source Select"]
-pub type SOURCESEL_R = crate::FieldReader<u8, SOURCESEL_A>;
+pub type SOURCESEL_R = crate::FieldReader<SOURCESEL_A>;
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -72,6 +72,9 @@ impl From<SOURCESEL_A> for u8 {
     fn from(variant: SOURCESEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SOURCESEL_A {
+    type Ux = u8;
 }
 impl SOURCESEL_R {
     #[doc = "Get enumerated values variant"]
@@ -149,8 +152,7 @@ impl SOURCESEL_R {
     }
 }
 #[doc = "Field `SOURCESEL` writer - Source Select"]
-pub type SOURCESEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CH1_REQSEL_SPEC, u8, SOURCESEL_A, 6, O>;
+pub type SOURCESEL_W<'a, const O: u8> = crate::FieldWriter<'a, CH1_REQSEL_SPEC, 6, O, SOURCESEL_A>;
 impl<'a, const O: u8> SOURCESEL_W<'a, O> {
     #[doc = "No source selected"]
     #[inline(always)]

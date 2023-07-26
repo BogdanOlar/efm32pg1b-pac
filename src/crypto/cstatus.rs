@@ -14,7 +14,7 @@ impl From<crate::R<CSTATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `V0` reader - Selected ALU Operand 0"]
-pub type V0_R = crate::FieldReader<u8, V0_A>;
+pub type V0_R = crate::FieldReader<V0_A>;
 #[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -41,6 +41,9 @@ impl From<V0_A> for u8 {
     fn from(variant: V0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for V0_A {
+    type Ux = u8;
 }
 impl V0_R {
     #[doc = "Get enumerated values variant"]
@@ -100,7 +103,7 @@ impl V0_R {
     }
 }
 #[doc = "Field `V1` reader - Selected ALU Operand 1"]
-pub type V1_R = crate::FieldReader<u8, V1_A>;
+pub type V1_R = crate::FieldReader<V1_A>;
 #[doc = "Selected ALU Operand 1\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -127,6 +130,9 @@ impl From<V1_A> for u8 {
     fn from(variant: V1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for V1_A {
+    type Ux = u8;
 }
 impl V1_R {
     #[doc = "Get enumerated values variant"]
@@ -186,11 +192,11 @@ impl V1_R {
     }
 }
 #[doc = "Field `SEQPART` reader - Sequence Part"]
-pub type SEQPART_R = crate::BitReader<bool>;
+pub type SEQPART_R = crate::BitReader;
 #[doc = "Field `SEQSKIP` reader - Sequence Skip Next Instruction"]
-pub type SEQSKIP_R = crate::BitReader<bool>;
+pub type SEQSKIP_R = crate::BitReader;
 #[doc = "Field `SEQIP` reader - Sequence Next Instruction Pointer"]
-pub type SEQIP_R = crate::FieldReader<u8, u8>;
+pub type SEQIP_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:2 - Selected ALU Operand 0"]
     #[inline(always)]

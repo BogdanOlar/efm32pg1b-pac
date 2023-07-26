@@ -20,35 +20,35 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `HFRCORDY` writer - Set HFRCORDY Interrupt Flag"]
-pub type HFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `HFXORDY` writer - Set HFXORDY Interrupt Flag"]
-pub type HFXORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HFXORDY_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `LFRCORDY` writer - Set LFRCORDY Interrupt Flag"]
-pub type LFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type LFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `LFXORDY` writer - Set LFXORDY Interrupt Flag"]
-pub type LFXORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type LFXORDY_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `AUXHFRCORDY` writer - Set AUXHFRCORDY Interrupt Flag"]
-pub type AUXHFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type AUXHFRCORDY_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CALRDY` writer - Set CALRDY Interrupt Flag"]
-pub type CALRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CALRDY_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CALOF` writer - Set CALOF Interrupt Flag"]
-pub type CALOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CALOF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `HFXODISERR` writer - Set HFXODISERR Interrupt Flag"]
-pub type HFXODISERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HFXODISERR_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `HFXOAUTOSW` writer - Set HFXOAUTOSW Interrupt Flag"]
-pub type HFXOAUTOSW_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HFXOAUTOSW_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `HFXOPEAKDETERR` writer - Set HFXOPEAKDETERR Interrupt Flag"]
-pub type HFXOPEAKDETERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HFXOPEAKDETERR_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `HFXOPEAKDETRDY` writer - Set HFXOPEAKDETRDY Interrupt Flag"]
-pub type HFXOPEAKDETRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HFXOPEAKDETRDY_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `HFXOSHUNTOPTRDY` writer - Set HFXOSHUNTOPTRDY Interrupt Flag"]
-pub type HFXOSHUNTOPTRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HFXOSHUNTOPTRDY_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `HFRCODIS` writer - Set HFRCODIS Interrupt Flag"]
-pub type HFRCODIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HFRCODIS_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `LFTIMEOUTERR` writer - Set LFTIMEOUTERR Interrupt Flag"]
-pub type LFTIMEOUTERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type LFTIMEOUTERR_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CMUERR` writer - Set CMUERR Interrupt Flag"]
-pub type CMUERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CMUERR_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Set HFRCORDY Interrupt Flag"]
     #[inline(always)]

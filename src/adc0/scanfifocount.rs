@@ -14,7 +14,7 @@ impl From<crate::R<SCANFIFOCOUNT_SPEC>> for R {
     }
 }
 #[doc = "Field `SCANDC` reader - Scan Data Count"]
-pub type SCANDC_R = crate::FieldReader<u8, u8>;
+pub type SCANDC_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:2 - Scan Data Count"]
     #[inline(always)]

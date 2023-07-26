@@ -35,7 +35,7 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `REPMODE` reader - Repeat Mode"]
-pub type REPMODE_R = crate::FieldReader<u8, REPMODE_A>;
+pub type REPMODE_R = crate::FieldReader<REPMODE_A>;
 #[doc = "Repeat Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<REPMODE_A> for u8 {
     fn from(variant: REPMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REPMODE_A {
+    type Ux = u8;
 }
 impl REPMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -89,8 +92,7 @@ impl REPMODE_R {
     }
 }
 #[doc = "Field `REPMODE` writer - Repeat Mode"]
-pub type REPMODE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, REPMODE_A, 2, O>;
+pub type REPMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, REPMODE_A>;
 impl<'a, const O: u8> REPMODE_W<'a, O> {
     #[doc = "When started, the LETIMER counts down until it is stopped by software"]
     #[inline(always)]
@@ -114,7 +116,7 @@ impl<'a, const O: u8> REPMODE_W<'a, O> {
     }
 }
 #[doc = "Field `UFOA0` reader - Underflow Output Action 0"]
-pub type UFOA0_R = crate::FieldReader<u8, UFOA0_A>;
+pub type UFOA0_R = crate::FieldReader<UFOA0_A>;
 #[doc = "Underflow Output Action 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -133,6 +135,9 @@ impl From<UFOA0_A> for u8 {
     fn from(variant: UFOA0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for UFOA0_A {
+    type Ux = u8;
 }
 impl UFOA0_R {
     #[doc = "Get enumerated values variant"]
@@ -168,7 +173,7 @@ impl UFOA0_R {
     }
 }
 #[doc = "Field `UFOA0` writer - Underflow Output Action 0"]
-pub type UFOA0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, UFOA0_A, 2, O>;
+pub type UFOA0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, UFOA0_A>;
 impl<'a, const O: u8> UFOA0_W<'a, O> {
     #[doc = "LETn_O0 is held at its idle value as defined by OPOL0"]
     #[inline(always)]
@@ -192,7 +197,7 @@ impl<'a, const O: u8> UFOA0_W<'a, O> {
     }
 }
 #[doc = "Field `UFOA1` reader - Underflow Output Action 1"]
-pub type UFOA1_R = crate::FieldReader<u8, UFOA1_A>;
+pub type UFOA1_R = crate::FieldReader<UFOA1_A>;
 #[doc = "Underflow Output Action 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -211,6 +216,9 @@ impl From<UFOA1_A> for u8 {
     fn from(variant: UFOA1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for UFOA1_A {
+    type Ux = u8;
 }
 impl UFOA1_R {
     #[doc = "Get enumerated values variant"]
@@ -246,7 +254,7 @@ impl UFOA1_R {
     }
 }
 #[doc = "Field `UFOA1` writer - Underflow Output Action 1"]
-pub type UFOA1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, UFOA1_A, 2, O>;
+pub type UFOA1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, UFOA1_A>;
 impl<'a, const O: u8> UFOA1_W<'a, O> {
     #[doc = "LETn_O1 is held at its idle value as defined by OPOL1"]
     #[inline(always)]
@@ -270,25 +278,25 @@ impl<'a, const O: u8> UFOA1_W<'a, O> {
     }
 }
 #[doc = "Field `OPOL0` reader - Output 0 Polarity"]
-pub type OPOL0_R = crate::BitReader<bool>;
+pub type OPOL0_R = crate::BitReader;
 #[doc = "Field `OPOL0` writer - Output 0 Polarity"]
-pub type OPOL0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type OPOL0_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `OPOL1` reader - Output 1 Polarity"]
-pub type OPOL1_R = crate::BitReader<bool>;
+pub type OPOL1_R = crate::BitReader;
 #[doc = "Field `OPOL1` writer - Output 1 Polarity"]
-pub type OPOL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type OPOL1_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `BUFTOP` reader - Buffered Top"]
-pub type BUFTOP_R = crate::BitReader<bool>;
+pub type BUFTOP_R = crate::BitReader;
 #[doc = "Field `BUFTOP` writer - Buffered Top"]
-pub type BUFTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type BUFTOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `COMP0TOP` reader - Compare Value 0 is Top Value"]
-pub type COMP0TOP_R = crate::BitReader<bool>;
+pub type COMP0TOP_R = crate::BitReader;
 #[doc = "Field `COMP0TOP` writer - Compare Value 0 is Top Value"]
-pub type COMP0TOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type COMP0TOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<bool>;
+pub type DEBUGRUN_R = crate::BitReader;
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:1 - Repeat Mode"]
     #[inline(always)]

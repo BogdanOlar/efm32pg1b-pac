@@ -14,9 +14,9 @@ impl From<crate::R<RXDOUBLE_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATA0` reader - RX Data 0"]
-pub type RXDATA0_R = crate::FieldReader<u8, u8>;
+pub type RXDATA0_R = crate::FieldReader;
 #[doc = "Field `RXDATA1` reader - RX Data 1"]
-pub type RXDATA1_R = crate::FieldReader<u8, u8>;
+pub type RXDATA1_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - RX Data 0"]
     #[inline(always)]

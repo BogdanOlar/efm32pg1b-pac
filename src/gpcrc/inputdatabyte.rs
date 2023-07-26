@@ -35,10 +35,9 @@ impl From<crate::W<INPUTDATABYTE_SPEC>> for W {
     }
 }
 #[doc = "Field `INPUTDATABYTE` reader - Input Data for 8-bit"]
-pub type INPUTDATABYTE_R = crate::FieldReader<u8, u8>;
+pub type INPUTDATABYTE_R = crate::FieldReader;
 #[doc = "Field `INPUTDATABYTE` writer - Input Data for 8-bit"]
-pub type INPUTDATABYTE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, INPUTDATABYTE_SPEC, u8, u8, 8, O>;
+pub type INPUTDATABYTE_W<'a, const O: u8> = crate::FieldWriter<'a, INPUTDATABYTE_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Input Data for 8-bit"]
     #[inline(always)]

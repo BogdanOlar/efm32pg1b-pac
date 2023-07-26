@@ -35,23 +35,23 @@ impl From<crate::W<EM4CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EM4STATE` reader - Energy Mode 4 State"]
-pub type EM4STATE_R = crate::BitReader<bool>;
+pub type EM4STATE_R = crate::BitReader;
 #[doc = "Field `EM4STATE` writer - Energy Mode 4 State"]
-pub type EM4STATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM4CTRL_SPEC, bool, O>;
+pub type EM4STATE_W<'a, const O: u8> = crate::BitWriter<'a, EM4CTRL_SPEC, O>;
 #[doc = "Field `RETAINLFRCO` reader - LFRCO Retain During EM4"]
-pub type RETAINLFRCO_R = crate::BitReader<bool>;
+pub type RETAINLFRCO_R = crate::BitReader;
 #[doc = "Field `RETAINLFRCO` writer - LFRCO Retain During EM4"]
-pub type RETAINLFRCO_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM4CTRL_SPEC, bool, O>;
+pub type RETAINLFRCO_W<'a, const O: u8> = crate::BitWriter<'a, EM4CTRL_SPEC, O>;
 #[doc = "Field `RETAINLFXO` reader - LFXO Retain During EM4"]
-pub type RETAINLFXO_R = crate::BitReader<bool>;
+pub type RETAINLFXO_R = crate::BitReader;
 #[doc = "Field `RETAINLFXO` writer - LFXO Retain During EM4"]
-pub type RETAINLFXO_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM4CTRL_SPEC, bool, O>;
+pub type RETAINLFXO_W<'a, const O: u8> = crate::BitWriter<'a, EM4CTRL_SPEC, O>;
 #[doc = "Field `RETAINULFRCO` reader - ULFRCO Retain During EM4S"]
-pub type RETAINULFRCO_R = crate::BitReader<bool>;
+pub type RETAINULFRCO_R = crate::BitReader;
 #[doc = "Field `RETAINULFRCO` writer - ULFRCO Retain During EM4S"]
-pub type RETAINULFRCO_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM4CTRL_SPEC, bool, O>;
+pub type RETAINULFRCO_W<'a, const O: u8> = crate::BitWriter<'a, EM4CTRL_SPEC, O>;
 #[doc = "Field `EM4IORETMODE` reader - EM4 IO Retention Disable"]
-pub type EM4IORETMODE_R = crate::FieldReader<u8, EM4IORETMODE_A>;
+pub type EM4IORETMODE_R = crate::FieldReader<EM4IORETMODE_A>;
 #[doc = "EM4 IO Retention Disable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -68,6 +68,9 @@ impl From<EM4IORETMODE_A> for u8 {
     fn from(variant: EM4IORETMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EM4IORETMODE_A {
+    type Ux = u8;
 }
 impl EM4IORETMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -98,7 +101,7 @@ impl EM4IORETMODE_R {
 }
 #[doc = "Field `EM4IORETMODE` writer - EM4 IO Retention Disable"]
 pub type EM4IORETMODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, EM4CTRL_SPEC, u8, EM4IORETMODE_A, 2, O>;
+    crate::FieldWriter<'a, EM4CTRL_SPEC, 2, O, EM4IORETMODE_A>;
 impl<'a, const O: u8> EM4IORETMODE_W<'a, O> {
     #[doc = "No Retention: Pads enter reset state when entering EM4"]
     #[inline(always)]
@@ -117,7 +120,7 @@ impl<'a, const O: u8> EM4IORETMODE_W<'a, O> {
     }
 }
 #[doc = "Field `EM4ENTRY` writer - Energy Mode 4 Entry"]
-pub type EM4ENTRY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EM4CTRL_SPEC, u8, u8, 2, O>;
+pub type EM4ENTRY_W<'a, const O: u8> = crate::FieldWriter<'a, EM4CTRL_SPEC, 2, O>;
 impl R {
     #[doc = "Bit 0 - Energy Mode 4 State"]
     #[inline(always)]

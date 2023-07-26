@@ -35,9 +35,9 @@ impl From<crate::W<EXTIFALL_SPEC>> for W {
     }
 }
 #[doc = "Field `EXTIFALL` reader - External Interrupt N Falling Edge Trigger Enable"]
-pub type EXTIFALL_R = crate::FieldReader<u16, u16>;
+pub type EXTIFALL_R = crate::FieldReader<u16>;
 #[doc = "Field `EXTIFALL` writer - External Interrupt N Falling Edge Trigger Enable"]
-pub type EXTIFALL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTIFALL_SPEC, u16, u16, 16, O>;
+pub type EXTIFALL_W<'a, const O: u8> = crate::FieldWriter<'a, EXTIFALL_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - External Interrupt N Falling Edge Trigger Enable"]
     #[inline(always)]

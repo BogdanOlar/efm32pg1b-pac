@@ -35,25 +35,25 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `COMP0` reader - COMP0 Interrupt Enable"]
-pub type COMP0_R = crate::BitReader<bool>;
+pub type COMP0_R = crate::BitReader;
 #[doc = "Field `COMP0` writer - COMP0 Interrupt Enable"]
-pub type COMP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type COMP0_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `COMP1` reader - COMP1 Interrupt Enable"]
-pub type COMP1_R = crate::BitReader<bool>;
+pub type COMP1_R = crate::BitReader;
 #[doc = "Field `COMP1` writer - COMP1 Interrupt Enable"]
-pub type COMP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type COMP1_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `UF` reader - UF Interrupt Enable"]
-pub type UF_R = crate::BitReader<bool>;
+pub type UF_R = crate::BitReader;
 #[doc = "Field `UF` writer - UF Interrupt Enable"]
-pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `REP0` reader - REP0 Interrupt Enable"]
-pub type REP0_R = crate::BitReader<bool>;
+pub type REP0_R = crate::BitReader;
 #[doc = "Field `REP0` writer - REP0 Interrupt Enable"]
-pub type REP0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type REP0_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `REP1` reader - REP1 Interrupt Enable"]
-pub type REP1_R = crate::BitReader<bool>;
+pub type REP1_R = crate::BitReader;
 #[doc = "Field `REP1` writer - REP1 Interrupt Enable"]
-pub type REP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type REP1_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - COMP0 Interrupt Enable"]
     #[inline(always)]

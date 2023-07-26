@@ -20,29 +20,29 @@ impl From<crate::W<SWPULSE_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0PULSE` writer - Channel 0 Pulse Generation"]
-pub type CH0PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH0PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH1PULSE` writer - Channel 1 Pulse Generation"]
-pub type CH1PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH1PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH2PULSE` writer - Channel 2 Pulse Generation"]
-pub type CH2PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH2PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH3PULSE` writer - Channel 3 Pulse Generation"]
-pub type CH3PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH3PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH4PULSE` writer - Channel 4 Pulse Generation"]
-pub type CH4PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH4PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH5PULSE` writer - Channel 5 Pulse Generation"]
-pub type CH5PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH5PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH6PULSE` writer - Channel 6 Pulse Generation"]
-pub type CH6PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH6PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH7PULSE` writer - Channel 7 Pulse Generation"]
-pub type CH7PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH7PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH8PULSE` writer - Channel 8 Pulse Generation"]
-pub type CH8PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH8PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH9PULSE` writer - Channel 9 Pulse Generation"]
-pub type CH9PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH9PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH10PULSE` writer - Channel 10 Pulse Generation"]
-pub type CH10PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH10PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 #[doc = "Field `CH11PULSE` writer - Channel 11 Pulse Generation"]
-pub type CH11PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWPULSE_SPEC, bool, O>;
+pub type CH11PULSE_W<'a, const O: u8> = crate::BitWriter<'a, SWPULSE_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Pulse Generation"]
     #[inline(always)]

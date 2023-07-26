@@ -14,7 +14,7 @@ impl From<crate::R<CACHEMISSES_SPEC>> for R {
     }
 }
 #[doc = "Field `CACHEMISSES` reader - Cache Misses Since Last Performance Counter Start Command"]
-pub type CACHEMISSES_R = crate::FieldReader<u32, u32>;
+pub type CACHEMISSES_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:19 - Cache Misses Since Last Performance Counter Start Command"]
     #[inline(always)]

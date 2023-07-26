@@ -35,37 +35,37 @@ impl From<crate::W<CAL_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLEOFFSET` reader - Single Mode Offset Calibration Value for Differential or Positive Single-ended Mode"]
-pub type SINGLEOFFSET_R = crate::FieldReader<u8, u8>;
+pub type SINGLEOFFSET_R = crate::FieldReader;
 #[doc = "Field `SINGLEOFFSET` writer - Single Mode Offset Calibration Value for Differential or Positive Single-ended Mode"]
-pub type SINGLEOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 4, O>;
+pub type SINGLEOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, CAL_SPEC, 4, O>;
 #[doc = "Field `SINGLEOFFSETINV` reader - Single Mode Offset Calibration Value for Negative Single-ended Mode"]
-pub type SINGLEOFFSETINV_R = crate::FieldReader<u8, u8>;
+pub type SINGLEOFFSETINV_R = crate::FieldReader;
 #[doc = "Field `SINGLEOFFSETINV` writer - Single Mode Offset Calibration Value for Negative Single-ended Mode"]
-pub type SINGLEOFFSETINV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 4, O>;
+pub type SINGLEOFFSETINV_W<'a, const O: u8> = crate::FieldWriter<'a, CAL_SPEC, 4, O>;
 #[doc = "Field `SINGLEGAIN` reader - Single Mode Gain Calibration Value"]
-pub type SINGLEGAIN_R = crate::FieldReader<u8, u8>;
+pub type SINGLEGAIN_R = crate::FieldReader;
 #[doc = "Field `SINGLEGAIN` writer - Single Mode Gain Calibration Value"]
-pub type SINGLEGAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, O>;
+pub type SINGLEGAIN_W<'a, const O: u8> = crate::FieldWriter<'a, CAL_SPEC, 7, O>;
 #[doc = "Field `OFFSETINVMODE` reader - Negative Single-ended Offset Calibration is Enabled"]
-pub type OFFSETINVMODE_R = crate::BitReader<bool>;
+pub type OFFSETINVMODE_R = crate::BitReader;
 #[doc = "Field `OFFSETINVMODE` writer - Negative Single-ended Offset Calibration is Enabled"]
-pub type OFFSETINVMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CAL_SPEC, bool, O>;
+pub type OFFSETINVMODE_W<'a, const O: u8> = crate::BitWriter<'a, CAL_SPEC, O>;
 #[doc = "Field `SCANOFFSET` reader - Scan Mode Offset Calibration Value for Differential or Positive Single-ended Mode"]
-pub type SCANOFFSET_R = crate::FieldReader<u8, u8>;
+pub type SCANOFFSET_R = crate::FieldReader;
 #[doc = "Field `SCANOFFSET` writer - Scan Mode Offset Calibration Value for Differential or Positive Single-ended Mode"]
-pub type SCANOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 4, O>;
+pub type SCANOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, CAL_SPEC, 4, O>;
 #[doc = "Field `SCANOFFSETINV` reader - Scan Mode Offset Calibration Value for Negative Single-ended Mode"]
-pub type SCANOFFSETINV_R = crate::FieldReader<u8, u8>;
+pub type SCANOFFSETINV_R = crate::FieldReader;
 #[doc = "Field `SCANOFFSETINV` writer - Scan Mode Offset Calibration Value for Negative Single-ended Mode"]
-pub type SCANOFFSETINV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 4, O>;
+pub type SCANOFFSETINV_W<'a, const O: u8> = crate::FieldWriter<'a, CAL_SPEC, 4, O>;
 #[doc = "Field `SCANGAIN` reader - Scan Mode Gain Calibration Value"]
-pub type SCANGAIN_R = crate::FieldReader<u8, u8>;
+pub type SCANGAIN_R = crate::FieldReader;
 #[doc = "Field `SCANGAIN` writer - Scan Mode Gain Calibration Value"]
-pub type SCANGAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 7, O>;
+pub type SCANGAIN_W<'a, const O: u8> = crate::FieldWriter<'a, CAL_SPEC, 7, O>;
 #[doc = "Field `CALEN` reader - Calibration Mode is Enabled"]
-pub type CALEN_R = crate::BitReader<bool>;
+pub type CALEN_R = crate::BitReader;
 #[doc = "Field `CALEN` writer - Calibration Mode is Enabled"]
-pub type CALEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CAL_SPEC, bool, O>;
+pub type CALEN_W<'a, const O: u8> = crate::BitWriter<'a, CAL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - Single Mode Offset Calibration Value for Differential or Positive Single-ended Mode"]
     #[inline(always)]

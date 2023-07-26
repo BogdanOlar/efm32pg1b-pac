@@ -14,37 +14,37 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXENS` reader - Receiver Enable Status"]
-pub type RXENS_R = crate::BitReader<bool>;
+pub type RXENS_R = crate::BitReader;
 #[doc = "Field `TXENS` reader - Transmitter Enable Status"]
-pub type TXENS_R = crate::BitReader<bool>;
+pub type TXENS_R = crate::BitReader;
 #[doc = "Field `MASTER` reader - SPI Master Mode"]
-pub type MASTER_R = crate::BitReader<bool>;
+pub type MASTER_R = crate::BitReader;
 #[doc = "Field `RXBLOCK` reader - Block Incoming Data"]
-pub type RXBLOCK_R = crate::BitReader<bool>;
+pub type RXBLOCK_R = crate::BitReader;
 #[doc = "Field `TXTRI` reader - Transmitter Tristated"]
-pub type TXTRI_R = crate::BitReader<bool>;
+pub type TXTRI_R = crate::BitReader;
 #[doc = "Field `TXC` reader - TX Complete"]
-pub type TXC_R = crate::BitReader<bool>;
+pub type TXC_R = crate::BitReader;
 #[doc = "Field `TXBL` reader - TX Buffer Level"]
-pub type TXBL_R = crate::BitReader<bool>;
+pub type TXBL_R = crate::BitReader;
 #[doc = "Field `RXDATAV` reader - RX Data Valid"]
-pub type RXDATAV_R = crate::BitReader<bool>;
+pub type RXDATAV_R = crate::BitReader;
 #[doc = "Field `RXFULL` reader - RX FIFO Full"]
-pub type RXFULL_R = crate::BitReader<bool>;
+pub type RXFULL_R = crate::BitReader;
 #[doc = "Field `TXBDRIGHT` reader - TX Buffer Expects Double Right Data"]
-pub type TXBDRIGHT_R = crate::BitReader<bool>;
+pub type TXBDRIGHT_R = crate::BitReader;
 #[doc = "Field `TXBSRIGHT` reader - TX Buffer Expects Single Right Data"]
-pub type TXBSRIGHT_R = crate::BitReader<bool>;
+pub type TXBSRIGHT_R = crate::BitReader;
 #[doc = "Field `RXDATAVRIGHT` reader - RX Data Right"]
-pub type RXDATAVRIGHT_R = crate::BitReader<bool>;
+pub type RXDATAVRIGHT_R = crate::BitReader;
 #[doc = "Field `RXFULLRIGHT` reader - RX Full of Right Data"]
-pub type RXFULLRIGHT_R = crate::BitReader<bool>;
+pub type RXFULLRIGHT_R = crate::BitReader;
 #[doc = "Field `TXIDLE` reader - TX Idle"]
-pub type TXIDLE_R = crate::BitReader<bool>;
+pub type TXIDLE_R = crate::BitReader;
 #[doc = "Field `TIMERRESTARTED` reader - The USART Timer Restarted Itself"]
-pub type TIMERRESTARTED_R = crate::BitReader<bool>;
+pub type TIMERRESTARTED_R = crate::BitReader;
 #[doc = "Field `TXBUFCNT` reader - TX Buffer Count"]
-pub type TXBUFCNT_R = crate::FieldReader<u8, u8>;
+pub type TXBUFCNT_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Receiver Enable Status"]
     #[inline(always)]

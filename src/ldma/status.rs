@@ -14,17 +14,17 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `ANYBUSY` reader - Any DMA Channel Busy"]
-pub type ANYBUSY_R = crate::BitReader<bool>;
+pub type ANYBUSY_R = crate::BitReader;
 #[doc = "Field `ANYREQ` reader - Any DMA Channel Request Pending"]
-pub type ANYREQ_R = crate::BitReader<bool>;
+pub type ANYREQ_R = crate::BitReader;
 #[doc = "Field `CHGRANT` reader - Granted Channel Number"]
-pub type CHGRANT_R = crate::FieldReader<u8, u8>;
+pub type CHGRANT_R = crate::FieldReader;
 #[doc = "Field `CHERROR` reader - Errant Channel Number"]
-pub type CHERROR_R = crate::FieldReader<u8, u8>;
+pub type CHERROR_R = crate::FieldReader;
 #[doc = "Field `FIFOLEVEL` reader - FIFO Level"]
-pub type FIFOLEVEL_R = crate::FieldReader<u8, u8>;
+pub type FIFOLEVEL_R = crate::FieldReader;
 #[doc = "Field `CHNUM` reader - Number of Channels"]
-pub type CHNUM_R = crate::FieldReader<u8, u8>;
+pub type CHNUM_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Any DMA Channel Busy"]
     #[inline(always)]

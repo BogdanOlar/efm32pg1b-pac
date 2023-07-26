@@ -14,7 +14,7 @@ impl From<crate::R<DCDCSYNC_SPEC>> for R {
     }
 }
 #[doc = "Field `DCDCCTRLBUSY` reader - DCDC CTRL Register Transfer Busy"]
-pub type DCDCCTRLBUSY_R = crate::BitReader<bool>;
+pub type DCDCCTRLBUSY_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - DCDC CTRL Register Transfer Busy"]
     #[inline(always)]

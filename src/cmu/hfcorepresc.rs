@@ -35,7 +35,7 @@ impl From<crate::W<HFCOREPRESC_SPEC>> for W {
     }
 }
 #[doc = "Field `PRESC` reader - HFCORECLK Prescaler"]
-pub type PRESC_R = crate::FieldReader<u16, PRESC_A>;
+pub type PRESC_R = crate::FieldReader<PRESC_A>;
 #[doc = "HFCORECLK Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -48,6 +48,9 @@ impl From<PRESC_A> for u16 {
     fn from(variant: PRESC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRESC_A {
+    type Ux = u16;
 }
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
@@ -65,8 +68,7 @@ impl PRESC_R {
     }
 }
 #[doc = "Field `PRESC` writer - HFCORECLK Prescaler"]
-pub type PRESC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFCOREPRESC_SPEC, u16, PRESC_A, 9, O>;
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, HFCOREPRESC_SPEC, 9, O, PRESC_A>;
 impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]

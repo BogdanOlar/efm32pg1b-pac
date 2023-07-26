@@ -35,21 +35,21 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRFAULTEN` reader - Invalid Address Bus Fault Response Enable"]
-pub type ADDRFAULTEN_R = crate::BitReader<bool>;
+pub type ADDRFAULTEN_R = crate::BitReader;
 #[doc = "Field `ADDRFAULTEN` writer - Invalid Address Bus Fault Response Enable"]
-pub type ADDRFAULTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type ADDRFAULTEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CLKDISFAULTEN` reader - Clock-disabled Bus Fault Response Enable"]
-pub type CLKDISFAULTEN_R = crate::BitReader<bool>;
+pub type CLKDISFAULTEN_R = crate::BitReader;
 #[doc = "Field `CLKDISFAULTEN` writer - Clock-disabled Bus Fault Response Enable"]
-pub type CLKDISFAULTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CLKDISFAULTEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `PWRUPONDEMAND` reader - Power Up on Demand During Wake Up"]
-pub type PWRUPONDEMAND_R = crate::BitReader<bool>;
+pub type PWRUPONDEMAND_R = crate::BitReader;
 #[doc = "Field `PWRUPONDEMAND` writer - Power Up on Demand During Wake Up"]
-pub type PWRUPONDEMAND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type PWRUPONDEMAND_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `IFCREADCLEAR` reader - IFC Read Clears IF"]
-pub type IFCREADCLEAR_R = crate::BitReader<bool>;
+pub type IFCREADCLEAR_R = crate::BitReader;
 #[doc = "Field `IFCREADCLEAR` writer - IFC Read Clears IF"]
-pub type IFCREADCLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type IFCREADCLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Invalid Address Bus Fault Response Enable"]
     #[inline(always)]

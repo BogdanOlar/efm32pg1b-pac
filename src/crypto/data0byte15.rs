@@ -35,10 +35,9 @@ impl From<crate::W<DATA0BYTE15_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA0BYTE15` reader - Data 0 Byte 15 Access"]
-pub type DATA0BYTE15_R = crate::FieldReader<u8, u8>;
+pub type DATA0BYTE15_R = crate::FieldReader;
 #[doc = "Field `DATA0BYTE15` writer - Data 0 Byte 15 Access"]
-pub type DATA0BYTE15_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DATA0BYTE15_SPEC, u8, u8, 8, O>;
+pub type DATA0BYTE15_W<'a, const O: u8> = crate::FieldWriter<'a, DATA0BYTE15_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Data 0 Byte 15 Access"]
     #[inline(always)]

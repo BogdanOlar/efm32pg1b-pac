@@ -35,29 +35,29 @@ impl From<crate::W<DTOGEN_SPEC>> for W {
     }
 }
 #[doc = "Field `DTOGCC0EN` reader - DTI CC0 Output Generation Enable"]
-pub type DTOGCC0EN_R = crate::BitReader<bool>;
+pub type DTOGCC0EN_R = crate::BitReader;
 #[doc = "Field `DTOGCC0EN` writer - DTI CC0 Output Generation Enable"]
-pub type DTOGCC0EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
+pub type DTOGCC0EN_W<'a, const O: u8> = crate::BitWriter<'a, DTOGEN_SPEC, O>;
 #[doc = "Field `DTOGCC1EN` reader - DTI CC1 Output Generation Enable"]
-pub type DTOGCC1EN_R = crate::BitReader<bool>;
+pub type DTOGCC1EN_R = crate::BitReader;
 #[doc = "Field `DTOGCC1EN` writer - DTI CC1 Output Generation Enable"]
-pub type DTOGCC1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
+pub type DTOGCC1EN_W<'a, const O: u8> = crate::BitWriter<'a, DTOGEN_SPEC, O>;
 #[doc = "Field `DTOGCC2EN` reader - DTI CC2 Output Generation Enable"]
-pub type DTOGCC2EN_R = crate::BitReader<bool>;
+pub type DTOGCC2EN_R = crate::BitReader;
 #[doc = "Field `DTOGCC2EN` writer - DTI CC2 Output Generation Enable"]
-pub type DTOGCC2EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
+pub type DTOGCC2EN_W<'a, const O: u8> = crate::BitWriter<'a, DTOGEN_SPEC, O>;
 #[doc = "Field `DTOGCDTI0EN` reader - DTI CDTI0 Output Generation Enable"]
-pub type DTOGCDTI0EN_R = crate::BitReader<bool>;
+pub type DTOGCDTI0EN_R = crate::BitReader;
 #[doc = "Field `DTOGCDTI0EN` writer - DTI CDTI0 Output Generation Enable"]
-pub type DTOGCDTI0EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
+pub type DTOGCDTI0EN_W<'a, const O: u8> = crate::BitWriter<'a, DTOGEN_SPEC, O>;
 #[doc = "Field `DTOGCDTI1EN` reader - DTI CDTI1 Output Generation Enable"]
-pub type DTOGCDTI1EN_R = crate::BitReader<bool>;
+pub type DTOGCDTI1EN_R = crate::BitReader;
 #[doc = "Field `DTOGCDTI1EN` writer - DTI CDTI1 Output Generation Enable"]
-pub type DTOGCDTI1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
+pub type DTOGCDTI1EN_W<'a, const O: u8> = crate::BitWriter<'a, DTOGEN_SPEC, O>;
 #[doc = "Field `DTOGCDTI2EN` reader - DTI CDTI2 Output Generation Enable"]
-pub type DTOGCDTI2EN_R = crate::BitReader<bool>;
+pub type DTOGCDTI2EN_R = crate::BitReader;
 #[doc = "Field `DTOGCDTI2EN` writer - DTI CDTI2 Output Generation Enable"]
-pub type DTOGCDTI2EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTOGEN_SPEC, bool, O>;
+pub type DTOGCDTI2EN_W<'a, const O: u8> = crate::BitWriter<'a, DTOGEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - DTI CC0 Output Generation Enable"]
     #[inline(always)]

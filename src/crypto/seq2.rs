@@ -35,21 +35,21 @@ impl From<crate::W<SEQ2_SPEC>> for W {
     }
 }
 #[doc = "Field `INSTR8` reader - Sequence Instruction 8"]
-pub type INSTR8_R = crate::FieldReader<u8, u8>;
+pub type INSTR8_R = crate::FieldReader;
 #[doc = "Field `INSTR8` writer - Sequence Instruction 8"]
-pub type INSTR8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, O>;
+pub type INSTR8_W<'a, const O: u8> = crate::FieldWriter<'a, SEQ2_SPEC, 8, O>;
 #[doc = "Field `INSTR9` reader - Sequence Instruction 9"]
-pub type INSTR9_R = crate::FieldReader<u8, u8>;
+pub type INSTR9_R = crate::FieldReader;
 #[doc = "Field `INSTR9` writer - Sequence Instruction 9"]
-pub type INSTR9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, O>;
+pub type INSTR9_W<'a, const O: u8> = crate::FieldWriter<'a, SEQ2_SPEC, 8, O>;
 #[doc = "Field `INSTR10` reader - Sequence Instruction 10"]
-pub type INSTR10_R = crate::FieldReader<u8, u8>;
+pub type INSTR10_R = crate::FieldReader;
 #[doc = "Field `INSTR10` writer - Sequence Instruction 10"]
-pub type INSTR10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, O>;
+pub type INSTR10_W<'a, const O: u8> = crate::FieldWriter<'a, SEQ2_SPEC, 8, O>;
 #[doc = "Field `INSTR11` reader - Sequence Instruction 11"]
-pub type INSTR11_R = crate::FieldReader<u8, u8>;
+pub type INSTR11_R = crate::FieldReader;
 #[doc = "Field `INSTR11` writer - Sequence Instruction 11"]
-pub type INSTR11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, O>;
+pub type INSTR11_W<'a, const O: u8> = crate::FieldWriter<'a, SEQ2_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Sequence Instruction 8"]
     #[inline(always)]

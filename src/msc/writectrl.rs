@@ -35,13 +35,13 @@ impl From<crate::W<WRITECTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `WREN` reader - Enable Write/Erase Controller"]
-pub type WREN_R = crate::BitReader<bool>;
+pub type WREN_R = crate::BitReader;
 #[doc = "Field `WREN` writer - Enable Write/Erase Controller"]
-pub type WREN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECTRL_SPEC, bool, O>;
+pub type WREN_W<'a, const O: u8> = crate::BitWriter<'a, WRITECTRL_SPEC, O>;
 #[doc = "Field `IRQERASEABORT` reader - Abort Page Erase on Interrupt"]
-pub type IRQERASEABORT_R = crate::BitReader<bool>;
+pub type IRQERASEABORT_R = crate::BitReader;
 #[doc = "Field `IRQERASEABORT` writer - Abort Page Erase on Interrupt"]
-pub type IRQERASEABORT_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECTRL_SPEC, bool, O>;
+pub type IRQERASEABORT_W<'a, const O: u8> = crate::BitWriter<'a, WRITECTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Enable Write/Erase Controller"]
     #[inline(always)]

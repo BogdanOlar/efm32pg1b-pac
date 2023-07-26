@@ -35,10 +35,9 @@ impl From<crate::W<QDATA1BIG_SPEC>> for W {
     }
 }
 #[doc = "Field `QDATA1BIG` reader - Quad Data 1 Big Endian Access"]
-pub type QDATA1BIG_R = crate::FieldReader<u32, u32>;
+pub type QDATA1BIG_R = crate::FieldReader<u32>;
 #[doc = "Field `QDATA1BIG` writer - Quad Data 1 Big Endian Access"]
-pub type QDATA1BIG_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, QDATA1BIG_SPEC, u32, u32, 32, O>;
+pub type QDATA1BIG_W<'a, const O: u8> = crate::FieldWriter<'a, QDATA1BIG_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Quad Data 1 Big Endian Access"]
     #[inline(always)]

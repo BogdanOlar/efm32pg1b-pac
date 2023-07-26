@@ -35,9 +35,9 @@ impl From<crate::W<CC0_CCV_SPEC>> for W {
     }
 }
 #[doc = "Field `CCV` reader - Capture/Compare Value"]
-pub type CCV_R = crate::FieldReader<u32, u32>;
+pub type CCV_R = crate::FieldReader<u32>;
 #[doc = "Field `CCV` writer - Capture/Compare Value"]
-pub type CCV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC0_CCV_SPEC, u32, u32, 32, O>;
+pub type CCV_W<'a, const O: u8> = crate::FieldWriter<'a, CC0_CCV_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Capture/Compare Value"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `PERIOD` reader - Wakeup Event/Interrupt"]
-pub type PERIOD_R = crate::BitReader<bool>;
+pub type PERIOD_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Wakeup Event/Interrupt"]
     #[inline(always)]

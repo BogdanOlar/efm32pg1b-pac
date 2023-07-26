@@ -35,29 +35,29 @@ impl From<crate::W<BIASCONF_SPEC>> for W {
     }
 }
 #[doc = "Field `NADUTYEM01` reader - NA DUTY in EM01"]
-pub type NADUTYEM01_R = crate::BitReader<bool>;
+pub type NADUTYEM01_R = crate::BitReader;
 #[doc = "Field `NADUTYEM01` writer - NA DUTY in EM01"]
-pub type NADUTYEM01_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+pub type NADUTYEM01_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
 #[doc = "Field `LPEM01` reader - LP in EM01"]
-pub type LPEM01_R = crate::BitReader<bool>;
+pub type LPEM01_R = crate::BitReader;
 #[doc = "Field `LPEM01` writer - LP in EM01"]
-pub type LPEM01_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+pub type LPEM01_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
 #[doc = "Field `GMCEM23` reader - GMC in EM234"]
-pub type GMCEM23_R = crate::BitReader<bool>;
+pub type GMCEM23_R = crate::BitReader;
 #[doc = "Field `GMCEM23` writer - GMC in EM234"]
-pub type GMCEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+pub type GMCEM23_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
 #[doc = "Field `UADUTYEM23` reader - UADUTY in EM234"]
-pub type UADUTYEM23_R = crate::BitReader<bool>;
+pub type UADUTYEM23_R = crate::BitReader;
 #[doc = "Field `UADUTYEM23` writer - UADUTY in EM234"]
-pub type UADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+pub type UADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
 #[doc = "Field `NADUTYEM23` reader - NA DUTY in EM234"]
-pub type NADUTYEM23_R = crate::BitReader<bool>;
+pub type NADUTYEM23_R = crate::BitReader;
 #[doc = "Field `NADUTYEM23` writer - NA DUTY in EM234"]
-pub type NADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+pub type NADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
 #[doc = "Field `LPEM23` reader - LP in EM234"]
-pub type LPEM23_R = crate::BitReader<bool>;
+pub type LPEM23_R = crate::BitReader;
 #[doc = "Field `LPEM23` writer - LP in EM234"]
-pub type LPEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASCONF_SPEC, bool, O>;
+pub type LPEM23_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
 impl R {
     #[doc = "Bit 2 - NA DUTY in EM01"]
     #[inline(always)]

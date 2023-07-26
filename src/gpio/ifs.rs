@@ -20,9 +20,9 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `EXT` writer - Set EXT Interrupt Flag"]
-pub type EXT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFS_SPEC, u16, u16, 16, O>;
+pub type EXT_W<'a, const O: u8> = crate::FieldWriter<'a, IFS_SPEC, 16, O, u16>;
 #[doc = "Field `EM4WU` writer - Set EM4WU Interrupt Flag"]
-pub type EM4WU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFS_SPEC, u16, u16, 16, O>;
+pub type EM4WU_W<'a, const O: u8> = crate::FieldWriter<'a, IFS_SPEC, 16, O, u16>;
 impl W {
     #[doc = "Bits 0:15 - Set EXT Interrupt Flag"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<PRECNT_SPEC>> for W {
     }
 }
 #[doc = "Field `PRECNT` reader - Pre-Counter Value"]
-pub type PRECNT_R = crate::FieldReader<u16, u16>;
+pub type PRECNT_R = crate::FieldReader<u16>;
 #[doc = "Field `PRECNT` writer - Pre-Counter Value"]
-pub type PRECNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRECNT_SPEC, u16, u16, 15, O>;
+pub type PRECNT_W<'a, const O: u8> = crate::FieldWriter<'a, PRECNT_SPEC, 15, O, u16>;
 impl R {
     #[doc = "Bits 0:14 - Pre-Counter Value"]
     #[inline(always)]

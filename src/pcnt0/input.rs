@@ -35,7 +35,7 @@ impl From<crate::W<INPUT_SPEC>> for W {
     }
 }
 #[doc = "Field `S0PRSSEL` reader - S0IN PRS Channel Select"]
-pub type S0PRSSEL_R = crate::FieldReader<u8, S0PRSSEL_A>;
+pub type S0PRSSEL_R = crate::FieldReader<S0PRSSEL_A>;
 #[doc = "S0IN PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -70,6 +70,9 @@ impl From<S0PRSSEL_A> for u8 {
     fn from(variant: S0PRSSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for S0PRSSEL_A {
+    type Ux = u8;
 }
 impl S0PRSSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -153,8 +156,7 @@ impl S0PRSSEL_R {
     }
 }
 #[doc = "Field `S0PRSSEL` writer - S0IN PRS Channel Select"]
-pub type S0PRSSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, INPUT_SPEC, u8, S0PRSSEL_A, 4, O>;
+pub type S0PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, INPUT_SPEC, 4, O, S0PRSSEL_A>;
 impl<'a, const O: u8> S0PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
@@ -218,11 +220,11 @@ impl<'a, const O: u8> S0PRSSEL_W<'a, O> {
     }
 }
 #[doc = "Field `S0PRSEN` reader - S0IN PRS Enable"]
-pub type S0PRSEN_R = crate::BitReader<bool>;
+pub type S0PRSEN_R = crate::BitReader;
 #[doc = "Field `S0PRSEN` writer - S0IN PRS Enable"]
-pub type S0PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUT_SPEC, bool, O>;
+pub type S0PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, INPUT_SPEC, O>;
 #[doc = "Field `S1PRSSEL` reader - S1IN PRS Channel Select"]
-pub type S1PRSSEL_R = crate::FieldReader<u8, S1PRSSEL_A>;
+pub type S1PRSSEL_R = crate::FieldReader<S1PRSSEL_A>;
 #[doc = "S1IN PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -257,6 +259,9 @@ impl From<S1PRSSEL_A> for u8 {
     fn from(variant: S1PRSSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for S1PRSSEL_A {
+    type Ux = u8;
 }
 impl S1PRSSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -340,8 +345,7 @@ impl S1PRSSEL_R {
     }
 }
 #[doc = "Field `S1PRSSEL` writer - S1IN PRS Channel Select"]
-pub type S1PRSSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, INPUT_SPEC, u8, S1PRSSEL_A, 4, O>;
+pub type S1PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, INPUT_SPEC, 4, O, S1PRSSEL_A>;
 impl<'a, const O: u8> S1PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
@@ -405,9 +409,9 @@ impl<'a, const O: u8> S1PRSSEL_W<'a, O> {
     }
 }
 #[doc = "Field `S1PRSEN` reader - S1IN PRS Enable"]
-pub type S1PRSEN_R = crate::BitReader<bool>;
+pub type S1PRSEN_R = crate::BitReader;
 #[doc = "Field `S1PRSEN` writer - S1IN PRS Enable"]
-pub type S1PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, INPUT_SPEC, bool, O>;
+pub type S1PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, INPUT_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - S0IN PRS Channel Select"]
     #[inline(always)]

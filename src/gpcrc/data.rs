@@ -14,7 +14,7 @@ impl From<crate::R<DATA_SPEC>> for R {
     }
 }
 #[doc = "Field `DATA` reader - CRC Data Register"]
-pub type DATA_R = crate::FieldReader<u32, u32>;
+pub type DATA_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - CRC Data Register"]
     #[inline(always)]

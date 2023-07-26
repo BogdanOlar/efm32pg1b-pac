@@ -35,17 +35,17 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SYNCPRSSETEN` reader - Synchronization PRS Set Enable"]
-pub type SYNCPRSSETEN_R = crate::FieldReader<u8, u8>;
+pub type SYNCPRSSETEN_R = crate::FieldReader;
 #[doc = "Field `SYNCPRSSETEN` writer - Synchronization PRS Set Enable"]
-pub type SYNCPRSSETEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 8, O>;
+pub type SYNCPRSSETEN_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 8, O>;
 #[doc = "Field `SYNCPRSCLREN` reader - Synchronization PRS Clear Enable"]
-pub type SYNCPRSCLREN_R = crate::FieldReader<u8, u8>;
+pub type SYNCPRSCLREN_R = crate::FieldReader;
 #[doc = "Field `SYNCPRSCLREN` writer - Synchronization PRS Clear Enable"]
-pub type SYNCPRSCLREN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 8, O>;
+pub type SYNCPRSCLREN_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 8, O>;
 #[doc = "Field `NUMFIXED` reader - Number of Fixed Priority Channels"]
-pub type NUMFIXED_R = crate::FieldReader<u8, u8>;
+pub type NUMFIXED_R = crate::FieldReader;
 #[doc = "Field `NUMFIXED` writer - Number of Fixed Priority Channels"]
-pub type NUMFIXED_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 3, O>;
+pub type NUMFIXED_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O>;
 impl R {
     #[doc = "Bits 0:7 - Synchronization PRS Set Enable"]
     #[inline(always)]

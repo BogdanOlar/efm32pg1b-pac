@@ -35,34 +35,31 @@ impl From<crate::W<DCDCMISCCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `LNFORCECCM` reader - Force DCDC Into CCM Mode in Low Noise Operation"]
-pub type LNFORCECCM_R = crate::BitReader<bool>;
+pub type LNFORCECCM_R = crate::BitReader;
 #[doc = "Field `LNFORCECCM` writer - Force DCDC Into CCM Mode in Low Noise Operation"]
-pub type LNFORCECCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCMISCCTRL_SPEC, bool, O>;
+pub type LNFORCECCM_W<'a, const O: u8> = crate::BitWriter<'a, DCDCMISCCTRL_SPEC, O>;
 #[doc = "Field `PFETCNT` reader - PFET Switch Number Selection"]
-pub type PFETCNT_R = crate::FieldReader<u8, u8>;
+pub type PFETCNT_R = crate::FieldReader;
 #[doc = "Field `PFETCNT` writer - PFET Switch Number Selection"]
-pub type PFETCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, O>;
+pub type PFETCNT_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCMISCCTRL_SPEC, 4, O>;
 #[doc = "Field `NFETCNT` reader - NFET Switch Number Selection"]
-pub type NFETCNT_R = crate::FieldReader<u8, u8>;
+pub type NFETCNT_R = crate::FieldReader;
 #[doc = "Field `NFETCNT` writer - NFET Switch Number Selection"]
-pub type NFETCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, O>;
+pub type NFETCNT_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCMISCCTRL_SPEC, 4, O>;
 #[doc = "Field `BYPLIMSEL` reader - Current Limit in Bypass Mode"]
-pub type BYPLIMSEL_R = crate::FieldReader<u8, u8>;
+pub type BYPLIMSEL_R = crate::FieldReader;
 #[doc = "Field `BYPLIMSEL` writer - Current Limit in Bypass Mode"]
-pub type BYPLIMSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 4, O>;
+pub type BYPLIMSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCMISCCTRL_SPEC, 4, O>;
 #[doc = "Field `LPCLIMILIMSEL` reader - Current Limit Level Selection for Current Limiter in LP Mode"]
-pub type LPCLIMILIMSEL_R = crate::FieldReader<u8, u8>;
+pub type LPCLIMILIMSEL_R = crate::FieldReader;
 #[doc = "Field `LPCLIMILIMSEL` writer - Current Limit Level Selection for Current Limiter in LP Mode"]
-pub type LPCLIMILIMSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 3, O>;
+pub type LPCLIMILIMSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCMISCCTRL_SPEC, 3, O>;
 #[doc = "Field `LNCLIMILIMSEL` reader - Current Limit Level Selection for Current Limiter in LN Mode"]
-pub type LNCLIMILIMSEL_R = crate::FieldReader<u8, u8>;
+pub type LNCLIMILIMSEL_R = crate::FieldReader;
 #[doc = "Field `LNCLIMILIMSEL` writer - Current Limit Level Selection for Current Limiter in LN Mode"]
-pub type LNCLIMILIMSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCMISCCTRL_SPEC, u8, u8, 3, O>;
+pub type LNCLIMILIMSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCMISCCTRL_SPEC, 3, O>;
 #[doc = "Field `LPCMPBIAS` reader - LP Mode Comparator Bias Selection"]
-pub type LPCMPBIAS_R = crate::FieldReader<u8, LPCMPBIAS_A>;
+pub type LPCMPBIAS_R = crate::FieldReader<LPCMPBIAS_A>;
 #[doc = "LP Mode Comparator Bias Selection\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -81,6 +78,9 @@ impl From<LPCMPBIAS_A> for u8 {
     fn from(variant: LPCMPBIAS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LPCMPBIAS_A {
+    type Ux = u8;
 }
 impl LPCMPBIAS_R {
     #[doc = "Get enumerated values variant"]
@@ -117,7 +117,7 @@ impl LPCMPBIAS_R {
 }
 #[doc = "Field `LPCMPBIAS` writer - LP Mode Comparator Bias Selection"]
 pub type LPCMPBIAS_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, DCDCMISCCTRL_SPEC, u8, LPCMPBIAS_A, 2, O>;
+    crate::FieldWriterSafe<'a, DCDCMISCCTRL_SPEC, 2, O, LPCMPBIAS_A>;
 impl<'a, const O: u8> LPCMPBIAS_W<'a, O> {
     #[doc = "Maximum load current less than 75uA."]
     #[inline(always)]

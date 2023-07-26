@@ -35,7 +35,7 @@ impl From<crate::W<DCDCCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `DCDCMODE` reader - Regulator Mode"]
-pub type DCDCMODE_R = crate::FieldReader<u8, DCDCMODE_A>;
+pub type DCDCMODE_R = crate::FieldReader<DCDCMODE_A>;
 #[doc = "Regulator Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<DCDCMODE_A> for u8 {
     fn from(variant: DCDCMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DCDCMODE_A {
+    type Ux = u8;
 }
 impl DCDCMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -89,8 +92,7 @@ impl DCDCMODE_R {
     }
 }
 #[doc = "Field `DCDCMODE` writer - Regulator Mode"]
-pub type DCDCMODE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, DCDCCTRL_SPEC, u8, DCDCMODE_A, 2, O>;
+pub type DCDCMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DCDCCTRL_SPEC, 2, O, DCDCMODE_A>;
 impl<'a, const O: u8> DCDCMODE_W<'a, O> {
     #[doc = "DCDC regulator is operating in bypass mode. Prior to configuring DCDCMODE=BYPASS, software must set EMU_DCDCCLIMCTRL.BYPLIMEN=1 to prevent excessive current between VREGVDD and DVDD supplies."]
     #[inline(always)]
@@ -114,13 +116,13 @@ impl<'a, const O: u8> DCDCMODE_W<'a, O> {
     }
 }
 #[doc = "Field `DCDCMODEEM23` reader - DCDC Mode EM23"]
-pub type DCDCMODEEM23_R = crate::BitReader<bool>;
+pub type DCDCMODEEM23_R = crate::BitReader;
 #[doc = "Field `DCDCMODEEM23` writer - DCDC Mode EM23"]
-pub type DCDCMODEEM23_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCCTRL_SPEC, bool, O>;
+pub type DCDCMODEEM23_W<'a, const O: u8> = crate::BitWriter<'a, DCDCCTRL_SPEC, O>;
 #[doc = "Field `DCDCMODEEM4` reader - DCDC Mode EM4H"]
-pub type DCDCMODEEM4_R = crate::BitReader<bool>;
+pub type DCDCMODEEM4_R = crate::BitReader;
 #[doc = "Field `DCDCMODEEM4` writer - DCDC Mode EM4H"]
-pub type DCDCMODEEM4_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCCTRL_SPEC, bool, O>;
+pub type DCDCMODEEM4_W<'a, const O: u8> = crate::BitWriter<'a, DCDCCTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:1 - Regulator Mode"]
     #[inline(always)]

@@ -35,11 +35,11 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SEVONPRS` reader - Set Event on PRS"]
-pub type SEVONPRS_R = crate::BitReader<bool>;
+pub type SEVONPRS_R = crate::BitReader;
 #[doc = "Field `SEVONPRS` writer - Set Event on PRS"]
-pub type SEVONPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SEVONPRS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SEVONPRSSEL` reader - SEVONPRS PRS Channel Select"]
-pub type SEVONPRSSEL_R = crate::FieldReader<u8, SEVONPRSSEL_A>;
+pub type SEVONPRSSEL_R = crate::FieldReader<SEVONPRSSEL_A>;
 #[doc = "SEVONPRS PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -74,6 +74,9 @@ impl From<SEVONPRSSEL_A> for u8 {
     fn from(variant: SEVONPRSSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SEVONPRSSEL_A {
+    type Ux = u8;
 }
 impl SEVONPRSSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -157,8 +160,7 @@ impl SEVONPRSSEL_R {
     }
 }
 #[doc = "Field `SEVONPRSSEL` writer - SEVONPRS PRS Channel Select"]
-pub type SEVONPRSSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, SEVONPRSSEL_A, 4, O>;
+pub type SEVONPRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 4, O, SEVONPRSSEL_A>;
 impl<'a, const O: u8> SEVONPRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]

@@ -14,9 +14,9 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `INSTRDONE` reader - Instruction Done"]
-pub type INSTRDONE_R = crate::BitReader<bool>;
+pub type INSTRDONE_R = crate::BitReader;
 #[doc = "Field `SEQDONE` reader - Sequence Done"]
-pub type SEQDONE_R = crate::BitReader<bool>;
+pub type SEQDONE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Instruction Done"]
     #[inline(always)]

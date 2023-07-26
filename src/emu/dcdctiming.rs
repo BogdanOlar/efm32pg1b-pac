@@ -35,25 +35,25 @@ impl From<crate::W<DCDCTIMING_SPEC>> for W {
     }
 }
 #[doc = "Field `LPINITWAIT` reader - Low Power Initialization Wait Time"]
-pub type LPINITWAIT_R = crate::FieldReader<u8, u8>;
+pub type LPINITWAIT_R = crate::FieldReader;
 #[doc = "Field `LPINITWAIT` writer - Low Power Initialization Wait Time"]
-pub type LPINITWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCTIMING_SPEC, u8, u8, 8, O>;
+pub type LPINITWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCTIMING_SPEC, 8, O>;
 #[doc = "Field `COMPENPRCHGEN` reader - LN Mode Precharge Enable"]
-pub type COMPENPRCHGEN_R = crate::BitReader<bool>;
+pub type COMPENPRCHGEN_R = crate::BitReader;
 #[doc = "Field `COMPENPRCHGEN` writer - LN Mode Precharge Enable"]
-pub type COMPENPRCHGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCTIMING_SPEC, bool, O>;
+pub type COMPENPRCHGEN_W<'a, const O: u8> = crate::BitWriter<'a, DCDCTIMING_SPEC, O>;
 #[doc = "Field `LNWAIT` reader - Low Noise Controller Initialization Wait Time"]
-pub type LNWAIT_R = crate::FieldReader<u8, u8>;
+pub type LNWAIT_R = crate::FieldReader;
 #[doc = "Field `LNWAIT` writer - Low Noise Controller Initialization Wait Time"]
-pub type LNWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCTIMING_SPEC, u8, u8, 5, O>;
+pub type LNWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCTIMING_SPEC, 5, O>;
 #[doc = "Field `BYPWAIT` reader - Bypass Mode Transition From Low Power or Low Noise Modes Wait Wait"]
-pub type BYPWAIT_R = crate::FieldReader<u8, u8>;
+pub type BYPWAIT_R = crate::FieldReader;
 #[doc = "Field `BYPWAIT` writer - Bypass Mode Transition From Low Power or Low Noise Modes Wait Wait"]
-pub type BYPWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCTIMING_SPEC, u8, u8, 8, O>;
+pub type BYPWAIT_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCTIMING_SPEC, 8, O>;
 #[doc = "Field `DUTYSCALE` reader - Select Bias Duty Cycle Clock"]
-pub type DUTYSCALE_R = crate::FieldReader<u8, u8>;
+pub type DUTYSCALE_R = crate::FieldReader;
 #[doc = "Field `DUTYSCALE` writer - Select Bias Duty Cycle Clock"]
-pub type DUTYSCALE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCTIMING_SPEC, u8, u8, 2, O>;
+pub type DUTYSCALE_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCTIMING_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 0:7 - Low Power Initialization Wait Time"]
     #[inline(always)]

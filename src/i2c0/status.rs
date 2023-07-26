@@ -14,25 +14,25 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `PSTART` reader - Pending START"]
-pub type PSTART_R = crate::BitReader<bool>;
+pub type PSTART_R = crate::BitReader;
 #[doc = "Field `PSTOP` reader - Pending STOP"]
-pub type PSTOP_R = crate::BitReader<bool>;
+pub type PSTOP_R = crate::BitReader;
 #[doc = "Field `PACK` reader - Pending ACK"]
-pub type PACK_R = crate::BitReader<bool>;
+pub type PACK_R = crate::BitReader;
 #[doc = "Field `PNACK` reader - Pending NACK"]
-pub type PNACK_R = crate::BitReader<bool>;
+pub type PNACK_R = crate::BitReader;
 #[doc = "Field `PCONT` reader - Pending Continue"]
-pub type PCONT_R = crate::BitReader<bool>;
+pub type PCONT_R = crate::BitReader;
 #[doc = "Field `PABORT` reader - Pending Abort"]
-pub type PABORT_R = crate::BitReader<bool>;
+pub type PABORT_R = crate::BitReader;
 #[doc = "Field `TXC` reader - TX Complete"]
-pub type TXC_R = crate::BitReader<bool>;
+pub type TXC_R = crate::BitReader;
 #[doc = "Field `TXBL` reader - TX Buffer Level"]
-pub type TXBL_R = crate::BitReader<bool>;
+pub type TXBL_R = crate::BitReader;
 #[doc = "Field `RXDATAV` reader - RX Data Valid"]
-pub type RXDATAV_R = crate::BitReader<bool>;
+pub type RXDATAV_R = crate::BitReader;
 #[doc = "Field `RXFULL` reader - RX FIFO Full"]
-pub type RXFULL_R = crate::BitReader<bool>;
+pub type RXFULL_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Pending START"]
     #[inline(always)]

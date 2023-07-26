@@ -20,7 +20,7 @@ impl From<crate::W<PA_DOUTTGL_SPEC>> for W {
     }
 }
 #[doc = "Field `DOUTTGL` writer - Data Out Toggle"]
-pub type DOUTTGL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PA_DOUTTGL_SPEC, u16, u16, 16, O>;
+pub type DOUTTGL_W<'a, const O: u8> = crate::FieldWriter<'a, PA_DOUTTGL_SPEC, 16, O, u16>;
 impl W {
     #[doc = "Bits 0:15 - Data Out Toggle"]
     #[inline(always)]

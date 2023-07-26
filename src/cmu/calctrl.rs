@@ -35,7 +35,7 @@ impl From<crate::W<CALCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
-pub type UPSEL_R = crate::FieldReader<u8, UPSEL_A>;
+pub type UPSEL_R = crate::FieldReader<UPSEL_A>;
 #[doc = "Calibration Up-counter Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<UPSEL_A> for u8 {
     fn from(variant: UPSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for UPSEL_A {
+    type Ux = u8;
 }
 impl UPSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -105,7 +108,7 @@ impl UPSEL_R {
     }
 }
 #[doc = "Field `UPSEL` writer - Calibration Up-counter Select"]
-pub type UPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, UPSEL_A, 3, O>;
+pub type UPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CALCTRL_SPEC, 3, O, UPSEL_A>;
 impl<'a, const O: u8> UPSEL_W<'a, O> {
     #[doc = "Select HFXO as up-counter"]
     #[inline(always)]
@@ -139,7 +142,7 @@ impl<'a, const O: u8> UPSEL_W<'a, O> {
     }
 }
 #[doc = "Field `DOWNSEL` reader - Calibration Down-counter Select"]
-pub type DOWNSEL_R = crate::FieldReader<u8, DOWNSEL_A>;
+pub type DOWNSEL_R = crate::FieldReader<DOWNSEL_A>;
 #[doc = "Calibration Down-counter Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -164,6 +167,9 @@ impl From<DOWNSEL_A> for u8 {
     fn from(variant: DOWNSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DOWNSEL_A {
+    type Ux = u8;
 }
 impl DOWNSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -217,8 +223,7 @@ impl DOWNSEL_R {
     }
 }
 #[doc = "Field `DOWNSEL` writer - Calibration Down-counter Select"]
-pub type DOWNSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, DOWNSEL_A, 3, O>;
+pub type DOWNSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CALCTRL_SPEC, 3, O, DOWNSEL_A>;
 impl<'a, const O: u8> DOWNSEL_W<'a, O> {
     #[doc = "Select HFCLK for down-counter"]
     #[inline(always)]
@@ -257,11 +262,11 @@ impl<'a, const O: u8> DOWNSEL_W<'a, O> {
     }
 }
 #[doc = "Field `CONT` reader - Continuous Calibration"]
-pub type CONT_R = crate::BitReader<bool>;
+pub type CONT_R = crate::BitReader;
 #[doc = "Field `CONT` writer - Continuous Calibration"]
-pub type CONT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CALCTRL_SPEC, bool, O>;
+pub type CONT_W<'a, const O: u8> = crate::BitWriter<'a, CALCTRL_SPEC, O>;
 #[doc = "Field `PRSUPSEL` reader - PRS Select for PRS Input When Selected in UPSEL"]
-pub type PRSUPSEL_R = crate::FieldReader<u8, PRSUPSEL_A>;
+pub type PRSUPSEL_R = crate::FieldReader<PRSUPSEL_A>;
 #[doc = "PRS Select for PRS Input When Selected in UPSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -296,6 +301,9 @@ impl From<PRSUPSEL_A> for u8 {
     fn from(variant: PRSUPSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRSUPSEL_A {
+    type Ux = u8;
 }
 impl PRSUPSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -379,8 +387,7 @@ impl PRSUPSEL_R {
     }
 }
 #[doc = "Field `PRSUPSEL` writer - PRS Select for PRS Input When Selected in UPSEL"]
-pub type PRSUPSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, PRSUPSEL_A, 4, O>;
+pub type PRSUPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CALCTRL_SPEC, 4, O, PRSUPSEL_A>;
 impl<'a, const O: u8> PRSUPSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
@@ -444,7 +451,7 @@ impl<'a, const O: u8> PRSUPSEL_W<'a, O> {
     }
 }
 #[doc = "Field `PRSDOWNSEL` reader - PRS Select for PRS Input When Selected in DOWNSEL"]
-pub type PRSDOWNSEL_R = crate::FieldReader<u8, PRSDOWNSEL_A>;
+pub type PRSDOWNSEL_R = crate::FieldReader<PRSDOWNSEL_A>;
 #[doc = "PRS Select for PRS Input When Selected in DOWNSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -479,6 +486,9 @@ impl From<PRSDOWNSEL_A> for u8 {
     fn from(variant: PRSDOWNSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRSDOWNSEL_A {
+    type Ux = u8;
 }
 impl PRSDOWNSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -562,8 +572,7 @@ impl PRSDOWNSEL_R {
     }
 }
 #[doc = "Field `PRSDOWNSEL` writer - PRS Select for PRS Input When Selected in DOWNSEL"]
-pub type PRSDOWNSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, PRSDOWNSEL_A, 4, O>;
+pub type PRSDOWNSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CALCTRL_SPEC, 4, O, PRSDOWNSEL_A>;
 impl<'a, const O: u8> PRSDOWNSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]

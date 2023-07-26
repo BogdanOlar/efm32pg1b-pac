@@ -14,25 +14,25 @@ impl From<crate::R<APORTREQ_SPEC>> for R {
     }
 }
 #[doc = "Field `APORT0XREQ` reader - 1 If the Bus Connected to APORT0X is Requested"]
-pub type APORT0XREQ_R = crate::BitReader<bool>;
+pub type APORT0XREQ_R = crate::BitReader;
 #[doc = "Field `APORT0YREQ` reader - 1 If the Bus Connected to APORT0Y is Requested"]
-pub type APORT0YREQ_R = crate::BitReader<bool>;
+pub type APORT0YREQ_R = crate::BitReader;
 #[doc = "Field `APORT1XREQ` reader - 1 If the Bus Connected to APORT1X is Requested"]
-pub type APORT1XREQ_R = crate::BitReader<bool>;
+pub type APORT1XREQ_R = crate::BitReader;
 #[doc = "Field `APORT1YREQ` reader - 1 If the Bus Connected to APORT1Y is Requested"]
-pub type APORT1YREQ_R = crate::BitReader<bool>;
+pub type APORT1YREQ_R = crate::BitReader;
 #[doc = "Field `APORT2XREQ` reader - 1 If the Bus Connected to APORT2X is Requested"]
-pub type APORT2XREQ_R = crate::BitReader<bool>;
+pub type APORT2XREQ_R = crate::BitReader;
 #[doc = "Field `APORT2YREQ` reader - 1 If the Bus Connected to APORT2Y is Requested"]
-pub type APORT2YREQ_R = crate::BitReader<bool>;
+pub type APORT2YREQ_R = crate::BitReader;
 #[doc = "Field `APORT3XREQ` reader - 1 If the Bus Connected to APORT3X is Requested"]
-pub type APORT3XREQ_R = crate::BitReader<bool>;
+pub type APORT3XREQ_R = crate::BitReader;
 #[doc = "Field `APORT3YREQ` reader - 1 If the Bus Connected to APORT3Y is Requested"]
-pub type APORT3YREQ_R = crate::BitReader<bool>;
+pub type APORT3YREQ_R = crate::BitReader;
 #[doc = "Field `APORT4XREQ` reader - 1 If the Bus Connected to APORT4X is Requested"]
-pub type APORT4XREQ_R = crate::BitReader<bool>;
+pub type APORT4XREQ_R = crate::BitReader;
 #[doc = "Field `APORT4YREQ` reader - 1 If the Bus Connected to APORT4Y is Requested"]
-pub type APORT4YREQ_R = crate::BitReader<bool>;
+pub type APORT4YREQ_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - 1 If the Bus Connected to APORT0X is Requested"]
     #[inline(always)]

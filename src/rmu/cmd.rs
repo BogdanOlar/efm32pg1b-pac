@@ -20,7 +20,7 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `RCCLR` writer - Reset Cause Clear"]
-pub type RCCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type RCCLR_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Reset Cause Clear"]
     #[inline(always)]

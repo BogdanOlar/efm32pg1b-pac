@@ -14,11 +14,11 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `EDGE` reader - Edge Triggered Interrupt Flag"]
-pub type EDGE_R = crate::BitReader<bool>;
+pub type EDGE_R = crate::BitReader;
 #[doc = "Field `WARMUP` reader - Warm-up Interrupt Flag"]
-pub type WARMUP_R = crate::BitReader<bool>;
+pub type WARMUP_R = crate::BitReader;
 #[doc = "Field `APORTCONFLICT` reader - APORT Conflict Interrupt Flag"]
-pub type APORTCONFLICT_R = crate::BitReader<bool>;
+pub type APORTCONFLICT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Edge Triggered Interrupt Flag"]
     #[inline(always)]

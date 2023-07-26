@@ -35,9 +35,9 @@ impl From<crate::W<EXTIRISE_SPEC>> for W {
     }
 }
 #[doc = "Field `EXTIRISE` reader - External Interrupt N Rising Edge Trigger Enable"]
-pub type EXTIRISE_R = crate::FieldReader<u16, u16>;
+pub type EXTIRISE_R = crate::FieldReader<u16>;
 #[doc = "Field `EXTIRISE` writer - External Interrupt N Rising Edge Trigger Enable"]
-pub type EXTIRISE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTIRISE_SPEC, u16, u16, 16, O>;
+pub type EXTIRISE_W<'a, const O: u8> = crate::FieldWriter<'a, EXTIRISE_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - External Interrupt N Rising Edge Trigger Enable"]
     #[inline(always)]

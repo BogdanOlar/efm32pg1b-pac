@@ -35,15 +35,15 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `AUTOTRI` reader - Automatic Transmitter Tristate"]
-pub type AUTOTRI_R = crate::BitReader<bool>;
+pub type AUTOTRI_R = crate::BitReader;
 #[doc = "Field `AUTOTRI` writer - Automatic Transmitter Tristate"]
-pub type AUTOTRI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type AUTOTRI_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `DATABITS` reader - Data-Bit Mode"]
-pub type DATABITS_R = crate::BitReader<bool>;
+pub type DATABITS_R = crate::BitReader;
 #[doc = "Field `DATABITS` writer - Data-Bit Mode"]
-pub type DATABITS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type DATABITS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `PARITY` reader - Parity-Bit Mode"]
-pub type PARITY_R = crate::FieldReader<u8, PARITY_A>;
+pub type PARITY_R = crate::FieldReader<PARITY_A>;
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -60,6 +60,9 @@ impl From<PARITY_A> for u8 {
     fn from(variant: PARITY_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PARITY_A {
+    type Ux = u8;
 }
 impl PARITY_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl PARITY_R {
     }
 }
 #[doc = "Field `PARITY` writer - Parity-Bit Mode"]
-pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PARITY_A, 2, O>;
+pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O, PARITY_A>;
 impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Parity bits are not used"]
     #[inline(always)]
@@ -108,47 +111,47 @@ impl<'a, const O: u8> PARITY_W<'a, O> {
     }
 }
 #[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
-pub type STOPBITS_R = crate::BitReader<bool>;
+pub type STOPBITS_R = crate::BitReader;
 #[doc = "Field `STOPBITS` writer - Stop-Bit Mode"]
-pub type STOPBITS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type STOPBITS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `INV` reader - Invert Input and Output"]
-pub type INV_R = crate::BitReader<bool>;
+pub type INV_R = crate::BitReader;
 #[doc = "Field `INV` writer - Invert Input and Output"]
-pub type INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type INV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `ERRSDMA` reader - Clear RX DMA on Error"]
-pub type ERRSDMA_R = crate::BitReader<bool>;
+pub type ERRSDMA_R = crate::BitReader;
 #[doc = "Field `ERRSDMA` writer - Clear RX DMA on Error"]
-pub type ERRSDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type ERRSDMA_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `LOOPBK` reader - Loopback Enable"]
-pub type LOOPBK_R = crate::BitReader<bool>;
+pub type LOOPBK_R = crate::BitReader;
 #[doc = "Field `LOOPBK` writer - Loopback Enable"]
-pub type LOOPBK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type LOOPBK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SFUBRX` reader - Start-Frame UnBlock RX"]
-pub type SFUBRX_R = crate::BitReader<bool>;
+pub type SFUBRX_R = crate::BitReader;
 #[doc = "Field `SFUBRX` writer - Start-Frame UnBlock RX"]
-pub type SFUBRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SFUBRX_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `MPM` reader - Multi-Processor Mode"]
-pub type MPM_R = crate::BitReader<bool>;
+pub type MPM_R = crate::BitReader;
 #[doc = "Field `MPM` writer - Multi-Processor Mode"]
-pub type MPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type MPM_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `MPAB` reader - Multi-Processor Address-Bit"]
-pub type MPAB_R = crate::BitReader<bool>;
+pub type MPAB_R = crate::BitReader;
 #[doc = "Field `MPAB` writer - Multi-Processor Address-Bit"]
-pub type MPAB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type MPAB_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `BIT8DV` reader - Bit 8 Default Value"]
-pub type BIT8DV_R = crate::BitReader<bool>;
+pub type BIT8DV_R = crate::BitReader;
 #[doc = "Field `BIT8DV` writer - Bit 8 Default Value"]
-pub type BIT8DV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type BIT8DV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `RXDMAWU` reader - RX DMA Wakeup"]
-pub type RXDMAWU_R = crate::BitReader<bool>;
+pub type RXDMAWU_R = crate::BitReader;
 #[doc = "Field `RXDMAWU` writer - RX DMA Wakeup"]
-pub type RXDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type RXDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `TXDMAWU` reader - TX DMA Wakeup"]
-pub type TXDMAWU_R = crate::BitReader<bool>;
+pub type TXDMAWU_R = crate::BitReader;
 #[doc = "Field `TXDMAWU` writer - TX DMA Wakeup"]
-pub type TXDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type TXDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `TXDELAY` reader - TX Delay Transmission"]
-pub type TXDELAY_R = crate::FieldReader<u8, TXDELAY_A>;
+pub type TXDELAY_R = crate::FieldReader<TXDELAY_A>;
 #[doc = "TX Delay Transmission\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -167,6 +170,9 @@ impl From<TXDELAY_A> for u8 {
     fn from(variant: TXDELAY_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TXDELAY_A {
+    type Ux = u8;
 }
 impl TXDELAY_R {
     #[doc = "Get enumerated values variant"]
@@ -202,8 +208,7 @@ impl TXDELAY_R {
     }
 }
 #[doc = "Field `TXDELAY` writer - TX Delay Transmission"]
-pub type TXDELAY_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, TXDELAY_A, 2, O>;
+pub type TXDELAY_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, TXDELAY_A>;
 impl<'a, const O: u8> TXDELAY_W<'a, O> {
     #[doc = "Frames are transmitted immediately"]
     #[inline(always)]

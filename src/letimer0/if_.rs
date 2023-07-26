@@ -14,15 +14,15 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `COMP0` reader - Compare Match 0 Interrupt Flag"]
-pub type COMP0_R = crate::BitReader<bool>;
+pub type COMP0_R = crate::BitReader;
 #[doc = "Field `COMP1` reader - Compare Match 1 Interrupt Flag"]
-pub type COMP1_R = crate::BitReader<bool>;
+pub type COMP1_R = crate::BitReader;
 #[doc = "Field `UF` reader - Underflow Interrupt Flag"]
-pub type UF_R = crate::BitReader<bool>;
+pub type UF_R = crate::BitReader;
 #[doc = "Field `REP0` reader - Repeat Counter 0 Interrupt Flag"]
-pub type REP0_R = crate::BitReader<bool>;
+pub type REP0_R = crate::BitReader;
 #[doc = "Field `REP1` reader - Repeat Counter 1 Interrupt Flag"]
-pub type REP1_R = crate::BitReader<bool>;
+pub type REP1_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Compare Match 0 Interrupt Flag"]
     #[inline(always)]

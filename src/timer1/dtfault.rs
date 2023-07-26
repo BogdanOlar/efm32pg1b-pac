@@ -14,13 +14,13 @@ impl From<crate::R<DTFAULT_SPEC>> for R {
     }
 }
 #[doc = "Field `DTPRS0F` reader - DTI PRS 0 Fault"]
-pub type DTPRS0F_R = crate::BitReader<bool>;
+pub type DTPRS0F_R = crate::BitReader;
 #[doc = "Field `DTPRS1F` reader - DTI PRS 1 Fault"]
-pub type DTPRS1F_R = crate::BitReader<bool>;
+pub type DTPRS1F_R = crate::BitReader;
 #[doc = "Field `DTDBGF` reader - DTI Debugger Fault"]
-pub type DTDBGF_R = crate::BitReader<bool>;
+pub type DTDBGF_R = crate::BitReader;
 #[doc = "Field `DTLOCKUPF` reader - DTI Lockup Fault"]
-pub type DTLOCKUPF_R = crate::BitReader<bool>;
+pub type DTLOCKUPF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - DTI PRS 0 Fault"]
     #[inline(always)]

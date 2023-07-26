@@ -14,9 +14,9 @@ impl From<crate::R<HFXOTRIMSTATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `IBTRIMXOCORE` reader - Value of IBTRIMXOCORE Found By Automatic HFXO Peak Detection Algorithm"]
-pub type IBTRIMXOCORE_R = crate::FieldReader<u8, u8>;
+pub type IBTRIMXOCORE_R = crate::FieldReader;
 #[doc = "Field `REGISH` reader - Value of REGISH Found By Automatic HFXO Shunt Current Optimization Algorithm"]
-pub type REGISH_R = crate::FieldReader<u8, u8>;
+pub type REGISH_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:6 - Value of IBTRIMXOCORE Found By Automatic HFXO Peak Detection Algorithm"]
     #[inline(always)]

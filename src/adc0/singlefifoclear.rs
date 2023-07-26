@@ -20,8 +20,7 @@ impl From<crate::W<SINGLEFIFOCLEAR_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLEFIFOCLEAR` writer - Clear Single FIFO Content"]
-pub type SINGLEFIFOCLEAR_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SINGLEFIFOCLEAR_SPEC, bool, O>;
+pub type SINGLEFIFOCLEAR_W<'a, const O: u8> = crate::BitWriter<'a, SINGLEFIFOCLEAR_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Clear Single FIFO Content"]
     #[inline(always)]

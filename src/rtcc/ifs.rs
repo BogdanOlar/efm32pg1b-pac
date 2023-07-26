@@ -20,27 +20,27 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `OF` writer - Set OF Interrupt Flag"]
-pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CC0` writer - Set CC0 Interrupt Flag"]
-pub type CC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CC0_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CC1` writer - Set CC1 Interrupt Flag"]
-pub type CC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CC1_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CC2` writer - Set CC2 Interrupt Flag"]
-pub type CC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CC2_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `OSCFAIL` writer - Set OSCFAIL Interrupt Flag"]
-pub type OSCFAIL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type OSCFAIL_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CNTTICK` writer - Set CNTTICK Interrupt Flag"]
-pub type CNTTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CNTTICK_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `MINTICK` writer - Set MINTICK Interrupt Flag"]
-pub type MINTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type MINTICK_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `HOURTICK` writer - Set HOURTICK Interrupt Flag"]
-pub type HOURTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type HOURTICK_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `DAYTICK` writer - Set DAYTICK Interrupt Flag"]
-pub type DAYTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type DAYTICK_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `DAYOWOF` writer - Set DAYOWOF Interrupt Flag"]
-pub type DAYOWOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type DAYOWOF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `MONTHTICK` writer - Set MONTHTICK Interrupt Flag"]
-pub type MONTHTICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type MONTHTICK_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Set OF Interrupt Flag"]
     #[inline(always)]

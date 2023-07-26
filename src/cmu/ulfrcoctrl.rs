@@ -35,11 +35,11 @@ impl From<crate::W<ULFRCOCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TUNING` reader - ULFRCO TUNING Value"]
-pub type TUNING_R = crate::FieldReader<u8, u8>;
+pub type TUNING_R = crate::FieldReader;
 #[doc = "Field `TUNING` writer - ULFRCO TUNING Value"]
-pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ULFRCOCTRL_SPEC, u8, u8, 6, O>;
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, ULFRCOCTRL_SPEC, 6, O>;
 #[doc = "Field `MODE` reader - ULFRCO Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "ULFRCO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -93,8 +96,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - ULFRCO Mode"]
-pub type MODE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, ULFRCOCTRL_SPEC, u8, MODE_A, 2, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ULFRCOCTRL_SPEC, 2, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "ULFRCO = 1 kHz"]
     #[inline(always)]
@@ -118,9 +120,9 @@ impl<'a, const O: u8> MODE_W<'a, O> {
     }
 }
 #[doc = "Field `RESTRIM` reader - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
-pub type RESTRIM_R = crate::FieldReader<u8, u8>;
+pub type RESTRIM_R = crate::FieldReader;
 #[doc = "Field `RESTRIM` writer - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
-pub type RESTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ULFRCOCTRL_SPEC, u8, u8, 2, O>;
+pub type RESTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, ULFRCOCTRL_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 0:5 - ULFRCO TUNING Value"]
     #[inline(always)]

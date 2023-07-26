@@ -35,9 +35,9 @@ impl From<crate::W<REQDIS_SPEC>> for W {
     }
 }
 #[doc = "Field `REQDIS` reader - DMA Request Disables"]
-pub type REQDIS_R = crate::FieldReader<u8, u8>;
+pub type REQDIS_R = crate::FieldReader;
 #[doc = "Field `REQDIS` writer - DMA Request Disables"]
-pub type REQDIS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REQDIS_SPEC, u8, u8, 8, O>;
+pub type REQDIS_W<'a, const O: u8> = crate::FieldWriter<'a, REQDIS_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - DMA Request Disables"]
     #[inline(always)]

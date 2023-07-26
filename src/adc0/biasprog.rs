@@ -35,7 +35,7 @@ impl From<crate::W<BIASPROG_SPEC>> for W {
     }
 }
 #[doc = "Field `ADCBIASPROG` reader - Bias Programming Value of Analog ADC Block"]
-pub type ADCBIASPROG_R = crate::FieldReader<u8, ADCBIASPROG_A>;
+pub type ADCBIASPROG_R = crate::FieldReader<ADCBIASPROG_A>;
 #[doc = "Bias Programming Value of Analog ADC Block\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<ADCBIASPROG_A> for u8 {
     fn from(variant: ADCBIASPROG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ADCBIASPROG_A {
+    type Ux = u8;
 }
 impl ADCBIASPROG_R {
     #[doc = "Get enumerated values variant"]
@@ -106,7 +109,7 @@ impl ADCBIASPROG_R {
 }
 #[doc = "Field `ADCBIASPROG` writer - Bias Programming Value of Analog ADC Block"]
 pub type ADCBIASPROG_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, BIASPROG_SPEC, u8, ADCBIASPROG_A, 4, O>;
+    crate::FieldWriter<'a, BIASPROG_SPEC, 4, O, ADCBIASPROG_A>;
 impl<'a, const O: u8> ADCBIASPROG_W<'a, O> {
     #[doc = "Normal power (use for 1Msps operation)"]
     #[inline(always)]
@@ -140,13 +143,13 @@ impl<'a, const O: u8> ADCBIASPROG_W<'a, O> {
     }
 }
 #[doc = "Field `VFAULTCLR` reader - Clear VREFOF Flag"]
-pub type VFAULTCLR_R = crate::BitReader<bool>;
+pub type VFAULTCLR_R = crate::BitReader;
 #[doc = "Field `VFAULTCLR` writer - Clear VREFOF Flag"]
-pub type VFAULTCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASPROG_SPEC, bool, O>;
+pub type VFAULTCLR_W<'a, const O: u8> = crate::BitWriter<'a, BIASPROG_SPEC, O>;
 #[doc = "Field `GPBIASACC` reader - Accuracy Setting for the System Bias During ADC Operation"]
-pub type GPBIASACC_R = crate::BitReader<bool>;
+pub type GPBIASACC_R = crate::BitReader;
 #[doc = "Field `GPBIASACC` writer - Accuracy Setting for the System Bias During ADC Operation"]
-pub type GPBIASACC_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASPROG_SPEC, bool, O>;
+pub type GPBIASACC_W<'a, const O: u8> = crate::BitWriter<'a, BIASPROG_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - Bias Programming Value of Analog ADC Block"]
     #[inline(always)]

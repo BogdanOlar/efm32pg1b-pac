@@ -35,17 +35,17 @@ impl From<crate::W<SEQCTRLB_SPEC>> for W {
     }
 }
 #[doc = "Field `LENGTHB` reader - Buffer Length B in Bytes"]
-pub type LENGTHB_R = crate::FieldReader<u16, u16>;
+pub type LENGTHB_R = crate::FieldReader<u16>;
 #[doc = "Field `LENGTHB` writer - Buffer Length B in Bytes"]
-pub type LENGTHB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQCTRLB_SPEC, u16, u16, 14, O>;
+pub type LENGTHB_W<'a, const O: u8> = crate::FieldWriter<'a, SEQCTRLB_SPEC, 14, O, u16>;
 #[doc = "Field `DMA0PRESB` reader - DMA0 Preserve B"]
-pub type DMA0PRESB_R = crate::BitReader<bool>;
+pub type DMA0PRESB_R = crate::BitReader;
 #[doc = "Field `DMA0PRESB` writer - DMA0 Preserve B"]
-pub type DMA0PRESB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQCTRLB_SPEC, bool, O>;
+pub type DMA0PRESB_W<'a, const O: u8> = crate::BitWriter<'a, SEQCTRLB_SPEC, O>;
 #[doc = "Field `DMA1PRESB` reader - DMA1 Preserve B"]
-pub type DMA1PRESB_R = crate::BitReader<bool>;
+pub type DMA1PRESB_R = crate::BitReader;
 #[doc = "Field `DMA1PRESB` writer - DMA1 Preserve B"]
-pub type DMA1PRESB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQCTRLB_SPEC, bool, O>;
+pub type DMA1PRESB_W<'a, const O: u8> = crate::BitWriter<'a, SEQCTRLB_SPEC, O>;
 impl R {
     #[doc = "Bits 0:13 - Buffer Length B in Bytes"]
     #[inline(always)]

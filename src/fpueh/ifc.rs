@@ -20,17 +20,17 @@ impl From<crate::W<IFC_SPEC>> for W {
     }
 }
 #[doc = "Field `FPIOC` writer - Clear FPIOC Interrupt Flag"]
-pub type FPIOC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type FPIOC_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `FPDZC` writer - Clear FPDZC Interrupt Flag"]
-pub type FPDZC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type FPDZC_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `FPUFC` writer - Clear FPUFC Interrupt Flag"]
-pub type FPUFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type FPUFC_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `FPOFC` writer - Clear FPOFC Interrupt Flag"]
-pub type FPOFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type FPOFC_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `FPIDC` writer - Clear FPIDC Interrupt Flag"]
-pub type FPIDC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type FPIDC_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 #[doc = "Field `FPIXC` writer - Clear FPIXC Interrupt Flag"]
-pub type FPIXC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
+pub type FPIXC_W<'a, const O: u8> = crate::BitWriter<'a, IFC_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Clear FPIOC Interrupt Flag"]
     #[inline(always)]

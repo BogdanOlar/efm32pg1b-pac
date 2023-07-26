@@ -35,27 +35,27 @@ impl From<crate::W<I2SCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Enable I2S Mode"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Enable I2S Mode"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, I2SCTRL_SPEC, O>;
 #[doc = "Field `MONO` reader - Stero or Mono"]
-pub type MONO_R = crate::BitReader<bool>;
+pub type MONO_R = crate::BitReader;
 #[doc = "Field `MONO` writer - Stero or Mono"]
-pub type MONO_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+pub type MONO_W<'a, const O: u8> = crate::BitWriter<'a, I2SCTRL_SPEC, O>;
 #[doc = "Field `JUSTIFY` reader - Justification of I2S Data"]
-pub type JUSTIFY_R = crate::BitReader<bool>;
+pub type JUSTIFY_R = crate::BitReader;
 #[doc = "Field `JUSTIFY` writer - Justification of I2S Data"]
-pub type JUSTIFY_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+pub type JUSTIFY_W<'a, const O: u8> = crate::BitWriter<'a, I2SCTRL_SPEC, O>;
 #[doc = "Field `DMASPLIT` reader - Separate DMA Request for Left/Right Data"]
-pub type DMASPLIT_R = crate::BitReader<bool>;
+pub type DMASPLIT_R = crate::BitReader;
 #[doc = "Field `DMASPLIT` writer - Separate DMA Request for Left/Right Data"]
-pub type DMASPLIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+pub type DMASPLIT_W<'a, const O: u8> = crate::BitWriter<'a, I2SCTRL_SPEC, O>;
 #[doc = "Field `DELAY` reader - Delay on I2S Data"]
-pub type DELAY_R = crate::BitReader<bool>;
+pub type DELAY_R = crate::BitReader;
 #[doc = "Field `DELAY` writer - Delay on I2S Data"]
-pub type DELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SCTRL_SPEC, bool, O>;
+pub type DELAY_W<'a, const O: u8> = crate::BitWriter<'a, I2SCTRL_SPEC, O>;
 #[doc = "Field `FORMAT` reader - I2S Word Format"]
-pub type FORMAT_R = crate::FieldReader<u8, FORMAT_A>;
+pub type FORMAT_R = crate::FieldReader<FORMAT_A>;
 #[doc = "I2S Word Format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -82,6 +82,9 @@ impl From<FORMAT_A> for u8 {
     fn from(variant: FORMAT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for FORMAT_A {
+    type Ux = u8;
 }
 impl FORMAT_R {
     #[doc = "Get enumerated values variant"]
@@ -141,8 +144,7 @@ impl FORMAT_R {
     }
 }
 #[doc = "Field `FORMAT` writer - I2S Word Format"]
-pub type FORMAT_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, I2SCTRL_SPEC, u8, FORMAT_A, 3, O>;
+pub type FORMAT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, I2SCTRL_SPEC, 3, O, FORMAT_A>;
 impl<'a, const O: u8> FORMAT_W<'a, O> {
     #[doc = "32-bit word, 32-bit data"]
     #[inline(always)]

@@ -35,17 +35,17 @@ impl From<crate::W<HFXOCTRL1_SPEC>> for W {
     }
 }
 #[doc = "Field `PEAKDETTHR` reader - Sets the Peak Detector amplitude detection threshold levels"]
-pub type PEAKDETTHR_R = crate::FieldReader<u8, u8>;
+pub type PEAKDETTHR_R = crate::FieldReader;
 #[doc = "Field `PEAKDETTHR` writer - Sets the Peak Detector amplitude detection threshold levels"]
-pub type PEAKDETTHR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFXOCTRL1_SPEC, u8, u8, 3, O>;
+pub type PEAKDETTHR_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOCTRL1_SPEC, 3, O>;
 #[doc = "Field `REGLVL` reader - Reserved for internal use. Do not change."]
-pub type REGLVL_R = crate::FieldReader<u8, u8>;
+pub type REGLVL_R = crate::FieldReader;
 #[doc = "Field `REGLVL` writer - Reserved for internal use. Do not change."]
-pub type REGLVL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFXOCTRL1_SPEC, u8, u8, 3, O>;
+pub type REGLVL_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOCTRL1_SPEC, 3, O>;
 #[doc = "Field `XTIBIASEN` reader - Reserved for internal use. Do not change."]
-pub type XTIBIASEN_R = crate::BitReader<bool>;
+pub type XTIBIASEN_R = crate::BitReader;
 #[doc = "Field `XTIBIASEN` writer - Reserved for internal use. Do not change."]
-pub type XTIBIASEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL1_SPEC, bool, O>;
+pub type XTIBIASEN_W<'a, const O: u8> = crate::BitWriter<'a, HFXOCTRL1_SPEC, O>;
 impl R {
     #[doc = "Bits 0:2 - Sets the Peak Detector amplitude detection threshold levels"]
     #[inline(always)]

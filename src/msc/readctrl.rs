@@ -35,27 +35,27 @@ impl From<crate::W<READCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `IFCDIS` reader - Internal Flash Cache Disable"]
-pub type IFCDIS_R = crate::BitReader<bool>;
+pub type IFCDIS_R = crate::BitReader;
 #[doc = "Field `IFCDIS` writer - Internal Flash Cache Disable"]
-pub type IFCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+pub type IFCDIS_W<'a, const O: u8> = crate::BitWriter<'a, READCTRL_SPEC, O>;
 #[doc = "Field `AIDIS` reader - Automatic Invalidate Disable"]
-pub type AIDIS_R = crate::BitReader<bool>;
+pub type AIDIS_R = crate::BitReader;
 #[doc = "Field `AIDIS` writer - Automatic Invalidate Disable"]
-pub type AIDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+pub type AIDIS_W<'a, const O: u8> = crate::BitWriter<'a, READCTRL_SPEC, O>;
 #[doc = "Field `ICCDIS` reader - Interrupt Context Cache Disable"]
-pub type ICCDIS_R = crate::BitReader<bool>;
+pub type ICCDIS_R = crate::BitReader;
 #[doc = "Field `ICCDIS` writer - Interrupt Context Cache Disable"]
-pub type ICCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+pub type ICCDIS_W<'a, const O: u8> = crate::BitWriter<'a, READCTRL_SPEC, O>;
 #[doc = "Field `PREFETCH` reader - Prefetch Mode"]
-pub type PREFETCH_R = crate::BitReader<bool>;
+pub type PREFETCH_R = crate::BitReader;
 #[doc = "Field `PREFETCH` writer - Prefetch Mode"]
-pub type PREFETCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+pub type PREFETCH_W<'a, const O: u8> = crate::BitWriter<'a, READCTRL_SPEC, O>;
 #[doc = "Field `USEHPROT` reader - AHB_HPROT Mode"]
-pub type USEHPROT_R = crate::BitReader<bool>;
+pub type USEHPROT_R = crate::BitReader;
 #[doc = "Field `USEHPROT` writer - AHB_HPROT Mode"]
-pub type USEHPROT_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+pub type USEHPROT_W<'a, const O: u8> = crate::BitWriter<'a, READCTRL_SPEC, O>;
 #[doc = "Field `MODE` reader - Read Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Read Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -70,6 +70,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +96,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Read Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, READCTRL_SPEC, u8, MODE_A, 2, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, READCTRL_SPEC, 2, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Zero wait-states inserted in fetch or read transfers"]
     #[inline(always)]
@@ -107,9 +110,9 @@ impl<'a, const O: u8> MODE_W<'a, O> {
     }
 }
 #[doc = "Field `SCBTP` reader - Suppress Conditional Branch Target Perfetch"]
-pub type SCBTP_R = crate::BitReader<bool>;
+pub type SCBTP_R = crate::BitReader;
 #[doc = "Field `SCBTP` writer - Suppress Conditional Branch Target Perfetch"]
-pub type SCBTP_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
+pub type SCBTP_W<'a, const O: u8> = crate::BitWriter<'a, READCTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 3 - Internal Flash Cache Disable"]
     #[inline(always)]

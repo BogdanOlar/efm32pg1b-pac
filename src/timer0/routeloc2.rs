@@ -35,7 +35,7 @@ impl From<crate::W<ROUTELOC2_SPEC>> for W {
     }
 }
 #[doc = "Field `CDTI0LOC` reader - I/O Location"]
-pub type CDTI0LOC_R = crate::FieldReader<u8, CDTI0LOC_A>;
+pub type CDTI0LOC_R = crate::FieldReader<CDTI0LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -110,6 +110,9 @@ impl From<CDTI0LOC_A> for u8 {
     fn from(variant: CDTI0LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CDTI0LOC_A {
+    type Ux = u8;
 }
 impl CDTI0LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -313,8 +316,7 @@ impl CDTI0LOC_R {
     }
 }
 #[doc = "Field `CDTI0LOC` writer - I/O Location"]
-pub type CDTI0LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI0LOC_A, 6, O>;
+pub type CDTI0LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC2_SPEC, 6, O, CDTI0LOC_A>;
 impl<'a, const O: u8> CDTI0LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
@@ -478,7 +480,7 @@ impl<'a, const O: u8> CDTI0LOC_W<'a, O> {
     }
 }
 #[doc = "Field `CDTI1LOC` reader - I/O Location"]
-pub type CDTI1LOC_R = crate::FieldReader<u8, CDTI1LOC_A>;
+pub type CDTI1LOC_R = crate::FieldReader<CDTI1LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -553,6 +555,9 @@ impl From<CDTI1LOC_A> for u8 {
     fn from(variant: CDTI1LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CDTI1LOC_A {
+    type Ux = u8;
 }
 impl CDTI1LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -756,8 +761,7 @@ impl CDTI1LOC_R {
     }
 }
 #[doc = "Field `CDTI1LOC` writer - I/O Location"]
-pub type CDTI1LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI1LOC_A, 6, O>;
+pub type CDTI1LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC2_SPEC, 6, O, CDTI1LOC_A>;
 impl<'a, const O: u8> CDTI1LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
@@ -921,7 +925,7 @@ impl<'a, const O: u8> CDTI1LOC_W<'a, O> {
     }
 }
 #[doc = "Field `CDTI2LOC` reader - I/O Location"]
-pub type CDTI2LOC_R = crate::FieldReader<u8, CDTI2LOC_A>;
+pub type CDTI2LOC_R = crate::FieldReader<CDTI2LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -996,6 +1000,9 @@ impl From<CDTI2LOC_A> for u8 {
     fn from(variant: CDTI2LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CDTI2LOC_A {
+    type Ux = u8;
 }
 impl CDTI2LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -1199,8 +1206,7 @@ impl CDTI2LOC_R {
     }
 }
 #[doc = "Field `CDTI2LOC` writer - I/O Location"]
-pub type CDTI2LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI2LOC_A, 6, O>;
+pub type CDTI2LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC2_SPEC, 6, O, CDTI2LOC_A>;
 impl<'a, const O: u8> CDTI2LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]

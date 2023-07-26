@@ -35,9 +35,9 @@ impl From<crate::W<LFBCLKEN0_SPEC>> for W {
     }
 }
 #[doc = "Field `LEUART0` reader - Low Energy UART 0 Clock Enable"]
-pub type LEUART0_R = crate::BitReader<bool>;
+pub type LEUART0_R = crate::BitReader;
 #[doc = "Field `LEUART0` writer - Low Energy UART 0 Clock Enable"]
-pub type LEUART0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFBCLKEN0_SPEC, bool, O>;
+pub type LEUART0_W<'a, const O: u8> = crate::BitWriter<'a, LFBCLKEN0_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Low Energy UART 0 Clock Enable"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<LOCK_SPEC>> for W {
     }
 }
 #[doc = "Field `LOCKKEY` reader - Configuration Lock"]
-pub type LOCKKEY_R = crate::FieldReader<u16, LOCKKEY_A>;
+pub type LOCKKEY_R = crate::FieldReader<LOCKKEY_A>;
 #[doc = "Configuration Lock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -50,6 +50,9 @@ impl From<LOCKKEY_A> for u16 {
     fn from(variant: LOCKKEY_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LOCKKEY_A {
+    type Ux = u16;
 }
 impl LOCKKEY_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl LOCKKEY_R {
     }
 }
 #[doc = "Field `LOCKKEY` writer - Configuration Lock"]
-pub type LOCKKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LOCK_SPEC, u16, LOCKKEY_A, 16, O>;
+pub type LOCKKEY_W<'a, const O: u8> = crate::FieldWriter<'a, LOCK_SPEC, 16, O, LOCKKEY_A>;
 impl<'a, const O: u8> LOCKKEY_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]

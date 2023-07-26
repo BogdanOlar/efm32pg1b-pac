@@ -35,29 +35,29 @@ impl From<crate::W<CC1_TIME_SPEC>> for W {
     }
 }
 #[doc = "Field `SECU` reader - Seconds, Units"]
-pub type SECU_R = crate::FieldReader<u8, u8>;
+pub type SECU_R = crate::FieldReader;
 #[doc = "Field `SECU` writer - Seconds, Units"]
-pub type SECU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, O>;
+pub type SECU_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_TIME_SPEC, 4, O>;
 #[doc = "Field `SECT` reader - Seconds, Tens"]
-pub type SECT_R = crate::FieldReader<u8, u8>;
+pub type SECT_R = crate::FieldReader;
 #[doc = "Field `SECT` writer - Seconds, Tens"]
-pub type SECT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 3, O>;
+pub type SECT_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_TIME_SPEC, 3, O>;
 #[doc = "Field `MINU` reader - Minutes, Units"]
-pub type MINU_R = crate::FieldReader<u8, u8>;
+pub type MINU_R = crate::FieldReader;
 #[doc = "Field `MINU` writer - Minutes, Units"]
-pub type MINU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, O>;
+pub type MINU_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_TIME_SPEC, 4, O>;
 #[doc = "Field `MINT` reader - Minutes, Tens"]
-pub type MINT_R = crate::FieldReader<u8, u8>;
+pub type MINT_R = crate::FieldReader;
 #[doc = "Field `MINT` writer - Minutes, Tens"]
-pub type MINT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 3, O>;
+pub type MINT_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_TIME_SPEC, 3, O>;
 #[doc = "Field `HOURU` reader - Hours, Units"]
-pub type HOURU_R = crate::FieldReader<u8, u8>;
+pub type HOURU_R = crate::FieldReader;
 #[doc = "Field `HOURU` writer - Hours, Units"]
-pub type HOURU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, O>;
+pub type HOURU_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_TIME_SPEC, 4, O>;
 #[doc = "Field `HOURT` reader - Hours, Tens"]
-pub type HOURT_R = crate::FieldReader<u8, u8>;
+pub type HOURT_R = crate::FieldReader;
 #[doc = "Field `HOURT` writer - Hours, Tens"]
-pub type HOURT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 2, O>;
+pub type HOURT_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_TIME_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 0:3 - Seconds, Units"]
     #[inline(always)]

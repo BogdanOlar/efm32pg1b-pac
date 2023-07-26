@@ -35,13 +35,13 @@ impl From<crate::W<INSENSE_SPEC>> for W {
     }
 }
 #[doc = "Field `INT` reader - Interrupt Sense Enable"]
-pub type INT_R = crate::BitReader<bool>;
+pub type INT_R = crate::BitReader;
 #[doc = "Field `INT` writer - Interrupt Sense Enable"]
-pub type INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, INSENSE_SPEC, bool, O>;
+pub type INT_W<'a, const O: u8> = crate::BitWriter<'a, INSENSE_SPEC, O>;
 #[doc = "Field `EM4WU` reader - EM4WU Interrupt Sense Enable"]
-pub type EM4WU_R = crate::BitReader<bool>;
+pub type EM4WU_R = crate::BitReader;
 #[doc = "Field `EM4WU` writer - EM4WU Interrupt Sense Enable"]
-pub type EM4WU_W<'a, const O: u8> = crate::BitWriter<'a, u32, INSENSE_SPEC, bool, O>;
+pub type EM4WU_W<'a, const O: u8> = crate::BitWriter<'a, INSENSE_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Interrupt Sense Enable"]
     #[inline(always)]

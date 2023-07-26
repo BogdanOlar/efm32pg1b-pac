@@ -14,27 +14,27 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `TXC` reader - TX Complete Interrupt Flag"]
-pub type TXC_R = crate::BitReader<bool>;
+pub type TXC_R = crate::BitReader;
 #[doc = "Field `TXBL` reader - TX Buffer Level Interrupt Flag"]
-pub type TXBL_R = crate::BitReader<bool>;
+pub type TXBL_R = crate::BitReader;
 #[doc = "Field `RXDATAV` reader - RX Data Valid Interrupt Flag"]
-pub type RXDATAV_R = crate::BitReader<bool>;
+pub type RXDATAV_R = crate::BitReader;
 #[doc = "Field `RXOF` reader - RX Overflow Interrupt Flag"]
-pub type RXOF_R = crate::BitReader<bool>;
+pub type RXOF_R = crate::BitReader;
 #[doc = "Field `RXUF` reader - RX Underflow Interrupt Flag"]
-pub type RXUF_R = crate::BitReader<bool>;
+pub type RXUF_R = crate::BitReader;
 #[doc = "Field `TXOF` reader - TX Overflow Interrupt Flag"]
-pub type TXOF_R = crate::BitReader<bool>;
+pub type TXOF_R = crate::BitReader;
 #[doc = "Field `PERR` reader - Parity Error Interrupt Flag"]
-pub type PERR_R = crate::BitReader<bool>;
+pub type PERR_R = crate::BitReader;
 #[doc = "Field `FERR` reader - Framing Error Interrupt Flag"]
-pub type FERR_R = crate::BitReader<bool>;
+pub type FERR_R = crate::BitReader;
 #[doc = "Field `MPAF` reader - Multi-Processor Address Frame Interrupt Flag"]
-pub type MPAF_R = crate::BitReader<bool>;
+pub type MPAF_R = crate::BitReader;
 #[doc = "Field `STARTF` reader - Start Frame Interrupt Flag"]
-pub type STARTF_R = crate::BitReader<bool>;
+pub type STARTF_R = crate::BitReader;
 #[doc = "Field `SIGF` reader - Signal Frame Interrupt Flag"]
-pub type SIGF_R = crate::BitReader<bool>;
+pub type SIGF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - TX Complete Interrupt Flag"]
     #[inline(always)]

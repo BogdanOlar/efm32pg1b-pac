@@ -14,11 +14,11 @@ impl From<crate::R<RXDATAX_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATA` reader - RX Data"]
-pub type RXDATA_R = crate::FieldReader<u16, u16>;
+pub type RXDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `PERR` reader - Data Parity Error"]
-pub type PERR_R = crate::BitReader<bool>;
+pub type PERR_R = crate::BitReader;
 #[doc = "Field `FERR` reader - Data Framing Error"]
-pub type FERR_R = crate::BitReader<bool>;
+pub type FERR_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:8 - RX Data"]
     #[inline(always)]

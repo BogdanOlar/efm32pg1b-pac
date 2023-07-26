@@ -20,27 +20,27 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `OF` writer - Set OF Interrupt Flag"]
-pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `UF` writer - Set UF Interrupt Flag"]
-pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `DIRCHG` writer - Set DIRCHG Interrupt Flag"]
-pub type DIRCHG_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type DIRCHG_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CC0` writer - Set CC0 Interrupt Flag"]
-pub type CC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CC0_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CC1` writer - Set CC1 Interrupt Flag"]
-pub type CC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CC1_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CC2` writer - Set CC2 Interrupt Flag"]
-pub type CC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CC2_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `CC3` writer - Set CC3 Interrupt Flag"]
-pub type CC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type CC3_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `ICBOF0` writer - Set ICBOF0 Interrupt Flag"]
-pub type ICBOF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type ICBOF0_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `ICBOF1` writer - Set ICBOF1 Interrupt Flag"]
-pub type ICBOF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type ICBOF1_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `ICBOF2` writer - Set ICBOF2 Interrupt Flag"]
-pub type ICBOF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type ICBOF2_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `ICBOF3` writer - Set ICBOF3 Interrupt Flag"]
-pub type ICBOF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type ICBOF3_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Set OF Interrupt Flag"]
     #[inline(always)]

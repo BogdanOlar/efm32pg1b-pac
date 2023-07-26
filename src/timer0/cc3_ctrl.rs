@@ -35,7 +35,7 @@ impl From<crate::W<CC3_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `MODE` reader - CC Channel Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "CC Channel Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - CC Channel Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CC3_CTRL_SPEC, u8, MODE_A, 2, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CC3_CTRL_SPEC, 2, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Compare/Capture channel turned off"]
     #[inline(always)]
@@ -113,15 +116,15 @@ impl<'a, const O: u8> MODE_W<'a, O> {
     }
 }
 #[doc = "Field `OUTINV` reader - Output Invert"]
-pub type OUTINV_R = crate::BitReader<bool>;
+pub type OUTINV_R = crate::BitReader;
 #[doc = "Field `OUTINV` writer - Output Invert"]
-pub type OUTINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC3_CTRL_SPEC, bool, O>;
+pub type OUTINV_W<'a, const O: u8> = crate::BitWriter<'a, CC3_CTRL_SPEC, O>;
 #[doc = "Field `COIST` reader - Compare Output Initial State"]
-pub type COIST_R = crate::BitReader<bool>;
+pub type COIST_R = crate::BitReader;
 #[doc = "Field `COIST` writer - Compare Output Initial State"]
-pub type COIST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC3_CTRL_SPEC, bool, O>;
+pub type COIST_W<'a, const O: u8> = crate::BitWriter<'a, CC3_CTRL_SPEC, O>;
 #[doc = "Field `CMOA` reader - Compare Match Output Action"]
-pub type CMOA_R = crate::FieldReader<u8, CMOA_A>;
+pub type CMOA_R = crate::FieldReader<CMOA_A>;
 #[doc = "Compare Match Output Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -140,6 +143,9 @@ impl From<CMOA_A> for u8 {
     fn from(variant: CMOA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CMOA_A {
+    type Ux = u8;
 }
 impl CMOA_R {
     #[doc = "Get enumerated values variant"]
@@ -175,7 +181,7 @@ impl CMOA_R {
     }
 }
 #[doc = "Field `CMOA` writer - Compare Match Output Action"]
-pub type CMOA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CC3_CTRL_SPEC, u8, CMOA_A, 2, O>;
+pub type CMOA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CC3_CTRL_SPEC, 2, O, CMOA_A>;
 impl<'a, const O: u8> CMOA_W<'a, O> {
     #[doc = "No action on compare match"]
     #[inline(always)]
@@ -199,7 +205,7 @@ impl<'a, const O: u8> CMOA_W<'a, O> {
     }
 }
 #[doc = "Field `COFOA` reader - Counter Overflow Output Action"]
-pub type COFOA_R = crate::FieldReader<u8, COFOA_A>;
+pub type COFOA_R = crate::FieldReader<COFOA_A>;
 #[doc = "Counter Overflow Output Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -218,6 +224,9 @@ impl From<COFOA_A> for u8 {
     fn from(variant: COFOA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for COFOA_A {
+    type Ux = u8;
 }
 impl COFOA_R {
     #[doc = "Get enumerated values variant"]
@@ -253,8 +262,7 @@ impl COFOA_R {
     }
 }
 #[doc = "Field `COFOA` writer - Counter Overflow Output Action"]
-pub type COFOA_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CC3_CTRL_SPEC, u8, COFOA_A, 2, O>;
+pub type COFOA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CC3_CTRL_SPEC, 2, O, COFOA_A>;
 impl<'a, const O: u8> COFOA_W<'a, O> {
     #[doc = "No action on counter overflow"]
     #[inline(always)]
@@ -278,7 +286,7 @@ impl<'a, const O: u8> COFOA_W<'a, O> {
     }
 }
 #[doc = "Field `CUFOA` reader - Counter Underflow Output Action"]
-pub type CUFOA_R = crate::FieldReader<u8, CUFOA_A>;
+pub type CUFOA_R = crate::FieldReader<CUFOA_A>;
 #[doc = "Counter Underflow Output Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -297,6 +305,9 @@ impl From<CUFOA_A> for u8 {
     fn from(variant: CUFOA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CUFOA_A {
+    type Ux = u8;
 }
 impl CUFOA_R {
     #[doc = "Get enumerated values variant"]
@@ -332,8 +343,7 @@ impl CUFOA_R {
     }
 }
 #[doc = "Field `CUFOA` writer - Counter Underflow Output Action"]
-pub type CUFOA_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CC3_CTRL_SPEC, u8, CUFOA_A, 2, O>;
+pub type CUFOA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CC3_CTRL_SPEC, 2, O, CUFOA_A>;
 impl<'a, const O: u8> CUFOA_W<'a, O> {
     #[doc = "No action on counter underflow"]
     #[inline(always)]
@@ -357,7 +367,7 @@ impl<'a, const O: u8> CUFOA_W<'a, O> {
     }
 }
 #[doc = "Field `PRSSEL` reader - Compare/Capture Channel PRS Input Channel Selection"]
-pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
+pub type PRSSEL_R = crate::FieldReader<PRSSEL_A>;
 #[doc = "Compare/Capture Channel PRS Input Channel Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -392,6 +402,9 @@ impl From<PRSSEL_A> for u8 {
     fn from(variant: PRSSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRSSEL_A {
+    type Ux = u8;
 }
 impl PRSSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -475,7 +488,7 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - Compare/Capture Channel PRS Input Channel Selection"]
-pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC3_CTRL_SPEC, u8, PRSSEL_A, 4, O>;
+pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CC3_CTRL_SPEC, 4, O, PRSSEL_A>;
 impl<'a, const O: u8> PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
@@ -539,7 +552,7 @@ impl<'a, const O: u8> PRSSEL_W<'a, O> {
     }
 }
 #[doc = "Field `ICEDGE` reader - Input Capture Edge Select"]
-pub type ICEDGE_R = crate::FieldReader<u8, ICEDGE_A>;
+pub type ICEDGE_R = crate::FieldReader<ICEDGE_A>;
 #[doc = "Input Capture Edge Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -558,6 +571,9 @@ impl From<ICEDGE_A> for u8 {
     fn from(variant: ICEDGE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ICEDGE_A {
+    type Ux = u8;
 }
 impl ICEDGE_R {
     #[doc = "Get enumerated values variant"]
@@ -593,8 +609,7 @@ impl ICEDGE_R {
     }
 }
 #[doc = "Field `ICEDGE` writer - Input Capture Edge Select"]
-pub type ICEDGE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CC3_CTRL_SPEC, u8, ICEDGE_A, 2, O>;
+pub type ICEDGE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CC3_CTRL_SPEC, 2, O, ICEDGE_A>;
 impl<'a, const O: u8> ICEDGE_W<'a, O> {
     #[doc = "Rising edges detected"]
     #[inline(always)]
@@ -618,7 +633,7 @@ impl<'a, const O: u8> ICEDGE_W<'a, O> {
     }
 }
 #[doc = "Field `ICEVCTRL` reader - Input Capture Event Control"]
-pub type ICEVCTRL_R = crate::FieldReader<u8, ICEVCTRL_A>;
+pub type ICEVCTRL_R = crate::FieldReader<ICEVCTRL_A>;
 #[doc = "Input Capture Event Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -637,6 +652,9 @@ impl From<ICEVCTRL_A> for u8 {
     fn from(variant: ICEVCTRL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ICEVCTRL_A {
+    type Ux = u8;
 }
 impl ICEVCTRL_R {
     #[doc = "Get enumerated values variant"]
@@ -672,8 +690,7 @@ impl ICEVCTRL_R {
     }
 }
 #[doc = "Field `ICEVCTRL` writer - Input Capture Event Control"]
-pub type ICEVCTRL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CC3_CTRL_SPEC, u8, ICEVCTRL_A, 2, O>;
+pub type ICEVCTRL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CC3_CTRL_SPEC, 2, O, ICEVCTRL_A>;
 impl<'a, const O: u8> ICEVCTRL_W<'a, O> {
     #[doc = "PRS output pulse and interrupt flag set on every capture"]
     #[inline(always)]
@@ -697,17 +714,17 @@ impl<'a, const O: u8> ICEVCTRL_W<'a, O> {
     }
 }
 #[doc = "Field `PRSCONF` reader - PRS Configuration"]
-pub type PRSCONF_R = crate::BitReader<bool>;
+pub type PRSCONF_R = crate::BitReader;
 #[doc = "Field `PRSCONF` writer - PRS Configuration"]
-pub type PRSCONF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC3_CTRL_SPEC, bool, O>;
+pub type PRSCONF_W<'a, const O: u8> = crate::BitWriter<'a, CC3_CTRL_SPEC, O>;
 #[doc = "Field `INSEL` reader - Input Selection"]
-pub type INSEL_R = crate::BitReader<bool>;
+pub type INSEL_R = crate::BitReader;
 #[doc = "Field `INSEL` writer - Input Selection"]
-pub type INSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC3_CTRL_SPEC, bool, O>;
+pub type INSEL_W<'a, const O: u8> = crate::BitWriter<'a, CC3_CTRL_SPEC, O>;
 #[doc = "Field `FILT` reader - Digital Filter"]
-pub type FILT_R = crate::BitReader<bool>;
+pub type FILT_R = crate::BitReader;
 #[doc = "Field `FILT` writer - Digital Filter"]
-pub type FILT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC3_CTRL_SPEC, bool, O>;
+pub type FILT_W<'a, const O: u8> = crate::BitWriter<'a, CC3_CTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:1 - CC Channel Mode"]
     #[inline(always)]

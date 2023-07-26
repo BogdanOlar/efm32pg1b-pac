@@ -14,7 +14,7 @@ impl From<crate::R<TOP_SPEC>> for R {
     }
 }
 #[doc = "Field `TOP` reader - Counter Top Value"]
-pub type TOP_R = crate::FieldReader<u16, u16>;
+pub type TOP_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Counter Top Value"]
     #[inline(always)]

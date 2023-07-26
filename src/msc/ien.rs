@@ -35,29 +35,29 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASE` reader - ERASE Interrupt Enable"]
-pub type ERASE_R = crate::BitReader<bool>;
+pub type ERASE_R = crate::BitReader;
 #[doc = "Field `ERASE` writer - ERASE Interrupt Enable"]
-pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `WRITE` reader - WRITE Interrupt Enable"]
-pub type WRITE_R = crate::BitReader<bool>;
+pub type WRITE_R = crate::BitReader;
 #[doc = "Field `WRITE` writer - WRITE Interrupt Enable"]
-pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `CHOF` reader - CHOF Interrupt Enable"]
-pub type CHOF_R = crate::BitReader<bool>;
+pub type CHOF_R = crate::BitReader;
 #[doc = "Field `CHOF` writer - CHOF Interrupt Enable"]
-pub type CHOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type CHOF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `CMOF` reader - CMOF Interrupt Enable"]
-pub type CMOF_R = crate::BitReader<bool>;
+pub type CMOF_R = crate::BitReader;
 #[doc = "Field `CMOF` writer - CMOF Interrupt Enable"]
-pub type CMOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type CMOF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `PWRUPF` reader - PWRUPF Interrupt Enable"]
-pub type PWRUPF_R = crate::BitReader<bool>;
+pub type PWRUPF_R = crate::BitReader;
 #[doc = "Field `PWRUPF` writer - PWRUPF Interrupt Enable"]
-pub type PWRUPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type PWRUPF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `ICACHERR` reader - ICACHERR Interrupt Enable"]
-pub type ICACHERR_R = crate::BitReader<bool>;
+pub type ICACHERR_R = crate::BitReader;
 #[doc = "Field `ICACHERR` writer - ICACHERR Interrupt Enable"]
-pub type ICACHERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type ICACHERR_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - ERASE Interrupt Enable"]
     #[inline(always)]

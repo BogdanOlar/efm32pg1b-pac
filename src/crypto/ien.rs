@@ -35,13 +35,13 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `INSTRDONE` reader - INSTRDONE Interrupt Enable"]
-pub type INSTRDONE_R = crate::BitReader<bool>;
+pub type INSTRDONE_R = crate::BitReader;
 #[doc = "Field `INSTRDONE` writer - INSTRDONE Interrupt Enable"]
-pub type INSTRDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type INSTRDONE_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `SEQDONE` reader - SEQDONE Interrupt Enable"]
-pub type SEQDONE_R = crate::BitReader<bool>;
+pub type SEQDONE_R = crate::BitReader;
 #[doc = "Field `SEQDONE` writer - SEQDONE Interrupt Enable"]
-pub type SEQDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type SEQDONE_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - INSTRDONE Interrupt Enable"]
     #[inline(always)]

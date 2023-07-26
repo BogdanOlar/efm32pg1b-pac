@@ -35,9 +35,9 @@ impl From<crate::W<FREEZE_SPEC>> for W {
     }
 }
 #[doc = "Field `REGFREEZE` reader - Register Update Freeze"]
-pub type REGFREEZE_R = crate::BitReader<bool>;
+pub type REGFREEZE_R = crate::BitReader;
 #[doc = "Field `REGFREEZE` writer - Register Update Freeze"]
-pub type REGFREEZE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FREEZE_SPEC, bool, O>;
+pub type REGFREEZE_W<'a, const O: u8> = crate::BitWriter<'a, FREEZE_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Register Update Freeze"]
     #[inline(always)]

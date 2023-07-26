@@ -35,35 +35,29 @@ impl From<crate::W<DCDCLNCOMPCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `COMPENR1` reader - Low Noise Mode Compensator R1 Trim Value"]
-pub type COMPENR1_R = crate::FieldReader<u8, u8>;
+pub type COMPENR1_R = crate::FieldReader;
 #[doc = "Field `COMPENR1` writer - Low Noise Mode Compensator R1 Trim Value"]
-pub type COMPENR1_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLNCOMPCTRL_SPEC, u8, u8, 3, O>;
+pub type COMPENR1_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNCOMPCTRL_SPEC, 3, O>;
 #[doc = "Field `COMPENR2` reader - Low Noise Mode Compensator R2 Trim Value"]
-pub type COMPENR2_R = crate::FieldReader<u8, u8>;
+pub type COMPENR2_R = crate::FieldReader;
 #[doc = "Field `COMPENR2` writer - Low Noise Mode Compensator R2 Trim Value"]
-pub type COMPENR2_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLNCOMPCTRL_SPEC, u8, u8, 5, O>;
+pub type COMPENR2_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNCOMPCTRL_SPEC, 5, O>;
 #[doc = "Field `COMPENR3` reader - Low Noise Mode Compensator R3 Trim Value"]
-pub type COMPENR3_R = crate::FieldReader<u8, u8>;
+pub type COMPENR3_R = crate::FieldReader;
 #[doc = "Field `COMPENR3` writer - Low Noise Mode Compensator R3 Trim Value"]
-pub type COMPENR3_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLNCOMPCTRL_SPEC, u8, u8, 4, O>;
+pub type COMPENR3_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNCOMPCTRL_SPEC, 4, O>;
 #[doc = "Field `COMPENC1` reader - Low Noise Mode Compensator C1 Trim Value"]
-pub type COMPENC1_R = crate::FieldReader<u8, u8>;
+pub type COMPENC1_R = crate::FieldReader;
 #[doc = "Field `COMPENC1` writer - Low Noise Mode Compensator C1 Trim Value"]
-pub type COMPENC1_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLNCOMPCTRL_SPEC, u8, u8, 2, O>;
+pub type COMPENC1_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNCOMPCTRL_SPEC, 2, O>;
 #[doc = "Field `COMPENC2` reader - Low Noise Mode Compensator C2 Trim Value"]
-pub type COMPENC2_R = crate::FieldReader<u8, u8>;
+pub type COMPENC2_R = crate::FieldReader;
 #[doc = "Field `COMPENC2` writer - Low Noise Mode Compensator C2 Trim Value"]
-pub type COMPENC2_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLNCOMPCTRL_SPEC, u8, u8, 3, O>;
+pub type COMPENC2_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNCOMPCTRL_SPEC, 3, O>;
 #[doc = "Field `COMPENC3` reader - Low Noise Mode Compensator C3 Trim Value"]
-pub type COMPENC3_R = crate::FieldReader<u8, u8>;
+pub type COMPENC3_R = crate::FieldReader;
 #[doc = "Field `COMPENC3` writer - Low Noise Mode Compensator C3 Trim Value"]
-pub type COMPENC3_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLNCOMPCTRL_SPEC, u8, u8, 4, O>;
+pub type COMPENC3_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNCOMPCTRL_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:2 - Low Noise Mode Compensator R1 Trim Value"]
     #[inline(always)]

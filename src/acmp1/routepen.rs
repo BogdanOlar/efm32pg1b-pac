@@ -35,9 +35,9 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
     }
 }
 #[doc = "Field `OUTPEN` reader - ACMP Output Pin Enable"]
-pub type OUTPEN_R = crate::BitReader<bool>;
+pub type OUTPEN_R = crate::BitReader;
 #[doc = "Field `OUTPEN` writer - ACMP Output Pin Enable"]
-pub type OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - ACMP Output Pin Enable"]
     #[inline(always)]

@@ -35,35 +35,29 @@ impl From<crate::W<HFXOSTEADYSTATECTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `IBTRIMXOCORE` reader - Sets the Steady State Oscillator Core Bias Current."]
-pub type IBTRIMXOCORE_R = crate::FieldReader<u8, u8>;
+pub type IBTRIMXOCORE_R = crate::FieldReader;
 #[doc = "Field `IBTRIMXOCORE` writer - Sets the Steady State Oscillator Core Bias Current."]
-pub type IBTRIMXOCORE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u8, u8, 7, O>;
+pub type IBTRIMXOCORE_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTEADYSTATECTRL_SPEC, 7, O>;
 #[doc = "Field `REGISH` reader - Sets the Steady State Regulator Output Current Level (shunt Regulator)"]
-pub type REGISH_R = crate::FieldReader<u8, u8>;
+pub type REGISH_R = crate::FieldReader;
 #[doc = "Field `REGISH` writer - Sets the Steady State Regulator Output Current Level (shunt Regulator)"]
-pub type REGISH_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u8, u8, 4, O>;
+pub type REGISH_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTEADYSTATECTRL_SPEC, 4, O>;
 #[doc = "Field `CTUNE` reader - Sets Oscillator Tuning Capacitance"]
-pub type CTUNE_R = crate::FieldReader<u16, u16>;
+pub type CTUNE_R = crate::FieldReader<u16>;
 #[doc = "Field `CTUNE` writer - Sets Oscillator Tuning Capacitance"]
-pub type CTUNE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u16, u16, 9, O>;
+pub type CTUNE_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTEADYSTATECTRL_SPEC, 9, O, u16>;
 #[doc = "Field `REGSELILOW` reader - Controls Regulator Minimum Shunt Current Detection Relative to Nominal"]
-pub type REGSELILOW_R = crate::FieldReader<u8, u8>;
+pub type REGSELILOW_R = crate::FieldReader;
 #[doc = "Field `REGSELILOW` writer - Controls Regulator Minimum Shunt Current Detection Relative to Nominal"]
-pub type REGSELILOW_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u8, u8, 2, O>;
+pub type REGSELILOW_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTEADYSTATECTRL_SPEC, 2, O>;
 #[doc = "Field `PEAKDETEN` reader - Enables Oscillator Peak Detectors"]
-pub type PEAKDETEN_R = crate::BitReader<bool>;
+pub type PEAKDETEN_R = crate::BitReader;
 #[doc = "Field `PEAKDETEN` writer - Enables Oscillator Peak Detectors"]
-pub type PEAKDETEN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, bool, O>;
+pub type PEAKDETEN_W<'a, const O: u8> = crate::BitWriter<'a, HFXOSTEADYSTATECTRL_SPEC, O>;
 #[doc = "Field `REGISHUPPER` reader - Set Regulator Output Current Level (shunt Regulator). Ish = 120uA + REGISHUPPER X 120uA"]
-pub type REGISHUPPER_R = crate::FieldReader<u8, u8>;
+pub type REGISHUPPER_R = crate::FieldReader;
 #[doc = "Field `REGISHUPPER` writer - Set Regulator Output Current Level (shunt Regulator). Ish = 120uA + REGISHUPPER X 120uA"]
-pub type REGISHUPPER_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u8, u8, 4, O>;
+pub type REGISHUPPER_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTEADYSTATECTRL_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:6 - Sets the Steady State Oscillator Core Bias Current."]
     #[inline(always)]

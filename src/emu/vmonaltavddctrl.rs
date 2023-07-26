@@ -35,27 +35,25 @@ impl From<crate::W<VMONALTAVDDCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Enable"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONALTAVDDCTRL_SPEC, bool, O>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, VMONALTAVDDCTRL_SPEC, O>;
 #[doc = "Field `RISEWU` reader - Rise Wakeup"]
-pub type RISEWU_R = crate::BitReader<bool>;
+pub type RISEWU_R = crate::BitReader;
 #[doc = "Field `RISEWU` writer - Rise Wakeup"]
-pub type RISEWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONALTAVDDCTRL_SPEC, bool, O>;
+pub type RISEWU_W<'a, const O: u8> = crate::BitWriter<'a, VMONALTAVDDCTRL_SPEC, O>;
 #[doc = "Field `FALLWU` reader - Fall Wakeup"]
-pub type FALLWU_R = crate::BitReader<bool>;
+pub type FALLWU_R = crate::BitReader;
 #[doc = "Field `FALLWU` writer - Fall Wakeup"]
-pub type FALLWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONALTAVDDCTRL_SPEC, bool, O>;
+pub type FALLWU_W<'a, const O: u8> = crate::BitWriter<'a, VMONALTAVDDCTRL_SPEC, O>;
 #[doc = "Field `THRESFINE` reader - Threshold Fine Adjust"]
-pub type THRESFINE_R = crate::FieldReader<u8, u8>;
+pub type THRESFINE_R = crate::FieldReader;
 #[doc = "Field `THRESFINE` writer - Threshold Fine Adjust"]
-pub type THRESFINE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, VMONALTAVDDCTRL_SPEC, u8, u8, 4, O>;
+pub type THRESFINE_W<'a, const O: u8> = crate::FieldWriter<'a, VMONALTAVDDCTRL_SPEC, 4, O>;
 #[doc = "Field `THRESCOARSE` reader - Threshold Coarse Adjust"]
-pub type THRESCOARSE_R = crate::FieldReader<u8, u8>;
+pub type THRESCOARSE_R = crate::FieldReader;
 #[doc = "Field `THRESCOARSE` writer - Threshold Coarse Adjust"]
-pub type THRESCOARSE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, VMONALTAVDDCTRL_SPEC, u8, u8, 4, O>;
+pub type THRESCOARSE_W<'a, const O: u8> = crate::FieldWriter<'a, VMONALTAVDDCTRL_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]

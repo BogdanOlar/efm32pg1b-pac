@@ -35,9 +35,9 @@ impl From<crate::W<CHDONE_SPEC>> for W {
     }
 }
 #[doc = "Field `CHDONE` reader - DMA Channel Linking or Done"]
-pub type CHDONE_R = crate::FieldReader<u8, u8>;
+pub type CHDONE_R = crate::FieldReader;
 #[doc = "Field `CHDONE` writer - DMA Channel Linking or Done"]
-pub type CHDONE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHDONE_SPEC, u8, u8, 8, O>;
+pub type CHDONE_W<'a, const O: u8> = crate::FieldWriter<'a, CHDONE_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - DMA Channel Linking or Done"]
     #[inline(always)]

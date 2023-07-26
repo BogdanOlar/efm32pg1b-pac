@@ -35,7 +35,7 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `WDOGRMODE` reader - WDOG Reset Mode"]
-pub type WDOGRMODE_R = crate::FieldReader<u8, WDOGRMODE_A>;
+pub type WDOGRMODE_R = crate::FieldReader<WDOGRMODE_A>;
 #[doc = "WDOG Reset Mode\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<WDOGRMODE_A> for u8 {
     fn from(variant: WDOGRMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for WDOGRMODE_A {
+    type Ux = u8;
 }
 impl WDOGRMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -89,8 +92,7 @@ impl WDOGRMODE_R {
     }
 }
 #[doc = "Field `WDOGRMODE` writer - WDOG Reset Mode"]
-pub type WDOGRMODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, WDOGRMODE_A, 3, O>;
+pub type WDOGRMODE_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O, WDOGRMODE_A>;
 impl<'a, const O: u8> WDOGRMODE_W<'a, O> {
     #[doc = "Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
     #[inline(always)]
@@ -114,7 +116,7 @@ impl<'a, const O: u8> WDOGRMODE_W<'a, O> {
     }
 }
 #[doc = "Field `LOCKUPRMODE` reader - Core LOCKUP Reset Mode"]
-pub type LOCKUPRMODE_R = crate::FieldReader<u8, LOCKUPRMODE_A>;
+pub type LOCKUPRMODE_R = crate::FieldReader<LOCKUPRMODE_A>;
 #[doc = "Core LOCKUP Reset Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -133,6 +135,9 @@ impl From<LOCKUPRMODE_A> for u8 {
     fn from(variant: LOCKUPRMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LOCKUPRMODE_A {
+    type Ux = u8;
 }
 impl LOCKUPRMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -168,8 +173,7 @@ impl LOCKUPRMODE_R {
     }
 }
 #[doc = "Field `LOCKUPRMODE` writer - Core LOCKUP Reset Mode"]
-pub type LOCKUPRMODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, LOCKUPRMODE_A, 3, O>;
+pub type LOCKUPRMODE_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O, LOCKUPRMODE_A>;
 impl<'a, const O: u8> LOCKUPRMODE_W<'a, O> {
     #[doc = "Reset request is blocked."]
     #[inline(always)]
@@ -193,7 +197,7 @@ impl<'a, const O: u8> LOCKUPRMODE_W<'a, O> {
     }
 }
 #[doc = "Field `SYSRMODE` reader - Core Sysreset Reset Mode"]
-pub type SYSRMODE_R = crate::FieldReader<u8, SYSRMODE_A>;
+pub type SYSRMODE_R = crate::FieldReader<SYSRMODE_A>;
 #[doc = "Core Sysreset Reset Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -212,6 +216,9 @@ impl From<SYSRMODE_A> for u8 {
     fn from(variant: SYSRMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SYSRMODE_A {
+    type Ux = u8;
 }
 impl SYSRMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -247,7 +254,7 @@ impl SYSRMODE_R {
     }
 }
 #[doc = "Field `SYSRMODE` writer - Core Sysreset Reset Mode"]
-pub type SYSRMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, SYSRMODE_A, 3, O>;
+pub type SYSRMODE_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O, SYSRMODE_A>;
 impl<'a, const O: u8> SYSRMODE_W<'a, O> {
     #[doc = "Reset request is blocked."]
     #[inline(always)]
@@ -271,7 +278,7 @@ impl<'a, const O: u8> SYSRMODE_W<'a, O> {
     }
 }
 #[doc = "Field `PINRMODE` reader - PIN Reset Mode"]
-pub type PINRMODE_R = crate::FieldReader<u8, PINRMODE_A>;
+pub type PINRMODE_R = crate::FieldReader<PINRMODE_A>;
 #[doc = "PIN Reset Mode\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -290,6 +297,9 @@ impl From<PINRMODE_A> for u8 {
     fn from(variant: PINRMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PINRMODE_A {
+    type Ux = u8;
 }
 impl PINRMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -325,7 +335,7 @@ impl PINRMODE_R {
     }
 }
 #[doc = "Field `PINRMODE` writer - PIN Reset Mode"]
-pub type PINRMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PINRMODE_A, 3, O>;
+pub type PINRMODE_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O, PINRMODE_A>;
 impl<'a, const O: u8> PINRMODE_W<'a, O> {
     #[doc = "Reset request is blocked."]
     #[inline(always)]
@@ -349,9 +359,9 @@ impl<'a, const O: u8> PINRMODE_W<'a, O> {
     }
 }
 #[doc = "Field `RESETSTATE` reader - System Software Reset State"]
-pub type RESETSTATE_R = crate::FieldReader<u8, u8>;
+pub type RESETSTATE_R = crate::FieldReader;
 #[doc = "Field `RESETSTATE` writer - System Software Reset State"]
-pub type RESETSTATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, O>;
+pub type RESETSTATE_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 0:2 - WDOG Reset Mode"]
     #[inline(always)]

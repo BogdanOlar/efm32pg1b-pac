@@ -14,27 +14,27 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `OF` reader - Overflow Interrupt Flag"]
-pub type OF_R = crate::BitReader<bool>;
+pub type OF_R = crate::BitReader;
 #[doc = "Field `UF` reader - Underflow Interrupt Flag"]
-pub type UF_R = crate::BitReader<bool>;
+pub type UF_R = crate::BitReader;
 #[doc = "Field `DIRCHG` reader - Direction Change Detect Interrupt Flag"]
-pub type DIRCHG_R = crate::BitReader<bool>;
+pub type DIRCHG_R = crate::BitReader;
 #[doc = "Field `CC0` reader - CC Channel 0 Interrupt Flag"]
-pub type CC0_R = crate::BitReader<bool>;
+pub type CC0_R = crate::BitReader;
 #[doc = "Field `CC1` reader - CC Channel 1 Interrupt Flag"]
-pub type CC1_R = crate::BitReader<bool>;
+pub type CC1_R = crate::BitReader;
 #[doc = "Field `CC2` reader - CC Channel 2 Interrupt Flag"]
-pub type CC2_R = crate::BitReader<bool>;
+pub type CC2_R = crate::BitReader;
 #[doc = "Field `CC3` reader - CC Channel 3 Interrupt Flag"]
-pub type CC3_R = crate::BitReader<bool>;
+pub type CC3_R = crate::BitReader;
 #[doc = "Field `ICBOF0` reader - CC Channel 0 Input Capture Buffer Overflow Interrupt Flag"]
-pub type ICBOF0_R = crate::BitReader<bool>;
+pub type ICBOF0_R = crate::BitReader;
 #[doc = "Field `ICBOF1` reader - CC Channel 1 Input Capture Buffer Overflow Interrupt Flag"]
-pub type ICBOF1_R = crate::BitReader<bool>;
+pub type ICBOF1_R = crate::BitReader;
 #[doc = "Field `ICBOF2` reader - CC Channel 2 Input Capture Buffer Overflow Interrupt Flag"]
-pub type ICBOF2_R = crate::BitReader<bool>;
+pub type ICBOF2_R = crate::BitReader;
 #[doc = "Field `ICBOF3` reader - CC Channel 3 Input Capture Buffer Overflow Interrupt Flag"]
-pub type ICBOF3_R = crate::BitReader<bool>;
+pub type ICBOF3_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Overflow Interrupt Flag"]
     #[inline(always)]

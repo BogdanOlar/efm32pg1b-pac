@@ -35,9 +35,9 @@ impl From<crate::W<CHEN_SPEC>> for W {
     }
 }
 #[doc = "Field `CHEN` reader - Channel Enables"]
-pub type CHEN_R = crate::FieldReader<u8, u8>;
+pub type CHEN_R = crate::FieldReader;
 #[doc = "Field `CHEN` writer - Channel Enables"]
-pub type CHEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHEN_SPEC, u8, u8, 8, O>;
+pub type CHEN_W<'a, const O: u8> = crate::FieldWriter<'a, CHEN_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Channel Enables"]
     #[inline(always)]

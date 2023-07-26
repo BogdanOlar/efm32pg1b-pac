@@ -14,17 +14,17 @@ impl From<crate::R<STATE_SPEC>> for R {
     }
 }
 #[doc = "Field `BUSY` reader - Bus Busy"]
-pub type BUSY_R = crate::BitReader<bool>;
+pub type BUSY_R = crate::BitReader;
 #[doc = "Field `MASTER` reader - Master"]
-pub type MASTER_R = crate::BitReader<bool>;
+pub type MASTER_R = crate::BitReader;
 #[doc = "Field `TRANSMITTER` reader - Transmitter"]
-pub type TRANSMITTER_R = crate::BitReader<bool>;
+pub type TRANSMITTER_R = crate::BitReader;
 #[doc = "Field `NACKED` reader - Nack Received"]
-pub type NACKED_R = crate::BitReader<bool>;
+pub type NACKED_R = crate::BitReader;
 #[doc = "Field `BUSHOLD` reader - Bus Held"]
-pub type BUSHOLD_R = crate::BitReader<bool>;
+pub type BUSHOLD_R = crate::BitReader;
 #[doc = "Field `STATE` reader - Transmission State"]
-pub type STATE_R = crate::FieldReader<u8, STATE_A>;
+pub type STATE_R = crate::FieldReader<STATE_A>;
 #[doc = "Transmission State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -49,6 +49,9 @@ impl From<STATE_A> for u8 {
     fn from(variant: STATE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STATE_A {
+    type Ux = u8;
 }
 impl STATE_R {
     #[doc = "Get enumerated values variant"]

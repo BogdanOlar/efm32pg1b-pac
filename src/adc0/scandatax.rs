@@ -14,9 +14,9 @@ impl From<crate::R<SCANDATAX_SPEC>> for R {
     }
 }
 #[doc = "Field `DATA` reader - Scan Conversion Result Data"]
-pub type DATA_R = crate::FieldReader<u16, u16>;
+pub type DATA_R = crate::FieldReader<u16>;
 #[doc = "Field `SCANINPUTID` reader - Scan Conversion Input ID"]
-pub type SCANINPUTID_R = crate::FieldReader<u8, u8>;
+pub type SCANINPUTID_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:15 - Scan Conversion Result Data"]
     #[inline(always)]

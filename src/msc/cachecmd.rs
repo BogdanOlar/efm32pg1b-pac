@@ -20,11 +20,11 @@ impl From<crate::W<CACHECMD_SPEC>> for W {
     }
 }
 #[doc = "Field `INVCACHE` writer - Invalidate Instruction Cache"]
-pub type INVCACHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CACHECMD_SPEC, bool, O>;
+pub type INVCACHE_W<'a, const O: u8> = crate::BitWriter<'a, CACHECMD_SPEC, O>;
 #[doc = "Field `STARTPC` writer - Start Performance Counters"]
-pub type STARTPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CACHECMD_SPEC, bool, O>;
+pub type STARTPC_W<'a, const O: u8> = crate::BitWriter<'a, CACHECMD_SPEC, O>;
 #[doc = "Field `STOPPC` writer - Stop Performance Counters"]
-pub type STOPPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CACHECMD_SPEC, bool, O>;
+pub type STOPPC_W<'a, const O: u8> = crate::BitWriter<'a, CACHECMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Invalidate Instruction Cache"]
     #[inline(always)]

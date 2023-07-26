@@ -14,9 +14,9 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `DONE` reader - DMA Structure Operation Done Interrupt Flag"]
-pub type DONE_R = crate::FieldReader<u8, u8>;
+pub type DONE_R = crate::FieldReader;
 #[doc = "Field `ERROR` reader - Transfer Error Interrupt Flag"]
-pub type ERROR_R = crate::BitReader<bool>;
+pub type ERROR_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:7 - DMA Structure Operation Done Interrupt Flag"]
     #[inline(always)]

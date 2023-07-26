@@ -35,9 +35,9 @@ impl From<crate::W<DATA0XOR_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA0XOR` reader - XOR Data 0 Access"]
-pub type DATA0XOR_R = crate::FieldReader<u32, u32>;
+pub type DATA0XOR_R = crate::FieldReader<u32>;
 #[doc = "Field `DATA0XOR` writer - XOR Data 0 Access"]
-pub type DATA0XOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATA0XOR_SPEC, u32, u32, 32, O>;
+pub type DATA0XOR_W<'a, const O: u8> = crate::FieldWriter<'a, DATA0XOR_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - XOR Data 0 Access"]
     #[inline(always)]

@@ -35,29 +35,29 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - CRC Functionality Enable"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - CRC Functionality Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `POLYSEL` reader - Polynomial Select"]
-pub type POLYSEL_R = crate::BitReader<bool>;
+pub type POLYSEL_R = crate::BitReader;
 #[doc = "Field `POLYSEL` writer - Polynomial Select"]
-pub type POLYSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type POLYSEL_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `BYTEMODE` reader - Byte Mode Enable"]
-pub type BYTEMODE_R = crate::BitReader<bool>;
+pub type BYTEMODE_R = crate::BitReader;
 #[doc = "Field `BYTEMODE` writer - Byte Mode Enable"]
-pub type BYTEMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type BYTEMODE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `BITREVERSE` reader - Byte-level Bit Reverse Enable"]
-pub type BITREVERSE_R = crate::BitReader<bool>;
+pub type BITREVERSE_R = crate::BitReader;
 #[doc = "Field `BITREVERSE` writer - Byte-level Bit Reverse Enable"]
-pub type BITREVERSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type BITREVERSE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `BYTEREVERSE` reader - Byte Reverse Mode"]
-pub type BYTEREVERSE_R = crate::BitReader<bool>;
+pub type BYTEREVERSE_R = crate::BitReader;
 #[doc = "Field `BYTEREVERSE` writer - Byte Reverse Mode"]
-pub type BYTEREVERSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type BYTEREVERSE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `AUTOINIT` reader - Auto Init Enable"]
-pub type AUTOINIT_R = crate::BitReader<bool>;
+pub type AUTOINIT_R = crate::BitReader;
 #[doc = "Field `AUTOINIT` writer - Auto Init Enable"]
-pub type AUTOINIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type AUTOINIT_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - CRC Functionality Enable"]
     #[inline(always)]

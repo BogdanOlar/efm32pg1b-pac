@@ -14,19 +14,19 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `VMONRDY` reader - VMON Ready"]
-pub type VMONRDY_R = crate::BitReader<bool>;
+pub type VMONRDY_R = crate::BitReader;
 #[doc = "Field `VMONAVDD` reader - VMON AVDD Channel"]
-pub type VMONAVDD_R = crate::BitReader<bool>;
+pub type VMONAVDD_R = crate::BitReader;
 #[doc = "Field `VMONALTAVDD` reader - Alternate VMON AVDD Channel"]
-pub type VMONALTAVDD_R = crate::BitReader<bool>;
+pub type VMONALTAVDD_R = crate::BitReader;
 #[doc = "Field `VMONDVDD` reader - VMON DVDD Channel"]
-pub type VMONDVDD_R = crate::BitReader<bool>;
+pub type VMONDVDD_R = crate::BitReader;
 #[doc = "Field `VMONIO0` reader - VMON IOVDD0 Channel"]
-pub type VMONIO0_R = crate::BitReader<bool>;
+pub type VMONIO0_R = crate::BitReader;
 #[doc = "Field `VMONFVDD` reader - VMON VDDFLASH Channel"]
-pub type VMONFVDD_R = crate::BitReader<bool>;
+pub type VMONFVDD_R = crate::BitReader;
 #[doc = "Field `EM4IORET` reader - IO Retention Status"]
-pub type EM4IORET_R = crate::BitReader<bool>;
+pub type EM4IORET_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - VMON Ready"]
     #[inline(always)]

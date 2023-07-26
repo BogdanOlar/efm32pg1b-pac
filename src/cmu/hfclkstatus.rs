@@ -14,7 +14,7 @@ impl From<crate::R<HFCLKSTATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `SELECTED` reader - HFCLK Selected"]
-pub type SELECTED_R = crate::FieldReader<u8, SELECTED_A>;
+pub type SELECTED_R = crate::FieldReader<SELECTED_A>;
 #[doc = "HFCLK Selected\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -33,6 +33,9 @@ impl From<SELECTED_A> for u8 {
     fn from(variant: SELECTED_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SELECTED_A {
+    type Ux = u8;
 }
 impl SELECTED_R {
     #[doc = "Get enumerated values variant"]

@@ -35,9 +35,9 @@ impl From<crate::W<DBGHALT_SPEC>> for W {
     }
 }
 #[doc = "Field `DBGHALT` reader - DMA Debug Halt"]
-pub type DBGHALT_R = crate::FieldReader<u8, u8>;
+pub type DBGHALT_R = crate::FieldReader;
 #[doc = "Field `DBGHALT` writer - DMA Debug Halt"]
-pub type DBGHALT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DBGHALT_SPEC, u8, u8, 8, O>;
+pub type DBGHALT_W<'a, const O: u8> = crate::FieldWriter<'a, DBGHALT_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - DMA Debug Halt"]
     #[inline(always)]

@@ -35,29 +35,29 @@ impl From<crate::W<EXTILEVEL_SPEC>> for W {
     }
 }
 #[doc = "Field `EM4WU0` reader - EM4 Wake Up Level for EM4WU0 Pin"]
-pub type EM4WU0_R = crate::BitReader<bool>;
+pub type EM4WU0_R = crate::BitReader;
 #[doc = "Field `EM4WU0` writer - EM4 Wake Up Level for EM4WU0 Pin"]
-pub type EM4WU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
+pub type EM4WU0_W<'a, const O: u8> = crate::BitWriter<'a, EXTILEVEL_SPEC, O>;
 #[doc = "Field `EM4WU1` reader - EM4 Wake Up Level for EM4WU1 Pin"]
-pub type EM4WU1_R = crate::BitReader<bool>;
+pub type EM4WU1_R = crate::BitReader;
 #[doc = "Field `EM4WU1` writer - EM4 Wake Up Level for EM4WU1 Pin"]
-pub type EM4WU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
+pub type EM4WU1_W<'a, const O: u8> = crate::BitWriter<'a, EXTILEVEL_SPEC, O>;
 #[doc = "Field `EM4WU4` reader - EM4 Wake Up Level for EM4WU4 Pin"]
-pub type EM4WU4_R = crate::BitReader<bool>;
+pub type EM4WU4_R = crate::BitReader;
 #[doc = "Field `EM4WU4` writer - EM4 Wake Up Level for EM4WU4 Pin"]
-pub type EM4WU4_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
+pub type EM4WU4_W<'a, const O: u8> = crate::BitWriter<'a, EXTILEVEL_SPEC, O>;
 #[doc = "Field `EM4WU8` reader - EM4 Wake Up Level for EM4WU8 Pin"]
-pub type EM4WU8_R = crate::BitReader<bool>;
+pub type EM4WU8_R = crate::BitReader;
 #[doc = "Field `EM4WU8` writer - EM4 Wake Up Level for EM4WU8 Pin"]
-pub type EM4WU8_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
+pub type EM4WU8_W<'a, const O: u8> = crate::BitWriter<'a, EXTILEVEL_SPEC, O>;
 #[doc = "Field `EM4WU9` reader - EM4 Wake Up Level for EM4WU9 Pin"]
-pub type EM4WU9_R = crate::BitReader<bool>;
+pub type EM4WU9_R = crate::BitReader;
 #[doc = "Field `EM4WU9` writer - EM4 Wake Up Level for EM4WU9 Pin"]
-pub type EM4WU9_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
+pub type EM4WU9_W<'a, const O: u8> = crate::BitWriter<'a, EXTILEVEL_SPEC, O>;
 #[doc = "Field `EM4WU12` reader - EM4 Wake Up Level for EM4WU12 Pin"]
-pub type EM4WU12_R = crate::BitReader<bool>;
+pub type EM4WU12_R = crate::BitReader;
 #[doc = "Field `EM4WU12` writer - EM4 Wake Up Level for EM4WU12 Pin"]
-pub type EM4WU12_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTILEVEL_SPEC, bool, O>;
+pub type EM4WU12_W<'a, const O: u8> = crate::BitWriter<'a, EXTILEVEL_SPEC, O>;
 impl R {
     #[doc = "Bit 16 - EM4 Wake Up Level for EM4WU0 Pin"]
     #[inline(always)]

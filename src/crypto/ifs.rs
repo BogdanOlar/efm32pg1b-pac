@@ -20,9 +20,9 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `INSTRDONE` writer - Set INSTRDONE Interrupt Flag"]
-pub type INSTRDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type INSTRDONE_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `SEQDONE` writer - Set SEQDONE Interrupt Flag"]
-pub type SEQDONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type SEQDONE_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Set INSTRDONE Interrupt Flag"]
     #[inline(always)]

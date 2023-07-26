@@ -35,11 +35,11 @@ impl From<crate::W<CH6_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SIGSEL` reader - Signal Select"]
-pub type SIGSEL_R = crate::FieldReader<u8, u8>;
+pub type SIGSEL_R = crate::FieldReader;
 #[doc = "Field `SIGSEL` writer - Signal Select"]
-pub type SIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH6_CTRL_SPEC, u8, u8, 3, O>;
+pub type SIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CH6_CTRL_SPEC, 3, O>;
 #[doc = "Field `SOURCESEL` reader - Source Select"]
-pub type SOURCESEL_R = crate::FieldReader<u8, SOURCESEL_A>;
+pub type SOURCESEL_R = crate::FieldReader<SOURCESEL_A>;
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -86,6 +86,9 @@ impl From<SOURCESEL_A> for u8 {
     fn from(variant: SOURCESEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SOURCESEL_A {
+    type Ux = u8;
 }
 impl SOURCESEL_R {
     #[doc = "Get enumerated values variant"]
@@ -205,8 +208,7 @@ impl SOURCESEL_R {
     }
 }
 #[doc = "Field `SOURCESEL` writer - Source Select"]
-pub type SOURCESEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CH6_CTRL_SPEC, u8, SOURCESEL_A, 7, O>;
+pub type SOURCESEL_W<'a, const O: u8> = crate::FieldWriter<'a, CH6_CTRL_SPEC, 7, O, SOURCESEL_A>;
 impl<'a, const O: u8> SOURCESEL_W<'a, O> {
     #[doc = "No source selected"]
     #[inline(always)]
@@ -300,7 +302,7 @@ impl<'a, const O: u8> SOURCESEL_W<'a, O> {
     }
 }
 #[doc = "Field `EDSEL` reader - Edge Detect Select"]
-pub type EDSEL_R = crate::FieldReader<u8, EDSEL_A>;
+pub type EDSEL_R = crate::FieldReader<EDSEL_A>;
 #[doc = "Edge Detect Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -319,6 +321,9 @@ impl From<EDSEL_A> for u8 {
     fn from(variant: EDSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EDSEL_A {
+    type Ux = u8;
 }
 impl EDSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -354,8 +359,7 @@ impl EDSEL_R {
     }
 }
 #[doc = "Field `EDSEL` writer - Edge Detect Select"]
-pub type EDSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CH6_CTRL_SPEC, u8, EDSEL_A, 2, O>;
+pub type EDSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CH6_CTRL_SPEC, 2, O, EDSEL_A>;
 impl<'a, const O: u8> EDSEL_W<'a, O> {
     #[doc = "Signal is left as it is"]
     #[inline(always)]
@@ -379,25 +383,25 @@ impl<'a, const O: u8> EDSEL_W<'a, O> {
     }
 }
 #[doc = "Field `STRETCH` reader - Stretch Channel Output"]
-pub type STRETCH_R = crate::BitReader<bool>;
+pub type STRETCH_R = crate::BitReader;
 #[doc = "Field `STRETCH` writer - Stretch Channel Output"]
-pub type STRETCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH6_CTRL_SPEC, bool, O>;
+pub type STRETCH_W<'a, const O: u8> = crate::BitWriter<'a, CH6_CTRL_SPEC, O>;
 #[doc = "Field `INV` reader - Invert Channel"]
-pub type INV_R = crate::BitReader<bool>;
+pub type INV_R = crate::BitReader;
 #[doc = "Field `INV` writer - Invert Channel"]
-pub type INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH6_CTRL_SPEC, bool, O>;
+pub type INV_W<'a, const O: u8> = crate::BitWriter<'a, CH6_CTRL_SPEC, O>;
 #[doc = "Field `ORPREV` reader - Or Previous"]
-pub type ORPREV_R = crate::BitReader<bool>;
+pub type ORPREV_R = crate::BitReader;
 #[doc = "Field `ORPREV` writer - Or Previous"]
-pub type ORPREV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH6_CTRL_SPEC, bool, O>;
+pub type ORPREV_W<'a, const O: u8> = crate::BitWriter<'a, CH6_CTRL_SPEC, O>;
 #[doc = "Field `ANDNEXT` reader - And Next"]
-pub type ANDNEXT_R = crate::BitReader<bool>;
+pub type ANDNEXT_R = crate::BitReader;
 #[doc = "Field `ANDNEXT` writer - And Next"]
-pub type ANDNEXT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH6_CTRL_SPEC, bool, O>;
+pub type ANDNEXT_W<'a, const O: u8> = crate::BitWriter<'a, CH6_CTRL_SPEC, O>;
 #[doc = "Field `ASYNCREFL` reader - Asynchronous Reflex"]
-pub type ASYNCREFL_R = crate::BitReader<bool>;
+pub type ASYNCREFL_R = crate::BitReader;
 #[doc = "Field `ASYNCREFL` writer - Asynchronous Reflex"]
-pub type ASYNCREFL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH6_CTRL_SPEC, bool, O>;
+pub type ASYNCREFL_W<'a, const O: u8> = crate::BitWriter<'a, CH6_CTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]

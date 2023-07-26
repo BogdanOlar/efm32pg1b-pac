@@ -35,7 +35,7 @@ impl From<crate::W<WAC_SPEC>> for W {
     }
 }
 #[doc = "Field `MODULUS` reader - Modular Operation Modulus"]
-pub type MODULUS_R = crate::FieldReader<u8, MODULUS_A>;
+pub type MODULUS_R = crate::FieldReader<MODULUS_A>;
 #[doc = "Modular Operation Modulus\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -76,6 +76,9 @@ impl From<MODULUS_A> for u8 {
     fn from(variant: MODULUS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODULUS_A {
+    type Ux = u8;
 }
 impl MODULUS_R {
     #[doc = "Get enumerated values variant"]
@@ -177,7 +180,7 @@ impl MODULUS_R {
     }
 }
 #[doc = "Field `MODULUS` writer - Modular Operation Modulus"]
-pub type MODULUS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WAC_SPEC, u8, MODULUS_A, 4, O>;
+pub type MODULUS_W<'a, const O: u8> = crate::FieldWriter<'a, WAC_SPEC, 4, O, MODULUS_A>;
 impl<'a, const O: u8> MODULUS_W<'a, O> {
     #[doc = "Generic modulus. p = 2^256"]
     #[inline(always)]
@@ -256,11 +259,11 @@ impl<'a, const O: u8> MODULUS_W<'a, O> {
     }
 }
 #[doc = "Field `MODOP` reader - Modular Operation Field Type"]
-pub type MODOP_R = crate::BitReader<bool>;
+pub type MODOP_R = crate::BitReader;
 #[doc = "Field `MODOP` writer - Modular Operation Field Type"]
-pub type MODOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, WAC_SPEC, bool, O>;
+pub type MODOP_W<'a, const O: u8> = crate::BitWriter<'a, WAC_SPEC, O>;
 #[doc = "Field `MULWIDTH` reader - Multiply Width"]
-pub type MULWIDTH_R = crate::FieldReader<u8, MULWIDTH_A>;
+pub type MULWIDTH_R = crate::FieldReader<MULWIDTH_A>;
 #[doc = "Multiply Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -277,6 +280,9 @@ impl From<MULWIDTH_A> for u8 {
     fn from(variant: MULWIDTH_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MULWIDTH_A {
+    type Ux = u8;
 }
 impl MULWIDTH_R {
     #[doc = "Get enumerated values variant"]
@@ -306,7 +312,7 @@ impl MULWIDTH_R {
     }
 }
 #[doc = "Field `MULWIDTH` writer - Multiply Width"]
-pub type MULWIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WAC_SPEC, u8, MULWIDTH_A, 2, O>;
+pub type MULWIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, WAC_SPEC, 2, O, MULWIDTH_A>;
 impl<'a, const O: u8> MULWIDTH_W<'a, O> {
     #[doc = "Multiply 256 bits"]
     #[inline(always)]
@@ -325,7 +331,7 @@ impl<'a, const O: u8> MULWIDTH_W<'a, O> {
     }
 }
 #[doc = "Field `RESULTWIDTH` reader - Result Width"]
-pub type RESULTWIDTH_R = crate::FieldReader<u8, RESULTWIDTH_A>;
+pub type RESULTWIDTH_R = crate::FieldReader<RESULTWIDTH_A>;
 #[doc = "Result Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -342,6 +348,9 @@ impl From<RESULTWIDTH_A> for u8 {
     fn from(variant: RESULTWIDTH_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RESULTWIDTH_A {
+    type Ux = u8;
 }
 impl RESULTWIDTH_R {
     #[doc = "Get enumerated values variant"]
@@ -371,8 +380,7 @@ impl RESULTWIDTH_R {
     }
 }
 #[doc = "Field `RESULTWIDTH` writer - Result Width"]
-pub type RESULTWIDTH_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, WAC_SPEC, u8, RESULTWIDTH_A, 2, O>;
+pub type RESULTWIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, WAC_SPEC, 2, O, RESULTWIDTH_A>;
 impl<'a, const O: u8> RESULTWIDTH_W<'a, O> {
     #[doc = "Results have 256 bits"]
     #[inline(always)]

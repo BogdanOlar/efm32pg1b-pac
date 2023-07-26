@@ -35,9 +35,9 @@ impl From<crate::W<DDATA4_SPEC>> for W {
     }
 }
 #[doc = "Field `DDATA4` reader - Double Data 0 Access"]
-pub type DDATA4_R = crate::FieldReader<u32, u32>;
+pub type DDATA4_R = crate::FieldReader<u32>;
 #[doc = "Field `DDATA4` writer - Double Data 0 Access"]
-pub type DDATA4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DDATA4_SPEC, u32, u32, 32, O>;
+pub type DDATA4_W<'a, const O: u8> = crate::FieldWriter<'a, DDATA4_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Double Data 0 Access"]
     #[inline(always)]

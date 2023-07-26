@@ -14,9 +14,9 @@ impl From<crate::R<COMBCNT_SPEC>> for R {
     }
 }
 #[doc = "Field `PRECNT` reader - Pre-Counter Value"]
-pub type PRECNT_R = crate::FieldReader<u16, u16>;
+pub type PRECNT_R = crate::FieldReader<u16>;
 #[doc = "Field `CNTLSB` reader - Counter Value"]
-pub type CNTLSB_R = crate::FieldReader<u32, u32>;
+pub type CNTLSB_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:14 - Pre-Counter Value"]
     #[inline(always)]

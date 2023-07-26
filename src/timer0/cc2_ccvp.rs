@@ -14,7 +14,7 @@ impl From<crate::R<CC2_CCVP_SPEC>> for R {
     }
 }
 #[doc = "Field `CCVP` reader - CC Channel Value Peek"]
-pub type CCVP_R = crate::FieldReader<u16, u16>;
+pub type CCVP_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - CC Channel Value Peek"]
     #[inline(always)]

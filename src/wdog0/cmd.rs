@@ -20,7 +20,7 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `CLEAR` writer - Watchdog Timer Clear"]
-pub type CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Watchdog Timer Clear"]
     #[inline(always)]

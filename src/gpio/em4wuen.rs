@@ -35,9 +35,9 @@ impl From<crate::W<EM4WUEN_SPEC>> for W {
     }
 }
 #[doc = "Field `EM4WUEN` reader - EM4 Wake Up Enable"]
-pub type EM4WUEN_R = crate::FieldReader<u16, u16>;
+pub type EM4WUEN_R = crate::FieldReader<u16>;
 #[doc = "Field `EM4WUEN` writer - EM4 Wake Up Enable"]
-pub type EM4WUEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EM4WUEN_SPEC, u16, u16, 16, O>;
+pub type EM4WUEN_W<'a, const O: u8> = crate::FieldWriter<'a, EM4WUEN_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 16:31 - EM4 Wake Up Enable"]
     #[inline(always)]

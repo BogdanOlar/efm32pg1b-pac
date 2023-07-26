@@ -71,7 +71,7 @@ impl DBG_R {
     }
 }
 #[doc = "Field `DBG` writer - Debug Trace Clock"]
-pub type DBG_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBGCLKSEL_SPEC, DBG_A, O>;
+pub type DBG_W<'a, const O: u8> = crate::BitWriter<'a, DBGCLKSEL_SPEC, O, DBG_A>;
 impl<'a, const O: u8> DBG_W<'a, O> {
     #[doc = "AUXHFRCO is the debug trace clock"]
     #[inline(always)]

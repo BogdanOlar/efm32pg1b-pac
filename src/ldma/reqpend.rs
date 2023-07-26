@@ -14,7 +14,7 @@ impl From<crate::R<REQPEND_SPEC>> for R {
     }
 }
 #[doc = "Field `REQPEND` reader - DMA Requests Pending"]
-pub type REQPEND_R = crate::FieldReader<u8, u8>;
+pub type REQPEND_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - DMA Requests Pending"]
     #[inline(always)]

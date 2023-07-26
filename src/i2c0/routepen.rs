@@ -35,13 +35,13 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
     }
 }
 #[doc = "Field `SDAPEN` reader - SDA Pin Enable"]
-pub type SDAPEN_R = crate::BitReader<bool>;
+pub type SDAPEN_R = crate::BitReader;
 #[doc = "Field `SDAPEN` writer - SDA Pin Enable"]
-pub type SDAPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type SDAPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `SCLPEN` reader - SCL Pin Enable"]
-pub type SCLPEN_R = crate::BitReader<bool>;
+pub type SCLPEN_R = crate::BitReader;
 #[doc = "Field `SCLPEN` writer - SCL Pin Enable"]
-pub type SCLPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type SCLPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - SDA Pin Enable"]
     #[inline(always)]

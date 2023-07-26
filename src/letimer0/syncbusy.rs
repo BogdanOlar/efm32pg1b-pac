@@ -14,7 +14,7 @@ impl From<crate::R<SYNCBUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `CMD` reader - CMD Register Busy"]
-pub type CMD_R = crate::BitReader<bool>;
+pub type CMD_R = crate::BitReader;
 impl R {
     #[doc = "Bit 1 - CMD Register Busy"]
     #[inline(always)]

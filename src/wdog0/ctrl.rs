@@ -35,39 +35,39 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Watchdog Timer Enable"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Watchdog Timer Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<bool>;
+pub type DEBUGRUN_R = crate::BitReader;
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `EM2RUN` reader - Energy Mode 2 Run Enable"]
-pub type EM2RUN_R = crate::BitReader<bool>;
+pub type EM2RUN_R = crate::BitReader;
 #[doc = "Field `EM2RUN` writer - Energy Mode 2 Run Enable"]
-pub type EM2RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type EM2RUN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `EM3RUN` reader - Energy Mode 3 Run Enable"]
-pub type EM3RUN_R = crate::BitReader<bool>;
+pub type EM3RUN_R = crate::BitReader;
 #[doc = "Field `EM3RUN` writer - Energy Mode 3 Run Enable"]
-pub type EM3RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type EM3RUN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `LOCK` reader - Configuration Lock"]
-pub type LOCK_R = crate::BitReader<bool>;
+pub type LOCK_R = crate::BitReader;
 #[doc = "Field `LOCK` writer - Configuration Lock"]
-pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `EM4BLOCK` reader - Energy Mode 4 Block"]
-pub type EM4BLOCK_R = crate::BitReader<bool>;
+pub type EM4BLOCK_R = crate::BitReader;
 #[doc = "Field `EM4BLOCK` writer - Energy Mode 4 Block"]
-pub type EM4BLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type EM4BLOCK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SWOSCBLOCK` reader - Software Oscillator Disable Block"]
-pub type SWOSCBLOCK_R = crate::BitReader<bool>;
+pub type SWOSCBLOCK_R = crate::BitReader;
 #[doc = "Field `SWOSCBLOCK` writer - Software Oscillator Disable Block"]
-pub type SWOSCBLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SWOSCBLOCK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `PERSEL` reader - Watchdog Timeout Period Select"]
-pub type PERSEL_R = crate::FieldReader<u8, u8>;
+pub type PERSEL_R = crate::FieldReader;
 #[doc = "Field `PERSEL` writer - Watchdog Timeout Period Select"]
-pub type PERSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 4, O>;
+pub type PERSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 4, O>;
 #[doc = "Field `CLKSEL` reader - Watchdog Clock Select"]
-pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
+pub type CLKSEL_R = crate::FieldReader<CLKSEL_A>;
 #[doc = "Watchdog Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -84,6 +84,9 @@ impl From<CLKSEL_A> for u8 {
     fn from(variant: CLKSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKSEL_A {
+    type Ux = u8;
 }
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -113,7 +116,7 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Watchdog Clock Select"]
-pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKSEL_A, 2, O>;
+pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O, CLKSEL_A>;
 impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "ULFRCO"]
     #[inline(always)]
@@ -132,21 +135,21 @@ impl<'a, const O: u8> CLKSEL_W<'a, O> {
     }
 }
 #[doc = "Field `WARNSEL` reader - Watchdog Timeout Period Select"]
-pub type WARNSEL_R = crate::FieldReader<u8, u8>;
+pub type WARNSEL_R = crate::FieldReader;
 #[doc = "Field `WARNSEL` writer - Watchdog Timeout Period Select"]
-pub type WARNSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, O>;
+pub type WARNSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O>;
 #[doc = "Field `WINSEL` reader - Watchdog Illegal Window Select"]
-pub type WINSEL_R = crate::FieldReader<u8, u8>;
+pub type WINSEL_R = crate::FieldReader;
 #[doc = "Field `WINSEL` writer - Watchdog Illegal Window Select"]
-pub type WINSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 3, O>;
+pub type WINSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O>;
 #[doc = "Field `CLRSRC` reader - Watchdog Clear Source"]
-pub type CLRSRC_R = crate::BitReader<bool>;
+pub type CLRSRC_R = crate::BitReader;
 #[doc = "Field `CLRSRC` writer - Watchdog Clear Source"]
-pub type CLRSRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type CLRSRC_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `WDOGRSTDIS` reader - Watchdog Reset Disable"]
-pub type WDOGRSTDIS_R = crate::BitReader<bool>;
+pub type WDOGRSTDIS_R = crate::BitReader;
 #[doc = "Field `WDOGRSTDIS` writer - Watchdog Reset Disable"]
-pub type WDOGRSTDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type WDOGRSTDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Watchdog Timer Enable"]
     #[inline(always)]

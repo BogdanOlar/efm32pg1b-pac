@@ -14,7 +14,7 @@ impl From<crate::R<SCANDATAP_SPEC>> for R {
     }
 }
 #[doc = "Field `DATAP` reader - Scan Conversion Result Data Peek"]
-pub type DATAP_R = crate::FieldReader<u32, u32>;
+pub type DATAP_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Scan Conversion Result Data Peek"]
     #[inline(always)]

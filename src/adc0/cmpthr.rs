@@ -35,13 +35,13 @@ impl From<crate::W<CMPTHR_SPEC>> for W {
     }
 }
 #[doc = "Field `ADLT` reader - Less Than Compare Threshold"]
-pub type ADLT_R = crate::FieldReader<u16, u16>;
+pub type ADLT_R = crate::FieldReader<u16>;
 #[doc = "Field `ADLT` writer - Less Than Compare Threshold"]
-pub type ADLT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPTHR_SPEC, u16, u16, 16, O>;
+pub type ADLT_W<'a, const O: u8> = crate::FieldWriter<'a, CMPTHR_SPEC, 16, O, u16>;
 #[doc = "Field `ADGT` reader - Greater Than Compare Threshold"]
-pub type ADGT_R = crate::FieldReader<u16, u16>;
+pub type ADGT_R = crate::FieldReader<u16>;
 #[doc = "Field `ADGT` writer - Greater Than Compare Threshold"]
-pub type ADGT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPTHR_SPEC, u16, u16, 16, O>;
+pub type ADGT_W<'a, const O: u8> = crate::FieldWriter<'a, CMPTHR_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Less Than Compare Threshold"]
     #[inline(always)]

@@ -20,9 +20,9 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `LCNTIM` writer - Load CNT Immediately"]
-pub type LCNTIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type LCNTIM_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `LTOPBIM` writer - Load TOPB Immediately"]
-pub type LTOPBIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type LTOPBIM_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Load CNT Immediately"]
     #[inline(always)]

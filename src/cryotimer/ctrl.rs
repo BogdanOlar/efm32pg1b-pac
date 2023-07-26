@@ -35,15 +35,15 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Enable CRYOTIMER"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Enable CRYOTIMER"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<bool>;
+pub type DEBUGRUN_R = crate::BitReader;
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `OSCSEL` reader - Select Low Frequency Oscillator"]
-pub type OSCSEL_R = crate::FieldReader<u8, OSCSEL_A>;
+pub type OSCSEL_R = crate::FieldReader<OSCSEL_A>;
 #[doc = "Select Low Frequency Oscillator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -60,6 +60,9 @@ impl From<OSCSEL_A> for u8 {
     fn from(variant: OSCSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for OSCSEL_A {
+    type Ux = u8;
 }
 impl OSCSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl OSCSEL_R {
     }
 }
 #[doc = "Field `OSCSEL` writer - Select Low Frequency Oscillator"]
-pub type OSCSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, OSCSEL_A, 2, O>;
+pub type OSCSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O, OSCSEL_A>;
 impl<'a, const O: u8> OSCSEL_W<'a, O> {
     #[doc = "Select Low Frequency RC Oscillator"]
     #[inline(always)]
@@ -108,7 +111,7 @@ impl<'a, const O: u8> OSCSEL_W<'a, O> {
     }
 }
 #[doc = "Field `PRESC` reader - Prescaler Setting"]
-pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
+pub type PRESC_R = crate::FieldReader<PRESC_A>;
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -135,6 +138,9 @@ impl From<PRESC_A> for u8 {
     fn from(variant: PRESC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRESC_A {
+    type Ux = u8;
 }
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
@@ -194,7 +200,7 @@ impl PRESC_R {
     }
 }
 #[doc = "Field `PRESC` writer - Prescaler Setting"]
-pub type PRESC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, PRESC_A, 3, O>;
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 3, O, PRESC_A>;
 impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "LF Oscillator frequency undivided"]
     #[inline(always)]

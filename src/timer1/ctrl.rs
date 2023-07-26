@@ -35,7 +35,7 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `MODE` reader - Timer Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Timer Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Timer Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, MODE_A, 2, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Up-count mode"]
     #[inline(always)]
@@ -113,27 +116,27 @@ impl<'a, const O: u8> MODE_W<'a, O> {
     }
 }
 #[doc = "Field `SYNC` reader - Timer Start/Stop/Reload Synchronization"]
-pub type SYNC_R = crate::BitReader<bool>;
+pub type SYNC_R = crate::BitReader;
 #[doc = "Field `SYNC` writer - Timer Start/Stop/Reload Synchronization"]
-pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `OSMEN` reader - One-shot Mode Enable"]
-pub type OSMEN_R = crate::BitReader<bool>;
+pub type OSMEN_R = crate::BitReader;
 #[doc = "Field `OSMEN` writer - One-shot Mode Enable"]
-pub type OSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type OSMEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `QDM` reader - Quadrature Decoder Mode Selection"]
-pub type QDM_R = crate::BitReader<bool>;
+pub type QDM_R = crate::BitReader;
 #[doc = "Field `QDM` writer - Quadrature Decoder Mode Selection"]
-pub type QDM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type QDM_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
-pub type DEBUGRUN_R = crate::BitReader<bool>;
+pub type DEBUGRUN_R = crate::BitReader;
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `DMACLRACT` reader - DMA Request Clear on Active"]
-pub type DMACLRACT_R = crate::BitReader<bool>;
+pub type DMACLRACT_R = crate::BitReader;
 #[doc = "Field `DMACLRACT` writer - DMA Request Clear on Active"]
-pub type DMACLRACT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type DMACLRACT_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `RISEA` reader - Timer Rising Input Edge Action"]
-pub type RISEA_R = crate::FieldReader<u8, RISEA_A>;
+pub type RISEA_R = crate::FieldReader<RISEA_A>;
 #[doc = "Timer Rising Input Edge Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -152,6 +155,9 @@ impl From<RISEA_A> for u8 {
     fn from(variant: RISEA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RISEA_A {
+    type Ux = u8;
 }
 impl RISEA_R {
     #[doc = "Get enumerated values variant"]
@@ -187,7 +193,7 @@ impl RISEA_R {
     }
 }
 #[doc = "Field `RISEA` writer - Timer Rising Input Edge Action"]
-pub type RISEA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, RISEA_A, 2, O>;
+pub type RISEA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, RISEA_A>;
 impl<'a, const O: u8> RISEA_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -211,7 +217,7 @@ impl<'a, const O: u8> RISEA_W<'a, O> {
     }
 }
 #[doc = "Field `FALLA` reader - Timer Falling Input Edge Action"]
-pub type FALLA_R = crate::FieldReader<u8, FALLA_A>;
+pub type FALLA_R = crate::FieldReader<FALLA_A>;
 #[doc = "Timer Falling Input Edge Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -230,6 +236,9 @@ impl From<FALLA_A> for u8 {
     fn from(variant: FALLA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for FALLA_A {
+    type Ux = u8;
 }
 impl FALLA_R {
     #[doc = "Get enumerated values variant"]
@@ -265,7 +274,7 @@ impl FALLA_R {
     }
 }
 #[doc = "Field `FALLA` writer - Timer Falling Input Edge Action"]
-pub type FALLA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, FALLA_A, 2, O>;
+pub type FALLA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, FALLA_A>;
 impl<'a, const O: u8> FALLA_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -289,11 +298,11 @@ impl<'a, const O: u8> FALLA_W<'a, O> {
     }
 }
 #[doc = "Field `X2CNT` reader - 2x Count Mode"]
-pub type X2CNT_R = crate::BitReader<bool>;
+pub type X2CNT_R = crate::BitReader;
 #[doc = "Field `X2CNT` writer - 2x Count Mode"]
-pub type X2CNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type X2CNT_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CLKSEL` reader - Clock Source Select"]
-pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
+pub type CLKSEL_R = crate::FieldReader<CLKSEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -310,6 +319,9 @@ impl From<CLKSEL_A> for u8 {
     fn from(variant: CLKSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKSEL_A {
+    type Ux = u8;
 }
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -339,7 +351,7 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Clock Source Select"]
-pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKSEL_A, 2, O>;
+pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O, CLKSEL_A>;
 impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "Prescaled HFPERCLK"]
     #[inline(always)]
@@ -358,7 +370,7 @@ impl<'a, const O: u8> CLKSEL_W<'a, O> {
     }
 }
 #[doc = "Field `PRESC` reader - Prescaler Setting"]
-pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
+pub type PRESC_R = crate::FieldReader<PRESC_A>;
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -391,6 +403,9 @@ impl From<PRESC_A> for u8 {
     fn from(variant: PRESC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRESC_A {
+    type Ux = u8;
 }
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
@@ -468,7 +483,7 @@ impl PRESC_R {
     }
 }
 #[doc = "Field `PRESC` writer - Prescaler Setting"]
-pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRESC_A, 4, O>;
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 4, O, PRESC_A>;
 impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "The HFPERCLK is undivided"]
     #[inline(always)]
@@ -527,13 +542,13 @@ impl<'a, const O: u8> PRESC_W<'a, O> {
     }
 }
 #[doc = "Field `ATI` reader - Always Track Inputs"]
-pub type ATI_R = crate::BitReader<bool>;
+pub type ATI_R = crate::BitReader;
 #[doc = "Field `ATI` writer - Always Track Inputs"]
-pub type ATI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type ATI_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `RSSCOIST` reader - Reload-Start Sets Compare Output Initial State"]
-pub type RSSCOIST_R = crate::BitReader<bool>;
+pub type RSSCOIST_R = crate::BitReader;
 #[doc = "Field `RSSCOIST` writer - Reload-Start Sets Compare Output Initial State"]
-pub type RSSCOIST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type RSSCOIST_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:1 - Timer Mode"]
     #[inline(always)]

@@ -20,11 +20,11 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `EDGE` writer - Set EDGE Interrupt Flag"]
-pub type EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type EDGE_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `WARMUP` writer - Set WARMUP Interrupt Flag"]
-pub type WARMUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type WARMUP_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `APORTCONFLICT` writer - Set APORTCONFLICT Interrupt Flag"]
-pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Set EDGE Interrupt Flag"]
     #[inline(always)]

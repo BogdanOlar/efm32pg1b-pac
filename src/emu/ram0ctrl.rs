@@ -35,7 +35,7 @@ impl From<crate::W<RAM0CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `RAMPOWERDOWN` reader - RAM0 Blockset Power-down"]
-pub type RAMPOWERDOWN_R = crate::FieldReader<u8, RAMPOWERDOWN_A>;
+pub type RAMPOWERDOWN_R = crate::FieldReader<RAMPOWERDOWN_A>;
 #[doc = "RAM0 Blockset Power-down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<RAMPOWERDOWN_A> for u8 {
     fn from(variant: RAMPOWERDOWN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RAMPOWERDOWN_A {
+    type Ux = u8;
 }
 impl RAMPOWERDOWN_R {
     #[doc = "Get enumerated values variant"]
@@ -98,7 +101,7 @@ impl RAMPOWERDOWN_R {
 }
 #[doc = "Field `RAMPOWERDOWN` writer - RAM0 Blockset Power-down"]
 pub type RAMPOWERDOWN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, RAM0CTRL_SPEC, u8, RAMPOWERDOWN_A, 4, O>;
+    crate::FieldWriter<'a, RAM0CTRL_SPEC, 4, O, RAMPOWERDOWN_A>;
 impl<'a, const O: u8> RAMPOWERDOWN_W<'a, O> {
     #[doc = "None of the RAM blocks powered down"]
     #[inline(always)]

@@ -35,11 +35,11 @@ impl From<crate::W<TIMECMP0_SPEC>> for W {
     }
 }
 #[doc = "Field `TCMPVAL` reader - Timer Comparator 0"]
-pub type TCMPVAL_R = crate::FieldReader<u8, u8>;
+pub type TCMPVAL_R = crate::FieldReader;
 #[doc = "Field `TCMPVAL` writer - Timer Comparator 0"]
-pub type TCMPVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMECMP0_SPEC, u8, u8, 8, O>;
+pub type TCMPVAL_W<'a, const O: u8> = crate::FieldWriter<'a, TIMECMP0_SPEC, 8, O>;
 #[doc = "Field `TSTART` reader - Timer Start Source"]
-pub type TSTART_R = crate::FieldReader<u8, TSTART_A>;
+pub type TSTART_R = crate::FieldReader<TSTART_A>;
 #[doc = "Timer Start Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -60,6 +60,9 @@ impl From<TSTART_A> for u8 {
     fn from(variant: TSTART_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TSTART_A {
+    type Ux = u8;
 }
 impl TSTART_R {
     #[doc = "Get enumerated values variant"]
@@ -101,7 +104,7 @@ impl TSTART_R {
     }
 }
 #[doc = "Field `TSTART` writer - Timer Start Source"]
-pub type TSTART_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMECMP0_SPEC, u8, TSTART_A, 3, O>;
+pub type TSTART_W<'a, const O: u8> = crate::FieldWriter<'a, TIMECMP0_SPEC, 3, O, TSTART_A>;
 impl<'a, const O: u8> TSTART_W<'a, O> {
     #[doc = "Comparator 0 is disabled"]
     #[inline(always)]
@@ -130,7 +133,7 @@ impl<'a, const O: u8> TSTART_W<'a, O> {
     }
 }
 #[doc = "Field `TSTOP` reader - Source Used to Disable Comparator 0"]
-pub type TSTOP_R = crate::FieldReader<u8, TSTOP_A>;
+pub type TSTOP_R = crate::FieldReader<TSTOP_A>;
 #[doc = "Source Used to Disable Comparator 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -149,6 +152,9 @@ impl From<TSTOP_A> for u8 {
     fn from(variant: TSTOP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TSTOP_A {
+    type Ux = u8;
 }
 impl TSTOP_R {
     #[doc = "Get enumerated values variant"]
@@ -184,7 +190,7 @@ impl TSTOP_R {
     }
 }
 #[doc = "Field `TSTOP` writer - Source Used to Disable Comparator 0"]
-pub type TSTOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMECMP0_SPEC, u8, TSTOP_A, 3, O>;
+pub type TSTOP_W<'a, const O: u8> = crate::FieldWriter<'a, TIMECMP0_SPEC, 3, O, TSTOP_A>;
 impl<'a, const O: u8> TSTOP_W<'a, O> {
     #[doc = "Comparator 0 is disabled when the counter equals TCMPVAL and triggers a TCMP0 event"]
     #[inline(always)]
@@ -208,9 +214,9 @@ impl<'a, const O: u8> TSTOP_W<'a, O> {
     }
 }
 #[doc = "Field `RESTARTEN` reader - Restart Timer on TCMP0"]
-pub type RESTARTEN_R = crate::BitReader<bool>;
+pub type RESTARTEN_R = crate::BitReader;
 #[doc = "Field `RESTARTEN` writer - Restart Timer on TCMP0"]
-pub type RESTARTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMECMP0_SPEC, bool, O>;
+pub type RESTARTEN_W<'a, const O: u8> = crate::BitWriter<'a, TIMECMP0_SPEC, O>;
 impl R {
     #[doc = "Bits 0:7 - Timer Comparator 0"]
     #[inline(always)]

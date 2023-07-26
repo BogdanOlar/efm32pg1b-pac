@@ -35,18 +35,17 @@ impl From<crate::W<DCDCLPCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `LPCMPHYSSEL` reader - LP Mode Hysteresis Selection"]
-pub type LPCMPHYSSEL_R = crate::FieldReader<u8, u8>;
+pub type LPCMPHYSSEL_R = crate::FieldReader;
 #[doc = "Field `LPCMPHYSSEL` writer - LP Mode Hysteresis Selection"]
-pub type LPCMPHYSSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLPCTRL_SPEC, u8, u8, 4, O>;
+pub type LPCMPHYSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLPCTRL_SPEC, 4, O>;
 #[doc = "Field `LPVREFDUTYEN` reader - LP Mode Duty Cycling Enable"]
-pub type LPVREFDUTYEN_R = crate::BitReader<bool>;
+pub type LPVREFDUTYEN_R = crate::BitReader;
 #[doc = "Field `LPVREFDUTYEN` writer - LP Mode Duty Cycling Enable"]
-pub type LPVREFDUTYEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCLPCTRL_SPEC, bool, O>;
+pub type LPVREFDUTYEN_W<'a, const O: u8> = crate::BitWriter<'a, DCDCLPCTRL_SPEC, O>;
 #[doc = "Field `LPBLANK` reader - Reserved for internal use. Do not change."]
-pub type LPBLANK_R = crate::FieldReader<u8, u8>;
+pub type LPBLANK_R = crate::FieldReader;
 #[doc = "Field `LPBLANK` writer - Reserved for internal use. Do not change."]
-pub type LPBLANK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCLPCTRL_SPEC, u8, u8, 2, O>;
+pub type LPBLANK_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLPCTRL_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 12:15 - LP Mode Hysteresis Selection"]
     #[inline(always)]

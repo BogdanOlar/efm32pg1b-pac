@@ -35,13 +35,13 @@ impl From<crate::W<CLKDIV_SPEC>> for W {
     }
 }
 #[doc = "Field `DIV` reader - Fractional Clock Divider"]
-pub type DIV_R = crate::FieldReader<u32, u32>;
+pub type DIV_R = crate::FieldReader<u32>;
 #[doc = "Field `DIV` writer - Fractional Clock Divider"]
-pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u32, u32, 20, O>;
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, CLKDIV_SPEC, 20, O, u32>;
 #[doc = "Field `AUTOBAUDEN` reader - AUTOBAUD Detection Enable"]
-pub type AUTOBAUDEN_R = crate::BitReader<bool>;
+pub type AUTOBAUDEN_R = crate::BitReader;
 #[doc = "Field `AUTOBAUDEN` writer - AUTOBAUD Detection Enable"]
-pub type AUTOBAUDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKDIV_SPEC, bool, O>;
+pub type AUTOBAUDEN_W<'a, const O: u8> = crate::BitWriter<'a, CLKDIV_SPEC, O>;
 impl R {
     #[doc = "Bits 3:22 - Fractional Clock Divider"]
     #[inline(always)]

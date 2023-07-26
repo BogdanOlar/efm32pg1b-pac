@@ -35,7 +35,7 @@ impl From<crate::W<LFECLKSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `LFE` reader - Clock Select for LFE"]
-pub type LFE_R = crate::FieldReader<u8, LFE_A>;
+pub type LFE_R = crate::FieldReader<LFE_A>;
 #[doc = "Clock Select for LFE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<LFE_A> for u8 {
     fn from(variant: LFE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LFE_A {
+    type Ux = u8;
 }
 impl LFE_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl LFE_R {
     }
 }
 #[doc = "Field `LFE` writer - Clock Select for LFE"]
-pub type LFE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFECLKSEL_SPEC, u8, LFE_A, 3, O>;
+pub type LFE_W<'a, const O: u8> = crate::FieldWriter<'a, LFECLKSEL_SPEC, 3, O, LFE_A>;
 impl<'a, const O: u8> LFE_W<'a, O> {
     #[doc = "LFECLK is disabled"]
     #[inline(always)]

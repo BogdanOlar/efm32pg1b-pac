@@ -35,29 +35,29 @@ impl From<crate::W<HFBUSCLKEN0_SPEC>> for W {
     }
 }
 #[doc = "Field `LE` reader - Low Energy Peripheral Interface Clock Enable"]
-pub type LE_R = crate::BitReader<bool>;
+pub type LE_R = crate::BitReader;
 #[doc = "Field `LE` writer - Low Energy Peripheral Interface Clock Enable"]
-pub type LE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+pub type LE_W<'a, const O: u8> = crate::BitWriter<'a, HFBUSCLKEN0_SPEC, O>;
 #[doc = "Field `CRYPTO` reader - Advanced Encryption Standard Accelerator Clock Enable"]
-pub type CRYPTO_R = crate::BitReader<bool>;
+pub type CRYPTO_R = crate::BitReader;
 #[doc = "Field `CRYPTO` writer - Advanced Encryption Standard Accelerator Clock Enable"]
-pub type CRYPTO_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+pub type CRYPTO_W<'a, const O: u8> = crate::BitWriter<'a, HFBUSCLKEN0_SPEC, O>;
 #[doc = "Field `GPIO` reader - General purpose Input/Output Clock Enable"]
-pub type GPIO_R = crate::BitReader<bool>;
+pub type GPIO_R = crate::BitReader;
 #[doc = "Field `GPIO` writer - General purpose Input/Output Clock Enable"]
-pub type GPIO_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+pub type GPIO_W<'a, const O: u8> = crate::BitWriter<'a, HFBUSCLKEN0_SPEC, O>;
 #[doc = "Field `PRS` reader - Peripheral Reflex System Clock Enable"]
-pub type PRS_R = crate::BitReader<bool>;
+pub type PRS_R = crate::BitReader;
 #[doc = "Field `PRS` writer - Peripheral Reflex System Clock Enable"]
-pub type PRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+pub type PRS_W<'a, const O: u8> = crate::BitWriter<'a, HFBUSCLKEN0_SPEC, O>;
 #[doc = "Field `LDMA` reader - Linked Direct Memory Access Controller Clock Enable"]
-pub type LDMA_R = crate::BitReader<bool>;
+pub type LDMA_R = crate::BitReader;
 #[doc = "Field `LDMA` writer - Linked Direct Memory Access Controller Clock Enable"]
-pub type LDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+pub type LDMA_W<'a, const O: u8> = crate::BitWriter<'a, HFBUSCLKEN0_SPEC, O>;
 #[doc = "Field `GPCRC` reader - General Purpose CRC Clock Enable"]
-pub type GPCRC_R = crate::BitReader<bool>;
+pub type GPCRC_R = crate::BitReader;
 #[doc = "Field `GPCRC` writer - General Purpose CRC Clock Enable"]
-pub type GPCRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFBUSCLKEN0_SPEC, bool, O>;
+pub type GPCRC_W<'a, const O: u8> = crate::BitWriter<'a, HFBUSCLKEN0_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Low Energy Peripheral Interface Clock Enable"]
     #[inline(always)]

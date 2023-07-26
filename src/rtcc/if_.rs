@@ -14,27 +14,27 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `OF` reader - Overflow Interrupt Flag"]
-pub type OF_R = crate::BitReader<bool>;
+pub type OF_R = crate::BitReader;
 #[doc = "Field `CC0` reader - Channel 0 Interrupt Flag"]
-pub type CC0_R = crate::BitReader<bool>;
+pub type CC0_R = crate::BitReader;
 #[doc = "Field `CC1` reader - Channel 1 Interrupt Flag"]
-pub type CC1_R = crate::BitReader<bool>;
+pub type CC1_R = crate::BitReader;
 #[doc = "Field `CC2` reader - Channel 2 Interrupt Flag"]
-pub type CC2_R = crate::BitReader<bool>;
+pub type CC2_R = crate::BitReader;
 #[doc = "Field `OSCFAIL` reader - Oscillator Failure Interrupt Flag"]
-pub type OSCFAIL_R = crate::BitReader<bool>;
+pub type OSCFAIL_R = crate::BitReader;
 #[doc = "Field `CNTTICK` reader - Main Counter Tick"]
-pub type CNTTICK_R = crate::BitReader<bool>;
+pub type CNTTICK_R = crate::BitReader;
 #[doc = "Field `MINTICK` reader - Minute Tick"]
-pub type MINTICK_R = crate::BitReader<bool>;
+pub type MINTICK_R = crate::BitReader;
 #[doc = "Field `HOURTICK` reader - Hour Tick"]
-pub type HOURTICK_R = crate::BitReader<bool>;
+pub type HOURTICK_R = crate::BitReader;
 #[doc = "Field `DAYTICK` reader - Day Tick"]
-pub type DAYTICK_R = crate::BitReader<bool>;
+pub type DAYTICK_R = crate::BitReader;
 #[doc = "Field `DAYOWOF` reader - Day of Week Overflow"]
-pub type DAYOWOF_R = crate::BitReader<bool>;
+pub type DAYOWOF_R = crate::BitReader;
 #[doc = "Field `MONTHTICK` reader - Month Tick"]
-pub type MONTHTICK_R = crate::BitReader<bool>;
+pub type MONTHTICK_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Overflow Interrupt Flag"]
     #[inline(always)]

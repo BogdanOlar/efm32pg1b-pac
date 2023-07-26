@@ -35,9 +35,9 @@ impl From<crate::W<REP1_SPEC>> for W {
     }
 }
 #[doc = "Field `REP1` reader - Repeat Counter 1"]
-pub type REP1_R = crate::FieldReader<u8, u8>;
+pub type REP1_R = crate::FieldReader;
 #[doc = "Field `REP1` writer - Repeat Counter 1"]
-pub type REP1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REP1_SPEC, u8, u8, 8, O>;
+pub type REP1_W<'a, const O: u8> = crate::FieldWriter<'a, REP1_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Repeat Counter 1"]
     #[inline(always)]

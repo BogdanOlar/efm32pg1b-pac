@@ -14,17 +14,17 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `FPIOC` reader - FPU invalid operation"]
-pub type FPIOC_R = crate::BitReader<bool>;
+pub type FPIOC_R = crate::BitReader;
 #[doc = "Field `FPDZC` reader - FPU divide-by-zero exception"]
-pub type FPDZC_R = crate::BitReader<bool>;
+pub type FPDZC_R = crate::BitReader;
 #[doc = "Field `FPUFC` reader - FPU underflow exception"]
-pub type FPUFC_R = crate::BitReader<bool>;
+pub type FPUFC_R = crate::BitReader;
 #[doc = "Field `FPOFC` reader - FPU overflow exception"]
-pub type FPOFC_R = crate::BitReader<bool>;
+pub type FPOFC_R = crate::BitReader;
 #[doc = "Field `FPIDC` reader - FPU input denormal exception"]
-pub type FPIDC_R = crate::BitReader<bool>;
+pub type FPIDC_R = crate::BitReader;
 #[doc = "Field `FPIXC` reader - FPU inexact exception"]
-pub type FPIXC_R = crate::BitReader<bool>;
+pub type FPIXC_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - FPU invalid operation"]
     #[inline(always)]

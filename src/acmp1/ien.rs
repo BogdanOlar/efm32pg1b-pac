@@ -35,17 +35,17 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `EDGE` reader - EDGE Interrupt Enable"]
-pub type EDGE_R = crate::BitReader<bool>;
+pub type EDGE_R = crate::BitReader;
 #[doc = "Field `EDGE` writer - EDGE Interrupt Enable"]
-pub type EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type EDGE_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `WARMUP` reader - WARMUP Interrupt Enable"]
-pub type WARMUP_R = crate::BitReader<bool>;
+pub type WARMUP_R = crate::BitReader;
 #[doc = "Field `WARMUP` writer - WARMUP Interrupt Enable"]
-pub type WARMUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type WARMUP_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `APORTCONFLICT` reader - APORTCONFLICT Interrupt Enable"]
-pub type APORTCONFLICT_R = crate::BitReader<bool>;
+pub type APORTCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORTCONFLICT` writer - APORTCONFLICT Interrupt Enable"]
-pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - EDGE Interrupt Enable"]
     #[inline(always)]

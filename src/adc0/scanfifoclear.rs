@@ -20,7 +20,7 @@ impl From<crate::W<SCANFIFOCLEAR_SPEC>> for W {
     }
 }
 #[doc = "Field `SCANFIFOCLEAR` writer - Clear Scan FIFO Content"]
-pub type SCANFIFOCLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCANFIFOCLEAR_SPEC, bool, O>;
+pub type SCANFIFOCLEAR_W<'a, const O: u8> = crate::BitWriter<'a, SCANFIFOCLEAR_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Clear Scan FIFO Content"]
     #[inline(always)]

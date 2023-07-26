@@ -14,9 +14,9 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `EXT` reader - External Pin Interrupt Flag"]
-pub type EXT_R = crate::FieldReader<u16, u16>;
+pub type EXT_R = crate::FieldReader<u16>;
 #[doc = "Field `EM4WU` reader - EM4 Wake Up Pin Interrupt Flag"]
-pub type EM4WU_R = crate::FieldReader<u16, u16>;
+pub type EM4WU_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - External Pin Interrupt Flag"]
     #[inline(always)]

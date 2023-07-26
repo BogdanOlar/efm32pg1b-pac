@@ -35,9 +35,9 @@ impl From<crate::W<ADDRB_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRB` reader - Page Erase or Write Address Buffer"]
-pub type ADDRB_R = crate::FieldReader<u32, u32>;
+pub type ADDRB_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDRB` writer - Page Erase or Write Address Buffer"]
-pub type ADDRB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ADDRB_SPEC, u32, u32, 32, O>;
+pub type ADDRB_W<'a, const O: u8> = crate::FieldWriter<'a, ADDRB_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Page Erase or Write Address Buffer"]
     #[inline(always)]

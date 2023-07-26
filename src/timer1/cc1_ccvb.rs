@@ -35,9 +35,9 @@ impl From<crate::W<CC1_CCVB_SPEC>> for W {
     }
 }
 #[doc = "Field `CCVB` reader - CC Channel Value Buffer"]
-pub type CCVB_R = crate::FieldReader<u16, u16>;
+pub type CCVB_R = crate::FieldReader<u16>;
 #[doc = "Field `CCVB` writer - CC Channel Value Buffer"]
-pub type CCVB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_CCVB_SPEC, u16, u16, 16, O>;
+pub type CCVB_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_CCVB_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - CC Channel Value Buffer"]
     #[inline(always)]

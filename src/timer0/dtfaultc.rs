@@ -20,13 +20,13 @@ impl From<crate::W<DTFAULTC_SPEC>> for W {
     }
 }
 #[doc = "Field `DTPRS0FC` writer - DTI PRS0 Fault Clear"]
-pub type DTPRS0FC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFAULTC_SPEC, bool, O>;
+pub type DTPRS0FC_W<'a, const O: u8> = crate::BitWriter<'a, DTFAULTC_SPEC, O>;
 #[doc = "Field `DTPRS1FC` writer - DTI PRS1 Fault Clear"]
-pub type DTPRS1FC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFAULTC_SPEC, bool, O>;
+pub type DTPRS1FC_W<'a, const O: u8> = crate::BitWriter<'a, DTFAULTC_SPEC, O>;
 #[doc = "Field `DTDBGFC` writer - DTI Debugger Fault Clear"]
-pub type DTDBGFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFAULTC_SPEC, bool, O>;
+pub type DTDBGFC_W<'a, const O: u8> = crate::BitWriter<'a, DTFAULTC_SPEC, O>;
 #[doc = "Field `TLOCKUPFC` writer - DTI Lockup Fault Clear"]
-pub type TLOCKUPFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFAULTC_SPEC, bool, O>;
+pub type TLOCKUPFC_W<'a, const O: u8> = crate::BitWriter<'a, DTFAULTC_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - DTI PRS0 Fault Clear"]
     #[inline(always)]

@@ -35,10 +35,9 @@ impl From<crate::W<SCANMASK_SPEC>> for W {
     }
 }
 #[doc = "Field `SCANINPUTEN` reader - Scan Sequence Input Mask"]
-pub type SCANINPUTEN_R = crate::FieldReader<u32, u32>;
+pub type SCANINPUTEN_R = crate::FieldReader<u32>;
 #[doc = "Field `SCANINPUTEN` writer - Scan Sequence Input Mask"]
-pub type SCANINPUTEN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, SCANMASK_SPEC, u32, u32, 32, O>;
+pub type SCANINPUTEN_W<'a, const O: u8> = crate::FieldWriter<'a, SCANMASK_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Scan Sequence Input Mask"]
     #[inline(always)]

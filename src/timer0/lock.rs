@@ -35,7 +35,7 @@ impl From<crate::W<LOCK_SPEC>> for W {
     }
 }
 #[doc = "Field `TIMERLOCKKEY` reader - Timer Lock Key"]
-pub type TIMERLOCKKEY_R = crate::FieldReader<u16, TIMERLOCKKEY_A>;
+pub type TIMERLOCKKEY_R = crate::FieldReader<TIMERLOCKKEY_A>;
 #[doc = "Timer Lock Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -50,6 +50,9 @@ impl From<TIMERLOCKKEY_A> for u16 {
     fn from(variant: TIMERLOCKKEY_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TIMERLOCKKEY_A {
+    type Ux = u16;
 }
 impl TIMERLOCKKEY_R {
     #[doc = "Get enumerated values variant"]
@@ -73,8 +76,7 @@ impl TIMERLOCKKEY_R {
     }
 }
 #[doc = "Field `TIMERLOCKKEY` writer - Timer Lock Key"]
-pub type TIMERLOCKKEY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LOCK_SPEC, u16, TIMERLOCKKEY_A, 16, O>;
+pub type TIMERLOCKKEY_W<'a, const O: u8> = crate::FieldWriter<'a, LOCK_SPEC, 16, O, TIMERLOCKKEY_A>;
 impl<'a, const O: u8> TIMERLOCKKEY_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]

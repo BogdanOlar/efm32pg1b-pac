@@ -35,9 +35,9 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EM2BLOCK` reader - Energy Mode 2 Block"]
-pub type EM2BLOCK_R = crate::BitReader<bool>;
+pub type EM2BLOCK_R = crate::BitReader;
 #[doc = "Field `EM2BLOCK` writer - Energy Mode 2 Block"]
-pub type EM2BLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type EM2BLOCK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 1 - Energy Mode 2 Block"]
     #[inline(always)]

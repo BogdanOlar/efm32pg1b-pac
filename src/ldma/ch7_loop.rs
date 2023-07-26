@@ -35,9 +35,9 @@ impl From<crate::W<CH7_LOOP_SPEC>> for W {
     }
 }
 #[doc = "Field `LOOPCNT` reader - Linked Structure Sequence Loop Counter"]
-pub type LOOPCNT_R = crate::FieldReader<u8, u8>;
+pub type LOOPCNT_R = crate::FieldReader;
 #[doc = "Field `LOOPCNT` writer - Linked Structure Sequence Loop Counter"]
-pub type LOOPCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH7_LOOP_SPEC, u8, u8, 8, O>;
+pub type LOOPCNT_W<'a, const O: u8> = crate::FieldWriter<'a, CH7_LOOP_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Linked Structure Sequence Loop Counter"]
     #[inline(always)]

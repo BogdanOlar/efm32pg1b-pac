@@ -14,11 +14,11 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `SEQRUNNING` reader - AES SEQUENCE Running"]
-pub type SEQRUNNING_R = crate::BitReader<bool>;
+pub type SEQRUNNING_R = crate::BitReader;
 #[doc = "Field `INSTRRUNNING` reader - Action is Active"]
-pub type INSTRRUNNING_R = crate::BitReader<bool>;
+pub type INSTRRUNNING_R = crate::BitReader;
 #[doc = "Field `DMAACTIVE` reader - DMA Action is Active"]
-pub type DMAACTIVE_R = crate::BitReader<bool>;
+pub type DMAACTIVE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - AES SEQUENCE Running"]
     #[inline(always)]

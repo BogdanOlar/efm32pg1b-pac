@@ -14,17 +14,17 @@ impl From<crate::R<RXDOUBLEXP_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATAP0` reader - RX Data 0 Peek"]
-pub type RXDATAP0_R = crate::FieldReader<u16, u16>;
+pub type RXDATAP0_R = crate::FieldReader<u16>;
 #[doc = "Field `PERRP0` reader - Data Parity Error 0 Peek"]
-pub type PERRP0_R = crate::BitReader<bool>;
+pub type PERRP0_R = crate::BitReader;
 #[doc = "Field `FERRP0` reader - Data Framing Error 0 Peek"]
-pub type FERRP0_R = crate::BitReader<bool>;
+pub type FERRP0_R = crate::BitReader;
 #[doc = "Field `RXDATAP1` reader - RX Data 1 Peek"]
-pub type RXDATAP1_R = crate::FieldReader<u16, u16>;
+pub type RXDATAP1_R = crate::FieldReader<u16>;
 #[doc = "Field `PERRP1` reader - Data Parity Error 1 Peek"]
-pub type PERRP1_R = crate::BitReader<bool>;
+pub type PERRP1_R = crate::BitReader;
 #[doc = "Field `FERRP1` reader - Data Framing Error 1 Peek"]
-pub type FERRP1_R = crate::BitReader<bool>;
+pub type FERRP1_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:8 - RX Data 0 Peek"]
     #[inline(always)]

@@ -35,21 +35,21 @@ impl From<crate::W<CTRLX_SPEC>> for W {
     }
 }
 #[doc = "Field `DBGHALT` reader - Debug Halt"]
-pub type DBGHALT_R = crate::BitReader<bool>;
+pub type DBGHALT_R = crate::BitReader;
 #[doc = "Field `DBGHALT` writer - Debug Halt"]
-pub type DBGHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
+pub type DBGHALT_W<'a, const O: u8> = crate::BitWriter<'a, CTRLX_SPEC, O>;
 #[doc = "Field `CTSINV` reader - CTS Pin Inversion"]
-pub type CTSINV_R = crate::BitReader<bool>;
+pub type CTSINV_R = crate::BitReader;
 #[doc = "Field `CTSINV` writer - CTS Pin Inversion"]
-pub type CTSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
+pub type CTSINV_W<'a, const O: u8> = crate::BitWriter<'a, CTRLX_SPEC, O>;
 #[doc = "Field `CTSEN` reader - CTS Function Enabled"]
-pub type CTSEN_R = crate::BitReader<bool>;
+pub type CTSEN_R = crate::BitReader;
 #[doc = "Field `CTSEN` writer - CTS Function Enabled"]
-pub type CTSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
+pub type CTSEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRLX_SPEC, O>;
 #[doc = "Field `RTSINV` reader - RTS Pin Inversion"]
-pub type RTSINV_R = crate::BitReader<bool>;
+pub type RTSINV_R = crate::BitReader;
 #[doc = "Field `RTSINV` writer - RTS Pin Inversion"]
-pub type RTSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
+pub type RTSINV_W<'a, const O: u8> = crate::BitWriter<'a, CTRLX_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Debug Halt"]
     #[inline(always)]

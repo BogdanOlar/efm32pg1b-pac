@@ -35,7 +35,7 @@ impl From<crate::W<LFACLKSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `LFA` reader - Clock Select for LFA"]
-pub type LFA_R = crate::FieldReader<u8, LFA_A>;
+pub type LFA_R = crate::FieldReader<LFA_A>;
 #[doc = "Clock Select for LFA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<LFA_A> for u8 {
     fn from(variant: LFA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LFA_A {
+    type Ux = u8;
 }
 impl LFA_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl LFA_R {
     }
 }
 #[doc = "Field `LFA` writer - Clock Select for LFA"]
-pub type LFA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFACLKSEL_SPEC, u8, LFA_A, 3, O>;
+pub type LFA_W<'a, const O: u8> = crate::FieldWriter<'a, LFACLKSEL_SPEC, 3, O, LFA_A>;
 impl<'a, const O: u8> LFA_W<'a, O> {
     #[doc = "LFACLK is disabled"]
     #[inline(always)]

@@ -14,15 +14,15 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `TOUT` reader - WDOG Timeout Interrupt Flag"]
-pub type TOUT_R = crate::BitReader<bool>;
+pub type TOUT_R = crate::BitReader;
 #[doc = "Field `WARN` reader - WDOG Warning Timeout Interrupt Flag"]
-pub type WARN_R = crate::BitReader<bool>;
+pub type WARN_R = crate::BitReader;
 #[doc = "Field `WIN` reader - WDOG Window Interrupt Flag"]
-pub type WIN_R = crate::BitReader<bool>;
+pub type WIN_R = crate::BitReader;
 #[doc = "Field `PEM0` reader - PRS Channel Zero Event Missing Interrupt Flag"]
-pub type PEM0_R = crate::BitReader<bool>;
+pub type PEM0_R = crate::BitReader;
 #[doc = "Field `PEM1` reader - PRS Channel One Event Missing Interrupt Flag"]
-pub type PEM1_R = crate::BitReader<bool>;
+pub type PEM1_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - WDOG Timeout Interrupt Flag"]
     #[inline(always)]

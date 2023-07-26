@@ -35,7 +35,7 @@ impl From<crate::W<HYSTERESIS1_SPEC>> for W {
     }
 }
 #[doc = "Field `HYST` reader - Hysteresis Select When ACMPOUT=1"]
-pub type HYST_R = crate::FieldReader<u8, HYST_A>;
+pub type HYST_R = crate::FieldReader<HYST_A>;
 #[doc = "Hysteresis Select When ACMPOUT=1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -78,6 +78,9 @@ impl From<HYST_A> for u8 {
     fn from(variant: HYST_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HYST_A {
+    type Ux = u8;
 }
 impl HYST_R {
     #[doc = "Get enumerated values variant"]
@@ -185,8 +188,7 @@ impl HYST_R {
     }
 }
 #[doc = "Field `HYST` writer - Hysteresis Select When ACMPOUT=1"]
-pub type HYST_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, HYSTERESIS1_SPEC, u8, HYST_A, 4, O>;
+pub type HYST_W<'a, const O: u8> = crate::FieldWriterSafe<'a, HYSTERESIS1_SPEC, 4, O, HYST_A>;
 impl<'a, const O: u8> HYST_W<'a, O> {
     #[doc = "No hysteresis"]
     #[inline(always)]
@@ -270,13 +272,13 @@ impl<'a, const O: u8> HYST_W<'a, O> {
     }
 }
 #[doc = "Field `DIVVA` reader - Divider for VA Voltage When ACMPOUT=1"]
-pub type DIVVA_R = crate::FieldReader<u8, u8>;
+pub type DIVVA_R = crate::FieldReader;
 #[doc = "Field `DIVVA` writer - Divider for VA Voltage When ACMPOUT=1"]
-pub type DIVVA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HYSTERESIS1_SPEC, u8, u8, 6, O>;
+pub type DIVVA_W<'a, const O: u8> = crate::FieldWriter<'a, HYSTERESIS1_SPEC, 6, O>;
 #[doc = "Field `DIVVB` reader - Divider for VB Voltage When ACMPOUT=1"]
-pub type DIVVB_R = crate::FieldReader<u8, u8>;
+pub type DIVVB_R = crate::FieldReader;
 #[doc = "Field `DIVVB` writer - Divider for VB Voltage When ACMPOUT=1"]
-pub type DIVVB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HYSTERESIS1_SPEC, u8, u8, 6, O>;
+pub type DIVVB_W<'a, const O: u8> = crate::FieldWriter<'a, HYSTERESIS1_SPEC, 6, O>;
 impl R {
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=1"]
     #[inline(always)]

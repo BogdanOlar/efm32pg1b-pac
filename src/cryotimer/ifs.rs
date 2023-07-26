@@ -20,7 +20,7 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `PERIOD` writer - Set PERIOD Interrupt Flag"]
-pub type PERIOD_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type PERIOD_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Set PERIOD Interrupt Flag"]
     #[inline(always)]

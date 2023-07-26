@@ -35,39 +35,39 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - I2C Enable"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - I2C Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `SLAVE` reader - Addressable as Slave"]
-pub type SLAVE_R = crate::BitReader<bool>;
+pub type SLAVE_R = crate::BitReader;
 #[doc = "Field `SLAVE` writer - Addressable as Slave"]
-pub type SLAVE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type SLAVE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `AUTOACK` reader - Automatic Acknowledge"]
-pub type AUTOACK_R = crate::BitReader<bool>;
+pub type AUTOACK_R = crate::BitReader;
 #[doc = "Field `AUTOACK` writer - Automatic Acknowledge"]
-pub type AUTOACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type AUTOACK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `AUTOSE` reader - Automatic STOP When Empty"]
-pub type AUTOSE_R = crate::BitReader<bool>;
+pub type AUTOSE_R = crate::BitReader;
 #[doc = "Field `AUTOSE` writer - Automatic STOP When Empty"]
-pub type AUTOSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type AUTOSE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `AUTOSN` reader - Automatic STOP on NACK"]
-pub type AUTOSN_R = crate::BitReader<bool>;
+pub type AUTOSN_R = crate::BitReader;
 #[doc = "Field `AUTOSN` writer - Automatic STOP on NACK"]
-pub type AUTOSN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type AUTOSN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `ARBDIS` reader - Arbitration Disable"]
-pub type ARBDIS_R = crate::BitReader<bool>;
+pub type ARBDIS_R = crate::BitReader;
 #[doc = "Field `ARBDIS` writer - Arbitration Disable"]
-pub type ARBDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type ARBDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `GCAMEN` reader - General Call Address Match Enable"]
-pub type GCAMEN_R = crate::BitReader<bool>;
+pub type GCAMEN_R = crate::BitReader;
 #[doc = "Field `GCAMEN` writer - General Call Address Match Enable"]
-pub type GCAMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type GCAMEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `TXBIL` reader - TX Buffer Interrupt Level"]
-pub type TXBIL_R = crate::BitReader<bool>;
+pub type TXBIL_R = crate::BitReader;
 #[doc = "Field `TXBIL` writer - TX Buffer Interrupt Level"]
-pub type TXBIL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type TXBIL_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CLHR` reader - Clock Low High Ratio"]
-pub type CLHR_R = crate::FieldReader<u8, CLHR_A>;
+pub type CLHR_R = crate::FieldReader<CLHR_A>;
 #[doc = "Clock Low High Ratio\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -84,6 +84,9 @@ impl From<CLHR_A> for u8 {
     fn from(variant: CLHR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLHR_A {
+    type Ux = u8;
 }
 impl CLHR_R {
     #[doc = "Get enumerated values variant"]
@@ -113,7 +116,7 @@ impl CLHR_R {
     }
 }
 #[doc = "Field `CLHR` writer - Clock Low High Ratio"]
-pub type CLHR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLHR_A, 2, O>;
+pub type CLHR_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O, CLHR_A>;
 impl<'a, const O: u8> CLHR_W<'a, O> {
     #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 4:4"]
     #[inline(always)]
@@ -132,7 +135,7 @@ impl<'a, const O: u8> CLHR_W<'a, O> {
     }
 }
 #[doc = "Field `BITO` reader - Bus Idle Timeout"]
-pub type BITO_R = crate::FieldReader<u8, BITO_A>;
+pub type BITO_R = crate::FieldReader<BITO_A>;
 #[doc = "Bus Idle Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -151,6 +154,9 @@ impl From<BITO_A> for u8 {
     fn from(variant: BITO_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BITO_A {
+    type Ux = u8;
 }
 impl BITO_R {
     #[doc = "Get enumerated values variant"]
@@ -186,7 +192,7 @@ impl BITO_R {
     }
 }
 #[doc = "Field `BITO` writer - Bus Idle Timeout"]
-pub type BITO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, BITO_A, 2, O>;
+pub type BITO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, BITO_A>;
 impl<'a, const O: u8> BITO_W<'a, O> {
     #[doc = "Timeout disabled"]
     #[inline(always)]
@@ -210,11 +216,11 @@ impl<'a, const O: u8> BITO_W<'a, O> {
     }
 }
 #[doc = "Field `GIBITO` reader - Go Idle on Bus Idle Timeout"]
-pub type GIBITO_R = crate::BitReader<bool>;
+pub type GIBITO_R = crate::BitReader;
 #[doc = "Field `GIBITO` writer - Go Idle on Bus Idle Timeout"]
-pub type GIBITO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type GIBITO_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `CLTO` reader - Clock Low Timeout"]
-pub type CLTO_R = crate::FieldReader<u8, CLTO_A>;
+pub type CLTO_R = crate::FieldReader<CLTO_A>;
 #[doc = "Clock Low Timeout\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -237,6 +243,9 @@ impl From<CLTO_A> for u8 {
     fn from(variant: CLTO_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLTO_A {
+    type Ux = u8;
 }
 impl CLTO_R {
     #[doc = "Get enumerated values variant"]
@@ -284,7 +293,7 @@ impl CLTO_R {
     }
 }
 #[doc = "Field `CLTO` writer - Clock Low Timeout"]
-pub type CLTO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLTO_A, 3, O>;
+pub type CLTO_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O, CLTO_A>;
 impl<'a, const O: u8> CLTO_W<'a, O> {
     #[doc = "Timeout disabled"]
     #[inline(always)]

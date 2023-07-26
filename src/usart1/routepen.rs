@@ -35,29 +35,29 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
     }
 }
 #[doc = "Field `RXPEN` reader - RX Pin Enable"]
-pub type RXPEN_R = crate::BitReader<bool>;
+pub type RXPEN_R = crate::BitReader;
 #[doc = "Field `RXPEN` writer - RX Pin Enable"]
-pub type RXPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type RXPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `TXPEN` reader - TX Pin Enable"]
-pub type TXPEN_R = crate::BitReader<bool>;
+pub type TXPEN_R = crate::BitReader;
 #[doc = "Field `TXPEN` writer - TX Pin Enable"]
-pub type TXPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type TXPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `CSPEN` reader - CS Pin Enable"]
-pub type CSPEN_R = crate::BitReader<bool>;
+pub type CSPEN_R = crate::BitReader;
 #[doc = "Field `CSPEN` writer - CS Pin Enable"]
-pub type CSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type CSPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `CLKPEN` reader - CLK Pin Enable"]
-pub type CLKPEN_R = crate::BitReader<bool>;
+pub type CLKPEN_R = crate::BitReader;
 #[doc = "Field `CLKPEN` writer - CLK Pin Enable"]
-pub type CLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type CLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `CTSPEN` reader - CTS Pin Enable"]
-pub type CTSPEN_R = crate::BitReader<bool>;
+pub type CTSPEN_R = crate::BitReader;
 #[doc = "Field `CTSPEN` writer - CTS Pin Enable"]
-pub type CTSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type CTSPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `RTSPEN` reader - RTS Pin Enable"]
-pub type RTSPEN_R = crate::BitReader<bool>;
+pub type RTSPEN_R = crate::BitReader;
 #[doc = "Field `RTSPEN` writer - RTS Pin Enable"]
-pub type RTSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type RTSPEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - RX Pin Enable"]
     #[inline(always)]

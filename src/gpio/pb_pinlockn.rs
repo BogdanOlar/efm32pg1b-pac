@@ -35,10 +35,9 @@ impl From<crate::W<PB_PINLOCKN_SPEC>> for W {
     }
 }
 #[doc = "Field `PINLOCKN` reader - Unlocked Pins"]
-pub type PINLOCKN_R = crate::FieldReader<u16, u16>;
+pub type PINLOCKN_R = crate::FieldReader<u16>;
 #[doc = "Field `PINLOCKN` writer - Unlocked Pins"]
-pub type PINLOCKN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PB_PINLOCKN_SPEC, u16, u16, 16, O>;
+pub type PINLOCKN_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PINLOCKN_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Unlocked Pins"]
     #[inline(always)]

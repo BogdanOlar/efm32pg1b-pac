@@ -35,9 +35,9 @@ impl From<crate::W<KEYBUF_SPEC>> for W {
     }
 }
 #[doc = "Field `KEYBUF` reader - Key Buffer Access"]
-pub type KEYBUF_R = crate::FieldReader<u32, u32>;
+pub type KEYBUF_R = crate::FieldReader<u32>;
 #[doc = "Field `KEYBUF` writer - Key Buffer Access"]
-pub type KEYBUF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, KEYBUF_SPEC, u32, u32, 32, O>;
+pub type KEYBUF_W<'a, const O: u8> = crate::FieldWriter<'a, KEYBUF_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Key Buffer Access"]
     #[inline(always)]

@@ -35,13 +35,13 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
     }
 }
 #[doc = "Field `OUT0PEN` reader - Output 0 Pin Enable"]
-pub type OUT0PEN_R = crate::BitReader<bool>;
+pub type OUT0PEN_R = crate::BitReader;
 #[doc = "Field `OUT0PEN` writer - Output 0 Pin Enable"]
-pub type OUT0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type OUT0PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 #[doc = "Field `OUT1PEN` reader - Output 1 Pin Enable"]
-pub type OUT1PEN_R = crate::BitReader<bool>;
+pub type OUT1PEN_R = crate::BitReader;
 #[doc = "Field `OUT1PEN` writer - Output 1 Pin Enable"]
-pub type OUT1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
+pub type OUT1PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Output 0 Pin Enable"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<BIASTESTCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `BIAS_RIP_RESET` reader - Reset Bias Ripple Counter"]
-pub type BIAS_RIP_RESET_R = crate::BitReader<bool>;
+pub type BIAS_RIP_RESET_R = crate::BitReader;
 #[doc = "Field `BIAS_RIP_RESET` writer - Reset Bias Ripple Counter"]
-pub type BIAS_RIP_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASTESTCTRL_SPEC, bool, O>;
+pub type BIAS_RIP_RESET_W<'a, const O: u8> = crate::BitWriter<'a, BIASTESTCTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 3 - Reset Bias Ripple Counter"]
     #[inline(always)]

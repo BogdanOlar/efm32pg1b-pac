@@ -35,7 +35,7 @@ impl From<crate::W<CH7_CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `ARBSLOTS` reader - Arbitration Slot Number Select"]
-pub type ARBSLOTS_R = crate::FieldReader<u8, ARBSLOTS_A>;
+pub type ARBSLOTS_R = crate::FieldReader<ARBSLOTS_A>;
 #[doc = "Arbitration Slot Number Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<ARBSLOTS_A> for u8 {
     fn from(variant: ARBSLOTS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ARBSLOTS_A {
+    type Ux = u8;
 }
 impl ARBSLOTS_R {
     #[doc = "Get enumerated values variant"]
@@ -89,8 +92,7 @@ impl ARBSLOTS_R {
     }
 }
 #[doc = "Field `ARBSLOTS` writer - Arbitration Slot Number Select"]
-pub type ARBSLOTS_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CH7_CFG_SPEC, u8, ARBSLOTS_A, 2, O>;
+pub type ARBSLOTS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CH7_CFG_SPEC, 2, O, ARBSLOTS_A>;
 impl<'a, const O: u8> ARBSLOTS_W<'a, O> {
     #[doc = "One arbitration slot selected"]
     #[inline(always)]
@@ -114,13 +116,13 @@ impl<'a, const O: u8> ARBSLOTS_W<'a, O> {
     }
 }
 #[doc = "Field `SRCINCSIGN` reader - Source Address Increment Sign"]
-pub type SRCINCSIGN_R = crate::BitReader<bool>;
+pub type SRCINCSIGN_R = crate::BitReader;
 #[doc = "Field `SRCINCSIGN` writer - Source Address Increment Sign"]
-pub type SRCINCSIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH7_CFG_SPEC, bool, O>;
+pub type SRCINCSIGN_W<'a, const O: u8> = crate::BitWriter<'a, CH7_CFG_SPEC, O>;
 #[doc = "Field `DSTINCSIGN` reader - Destination Address Increment Sign"]
-pub type DSTINCSIGN_R = crate::BitReader<bool>;
+pub type DSTINCSIGN_R = crate::BitReader;
 #[doc = "Field `DSTINCSIGN` writer - Destination Address Increment Sign"]
-pub type DSTINCSIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH7_CFG_SPEC, bool, O>;
+pub type DSTINCSIGN_W<'a, const O: u8> = crate::BitWriter<'a, CH7_CFG_SPEC, O>;
 impl R {
     #[doc = "Bits 16:17 - Arbitration Slot Number Select"]
     #[inline(always)]

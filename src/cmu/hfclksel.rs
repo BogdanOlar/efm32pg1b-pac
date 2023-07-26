@@ -38,8 +38,11 @@ impl From<HF_AW> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for HF_AW {
+    type Ux = u8;
+}
 #[doc = "Field `HF` writer - HFCLK Select"]
-pub type HF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFCLKSEL_SPEC, u8, HF_AW, 3, O>;
+pub type HF_W<'a, const O: u8> = crate::FieldWriter<'a, HFCLKSEL_SPEC, 3, O, HF_AW>;
 impl<'a, const O: u8> HF_W<'a, O> {
     #[doc = "Select HFRCO as HFCLK"]
     #[inline(always)]

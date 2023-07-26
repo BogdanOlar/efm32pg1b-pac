@@ -35,13 +35,13 @@ impl From<crate::W<DCDCLNVCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `LNATT` reader - Low Noise Mode Feedback Attenuation"]
-pub type LNATT_R = crate::BitReader<bool>;
+pub type LNATT_R = crate::BitReader;
 #[doc = "Field `LNATT` writer - Low Noise Mode Feedback Attenuation"]
-pub type LNATT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCLNVCTRL_SPEC, bool, O>;
+pub type LNATT_W<'a, const O: u8> = crate::BitWriter<'a, DCDCLNVCTRL_SPEC, O>;
 #[doc = "Field `LNVREF` reader - Low Noise Mode VREF Trim"]
-pub type LNVREF_R = crate::FieldReader<u8, u8>;
+pub type LNVREF_R = crate::FieldReader;
 #[doc = "Field `LNVREF` writer - Low Noise Mode VREF Trim"]
-pub type LNVREF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCLNVCTRL_SPEC, u8, u8, 7, O>;
+pub type LNVREF_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNVCTRL_SPEC, 7, O>;
 impl R {
     #[doc = "Bit 1 - Low Noise Mode Feedback Attenuation"]
     #[inline(always)]

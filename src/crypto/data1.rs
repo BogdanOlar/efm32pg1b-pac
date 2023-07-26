@@ -35,9 +35,9 @@ impl From<crate::W<DATA1_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA1` reader - Data 1 Access"]
-pub type DATA1_R = crate::FieldReader<u32, u32>;
+pub type DATA1_R = crate::FieldReader<u32>;
 #[doc = "Field `DATA1` writer - Data 1 Access"]
-pub type DATA1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATA1_SPEC, u32, u32, 32, O>;
+pub type DATA1_W<'a, const O: u8> = crate::FieldWriter<'a, DATA1_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Data 1 Access"]
     #[inline(always)]

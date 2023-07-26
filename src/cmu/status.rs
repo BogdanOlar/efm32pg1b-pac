@@ -14,39 +14,39 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `HFRCOENS` reader - HFRCO Enable Status"]
-pub type HFRCOENS_R = crate::BitReader<bool>;
+pub type HFRCOENS_R = crate::BitReader;
 #[doc = "Field `HFRCORDY` reader - HFRCO Ready"]
-pub type HFRCORDY_R = crate::BitReader<bool>;
+pub type HFRCORDY_R = crate::BitReader;
 #[doc = "Field `HFXOENS` reader - HFXO Enable Status"]
-pub type HFXOENS_R = crate::BitReader<bool>;
+pub type HFXOENS_R = crate::BitReader;
 #[doc = "Field `HFXORDY` reader - HFXO Ready"]
-pub type HFXORDY_R = crate::BitReader<bool>;
+pub type HFXORDY_R = crate::BitReader;
 #[doc = "Field `AUXHFRCOENS` reader - AUXHFRCO Enable Status"]
-pub type AUXHFRCOENS_R = crate::BitReader<bool>;
+pub type AUXHFRCOENS_R = crate::BitReader;
 #[doc = "Field `AUXHFRCORDY` reader - AUXHFRCO Ready"]
-pub type AUXHFRCORDY_R = crate::BitReader<bool>;
+pub type AUXHFRCORDY_R = crate::BitReader;
 #[doc = "Field `LFRCOENS` reader - LFRCO Enable Status"]
-pub type LFRCOENS_R = crate::BitReader<bool>;
+pub type LFRCOENS_R = crate::BitReader;
 #[doc = "Field `LFRCORDY` reader - LFRCO Ready"]
-pub type LFRCORDY_R = crate::BitReader<bool>;
+pub type LFRCORDY_R = crate::BitReader;
 #[doc = "Field `LFXOENS` reader - LFXO Enable Status"]
-pub type LFXOENS_R = crate::BitReader<bool>;
+pub type LFXOENS_R = crate::BitReader;
 #[doc = "Field `LFXORDY` reader - LFXO Ready"]
-pub type LFXORDY_R = crate::BitReader<bool>;
+pub type LFXORDY_R = crate::BitReader;
 #[doc = "Field `CALRDY` reader - Calibration Ready"]
-pub type CALRDY_R = crate::BitReader<bool>;
+pub type CALRDY_R = crate::BitReader;
 #[doc = "Field `HFXOREQ` reader - HFXO is Required By Hardware"]
-pub type HFXOREQ_R = crate::BitReader<bool>;
+pub type HFXOREQ_R = crate::BitReader;
 #[doc = "Field `HFXOPEAKDETRDY` reader - HFXO Peak Detection Ready"]
-pub type HFXOPEAKDETRDY_R = crate::BitReader<bool>;
+pub type HFXOPEAKDETRDY_R = crate::BitReader;
 #[doc = "Field `HFXOSHUNTOPTRDY` reader - HFXO Shunt Current Optimization Ready"]
-pub type HFXOSHUNTOPTRDY_R = crate::BitReader<bool>;
+pub type HFXOSHUNTOPTRDY_R = crate::BitReader;
 #[doc = "Field `HFXOAMPHIGH` reader - HFXO Oscillation Amplitude is Too High"]
-pub type HFXOAMPHIGH_R = crate::BitReader<bool>;
+pub type HFXOAMPHIGH_R = crate::BitReader;
 #[doc = "Field `HFXOAMPLOW` reader - HFXO Amplitude Tuning Value Too Low"]
-pub type HFXOAMPLOW_R = crate::BitReader<bool>;
+pub type HFXOAMPLOW_R = crate::BitReader;
 #[doc = "Field `HFXOREGILOW` reader - HFXO Regulator Shunt Current Too Low"]
-pub type HFXOREGILOW_R = crate::BitReader<bool>;
+pub type HFXOREGILOW_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - HFRCO Enable Status"]
     #[inline(always)]

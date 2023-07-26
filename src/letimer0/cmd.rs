@@ -20,15 +20,15 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `START` writer - Start LETIMER"]
-pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `STOP` writer - Stop LETIMER"]
-pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `CLEAR` writer - Clear LETIMER"]
-pub type CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `CTO0` writer - Clear Toggle Output 0"]
-pub type CTO0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type CTO0_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `CTO1` writer - Clear Toggle Output 1"]
-pub type CTO1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type CTO1_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Start LETIMER"]
     #[inline(always)]

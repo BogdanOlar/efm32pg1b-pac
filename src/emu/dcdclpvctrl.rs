@@ -35,13 +35,13 @@ impl From<crate::W<DCDCLPVCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `LPATT` reader - Low Power Feedback Attenuation"]
-pub type LPATT_R = crate::BitReader<bool>;
+pub type LPATT_R = crate::BitReader;
 #[doc = "Field `LPATT` writer - Low Power Feedback Attenuation"]
-pub type LPATT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCLPVCTRL_SPEC, bool, O>;
+pub type LPATT_W<'a, const O: u8> = crate::BitWriter<'a, DCDCLPVCTRL_SPEC, O>;
 #[doc = "Field `LPVREF` reader - LP Mode Reference Selection for EM23 and EM4H"]
-pub type LPVREF_R = crate::FieldReader<u8, u8>;
+pub type LPVREF_R = crate::FieldReader;
 #[doc = "Field `LPVREF` writer - LP Mode Reference Selection for EM23 and EM4H"]
-pub type LPVREF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCLPVCTRL_SPEC, u8, u8, 8, O>;
+pub type LPVREF_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLPVCTRL_SPEC, 8, O>;
 impl R {
     #[doc = "Bit 0 - Low Power Feedback Attenuation"]
     #[inline(always)]

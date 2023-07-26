@@ -35,9 +35,9 @@ impl From<crate::W<POLY_SPEC>> for W {
     }
 }
 #[doc = "Field `POLY` reader - CRC Polynomial Value"]
-pub type POLY_R = crate::FieldReader<u16, u16>;
+pub type POLY_R = crate::FieldReader<u16>;
 #[doc = "Field `POLY` writer - CRC Polynomial Value"]
-pub type POLY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POLY_SPEC, u16, u16, 16, O>;
+pub type POLY_W<'a, const O: u8> = crate::FieldWriter<'a, POLY_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - CRC Polynomial Value"]
     #[inline(always)]

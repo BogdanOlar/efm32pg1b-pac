@@ -35,29 +35,27 @@ impl From<crate::W<AUXHFRCOCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TUNING` reader - AUXHFRCO Tuning Value"]
-pub type TUNING_R = crate::FieldReader<u8, u8>;
+pub type TUNING_R = crate::FieldReader;
 #[doc = "Field `TUNING` writer - AUXHFRCO Tuning Value"]
-pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 7, O>;
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, AUXHFRCOCTRL_SPEC, 7, O>;
 #[doc = "Field `FINETUNING` reader - AUXHFRCO Fine Tuning Value"]
-pub type FINETUNING_R = crate::FieldReader<u8, u8>;
+pub type FINETUNING_R = crate::FieldReader;
 #[doc = "Field `FINETUNING` writer - AUXHFRCO Fine Tuning Value"]
-pub type FINETUNING_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 6, O>;
+pub type FINETUNING_W<'a, const O: u8> = crate::FieldWriter<'a, AUXHFRCOCTRL_SPEC, 6, O>;
 #[doc = "Field `FREQRANGE` reader - AUXHFRCO Frequency Range"]
-pub type FREQRANGE_R = crate::FieldReader<u8, u8>;
+pub type FREQRANGE_R = crate::FieldReader;
 #[doc = "Field `FREQRANGE` writer - AUXHFRCO Frequency Range"]
-pub type FREQRANGE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 5, O>;
+pub type FREQRANGE_W<'a, const O: u8> = crate::FieldWriter<'a, AUXHFRCOCTRL_SPEC, 5, O>;
 #[doc = "Field `CMPBIAS` reader - AUXHFRCO Comparator Bias Current"]
-pub type CMPBIAS_R = crate::FieldReader<u8, u8>;
+pub type CMPBIAS_R = crate::FieldReader;
 #[doc = "Field `CMPBIAS` writer - AUXHFRCO Comparator Bias Current"]
-pub type CMPBIAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 3, O>;
+pub type CMPBIAS_W<'a, const O: u8> = crate::FieldWriter<'a, AUXHFRCOCTRL_SPEC, 3, O>;
 #[doc = "Field `LDOHP` reader - AUXHFRCO LDO High Power Mode"]
-pub type LDOHP_R = crate::BitReader<bool>;
+pub type LDOHP_R = crate::BitReader;
 #[doc = "Field `LDOHP` writer - AUXHFRCO LDO High Power Mode"]
-pub type LDOHP_W<'a, const O: u8> = crate::BitWriter<'a, u32, AUXHFRCOCTRL_SPEC, bool, O>;
+pub type LDOHP_W<'a, const O: u8> = crate::BitWriter<'a, AUXHFRCOCTRL_SPEC, O>;
 #[doc = "Field `CLKDIV` reader - Locally Divide AUXHFRCO Clock Output"]
-pub type CLKDIV_R = crate::FieldReader<u8, CLKDIV_A>;
+pub type CLKDIV_R = crate::FieldReader<CLKDIV_A>;
 #[doc = "Locally Divide AUXHFRCO Clock Output\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -74,6 +72,9 @@ impl From<CLKDIV_A> for u8 {
     fn from(variant: CLKDIV_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKDIV_A {
+    type Ux = u8;
 }
 impl CLKDIV_R {
     #[doc = "Get enumerated values variant"]
@@ -103,8 +104,7 @@ impl CLKDIV_R {
     }
 }
 #[doc = "Field `CLKDIV` writer - Locally Divide AUXHFRCO Clock Output"]
-pub type CLKDIV_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, CLKDIV_A, 2, O>;
+pub type CLKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, AUXHFRCOCTRL_SPEC, 2, O, CLKDIV_A>;
 impl<'a, const O: u8> CLKDIV_W<'a, O> {
     #[doc = "Divide by 1."]
     #[inline(always)]
@@ -123,13 +123,13 @@ impl<'a, const O: u8> CLKDIV_W<'a, O> {
     }
 }
 #[doc = "Field `FINETUNINGEN` reader - Enable Reference for Fine Tuning"]
-pub type FINETUNINGEN_R = crate::BitReader<bool>;
+pub type FINETUNINGEN_R = crate::BitReader;
 #[doc = "Field `FINETUNINGEN` writer - Enable Reference for Fine Tuning"]
-pub type FINETUNINGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AUXHFRCOCTRL_SPEC, bool, O>;
+pub type FINETUNINGEN_W<'a, const O: u8> = crate::BitWriter<'a, AUXHFRCOCTRL_SPEC, O>;
 #[doc = "Field `VREFTC` reader - AUXHFRCO Temperature Coefficient Trim on Comparator Reference"]
-pub type VREFTC_R = crate::FieldReader<u8, u8>;
+pub type VREFTC_R = crate::FieldReader;
 #[doc = "Field `VREFTC` writer - AUXHFRCO Temperature Coefficient Trim on Comparator Reference"]
-pub type VREFTC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 4, O>;
+pub type VREFTC_W<'a, const O: u8> = crate::FieldWriter<'a, AUXHFRCOCTRL_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:6 - AUXHFRCO Tuning Value"]
     #[inline(always)]

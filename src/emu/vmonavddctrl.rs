@@ -35,37 +35,33 @@ impl From<crate::W<VMONAVDDCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Enable"]
-pub type EN_R = crate::BitReader<bool>;
+pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONAVDDCTRL_SPEC, bool, O>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, VMONAVDDCTRL_SPEC, O>;
 #[doc = "Field `RISEWU` reader - Rise Wakeup"]
-pub type RISEWU_R = crate::BitReader<bool>;
+pub type RISEWU_R = crate::BitReader;
 #[doc = "Field `RISEWU` writer - Rise Wakeup"]
-pub type RISEWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONAVDDCTRL_SPEC, bool, O>;
+pub type RISEWU_W<'a, const O: u8> = crate::BitWriter<'a, VMONAVDDCTRL_SPEC, O>;
 #[doc = "Field `FALLWU` reader - Fall Wakeup"]
-pub type FALLWU_R = crate::BitReader<bool>;
+pub type FALLWU_R = crate::BitReader;
 #[doc = "Field `FALLWU` writer - Fall Wakeup"]
-pub type FALLWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, VMONAVDDCTRL_SPEC, bool, O>;
+pub type FALLWU_W<'a, const O: u8> = crate::BitWriter<'a, VMONAVDDCTRL_SPEC, O>;
 #[doc = "Field `FALLTHRESFINE` reader - Falling Threshold Fine Adjust"]
-pub type FALLTHRESFINE_R = crate::FieldReader<u8, u8>;
+pub type FALLTHRESFINE_R = crate::FieldReader;
 #[doc = "Field `FALLTHRESFINE` writer - Falling Threshold Fine Adjust"]
-pub type FALLTHRESFINE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, VMONAVDDCTRL_SPEC, u8, u8, 4, O>;
+pub type FALLTHRESFINE_W<'a, const O: u8> = crate::FieldWriter<'a, VMONAVDDCTRL_SPEC, 4, O>;
 #[doc = "Field `FALLTHRESCOARSE` reader - Falling Threshold Coarse Adjust"]
-pub type FALLTHRESCOARSE_R = crate::FieldReader<u8, u8>;
+pub type FALLTHRESCOARSE_R = crate::FieldReader;
 #[doc = "Field `FALLTHRESCOARSE` writer - Falling Threshold Coarse Adjust"]
-pub type FALLTHRESCOARSE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, VMONAVDDCTRL_SPEC, u8, u8, 4, O>;
+pub type FALLTHRESCOARSE_W<'a, const O: u8> = crate::FieldWriter<'a, VMONAVDDCTRL_SPEC, 4, O>;
 #[doc = "Field `RISETHRESFINE` reader - Rising Threshold Fine Adjust"]
-pub type RISETHRESFINE_R = crate::FieldReader<u8, u8>;
+pub type RISETHRESFINE_R = crate::FieldReader;
 #[doc = "Field `RISETHRESFINE` writer - Rising Threshold Fine Adjust"]
-pub type RISETHRESFINE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, VMONAVDDCTRL_SPEC, u8, u8, 4, O>;
+pub type RISETHRESFINE_W<'a, const O: u8> = crate::FieldWriter<'a, VMONAVDDCTRL_SPEC, 4, O>;
 #[doc = "Field `RISETHRESCOARSE` reader - Rising Threshold Coarse Adjust"]
-pub type RISETHRESCOARSE_R = crate::FieldReader<u8, u8>;
+pub type RISETHRESCOARSE_R = crate::FieldReader;
 #[doc = "Field `RISETHRESCOARSE` writer - Rising Threshold Coarse Adjust"]
-pub type RISETHRESCOARSE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, VMONAVDDCTRL_SPEC, u8, u8, 4, O>;
+pub type RISETHRESCOARSE_W<'a, const O: u8> = crate::FieldWriter<'a, VMONAVDDCTRL_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]

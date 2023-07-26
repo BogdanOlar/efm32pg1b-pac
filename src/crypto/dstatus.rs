@@ -14,7 +14,7 @@ impl From<crate::R<DSTATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `DATA0ZERO` reader - Data 0 Zero"]
-pub type DATA0ZERO_R = crate::FieldReader<u8, DATA0ZERO_A>;
+pub type DATA0ZERO_R = crate::FieldReader<DATA0ZERO_A>;
 #[doc = "Data 0 Zero\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -33,6 +33,9 @@ impl From<DATA0ZERO_A> for u8 {
     fn from(variant: DATA0ZERO_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DATA0ZERO_A {
+    type Ux = u8;
 }
 impl DATA0ZERO_R {
     #[doc = "Get enumerated values variant"]
@@ -68,13 +71,13 @@ impl DATA0ZERO_R {
     }
 }
 #[doc = "Field `DDATA0LSBS` reader - LSBs in DDATA0"]
-pub type DDATA0LSBS_R = crate::FieldReader<u8, u8>;
+pub type DDATA0LSBS_R = crate::FieldReader;
 #[doc = "Field `DDATA0MSBS` reader - MSB in DDATA0"]
-pub type DDATA0MSBS_R = crate::FieldReader<u8, u8>;
+pub type DDATA0MSBS_R = crate::FieldReader;
 #[doc = "Field `DDATA1MSB` reader - MSB in DDATA1"]
-pub type DDATA1MSB_R = crate::BitReader<bool>;
+pub type DDATA1MSB_R = crate::BitReader;
 #[doc = "Field `CARRY` reader - Carry From Arithmetic Operation"]
-pub type CARRY_R = crate::BitReader<bool>;
+pub type CARRY_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:3 - Data 0 Zero"]
     #[inline(always)]

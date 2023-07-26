@@ -35,21 +35,21 @@ impl From<crate::W<TXDATAX_SPEC>> for W {
     }
 }
 #[doc = "Field `TXDATA` reader - TX Data"]
-pub type TXDATA_R = crate::FieldReader<u16, u16>;
+pub type TXDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `TXDATA` writer - TX Data"]
-pub type TXDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXDATAX_SPEC, u16, u16, 9, O>;
+pub type TXDATA_W<'a, const O: u8> = crate::FieldWriter<'a, TXDATAX_SPEC, 9, O, u16>;
 #[doc = "Field `TXBREAK` reader - Transmit Data as Break"]
-pub type TXBREAK_R = crate::BitReader<bool>;
+pub type TXBREAK_R = crate::BitReader;
 #[doc = "Field `TXBREAK` writer - Transmit Data as Break"]
-pub type TXBREAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXDATAX_SPEC, bool, O>;
+pub type TXBREAK_W<'a, const O: u8> = crate::BitWriter<'a, TXDATAX_SPEC, O>;
 #[doc = "Field `TXDISAT` reader - Disable TX After Transmission"]
-pub type TXDISAT_R = crate::BitReader<bool>;
+pub type TXDISAT_R = crate::BitReader;
 #[doc = "Field `TXDISAT` writer - Disable TX After Transmission"]
-pub type TXDISAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXDATAX_SPEC, bool, O>;
+pub type TXDISAT_W<'a, const O: u8> = crate::BitWriter<'a, TXDATAX_SPEC, O>;
 #[doc = "Field `RXENAT` reader - Enable RX After Transmission"]
-pub type RXENAT_R = crate::BitReader<bool>;
+pub type RXENAT_R = crate::BitReader;
 #[doc = "Field `RXENAT` writer - Enable RX After Transmission"]
-pub type RXENAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TXDATAX_SPEC, bool, O>;
+pub type RXENAT_W<'a, const O: u8> = crate::BitWriter<'a, TXDATAX_SPEC, O>;
 impl R {
     #[doc = "Bits 0:8 - TX Data"]
     #[inline(always)]

@@ -35,15 +35,15 @@ impl From<crate::W<CH3_LINK_SPEC>> for W {
     }
 }
 #[doc = "Field `LINKMODE` reader - Link Structure Addressing Mode"]
-pub type LINKMODE_R = crate::BitReader<bool>;
+pub type LINKMODE_R = crate::BitReader;
 #[doc = "Field `LINK` reader - Link Next Structure"]
-pub type LINK_R = crate::BitReader<bool>;
+pub type LINK_R = crate::BitReader;
 #[doc = "Field `LINK` writer - Link Next Structure"]
-pub type LINK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH3_LINK_SPEC, bool, O>;
+pub type LINK_W<'a, const O: u8> = crate::BitWriter<'a, CH3_LINK_SPEC, O>;
 #[doc = "Field `LINKADDR` reader - Link Structure Address"]
-pub type LINKADDR_R = crate::FieldReader<u32, u32>;
+pub type LINKADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `LINKADDR` writer - Link Structure Address"]
-pub type LINKADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH3_LINK_SPEC, u32, u32, 30, O>;
+pub type LINKADDR_W<'a, const O: u8> = crate::FieldWriter<'a, CH3_LINK_SPEC, 30, O, u32>;
 impl R {
     #[doc = "Bit 0 - Link Structure Addressing Mode"]
     #[inline(always)]

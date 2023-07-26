@@ -14,25 +14,25 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `SINGLE` reader - Single Conversion Complete Interrupt Flag"]
-pub type SINGLE_R = crate::BitReader<bool>;
+pub type SINGLE_R = crate::BitReader;
 #[doc = "Field `SCAN` reader - Scan Conversion Complete Interrupt Flag"]
-pub type SCAN_R = crate::BitReader<bool>;
+pub type SCAN_R = crate::BitReader;
 #[doc = "Field `SINGLEOF` reader - Single FIFO Overflow Interrupt Flag"]
-pub type SINGLEOF_R = crate::BitReader<bool>;
+pub type SINGLEOF_R = crate::BitReader;
 #[doc = "Field `SCANOF` reader - Scan FIFO Overflow Interrupt Flag"]
-pub type SCANOF_R = crate::BitReader<bool>;
+pub type SCANOF_R = crate::BitReader;
 #[doc = "Field `SINGLEUF` reader - Single FIFO Underflow Interrupt Flag"]
-pub type SINGLEUF_R = crate::BitReader<bool>;
+pub type SINGLEUF_R = crate::BitReader;
 #[doc = "Field `SCANUF` reader - Scan FIFO Underflow Interrupt Flag"]
-pub type SCANUF_R = crate::BitReader<bool>;
+pub type SCANUF_R = crate::BitReader;
 #[doc = "Field `SINGLECMP` reader - Single Result Compare Match Interrupt Flag"]
-pub type SINGLECMP_R = crate::BitReader<bool>;
+pub type SINGLECMP_R = crate::BitReader;
 #[doc = "Field `SCANCMP` reader - Scan Result Compare Match Interrupt Flag"]
-pub type SCANCMP_R = crate::BitReader<bool>;
+pub type SCANCMP_R = crate::BitReader;
 #[doc = "Field `VREFOV` reader - VREF Over Voltage Interrupt Flag"]
-pub type VREFOV_R = crate::BitReader<bool>;
+pub type VREFOV_R = crate::BitReader;
 #[doc = "Field `PROGERR` reader - Programming Error Interrupt Flag"]
-pub type PROGERR_R = crate::BitReader<bool>;
+pub type PROGERR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Single Conversion Complete Interrupt Flag"]
     #[inline(always)]

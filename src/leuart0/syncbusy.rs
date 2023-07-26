@@ -14,21 +14,21 @@ impl From<crate::R<SYNCBUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `CTRL` reader - CTRL Register Busy"]
-pub type CTRL_R = crate::BitReader<bool>;
+pub type CTRL_R = crate::BitReader;
 #[doc = "Field `CMD` reader - CMD Register Busy"]
-pub type CMD_R = crate::BitReader<bool>;
+pub type CMD_R = crate::BitReader;
 #[doc = "Field `CLKDIV` reader - CLKDIV Register Busy"]
-pub type CLKDIV_R = crate::BitReader<bool>;
+pub type CLKDIV_R = crate::BitReader;
 #[doc = "Field `STARTFRAME` reader - STARTFRAME Register Busy"]
-pub type STARTFRAME_R = crate::BitReader<bool>;
+pub type STARTFRAME_R = crate::BitReader;
 #[doc = "Field `SIGFRAME` reader - SIGFRAME Register Busy"]
-pub type SIGFRAME_R = crate::BitReader<bool>;
+pub type SIGFRAME_R = crate::BitReader;
 #[doc = "Field `TXDATAX` reader - TXDATAX Register Busy"]
-pub type TXDATAX_R = crate::BitReader<bool>;
+pub type TXDATAX_R = crate::BitReader;
 #[doc = "Field `TXDATA` reader - TXDATA Register Busy"]
-pub type TXDATA_R = crate::BitReader<bool>;
+pub type TXDATA_R = crate::BitReader;
 #[doc = "Field `PULSECTRL` reader - PULSECTRL Register Busy"]
-pub type PULSECTRL_R = crate::BitReader<bool>;
+pub type PULSECTRL_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - CTRL Register Busy"]
     #[inline(always)]

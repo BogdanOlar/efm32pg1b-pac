@@ -35,7 +35,7 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `CLKOUTSEL0` reader - Clock Output Select 0"]
-pub type CLKOUTSEL0_R = crate::FieldReader<u8, CLKOUTSEL0_A>;
+pub type CLKOUTSEL0_R = crate::FieldReader<CLKOUTSEL0_A>;
 #[doc = "Clock Output Select 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -72,6 +72,9 @@ impl From<CLKOUTSEL0_A> for u8 {
     fn from(variant: CLKOUTSEL0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKOUTSEL0_A {
+    type Ux = u8;
 }
 impl CLKOUTSEL0_R {
     #[doc = "Get enumerated values variant"]
@@ -161,8 +164,7 @@ impl CLKOUTSEL0_R {
     }
 }
 #[doc = "Field `CLKOUTSEL0` writer - Clock Output Select 0"]
-pub type CLKOUTSEL0_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKOUTSEL0_A, 4, O>;
+pub type CLKOUTSEL0_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 4, O, CLKOUTSEL0_A>;
 impl<'a, const O: u8> CLKOUTSEL0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -231,7 +233,7 @@ impl<'a, const O: u8> CLKOUTSEL0_W<'a, O> {
     }
 }
 #[doc = "Field `CLKOUTSEL1` reader - Clock Output Select 1"]
-pub type CLKOUTSEL1_R = crate::FieldReader<u8, CLKOUTSEL1_A>;
+pub type CLKOUTSEL1_R = crate::FieldReader<CLKOUTSEL1_A>;
 #[doc = "Clock Output Select 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -268,6 +270,9 @@ impl From<CLKOUTSEL1_A> for u8 {
     fn from(variant: CLKOUTSEL1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKOUTSEL1_A {
+    type Ux = u8;
 }
 impl CLKOUTSEL1_R {
     #[doc = "Get enumerated values variant"]
@@ -357,8 +362,7 @@ impl CLKOUTSEL1_R {
     }
 }
 #[doc = "Field `CLKOUTSEL1` writer - Clock Output Select 1"]
-pub type CLKOUTSEL1_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKOUTSEL1_A, 4, O>;
+pub type CLKOUTSEL1_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 4, O, CLKOUTSEL1_A>;
 impl<'a, const O: u8> CLKOUTSEL1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -427,13 +431,13 @@ impl<'a, const O: u8> CLKOUTSEL1_W<'a, O> {
     }
 }
 #[doc = "Field `WSHFLE` reader - Wait State for High-Frequency LE Interface"]
-pub type WSHFLE_R = crate::BitReader<bool>;
+pub type WSHFLE_R = crate::BitReader;
 #[doc = "Field `WSHFLE` writer - Wait State for High-Frequency LE Interface"]
-pub type WSHFLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type WSHFLE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 #[doc = "Field `HFPERCLKEN` reader - HFPERCLK Enable"]
-pub type HFPERCLKEN_R = crate::BitReader<bool>;
+pub type HFPERCLKEN_R = crate::BitReader;
 #[doc = "Field `HFPERCLKEN` writer - HFPERCLK Enable"]
-pub type HFPERCLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+pub type HFPERCLKEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - Clock Output Select 0"]
     #[inline(always)]

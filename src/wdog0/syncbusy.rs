@@ -14,13 +14,13 @@ impl From<crate::R<SYNCBUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `CTRL` reader - CTRL Register Busy"]
-pub type CTRL_R = crate::BitReader<bool>;
+pub type CTRL_R = crate::BitReader;
 #[doc = "Field `CMD` reader - CMD Register Busy"]
-pub type CMD_R = crate::BitReader<bool>;
+pub type CMD_R = crate::BitReader;
 #[doc = "Field `PCH0_PRSCTRL` reader - PCH0_PRSCTRL Register Busy"]
-pub type PCH0_PRSCTRL_R = crate::BitReader<bool>;
+pub type PCH0_PRSCTRL_R = crate::BitReader;
 #[doc = "Field `PCH1_PRSCTRL` reader - PCH1_PRSCTRL Register Busy"]
-pub type PCH1_PRSCTRL_R = crate::BitReader<bool>;
+pub type PCH1_PRSCTRL_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - CTRL Register Busy"]
     #[inline(always)]

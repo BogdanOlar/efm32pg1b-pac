@@ -14,7 +14,7 @@ impl From<crate::R<AUXCNT_SPEC>> for R {
     }
 }
 #[doc = "Field `AUXCNT` reader - Auxiliary Counter Value"]
-pub type AUXCNT_R = crate::FieldReader<u16, u16>;
+pub type AUXCNT_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Auxiliary Counter Value"]
     #[inline(always)]

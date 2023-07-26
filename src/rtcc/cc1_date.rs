@@ -35,21 +35,21 @@ impl From<crate::W<CC1_DATE_SPEC>> for W {
     }
 }
 #[doc = "Field `DAYU` reader - Day of Month/week, Units"]
-pub type DAYU_R = crate::FieldReader<u8, u8>;
+pub type DAYU_R = crate::FieldReader;
 #[doc = "Field `DAYU` writer - Day of Month/week, Units"]
-pub type DAYU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_DATE_SPEC, u8, u8, 4, O>;
+pub type DAYU_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_DATE_SPEC, 4, O>;
 #[doc = "Field `DAYT` reader - Day of Month/week, Tens"]
-pub type DAYT_R = crate::FieldReader<u8, u8>;
+pub type DAYT_R = crate::FieldReader;
 #[doc = "Field `DAYT` writer - Day of Month/week, Tens"]
-pub type DAYT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_DATE_SPEC, u8, u8, 2, O>;
+pub type DAYT_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_DATE_SPEC, 2, O>;
 #[doc = "Field `MONTHU` reader - Month, Units"]
-pub type MONTHU_R = crate::FieldReader<u8, u8>;
+pub type MONTHU_R = crate::FieldReader;
 #[doc = "Field `MONTHU` writer - Month, Units"]
-pub type MONTHU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_DATE_SPEC, u8, u8, 4, O>;
+pub type MONTHU_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_DATE_SPEC, 4, O>;
 #[doc = "Field `MONTHT` reader - Month, Tens"]
-pub type MONTHT_R = crate::BitReader<bool>;
+pub type MONTHT_R = crate::BitReader;
 #[doc = "Field `MONTHT` writer - Month, Tens"]
-pub type MONTHT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CC1_DATE_SPEC, bool, O>;
+pub type MONTHT_W<'a, const O: u8> = crate::BitWriter<'a, CC1_DATE_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - Day of Month/week, Units"]
     #[inline(always)]

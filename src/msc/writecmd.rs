@@ -20,21 +20,21 @@ impl From<crate::W<WRITECMD_SPEC>> for W {
     }
 }
 #[doc = "Field `LADDRIM` writer - Load MSC_ADDRB Into ADDR"]
-pub type LADDRIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
+pub type LADDRIM_W<'a, const O: u8> = crate::BitWriter<'a, WRITECMD_SPEC, O>;
 #[doc = "Field `ERASEPAGE` writer - Erase Page"]
-pub type ERASEPAGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
+pub type ERASEPAGE_W<'a, const O: u8> = crate::BitWriter<'a, WRITECMD_SPEC, O>;
 #[doc = "Field `WRITEEND` writer - End Write Mode"]
-pub type WRITEEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
+pub type WRITEEND_W<'a, const O: u8> = crate::BitWriter<'a, WRITECMD_SPEC, O>;
 #[doc = "Field `WRITEONCE` writer - Word Write-Once Trigger"]
-pub type WRITEONCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
+pub type WRITEONCE_W<'a, const O: u8> = crate::BitWriter<'a, WRITECMD_SPEC, O>;
 #[doc = "Field `WRITETRIG` writer - Word Write Sequence Trigger"]
-pub type WRITETRIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
+pub type WRITETRIG_W<'a, const O: u8> = crate::BitWriter<'a, WRITECMD_SPEC, O>;
 #[doc = "Field `ERASEABORT` writer - Abort Erase Sequence"]
-pub type ERASEABORT_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
+pub type ERASEABORT_W<'a, const O: u8> = crate::BitWriter<'a, WRITECMD_SPEC, O>;
 #[doc = "Field `ERASEMAIN0` writer - Mass Erase Region 0"]
-pub type ERASEMAIN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
+pub type ERASEMAIN0_W<'a, const O: u8> = crate::BitWriter<'a, WRITECMD_SPEC, O>;
 #[doc = "Field `CLEARWDATA` writer - Clear WDATA State"]
-pub type CLEARWDATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, WRITECMD_SPEC, bool, O>;
+pub type CLEARWDATA_W<'a, const O: u8> = crate::BitWriter<'a, WRITECMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Load MSC_ADDRB Into ADDR"]
     #[inline(always)]

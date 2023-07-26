@@ -35,9 +35,9 @@ impl From<crate::W<PWRCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `ANASW` reader - Analog Switch Selection"]
-pub type ANASW_R = crate::BitReader<bool>;
+pub type ANASW_R = crate::BitReader;
 #[doc = "Field `ANASW` writer - Analog Switch Selection"]
-pub type ANASW_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCTRL_SPEC, bool, O>;
+pub type ANASW_W<'a, const O: u8> = crate::BitWriter<'a, PWRCTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 5 - Analog Switch Selection"]
     #[inline(always)]

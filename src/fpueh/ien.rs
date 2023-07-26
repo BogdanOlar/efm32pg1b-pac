@@ -35,29 +35,29 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `FPIOC` reader - FPIOC Interrupt Enable"]
-pub type FPIOC_R = crate::BitReader<bool>;
+pub type FPIOC_R = crate::BitReader;
 #[doc = "Field `FPIOC` writer - FPIOC Interrupt Enable"]
-pub type FPIOC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type FPIOC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `FPDZC` reader - FPDZC Interrupt Enable"]
-pub type FPDZC_R = crate::BitReader<bool>;
+pub type FPDZC_R = crate::BitReader;
 #[doc = "Field `FPDZC` writer - FPDZC Interrupt Enable"]
-pub type FPDZC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type FPDZC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `FPUFC` reader - FPUFC Interrupt Enable"]
-pub type FPUFC_R = crate::BitReader<bool>;
+pub type FPUFC_R = crate::BitReader;
 #[doc = "Field `FPUFC` writer - FPUFC Interrupt Enable"]
-pub type FPUFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type FPUFC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `FPOFC` reader - FPOFC Interrupt Enable"]
-pub type FPOFC_R = crate::BitReader<bool>;
+pub type FPOFC_R = crate::BitReader;
 #[doc = "Field `FPOFC` writer - FPOFC Interrupt Enable"]
-pub type FPOFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type FPOFC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `FPIDC` reader - FPIDC Interrupt Enable"]
-pub type FPIDC_R = crate::BitReader<bool>;
+pub type FPIDC_R = crate::BitReader;
 #[doc = "Field `FPIDC` writer - FPIDC Interrupt Enable"]
-pub type FPIDC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type FPIDC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `FPIXC` reader - FPIXC Interrupt Enable"]
-pub type FPIXC_R = crate::BitReader<bool>;
+pub type FPIXC_R = crate::BitReader;
 #[doc = "Field `FPIXC` writer - FPIXC Interrupt Enable"]
-pub type FPIXC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type FPIXC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - FPIOC Interrupt Enable"]
     #[inline(always)]

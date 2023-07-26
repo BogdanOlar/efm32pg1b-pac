@@ -14,17 +14,17 @@ impl From<crate::R<IF_SPEC>> for R {
     }
 }
 #[doc = "Field `UF` reader - Underflow Interrupt Read Flag"]
-pub type UF_R = crate::BitReader<bool>;
+pub type UF_R = crate::BitReader;
 #[doc = "Field `OF` reader - Overflow Interrupt Read Flag"]
-pub type OF_R = crate::BitReader<bool>;
+pub type OF_R = crate::BitReader;
 #[doc = "Field `DIRCNG` reader - Direction Change Detect Interrupt Flag"]
-pub type DIRCNG_R = crate::BitReader<bool>;
+pub type DIRCNG_R = crate::BitReader;
 #[doc = "Field `AUXOF` reader - Auxiliary Overflow Interrupt Read Flag"]
-pub type AUXOF_R = crate::BitReader<bool>;
+pub type AUXOF_R = crate::BitReader;
 #[doc = "Field `TCC` reader - Triggered Compare Interrupt Read Flag"]
-pub type TCC_R = crate::BitReader<bool>;
+pub type TCC_R = crate::BitReader;
 #[doc = "Field `OQSTERR` reader - Oversampling Quadrature State Error Interrupt"]
-pub type OQSTERR_R = crate::BitReader<bool>;
+pub type OQSTERR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Underflow Interrupt Read Flag"]
     #[inline(always)]

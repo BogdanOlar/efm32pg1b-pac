@@ -35,13 +35,13 @@ impl From<crate::W<OVSCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `FILTLEN` reader - Configure Filter Length for Inputs S0IN and S1IN"]
-pub type FILTLEN_R = crate::FieldReader<u8, u8>;
+pub type FILTLEN_R = crate::FieldReader;
 #[doc = "Field `FILTLEN` writer - Configure Filter Length for Inputs S0IN and S1IN"]
-pub type FILTLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OVSCFG_SPEC, u8, u8, 8, O>;
+pub type FILTLEN_W<'a, const O: u8> = crate::FieldWriter<'a, OVSCFG_SPEC, 8, O>;
 #[doc = "Field `FLUTTERRM` reader - Flutter Remove"]
-pub type FLUTTERRM_R = crate::BitReader<bool>;
+pub type FLUTTERRM_R = crate::BitReader;
 #[doc = "Field `FLUTTERRM` writer - Flutter Remove"]
-pub type FLUTTERRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVSCFG_SPEC, bool, O>;
+pub type FLUTTERRM_W<'a, const O: u8> = crate::BitWriter<'a, OVSCFG_SPEC, O>;
 impl R {
     #[doc = "Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN"]
     #[inline(always)]

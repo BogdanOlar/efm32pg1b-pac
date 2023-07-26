@@ -14,9 +14,9 @@ impl From<crate::R<SCANDATAXP_SPEC>> for R {
     }
 }
 #[doc = "Field `DATAP` reader - Scan Conversion Result Data Peek"]
-pub type DATAP_R = crate::FieldReader<u16, u16>;
+pub type DATAP_R = crate::FieldReader<u16>;
 #[doc = "Field `SCANINPUTIDPEEK` reader - Scan Conversion Data Source Peek"]
-pub type SCANINPUTIDPEEK_R = crate::FieldReader<u8, u8>;
+pub type SCANINPUTIDPEEK_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:15 - Scan Conversion Result Data Peek"]
     #[inline(always)]

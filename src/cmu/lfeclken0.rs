@@ -35,9 +35,9 @@ impl From<crate::W<LFECLKEN0_SPEC>> for W {
     }
 }
 #[doc = "Field `RTCC` reader - Real-Time Counter and Calendar Clock Enable"]
-pub type RTCC_R = crate::BitReader<bool>;
+pub type RTCC_R = crate::BitReader;
 #[doc = "Field `RTCC` writer - Real-Time Counter and Calendar Clock Enable"]
-pub type RTCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFECLKEN0_SPEC, bool, O>;
+pub type RTCC_W<'a, const O: u8> = crate::BitWriter<'a, LFECLKEN0_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Real-Time Counter and Calendar Clock Enable"]
     #[inline(always)]

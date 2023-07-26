@@ -35,7 +35,7 @@ impl From<crate::W<DTFC_SPEC>> for W {
     }
 }
 #[doc = "Field `DTPRS0FSEL` reader - DTI PRS Fault Source 0 Select"]
-pub type DTPRS0FSEL_R = crate::FieldReader<u8, DTPRS0FSEL_A>;
+pub type DTPRS0FSEL_R = crate::FieldReader<DTPRS0FSEL_A>;
 #[doc = "DTI PRS Fault Source 0 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -70,6 +70,9 @@ impl From<DTPRS0FSEL_A> for u8 {
     fn from(variant: DTPRS0FSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DTPRS0FSEL_A {
+    type Ux = u8;
 }
 impl DTPRS0FSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -153,8 +156,7 @@ impl DTPRS0FSEL_R {
     }
 }
 #[doc = "Field `DTPRS0FSEL` writer - DTI PRS Fault Source 0 Select"]
-pub type DTPRS0FSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DTFC_SPEC, u8, DTPRS0FSEL_A, 4, O>;
+pub type DTPRS0FSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DTFC_SPEC, 4, O, DTPRS0FSEL_A>;
 impl<'a, const O: u8> DTPRS0FSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as fault source 0"]
     #[inline(always)]
@@ -218,7 +220,7 @@ impl<'a, const O: u8> DTPRS0FSEL_W<'a, O> {
     }
 }
 #[doc = "Field `DTPRS1FSEL` reader - DTI PRS Fault Source 1 Select"]
-pub type DTPRS1FSEL_R = crate::FieldReader<u8, DTPRS1FSEL_A>;
+pub type DTPRS1FSEL_R = crate::FieldReader<DTPRS1FSEL_A>;
 #[doc = "DTI PRS Fault Source 1 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -253,6 +255,9 @@ impl From<DTPRS1FSEL_A> for u8 {
     fn from(variant: DTPRS1FSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DTPRS1FSEL_A {
+    type Ux = u8;
 }
 impl DTPRS1FSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -336,8 +341,7 @@ impl DTPRS1FSEL_R {
     }
 }
 #[doc = "Field `DTPRS1FSEL` writer - DTI PRS Fault Source 1 Select"]
-pub type DTPRS1FSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DTFC_SPEC, u8, DTPRS1FSEL_A, 4, O>;
+pub type DTPRS1FSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DTFC_SPEC, 4, O, DTPRS1FSEL_A>;
 impl<'a, const O: u8> DTPRS1FSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as fault source 1"]
     #[inline(always)]
@@ -401,7 +405,7 @@ impl<'a, const O: u8> DTPRS1FSEL_W<'a, O> {
     }
 }
 #[doc = "Field `DTFA` reader - DTI Fault Action"]
-pub type DTFA_R = crate::FieldReader<u8, DTFA_A>;
+pub type DTFA_R = crate::FieldReader<DTFA_A>;
 #[doc = "DTI Fault Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -420,6 +424,9 @@ impl From<DTFA_A> for u8 {
     fn from(variant: DTFA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DTFA_A {
+    type Ux = u8;
 }
 impl DTFA_R {
     #[doc = "Get enumerated values variant"]
@@ -455,7 +462,7 @@ impl DTFA_R {
     }
 }
 #[doc = "Field `DTFA` writer - DTI Fault Action"]
-pub type DTFA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DTFC_SPEC, u8, DTFA_A, 2, O>;
+pub type DTFA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DTFC_SPEC, 2, O, DTFA_A>;
 impl<'a, const O: u8> DTFA_W<'a, O> {
     #[doc = "No action on fault"]
     #[inline(always)]
@@ -479,21 +486,21 @@ impl<'a, const O: u8> DTFA_W<'a, O> {
     }
 }
 #[doc = "Field `DTPRS0FEN` reader - DTI PRS 0 Fault Enable"]
-pub type DTPRS0FEN_R = crate::BitReader<bool>;
+pub type DTPRS0FEN_R = crate::BitReader;
 #[doc = "Field `DTPRS0FEN` writer - DTI PRS 0 Fault Enable"]
-pub type DTPRS0FEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFC_SPEC, bool, O>;
+pub type DTPRS0FEN_W<'a, const O: u8> = crate::BitWriter<'a, DTFC_SPEC, O>;
 #[doc = "Field `DTPRS1FEN` reader - DTI PRS 1 Fault Enable"]
-pub type DTPRS1FEN_R = crate::BitReader<bool>;
+pub type DTPRS1FEN_R = crate::BitReader;
 #[doc = "Field `DTPRS1FEN` writer - DTI PRS 1 Fault Enable"]
-pub type DTPRS1FEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFC_SPEC, bool, O>;
+pub type DTPRS1FEN_W<'a, const O: u8> = crate::BitWriter<'a, DTFC_SPEC, O>;
 #[doc = "Field `DTDBGFEN` reader - DTI Debugger Fault Enable"]
-pub type DTDBGFEN_R = crate::BitReader<bool>;
+pub type DTDBGFEN_R = crate::BitReader;
 #[doc = "Field `DTDBGFEN` writer - DTI Debugger Fault Enable"]
-pub type DTDBGFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFC_SPEC, bool, O>;
+pub type DTDBGFEN_W<'a, const O: u8> = crate::BitWriter<'a, DTFC_SPEC, O>;
 #[doc = "Field `DTLOCKUPFEN` reader - DTI Lockup Fault Enable"]
-pub type DTLOCKUPFEN_R = crate::BitReader<bool>;
+pub type DTLOCKUPFEN_R = crate::BitReader;
 #[doc = "Field `DTLOCKUPFEN` writer - DTI Lockup Fault Enable"]
-pub type DTLOCKUPFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTFC_SPEC, bool, O>;
+pub type DTLOCKUPFEN_W<'a, const O: u8> = crate::BitWriter<'a, DTFC_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - DTI PRS Fault Source 0 Select"]
     #[inline(always)]

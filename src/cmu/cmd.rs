@@ -20,13 +20,13 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `CALSTART` writer - Calibration Start"]
-pub type CALSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type CALSTART_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `CALSTOP` writer - Calibration Stop"]
-pub type CALSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type CALSTOP_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `HFXOPEAKDETSTART` writer - HFXO Peak Detection Start"]
-pub type HFXOPEAKDETSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type HFXOPEAKDETSTART_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `HFXOSHUNTOPTSTART` writer - HFXO Shunt Current Optimization Start"]
-pub type HFXOSHUNTOPTSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type HFXOSHUNTOPTSTART_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Calibration Start"]
     #[inline(always)]

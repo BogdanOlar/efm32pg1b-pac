@@ -14,9 +14,9 @@ impl From<crate::R<APORTCONFLICT_SPEC>> for R {
     }
 }
 #[doc = "Field `APORT1XCONFLICT` reader - 1 If the Bus Connected to APORT1X is in Conflict With Another Peripheral"]
-pub type APORT1XCONFLICT_R = crate::BitReader<bool>;
+pub type APORT1XCONFLICT_R = crate::BitReader;
 #[doc = "Field `APORT1YCONFLICT` reader - 1 If the Bus Connected to APORT1Y is in Conflict With Another Peripheral"]
-pub type APORT1YCONFLICT_R = crate::BitReader<bool>;
+pub type APORT1YCONFLICT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 2 - 1 If the Bus Connected to APORT1X is in Conflict With Another Peripheral"]
     #[inline(always)]

@@ -35,25 +35,21 @@ impl From<crate::W<HFXOSTARTUPCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `IBTRIMXOCORE` reader - Sets the Startup Oscillator Core Bias Current"]
-pub type IBTRIMXOCORE_R = crate::FieldReader<u8, u8>;
+pub type IBTRIMXOCORE_R = crate::FieldReader;
 #[doc = "Field `IBTRIMXOCORE` writer - Sets the Startup Oscillator Core Bias Current"]
-pub type IBTRIMXOCORE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTARTUPCTRL_SPEC, u8, u8, 7, O>;
+pub type IBTRIMXOCORE_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTARTUPCTRL_SPEC, 7, O>;
 #[doc = "Field `CTUNE` reader - Sets Oscillator Tuning Capacitance"]
-pub type CTUNE_R = crate::FieldReader<u16, u16>;
+pub type CTUNE_R = crate::FieldReader<u16>;
 #[doc = "Field `CTUNE` writer - Sets Oscillator Tuning Capacitance"]
-pub type CTUNE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTARTUPCTRL_SPEC, u16, u16, 9, O>;
+pub type CTUNE_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTARTUPCTRL_SPEC, 9, O, u16>;
 #[doc = "Field `RESERVED0` reader - This Field is Reserved. It Should Be Set to 0x9"]
-pub type RESERVED0_R = crate::FieldReader<u8, u8>;
+pub type RESERVED0_R = crate::FieldReader;
 #[doc = "Field `RESERVED0` writer - This Field is Reserved. It Should Be Set to 0x9"]
-pub type RESERVED0_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTARTUPCTRL_SPEC, u8, u8, 7, O>;
+pub type RESERVED0_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTARTUPCTRL_SPEC, 7, O>;
 #[doc = "Field `RESERVED1` reader - Sets the Regulator Output Current Level (shunt Regulator)"]
-pub type RESERVED1_R = crate::FieldReader<u8, u8>;
+pub type RESERVED1_R = crate::FieldReader;
 #[doc = "Field `RESERVED1` writer - Sets the Regulator Output Current Level (shunt Regulator)"]
-pub type RESERVED1_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOSTARTUPCTRL_SPEC, u8, u8, 4, O>;
+pub type RESERVED1_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOSTARTUPCTRL_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:6 - Sets the Startup Oscillator Core Bias Current"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RXDATAP_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATAP` reader - RX Data Peek"]
-pub type RXDATAP_R = crate::FieldReader<u8, u8>;
+pub type RXDATAP_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - RX Data Peek"]
     #[inline(always)]

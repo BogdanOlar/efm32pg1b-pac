@@ -14,7 +14,7 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `APORTCONFLICT` reader - APORT Conflict Output"]
-pub type APORTCONFLICT_R = crate::BitReader<bool>;
+pub type APORTCONFLICT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 1 - APORT Conflict Output"]
     #[inline(always)]

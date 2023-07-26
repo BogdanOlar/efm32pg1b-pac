@@ -14,7 +14,7 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `DIR` reader - Current Counter Direction"]
-pub type DIR_R = crate::BitReader<bool>;
+pub type DIR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Current Counter Direction"]
     #[inline(always)]

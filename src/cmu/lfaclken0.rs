@@ -35,9 +35,9 @@ impl From<crate::W<LFACLKEN0_SPEC>> for W {
     }
 }
 #[doc = "Field `LETIMER0` reader - Low Energy Timer 0 Clock Enable"]
-pub type LETIMER0_R = crate::BitReader<bool>;
+pub type LETIMER0_R = crate::BitReader;
 #[doc = "Field `LETIMER0` writer - Low Energy Timer 0 Clock Enable"]
-pub type LETIMER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFACLKEN0_SPEC, bool, O>;
+pub type LETIMER0_W<'a, const O: u8> = crate::BitWriter<'a, LFACLKEN0_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Low Energy Timer 0 Clock Enable"]
     #[inline(always)]

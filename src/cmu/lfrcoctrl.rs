@@ -35,23 +35,23 @@ impl From<crate::W<LFRCOCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TUNING` reader - LFRCO Tuning Value"]
-pub type TUNING_R = crate::FieldReader<u16, u16>;
+pub type TUNING_R = crate::FieldReader<u16>;
 #[doc = "Field `TUNING` writer - LFRCO Tuning Value"]
-pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFRCOCTRL_SPEC, u16, u16, 9, O>;
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, LFRCOCTRL_SPEC, 9, O, u16>;
 #[doc = "Field `ENVREF` reader - Enable Duty Cycling of Vref"]
-pub type ENVREF_R = crate::BitReader<bool>;
+pub type ENVREF_R = crate::BitReader;
 #[doc = "Field `ENVREF` writer - Enable Duty Cycling of Vref"]
-pub type ENVREF_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFRCOCTRL_SPEC, bool, O>;
+pub type ENVREF_W<'a, const O: u8> = crate::BitWriter<'a, LFRCOCTRL_SPEC, O>;
 #[doc = "Field `ENCHOP` reader - Enable Comparator Chopping"]
-pub type ENCHOP_R = crate::BitReader<bool>;
+pub type ENCHOP_R = crate::BitReader;
 #[doc = "Field `ENCHOP` writer - Enable Comparator Chopping"]
-pub type ENCHOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFRCOCTRL_SPEC, bool, O>;
+pub type ENCHOP_W<'a, const O: u8> = crate::BitWriter<'a, LFRCOCTRL_SPEC, O>;
 #[doc = "Field `ENDEM` reader - Enable Dynamic Element Matching"]
-pub type ENDEM_R = crate::BitReader<bool>;
+pub type ENDEM_R = crate::BitReader;
 #[doc = "Field `ENDEM` writer - Enable Dynamic Element Matching"]
-pub type ENDEM_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFRCOCTRL_SPEC, bool, O>;
+pub type ENDEM_W<'a, const O: u8> = crate::BitWriter<'a, LFRCOCTRL_SPEC, O>;
 #[doc = "Field `TIMEOUT` reader - LFRCO Timeout"]
-pub type TIMEOUT_R = crate::FieldReader<u8, TIMEOUT_A>;
+pub type TIMEOUT_R = crate::FieldReader<TIMEOUT_A>;
 #[doc = "LFRCO Timeout\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -68,6 +68,9 @@ impl From<TIMEOUT_A> for u8 {
     fn from(variant: TIMEOUT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TIMEOUT_A {
+    type Ux = u8;
 }
 impl TIMEOUT_R {
     #[doc = "Get enumerated values variant"]
@@ -97,8 +100,7 @@ impl TIMEOUT_R {
     }
 }
 #[doc = "Field `TIMEOUT` writer - LFRCO Timeout"]
-pub type TIMEOUT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LFRCOCTRL_SPEC, u8, TIMEOUT_A, 2, O>;
+pub type TIMEOUT_W<'a, const O: u8> = crate::FieldWriter<'a, LFRCOCTRL_SPEC, 2, O, TIMEOUT_A>;
 impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
@@ -117,9 +119,9 @@ impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     }
 }
 #[doc = "Field `GMCCURTUNE` reader - Tuning of Gmc Current"]
-pub type GMCCURTUNE_R = crate::FieldReader<u8, u8>;
+pub type GMCCURTUNE_R = crate::FieldReader;
 #[doc = "Field `GMCCURTUNE` writer - Tuning of Gmc Current"]
-pub type GMCCURTUNE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFRCOCTRL_SPEC, u8, u8, 4, O>;
+pub type GMCCURTUNE_W<'a, const O: u8> = crate::FieldWriter<'a, LFRCOCTRL_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:8 - LFRCO Tuning Value"]
     #[inline(always)]

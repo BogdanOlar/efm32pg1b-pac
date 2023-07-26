@@ -35,29 +35,29 @@ impl From<crate::W<PD_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `DRIVESTRENGTH` reader - Drive Strength for Port"]
-pub type DRIVESTRENGTH_R = crate::BitReader<bool>;
+pub type DRIVESTRENGTH_R = crate::BitReader;
 #[doc = "Field `DRIVESTRENGTH` writer - Drive Strength for Port"]
-pub type DRIVESTRENGTH_W<'a, const O: u8> = crate::BitWriter<'a, u32, PD_CTRL_SPEC, bool, O>;
+pub type DRIVESTRENGTH_W<'a, const O: u8> = crate::BitWriter<'a, PD_CTRL_SPEC, O>;
 #[doc = "Field `SLEWRATE` reader - Slewrate Limit for Port"]
-pub type SLEWRATE_R = crate::FieldReader<u8, u8>;
+pub type SLEWRATE_R = crate::FieldReader;
 #[doc = "Field `SLEWRATE` writer - Slewrate Limit for Port"]
-pub type SLEWRATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PD_CTRL_SPEC, u8, u8, 3, O>;
+pub type SLEWRATE_W<'a, const O: u8> = crate::FieldWriter<'a, PD_CTRL_SPEC, 3, O>;
 #[doc = "Field `DINDIS` reader - Data in Disable"]
-pub type DINDIS_R = crate::BitReader<bool>;
+pub type DINDIS_R = crate::BitReader;
 #[doc = "Field `DINDIS` writer - Data in Disable"]
-pub type DINDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PD_CTRL_SPEC, bool, O>;
+pub type DINDIS_W<'a, const O: u8> = crate::BitWriter<'a, PD_CTRL_SPEC, O>;
 #[doc = "Field `DRIVESTRENGTHALT` reader - Alternate Drive Strength for Port"]
-pub type DRIVESTRENGTHALT_R = crate::BitReader<bool>;
+pub type DRIVESTRENGTHALT_R = crate::BitReader;
 #[doc = "Field `DRIVESTRENGTHALT` writer - Alternate Drive Strength for Port"]
-pub type DRIVESTRENGTHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, PD_CTRL_SPEC, bool, O>;
+pub type DRIVESTRENGTHALT_W<'a, const O: u8> = crate::BitWriter<'a, PD_CTRL_SPEC, O>;
 #[doc = "Field `SLEWRATEALT` reader - Alternate Slewrate Limit for Port"]
-pub type SLEWRATEALT_R = crate::FieldReader<u8, u8>;
+pub type SLEWRATEALT_R = crate::FieldReader;
 #[doc = "Field `SLEWRATEALT` writer - Alternate Slewrate Limit for Port"]
-pub type SLEWRATEALT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PD_CTRL_SPEC, u8, u8, 3, O>;
+pub type SLEWRATEALT_W<'a, const O: u8> = crate::FieldWriter<'a, PD_CTRL_SPEC, 3, O>;
 #[doc = "Field `DINDISALT` reader - Alternate Data in Disable"]
-pub type DINDISALT_R = crate::BitReader<bool>;
+pub type DINDISALT_R = crate::BitReader;
 #[doc = "Field `DINDISALT` writer - Alternate Data in Disable"]
-pub type DINDISALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, PD_CTRL_SPEC, bool, O>;
+pub type DINDISALT_W<'a, const O: u8> = crate::BitWriter<'a, PD_CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Drive Strength for Port"]
     #[inline(always)]

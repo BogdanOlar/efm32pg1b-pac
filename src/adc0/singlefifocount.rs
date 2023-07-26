@@ -14,7 +14,7 @@ impl From<crate::R<SINGLEFIFOCOUNT_SPEC>> for R {
     }
 }
 #[doc = "Field `SINGLEDC` reader - Single Data Count"]
-pub type SINGLEDC_R = crate::FieldReader<u8, u8>;
+pub type SINGLEDC_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:2 - Single Data Count"]
     #[inline(always)]

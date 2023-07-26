@@ -35,9 +35,9 @@ impl From<crate::W<SADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDR` reader - Slave Address"]
-pub type ADDR_R = crate::FieldReader<u8, u8>;
+pub type ADDR_R = crate::FieldReader;
 #[doc = "Field `ADDR` writer - Slave Address"]
-pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SADDR_SPEC, u8, u8, 7, O>;
+pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, SADDR_SPEC, 7, O>;
 impl R {
     #[doc = "Bits 1:7 - Slave Address"]
     #[inline(always)]

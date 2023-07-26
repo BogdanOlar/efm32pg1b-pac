@@ -35,14 +35,13 @@ impl From<crate::W<DCDCCLIMCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `CLIMBLANKDLY` reader - Reserved for internal use. Do not change."]
-pub type CLIMBLANKDLY_R = crate::FieldReader<u8, u8>;
+pub type CLIMBLANKDLY_R = crate::FieldReader;
 #[doc = "Field `CLIMBLANKDLY` writer - Reserved for internal use. Do not change."]
-pub type CLIMBLANKDLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCCLIMCTRL_SPEC, u8, u8, 2, O>;
+pub type CLIMBLANKDLY_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCCLIMCTRL_SPEC, 2, O>;
 #[doc = "Field `BYPLIMEN` reader - Bypass Current Limit Enable"]
-pub type BYPLIMEN_R = crate::BitReader<bool>;
+pub type BYPLIMEN_R = crate::BitReader;
 #[doc = "Field `BYPLIMEN` writer - Bypass Current Limit Enable"]
-pub type BYPLIMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCCLIMCTRL_SPEC, bool, O>;
+pub type BYPLIMEN_W<'a, const O: u8> = crate::BitWriter<'a, DCDCCLIMCTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
     #[inline(always)]

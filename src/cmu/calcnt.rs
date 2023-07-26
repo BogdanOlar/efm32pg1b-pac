@@ -35,9 +35,9 @@ impl From<crate::W<CALCNT_SPEC>> for W {
     }
 }
 #[doc = "Field `CALCNT` reader - Calibration Counter"]
-pub type CALCNT_R = crate::FieldReader<u32, u32>;
+pub type CALCNT_R = crate::FieldReader<u32>;
 #[doc = "Field `CALCNT` writer - Calibration Counter"]
-pub type CALCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALCNT_SPEC, u32, u32, 20, O>;
+pub type CALCNT_W<'a, const O: u8> = crate::FieldWriter<'a, CALCNT_SPEC, 20, O, u32>;
 impl R {
     #[doc = "Bits 0:19 - Calibration Counter"]
     #[inline(always)]

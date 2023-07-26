@@ -35,9 +35,9 @@ impl From<crate::W<INIT_SPEC>> for W {
     }
 }
 #[doc = "Field `INIT` reader - CRC Initialization Value"]
-pub type INIT_R = crate::FieldReader<u32, u32>;
+pub type INIT_R = crate::FieldReader<u32>;
 #[doc = "Field `INIT` writer - CRC Initialization Value"]
-pub type INIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INIT_SPEC, u32, u32, 32, O>;
+pub type INIT_W<'a, const O: u8> = crate::FieldWriter<'a, INIT_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - CRC Initialization Value"]
     #[inline(always)]

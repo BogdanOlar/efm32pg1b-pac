@@ -35,7 +35,7 @@ impl From<crate::W<FRAME_SPEC>> for W {
     }
 }
 #[doc = "Field `DATABITS` reader - Data-Bit Mode"]
-pub type DATABITS_R = crate::FieldReader<u8, DATABITS_A>;
+pub type DATABITS_R = crate::FieldReader<DATABITS_A>;
 #[doc = "Data-Bit Mode\n\nValue on reset: 5"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -72,6 +72,9 @@ impl From<DATABITS_A> for u8 {
     fn from(variant: DATABITS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DATABITS_A {
+    type Ux = u8;
 }
 impl DATABITS_R {
     #[doc = "Get enumerated values variant"]
@@ -161,8 +164,7 @@ impl DATABITS_R {
     }
 }
 #[doc = "Field `DATABITS` writer - Data-Bit Mode"]
-pub type DATABITS_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, FRAME_SPEC, u8, DATABITS_A, 4, O>;
+pub type DATABITS_W<'a, const O: u8> = crate::FieldWriter<'a, FRAME_SPEC, 4, O, DATABITS_A>;
 impl<'a, const O: u8> DATABITS_W<'a, O> {
     #[doc = "Each frame contains 4 data bits"]
     #[inline(always)]
@@ -231,7 +233,7 @@ impl<'a, const O: u8> DATABITS_W<'a, O> {
     }
 }
 #[doc = "Field `PARITY` reader - Parity-Bit Mode"]
-pub type PARITY_R = crate::FieldReader<u8, PARITY_A>;
+pub type PARITY_R = crate::FieldReader<PARITY_A>;
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -248,6 +250,9 @@ impl From<PARITY_A> for u8 {
     fn from(variant: PARITY_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PARITY_A {
+    type Ux = u8;
 }
 impl PARITY_R {
     #[doc = "Get enumerated values variant"]
@@ -277,7 +282,7 @@ impl PARITY_R {
     }
 }
 #[doc = "Field `PARITY` writer - Parity-Bit Mode"]
-pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FRAME_SPEC, u8, PARITY_A, 2, O>;
+pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, FRAME_SPEC, 2, O, PARITY_A>;
 impl<'a, const O: u8> PARITY_W<'a, O> {
     #[doc = "Parity bits are not used"]
     #[inline(always)]
@@ -296,7 +301,7 @@ impl<'a, const O: u8> PARITY_W<'a, O> {
     }
 }
 #[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
-pub type STOPBITS_R = crate::FieldReader<u8, STOPBITS_A>;
+pub type STOPBITS_R = crate::FieldReader<STOPBITS_A>;
 #[doc = "Stop-Bit Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -315,6 +320,9 @@ impl From<STOPBITS_A> for u8 {
     fn from(variant: STOPBITS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STOPBITS_A {
+    type Ux = u8;
 }
 impl STOPBITS_R {
     #[doc = "Get enumerated values variant"]
@@ -350,8 +358,7 @@ impl STOPBITS_R {
     }
 }
 #[doc = "Field `STOPBITS` writer - Stop-Bit Mode"]
-pub type STOPBITS_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, FRAME_SPEC, u8, STOPBITS_A, 2, O>;
+pub type STOPBITS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FRAME_SPEC, 2, O, STOPBITS_A>;
 impl<'a, const O: u8> STOPBITS_W<'a, O> {
     #[doc = "The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
     #[inline(always)]

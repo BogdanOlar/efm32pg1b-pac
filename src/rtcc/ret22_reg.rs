@@ -35,9 +35,9 @@ impl From<crate::W<RET22_REG_SPEC>> for W {
     }
 }
 #[doc = "Field `REG` reader - General Purpose Retention Register"]
-pub type REG_R = crate::FieldReader<u32, u32>;
+pub type REG_R = crate::FieldReader<u32>;
 #[doc = "Field `REG` writer - General Purpose Retention Register"]
-pub type REG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RET22_REG_SPEC, u32, u32, 32, O>;
+pub type REG_W<'a, const O: u8> = crate::FieldWriter<'a, RET22_REG_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - General Purpose Retention Register"]
     #[inline(always)]

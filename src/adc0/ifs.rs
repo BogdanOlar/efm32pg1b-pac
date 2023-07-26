@@ -20,21 +20,21 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLEOF` writer - Set SINGLEOF Interrupt Flag"]
-pub type SINGLEOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type SINGLEOF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `SCANOF` writer - Set SCANOF Interrupt Flag"]
-pub type SCANOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type SCANOF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `SINGLEUF` writer - Set SINGLEUF Interrupt Flag"]
-pub type SINGLEUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type SINGLEUF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `SCANUF` writer - Set SCANUF Interrupt Flag"]
-pub type SCANUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type SCANUF_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `SINGLECMP` writer - Set SINGLECMP Interrupt Flag"]
-pub type SINGLECMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type SINGLECMP_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `SCANCMP` writer - Set SCANCMP Interrupt Flag"]
-pub type SCANCMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type SCANCMP_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `VREFOV` writer - Set VREFOV Interrupt Flag"]
-pub type VREFOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type VREFOV_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 #[doc = "Field `PROGERR` writer - Set PROGERR Interrupt Flag"]
-pub type PROGERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
+pub type PROGERR_W<'a, const O: u8> = crate::BitWriter<'a, IFS_SPEC, O>;
 impl W {
     #[doc = "Bit 8 - Set SINGLEOF Interrupt Flag"]
     #[inline(always)]

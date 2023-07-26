@@ -35,7 +35,7 @@ impl From<crate::W<HFXOTIMEOUTCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `STARTUPTIMEOUT` reader - Wait Duration in HFXO Startup Enable Wait State"]
-pub type STARTUPTIMEOUT_R = crate::FieldReader<u8, STARTUPTIMEOUT_A>;
+pub type STARTUPTIMEOUT_R = crate::FieldReader<STARTUPTIMEOUT_A>;
 #[doc = "Wait Duration in HFXO Startup Enable Wait State\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -68,6 +68,9 @@ impl From<STARTUPTIMEOUT_A> for u8 {
     fn from(variant: STARTUPTIMEOUT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STARTUPTIMEOUT_A {
+    type Ux = u8;
 }
 impl STARTUPTIMEOUT_R {
     #[doc = "Get enumerated values variant"]
@@ -146,7 +149,7 @@ impl STARTUPTIMEOUT_R {
 }
 #[doc = "Field `STARTUPTIMEOUT` writer - Wait Duration in HFXO Startup Enable Wait State"]
 pub type STARTUPTIMEOUT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, STARTUPTIMEOUT_A, 4, O>;
+    crate::FieldWriter<'a, HFXOTIMEOUTCTRL_SPEC, 4, O, STARTUPTIMEOUT_A>;
 impl<'a, const O: u8> STARTUPTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
@@ -205,7 +208,7 @@ impl<'a, const O: u8> STARTUPTIMEOUT_W<'a, O> {
     }
 }
 #[doc = "Field `STEADYTIMEOUT` reader - Wait Duration in HFXO Startup Steady Wait State"]
-pub type STEADYTIMEOUT_R = crate::FieldReader<u8, STEADYTIMEOUT_A>;
+pub type STEADYTIMEOUT_R = crate::FieldReader<STEADYTIMEOUT_A>;
 #[doc = "Wait Duration in HFXO Startup Steady Wait State\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -238,6 +241,9 @@ impl From<STEADYTIMEOUT_A> for u8 {
     fn from(variant: STEADYTIMEOUT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STEADYTIMEOUT_A {
+    type Ux = u8;
 }
 impl STEADYTIMEOUT_R {
     #[doc = "Get enumerated values variant"]
@@ -316,7 +322,7 @@ impl STEADYTIMEOUT_R {
 }
 #[doc = "Field `STEADYTIMEOUT` writer - Wait Duration in HFXO Startup Steady Wait State"]
 pub type STEADYTIMEOUT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, STEADYTIMEOUT_A, 4, O>;
+    crate::FieldWriter<'a, HFXOTIMEOUTCTRL_SPEC, 4, O, STEADYTIMEOUT_A>;
 impl<'a, const O: u8> STEADYTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
@@ -375,12 +381,11 @@ impl<'a, const O: u8> STEADYTIMEOUT_W<'a, O> {
     }
 }
 #[doc = "Field `RESERVED2` reader - Wait Duration in HFXO Warm Startup Steady Wait State"]
-pub type RESERVED2_R = crate::FieldReader<u8, u8>;
+pub type RESERVED2_R = crate::FieldReader;
 #[doc = "Field `RESERVED2` writer - Wait Duration in HFXO Warm Startup Steady Wait State"]
-pub type RESERVED2_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, u8, 4, O>;
+pub type RESERVED2_W<'a, const O: u8> = crate::FieldWriter<'a, HFXOTIMEOUTCTRL_SPEC, 4, O>;
 #[doc = "Field `PEAKDETTIMEOUT` reader - Wait Duration in HFXO Peak Detection Wait State"]
-pub type PEAKDETTIMEOUT_R = crate::FieldReader<u8, PEAKDETTIMEOUT_A>;
+pub type PEAKDETTIMEOUT_R = crate::FieldReader<PEAKDETTIMEOUT_A>;
 #[doc = "Wait Duration in HFXO Peak Detection Wait State\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -413,6 +418,9 @@ impl From<PEAKDETTIMEOUT_A> for u8 {
     fn from(variant: PEAKDETTIMEOUT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PEAKDETTIMEOUT_A {
+    type Ux = u8;
 }
 impl PEAKDETTIMEOUT_R {
     #[doc = "Get enumerated values variant"]
@@ -491,7 +499,7 @@ impl PEAKDETTIMEOUT_R {
 }
 #[doc = "Field `PEAKDETTIMEOUT` writer - Wait Duration in HFXO Peak Detection Wait State"]
 pub type PEAKDETTIMEOUT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, PEAKDETTIMEOUT_A, 4, O>;
+    crate::FieldWriter<'a, HFXOTIMEOUTCTRL_SPEC, 4, O, PEAKDETTIMEOUT_A>;
 impl<'a, const O: u8> PEAKDETTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]
@@ -550,7 +558,7 @@ impl<'a, const O: u8> PEAKDETTIMEOUT_W<'a, O> {
     }
 }
 #[doc = "Field `SHUNTOPTTIMEOUT` reader - Wait Duration in HFXO Shunt Current Optimization Wait State"]
-pub type SHUNTOPTTIMEOUT_R = crate::FieldReader<u8, SHUNTOPTTIMEOUT_A>;
+pub type SHUNTOPTTIMEOUT_R = crate::FieldReader<SHUNTOPTTIMEOUT_A>;
 #[doc = "Wait Duration in HFXO Shunt Current Optimization Wait State\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -583,6 +591,9 @@ impl From<SHUNTOPTTIMEOUT_A> for u8 {
     fn from(variant: SHUNTOPTTIMEOUT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SHUNTOPTTIMEOUT_A {
+    type Ux = u8;
 }
 impl SHUNTOPTTIMEOUT_R {
     #[doc = "Get enumerated values variant"]
@@ -661,7 +672,7 @@ impl SHUNTOPTTIMEOUT_R {
 }
 #[doc = "Field `SHUNTOPTTIMEOUT` writer - Wait Duration in HFXO Shunt Current Optimization Wait State"]
 pub type SHUNTOPTTIMEOUT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HFXOTIMEOUTCTRL_SPEC, u8, SHUNTOPTTIMEOUT_A, 4, O>;
+    crate::FieldWriter<'a, HFXOTIMEOUTCTRL_SPEC, 4, O, SHUNTOPTTIMEOUT_A>;
 impl<'a, const O: u8> SHUNTOPTTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 2 cycles"]
     #[inline(always)]

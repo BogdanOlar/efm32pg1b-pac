@@ -35,7 +35,7 @@ impl From<crate::W<ROUTELOC0_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0LOC` reader - I/O Location"]
-pub type CH0LOC_R = crate::FieldReader<u8, CH0LOC_A>;
+pub type CH0LOC_R = crate::FieldReader<CH0LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -74,6 +74,9 @@ impl From<CH0LOC_A> for u8 {
     fn from(variant: CH0LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CH0LOC_A {
+    type Ux = u8;
 }
 impl CH0LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -169,8 +172,7 @@ impl CH0LOC_R {
     }
 }
 #[doc = "Field `CH0LOC` writer - I/O Location"]
-pub type CH0LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CH0LOC_A, 6, O>;
+pub type CH0LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC0_SPEC, 6, O, CH0LOC_A>;
 impl<'a, const O: u8> CH0LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
@@ -244,7 +246,7 @@ impl<'a, const O: u8> CH0LOC_W<'a, O> {
     }
 }
 #[doc = "Field `CH1LOC` reader - I/O Location"]
-pub type CH1LOC_R = crate::FieldReader<u8, CH1LOC_A>;
+pub type CH1LOC_R = crate::FieldReader<CH1LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -271,6 +273,9 @@ impl From<CH1LOC_A> for u8 {
     fn from(variant: CH1LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CH1LOC_A {
+    type Ux = u8;
 }
 impl CH1LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -330,8 +335,7 @@ impl CH1LOC_R {
     }
 }
 #[doc = "Field `CH1LOC` writer - I/O Location"]
-pub type CH1LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CH1LOC_A, 6, O>;
+pub type CH1LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC0_SPEC, 6, O, CH1LOC_A>;
 impl<'a, const O: u8> CH1LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
@@ -375,7 +379,7 @@ impl<'a, const O: u8> CH1LOC_W<'a, O> {
     }
 }
 #[doc = "Field `CH2LOC` reader - I/O Location"]
-pub type CH2LOC_R = crate::FieldReader<u8, CH2LOC_A>;
+pub type CH2LOC_R = crate::FieldReader<CH2LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -402,6 +406,9 @@ impl From<CH2LOC_A> for u8 {
     fn from(variant: CH2LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CH2LOC_A {
+    type Ux = u8;
 }
 impl CH2LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -461,8 +468,7 @@ impl CH2LOC_R {
     }
 }
 #[doc = "Field `CH2LOC` writer - I/O Location"]
-pub type CH2LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CH2LOC_A, 6, O>;
+pub type CH2LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC0_SPEC, 6, O, CH2LOC_A>;
 impl<'a, const O: u8> CH2LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
@@ -506,7 +512,7 @@ impl<'a, const O: u8> CH2LOC_W<'a, O> {
     }
 }
 #[doc = "Field `CH3LOC` reader - I/O Location"]
-pub type CH3LOC_R = crate::FieldReader<u8, CH3LOC_A>;
+pub type CH3LOC_R = crate::FieldReader<CH3LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -547,6 +553,9 @@ impl From<CH3LOC_A> for u8 {
     fn from(variant: CH3LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CH3LOC_A {
+    type Ux = u8;
 }
 impl CH3LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -648,8 +657,7 @@ impl CH3LOC_R {
     }
 }
 #[doc = "Field `CH3LOC` writer - I/O Location"]
-pub type CH3LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CH3LOC_A, 6, O>;
+pub type CH3LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC0_SPEC, 6, O, CH3LOC_A>;
 impl<'a, const O: u8> CH3LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]

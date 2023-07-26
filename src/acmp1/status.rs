@@ -14,11 +14,11 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `ACMPACT` reader - Analog Comparator Active"]
-pub type ACMPACT_R = crate::BitReader<bool>;
+pub type ACMPACT_R = crate::BitReader;
 #[doc = "Field `ACMPOUT` reader - Analog Comparator Output"]
-pub type ACMPOUT_R = crate::BitReader<bool>;
+pub type ACMPOUT_R = crate::BitReader;
 #[doc = "Field `APORTCONFLICT` reader - APORT Conflict Output"]
-pub type APORTCONFLICT_R = crate::BitReader<bool>;
+pub type APORTCONFLICT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Analog Comparator Active"]
     #[inline(always)]

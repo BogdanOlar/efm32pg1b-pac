@@ -35,7 +35,7 @@ impl From<crate::W<CURPROG_SPEC>> for W {
     }
 }
 #[doc = "Field `RANGESEL` reader - Current Range Select"]
-pub type RANGESEL_R = crate::FieldReader<u8, RANGESEL_A>;
+pub type RANGESEL_R = crate::FieldReader<RANGESEL_A>;
 #[doc = "Current Range Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<RANGESEL_A> for u8 {
     fn from(variant: RANGESEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RANGESEL_A {
+    type Ux = u8;
 }
 impl RANGESEL_R {
     #[doc = "Get enumerated values variant"]
@@ -89,8 +92,7 @@ impl RANGESEL_R {
     }
 }
 #[doc = "Field `RANGESEL` writer - Current Range Select"]
-pub type RANGESEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CURPROG_SPEC, u8, RANGESEL_A, 2, O>;
+pub type RANGESEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CURPROG_SPEC, 2, O, RANGESEL_A>;
 impl<'a, const O: u8> RANGESEL_W<'a, O> {
     #[doc = "Current range set to 0 - 1.6 uA."]
     #[inline(always)]
@@ -114,13 +116,13 @@ impl<'a, const O: u8> RANGESEL_W<'a, O> {
     }
 }
 #[doc = "Field `STEPSEL` reader - Current Step Size Select"]
-pub type STEPSEL_R = crate::FieldReader<u8, u8>;
+pub type STEPSEL_R = crate::FieldReader;
 #[doc = "Field `STEPSEL` writer - Current Step Size Select"]
-pub type STEPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CURPROG_SPEC, u8, u8, 5, O>;
+pub type STEPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CURPROG_SPEC, 5, O>;
 #[doc = "Field `TUNING` reader - Tune the Current to Given Accuracy"]
-pub type TUNING_R = crate::FieldReader<u8, u8>;
+pub type TUNING_R = crate::FieldReader;
 #[doc = "Field `TUNING` writer - Tune the Current to Given Accuracy"]
-pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CURPROG_SPEC, u8, u8, 8, O>;
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, CURPROG_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:1 - Current Range Select"]
     #[inline(always)]

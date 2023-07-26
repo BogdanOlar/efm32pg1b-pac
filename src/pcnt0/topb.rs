@@ -35,9 +35,9 @@ impl From<crate::W<TOPB_SPEC>> for W {
     }
 }
 #[doc = "Field `TOPB` reader - Counter Top Buffer"]
-pub type TOPB_R = crate::FieldReader<u16, u16>;
+pub type TOPB_R = crate::FieldReader<u16>;
 #[doc = "Field `TOPB` writer - Counter Top Buffer"]
-pub type TOPB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TOPB_SPEC, u16, u16, 16, O>;
+pub type TOPB_W<'a, const O: u8> = crate::FieldWriter<'a, TOPB_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Counter Top Buffer"]
     #[inline(always)]

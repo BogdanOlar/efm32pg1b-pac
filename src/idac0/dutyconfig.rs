@@ -35,9 +35,9 @@ impl From<crate::W<DUTYCONFIG_SPEC>> for W {
     }
 }
 #[doc = "Field `EM2DUTYCYCLEDIS` reader - Duty Cycle Enable"]
-pub type EM2DUTYCYCLEDIS_R = crate::BitReader<bool>;
+pub type EM2DUTYCYCLEDIS_R = crate::BitReader;
 #[doc = "Field `EM2DUTYCYCLEDIS` writer - Duty Cycle Enable"]
-pub type EM2DUTYCYCLEDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DUTYCONFIG_SPEC, bool, O>;
+pub type EM2DUTYCYCLEDIS_W<'a, const O: u8> = crate::BitWriter<'a, DUTYCONFIG_SPEC, O>;
 impl R {
     #[doc = "Bit 1 - Duty Cycle Enable"]
     #[inline(always)]

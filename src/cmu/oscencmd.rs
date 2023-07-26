@@ -20,25 +20,25 @@ impl From<crate::W<OSCENCMD_SPEC>> for W {
     }
 }
 #[doc = "Field `HFRCOEN` writer - HFRCO Enable"]
-pub type HFRCOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type HFRCOEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `HFRCODIS` writer - HFRCO Disable"]
-pub type HFRCODIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type HFRCODIS_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `HFXOEN` writer - HFXO Enable"]
-pub type HFXOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type HFXOEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `HFXODIS` writer - HFXO Disable"]
-pub type HFXODIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type HFXODIS_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `AUXHFRCOEN` writer - AUXHFRCO Enable"]
-pub type AUXHFRCOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type AUXHFRCOEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `AUXHFRCODIS` writer - AUXHFRCO Disable"]
-pub type AUXHFRCODIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type AUXHFRCODIS_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `LFRCOEN` writer - LFRCO Enable"]
-pub type LFRCOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type LFRCOEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `LFRCODIS` writer - LFRCO Disable"]
-pub type LFRCODIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type LFRCODIS_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `LFXOEN` writer - LFXO Enable"]
-pub type LFXOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type LFXOEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 #[doc = "Field `LFXODIS` writer - LFXO Disable"]
-pub type LFXODIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCENCMD_SPEC, bool, O>;
+pub type LFXODIS_W<'a, const O: u8> = crate::BitWriter<'a, OSCENCMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - HFRCO Enable"]
     #[inline(always)]

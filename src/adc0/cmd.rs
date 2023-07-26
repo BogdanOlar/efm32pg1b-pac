@@ -20,13 +20,13 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLESTART` writer - Single Channel Conversion Start"]
-pub type SINGLESTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type SINGLESTART_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `SINGLESTOP` writer - Single Channel Conversion Stop"]
-pub type SINGLESTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type SINGLESTOP_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `SCANSTART` writer - Scan Sequence Start"]
-pub type SCANSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type SCANSTART_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 #[doc = "Field `SCANSTOP` writer - Scan Sequence Stop"]
-pub type SCANSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
+pub type SCANSTOP_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Single Channel Conversion Start"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<EXTIPINSELH_SPEC>> for W {
     }
 }
 #[doc = "Field `EXTIPINSEL8` reader - External Interrupt 8 Pin Select"]
-pub type EXTIPINSEL8_R = crate::FieldReader<u8, EXTIPINSEL8_A>;
+pub type EXTIPINSEL8_R = crate::FieldReader<EXTIPINSEL8_A>;
 #[doc = "External Interrupt 8 Pin Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<EXTIPINSEL8_A> for u8 {
     fn from(variant: EXTIPINSEL8_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTIPINSEL8_A {
+    type Ux = u8;
 }
 impl EXTIPINSEL8_R {
     #[doc = "Get enumerated values variant"]
@@ -90,7 +93,7 @@ impl EXTIPINSEL8_R {
 }
 #[doc = "Field `EXTIPINSEL8` writer - External Interrupt 8 Pin Select"]
 pub type EXTIPINSEL8_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EXTIPINSELH_SPEC, u8, EXTIPINSEL8_A, 2, O>;
+    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL8_A>;
 impl<'a, const O: u8> EXTIPINSEL8_W<'a, O> {
     #[doc = "Pin 8"]
     #[inline(always)]
@@ -114,7 +117,7 @@ impl<'a, const O: u8> EXTIPINSEL8_W<'a, O> {
     }
 }
 #[doc = "Field `EXTIPINSEL9` reader - External Interrupt 9 Pin Select"]
-pub type EXTIPINSEL9_R = crate::FieldReader<u8, EXTIPINSEL9_A>;
+pub type EXTIPINSEL9_R = crate::FieldReader<EXTIPINSEL9_A>;
 #[doc = "External Interrupt 9 Pin Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -133,6 +136,9 @@ impl From<EXTIPINSEL9_A> for u8 {
     fn from(variant: EXTIPINSEL9_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTIPINSEL9_A {
+    type Ux = u8;
 }
 impl EXTIPINSEL9_R {
     #[doc = "Get enumerated values variant"]
@@ -169,7 +175,7 @@ impl EXTIPINSEL9_R {
 }
 #[doc = "Field `EXTIPINSEL9` writer - External Interrupt 9 Pin Select"]
 pub type EXTIPINSEL9_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EXTIPINSELH_SPEC, u8, EXTIPINSEL9_A, 2, O>;
+    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL9_A>;
 impl<'a, const O: u8> EXTIPINSEL9_W<'a, O> {
     #[doc = "Pin 8"]
     #[inline(always)]
@@ -193,7 +199,7 @@ impl<'a, const O: u8> EXTIPINSEL9_W<'a, O> {
     }
 }
 #[doc = "Field `EXTIPINSEL10` reader - External Interrupt 10 Pin Select"]
-pub type EXTIPINSEL10_R = crate::FieldReader<u8, EXTIPINSEL10_A>;
+pub type EXTIPINSEL10_R = crate::FieldReader<EXTIPINSEL10_A>;
 #[doc = "External Interrupt 10 Pin Select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -212,6 +218,9 @@ impl From<EXTIPINSEL10_A> for u8 {
     fn from(variant: EXTIPINSEL10_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTIPINSEL10_A {
+    type Ux = u8;
 }
 impl EXTIPINSEL10_R {
     #[doc = "Get enumerated values variant"]
@@ -248,7 +257,7 @@ impl EXTIPINSEL10_R {
 }
 #[doc = "Field `EXTIPINSEL10` writer - External Interrupt 10 Pin Select"]
 pub type EXTIPINSEL10_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EXTIPINSELH_SPEC, u8, EXTIPINSEL10_A, 2, O>;
+    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL10_A>;
 impl<'a, const O: u8> EXTIPINSEL10_W<'a, O> {
     #[doc = "Pin 8"]
     #[inline(always)]
@@ -272,7 +281,7 @@ impl<'a, const O: u8> EXTIPINSEL10_W<'a, O> {
     }
 }
 #[doc = "Field `EXTIPINSEL11` reader - External Interrupt 11 Pin Select"]
-pub type EXTIPINSEL11_R = crate::FieldReader<u8, EXTIPINSEL11_A>;
+pub type EXTIPINSEL11_R = crate::FieldReader<EXTIPINSEL11_A>;
 #[doc = "External Interrupt 11 Pin Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -291,6 +300,9 @@ impl From<EXTIPINSEL11_A> for u8 {
     fn from(variant: EXTIPINSEL11_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTIPINSEL11_A {
+    type Ux = u8;
 }
 impl EXTIPINSEL11_R {
     #[doc = "Get enumerated values variant"]
@@ -327,7 +339,7 @@ impl EXTIPINSEL11_R {
 }
 #[doc = "Field `EXTIPINSEL11` writer - External Interrupt 11 Pin Select"]
 pub type EXTIPINSEL11_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EXTIPINSELH_SPEC, u8, EXTIPINSEL11_A, 2, O>;
+    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL11_A>;
 impl<'a, const O: u8> EXTIPINSEL11_W<'a, O> {
     #[doc = "Pin 8"]
     #[inline(always)]
@@ -351,7 +363,7 @@ impl<'a, const O: u8> EXTIPINSEL11_W<'a, O> {
     }
 }
 #[doc = "Field `EXTIPINSEL12` reader - External Interrupt 12 Pin Select"]
-pub type EXTIPINSEL12_R = crate::FieldReader<u8, EXTIPINSEL12_A>;
+pub type EXTIPINSEL12_R = crate::FieldReader<EXTIPINSEL12_A>;
 #[doc = "External Interrupt 12 Pin Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -370,6 +382,9 @@ impl From<EXTIPINSEL12_A> for u8 {
     fn from(variant: EXTIPINSEL12_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTIPINSEL12_A {
+    type Ux = u8;
 }
 impl EXTIPINSEL12_R {
     #[doc = "Get enumerated values variant"]
@@ -406,7 +421,7 @@ impl EXTIPINSEL12_R {
 }
 #[doc = "Field `EXTIPINSEL12` writer - External Interrupt 12 Pin Select"]
 pub type EXTIPINSEL12_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EXTIPINSELH_SPEC, u8, EXTIPINSEL12_A, 2, O>;
+    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL12_A>;
 impl<'a, const O: u8> EXTIPINSEL12_W<'a, O> {
     #[doc = "Pin 12"]
     #[inline(always)]
@@ -430,7 +445,7 @@ impl<'a, const O: u8> EXTIPINSEL12_W<'a, O> {
     }
 }
 #[doc = "Field `EXTIPINSEL13` reader - External Interrupt 13 Pin Select"]
-pub type EXTIPINSEL13_R = crate::FieldReader<u8, EXTIPINSEL13_A>;
+pub type EXTIPINSEL13_R = crate::FieldReader<EXTIPINSEL13_A>;
 #[doc = "External Interrupt 13 Pin Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -449,6 +464,9 @@ impl From<EXTIPINSEL13_A> for u8 {
     fn from(variant: EXTIPINSEL13_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTIPINSEL13_A {
+    type Ux = u8;
 }
 impl EXTIPINSEL13_R {
     #[doc = "Get enumerated values variant"]
@@ -485,7 +503,7 @@ impl EXTIPINSEL13_R {
 }
 #[doc = "Field `EXTIPINSEL13` writer - External Interrupt 13 Pin Select"]
 pub type EXTIPINSEL13_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EXTIPINSELH_SPEC, u8, EXTIPINSEL13_A, 2, O>;
+    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL13_A>;
 impl<'a, const O: u8> EXTIPINSEL13_W<'a, O> {
     #[doc = "Pin 12"]
     #[inline(always)]
@@ -509,7 +527,7 @@ impl<'a, const O: u8> EXTIPINSEL13_W<'a, O> {
     }
 }
 #[doc = "Field `EXTIPINSEL14` reader - External Interrupt 14 Pin Select"]
-pub type EXTIPINSEL14_R = crate::FieldReader<u8, EXTIPINSEL14_A>;
+pub type EXTIPINSEL14_R = crate::FieldReader<EXTIPINSEL14_A>;
 #[doc = "External Interrupt 14 Pin Select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -528,6 +546,9 @@ impl From<EXTIPINSEL14_A> for u8 {
     fn from(variant: EXTIPINSEL14_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTIPINSEL14_A {
+    type Ux = u8;
 }
 impl EXTIPINSEL14_R {
     #[doc = "Get enumerated values variant"]
@@ -564,7 +585,7 @@ impl EXTIPINSEL14_R {
 }
 #[doc = "Field `EXTIPINSEL14` writer - External Interrupt 14 Pin Select"]
 pub type EXTIPINSEL14_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EXTIPINSELH_SPEC, u8, EXTIPINSEL14_A, 2, O>;
+    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL14_A>;
 impl<'a, const O: u8> EXTIPINSEL14_W<'a, O> {
     #[doc = "Pin 12"]
     #[inline(always)]
@@ -588,7 +609,7 @@ impl<'a, const O: u8> EXTIPINSEL14_W<'a, O> {
     }
 }
 #[doc = "Field `EXTIPINSEL15` reader - External Interrupt 15 Pin Select"]
-pub type EXTIPINSEL15_R = crate::FieldReader<u8, EXTIPINSEL15_A>;
+pub type EXTIPINSEL15_R = crate::FieldReader<EXTIPINSEL15_A>;
 #[doc = "External Interrupt 15 Pin Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -607,6 +628,9 @@ impl From<EXTIPINSEL15_A> for u8 {
     fn from(variant: EXTIPINSEL15_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTIPINSEL15_A {
+    type Ux = u8;
 }
 impl EXTIPINSEL15_R {
     #[doc = "Get enumerated values variant"]
@@ -643,7 +667,7 @@ impl EXTIPINSEL15_R {
 }
 #[doc = "Field `EXTIPINSEL15` writer - External Interrupt 15 Pin Select"]
 pub type EXTIPINSEL15_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, EXTIPINSELH_SPEC, u8, EXTIPINSEL15_A, 2, O>;
+    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL15_A>;
 impl<'a, const O: u8> EXTIPINSEL15_W<'a, O> {
     #[doc = "Pin 12"]
     #[inline(always)]

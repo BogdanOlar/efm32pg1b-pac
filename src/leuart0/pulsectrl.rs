@@ -35,17 +35,17 @@ impl From<crate::W<PULSECTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `PULSEW` reader - Pulse Width"]
-pub type PULSEW_R = crate::FieldReader<u8, u8>;
+pub type PULSEW_R = crate::FieldReader;
 #[doc = "Field `PULSEW` writer - Pulse Width"]
-pub type PULSEW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PULSECTRL_SPEC, u8, u8, 4, O>;
+pub type PULSEW_W<'a, const O: u8> = crate::FieldWriter<'a, PULSECTRL_SPEC, 4, O>;
 #[doc = "Field `PULSEEN` reader - Pulse Generator/Extender Enable"]
-pub type PULSEEN_R = crate::BitReader<bool>;
+pub type PULSEEN_R = crate::BitReader;
 #[doc = "Field `PULSEEN` writer - Pulse Generator/Extender Enable"]
-pub type PULSEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PULSECTRL_SPEC, bool, O>;
+pub type PULSEEN_W<'a, const O: u8> = crate::BitWriter<'a, PULSECTRL_SPEC, O>;
 #[doc = "Field `PULSEFILT` reader - Pulse Filter"]
-pub type PULSEFILT_R = crate::BitReader<bool>;
+pub type PULSEFILT_R = crate::BitReader;
 #[doc = "Field `PULSEFILT` writer - Pulse Filter"]
-pub type PULSEFILT_W<'a, const O: u8> = crate::BitWriter<'a, u32, PULSECTRL_SPEC, bool, O>;
+pub type PULSEFILT_W<'a, const O: u8> = crate::BitWriter<'a, PULSECTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 0:3 - Pulse Width"]
     #[inline(always)]

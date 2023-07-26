@@ -35,7 +35,7 @@ impl From<crate::W<PWRCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `PWRCFG` reader - Power Configuration"]
-pub type PWRCFG_R = crate::FieldReader<u8, PWRCFG_A>;
+pub type PWRCFG_R = crate::FieldReader<PWRCFG_A>;
 #[doc = "Power Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,6 +50,9 @@ impl From<PWRCFG_A> for u8 {
     fn from(variant: PWRCFG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PWRCFG_A {
+    type Ux = u8;
 }
 impl PWRCFG_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl PWRCFG_R {
     }
 }
 #[doc = "Field `PWRCFG` writer - Power Configuration"]
-pub type PWRCFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PWRCFG_SPEC, u8, PWRCFG_A, 4, O>;
+pub type PWRCFG_W<'a, const O: u8> = crate::FieldWriter<'a, PWRCFG_SPEC, 4, O, PWRCFG_A>;
 impl<'a, const O: u8> PWRCFG_W<'a, O> {
     #[doc = "Power up configuration. Works with any external configuration."]
     #[inline(always)]

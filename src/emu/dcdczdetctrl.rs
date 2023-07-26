@@ -35,15 +35,13 @@ impl From<crate::W<DCDCZDETCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `ZDETILIMSEL` reader - Reverse Current Limit Level Selection for Zero Detector"]
-pub type ZDETILIMSEL_R = crate::FieldReader<u8, u8>;
+pub type ZDETILIMSEL_R = crate::FieldReader;
 #[doc = "Field `ZDETILIMSEL` writer - Reverse Current Limit Level Selection for Zero Detector"]
-pub type ZDETILIMSEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCZDETCTRL_SPEC, u8, u8, 3, O>;
+pub type ZDETILIMSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCZDETCTRL_SPEC, 3, O>;
 #[doc = "Field `ZDETBLANKDLY` reader - Reserved for internal use. Do not change."]
-pub type ZDETBLANKDLY_R = crate::FieldReader<u8, u8>;
+pub type ZDETBLANKDLY_R = crate::FieldReader;
 #[doc = "Field `ZDETBLANKDLY` writer - Reserved for internal use. Do not change."]
-pub type ZDETBLANKDLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCZDETCTRL_SPEC, u8, u8, 2, O>;
+pub type ZDETBLANKDLY_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCZDETCTRL_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 4:6 - Reverse Current Limit Level Selection for Zero Detector"]
     #[inline(always)]

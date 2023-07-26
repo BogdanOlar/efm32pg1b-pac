@@ -35,13 +35,13 @@ impl From<crate::W<TXDOUBLE_SPEC>> for W {
     }
 }
 #[doc = "Field `TXDATA0` reader - TX Data"]
-pub type TXDATA0_R = crate::FieldReader<u8, u8>;
+pub type TXDATA0_R = crate::FieldReader;
 #[doc = "Field `TXDATA0` writer - TX Data"]
-pub type TXDATA0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXDOUBLE_SPEC, u8, u8, 8, O>;
+pub type TXDATA0_W<'a, const O: u8> = crate::FieldWriter<'a, TXDOUBLE_SPEC, 8, O>;
 #[doc = "Field `TXDATA1` reader - TX Data"]
-pub type TXDATA1_R = crate::FieldReader<u8, u8>;
+pub type TXDATA1_R = crate::FieldReader;
 #[doc = "Field `TXDATA1` writer - TX Data"]
-pub type TXDATA1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TXDOUBLE_SPEC, u8, u8, 8, O>;
+pub type TXDATA1_W<'a, const O: u8> = crate::FieldWriter<'a, TXDOUBLE_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - TX Data"]
     #[inline(always)]

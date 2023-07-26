@@ -20,7 +20,7 @@ impl From<crate::W<SWREQ_SPEC>> for W {
     }
 }
 #[doc = "Field `SWREQ` writer - Software Transfer Requests"]
-pub type SWREQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SWREQ_SPEC, u8, u8, 8, O>;
+pub type SWREQ_W<'a, const O: u8> = crate::FieldWriter<'a, SWREQ_SPEC, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - Software Transfer Requests"]
     #[inline(always)]

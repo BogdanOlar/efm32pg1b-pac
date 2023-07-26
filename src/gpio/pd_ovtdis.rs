@@ -35,9 +35,9 @@ impl From<crate::W<PD_OVTDIS_SPEC>> for W {
     }
 }
 #[doc = "Field `OVTDIS` reader - Disable Over Voltage Capability"]
-pub type OVTDIS_R = crate::FieldReader<u16, u16>;
+pub type OVTDIS_R = crate::FieldReader<u16>;
 #[doc = "Field `OVTDIS` writer - Disable Over Voltage Capability"]
-pub type OVTDIS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PD_OVTDIS_SPEC, u16, u16, 16, O>;
+pub type OVTDIS_W<'a, const O: u8> = crate::FieldWriter<'a, PD_OVTDIS_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Disable Over Voltage Capability"]
     #[inline(always)]

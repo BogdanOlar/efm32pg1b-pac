@@ -14,7 +14,7 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `RUNNING` reader - LETIMER Running"]
-pub type RUNNING_R = crate::BitReader<bool>;
+pub type RUNNING_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - LETIMER Running"]
     #[inline(always)]

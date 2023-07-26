@@ -35,15 +35,13 @@ impl From<crate::W<DCDCLNFREQCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `RCOBAND` reader - LN Mode RCO Frequency Band Selection"]
-pub type RCOBAND_R = crate::FieldReader<u8, u8>;
+pub type RCOBAND_R = crate::FieldReader;
 #[doc = "Field `RCOBAND` writer - LN Mode RCO Frequency Band Selection"]
-pub type RCOBAND_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLNFREQCTRL_SPEC, u8, u8, 3, O>;
+pub type RCOBAND_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNFREQCTRL_SPEC, 3, O>;
 #[doc = "Field `RCOTRIM` reader - Reserved for internal use. Do not change."]
-pub type RCOTRIM_R = crate::FieldReader<u8, u8>;
+pub type RCOTRIM_R = crate::FieldReader;
 #[doc = "Field `RCOTRIM` writer - Reserved for internal use. Do not change."]
-pub type RCOTRIM_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DCDCLNFREQCTRL_SPEC, u8, u8, 5, O>;
+pub type RCOTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNFREQCTRL_SPEC, 5, O>;
 impl R {
     #[doc = "Bits 0:2 - LN Mode RCO Frequency Band Selection"]
     #[inline(always)]

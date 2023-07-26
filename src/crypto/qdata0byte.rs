@@ -35,9 +35,9 @@ impl From<crate::W<QDATA0BYTE_SPEC>> for W {
     }
 }
 #[doc = "Field `QDATA0BYTE` reader - Qdata 0 Byte Access"]
-pub type QDATA0BYTE_R = crate::FieldReader<u8, u8>;
+pub type QDATA0BYTE_R = crate::FieldReader;
 #[doc = "Field `QDATA0BYTE` writer - Qdata 0 Byte Access"]
-pub type QDATA0BYTE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QDATA0BYTE_SPEC, u8, u8, 8, O>;
+pub type QDATA0BYTE_W<'a, const O: u8> = crate::FieldWriter<'a, QDATA0BYTE_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Qdata 0 Byte Access"]
     #[inline(always)]

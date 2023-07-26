@@ -35,29 +35,29 @@ impl From<crate::W<IEN_SPEC>> for W {
     }
 }
 #[doc = "Field `UF` reader - UF Interrupt Enable"]
-pub type UF_R = crate::BitReader<bool>;
+pub type UF_R = crate::BitReader;
 #[doc = "Field `UF` writer - UF Interrupt Enable"]
-pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `OF` reader - OF Interrupt Enable"]
-pub type OF_R = crate::BitReader<bool>;
+pub type OF_R = crate::BitReader;
 #[doc = "Field `OF` writer - OF Interrupt Enable"]
-pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `DIRCNG` reader - DIRCNG Interrupt Enable"]
-pub type DIRCNG_R = crate::BitReader<bool>;
+pub type DIRCNG_R = crate::BitReader;
 #[doc = "Field `DIRCNG` writer - DIRCNG Interrupt Enable"]
-pub type DIRCNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type DIRCNG_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `AUXOF` reader - AUXOF Interrupt Enable"]
-pub type AUXOF_R = crate::BitReader<bool>;
+pub type AUXOF_R = crate::BitReader;
 #[doc = "Field `AUXOF` writer - AUXOF Interrupt Enable"]
-pub type AUXOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type AUXOF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `TCC` reader - TCC Interrupt Enable"]
-pub type TCC_R = crate::BitReader<bool>;
+pub type TCC_R = crate::BitReader;
 #[doc = "Field `TCC` writer - TCC Interrupt Enable"]
-pub type TCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type TCC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 #[doc = "Field `OQSTERR` reader - OQSTERR Interrupt Enable"]
-pub type OQSTERR_R = crate::BitReader<bool>;
+pub type OQSTERR_R = crate::BitReader;
 #[doc = "Field `OQSTERR` writer - OQSTERR Interrupt Enable"]
-pub type OQSTERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
+pub type OQSTERR_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - UF Interrupt Enable"]
     #[inline(always)]

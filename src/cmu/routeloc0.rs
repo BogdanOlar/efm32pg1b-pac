@@ -35,7 +35,7 @@ impl From<crate::W<ROUTELOC0_SPEC>> for W {
     }
 }
 #[doc = "Field `CLKOUT0LOC` reader - I/O Location"]
-pub type CLKOUT0LOC_R = crate::FieldReader<u8, CLKOUT0LOC_A>;
+pub type CLKOUT0LOC_R = crate::FieldReader<CLKOUT0LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -62,6 +62,9 @@ impl From<CLKOUT0LOC_A> for u8 {
     fn from(variant: CLKOUT0LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKOUT0LOC_A {
+    type Ux = u8;
 }
 impl CLKOUT0LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -121,8 +124,7 @@ impl CLKOUT0LOC_R {
     }
 }
 #[doc = "Field `CLKOUT0LOC` writer - I/O Location"]
-pub type CLKOUT0LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CLKOUT0LOC_A, 6, O>;
+pub type CLKOUT0LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC0_SPEC, 6, O, CLKOUT0LOC_A>;
 impl<'a, const O: u8> CLKOUT0LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
@@ -166,7 +168,7 @@ impl<'a, const O: u8> CLKOUT0LOC_W<'a, O> {
     }
 }
 #[doc = "Field `CLKOUT1LOC` reader - I/O Location"]
-pub type CLKOUT1LOC_R = crate::FieldReader<u8, CLKOUT1LOC_A>;
+pub type CLKOUT1LOC_R = crate::FieldReader<CLKOUT1LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -193,6 +195,9 @@ impl From<CLKOUT1LOC_A> for u8 {
     fn from(variant: CLKOUT1LOC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKOUT1LOC_A {
+    type Ux = u8;
 }
 impl CLKOUT1LOC_R {
     #[doc = "Get enumerated values variant"]
@@ -252,8 +257,7 @@ impl CLKOUT1LOC_R {
     }
 }
 #[doc = "Field `CLKOUT1LOC` writer - I/O Location"]
-pub type CLKOUT1LOC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, CLKOUT1LOC_A, 6, O>;
+pub type CLKOUT1LOC_W<'a, const O: u8> = crate::FieldWriter<'a, ROUTELOC0_SPEC, 6, O, CLKOUT1LOC_A>;
 impl<'a, const O: u8> CLKOUT1LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]

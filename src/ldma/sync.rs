@@ -35,9 +35,9 @@ impl From<crate::W<SYNC_SPEC>> for W {
     }
 }
 #[doc = "Field `SYNCTRIG` reader - Synchronization Trigger"]
-pub type SYNCTRIG_R = crate::FieldReader<u8, u8>;
+pub type SYNCTRIG_R = crate::FieldReader;
 #[doc = "Field `SYNCTRIG` writer - Synchronization Trigger"]
-pub type SYNCTRIG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYNC_SPEC, u8, u8, 8, O>;
+pub type SYNCTRIG_W<'a, const O: u8> = crate::FieldWriter<'a, SYNC_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Synchronization Trigger"]
     #[inline(always)]

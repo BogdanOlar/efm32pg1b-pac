@@ -14,19 +14,19 @@ impl From<crate::R<STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXENS` reader - Receiver Enable Status"]
-pub type RXENS_R = crate::BitReader<bool>;
+pub type RXENS_R = crate::BitReader;
 #[doc = "Field `TXENS` reader - Transmitter Enable Status"]
-pub type TXENS_R = crate::BitReader<bool>;
+pub type TXENS_R = crate::BitReader;
 #[doc = "Field `RXBLOCK` reader - Block Incoming Data"]
-pub type RXBLOCK_R = crate::BitReader<bool>;
+pub type RXBLOCK_R = crate::BitReader;
 #[doc = "Field `TXC` reader - TX Complete"]
-pub type TXC_R = crate::BitReader<bool>;
+pub type TXC_R = crate::BitReader;
 #[doc = "Field `TXBL` reader - TX Buffer Level"]
-pub type TXBL_R = crate::BitReader<bool>;
+pub type TXBL_R = crate::BitReader;
 #[doc = "Field `RXDATAV` reader - RX Data Valid"]
-pub type RXDATAV_R = crate::BitReader<bool>;
+pub type RXDATAV_R = crate::BitReader;
 #[doc = "Field `TXIDLE` reader - TX Idle"]
-pub type TXIDLE_R = crate::BitReader<bool>;
+pub type TXIDLE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Receiver Enable Status"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<ADCCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `ADC0CLKSEL` reader - ADC0 Clock Select"]
-pub type ADC0CLKSEL_R = crate::FieldReader<u8, ADC0CLKSEL_A>;
+pub type ADC0CLKSEL_R = crate::FieldReader<ADC0CLKSEL_A>;
 #[doc = "ADC0 Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<ADC0CLKSEL_A> for u8 {
     fn from(variant: ADC0CLKSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ADC0CLKSEL_A {
+    type Ux = u8;
 }
 impl ADC0CLKSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -90,7 +93,7 @@ impl ADC0CLKSEL_R {
 }
 #[doc = "Field `ADC0CLKSEL` writer - ADC0 Clock Select"]
 pub type ADC0CLKSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, ADCCTRL_SPEC, u8, ADC0CLKSEL_A, 2, O>;
+    crate::FieldWriterSafe<'a, ADCCTRL_SPEC, 2, O, ADC0CLKSEL_A>;
 impl<'a, const O: u8> ADC0CLKSEL_W<'a, O> {
     #[doc = "ADC0 is not clocked"]
     #[inline(always)]
@@ -114,9 +117,9 @@ impl<'a, const O: u8> ADC0CLKSEL_W<'a, O> {
     }
 }
 #[doc = "Field `ADC0CLKINV` reader - Invert Clock Selected By ADC0CLKSEL"]
-pub type ADC0CLKINV_R = crate::BitReader<bool>;
+pub type ADC0CLKINV_R = crate::BitReader;
 #[doc = "Field `ADC0CLKINV` writer - Invert Clock Selected By ADC0CLKSEL"]
-pub type ADC0CLKINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADCCTRL_SPEC, bool, O>;
+pub type ADC0CLKINV_W<'a, const O: u8> = crate::BitWriter<'a, ADCCTRL_SPEC, O>;
 impl R {
     #[doc = "Bits 4:5 - ADC0 Clock Select"]
     #[inline(always)]
