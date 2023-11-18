@@ -1,18 +1,5 @@
 #[doc = "Register `RSTCAUSE` reader"]
-pub struct R(crate::R<RSTCAUSE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RSTCAUSE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RSTCAUSE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RSTCAUSE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RSTCAUSE_SPEC>;
 #[doc = "Field `PORST` reader - Power on Reset"]
 pub type PORST_R = crate::BitReader;
 #[doc = "Field `AVDDBOD` reader - Brown Out Detector AVDD Reset"]
@@ -78,15 +65,33 @@ impl R {
         EM4RST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Reset Cause Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rstcause](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RSTCAUSE")
+            .field("porst", &format_args!("{}", self.porst().bit()))
+            .field("avddbod", &format_args!("{}", self.avddbod().bit()))
+            .field("dvddbod", &format_args!("{}", self.dvddbod().bit()))
+            .field("decbod", &format_args!("{}", self.decbod().bit()))
+            .field("extrst", &format_args!("{}", self.extrst().bit()))
+            .field("lockuprst", &format_args!("{}", self.lockuprst().bit()))
+            .field("sysreqrst", &format_args!("{}", self.sysreqrst().bit()))
+            .field("wdogrst", &format_args!("{}", self.wdogrst().bit()))
+            .field("em4rst", &format_args!("{}", self.em4rst().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<RSTCAUSE_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Reset Cause Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rstcause::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RSTCAUSE_SPEC;
 impl crate::RegisterSpec for RSTCAUSE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rstcause::R](R) reader structure"]
-impl crate::Readable for RSTCAUSE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rstcause::R`](R) reader structure"]
+impl crate::Readable for RSTCAUSE_SPEC {}
 #[doc = "`reset()` method sets RSTCAUSE to value 0"]
 impl crate::Resettable for RSTCAUSE_SPEC {
     const RESET_VALUE: Self::Ux = 0;

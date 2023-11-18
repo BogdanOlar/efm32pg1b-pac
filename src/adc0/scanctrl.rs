@@ -1,51 +1,19 @@
 #[doc = "Register `SCANCTRL` reader"]
-pub struct R(crate::R<SCANCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCANCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCANCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCANCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SCANCTRL_SPEC>;
 #[doc = "Register `SCANCTRL` writer"]
-pub struct W(crate::W<SCANCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCANCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCANCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCANCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SCANCTRL_SPEC>;
 #[doc = "Field `REP` reader - Scan Sequence Repetitive Mode"]
 pub type REP_R = crate::BitReader;
 #[doc = "Field `REP` writer - Scan Sequence Repetitive Mode"]
-pub type REP_W<'a, const O: u8> = crate::BitWriter<'a, SCANCTRL_SPEC, O>;
+pub type REP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIFF` reader - Scan Sequence Differential Mode"]
 pub type DIFF_R = crate::BitReader;
 #[doc = "Field `DIFF` writer - Scan Sequence Differential Mode"]
-pub type DIFF_W<'a, const O: u8> = crate::BitWriter<'a, SCANCTRL_SPEC, O>;
+pub type DIFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ADJ` reader - Scan Sequence Result Adjustment"]
 pub type ADJ_R = crate::BitReader;
 #[doc = "Field `ADJ` writer - Scan Sequence Result Adjustment"]
-pub type ADJ_W<'a, const O: u8> = crate::BitWriter<'a, SCANCTRL_SPEC, O>;
+pub type ADJ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RES` reader - Scan Sequence Resolution Select"]
 pub type RES_R = crate::FieldReader<RES_A>;
 #[doc = "Scan Sequence Resolution Select\n\nValue on reset: 0"]
@@ -73,7 +41,7 @@ impl crate::FieldSpec for RES_A {
 impl RES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RES_A {
+    pub const fn variant(&self) -> RES_A {
         match self.bits {
             0 => RES_A::_12BIT,
             1 => RES_A::_8BIT,
@@ -82,48 +50,52 @@ impl RES_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_12BIT`"]
+    #[doc = "12-bit resolution"]
     #[inline(always)]
     pub fn is_12bit(&self) -> bool {
         *self == RES_A::_12BIT
     }
-    #[doc = "Checks if the value of the field is `_8BIT`"]
+    #[doc = "8-bit resolution"]
     #[inline(always)]
     pub fn is_8bit(&self) -> bool {
         *self == RES_A::_8BIT
     }
-    #[doc = "Checks if the value of the field is `_6BIT`"]
+    #[doc = "6-bit resolution"]
     #[inline(always)]
     pub fn is_6bit(&self) -> bool {
         *self == RES_A::_6BIT
     }
-    #[doc = "Checks if the value of the field is `OVS`"]
+    #[doc = "Oversampling enabled. Oversampling rate is set in OVSRSEL"]
     #[inline(always)]
     pub fn is_ovs(&self) -> bool {
         *self == RES_A::OVS
     }
 }
 #[doc = "Field `RES` writer - Scan Sequence Resolution Select"]
-pub type RES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SCANCTRL_SPEC, 2, O, RES_A>;
-impl<'a, const O: u8> RES_W<'a, O> {
+pub type RES_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RES_A>;
+impl<'a, REG, const O: u8> RES_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "12-bit resolution"]
     #[inline(always)]
-    pub fn _12bit(self) -> &'a mut W {
+    pub fn _12bit(self) -> &'a mut crate::W<REG> {
         self.variant(RES_A::_12BIT)
     }
     #[doc = "8-bit resolution"]
     #[inline(always)]
-    pub fn _8bit(self) -> &'a mut W {
+    pub fn _8bit(self) -> &'a mut crate::W<REG> {
         self.variant(RES_A::_8BIT)
     }
     #[doc = "6-bit resolution"]
     #[inline(always)]
-    pub fn _6bit(self) -> &'a mut W {
+    pub fn _6bit(self) -> &'a mut crate::W<REG> {
         self.variant(RES_A::_6BIT)
     }
     #[doc = "Oversampling enabled. Oversampling rate is set in OVSRSEL"]
     #[inline(always)]
-    pub fn ovs(self) -> &'a mut W {
+    pub fn ovs(self) -> &'a mut crate::W<REG> {
         self.variant(RES_A::OVS)
     }
 }
@@ -162,7 +134,7 @@ impl crate::FieldSpec for REF_A {
 impl REF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REF_A {
+    pub const fn variant(&self) -> REF_A {
         match self.bits {
             0 => REF_A::_1V25,
             1 => REF_A::_2V5,
@@ -175,88 +147,92 @@ impl REF_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_1V25`"]
+    #[doc = "VFS = 1.25V with internal VBGR reference"]
     #[inline(always)]
     pub fn is_1v25(&self) -> bool {
         *self == REF_A::_1V25
     }
-    #[doc = "Checks if the value of the field is `_2V5`"]
+    #[doc = "VFS = 2.5V with internal VBGR reference"]
     #[inline(always)]
     pub fn is_2v5(&self) -> bool {
         *self == REF_A::_2V5
     }
-    #[doc = "Checks if the value of the field is `VDD`"]
+    #[doc = "VFS = AVDD with AVDD as reference source"]
     #[inline(always)]
     pub fn is_vdd(&self) -> bool {
         *self == REF_A::VDD
     }
-    #[doc = "Checks if the value of the field is `_5V`"]
+    #[doc = "VFS = 5V with internal VBGR reference"]
     #[inline(always)]
     pub fn is_5v(&self) -> bool {
         *self == REF_A::_5V
     }
-    #[doc = "Checks if the value of the field is `EXTSINGLE`"]
+    #[doc = "Single ended external reference"]
     #[inline(always)]
     pub fn is_extsingle(&self) -> bool {
         *self == REF_A::EXTSINGLE
     }
-    #[doc = "Checks if the value of the field is `_2XEXTDIFF`"]
+    #[doc = "Differential external reference, 2x"]
     #[inline(always)]
     pub fn is_2xextdiff(&self) -> bool {
         *self == REF_A::_2XEXTDIFF
     }
-    #[doc = "Checks if the value of the field is `_2XVDD`"]
+    #[doc = "VFS=2xAVDD with AVDD as the reference source"]
     #[inline(always)]
     pub fn is_2xvdd(&self) -> bool {
         *self == REF_A::_2XVDD
     }
-    #[doc = "Checks if the value of the field is `CONF`"]
+    #[doc = "Use SCANCTRLX to configure reference"]
     #[inline(always)]
     pub fn is_conf(&self) -> bool {
         *self == REF_A::CONF
     }
 }
 #[doc = "Field `REF` writer - Scan Sequence Reference Selection"]
-pub type REF_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SCANCTRL_SPEC, 3, O, REF_A>;
-impl<'a, const O: u8> REF_W<'a, O> {
+pub type REF_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, REF_A>;
+impl<'a, REG, const O: u8> REF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "VFS = 1.25V with internal VBGR reference"]
     #[inline(always)]
-    pub fn _1v25(self) -> &'a mut W {
+    pub fn _1v25(self) -> &'a mut crate::W<REG> {
         self.variant(REF_A::_1V25)
     }
     #[doc = "VFS = 2.5V with internal VBGR reference"]
     #[inline(always)]
-    pub fn _2v5(self) -> &'a mut W {
+    pub fn _2v5(self) -> &'a mut crate::W<REG> {
         self.variant(REF_A::_2V5)
     }
     #[doc = "VFS = AVDD with AVDD as reference source"]
     #[inline(always)]
-    pub fn vdd(self) -> &'a mut W {
+    pub fn vdd(self) -> &'a mut crate::W<REG> {
         self.variant(REF_A::VDD)
     }
     #[doc = "VFS = 5V with internal VBGR reference"]
     #[inline(always)]
-    pub fn _5v(self) -> &'a mut W {
+    pub fn _5v(self) -> &'a mut crate::W<REG> {
         self.variant(REF_A::_5V)
     }
     #[doc = "Single ended external reference"]
     #[inline(always)]
-    pub fn extsingle(self) -> &'a mut W {
+    pub fn extsingle(self) -> &'a mut crate::W<REG> {
         self.variant(REF_A::EXTSINGLE)
     }
     #[doc = "Differential external reference, 2x"]
     #[inline(always)]
-    pub fn _2xextdiff(self) -> &'a mut W {
+    pub fn _2xextdiff(self) -> &'a mut crate::W<REG> {
         self.variant(REF_A::_2XEXTDIFF)
     }
     #[doc = "VFS=2xAVDD with AVDD as the reference source"]
     #[inline(always)]
-    pub fn _2xvdd(self) -> &'a mut W {
+    pub fn _2xvdd(self) -> &'a mut crate::W<REG> {
         self.variant(REF_A::_2XVDD)
     }
     #[doc = "Use SCANCTRLX to configure reference"]
     #[inline(always)]
-    pub fn conf(self) -> &'a mut W {
+    pub fn conf(self) -> &'a mut crate::W<REG> {
         self.variant(REF_A::CONF)
     }
 }
@@ -299,7 +275,7 @@ impl crate::FieldSpec for AT_A {
 impl AT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<AT_A> {
+    pub const fn variant(&self) -> Option<AT_A> {
         match self.bits {
             0 => Some(AT_A::_1CYCLE),
             1 => Some(AT_A::_2CYCLES),
@@ -314,119 +290,123 @@ impl AT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_1CYCLE`"]
+    #[doc = "1 conversion clock cycle acquisition time for scan"]
     #[inline(always)]
     pub fn is_1cycle(&self) -> bool {
         *self == AT_A::_1CYCLE
     }
-    #[doc = "Checks if the value of the field is `_2CYCLES`"]
+    #[doc = "2 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_2cycles(&self) -> bool {
         *self == AT_A::_2CYCLES
     }
-    #[doc = "Checks if the value of the field is `_3CYCLES`"]
+    #[doc = "3 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_3cycles(&self) -> bool {
         *self == AT_A::_3CYCLES
     }
-    #[doc = "Checks if the value of the field is `_4CYCLES`"]
+    #[doc = "4 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_4cycles(&self) -> bool {
         *self == AT_A::_4CYCLES
     }
-    #[doc = "Checks if the value of the field is `_8CYCLES`"]
+    #[doc = "8 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_8cycles(&self) -> bool {
         *self == AT_A::_8CYCLES
     }
-    #[doc = "Checks if the value of the field is `_16CYCLES`"]
+    #[doc = "16 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_16cycles(&self) -> bool {
         *self == AT_A::_16CYCLES
     }
-    #[doc = "Checks if the value of the field is `_32CYCLES`"]
+    #[doc = "32 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_32cycles(&self) -> bool {
         *self == AT_A::_32CYCLES
     }
-    #[doc = "Checks if the value of the field is `_64CYCLES`"]
+    #[doc = "64 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_64cycles(&self) -> bool {
         *self == AT_A::_64CYCLES
     }
-    #[doc = "Checks if the value of the field is `_128CYCLES`"]
+    #[doc = "128 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_128cycles(&self) -> bool {
         *self == AT_A::_128CYCLES
     }
-    #[doc = "Checks if the value of the field is `_256CYCLES`"]
+    #[doc = "256 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
     pub fn is_256cycles(&self) -> bool {
         *self == AT_A::_256CYCLES
     }
 }
 #[doc = "Field `AT` writer - Scan Acquisition Time"]
-pub type AT_W<'a, const O: u8> = crate::FieldWriter<'a, SCANCTRL_SPEC, 4, O, AT_A>;
-impl<'a, const O: u8> AT_W<'a, O> {
+pub type AT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, AT_A>;
+impl<'a, REG, const O: u8> AT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1 conversion clock cycle acquisition time for scan"]
     #[inline(always)]
-    pub fn _1cycle(self) -> &'a mut W {
+    pub fn _1cycle(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_1CYCLE)
     }
     #[doc = "2 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _2cycles(self) -> &'a mut W {
+    pub fn _2cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_2CYCLES)
     }
     #[doc = "3 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _3cycles(self) -> &'a mut W {
+    pub fn _3cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_3CYCLES)
     }
     #[doc = "4 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _4cycles(self) -> &'a mut W {
+    pub fn _4cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_4CYCLES)
     }
     #[doc = "8 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _8cycles(self) -> &'a mut W {
+    pub fn _8cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_8CYCLES)
     }
     #[doc = "16 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _16cycles(self) -> &'a mut W {
+    pub fn _16cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_16CYCLES)
     }
     #[doc = "32 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _32cycles(self) -> &'a mut W {
+    pub fn _32cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_32CYCLES)
     }
     #[doc = "64 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _64cycles(self) -> &'a mut W {
+    pub fn _64cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_64CYCLES)
     }
     #[doc = "128 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _128cycles(self) -> &'a mut W {
+    pub fn _128cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_128CYCLES)
     }
     #[doc = "256 conversion clock cycles acquisition time for scan"]
     #[inline(always)]
-    pub fn _256cycles(self) -> &'a mut W {
+    pub fn _256cycles(self) -> &'a mut crate::W<REG> {
         self.variant(AT_A::_256CYCLES)
     }
 }
 #[doc = "Field `PRSEN` reader - Scan Sequence PRS Trigger Enable"]
 pub type PRSEN_R = crate::BitReader;
 #[doc = "Field `PRSEN` writer - Scan Sequence PRS Trigger Enable"]
-pub type PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, SCANCTRL_SPEC, O>;
+pub type PRSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CMPEN` reader - Compare Logic Enable for Scan"]
 pub type CMPEN_R = crate::BitReader;
 #[doc = "Field `CMPEN` writer - Compare Logic Enable for Scan"]
-pub type CMPEN_W<'a, const O: u8> = crate::BitWriter<'a, SCANCTRL_SPEC, O>;
+pub type CMPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Scan Sequence Repetitive Mode"]
     #[inline(always)]
@@ -469,74 +449,94 @@ impl R {
         CMPEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANCTRL")
+            .field("rep", &format_args!("{}", self.rep().bit()))
+            .field("diff", &format_args!("{}", self.diff().bit()))
+            .field("adj", &format_args!("{}", self.adj().bit()))
+            .field("res", &format_args!("{}", self.res().bits()))
+            .field("ref_", &format_args!("{}", self.ref_().bits()))
+            .field("at", &format_args!("{}", self.at().bits()))
+            .field("prsen", &format_args!("{}", self.prsen().bit()))
+            .field("cmpen", &format_args!("{}", self.cmpen().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<SCANCTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - Scan Sequence Repetitive Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn rep(&mut self) -> REP_W<0> {
+    pub fn rep(&mut self) -> REP_W<SCANCTRL_SPEC, 0> {
         REP_W::new(self)
     }
     #[doc = "Bit 1 - Scan Sequence Differential Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn diff(&mut self) -> DIFF_W<1> {
+    pub fn diff(&mut self) -> DIFF_W<SCANCTRL_SPEC, 1> {
         DIFF_W::new(self)
     }
     #[doc = "Bit 2 - Scan Sequence Result Adjustment"]
     #[inline(always)]
     #[must_use]
-    pub fn adj(&mut self) -> ADJ_W<2> {
+    pub fn adj(&mut self) -> ADJ_W<SCANCTRL_SPEC, 2> {
         ADJ_W::new(self)
     }
     #[doc = "Bits 3:4 - Scan Sequence Resolution Select"]
     #[inline(always)]
     #[must_use]
-    pub fn res(&mut self) -> RES_W<3> {
+    pub fn res(&mut self) -> RES_W<SCANCTRL_SPEC, 3> {
         RES_W::new(self)
     }
     #[doc = "Bits 5:7 - Scan Sequence Reference Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ref_(&mut self) -> REF_W<5> {
+    pub fn ref_(&mut self) -> REF_W<SCANCTRL_SPEC, 5> {
         REF_W::new(self)
     }
     #[doc = "Bits 24:27 - Scan Acquisition Time"]
     #[inline(always)]
     #[must_use]
-    pub fn at(&mut self) -> AT_W<24> {
+    pub fn at(&mut self) -> AT_W<SCANCTRL_SPEC, 24> {
         AT_W::new(self)
     }
     #[doc = "Bit 29 - Scan Sequence PRS Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn prsen(&mut self) -> PRSEN_W<29> {
+    pub fn prsen(&mut self) -> PRSEN_W<SCANCTRL_SPEC, 29> {
         PRSEN_W::new(self)
     }
     #[doc = "Bit 31 - Compare Logic Enable for Scan"]
     #[inline(always)]
     #[must_use]
-    pub fn cmpen(&mut self) -> CMPEN_W<31> {
+    pub fn cmpen(&mut self) -> CMPEN_W<SCANCTRL_SPEC, 31> {
         CMPEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Scan Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scanctrl](index.html) module"]
+#[doc = "Scan Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANCTRL_SPEC;
 impl crate::RegisterSpec for SCANCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [scanctrl::R](R) reader structure"]
-impl crate::Readable for SCANCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [scanctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`scanctrl::R`](R) reader structure"]
+impl crate::Readable for SCANCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`scanctrl::W`](W) writer structure"]
 impl crate::Writable for SCANCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

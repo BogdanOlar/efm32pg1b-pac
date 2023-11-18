@@ -1,55 +1,23 @@
 #[doc = "Register `CC1_DATE` reader"]
-pub struct R(crate::R<CC1_DATE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CC1_DATE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CC1_DATE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CC1_DATE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CC1_DATE_SPEC>;
 #[doc = "Register `CC1_DATE` writer"]
-pub struct W(crate::W<CC1_DATE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CC1_DATE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CC1_DATE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CC1_DATE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CC1_DATE_SPEC>;
 #[doc = "Field `DAYU` reader - Day of Month/week, Units"]
 pub type DAYU_R = crate::FieldReader;
 #[doc = "Field `DAYU` writer - Day of Month/week, Units"]
-pub type DAYU_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_DATE_SPEC, 4, O>;
+pub type DAYU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `DAYT` reader - Day of Month/week, Tens"]
 pub type DAYT_R = crate::FieldReader;
 #[doc = "Field `DAYT` writer - Day of Month/week, Tens"]
-pub type DAYT_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_DATE_SPEC, 2, O>;
+pub type DAYT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `MONTHU` reader - Month, Units"]
 pub type MONTHU_R = crate::FieldReader;
 #[doc = "Field `MONTHU` writer - Month, Units"]
-pub type MONTHU_W<'a, const O: u8> = crate::FieldWriter<'a, CC1_DATE_SPEC, 4, O>;
+pub type MONTHU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `MONTHT` reader - Month, Tens"]
 pub type MONTHT_R = crate::BitReader;
 #[doc = "Field `MONTHT` writer - Month, Tens"]
-pub type MONTHT_W<'a, const O: u8> = crate::BitWriter<'a, CC1_DATE_SPEC, O>;
+pub type MONTHT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:3 - Day of Month/week, Units"]
     #[inline(always)]
@@ -72,50 +40,66 @@ impl R {
         MONTHT_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CC1_DATE")
+            .field("dayu", &format_args!("{}", self.dayu().bits()))
+            .field("dayt", &format_args!("{}", self.dayt().bits()))
+            .field("monthu", &format_args!("{}", self.monthu().bits()))
+            .field("montht", &format_args!("{}", self.montht().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CC1_DATE_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Day of Month/week, Units"]
     #[inline(always)]
     #[must_use]
-    pub fn dayu(&mut self) -> DAYU_W<0> {
+    pub fn dayu(&mut self) -> DAYU_W<CC1_DATE_SPEC, 0> {
         DAYU_W::new(self)
     }
     #[doc = "Bits 4:5 - Day of Month/week, Tens"]
     #[inline(always)]
     #[must_use]
-    pub fn dayt(&mut self) -> DAYT_W<4> {
+    pub fn dayt(&mut self) -> DAYT_W<CC1_DATE_SPEC, 4> {
         DAYT_W::new(self)
     }
     #[doc = "Bits 8:11 - Month, Units"]
     #[inline(always)]
     #[must_use]
-    pub fn monthu(&mut self) -> MONTHU_W<8> {
+    pub fn monthu(&mut self) -> MONTHU_W<CC1_DATE_SPEC, 8> {
         MONTHU_W::new(self)
     }
     #[doc = "Bit 12 - Month, Tens"]
     #[inline(always)]
     #[must_use]
-    pub fn montht(&mut self) -> MONTHT_W<12> {
+    pub fn montht(&mut self) -> MONTHT_W<CC1_DATE_SPEC, 12> {
         MONTHT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Capture/Compare Date Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc1_date](index.html) module"]
+#[doc = "Capture/Compare Date Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc1_date::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cc1_date::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CC1_DATE_SPEC;
 impl crate::RegisterSpec for CC1_DATE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cc1_date::R](R) reader structure"]
-impl crate::Readable for CC1_DATE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cc1_date::W](W) writer structure"]
+#[doc = "`read()` method returns [`cc1_date::R`](R) reader structure"]
+impl crate::Readable for CC1_DATE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cc1_date::W`](W) writer structure"]
 impl crate::Writable for CC1_DATE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

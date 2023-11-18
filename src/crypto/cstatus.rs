@@ -1,18 +1,5 @@
 #[doc = "Register `CSTATUS` reader"]
-pub struct R(crate::R<CSTATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSTATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSTATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CSTATUS_SPEC>;
 #[doc = "Field `V0` reader - Selected ALU Operand 0"]
 pub type V0_R = crate::FieldReader<V0_A>;
 #[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
@@ -48,7 +35,7 @@ impl crate::FieldSpec for V0_A {
 impl V0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> V0_A {
+    pub const fn variant(&self) -> V0_A {
         match self.bits {
             0 => V0_A::DDATA0,
             1 => V0_A::DDATA1,
@@ -61,42 +48,42 @@ impl V0_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `DDATA0`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_ddata0(&self) -> bool {
         *self == V0_A::DDATA0
     }
-    #[doc = "Checks if the value of the field is `DDATA1`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_ddata1(&self) -> bool {
         *self == V0_A::DDATA1
     }
-    #[doc = "Checks if the value of the field is `DDATA2`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_ddata2(&self) -> bool {
         *self == V0_A::DDATA2
     }
-    #[doc = "Checks if the value of the field is `DDATA3`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_ddata3(&self) -> bool {
         *self == V0_A::DDATA3
     }
-    #[doc = "Checks if the value of the field is `DDATA4`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_ddata4(&self) -> bool {
         *self == V0_A::DDATA4
     }
-    #[doc = "Checks if the value of the field is `DATA0`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
         *self == V0_A::DATA0
     }
-    #[doc = "Checks if the value of the field is `DATA1`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
         *self == V0_A::DATA1
     }
-    #[doc = "Checks if the value of the field is `DATA2`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
         *self == V0_A::DATA2
@@ -137,7 +124,7 @@ impl crate::FieldSpec for V1_A {
 impl V1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> V1_A {
+    pub const fn variant(&self) -> V1_A {
         match self.bits {
             0 => V1_A::DDATA0,
             1 => V1_A::DDATA1,
@@ -150,42 +137,42 @@ impl V1_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `DDATA0`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_ddata0(&self) -> bool {
         *self == V1_A::DDATA0
     }
-    #[doc = "Checks if the value of the field is `DDATA1`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_ddata1(&self) -> bool {
         *self == V1_A::DDATA1
     }
-    #[doc = "Checks if the value of the field is `DDATA2`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_ddata2(&self) -> bool {
         *self == V1_A::DDATA2
     }
-    #[doc = "Checks if the value of the field is `DDATA3`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_ddata3(&self) -> bool {
         *self == V1_A::DDATA3
     }
-    #[doc = "Checks if the value of the field is `DDATA4`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_ddata4(&self) -> bool {
         *self == V1_A::DDATA4
     }
-    #[doc = "Checks if the value of the field is `DATA0`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
         *self == V1_A::DATA0
     }
-    #[doc = "Checks if the value of the field is `DATA1`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
         *self == V1_A::DATA1
     }
-    #[doc = "Checks if the value of the field is `DATA2`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
         *self == V1_A::DATA2
@@ -224,15 +211,29 @@ impl R {
         SEQIP_R::new(((self.bits >> 20) & 0x1f) as u8)
     }
 }
-#[doc = "Control Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cstatus](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CSTATUS")
+            .field("v0", &format_args!("{}", self.v0().bits()))
+            .field("v1", &format_args!("{}", self.v1().bits()))
+            .field("seqpart", &format_args!("{}", self.seqpart().bit()))
+            .field("seqskip", &format_args!("{}", self.seqskip().bit()))
+            .field("seqip", &format_args!("{}", self.seqip().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CSTATUS_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Control Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSTATUS_SPEC;
 impl crate::RegisterSpec for CSTATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cstatus::R](R) reader structure"]
-impl crate::Readable for CSTATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`cstatus::R`](R) reader structure"]
+impl crate::Readable for CSTATUS_SPEC {}
 #[doc = "`reset()` method sets CSTATUS to value 0x0201"]
 impl crate::Resettable for CSTATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0x0201;

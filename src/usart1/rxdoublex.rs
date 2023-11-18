@@ -1,18 +1,5 @@
 #[doc = "Register `RXDOUBLEX` reader"]
-pub struct R(crate::R<RXDOUBLEX_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RXDOUBLEX_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RXDOUBLEX_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RXDOUBLEX_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RXDOUBLEX_SPEC>;
 #[doc = "Field `RXDATA0` reader - RX Data 0"]
 pub type RXDATA0_R = crate::FieldReader<u16>;
 #[doc = "Field `PERR0` reader - Data Parity Error 0"]
@@ -57,15 +44,18 @@ impl R {
         FERR1_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "RX Buffer Double Data Extended Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdoublex](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
+impl core::fmt::Debug for crate::generic::Reg<RXDOUBLEX_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
+#[doc = "RX Buffer Double Data Extended Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdoublex::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDOUBLEX_SPEC;
 impl crate::RegisterSpec for RXDOUBLEX_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxdoublex::R](R) reader structure"]
-impl crate::Readable for RXDOUBLEX_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rxdoublex::R`](R) reader structure"]
+impl crate::Readable for RXDOUBLEX_SPEC {}
 #[doc = "`reset()` method sets RXDOUBLEX to value 0"]
 impl crate::Resettable for RXDOUBLEX_SPEC {
     const RESET_VALUE: Self::Ux = 0;

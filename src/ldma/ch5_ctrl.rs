@@ -1,39 +1,7 @@
 #[doc = "Register `CH5_CTRL` reader"]
-pub struct R(crate::R<CH5_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CH5_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CH5_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CH5_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CH5_CTRL_SPEC>;
 #[doc = "Register `CH5_CTRL` writer"]
-pub struct W(crate::W<CH5_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CH5_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CH5_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CH5_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CH5_CTRL_SPEC>;
 #[doc = "Field `STRUCTTYPE` reader - DMA Structure Type"]
 pub type STRUCTTYPE_R = crate::FieldReader<STRUCTTYPE_A>;
 #[doc = "DMA Structure Type\n\nValue on reset: 0"]
@@ -59,7 +27,7 @@ impl crate::FieldSpec for STRUCTTYPE_A {
 impl STRUCTTYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STRUCTTYPE_A> {
+    pub const fn variant(&self) -> Option<STRUCTTYPE_A> {
         match self.bits {
             0 => Some(STRUCTTYPE_A::TRANSFER),
             1 => Some(STRUCTTYPE_A::SYNCHRONIZE),
@@ -67,32 +35,32 @@ impl STRUCTTYPE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `TRANSFER`"]
+    #[doc = "DMA transfer structure type selected."]
     #[inline(always)]
     pub fn is_transfer(&self) -> bool {
         *self == STRUCTTYPE_A::TRANSFER
     }
-    #[doc = "Checks if the value of the field is `SYNCHRONIZE`"]
+    #[doc = "Synchronization structure type selected."]
     #[inline(always)]
     pub fn is_synchronize(&self) -> bool {
         *self == STRUCTTYPE_A::SYNCHRONIZE
     }
-    #[doc = "Checks if the value of the field is `WRITE`"]
+    #[doc = "Write immediate value structure type selected."]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
         *self == STRUCTTYPE_A::WRITE
     }
 }
 #[doc = "Field `STRUCTREQ` writer - Structure DMA Transfer Request"]
-pub type STRUCTREQ_W<'a, const O: u8> = crate::BitWriter<'a, CH5_CTRL_SPEC, O>;
+pub type STRUCTREQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `XFERCNT` reader - DMA Unit Data Transfer Count"]
 pub type XFERCNT_R = crate::FieldReader<u16>;
 #[doc = "Field `XFERCNT` writer - DMA Unit Data Transfer Count"]
-pub type XFERCNT_W<'a, const O: u8> = crate::FieldWriter<'a, CH5_CTRL_SPEC, 11, O, u16>;
+pub type XFERCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 11, O, u16>;
 #[doc = "Field `BYTESWAP` reader - Endian Byte Swap"]
 pub type BYTESWAP_R = crate::BitReader;
 #[doc = "Field `BYTESWAP` writer - Endian Byte Swap"]
-pub type BYTESWAP_W<'a, const O: u8> = crate::BitWriter<'a, CH5_CTRL_SPEC, O>;
+pub type BYTESWAP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `BLOCKSIZE` reader - Block Transfer Size"]
 pub type BLOCKSIZE_R = crate::FieldReader<BLOCKSIZE_A>;
 #[doc = "Block Transfer Size\n\nValue on reset: 0"]
@@ -140,7 +108,7 @@ impl crate::FieldSpec for BLOCKSIZE_A {
 impl BLOCKSIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BLOCKSIZE_A> {
+    pub const fn variant(&self) -> Option<BLOCKSIZE_A> {
         match self.bits {
             0 => Some(BLOCKSIZE_A::UNIT1),
             1 => Some(BLOCKSIZE_A::UNIT2),
@@ -159,167 +127,171 @@ impl BLOCKSIZE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `UNIT1`"]
+    #[doc = "One unit transfer per arbitration"]
     #[inline(always)]
     pub fn is_unit1(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT1
     }
-    #[doc = "Checks if the value of the field is `UNIT2`"]
+    #[doc = "Two unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit2(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT2
     }
-    #[doc = "Checks if the value of the field is `UNIT3`"]
+    #[doc = "Three unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit3(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT3
     }
-    #[doc = "Checks if the value of the field is `UNIT4`"]
+    #[doc = "Four unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit4(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT4
     }
-    #[doc = "Checks if the value of the field is `UNIT6`"]
+    #[doc = "Six unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit6(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT6
     }
-    #[doc = "Checks if the value of the field is `UNIT8`"]
+    #[doc = "Eight unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit8(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT8
     }
-    #[doc = "Checks if the value of the field is `UNIT16`"]
+    #[doc = "Sixteen unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit16(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT16
     }
-    #[doc = "Checks if the value of the field is `UNIT32`"]
+    #[doc = "32 unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit32(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT32
     }
-    #[doc = "Checks if the value of the field is `UNIT64`"]
+    #[doc = "64 unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit64(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT64
     }
-    #[doc = "Checks if the value of the field is `UNIT128`"]
+    #[doc = "128 unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit128(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT128
     }
-    #[doc = "Checks if the value of the field is `UNIT256`"]
+    #[doc = "256 unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit256(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT256
     }
-    #[doc = "Checks if the value of the field is `UNIT512`"]
+    #[doc = "512 unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit512(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT512
     }
-    #[doc = "Checks if the value of the field is `UNIT1024`"]
+    #[doc = "1024 unit transfers per arbitration"]
     #[inline(always)]
     pub fn is_unit1024(&self) -> bool {
         *self == BLOCKSIZE_A::UNIT1024
     }
-    #[doc = "Checks if the value of the field is `ALL`"]
+    #[doc = "Transfer all units as specified by the XFRCNT field"]
     #[inline(always)]
     pub fn is_all(&self) -> bool {
         *self == BLOCKSIZE_A::ALL
     }
 }
 #[doc = "Field `BLOCKSIZE` writer - Block Transfer Size"]
-pub type BLOCKSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, CH5_CTRL_SPEC, 4, O, BLOCKSIZE_A>;
-impl<'a, const O: u8> BLOCKSIZE_W<'a, O> {
+pub type BLOCKSIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BLOCKSIZE_A>;
+impl<'a, REG, const O: u8> BLOCKSIZE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "One unit transfer per arbitration"]
     #[inline(always)]
-    pub fn unit1(self) -> &'a mut W {
+    pub fn unit1(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT1)
     }
     #[doc = "Two unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit2(self) -> &'a mut W {
+    pub fn unit2(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT2)
     }
     #[doc = "Three unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit3(self) -> &'a mut W {
+    pub fn unit3(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT3)
     }
     #[doc = "Four unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit4(self) -> &'a mut W {
+    pub fn unit4(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT4)
     }
     #[doc = "Six unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit6(self) -> &'a mut W {
+    pub fn unit6(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT6)
     }
     #[doc = "Eight unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit8(self) -> &'a mut W {
+    pub fn unit8(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT8)
     }
     #[doc = "Sixteen unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit16(self) -> &'a mut W {
+    pub fn unit16(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT16)
     }
     #[doc = "32 unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit32(self) -> &'a mut W {
+    pub fn unit32(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT32)
     }
     #[doc = "64 unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit64(self) -> &'a mut W {
+    pub fn unit64(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT64)
     }
     #[doc = "128 unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit128(self) -> &'a mut W {
+    pub fn unit128(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT128)
     }
     #[doc = "256 unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit256(self) -> &'a mut W {
+    pub fn unit256(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT256)
     }
     #[doc = "512 unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit512(self) -> &'a mut W {
+    pub fn unit512(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT512)
     }
     #[doc = "1024 unit transfers per arbitration"]
     #[inline(always)]
-    pub fn unit1024(self) -> &'a mut W {
+    pub fn unit1024(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::UNIT1024)
     }
     #[doc = "Transfer all units as specified by the XFRCNT field"]
     #[inline(always)]
-    pub fn all(self) -> &'a mut W {
+    pub fn all(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCKSIZE_A::ALL)
     }
 }
 #[doc = "Field `DONEIFSEN` reader - DMA Operation Done Interrupt Flag Set Enable"]
 pub type DONEIFSEN_R = crate::BitReader;
 #[doc = "Field `DONEIFSEN` writer - DMA Operation Done Interrupt Flag Set Enable"]
-pub type DONEIFSEN_W<'a, const O: u8> = crate::BitWriter<'a, CH5_CTRL_SPEC, O>;
+pub type DONEIFSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `REQMODE` reader - DMA Request Transfer Mode Select"]
 pub type REQMODE_R = crate::BitReader;
 #[doc = "Field `REQMODE` writer - DMA Request Transfer Mode Select"]
-pub type REQMODE_W<'a, const O: u8> = crate::BitWriter<'a, CH5_CTRL_SPEC, O>;
+pub type REQMODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DECLOOPCNT` reader - Decrement Loop Count"]
 pub type DECLOOPCNT_R = crate::BitReader;
 #[doc = "Field `DECLOOPCNT` writer - Decrement Loop Count"]
-pub type DECLOOPCNT_W<'a, const O: u8> = crate::BitWriter<'a, CH5_CTRL_SPEC, O>;
+pub type DECLOOPCNT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `IGNORESREQ` reader - Ignore Sreq"]
 pub type IGNORESREQ_R = crate::BitReader;
 #[doc = "Field `IGNORESREQ` writer - Ignore Sreq"]
-pub type IGNORESREQ_W<'a, const O: u8> = crate::BitWriter<'a, CH5_CTRL_SPEC, O>;
+pub type IGNORESREQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SRCINC` reader - Source Address Increment Size"]
 pub type SRCINC_R = crate::FieldReader<SRCINC_A>;
 #[doc = "Source Address Increment Size\n\nValue on reset: 0"]
@@ -347,7 +319,7 @@ impl crate::FieldSpec for SRCINC_A {
 impl SRCINC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRCINC_A {
+    pub const fn variant(&self) -> SRCINC_A {
         match self.bits {
             0 => SRCINC_A::ONE,
             1 => SRCINC_A::TWO,
@@ -356,48 +328,52 @@ impl SRCINC_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ONE`"]
+    #[doc = "Increment source address by one unit data size after each read"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
         *self == SRCINC_A::ONE
     }
-    #[doc = "Checks if the value of the field is `TWO`"]
+    #[doc = "Increment source address by two unit data sizes after each read"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
         *self == SRCINC_A::TWO
     }
-    #[doc = "Checks if the value of the field is `FOUR`"]
+    #[doc = "Increment source address by four unit data sizes after each read"]
     #[inline(always)]
     pub fn is_four(&self) -> bool {
         *self == SRCINC_A::FOUR
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == SRCINC_A::NONE
     }
 }
 #[doc = "Field `SRCINC` writer - Source Address Increment Size"]
-pub type SRCINC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CH5_CTRL_SPEC, 2, O, SRCINC_A>;
-impl<'a, const O: u8> SRCINC_W<'a, O> {
+pub type SRCINC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SRCINC_A>;
+impl<'a, REG, const O: u8> SRCINC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Increment source address by one unit data size after each read"]
     #[inline(always)]
-    pub fn one(self) -> &'a mut W {
+    pub fn one(self) -> &'a mut crate::W<REG> {
         self.variant(SRCINC_A::ONE)
     }
     #[doc = "Increment source address by two unit data sizes after each read"]
     #[inline(always)]
-    pub fn two(self) -> &'a mut W {
+    pub fn two(self) -> &'a mut crate::W<REG> {
         self.variant(SRCINC_A::TWO)
     }
     #[doc = "Increment source address by four unit data sizes after each read"]
     #[inline(always)]
-    pub fn four(self) -> &'a mut W {
+    pub fn four(self) -> &'a mut crate::W<REG> {
         self.variant(SRCINC_A::FOUR)
     }
     #[doc = "Do not increment the source address. In this mode reads are made from a fixed source address, for example reading FIFO."]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(SRCINC_A::NONE)
     }
 }
@@ -426,7 +402,7 @@ impl crate::FieldSpec for SIZE_A {
 impl SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SIZE_A> {
+    pub const fn variant(&self) -> Option<SIZE_A> {
         match self.bits {
             0 => Some(SIZE_A::BYTE),
             1 => Some(SIZE_A::HALFWORD),
@@ -434,38 +410,42 @@ impl SIZE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BYTE`"]
+    #[doc = "Each unit transfer is a byte"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
         *self == SIZE_A::BYTE
     }
-    #[doc = "Checks if the value of the field is `HALFWORD`"]
+    #[doc = "Each unit transfer is a half-word"]
     #[inline(always)]
     pub fn is_halfword(&self) -> bool {
         *self == SIZE_A::HALFWORD
     }
-    #[doc = "Checks if the value of the field is `WORD`"]
+    #[doc = "Each unit transfer is a word"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
         *self == SIZE_A::WORD
     }
 }
 #[doc = "Field `SIZE` writer - Unit Data Transfer Size"]
-pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, CH5_CTRL_SPEC, 2, O, SIZE_A>;
-impl<'a, const O: u8> SIZE_W<'a, O> {
+pub type SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SIZE_A>;
+impl<'a, REG, const O: u8> SIZE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Each unit transfer is a byte"]
     #[inline(always)]
-    pub fn byte(self) -> &'a mut W {
+    pub fn byte(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::BYTE)
     }
     #[doc = "Each unit transfer is a half-word"]
     #[inline(always)]
-    pub fn halfword(self) -> &'a mut W {
+    pub fn halfword(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::HALFWORD)
     }
     #[doc = "Each unit transfer is a word"]
     #[inline(always)]
-    pub fn word(self) -> &'a mut W {
+    pub fn word(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::WORD)
     }
 }
@@ -496,7 +476,7 @@ impl crate::FieldSpec for DSTINC_A {
 impl DSTINC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DSTINC_A {
+    pub const fn variant(&self) -> DSTINC_A {
         match self.bits {
             0 => DSTINC_A::ONE,
             1 => DSTINC_A::TWO,
@@ -505,48 +485,52 @@ impl DSTINC_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ONE`"]
+    #[doc = "Increment destination address by one unit data size after each write"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
         *self == DSTINC_A::ONE
     }
-    #[doc = "Checks if the value of the field is `TWO`"]
+    #[doc = "Increment destination address by two unit data sizes after each write"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
         *self == DSTINC_A::TWO
     }
-    #[doc = "Checks if the value of the field is `FOUR`"]
+    #[doc = "Increment destination address by four unit data sizes after each write"]
     #[inline(always)]
     pub fn is_four(&self) -> bool {
         *self == DSTINC_A::FOUR
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Do not increment the destination address. Writes are made to a fixed destination address, for example writing to a FIFO."]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == DSTINC_A::NONE
     }
 }
 #[doc = "Field `DSTINC` writer - Destination Address Increment Size"]
-pub type DSTINC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CH5_CTRL_SPEC, 2, O, DSTINC_A>;
-impl<'a, const O: u8> DSTINC_W<'a, O> {
+pub type DSTINC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, DSTINC_A>;
+impl<'a, REG, const O: u8> DSTINC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Increment destination address by one unit data size after each write"]
     #[inline(always)]
-    pub fn one(self) -> &'a mut W {
+    pub fn one(self) -> &'a mut crate::W<REG> {
         self.variant(DSTINC_A::ONE)
     }
     #[doc = "Increment destination address by two unit data sizes after each write"]
     #[inline(always)]
-    pub fn two(self) -> &'a mut W {
+    pub fn two(self) -> &'a mut crate::W<REG> {
         self.variant(DSTINC_A::TWO)
     }
     #[doc = "Increment destination address by four unit data sizes after each write"]
     #[inline(always)]
-    pub fn four(self) -> &'a mut W {
+    pub fn four(self) -> &'a mut crate::W<REG> {
         self.variant(DSTINC_A::FOUR)
     }
     #[doc = "Do not increment the destination address. Writes are made to a fixed destination address, for example writing to a FIFO."]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(DSTINC_A::NONE)
     }
 }
@@ -621,92 +605,117 @@ impl R {
         DSTMODE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CH5_CTRL")
+            .field("structtype", &format_args!("{}", self.structtype().bits()))
+            .field("xfercnt", &format_args!("{}", self.xfercnt().bits()))
+            .field("byteswap", &format_args!("{}", self.byteswap().bit()))
+            .field("blocksize", &format_args!("{}", self.blocksize().bits()))
+            .field("doneifsen", &format_args!("{}", self.doneifsen().bit()))
+            .field("reqmode", &format_args!("{}", self.reqmode().bit()))
+            .field("decloopcnt", &format_args!("{}", self.decloopcnt().bit()))
+            .field("ignoresreq", &format_args!("{}", self.ignoresreq().bit()))
+            .field("srcinc", &format_args!("{}", self.srcinc().bits()))
+            .field("size", &format_args!("{}", self.size().bits()))
+            .field("dstinc", &format_args!("{}", self.dstinc().bits()))
+            .field("srcmode", &format_args!("{}", self.srcmode().bit()))
+            .field("dstmode", &format_args!("{}", self.dstmode().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CH5_CTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 3 - Structure DMA Transfer Request"]
     #[inline(always)]
     #[must_use]
-    pub fn structreq(&mut self) -> STRUCTREQ_W<3> {
+    pub fn structreq(&mut self) -> STRUCTREQ_W<CH5_CTRL_SPEC, 3> {
         STRUCTREQ_W::new(self)
     }
     #[doc = "Bits 4:14 - DMA Unit Data Transfer Count"]
     #[inline(always)]
     #[must_use]
-    pub fn xfercnt(&mut self) -> XFERCNT_W<4> {
+    pub fn xfercnt(&mut self) -> XFERCNT_W<CH5_CTRL_SPEC, 4> {
         XFERCNT_W::new(self)
     }
     #[doc = "Bit 15 - Endian Byte Swap"]
     #[inline(always)]
     #[must_use]
-    pub fn byteswap(&mut self) -> BYTESWAP_W<15> {
+    pub fn byteswap(&mut self) -> BYTESWAP_W<CH5_CTRL_SPEC, 15> {
         BYTESWAP_W::new(self)
     }
     #[doc = "Bits 16:19 - Block Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn blocksize(&mut self) -> BLOCKSIZE_W<16> {
+    pub fn blocksize(&mut self) -> BLOCKSIZE_W<CH5_CTRL_SPEC, 16> {
         BLOCKSIZE_W::new(self)
     }
     #[doc = "Bit 20 - DMA Operation Done Interrupt Flag Set Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn doneifsen(&mut self) -> DONEIFSEN_W<20> {
+    pub fn doneifsen(&mut self) -> DONEIFSEN_W<CH5_CTRL_SPEC, 20> {
         DONEIFSEN_W::new(self)
     }
     #[doc = "Bit 21 - DMA Request Transfer Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn reqmode(&mut self) -> REQMODE_W<21> {
+    pub fn reqmode(&mut self) -> REQMODE_W<CH5_CTRL_SPEC, 21> {
         REQMODE_W::new(self)
     }
     #[doc = "Bit 22 - Decrement Loop Count"]
     #[inline(always)]
     #[must_use]
-    pub fn decloopcnt(&mut self) -> DECLOOPCNT_W<22> {
+    pub fn decloopcnt(&mut self) -> DECLOOPCNT_W<CH5_CTRL_SPEC, 22> {
         DECLOOPCNT_W::new(self)
     }
     #[doc = "Bit 23 - Ignore Sreq"]
     #[inline(always)]
     #[must_use]
-    pub fn ignoresreq(&mut self) -> IGNORESREQ_W<23> {
+    pub fn ignoresreq(&mut self) -> IGNORESREQ_W<CH5_CTRL_SPEC, 23> {
         IGNORESREQ_W::new(self)
     }
     #[doc = "Bits 24:25 - Source Address Increment Size"]
     #[inline(always)]
     #[must_use]
-    pub fn srcinc(&mut self) -> SRCINC_W<24> {
+    pub fn srcinc(&mut self) -> SRCINC_W<CH5_CTRL_SPEC, 24> {
         SRCINC_W::new(self)
     }
     #[doc = "Bits 26:27 - Unit Data Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn size(&mut self) -> SIZE_W<26> {
+    pub fn size(&mut self) -> SIZE_W<CH5_CTRL_SPEC, 26> {
         SIZE_W::new(self)
     }
     #[doc = "Bits 28:29 - Destination Address Increment Size"]
     #[inline(always)]
     #[must_use]
-    pub fn dstinc(&mut self) -> DSTINC_W<28> {
+    pub fn dstinc(&mut self) -> DSTINC_W<CH5_CTRL_SPEC, 28> {
         DSTINC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Descriptor Control Word Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ch5_ctrl](index.html) module"]
+#[doc = "Channel Descriptor Control Word Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ch5_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ch5_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CH5_CTRL_SPEC;
 impl crate::RegisterSpec for CH5_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ch5_ctrl::R](R) reader structure"]
-impl crate::Readable for CH5_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ch5_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`ch5_ctrl::R`](R) reader structure"]
+impl crate::Readable for CH5_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ch5_ctrl::W`](W) writer structure"]
 impl crate::Writable for CH5_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

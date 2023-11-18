@@ -1,18 +1,5 @@
 #[doc = "Register `IF` reader"]
-pub struct R(crate::R<IF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IF_SPEC>;
 #[doc = "Field `UF` reader - Underflow Interrupt Read Flag"]
 pub type UF_R = crate::BitReader;
 #[doc = "Field `OF` reader - Overflow Interrupt Read Flag"]
@@ -57,15 +44,30 @@ impl R {
         OQSTERR_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
-#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IF")
+            .field("uf", &format_args!("{}", self.uf().bit()))
+            .field("of", &format_args!("{}", self.of().bit()))
+            .field("dircng", &format_args!("{}", self.dircng().bit()))
+            .field("auxof", &format_args!("{}", self.auxof().bit()))
+            .field("tcc", &format_args!("{}", self.tcc().bit()))
+            .field("oqsterr", &format_args!("{}", self.oqsterr().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<IF_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IF_SPEC;
 impl crate::RegisterSpec for IF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [if_::R](R) reader structure"]
-impl crate::Readable for IF_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`if_::R`](R) reader structure"]
+impl crate::Readable for IF_SPEC {}
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
     const RESET_VALUE: Self::Ux = 0;

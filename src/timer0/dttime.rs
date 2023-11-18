@@ -1,39 +1,7 @@
 #[doc = "Register `DTTIME` reader"]
-pub struct R(crate::R<DTTIME_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DTTIME_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DTTIME_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DTTIME_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DTTIME_SPEC>;
 #[doc = "Register `DTTIME` writer"]
-pub struct W(crate::W<DTTIME_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DTTIME_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DTTIME_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DTTIME_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DTTIME_SPEC>;
 #[doc = "Field `DTPRESC` reader - DTI Prescaler Setting"]
 pub type DTPRESC_R = crate::FieldReader<DTPRESC_A>;
 #[doc = "DTI Prescaler Setting\n\nValue on reset: 0"]
@@ -75,7 +43,7 @@ impl crate::FieldSpec for DTPRESC_A {
 impl DTPRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DTPRESC_A> {
+    pub const fn variant(&self) -> Option<DTPRESC_A> {
         match self.bits {
             0 => Some(DTPRESC_A::DIV1),
             1 => Some(DTPRESC_A::DIV2),
@@ -91,129 +59,133 @@ impl DTPRESC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DIV1`"]
+    #[doc = "The HFPERCLK is undivided"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
         *self == DTPRESC_A::DIV1
     }
-    #[doc = "Checks if the value of the field is `DIV2`"]
+    #[doc = "The HFPERCLK is divided by 2"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
         *self == DTPRESC_A::DIV2
     }
-    #[doc = "Checks if the value of the field is `DIV4`"]
+    #[doc = "The HFPERCLK is divided by 4"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
         *self == DTPRESC_A::DIV4
     }
-    #[doc = "Checks if the value of the field is `DIV8`"]
+    #[doc = "The HFPERCLK is divided by 8"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
         *self == DTPRESC_A::DIV8
     }
-    #[doc = "Checks if the value of the field is `DIV16`"]
+    #[doc = "The HFPERCLK is divided by 16"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
         *self == DTPRESC_A::DIV16
     }
-    #[doc = "Checks if the value of the field is `DIV32`"]
+    #[doc = "The HFPERCLK is divided by 32"]
     #[inline(always)]
     pub fn is_div32(&self) -> bool {
         *self == DTPRESC_A::DIV32
     }
-    #[doc = "Checks if the value of the field is `DIV64`"]
+    #[doc = "The HFPERCLK is divided by 64"]
     #[inline(always)]
     pub fn is_div64(&self) -> bool {
         *self == DTPRESC_A::DIV64
     }
-    #[doc = "Checks if the value of the field is `DIV128`"]
+    #[doc = "The HFPERCLK is divided by 128"]
     #[inline(always)]
     pub fn is_div128(&self) -> bool {
         *self == DTPRESC_A::DIV128
     }
-    #[doc = "Checks if the value of the field is `DIV256`"]
+    #[doc = "The HFPERCLK is divided by 256"]
     #[inline(always)]
     pub fn is_div256(&self) -> bool {
         *self == DTPRESC_A::DIV256
     }
-    #[doc = "Checks if the value of the field is `DIV512`"]
+    #[doc = "The HFPERCLK is divided by 512"]
     #[inline(always)]
     pub fn is_div512(&self) -> bool {
         *self == DTPRESC_A::DIV512
     }
-    #[doc = "Checks if the value of the field is `DIV1024`"]
+    #[doc = "The HFPERCLK is divided by 1024"]
     #[inline(always)]
     pub fn is_div1024(&self) -> bool {
         *self == DTPRESC_A::DIV1024
     }
 }
 #[doc = "Field `DTPRESC` writer - DTI Prescaler Setting"]
-pub type DTPRESC_W<'a, const O: u8> = crate::FieldWriter<'a, DTTIME_SPEC, 4, O, DTPRESC_A>;
-impl<'a, const O: u8> DTPRESC_W<'a, O> {
+pub type DTPRESC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DTPRESC_A>;
+impl<'a, REG, const O: u8> DTPRESC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The HFPERCLK is undivided"]
     #[inline(always)]
-    pub fn div1(self) -> &'a mut W {
+    pub fn div1(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV1)
     }
     #[doc = "The HFPERCLK is divided by 2"]
     #[inline(always)]
-    pub fn div2(self) -> &'a mut W {
+    pub fn div2(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV2)
     }
     #[doc = "The HFPERCLK is divided by 4"]
     #[inline(always)]
-    pub fn div4(self) -> &'a mut W {
+    pub fn div4(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV4)
     }
     #[doc = "The HFPERCLK is divided by 8"]
     #[inline(always)]
-    pub fn div8(self) -> &'a mut W {
+    pub fn div8(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV8)
     }
     #[doc = "The HFPERCLK is divided by 16"]
     #[inline(always)]
-    pub fn div16(self) -> &'a mut W {
+    pub fn div16(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV16)
     }
     #[doc = "The HFPERCLK is divided by 32"]
     #[inline(always)]
-    pub fn div32(self) -> &'a mut W {
+    pub fn div32(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV32)
     }
     #[doc = "The HFPERCLK is divided by 64"]
     #[inline(always)]
-    pub fn div64(self) -> &'a mut W {
+    pub fn div64(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV64)
     }
     #[doc = "The HFPERCLK is divided by 128"]
     #[inline(always)]
-    pub fn div128(self) -> &'a mut W {
+    pub fn div128(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV128)
     }
     #[doc = "The HFPERCLK is divided by 256"]
     #[inline(always)]
-    pub fn div256(self) -> &'a mut W {
+    pub fn div256(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV256)
     }
     #[doc = "The HFPERCLK is divided by 512"]
     #[inline(always)]
-    pub fn div512(self) -> &'a mut W {
+    pub fn div512(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV512)
     }
     #[doc = "The HFPERCLK is divided by 1024"]
     #[inline(always)]
-    pub fn div1024(self) -> &'a mut W {
+    pub fn div1024(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRESC_A::DIV1024)
     }
 }
 #[doc = "Field `DTRISET` reader - DTI Rise-time"]
 pub type DTRISET_R = crate::FieldReader;
 #[doc = "Field `DTRISET` writer - DTI Rise-time"]
-pub type DTRISET_W<'a, const O: u8> = crate::FieldWriter<'a, DTTIME_SPEC, 6, O>;
+pub type DTRISET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `DTFALLT` reader - DTI Fall-time"]
 pub type DTFALLT_R = crate::FieldReader;
 #[doc = "Field `DTFALLT` writer - DTI Fall-time"]
-pub type DTFALLT_W<'a, const O: u8> = crate::FieldWriter<'a, DTTIME_SPEC, 6, O>;
+pub type DTFALLT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 impl R {
     #[doc = "Bits 0:3 - DTI Prescaler Setting"]
     #[inline(always)]
@@ -231,44 +203,59 @@ impl R {
         DTFALLT_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DTTIME")
+            .field("dtpresc", &format_args!("{}", self.dtpresc().bits()))
+            .field("dtriset", &format_args!("{}", self.dtriset().bits()))
+            .field("dtfallt", &format_args!("{}", self.dtfallt().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<DTTIME_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - DTI Prescaler Setting"]
     #[inline(always)]
     #[must_use]
-    pub fn dtpresc(&mut self) -> DTPRESC_W<0> {
+    pub fn dtpresc(&mut self) -> DTPRESC_W<DTTIME_SPEC, 0> {
         DTPRESC_W::new(self)
     }
     #[doc = "Bits 8:13 - DTI Rise-time"]
     #[inline(always)]
     #[must_use]
-    pub fn dtriset(&mut self) -> DTRISET_W<8> {
+    pub fn dtriset(&mut self) -> DTRISET_W<DTTIME_SPEC, 8> {
         DTRISET_W::new(self)
     }
     #[doc = "Bits 16:21 - DTI Fall-time"]
     #[inline(always)]
     #[must_use]
-    pub fn dtfallt(&mut self) -> DTFALLT_W<16> {
+    pub fn dtfallt(&mut self) -> DTFALLT_W<DTTIME_SPEC, 16> {
         DTFALLT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DTI Time Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dttime](index.html) module"]
+#[doc = "DTI Time Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dttime::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dttime::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTTIME_SPEC;
 impl crate::RegisterSpec for DTTIME_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dttime::R](R) reader structure"]
-impl crate::Readable for DTTIME_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dttime::W](W) writer structure"]
+#[doc = "`read()` method returns [`dttime::R`](R) reader structure"]
+impl crate::Readable for DTTIME_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dttime::W`](W) writer structure"]
 impl crate::Writable for DTTIME_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,67 +1,35 @@
 #[doc = "Register `ROUTEPEN` reader"]
-pub struct R(crate::R<ROUTEPEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ROUTEPEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ROUTEPEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ROUTEPEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ROUTEPEN_SPEC>;
 #[doc = "Register `ROUTEPEN` writer"]
-pub struct W(crate::W<ROUTEPEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ROUTEPEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ROUTEPEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ROUTEPEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<ROUTEPEN_SPEC>;
 #[doc = "Field `CC0PEN` reader - CC Channel 0 Pin Enable"]
 pub type CC0PEN_R = crate::BitReader;
 #[doc = "Field `CC0PEN` writer - CC Channel 0 Pin Enable"]
-pub type CC0PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
+pub type CC0PEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CC1PEN` reader - CC Channel 1 Pin Enable"]
 pub type CC1PEN_R = crate::BitReader;
 #[doc = "Field `CC1PEN` writer - CC Channel 1 Pin Enable"]
-pub type CC1PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
+pub type CC1PEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CC2PEN` reader - CC Channel 2 Pin Enable"]
 pub type CC2PEN_R = crate::BitReader;
 #[doc = "Field `CC2PEN` writer - CC Channel 2 Pin Enable"]
-pub type CC2PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
+pub type CC2PEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CC3PEN` reader - CC Channel 3 Pin Enable"]
 pub type CC3PEN_R = crate::BitReader;
 #[doc = "Field `CC3PEN` writer - CC Channel 3 Pin Enable"]
-pub type CC3PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
+pub type CC3PEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CDTI0PEN` reader - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
 pub type CDTI0PEN_R = crate::BitReader;
 #[doc = "Field `CDTI0PEN` writer - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
-pub type CDTI0PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
+pub type CDTI0PEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CDTI1PEN` reader - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
 pub type CDTI1PEN_R = crate::BitReader;
 #[doc = "Field `CDTI1PEN` writer - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
-pub type CDTI1PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
+pub type CDTI1PEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CDTI2PEN` reader - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
 pub type CDTI2PEN_R = crate::BitReader;
 #[doc = "Field `CDTI2PEN` writer - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
-pub type CDTI2PEN_W<'a, const O: u8> = crate::BitWriter<'a, ROUTEPEN_SPEC, O>;
+pub type CDTI2PEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - CC Channel 0 Pin Enable"]
     #[inline(always)]
@@ -99,68 +67,87 @@ impl R {
         CDTI2PEN_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ROUTEPEN")
+            .field("cc0pen", &format_args!("{}", self.cc0pen().bit()))
+            .field("cc1pen", &format_args!("{}", self.cc1pen().bit()))
+            .field("cc2pen", &format_args!("{}", self.cc2pen().bit()))
+            .field("cc3pen", &format_args!("{}", self.cc3pen().bit()))
+            .field("cdti0pen", &format_args!("{}", self.cdti0pen().bit()))
+            .field("cdti1pen", &format_args!("{}", self.cdti1pen().bit()))
+            .field("cdti2pen", &format_args!("{}", self.cdti2pen().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<ROUTEPEN_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - CC Channel 0 Pin Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cc0pen(&mut self) -> CC0PEN_W<0> {
+    pub fn cc0pen(&mut self) -> CC0PEN_W<ROUTEPEN_SPEC, 0> {
         CC0PEN_W::new(self)
     }
     #[doc = "Bit 1 - CC Channel 1 Pin Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cc1pen(&mut self) -> CC1PEN_W<1> {
+    pub fn cc1pen(&mut self) -> CC1PEN_W<ROUTEPEN_SPEC, 1> {
         CC1PEN_W::new(self)
     }
     #[doc = "Bit 2 - CC Channel 2 Pin Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cc2pen(&mut self) -> CC2PEN_W<2> {
+    pub fn cc2pen(&mut self) -> CC2PEN_W<ROUTEPEN_SPEC, 2> {
         CC2PEN_W::new(self)
     }
     #[doc = "Bit 3 - CC Channel 3 Pin Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cc3pen(&mut self) -> CC3PEN_W<3> {
+    pub fn cc3pen(&mut self) -> CC3PEN_W<ROUTEPEN_SPEC, 3> {
         CC3PEN_W::new(self)
     }
     #[doc = "Bit 8 - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cdti0pen(&mut self) -> CDTI0PEN_W<8> {
+    pub fn cdti0pen(&mut self) -> CDTI0PEN_W<ROUTEPEN_SPEC, 8> {
         CDTI0PEN_W::new(self)
     }
     #[doc = "Bit 9 - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cdti1pen(&mut self) -> CDTI1PEN_W<9> {
+    pub fn cdti1pen(&mut self) -> CDTI1PEN_W<ROUTEPEN_SPEC, 9> {
         CDTI1PEN_W::new(self)
     }
     #[doc = "Bit 10 - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cdti2pen(&mut self) -> CDTI2PEN_W<10> {
+    pub fn cdti2pen(&mut self) -> CDTI2PEN_W<ROUTEPEN_SPEC, 10> {
         CDTI2PEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "I/O Routing Pin Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [routepen](index.html) module"]
+#[doc = "I/O Routing Pin Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routepen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routepen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ROUTEPEN_SPEC;
 impl crate::RegisterSpec for ROUTEPEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [routepen::R](R) reader structure"]
-impl crate::Readable for ROUTEPEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [routepen::W](W) writer structure"]
+#[doc = "`read()` method returns [`routepen::R`](R) reader structure"]
+impl crate::Readable for ROUTEPEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`routepen::W`](W) writer structure"]
 impl crate::Writable for ROUTEPEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

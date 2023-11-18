@@ -1,39 +1,7 @@
 #[doc = "Register `CTRL` reader"]
-pub struct R(crate::R<CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CTRL_SPEC>;
 #[doc = "Register `CTRL` writer"]
-pub struct W(crate::W<CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `WARMUPMODE` reader - Warm-up Mode"]
 pub type WARMUPMODE_R = crate::FieldReader<WARMUPMODE_A>;
 #[doc = "Warm-up Mode\n\nValue on reset: 0"]
@@ -61,7 +29,7 @@ impl crate::FieldSpec for WARMUPMODE_A {
 impl WARMUPMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WARMUPMODE_A {
+    pub const fn variant(&self) -> WARMUPMODE_A {
         match self.bits {
             0 => WARMUPMODE_A::NORMAL,
             1 => WARMUPMODE_A::KEEPINSTANDBY,
@@ -70,71 +38,75 @@ impl WARMUPMODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == WARMUPMODE_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `KEEPINSTANDBY`"]
+    #[doc = "ADC is kept in standby mode between conversions. 1us warmup time is used before each conversion."]
     #[inline(always)]
     pub fn is_keepinstandby(&self) -> bool {
         *self == WARMUPMODE_A::KEEPINSTANDBY
     }
-    #[doc = "Checks if the value of the field is `KEEPINSLOWACC`"]
+    #[doc = "ADC is kept in slow acquisition mode between conversions. 1us warmup time is used before each conversion."]
     #[inline(always)]
     pub fn is_keepinslowacc(&self) -> bool {
         *self == WARMUPMODE_A::KEEPINSLOWACC
     }
-    #[doc = "Checks if the value of the field is `KEEPADCWARM`"]
+    #[doc = "ADC is kept on after conversions, allowing for continuous conversion."]
     #[inline(always)]
     pub fn is_keepadcwarm(&self) -> bool {
         *self == WARMUPMODE_A::KEEPADCWARM
     }
 }
 #[doc = "Field `WARMUPMODE` writer - Warm-up Mode"]
-pub type WARMUPMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, WARMUPMODE_A>;
-impl<'a, const O: u8> WARMUPMODE_W<'a, O> {
+pub type WARMUPMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, WARMUPMODE_A>;
+impl<'a, REG, const O: u8> WARMUPMODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(WARMUPMODE_A::NORMAL)
     }
     #[doc = "ADC is kept in standby mode between conversions. 1us warmup time is used before each conversion."]
     #[inline(always)]
-    pub fn keepinstandby(self) -> &'a mut W {
+    pub fn keepinstandby(self) -> &'a mut crate::W<REG> {
         self.variant(WARMUPMODE_A::KEEPINSTANDBY)
     }
     #[doc = "ADC is kept in slow acquisition mode between conversions. 1us warmup time is used before each conversion."]
     #[inline(always)]
-    pub fn keepinslowacc(self) -> &'a mut W {
+    pub fn keepinslowacc(self) -> &'a mut crate::W<REG> {
         self.variant(WARMUPMODE_A::KEEPINSLOWACC)
     }
     #[doc = "ADC is kept on after conversions, allowing for continuous conversion."]
     #[inline(always)]
-    pub fn keepadcwarm(self) -> &'a mut W {
+    pub fn keepadcwarm(self) -> &'a mut crate::W<REG> {
         self.variant(WARMUPMODE_A::KEEPADCWARM)
     }
 }
 #[doc = "Field `SINGLEDMAWU` reader - SINGLEFIFO DMA Wakeup"]
 pub type SINGLEDMAWU_R = crate::BitReader;
 #[doc = "Field `SINGLEDMAWU` writer - SINGLEFIFO DMA Wakeup"]
-pub type SINGLEDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type SINGLEDMAWU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SCANDMAWU` reader - SCANFIFO DMA Wakeup"]
 pub type SCANDMAWU_R = crate::BitReader;
 #[doc = "Field `SCANDMAWU` writer - SCANFIFO DMA Wakeup"]
-pub type SCANDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type SCANDMAWU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TAILGATE` reader - Conversion Tailgating"]
 pub type TAILGATE_R = crate::BitReader;
 #[doc = "Field `TAILGATE` writer - Conversion Tailgating"]
-pub type TAILGATE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type TAILGATE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ASYNCCLKEN` reader - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
 pub type ASYNCCLKEN_R = crate::BitReader;
 #[doc = "Field `ASYNCCLKEN` writer - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
-pub type ASYNCCLKEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type ASYNCCLKEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ADCCLKMODE` reader - ADC Clock Mode"]
 pub type ADCCLKMODE_R = crate::BitReader;
 #[doc = "Field `ADCCLKMODE` writer - ADC Clock Mode"]
-pub type ADCCLKMODE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type ADCCLKMODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PRESC` reader - Prescalar Setting for ADC Sample and Conversion Clock"]
 pub type PRESC_R = crate::FieldReader<PRESC_A>;
 #[doc = "Prescalar Setting for ADC Sample and Conversion Clock\n\nValue on reset: 0"]
@@ -156,31 +128,35 @@ impl crate::FieldSpec for PRESC_A {
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRESC_A> {
+    pub const fn variant(&self) -> Option<PRESC_A> {
         match self.bits {
             0 => Some(PRESC_A::NODIVISION),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NODIVISION`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_nodivision(&self) -> bool {
         *self == PRESC_A::NODIVISION
     }
 }
 #[doc = "Field `PRESC` writer - Prescalar Setting for ADC Sample and Conversion Clock"]
-pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 7, O, PRESC_A>;
-impl<'a, const O: u8> PRESC_W<'a, O> {
+pub type PRESC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O, PRESC_A>;
+impl<'a, REG, const O: u8> PRESC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn nodivision(self) -> &'a mut W {
+    pub fn nodivision(self) -> &'a mut crate::W<REG> {
         self.variant(PRESC_A::NODIVISION)
     }
 }
 #[doc = "Field `TIMEBASE` reader - 1us Time Base"]
 pub type TIMEBASE_R = crate::FieldReader;
 #[doc = "Field `TIMEBASE` writer - 1us Time Base"]
-pub type TIMEBASE_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 7, O>;
+pub type TIMEBASE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
 #[doc = "Field `OVSRSEL` reader - Oversample Rate Select"]
 pub type OVSRSEL_R = crate::FieldReader<OVSRSEL_A>;
 #[doc = "Oversample Rate Select\n\nValue on reset: 0"]
@@ -224,7 +200,7 @@ impl crate::FieldSpec for OVSRSEL_A {
 impl OVSRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OVSRSEL_A> {
+    pub const fn variant(&self) -> Option<OVSRSEL_A> {
         match self.bits {
             0 => Some(OVSRSEL_A::X2),
             1 => Some(OVSRSEL_A::X4),
@@ -241,135 +217,139 @@ impl OVSRSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `X2`"]
+    #[doc = "2 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x2(&self) -> bool {
         *self == OVSRSEL_A::X2
     }
-    #[doc = "Checks if the value of the field is `X4`"]
+    #[doc = "4 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x4(&self) -> bool {
         *self == OVSRSEL_A::X4
     }
-    #[doc = "Checks if the value of the field is `X8`"]
+    #[doc = "8 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x8(&self) -> bool {
         *self == OVSRSEL_A::X8
     }
-    #[doc = "Checks if the value of the field is `X16`"]
+    #[doc = "16 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x16(&self) -> bool {
         *self == OVSRSEL_A::X16
     }
-    #[doc = "Checks if the value of the field is `X32`"]
+    #[doc = "32 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x32(&self) -> bool {
         *self == OVSRSEL_A::X32
     }
-    #[doc = "Checks if the value of the field is `X64`"]
+    #[doc = "64 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x64(&self) -> bool {
         *self == OVSRSEL_A::X64
     }
-    #[doc = "Checks if the value of the field is `X128`"]
+    #[doc = "128 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x128(&self) -> bool {
         *self == OVSRSEL_A::X128
     }
-    #[doc = "Checks if the value of the field is `X256`"]
+    #[doc = "256 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x256(&self) -> bool {
         *self == OVSRSEL_A::X256
     }
-    #[doc = "Checks if the value of the field is `X512`"]
+    #[doc = "512 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x512(&self) -> bool {
         *self == OVSRSEL_A::X512
     }
-    #[doc = "Checks if the value of the field is `X1024`"]
+    #[doc = "1024 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x1024(&self) -> bool {
         *self == OVSRSEL_A::X1024
     }
-    #[doc = "Checks if the value of the field is `X2048`"]
+    #[doc = "2048 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x2048(&self) -> bool {
         *self == OVSRSEL_A::X2048
     }
-    #[doc = "Checks if the value of the field is `X4096`"]
+    #[doc = "4096 samples for each conversion result"]
     #[inline(always)]
     pub fn is_x4096(&self) -> bool {
         *self == OVSRSEL_A::X4096
     }
 }
 #[doc = "Field `OVSRSEL` writer - Oversample Rate Select"]
-pub type OVSRSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 4, O, OVSRSEL_A>;
-impl<'a, const O: u8> OVSRSEL_W<'a, O> {
+pub type OVSRSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, OVSRSEL_A>;
+impl<'a, REG, const O: u8> OVSRSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "2 samples for each conversion result"]
     #[inline(always)]
-    pub fn x2(self) -> &'a mut W {
+    pub fn x2(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X2)
     }
     #[doc = "4 samples for each conversion result"]
     #[inline(always)]
-    pub fn x4(self) -> &'a mut W {
+    pub fn x4(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X4)
     }
     #[doc = "8 samples for each conversion result"]
     #[inline(always)]
-    pub fn x8(self) -> &'a mut W {
+    pub fn x8(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X8)
     }
     #[doc = "16 samples for each conversion result"]
     #[inline(always)]
-    pub fn x16(self) -> &'a mut W {
+    pub fn x16(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X16)
     }
     #[doc = "32 samples for each conversion result"]
     #[inline(always)]
-    pub fn x32(self) -> &'a mut W {
+    pub fn x32(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X32)
     }
     #[doc = "64 samples for each conversion result"]
     #[inline(always)]
-    pub fn x64(self) -> &'a mut W {
+    pub fn x64(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X64)
     }
     #[doc = "128 samples for each conversion result"]
     #[inline(always)]
-    pub fn x128(self) -> &'a mut W {
+    pub fn x128(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X128)
     }
     #[doc = "256 samples for each conversion result"]
     #[inline(always)]
-    pub fn x256(self) -> &'a mut W {
+    pub fn x256(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X256)
     }
     #[doc = "512 samples for each conversion result"]
     #[inline(always)]
-    pub fn x512(self) -> &'a mut W {
+    pub fn x512(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X512)
     }
     #[doc = "1024 samples for each conversion result"]
     #[inline(always)]
-    pub fn x1024(self) -> &'a mut W {
+    pub fn x1024(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X1024)
     }
     #[doc = "2048 samples for each conversion result"]
     #[inline(always)]
-    pub fn x2048(self) -> &'a mut W {
+    pub fn x2048(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X2048)
     }
     #[doc = "4096 samples for each conversion result"]
     #[inline(always)]
-    pub fn x4096(self) -> &'a mut W {
+    pub fn x4096(self) -> &'a mut crate::W<REG> {
         self.variant(OVSRSEL_A::X4096)
     }
 }
 #[doc = "Field `CHCONMODE` reader - Channel Connect"]
 pub type CHCONMODE_R = crate::BitReader;
 #[doc = "Field `CHCONMODE` writer - Channel Connect"]
-pub type CHCONMODE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type CHCONMODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:1 - Warm-up Mode"]
     #[inline(always)]
@@ -422,86 +402,108 @@ impl R {
         CHCONMODE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("warmupmode", &format_args!("{}", self.warmupmode().bits()))
+            .field("singledmawu", &format_args!("{}", self.singledmawu().bit()))
+            .field("scandmawu", &format_args!("{}", self.scandmawu().bit()))
+            .field("tailgate", &format_args!("{}", self.tailgate().bit()))
+            .field("asyncclken", &format_args!("{}", self.asyncclken().bit()))
+            .field("adcclkmode", &format_args!("{}", self.adcclkmode().bit()))
+            .field("presc", &format_args!("{}", self.presc().bits()))
+            .field("timebase", &format_args!("{}", self.timebase().bits()))
+            .field("ovsrsel", &format_args!("{}", self.ovsrsel().bits()))
+            .field("chconmode", &format_args!("{}", self.chconmode().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Warm-up Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn warmupmode(&mut self) -> WARMUPMODE_W<0> {
+    pub fn warmupmode(&mut self) -> WARMUPMODE_W<CTRL_SPEC, 0> {
         WARMUPMODE_W::new(self)
     }
     #[doc = "Bit 2 - SINGLEFIFO DMA Wakeup"]
     #[inline(always)]
     #[must_use]
-    pub fn singledmawu(&mut self) -> SINGLEDMAWU_W<2> {
+    pub fn singledmawu(&mut self) -> SINGLEDMAWU_W<CTRL_SPEC, 2> {
         SINGLEDMAWU_W::new(self)
     }
     #[doc = "Bit 3 - SCANFIFO DMA Wakeup"]
     #[inline(always)]
     #[must_use]
-    pub fn scandmawu(&mut self) -> SCANDMAWU_W<3> {
+    pub fn scandmawu(&mut self) -> SCANDMAWU_W<CTRL_SPEC, 3> {
         SCANDMAWU_W::new(self)
     }
     #[doc = "Bit 4 - Conversion Tailgating"]
     #[inline(always)]
     #[must_use]
-    pub fn tailgate(&mut self) -> TAILGATE_W<4> {
+    pub fn tailgate(&mut self) -> TAILGATE_W<CTRL_SPEC, 4> {
         TAILGATE_W::new(self)
     }
     #[doc = "Bit 6 - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
     #[inline(always)]
     #[must_use]
-    pub fn asyncclken(&mut self) -> ASYNCCLKEN_W<6> {
+    pub fn asyncclken(&mut self) -> ASYNCCLKEN_W<CTRL_SPEC, 6> {
         ASYNCCLKEN_W::new(self)
     }
     #[doc = "Bit 7 - ADC Clock Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn adcclkmode(&mut self) -> ADCCLKMODE_W<7> {
+    pub fn adcclkmode(&mut self) -> ADCCLKMODE_W<CTRL_SPEC, 7> {
         ADCCLKMODE_W::new(self)
     }
     #[doc = "Bits 8:14 - Prescalar Setting for ADC Sample and Conversion Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn presc(&mut self) -> PRESC_W<8> {
+    pub fn presc(&mut self) -> PRESC_W<CTRL_SPEC, 8> {
         PRESC_W::new(self)
     }
     #[doc = "Bits 16:22 - 1us Time Base"]
     #[inline(always)]
     #[must_use]
-    pub fn timebase(&mut self) -> TIMEBASE_W<16> {
+    pub fn timebase(&mut self) -> TIMEBASE_W<CTRL_SPEC, 16> {
         TIMEBASE_W::new(self)
     }
     #[doc = "Bits 24:27 - Oversample Rate Select"]
     #[inline(always)]
     #[must_use]
-    pub fn ovsrsel(&mut self) -> OVSRSEL_W<24> {
+    pub fn ovsrsel(&mut self) -> OVSRSEL_W<CTRL_SPEC, 24> {
         OVSRSEL_W::new(self)
     }
     #[doc = "Bit 29 - Channel Connect"]
     #[inline(always)]
     #[must_use]
-    pub fn chconmode(&mut self) -> CHCONMODE_W<29> {
+    pub fn chconmode(&mut self) -> CHCONMODE_W<CTRL_SPEC, 29> {
         CHCONMODE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRL_SPEC;
 impl crate::RegisterSpec for CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
-impl crate::Readable for CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`ctrl::R`](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

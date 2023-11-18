@@ -1,43 +1,11 @@
 #[doc = "Register `PD_OVTDIS` reader"]
-pub struct R(crate::R<PD_OVTDIS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PD_OVTDIS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PD_OVTDIS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PD_OVTDIS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PD_OVTDIS_SPEC>;
 #[doc = "Register `PD_OVTDIS` writer"]
-pub struct W(crate::W<PD_OVTDIS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PD_OVTDIS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PD_OVTDIS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PD_OVTDIS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PD_OVTDIS_SPEC>;
 #[doc = "Field `OVTDIS` reader - Disable Over Voltage Capability"]
 pub type OVTDIS_R = crate::FieldReader<u16>;
 #[doc = "Field `OVTDIS` writer - Disable Over Voltage Capability"]
-pub type OVTDIS_W<'a, const O: u8> = crate::FieldWriter<'a, PD_OVTDIS_SPEC, 16, O, u16>;
+pub type OVTDIS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Disable Over Voltage Capability"]
     #[inline(always)]
@@ -45,32 +13,45 @@ impl R {
         OVTDIS_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PD_OVTDIS")
+            .field("ovtdis", &format_args!("{}", self.ovtdis().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<PD_OVTDIS_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Disable Over Voltage Capability"]
     #[inline(always)]
     #[must_use]
-    pub fn ovtdis(&mut self) -> OVTDIS_W<0> {
+    pub fn ovtdis(&mut self) -> OVTDIS_W<PD_OVTDIS_SPEC, 0> {
         OVTDIS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Over Voltage Disable for All Modes\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_ovtdis](index.html) module"]
+#[doc = "Over Voltage Disable for All Modes\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pd_ovtdis::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pd_ovtdis::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PD_OVTDIS_SPEC;
 impl crate::RegisterSpec for PD_OVTDIS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pd_ovtdis::R](R) reader structure"]
-impl crate::Readable for PD_OVTDIS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pd_ovtdis::W](W) writer structure"]
+#[doc = "`read()` method returns [`pd_ovtdis::R`](R) reader structure"]
+impl crate::Readable for PD_OVTDIS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pd_ovtdis::W`](W) writer structure"]
 impl crate::Writable for PD_OVTDIS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

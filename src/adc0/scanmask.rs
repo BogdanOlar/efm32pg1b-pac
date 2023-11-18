@@ -1,43 +1,11 @@
 #[doc = "Register `SCANMASK` reader"]
-pub struct R(crate::R<SCANMASK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCANMASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCANMASK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCANMASK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SCANMASK_SPEC>;
 #[doc = "Register `SCANMASK` writer"]
-pub struct W(crate::W<SCANMASK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCANMASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCANMASK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCANMASK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SCANMASK_SPEC>;
 #[doc = "Field `SCANINPUTEN` reader - Scan Sequence Input Mask"]
 pub type SCANINPUTEN_R = crate::FieldReader<u32>;
 #[doc = "Field `SCANINPUTEN` writer - Scan Sequence Input Mask"]
-pub type SCANINPUTEN_W<'a, const O: u8> = crate::FieldWriter<'a, SCANMASK_SPEC, 32, O, u32>;
+pub type SCANINPUTEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Scan Sequence Input Mask"]
     #[inline(always)]
@@ -45,32 +13,48 @@ impl R {
         SCANINPUTEN_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANMASK")
+            .field(
+                "scaninputen",
+                &format_args!("{}", self.scaninputen().bits()),
+            )
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<SCANMASK_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Scan Sequence Input Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn scaninputen(&mut self) -> SCANINPUTEN_W<0> {
+    pub fn scaninputen(&mut self) -> SCANINPUTEN_W<SCANMASK_SPEC, 0> {
         SCANINPUTEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Scan Sequence Input Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scanmask](index.html) module"]
+#[doc = "Scan Sequence Input Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanmask::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanmask::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANMASK_SPEC;
 impl crate::RegisterSpec for SCANMASK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [scanmask::R](R) reader structure"]
-impl crate::Readable for SCANMASK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [scanmask::W](W) writer structure"]
+#[doc = "`read()` method returns [`scanmask::R`](R) reader structure"]
+impl crate::Readable for SCANMASK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`scanmask::W`](W) writer structure"]
 impl crate::Writable for SCANMASK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

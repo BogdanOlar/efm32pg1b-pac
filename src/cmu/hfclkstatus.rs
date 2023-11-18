@@ -1,18 +1,5 @@
 #[doc = "Register `HFCLKSTATUS` reader"]
-pub struct R(crate::R<HFCLKSTATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HFCLKSTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HFCLKSTATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HFCLKSTATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HFCLKSTATUS_SPEC>;
 #[doc = "Field `SELECTED` reader - HFCLK Selected"]
 pub type SELECTED_R = crate::FieldReader<SELECTED_A>;
 #[doc = "HFCLK Selected\n\nValue on reset: 1"]
@@ -40,7 +27,7 @@ impl crate::FieldSpec for SELECTED_A {
 impl SELECTED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SELECTED_A> {
+    pub const fn variant(&self) -> Option<SELECTED_A> {
         match self.bits {
             1 => Some(SELECTED_A::HFRCO),
             2 => Some(SELECTED_A::HFXO),
@@ -49,22 +36,22 @@ impl SELECTED_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `HFRCO`"]
+    #[doc = "HFRCO is selected as HFCLK clock source"]
     #[inline(always)]
     pub fn is_hfrco(&self) -> bool {
         *self == SELECTED_A::HFRCO
     }
-    #[doc = "Checks if the value of the field is `HFXO`"]
+    #[doc = "HFXO is selected as HFCLK clock source"]
     #[inline(always)]
     pub fn is_hfxo(&self) -> bool {
         *self == SELECTED_A::HFXO
     }
-    #[doc = "Checks if the value of the field is `LFRCO`"]
+    #[doc = "LFRCO is selected as HFCLK clock source"]
     #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
         *self == SELECTED_A::LFRCO
     }
-    #[doc = "Checks if the value of the field is `LFXO`"]
+    #[doc = "LFXO is selected as HFCLK clock source"]
     #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
         *self == SELECTED_A::LFXO
@@ -77,15 +64,25 @@ impl R {
         SELECTED_R::new((self.bits & 7) as u8)
     }
 }
-#[doc = "HFCLK Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfclkstatus](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFCLKSTATUS")
+            .field("selected", &format_args!("{}", self.selected().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<HFCLKSTATUS_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "HFCLK Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfclkstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFCLKSTATUS_SPEC;
 impl crate::RegisterSpec for HFCLKSTATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hfclkstatus::R](R) reader structure"]
-impl crate::Readable for HFCLKSTATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`hfclkstatus::R`](R) reader structure"]
+impl crate::Readable for HFCLKSTATUS_SPEC {}
 #[doc = "`reset()` method sets HFCLKSTATUS to value 0x01"]
 impl crate::Resettable for HFCLKSTATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0x01;

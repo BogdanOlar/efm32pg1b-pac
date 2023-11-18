@@ -1,39 +1,7 @@
 #[doc = "Register `DTFC` reader"]
-pub struct R(crate::R<DTFC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DTFC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DTFC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DTFC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DTFC_SPEC>;
 #[doc = "Register `DTFC` writer"]
-pub struct W(crate::W<DTFC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DTFC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DTFC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DTFC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DTFC_SPEC>;
 #[doc = "Field `DTPRS0FSEL` reader - DTI PRS Fault Source 0 Select"]
 pub type DTPRS0FSEL_R = crate::FieldReader<DTPRS0FSEL_A>;
 #[doc = "DTI PRS Fault Source 0 Select\n\nValue on reset: 0"]
@@ -77,7 +45,7 @@ impl crate::FieldSpec for DTPRS0FSEL_A {
 impl DTPRS0FSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DTPRS0FSEL_A> {
+    pub const fn variant(&self) -> Option<DTPRS0FSEL_A> {
         match self.bits {
             0 => Some(DTPRS0FSEL_A::PRSCH0),
             1 => Some(DTPRS0FSEL_A::PRSCH1),
@@ -94,128 +62,132 @@ impl DTPRS0FSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PRSCH0`"]
+    #[doc = "PRS Channel 0 selected as fault source 0"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH0
     }
-    #[doc = "Checks if the value of the field is `PRSCH1`"]
+    #[doc = "PRS Channel 1 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH1
     }
-    #[doc = "Checks if the value of the field is `PRSCH2`"]
+    #[doc = "PRS Channel 2 selected as fault source 2"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH2
     }
-    #[doc = "Checks if the value of the field is `PRSCH3`"]
+    #[doc = "PRS Channel 3 selected as fault source 3"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH3
     }
-    #[doc = "Checks if the value of the field is `PRSCH4`"]
+    #[doc = "PRS Channel 4 selected as fault source 4"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH4
     }
-    #[doc = "Checks if the value of the field is `PRSCH5`"]
+    #[doc = "PRS Channel 5 selected as fault source 5"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH5
     }
-    #[doc = "Checks if the value of the field is `PRSCH6`"]
+    #[doc = "PRS Channel 6 selected as fault source 6"]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH6
     }
-    #[doc = "Checks if the value of the field is `PRSCH7`"]
+    #[doc = "PRS Channel 7 selected as fault source 7"]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH7
     }
-    #[doc = "Checks if the value of the field is `PRSCH8`"]
+    #[doc = "PRS Channel 8 selected as fault source 8"]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH8
     }
-    #[doc = "Checks if the value of the field is `PRSCH9`"]
+    #[doc = "PRS Channel 9 selected as fault source 9"]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH9
     }
-    #[doc = "Checks if the value of the field is `PRSCH10`"]
+    #[doc = "PRS Channel 10 selected as fault source 10"]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH10
     }
-    #[doc = "Checks if the value of the field is `PRSCH11`"]
+    #[doc = "PRS Channel 11 selected as fault source 11"]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
         *self == DTPRS0FSEL_A::PRSCH11
     }
 }
 #[doc = "Field `DTPRS0FSEL` writer - DTI PRS Fault Source 0 Select"]
-pub type DTPRS0FSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DTFC_SPEC, 4, O, DTPRS0FSEL_A>;
-impl<'a, const O: u8> DTPRS0FSEL_W<'a, O> {
+pub type DTPRS0FSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DTPRS0FSEL_A>;
+impl<'a, REG, const O: u8> DTPRS0FSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PRS Channel 0 selected as fault source 0"]
     #[inline(always)]
-    pub fn prsch0(self) -> &'a mut W {
+    pub fn prsch0(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH0)
     }
     #[doc = "PRS Channel 1 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch1(self) -> &'a mut W {
+    pub fn prsch1(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH1)
     }
     #[doc = "PRS Channel 2 selected as fault source 2"]
     #[inline(always)]
-    pub fn prsch2(self) -> &'a mut W {
+    pub fn prsch2(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH2)
     }
     #[doc = "PRS Channel 3 selected as fault source 3"]
     #[inline(always)]
-    pub fn prsch3(self) -> &'a mut W {
+    pub fn prsch3(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH3)
     }
     #[doc = "PRS Channel 4 selected as fault source 4"]
     #[inline(always)]
-    pub fn prsch4(self) -> &'a mut W {
+    pub fn prsch4(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH4)
     }
     #[doc = "PRS Channel 5 selected as fault source 5"]
     #[inline(always)]
-    pub fn prsch5(self) -> &'a mut W {
+    pub fn prsch5(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH5)
     }
     #[doc = "PRS Channel 6 selected as fault source 6"]
     #[inline(always)]
-    pub fn prsch6(self) -> &'a mut W {
+    pub fn prsch6(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH6)
     }
     #[doc = "PRS Channel 7 selected as fault source 7"]
     #[inline(always)]
-    pub fn prsch7(self) -> &'a mut W {
+    pub fn prsch7(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH7)
     }
     #[doc = "PRS Channel 8 selected as fault source 8"]
     #[inline(always)]
-    pub fn prsch8(self) -> &'a mut W {
+    pub fn prsch8(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH8)
     }
     #[doc = "PRS Channel 9 selected as fault source 9"]
     #[inline(always)]
-    pub fn prsch9(self) -> &'a mut W {
+    pub fn prsch9(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH9)
     }
     #[doc = "PRS Channel 10 selected as fault source 10"]
     #[inline(always)]
-    pub fn prsch10(self) -> &'a mut W {
+    pub fn prsch10(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH10)
     }
     #[doc = "PRS Channel 11 selected as fault source 11"]
     #[inline(always)]
-    pub fn prsch11(self) -> &'a mut W {
+    pub fn prsch11(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS0FSEL_A::PRSCH11)
     }
 }
@@ -262,7 +234,7 @@ impl crate::FieldSpec for DTPRS1FSEL_A {
 impl DTPRS1FSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DTPRS1FSEL_A> {
+    pub const fn variant(&self) -> Option<DTPRS1FSEL_A> {
         match self.bits {
             0 => Some(DTPRS1FSEL_A::PRSCH0),
             1 => Some(DTPRS1FSEL_A::PRSCH1),
@@ -279,128 +251,132 @@ impl DTPRS1FSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PRSCH0`"]
+    #[doc = "PRS Channel 0 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH0
     }
-    #[doc = "Checks if the value of the field is `PRSCH1`"]
+    #[doc = "PRS Channel 1 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH1
     }
-    #[doc = "Checks if the value of the field is `PRSCH2`"]
+    #[doc = "PRS Channel 2 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH2
     }
-    #[doc = "Checks if the value of the field is `PRSCH3`"]
+    #[doc = "PRS Channel 3 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH3
     }
-    #[doc = "Checks if the value of the field is `PRSCH4`"]
+    #[doc = "PRS Channel 4 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH4
     }
-    #[doc = "Checks if the value of the field is `PRSCH5`"]
+    #[doc = "PRS Channel 5 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH5
     }
-    #[doc = "Checks if the value of the field is `PRSCH6`"]
+    #[doc = "PRS Channel 6 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH6
     }
-    #[doc = "Checks if the value of the field is `PRSCH7`"]
+    #[doc = "PRS Channel 7 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH7
     }
-    #[doc = "Checks if the value of the field is `PRSCH8`"]
+    #[doc = "PRS Channel 8 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH8
     }
-    #[doc = "Checks if the value of the field is `PRSCH9`"]
+    #[doc = "PRS Channel 9 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH9
     }
-    #[doc = "Checks if the value of the field is `PRSCH10`"]
+    #[doc = "PRS Channel 10 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH10
     }
-    #[doc = "Checks if the value of the field is `PRSCH11`"]
+    #[doc = "PRS Channel 11 selected as fault source 1"]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
         *self == DTPRS1FSEL_A::PRSCH11
     }
 }
 #[doc = "Field `DTPRS1FSEL` writer - DTI PRS Fault Source 1 Select"]
-pub type DTPRS1FSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DTFC_SPEC, 4, O, DTPRS1FSEL_A>;
-impl<'a, const O: u8> DTPRS1FSEL_W<'a, O> {
+pub type DTPRS1FSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DTPRS1FSEL_A>;
+impl<'a, REG, const O: u8> DTPRS1FSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PRS Channel 0 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch0(self) -> &'a mut W {
+    pub fn prsch0(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH0)
     }
     #[doc = "PRS Channel 1 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch1(self) -> &'a mut W {
+    pub fn prsch1(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH1)
     }
     #[doc = "PRS Channel 2 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch2(self) -> &'a mut W {
+    pub fn prsch2(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH2)
     }
     #[doc = "PRS Channel 3 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch3(self) -> &'a mut W {
+    pub fn prsch3(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH3)
     }
     #[doc = "PRS Channel 4 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch4(self) -> &'a mut W {
+    pub fn prsch4(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH4)
     }
     #[doc = "PRS Channel 5 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch5(self) -> &'a mut W {
+    pub fn prsch5(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH5)
     }
     #[doc = "PRS Channel 6 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch6(self) -> &'a mut W {
+    pub fn prsch6(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH6)
     }
     #[doc = "PRS Channel 7 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch7(self) -> &'a mut W {
+    pub fn prsch7(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH7)
     }
     #[doc = "PRS Channel 8 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch8(self) -> &'a mut W {
+    pub fn prsch8(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH8)
     }
     #[doc = "PRS Channel 9 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch9(self) -> &'a mut W {
+    pub fn prsch9(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH9)
     }
     #[doc = "PRS Channel 10 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch10(self) -> &'a mut W {
+    pub fn prsch10(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH10)
     }
     #[doc = "PRS Channel 11 selected as fault source 1"]
     #[inline(always)]
-    pub fn prsch11(self) -> &'a mut W {
+    pub fn prsch11(self) -> &'a mut crate::W<REG> {
         self.variant(DTPRS1FSEL_A::PRSCH11)
     }
 }
@@ -431,7 +407,7 @@ impl crate::FieldSpec for DTFA_A {
 impl DTFA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DTFA_A {
+    pub const fn variant(&self) -> DTFA_A {
         match self.bits {
             0 => DTFA_A::NONE,
             1 => DTFA_A::INACTIVE,
@@ -440,67 +416,71 @@ impl DTFA_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "No action on fault"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == DTFA_A::NONE
     }
-    #[doc = "Checks if the value of the field is `INACTIVE`"]
+    #[doc = "Set outputs inactive"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
         *self == DTFA_A::INACTIVE
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Clear outputs"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
         *self == DTFA_A::CLEAR
     }
-    #[doc = "Checks if the value of the field is `TRISTATE`"]
+    #[doc = "Tristate outputs"]
     #[inline(always)]
     pub fn is_tristate(&self) -> bool {
         *self == DTFA_A::TRISTATE
     }
 }
 #[doc = "Field `DTFA` writer - DTI Fault Action"]
-pub type DTFA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DTFC_SPEC, 2, O, DTFA_A>;
-impl<'a, const O: u8> DTFA_W<'a, O> {
+pub type DTFA_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, DTFA_A>;
+impl<'a, REG, const O: u8> DTFA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No action on fault"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(DTFA_A::NONE)
     }
     #[doc = "Set outputs inactive"]
     #[inline(always)]
-    pub fn inactive(self) -> &'a mut W {
+    pub fn inactive(self) -> &'a mut crate::W<REG> {
         self.variant(DTFA_A::INACTIVE)
     }
     #[doc = "Clear outputs"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
+    pub fn clear(self) -> &'a mut crate::W<REG> {
         self.variant(DTFA_A::CLEAR)
     }
     #[doc = "Tristate outputs"]
     #[inline(always)]
-    pub fn tristate(self) -> &'a mut W {
+    pub fn tristate(self) -> &'a mut crate::W<REG> {
         self.variant(DTFA_A::TRISTATE)
     }
 }
 #[doc = "Field `DTPRS0FEN` reader - DTI PRS 0 Fault Enable"]
 pub type DTPRS0FEN_R = crate::BitReader;
 #[doc = "Field `DTPRS0FEN` writer - DTI PRS 0 Fault Enable"]
-pub type DTPRS0FEN_W<'a, const O: u8> = crate::BitWriter<'a, DTFC_SPEC, O>;
+pub type DTPRS0FEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DTPRS1FEN` reader - DTI PRS 1 Fault Enable"]
 pub type DTPRS1FEN_R = crate::BitReader;
 #[doc = "Field `DTPRS1FEN` writer - DTI PRS 1 Fault Enable"]
-pub type DTPRS1FEN_W<'a, const O: u8> = crate::BitWriter<'a, DTFC_SPEC, O>;
+pub type DTPRS1FEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DTDBGFEN` reader - DTI Debugger Fault Enable"]
 pub type DTDBGFEN_R = crate::BitReader;
 #[doc = "Field `DTDBGFEN` writer - DTI Debugger Fault Enable"]
-pub type DTDBGFEN_W<'a, const O: u8> = crate::BitWriter<'a, DTFC_SPEC, O>;
+pub type DTDBGFEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DTLOCKUPFEN` reader - DTI Lockup Fault Enable"]
 pub type DTLOCKUPFEN_R = crate::BitReader;
 #[doc = "Field `DTLOCKUPFEN` writer - DTI Lockup Fault Enable"]
-pub type DTLOCKUPFEN_W<'a, const O: u8> = crate::BitWriter<'a, DTFC_SPEC, O>;
+pub type DTLOCKUPFEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:3 - DTI PRS Fault Source 0 Select"]
     #[inline(always)]
@@ -538,68 +518,87 @@ impl R {
         DTLOCKUPFEN_R::new(((self.bits >> 27) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DTFC")
+            .field("dtprs0fsel", &format_args!("{}", self.dtprs0fsel().bits()))
+            .field("dtprs1fsel", &format_args!("{}", self.dtprs1fsel().bits()))
+            .field("dtfa", &format_args!("{}", self.dtfa().bits()))
+            .field("dtprs0fen", &format_args!("{}", self.dtprs0fen().bit()))
+            .field("dtprs1fen", &format_args!("{}", self.dtprs1fen().bit()))
+            .field("dtdbgfen", &format_args!("{}", self.dtdbgfen().bit()))
+            .field("dtlockupfen", &format_args!("{}", self.dtlockupfen().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<DTFC_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - DTI PRS Fault Source 0 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dtprs0fsel(&mut self) -> DTPRS0FSEL_W<0> {
+    pub fn dtprs0fsel(&mut self) -> DTPRS0FSEL_W<DTFC_SPEC, 0> {
         DTPRS0FSEL_W::new(self)
     }
     #[doc = "Bits 8:11 - DTI PRS Fault Source 1 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dtprs1fsel(&mut self) -> DTPRS1FSEL_W<8> {
+    pub fn dtprs1fsel(&mut self) -> DTPRS1FSEL_W<DTFC_SPEC, 8> {
         DTPRS1FSEL_W::new(self)
     }
     #[doc = "Bits 16:17 - DTI Fault Action"]
     #[inline(always)]
     #[must_use]
-    pub fn dtfa(&mut self) -> DTFA_W<16> {
+    pub fn dtfa(&mut self) -> DTFA_W<DTFC_SPEC, 16> {
         DTFA_W::new(self)
     }
     #[doc = "Bit 24 - DTI PRS 0 Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dtprs0fen(&mut self) -> DTPRS0FEN_W<24> {
+    pub fn dtprs0fen(&mut self) -> DTPRS0FEN_W<DTFC_SPEC, 24> {
         DTPRS0FEN_W::new(self)
     }
     #[doc = "Bit 25 - DTI PRS 1 Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dtprs1fen(&mut self) -> DTPRS1FEN_W<25> {
+    pub fn dtprs1fen(&mut self) -> DTPRS1FEN_W<DTFC_SPEC, 25> {
         DTPRS1FEN_W::new(self)
     }
     #[doc = "Bit 26 - DTI Debugger Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dtdbgfen(&mut self) -> DTDBGFEN_W<26> {
+    pub fn dtdbgfen(&mut self) -> DTDBGFEN_W<DTFC_SPEC, 26> {
         DTDBGFEN_W::new(self)
     }
     #[doc = "Bit 27 - DTI Lockup Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dtlockupfen(&mut self) -> DTLOCKUPFEN_W<27> {
+    pub fn dtlockupfen(&mut self) -> DTLOCKUPFEN_W<DTFC_SPEC, 27> {
         DTLOCKUPFEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DTI Fault Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtfc](index.html) module"]
+#[doc = "DTI Fault Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtfc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtfc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTFC_SPEC;
 impl crate::RegisterSpec for DTFC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dtfc::R](R) reader structure"]
-impl crate::Readable for DTFC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dtfc::W](W) writer structure"]
+#[doc = "`read()` method returns [`dtfc::R`](R) reader structure"]
+impl crate::Readable for DTFC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dtfc::W`](W) writer structure"]
 impl crate::Writable for DTFC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

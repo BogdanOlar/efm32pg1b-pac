@@ -1,39 +1,7 @@
 #[doc = "Register `INPUT` reader"]
-pub struct R(crate::R<INPUT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INPUT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INPUT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INPUT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INPUT_SPEC>;
 #[doc = "Register `INPUT` writer"]
-pub struct W(crate::W<INPUT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INPUT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INPUT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INPUT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<INPUT_SPEC>;
 #[doc = "Field `S0PRSSEL` reader - S0IN PRS Channel Select"]
 pub type S0PRSSEL_R = crate::FieldReader<S0PRSSEL_A>;
 #[doc = "S0IN PRS Channel Select\n\nValue on reset: 0"]
@@ -77,7 +45,7 @@ impl crate::FieldSpec for S0PRSSEL_A {
 impl S0PRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<S0PRSSEL_A> {
+    pub const fn variant(&self) -> Option<S0PRSSEL_A> {
         match self.bits {
             0 => Some(S0PRSSEL_A::PRSCH0),
             1 => Some(S0PRSSEL_A::PRSCH1),
@@ -94,135 +62,139 @@ impl S0PRSSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PRSCH0`"]
+    #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH0
     }
-    #[doc = "Checks if the value of the field is `PRSCH1`"]
+    #[doc = "PRS Channel 1 selected."]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH1
     }
-    #[doc = "Checks if the value of the field is `PRSCH2`"]
+    #[doc = "PRS Channel 2 selected."]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH2
     }
-    #[doc = "Checks if the value of the field is `PRSCH3`"]
+    #[doc = "PRS Channel 3 selected."]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH3
     }
-    #[doc = "Checks if the value of the field is `PRSCH4`"]
+    #[doc = "PRS Channel 4 selected."]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH4
     }
-    #[doc = "Checks if the value of the field is `PRSCH5`"]
+    #[doc = "PRS Channel 5 selected."]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH5
     }
-    #[doc = "Checks if the value of the field is `PRSCH6`"]
+    #[doc = "PRS Channel 6 selected."]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH6
     }
-    #[doc = "Checks if the value of the field is `PRSCH7`"]
+    #[doc = "PRS Channel 7 selected."]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH7
     }
-    #[doc = "Checks if the value of the field is `PRSCH8`"]
+    #[doc = "PRS Channel 8 selected."]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH8
     }
-    #[doc = "Checks if the value of the field is `PRSCH9`"]
+    #[doc = "PRS Channel 9 selected."]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH9
     }
-    #[doc = "Checks if the value of the field is `PRSCH10`"]
+    #[doc = "PRS Channel 10 selected."]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH10
     }
-    #[doc = "Checks if the value of the field is `PRSCH11`"]
+    #[doc = "PRS Channel 11 selected."]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
         *self == S0PRSSEL_A::PRSCH11
     }
 }
 #[doc = "Field `S0PRSSEL` writer - S0IN PRS Channel Select"]
-pub type S0PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, INPUT_SPEC, 4, O, S0PRSSEL_A>;
-impl<'a, const O: u8> S0PRSSEL_W<'a, O> {
+pub type S0PRSSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, S0PRSSEL_A>;
+impl<'a, REG, const O: u8> S0PRSSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
-    pub fn prsch0(self) -> &'a mut W {
+    pub fn prsch0(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH0)
     }
     #[doc = "PRS Channel 1 selected."]
     #[inline(always)]
-    pub fn prsch1(self) -> &'a mut W {
+    pub fn prsch1(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH1)
     }
     #[doc = "PRS Channel 2 selected."]
     #[inline(always)]
-    pub fn prsch2(self) -> &'a mut W {
+    pub fn prsch2(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH2)
     }
     #[doc = "PRS Channel 3 selected."]
     #[inline(always)]
-    pub fn prsch3(self) -> &'a mut W {
+    pub fn prsch3(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH3)
     }
     #[doc = "PRS Channel 4 selected."]
     #[inline(always)]
-    pub fn prsch4(self) -> &'a mut W {
+    pub fn prsch4(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH4)
     }
     #[doc = "PRS Channel 5 selected."]
     #[inline(always)]
-    pub fn prsch5(self) -> &'a mut W {
+    pub fn prsch5(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH5)
     }
     #[doc = "PRS Channel 6 selected."]
     #[inline(always)]
-    pub fn prsch6(self) -> &'a mut W {
+    pub fn prsch6(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH6)
     }
     #[doc = "PRS Channel 7 selected."]
     #[inline(always)]
-    pub fn prsch7(self) -> &'a mut W {
+    pub fn prsch7(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH7)
     }
     #[doc = "PRS Channel 8 selected."]
     #[inline(always)]
-    pub fn prsch8(self) -> &'a mut W {
+    pub fn prsch8(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH8)
     }
     #[doc = "PRS Channel 9 selected."]
     #[inline(always)]
-    pub fn prsch9(self) -> &'a mut W {
+    pub fn prsch9(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH9)
     }
     #[doc = "PRS Channel 10 selected."]
     #[inline(always)]
-    pub fn prsch10(self) -> &'a mut W {
+    pub fn prsch10(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH10)
     }
     #[doc = "PRS Channel 11 selected."]
     #[inline(always)]
-    pub fn prsch11(self) -> &'a mut W {
+    pub fn prsch11(self) -> &'a mut crate::W<REG> {
         self.variant(S0PRSSEL_A::PRSCH11)
     }
 }
 #[doc = "Field `S0PRSEN` reader - S0IN PRS Enable"]
 pub type S0PRSEN_R = crate::BitReader;
 #[doc = "Field `S0PRSEN` writer - S0IN PRS Enable"]
-pub type S0PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, INPUT_SPEC, O>;
+pub type S0PRSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `S1PRSSEL` reader - S1IN PRS Channel Select"]
 pub type S1PRSSEL_R = crate::FieldReader<S1PRSSEL_A>;
 #[doc = "S1IN PRS Channel Select\n\nValue on reset: 0"]
@@ -266,7 +238,7 @@ impl crate::FieldSpec for S1PRSSEL_A {
 impl S1PRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<S1PRSSEL_A> {
+    pub const fn variant(&self) -> Option<S1PRSSEL_A> {
         match self.bits {
             0 => Some(S1PRSSEL_A::PRSCH0),
             1 => Some(S1PRSSEL_A::PRSCH1),
@@ -283,135 +255,139 @@ impl S1PRSSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PRSCH0`"]
+    #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH0
     }
-    #[doc = "Checks if the value of the field is `PRSCH1`"]
+    #[doc = "PRS Channel 1 selected."]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH1
     }
-    #[doc = "Checks if the value of the field is `PRSCH2`"]
+    #[doc = "PRS Channel 2 selected."]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH2
     }
-    #[doc = "Checks if the value of the field is `PRSCH3`"]
+    #[doc = "PRS Channel 3 selected."]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH3
     }
-    #[doc = "Checks if the value of the field is `PRSCH4`"]
+    #[doc = "PRS Channel 4 selected."]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH4
     }
-    #[doc = "Checks if the value of the field is `PRSCH5`"]
+    #[doc = "PRS Channel 5 selected."]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH5
     }
-    #[doc = "Checks if the value of the field is `PRSCH6`"]
+    #[doc = "PRS Channel 6 selected."]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH6
     }
-    #[doc = "Checks if the value of the field is `PRSCH7`"]
+    #[doc = "PRS Channel 7 selected."]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH7
     }
-    #[doc = "Checks if the value of the field is `PRSCH8`"]
+    #[doc = "PRS Channel 8 selected."]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH8
     }
-    #[doc = "Checks if the value of the field is `PRSCH9`"]
+    #[doc = "PRS Channel 9 selected."]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH9
     }
-    #[doc = "Checks if the value of the field is `PRSCH10`"]
+    #[doc = "PRS Channel 10 selected."]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH10
     }
-    #[doc = "Checks if the value of the field is `PRSCH11`"]
+    #[doc = "PRS Channel 11 selected."]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
         *self == S1PRSSEL_A::PRSCH11
     }
 }
 #[doc = "Field `S1PRSSEL` writer - S1IN PRS Channel Select"]
-pub type S1PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, INPUT_SPEC, 4, O, S1PRSSEL_A>;
-impl<'a, const O: u8> S1PRSSEL_W<'a, O> {
+pub type S1PRSSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, S1PRSSEL_A>;
+impl<'a, REG, const O: u8> S1PRSSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
-    pub fn prsch0(self) -> &'a mut W {
+    pub fn prsch0(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH0)
     }
     #[doc = "PRS Channel 1 selected."]
     #[inline(always)]
-    pub fn prsch1(self) -> &'a mut W {
+    pub fn prsch1(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH1)
     }
     #[doc = "PRS Channel 2 selected."]
     #[inline(always)]
-    pub fn prsch2(self) -> &'a mut W {
+    pub fn prsch2(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH2)
     }
     #[doc = "PRS Channel 3 selected."]
     #[inline(always)]
-    pub fn prsch3(self) -> &'a mut W {
+    pub fn prsch3(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH3)
     }
     #[doc = "PRS Channel 4 selected."]
     #[inline(always)]
-    pub fn prsch4(self) -> &'a mut W {
+    pub fn prsch4(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH4)
     }
     #[doc = "PRS Channel 5 selected."]
     #[inline(always)]
-    pub fn prsch5(self) -> &'a mut W {
+    pub fn prsch5(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH5)
     }
     #[doc = "PRS Channel 6 selected."]
     #[inline(always)]
-    pub fn prsch6(self) -> &'a mut W {
+    pub fn prsch6(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH6)
     }
     #[doc = "PRS Channel 7 selected."]
     #[inline(always)]
-    pub fn prsch7(self) -> &'a mut W {
+    pub fn prsch7(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH7)
     }
     #[doc = "PRS Channel 8 selected."]
     #[inline(always)]
-    pub fn prsch8(self) -> &'a mut W {
+    pub fn prsch8(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH8)
     }
     #[doc = "PRS Channel 9 selected."]
     #[inline(always)]
-    pub fn prsch9(self) -> &'a mut W {
+    pub fn prsch9(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH9)
     }
     #[doc = "PRS Channel 10 selected."]
     #[inline(always)]
-    pub fn prsch10(self) -> &'a mut W {
+    pub fn prsch10(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH10)
     }
     #[doc = "PRS Channel 11 selected."]
     #[inline(always)]
-    pub fn prsch11(self) -> &'a mut W {
+    pub fn prsch11(self) -> &'a mut crate::W<REG> {
         self.variant(S1PRSSEL_A::PRSCH11)
     }
 }
 #[doc = "Field `S1PRSEN` reader - S1IN PRS Enable"]
 pub type S1PRSEN_R = crate::BitReader;
 #[doc = "Field `S1PRSEN` writer - S1IN PRS Enable"]
-pub type S1PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, INPUT_SPEC, O>;
+pub type S1PRSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:3 - S0IN PRS Channel Select"]
     #[inline(always)]
@@ -434,50 +410,66 @@ impl R {
         S1PRSEN_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INPUT")
+            .field("s0prssel", &format_args!("{}", self.s0prssel().bits()))
+            .field("s0prsen", &format_args!("{}", self.s0prsen().bit()))
+            .field("s1prssel", &format_args!("{}", self.s1prssel().bits()))
+            .field("s1prsen", &format_args!("{}", self.s1prsen().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<INPUT_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - S0IN PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn s0prssel(&mut self) -> S0PRSSEL_W<0> {
+    pub fn s0prssel(&mut self) -> S0PRSSEL_W<INPUT_SPEC, 0> {
         S0PRSSEL_W::new(self)
     }
     #[doc = "Bit 5 - S0IN PRS Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn s0prsen(&mut self) -> S0PRSEN_W<5> {
+    pub fn s0prsen(&mut self) -> S0PRSEN_W<INPUT_SPEC, 5> {
         S0PRSEN_W::new(self)
     }
     #[doc = "Bits 6:9 - S1IN PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn s1prssel(&mut self) -> S1PRSSEL_W<6> {
+    pub fn s1prssel(&mut self) -> S1PRSSEL_W<INPUT_SPEC, 6> {
         S1PRSSEL_W::new(self)
     }
     #[doc = "Bit 11 - S1IN PRS Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn s1prsen(&mut self) -> S1PRSEN_W<11> {
+    pub fn s1prsen(&mut self) -> S1PRSEN_W<INPUT_SPEC, 11> {
         S1PRSEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PCNT Input Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [input](index.html) module"]
+#[doc = "PCNT Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`input::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`input::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INPUT_SPEC;
 impl crate::RegisterSpec for INPUT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [input::R](R) reader structure"]
-impl crate::Readable for INPUT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [input::W](W) writer structure"]
+#[doc = "`read()` method returns [`input::R`](R) reader structure"]
+impl crate::Readable for INPUT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`input::W`](W) writer structure"]
 impl crate::Writable for INPUT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

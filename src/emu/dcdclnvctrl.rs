@@ -1,47 +1,15 @@
 #[doc = "Register `DCDCLNVCTRL` reader"]
-pub struct R(crate::R<DCDCLNVCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DCDCLNVCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DCDCLNVCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DCDCLNVCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DCDCLNVCTRL_SPEC>;
 #[doc = "Register `DCDCLNVCTRL` writer"]
-pub struct W(crate::W<DCDCLNVCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DCDCLNVCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DCDCLNVCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DCDCLNVCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DCDCLNVCTRL_SPEC>;
 #[doc = "Field `LNATT` reader - Low Noise Mode Feedback Attenuation"]
 pub type LNATT_R = crate::BitReader;
 #[doc = "Field `LNATT` writer - Low Noise Mode Feedback Attenuation"]
-pub type LNATT_W<'a, const O: u8> = crate::BitWriter<'a, DCDCLNVCTRL_SPEC, O>;
+pub type LNATT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LNVREF` reader - Low Noise Mode VREF Trim"]
 pub type LNVREF_R = crate::FieldReader;
 #[doc = "Field `LNVREF` writer - Low Noise Mode VREF Trim"]
-pub type LNVREF_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCLNVCTRL_SPEC, 7, O>;
+pub type LNVREF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
 impl R {
     #[doc = "Bit 1 - Low Noise Mode Feedback Attenuation"]
     #[inline(always)]
@@ -54,38 +22,52 @@ impl R {
         LNVREF_R::new(((self.bits >> 8) & 0x7f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCLNVCTRL")
+            .field("lnatt", &format_args!("{}", self.lnatt().bit()))
+            .field("lnvref", &format_args!("{}", self.lnvref().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<DCDCLNVCTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 1 - Low Noise Mode Feedback Attenuation"]
     #[inline(always)]
     #[must_use]
-    pub fn lnatt(&mut self) -> LNATT_W<1> {
+    pub fn lnatt(&mut self) -> LNATT_W<DCDCLNVCTRL_SPEC, 1> {
         LNATT_W::new(self)
     }
     #[doc = "Bits 8:14 - Low Noise Mode VREF Trim"]
     #[inline(always)]
     #[must_use]
-    pub fn lnvref(&mut self) -> LNVREF_W<8> {
+    pub fn lnvref(&mut self) -> LNVREF_W<DCDCLNVCTRL_SPEC, 8> {
         LNVREF_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DCDC Low Noise Voltage Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcdclnvctrl](index.html) module"]
+#[doc = "DCDC Low Noise Voltage Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdclnvctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdclnvctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCLNVCTRL_SPEC;
 impl crate::RegisterSpec for DCDCLNVCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dcdclnvctrl::R](R) reader structure"]
-impl crate::Readable for DCDCLNVCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dcdclnvctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`dcdclnvctrl::R`](R) reader structure"]
+impl crate::Readable for DCDCLNVCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dcdclnvctrl::W`](W) writer structure"]
 impl crate::Writable for DCDCLNVCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

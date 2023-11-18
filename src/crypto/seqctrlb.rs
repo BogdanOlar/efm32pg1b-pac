@@ -1,51 +1,19 @@
 #[doc = "Register `SEQCTRLB` reader"]
-pub struct R(crate::R<SEQCTRLB_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SEQCTRLB_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SEQCTRLB_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SEQCTRLB_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SEQCTRLB_SPEC>;
 #[doc = "Register `SEQCTRLB` writer"]
-pub struct W(crate::W<SEQCTRLB_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SEQCTRLB_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SEQCTRLB_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SEQCTRLB_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SEQCTRLB_SPEC>;
 #[doc = "Field `LENGTHB` reader - Buffer Length B in Bytes"]
 pub type LENGTHB_R = crate::FieldReader<u16>;
 #[doc = "Field `LENGTHB` writer - Buffer Length B in Bytes"]
-pub type LENGTHB_W<'a, const O: u8> = crate::FieldWriter<'a, SEQCTRLB_SPEC, 14, O, u16>;
+pub type LENGTHB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 14, O, u16>;
 #[doc = "Field `DMA0PRESB` reader - DMA0 Preserve B"]
 pub type DMA0PRESB_R = crate::BitReader;
 #[doc = "Field `DMA0PRESB` writer - DMA0 Preserve B"]
-pub type DMA0PRESB_W<'a, const O: u8> = crate::BitWriter<'a, SEQCTRLB_SPEC, O>;
+pub type DMA0PRESB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DMA1PRESB` reader - DMA1 Preserve B"]
 pub type DMA1PRESB_R = crate::BitReader;
 #[doc = "Field `DMA1PRESB` writer - DMA1 Preserve B"]
-pub type DMA1PRESB_W<'a, const O: u8> = crate::BitWriter<'a, SEQCTRLB_SPEC, O>;
+pub type DMA1PRESB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:13 - Buffer Length B in Bytes"]
     #[inline(always)]
@@ -63,44 +31,59 @@ impl R {
         DMA1PRESB_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEQCTRLB")
+            .field("lengthb", &format_args!("{}", self.lengthb().bits()))
+            .field("dma0presb", &format_args!("{}", self.dma0presb().bit()))
+            .field("dma1presb", &format_args!("{}", self.dma1presb().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<SEQCTRLB_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:13 - Buffer Length B in Bytes"]
     #[inline(always)]
     #[must_use]
-    pub fn lengthb(&mut self) -> LENGTHB_W<0> {
+    pub fn lengthb(&mut self) -> LENGTHB_W<SEQCTRLB_SPEC, 0> {
         LENGTHB_W::new(self)
     }
     #[doc = "Bit 28 - DMA0 Preserve B"]
     #[inline(always)]
     #[must_use]
-    pub fn dma0presb(&mut self) -> DMA0PRESB_W<28> {
+    pub fn dma0presb(&mut self) -> DMA0PRESB_W<SEQCTRLB_SPEC, 28> {
         DMA0PRESB_W::new(self)
     }
     #[doc = "Bit 29 - DMA1 Preserve B"]
     #[inline(always)]
     #[must_use]
-    pub fn dma1presb(&mut self) -> DMA1PRESB_W<29> {
+    pub fn dma1presb(&mut self) -> DMA1PRESB_W<SEQCTRLB_SPEC, 29> {
         DMA1PRESB_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Sequence Control B\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seqctrlb](index.html) module"]
+#[doc = "Sequence Control B\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`seqctrlb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`seqctrlb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SEQCTRLB_SPEC;
 impl crate::RegisterSpec for SEQCTRLB_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [seqctrlb::R](R) reader structure"]
-impl crate::Readable for SEQCTRLB_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [seqctrlb::W](W) writer structure"]
+#[doc = "`read()` method returns [`seqctrlb::R`](R) reader structure"]
+impl crate::Readable for SEQCTRLB_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`seqctrlb::W`](W) writer structure"]
 impl crate::Writable for SEQCTRLB_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,63 +1,31 @@
 #[doc = "Register `BIASCONF` reader"]
-pub struct R(crate::R<BIASCONF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BIASCONF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BIASCONF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BIASCONF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BIASCONF_SPEC>;
 #[doc = "Register `BIASCONF` writer"]
-pub struct W(crate::W<BIASCONF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BIASCONF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BIASCONF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BIASCONF_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BIASCONF_SPEC>;
 #[doc = "Field `NADUTYEM01` reader - NA DUTY in EM01"]
 pub type NADUTYEM01_R = crate::BitReader;
 #[doc = "Field `NADUTYEM01` writer - NA DUTY in EM01"]
-pub type NADUTYEM01_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
+pub type NADUTYEM01_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LPEM01` reader - LP in EM01"]
 pub type LPEM01_R = crate::BitReader;
 #[doc = "Field `LPEM01` writer - LP in EM01"]
-pub type LPEM01_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
+pub type LPEM01_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `GMCEM23` reader - GMC in EM234"]
 pub type GMCEM23_R = crate::BitReader;
 #[doc = "Field `GMCEM23` writer - GMC in EM234"]
-pub type GMCEM23_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
+pub type GMCEM23_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `UADUTYEM23` reader - UADUTY in EM234"]
 pub type UADUTYEM23_R = crate::BitReader;
 #[doc = "Field `UADUTYEM23` writer - UADUTY in EM234"]
-pub type UADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
+pub type UADUTYEM23_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `NADUTYEM23` reader - NA DUTY in EM234"]
 pub type NADUTYEM23_R = crate::BitReader;
 #[doc = "Field `NADUTYEM23` writer - NA DUTY in EM234"]
-pub type NADUTYEM23_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
+pub type NADUTYEM23_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LPEM23` reader - LP in EM234"]
 pub type LPEM23_R = crate::BitReader;
 #[doc = "Field `LPEM23` writer - LP in EM234"]
-pub type LPEM23_W<'a, const O: u8> = crate::BitWriter<'a, BIASCONF_SPEC, O>;
+pub type LPEM23_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 2 - NA DUTY in EM01"]
     #[inline(always)]
@@ -90,62 +58,80 @@ impl R {
         LPEM23_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BIASCONF")
+            .field("nadutyem01", &format_args!("{}", self.nadutyem01().bit()))
+            .field("lpem01", &format_args!("{}", self.lpem01().bit()))
+            .field("gmcem23", &format_args!("{}", self.gmcem23().bit()))
+            .field("uadutyem23", &format_args!("{}", self.uadutyem23().bit()))
+            .field("nadutyem23", &format_args!("{}", self.nadutyem23().bit()))
+            .field("lpem23", &format_args!("{}", self.lpem23().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<BIASCONF_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 2 - NA DUTY in EM01"]
     #[inline(always)]
     #[must_use]
-    pub fn nadutyem01(&mut self) -> NADUTYEM01_W<2> {
+    pub fn nadutyem01(&mut self) -> NADUTYEM01_W<BIASCONF_SPEC, 2> {
         NADUTYEM01_W::new(self)
     }
     #[doc = "Bit 3 - LP in EM01"]
     #[inline(always)]
     #[must_use]
-    pub fn lpem01(&mut self) -> LPEM01_W<3> {
+    pub fn lpem01(&mut self) -> LPEM01_W<BIASCONF_SPEC, 3> {
         LPEM01_W::new(self)
     }
     #[doc = "Bit 4 - GMC in EM234"]
     #[inline(always)]
     #[must_use]
-    pub fn gmcem23(&mut self) -> GMCEM23_W<4> {
+    pub fn gmcem23(&mut self) -> GMCEM23_W<BIASCONF_SPEC, 4> {
         GMCEM23_W::new(self)
     }
     #[doc = "Bit 5 - UADUTY in EM234"]
     #[inline(always)]
     #[must_use]
-    pub fn uadutyem23(&mut self) -> UADUTYEM23_W<5> {
+    pub fn uadutyem23(&mut self) -> UADUTYEM23_W<BIASCONF_SPEC, 5> {
         UADUTYEM23_W::new(self)
     }
     #[doc = "Bit 6 - NA DUTY in EM234"]
     #[inline(always)]
     #[must_use]
-    pub fn nadutyem23(&mut self) -> NADUTYEM23_W<6> {
+    pub fn nadutyem23(&mut self) -> NADUTYEM23_W<BIASCONF_SPEC, 6> {
         NADUTYEM23_W::new(self)
     }
     #[doc = "Bit 7 - LP in EM234"]
     #[inline(always)]
     #[must_use]
-    pub fn lpem23(&mut self) -> LPEM23_W<7> {
+    pub fn lpem23(&mut self) -> LPEM23_W<BIASCONF_SPEC, 7> {
         LPEM23_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Configurations Related to the Bias\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [biasconf](index.html) module"]
+#[doc = "Configurations Related to the Bias\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`biasconf::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`biasconf::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BIASCONF_SPEC;
 impl crate::RegisterSpec for BIASCONF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [biasconf::R](R) reader structure"]
-impl crate::Readable for BIASCONF_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [biasconf::W](W) writer structure"]
+#[doc = "`read()` method returns [`biasconf::R`](R) reader structure"]
+impl crate::Readable for BIASCONF_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`biasconf::W`](W) writer structure"]
 impl crate::Writable for BIASCONF_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

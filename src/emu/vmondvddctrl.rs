@@ -1,59 +1,27 @@
 #[doc = "Register `VMONDVDDCTRL` reader"]
-pub struct R(crate::R<VMONDVDDCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<VMONDVDDCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<VMONDVDDCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<VMONDVDDCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<VMONDVDDCTRL_SPEC>;
 #[doc = "Register `VMONDVDDCTRL` writer"]
-pub struct W(crate::W<VMONDVDDCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<VMONDVDDCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<VMONDVDDCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<VMONDVDDCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<VMONDVDDCTRL_SPEC>;
 #[doc = "Field `EN` reader - Enable"]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, VMONDVDDCTRL_SPEC, O>;
+pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RISEWU` reader - Rise Wakeup"]
 pub type RISEWU_R = crate::BitReader;
 #[doc = "Field `RISEWU` writer - Rise Wakeup"]
-pub type RISEWU_W<'a, const O: u8> = crate::BitWriter<'a, VMONDVDDCTRL_SPEC, O>;
+pub type RISEWU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FALLWU` reader - Fall Wakeup"]
 pub type FALLWU_R = crate::BitReader;
 #[doc = "Field `FALLWU` writer - Fall Wakeup"]
-pub type FALLWU_W<'a, const O: u8> = crate::BitWriter<'a, VMONDVDDCTRL_SPEC, O>;
+pub type FALLWU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `THRESFINE` reader - Threshold Fine Adjust"]
 pub type THRESFINE_R = crate::FieldReader;
 #[doc = "Field `THRESFINE` writer - Threshold Fine Adjust"]
-pub type THRESFINE_W<'a, const O: u8> = crate::FieldWriter<'a, VMONDVDDCTRL_SPEC, 4, O>;
+pub type THRESFINE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `THRESCOARSE` reader - Threshold Coarse Adjust"]
 pub type THRESCOARSE_R = crate::FieldReader;
 #[doc = "Field `THRESCOARSE` writer - Threshold Coarse Adjust"]
-pub type THRESCOARSE_W<'a, const O: u8> = crate::FieldWriter<'a, VMONDVDDCTRL_SPEC, 4, O>;
+pub type THRESCOARSE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
@@ -81,56 +49,76 @@ impl R {
         THRESCOARSE_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VMONDVDDCTRL")
+            .field("en", &format_args!("{}", self.en().bit()))
+            .field("risewu", &format_args!("{}", self.risewu().bit()))
+            .field("fallwu", &format_args!("{}", self.fallwu().bit()))
+            .field("thresfine", &format_args!("{}", self.thresfine().bits()))
+            .field(
+                "threscoarse",
+                &format_args!("{}", self.threscoarse().bits()),
+            )
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<VMONDVDDCTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<0> {
+    pub fn en(&mut self) -> EN_W<VMONDVDDCTRL_SPEC, 0> {
         EN_W::new(self)
     }
     #[doc = "Bit 2 - Rise Wakeup"]
     #[inline(always)]
     #[must_use]
-    pub fn risewu(&mut self) -> RISEWU_W<2> {
+    pub fn risewu(&mut self) -> RISEWU_W<VMONDVDDCTRL_SPEC, 2> {
         RISEWU_W::new(self)
     }
     #[doc = "Bit 3 - Fall Wakeup"]
     #[inline(always)]
     #[must_use]
-    pub fn fallwu(&mut self) -> FALLWU_W<3> {
+    pub fn fallwu(&mut self) -> FALLWU_W<VMONDVDDCTRL_SPEC, 3> {
         FALLWU_W::new(self)
     }
     #[doc = "Bits 8:11 - Threshold Fine Adjust"]
     #[inline(always)]
     #[must_use]
-    pub fn thresfine(&mut self) -> THRESFINE_W<8> {
+    pub fn thresfine(&mut self) -> THRESFINE_W<VMONDVDDCTRL_SPEC, 8> {
         THRESFINE_W::new(self)
     }
     #[doc = "Bits 12:15 - Threshold Coarse Adjust"]
     #[inline(always)]
     #[must_use]
-    pub fn threscoarse(&mut self) -> THRESCOARSE_W<12> {
+    pub fn threscoarse(&mut self) -> THRESCOARSE_W<VMONDVDDCTRL_SPEC, 12> {
         THRESCOARSE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "VMON DVDD Channel Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vmondvddctrl](index.html) module"]
+#[doc = "VMON DVDD Channel Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`vmondvddctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`vmondvddctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VMONDVDDCTRL_SPEC;
 impl crate::RegisterSpec for VMONDVDDCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [vmondvddctrl::R](R) reader structure"]
-impl crate::Readable for VMONDVDDCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [vmondvddctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`vmondvddctrl::R`](R) reader structure"]
+impl crate::Readable for VMONDVDDCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`vmondvddctrl::W`](W) writer structure"]
 impl crate::Writable for VMONDVDDCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

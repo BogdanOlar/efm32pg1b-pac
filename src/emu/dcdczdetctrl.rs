@@ -1,47 +1,15 @@
 #[doc = "Register `DCDCZDETCTRL` reader"]
-pub struct R(crate::R<DCDCZDETCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DCDCZDETCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DCDCZDETCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DCDCZDETCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DCDCZDETCTRL_SPEC>;
 #[doc = "Register `DCDCZDETCTRL` writer"]
-pub struct W(crate::W<DCDCZDETCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DCDCZDETCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DCDCZDETCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DCDCZDETCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DCDCZDETCTRL_SPEC>;
 #[doc = "Field `ZDETILIMSEL` reader - Reverse Current Limit Level Selection for Zero Detector"]
 pub type ZDETILIMSEL_R = crate::FieldReader;
 #[doc = "Field `ZDETILIMSEL` writer - Reverse Current Limit Level Selection for Zero Detector"]
-pub type ZDETILIMSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCZDETCTRL_SPEC, 3, O>;
+pub type ZDETILIMSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `ZDETBLANKDLY` reader - Reserved for internal use. Do not change."]
 pub type ZDETBLANKDLY_R = crate::FieldReader;
 #[doc = "Field `ZDETBLANKDLY` writer - Reserved for internal use. Do not change."]
-pub type ZDETBLANKDLY_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCZDETCTRL_SPEC, 2, O>;
+pub type ZDETBLANKDLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 impl R {
     #[doc = "Bits 4:6 - Reverse Current Limit Level Selection for Zero Detector"]
     #[inline(always)]
@@ -54,38 +22,58 @@ impl R {
         ZDETBLANKDLY_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCZDETCTRL")
+            .field(
+                "zdetilimsel",
+                &format_args!("{}", self.zdetilimsel().bits()),
+            )
+            .field(
+                "zdetblankdly",
+                &format_args!("{}", self.zdetblankdly().bits()),
+            )
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<DCDCZDETCTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 4:6 - Reverse Current Limit Level Selection for Zero Detector"]
     #[inline(always)]
     #[must_use]
-    pub fn zdetilimsel(&mut self) -> ZDETILIMSEL_W<4> {
+    pub fn zdetilimsel(&mut self) -> ZDETILIMSEL_W<DCDCZDETCTRL_SPEC, 4> {
         ZDETILIMSEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
     #[inline(always)]
     #[must_use]
-    pub fn zdetblankdly(&mut self) -> ZDETBLANKDLY_W<8> {
+    pub fn zdetblankdly(&mut self) -> ZDETBLANKDLY_W<DCDCZDETCTRL_SPEC, 8> {
         ZDETBLANKDLY_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DCDC Power Train NFET Zero Current Detector Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcdczdetctrl](index.html) module"]
+#[doc = "DCDC Power Train NFET Zero Current Detector Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdczdetctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdczdetctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCZDETCTRL_SPEC;
 impl crate::RegisterSpec for DCDCZDETCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dcdczdetctrl::R](R) reader structure"]
-impl crate::Readable for DCDCZDETCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dcdczdetctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`dcdczdetctrl::R`](R) reader structure"]
+impl crate::Readable for DCDCZDETCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dcdczdetctrl::W`](W) writer structure"]
 impl crate::Writable for DCDCZDETCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,18 +1,5 @@
 #[doc = "Register `SYNCBUSY` reader"]
-pub struct R(crate::R<SYNCBUSY_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SYNCBUSY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SYNCBUSY_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SYNCBUSY_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SYNCBUSY_SPEC>;
 #[doc = "Field `CTRL` reader - CTRL Register Busy"]
 pub type CTRL_R = crate::BitReader;
 #[doc = "Field `CMD` reader - CMD Register Busy"]
@@ -43,15 +30,34 @@ impl R {
         PCH1_PRSCTRL_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "Synchronization Busy Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [syncbusy](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYNCBUSY")
+            .field("ctrl", &format_args!("{}", self.ctrl().bit()))
+            .field("cmd", &format_args!("{}", self.cmd().bit()))
+            .field(
+                "pch0_prsctrl",
+                &format_args!("{}", self.pch0_prsctrl().bit()),
+            )
+            .field(
+                "pch1_prsctrl",
+                &format_args!("{}", self.pch1_prsctrl().bit()),
+            )
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<SYNCBUSY_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Synchronization Busy Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`syncbusy::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYNCBUSY_SPEC;
 impl crate::RegisterSpec for SYNCBUSY_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [syncbusy::R](R) reader structure"]
-impl crate::Readable for SYNCBUSY_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`syncbusy::R`](R) reader structure"]
+impl crate::Readable for SYNCBUSY_SPEC {}
 #[doc = "`reset()` method sets SYNCBUSY to value 0"]
 impl crate::Resettable for SYNCBUSY_SPEC {
     const RESET_VALUE: Self::Ux = 0;

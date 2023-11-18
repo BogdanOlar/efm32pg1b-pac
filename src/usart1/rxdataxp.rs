@@ -1,18 +1,5 @@
 #[doc = "Register `RXDATAXP` reader"]
-pub struct R(crate::R<RXDATAXP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RXDATAXP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RXDATAXP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RXDATAXP_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RXDATAXP_SPEC>;
 #[doc = "Field `RXDATAP` reader - RX Data Peek"]
 pub type RXDATAP_R = crate::FieldReader<u16>;
 #[doc = "Field `PERRP` reader - Data Parity Error Peek"]
@@ -36,15 +23,27 @@ impl R {
         FERRP_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "RX Buffer Data Extended Peek Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdataxp](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RXDATAXP")
+            .field("rxdatap", &format_args!("{}", self.rxdatap().bits()))
+            .field("perrp", &format_args!("{}", self.perrp().bit()))
+            .field("ferrp", &format_args!("{}", self.ferrp().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<RXDATAXP_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "RX Buffer Data Extended Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdataxp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDATAXP_SPEC;
 impl crate::RegisterSpec for RXDATAXP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxdataxp::R](R) reader structure"]
-impl crate::Readable for RXDATAXP_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rxdataxp::R`](R) reader structure"]
+impl crate::Readable for RXDATAXP_SPEC {}
 #[doc = "`reset()` method sets RXDATAXP to value 0"]
 impl crate::Resettable for RXDATAXP_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,39 +1,7 @@
 #[doc = "Register `EXTIPINSELH` reader"]
-pub struct R(crate::R<EXTIPINSELH_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EXTIPINSELH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EXTIPINSELH_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EXTIPINSELH_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EXTIPINSELH_SPEC>;
 #[doc = "Register `EXTIPINSELH` writer"]
-pub struct W(crate::W<EXTIPINSELH_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EXTIPINSELH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EXTIPINSELH_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EXTIPINSELH_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EXTIPINSELH_SPEC>;
 #[doc = "Field `EXTIPINSEL8` reader - External Interrupt 8 Pin Select"]
 pub type EXTIPINSEL8_R = crate::FieldReader<EXTIPINSEL8_A>;
 #[doc = "External Interrupt 8 Pin Select\n\nValue on reset: 0"]
@@ -61,7 +29,7 @@ impl crate::FieldSpec for EXTIPINSEL8_A {
 impl EXTIPINSEL8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTIPINSEL8_A {
+    pub const fn variant(&self) -> EXTIPINSEL8_A {
         match self.bits {
             0 => EXTIPINSEL8_A::PIN8,
             1 => EXTIPINSEL8_A::PIN9,
@@ -70,49 +38,52 @@ impl EXTIPINSEL8_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PIN8`"]
+    #[doc = "Pin 8"]
     #[inline(always)]
     pub fn is_pin8(&self) -> bool {
         *self == EXTIPINSEL8_A::PIN8
     }
-    #[doc = "Checks if the value of the field is `PIN9`"]
+    #[doc = "Pin 9"]
     #[inline(always)]
     pub fn is_pin9(&self) -> bool {
         *self == EXTIPINSEL8_A::PIN9
     }
-    #[doc = "Checks if the value of the field is `PIN10`"]
+    #[doc = "Pin 10"]
     #[inline(always)]
     pub fn is_pin10(&self) -> bool {
         *self == EXTIPINSEL8_A::PIN10
     }
-    #[doc = "Checks if the value of the field is `PIN11`"]
+    #[doc = "Pin 11"]
     #[inline(always)]
     pub fn is_pin11(&self) -> bool {
         *self == EXTIPINSEL8_A::PIN11
     }
 }
 #[doc = "Field `EXTIPINSEL8` writer - External Interrupt 8 Pin Select"]
-pub type EXTIPINSEL8_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL8_A>;
-impl<'a, const O: u8> EXTIPINSEL8_W<'a, O> {
+pub type EXTIPINSEL8_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EXTIPINSEL8_A>;
+impl<'a, REG, const O: u8> EXTIPINSEL8_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Pin 8"]
     #[inline(always)]
-    pub fn pin8(self) -> &'a mut W {
+    pub fn pin8(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL8_A::PIN8)
     }
     #[doc = "Pin 9"]
     #[inline(always)]
-    pub fn pin9(self) -> &'a mut W {
+    pub fn pin9(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL8_A::PIN9)
     }
     #[doc = "Pin 10"]
     #[inline(always)]
-    pub fn pin10(self) -> &'a mut W {
+    pub fn pin10(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL8_A::PIN10)
     }
     #[doc = "Pin 11"]
     #[inline(always)]
-    pub fn pin11(self) -> &'a mut W {
+    pub fn pin11(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL8_A::PIN11)
     }
 }
@@ -143,7 +114,7 @@ impl crate::FieldSpec for EXTIPINSEL9_A {
 impl EXTIPINSEL9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTIPINSEL9_A {
+    pub const fn variant(&self) -> EXTIPINSEL9_A {
         match self.bits {
             0 => EXTIPINSEL9_A::PIN8,
             1 => EXTIPINSEL9_A::PIN9,
@@ -152,49 +123,52 @@ impl EXTIPINSEL9_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PIN8`"]
+    #[doc = "Pin 8"]
     #[inline(always)]
     pub fn is_pin8(&self) -> bool {
         *self == EXTIPINSEL9_A::PIN8
     }
-    #[doc = "Checks if the value of the field is `PIN9`"]
+    #[doc = "Pin 9"]
     #[inline(always)]
     pub fn is_pin9(&self) -> bool {
         *self == EXTIPINSEL9_A::PIN9
     }
-    #[doc = "Checks if the value of the field is `PIN10`"]
+    #[doc = "Pin 10"]
     #[inline(always)]
     pub fn is_pin10(&self) -> bool {
         *self == EXTIPINSEL9_A::PIN10
     }
-    #[doc = "Checks if the value of the field is `PIN11`"]
+    #[doc = "Pin 11"]
     #[inline(always)]
     pub fn is_pin11(&self) -> bool {
         *self == EXTIPINSEL9_A::PIN11
     }
 }
 #[doc = "Field `EXTIPINSEL9` writer - External Interrupt 9 Pin Select"]
-pub type EXTIPINSEL9_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL9_A>;
-impl<'a, const O: u8> EXTIPINSEL9_W<'a, O> {
+pub type EXTIPINSEL9_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EXTIPINSEL9_A>;
+impl<'a, REG, const O: u8> EXTIPINSEL9_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Pin 8"]
     #[inline(always)]
-    pub fn pin8(self) -> &'a mut W {
+    pub fn pin8(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL9_A::PIN8)
     }
     #[doc = "Pin 9"]
     #[inline(always)]
-    pub fn pin9(self) -> &'a mut W {
+    pub fn pin9(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL9_A::PIN9)
     }
     #[doc = "Pin 10"]
     #[inline(always)]
-    pub fn pin10(self) -> &'a mut W {
+    pub fn pin10(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL9_A::PIN10)
     }
     #[doc = "Pin 11"]
     #[inline(always)]
-    pub fn pin11(self) -> &'a mut W {
+    pub fn pin11(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL9_A::PIN11)
     }
 }
@@ -225,7 +199,7 @@ impl crate::FieldSpec for EXTIPINSEL10_A {
 impl EXTIPINSEL10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTIPINSEL10_A {
+    pub const fn variant(&self) -> EXTIPINSEL10_A {
         match self.bits {
             0 => EXTIPINSEL10_A::PIN8,
             1 => EXTIPINSEL10_A::PIN9,
@@ -234,49 +208,53 @@ impl EXTIPINSEL10_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PIN8`"]
+    #[doc = "Pin 8"]
     #[inline(always)]
     pub fn is_pin8(&self) -> bool {
         *self == EXTIPINSEL10_A::PIN8
     }
-    #[doc = "Checks if the value of the field is `PIN9`"]
+    #[doc = "Pin 9"]
     #[inline(always)]
     pub fn is_pin9(&self) -> bool {
         *self == EXTIPINSEL10_A::PIN9
     }
-    #[doc = "Checks if the value of the field is `PIN10`"]
+    #[doc = "Pin 10"]
     #[inline(always)]
     pub fn is_pin10(&self) -> bool {
         *self == EXTIPINSEL10_A::PIN10
     }
-    #[doc = "Checks if the value of the field is `PIN11`"]
+    #[doc = "Pin 11"]
     #[inline(always)]
     pub fn is_pin11(&self) -> bool {
         *self == EXTIPINSEL10_A::PIN11
     }
 }
 #[doc = "Field `EXTIPINSEL10` writer - External Interrupt 10 Pin Select"]
-pub type EXTIPINSEL10_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL10_A>;
-impl<'a, const O: u8> EXTIPINSEL10_W<'a, O> {
+pub type EXTIPINSEL10_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, EXTIPINSEL10_A>;
+impl<'a, REG, const O: u8> EXTIPINSEL10_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Pin 8"]
     #[inline(always)]
-    pub fn pin8(self) -> &'a mut W {
+    pub fn pin8(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL10_A::PIN8)
     }
     #[doc = "Pin 9"]
     #[inline(always)]
-    pub fn pin9(self) -> &'a mut W {
+    pub fn pin9(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL10_A::PIN9)
     }
     #[doc = "Pin 10"]
     #[inline(always)]
-    pub fn pin10(self) -> &'a mut W {
+    pub fn pin10(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL10_A::PIN10)
     }
     #[doc = "Pin 11"]
     #[inline(always)]
-    pub fn pin11(self) -> &'a mut W {
+    pub fn pin11(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL10_A::PIN11)
     }
 }
@@ -307,7 +285,7 @@ impl crate::FieldSpec for EXTIPINSEL11_A {
 impl EXTIPINSEL11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTIPINSEL11_A {
+    pub const fn variant(&self) -> EXTIPINSEL11_A {
         match self.bits {
             0 => EXTIPINSEL11_A::PIN8,
             1 => EXTIPINSEL11_A::PIN9,
@@ -316,49 +294,53 @@ impl EXTIPINSEL11_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PIN8`"]
+    #[doc = "Pin 8"]
     #[inline(always)]
     pub fn is_pin8(&self) -> bool {
         *self == EXTIPINSEL11_A::PIN8
     }
-    #[doc = "Checks if the value of the field is `PIN9`"]
+    #[doc = "Pin 9"]
     #[inline(always)]
     pub fn is_pin9(&self) -> bool {
         *self == EXTIPINSEL11_A::PIN9
     }
-    #[doc = "Checks if the value of the field is `PIN10`"]
+    #[doc = "Pin 10"]
     #[inline(always)]
     pub fn is_pin10(&self) -> bool {
         *self == EXTIPINSEL11_A::PIN10
     }
-    #[doc = "Checks if the value of the field is `PIN11`"]
+    #[doc = "Pin 11"]
     #[inline(always)]
     pub fn is_pin11(&self) -> bool {
         *self == EXTIPINSEL11_A::PIN11
     }
 }
 #[doc = "Field `EXTIPINSEL11` writer - External Interrupt 11 Pin Select"]
-pub type EXTIPINSEL11_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL11_A>;
-impl<'a, const O: u8> EXTIPINSEL11_W<'a, O> {
+pub type EXTIPINSEL11_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, EXTIPINSEL11_A>;
+impl<'a, REG, const O: u8> EXTIPINSEL11_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Pin 8"]
     #[inline(always)]
-    pub fn pin8(self) -> &'a mut W {
+    pub fn pin8(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL11_A::PIN8)
     }
     #[doc = "Pin 9"]
     #[inline(always)]
-    pub fn pin9(self) -> &'a mut W {
+    pub fn pin9(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL11_A::PIN9)
     }
     #[doc = "Pin 10"]
     #[inline(always)]
-    pub fn pin10(self) -> &'a mut W {
+    pub fn pin10(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL11_A::PIN10)
     }
     #[doc = "Pin 11"]
     #[inline(always)]
-    pub fn pin11(self) -> &'a mut W {
+    pub fn pin11(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL11_A::PIN11)
     }
 }
@@ -389,7 +371,7 @@ impl crate::FieldSpec for EXTIPINSEL12_A {
 impl EXTIPINSEL12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTIPINSEL12_A {
+    pub const fn variant(&self) -> EXTIPINSEL12_A {
         match self.bits {
             0 => EXTIPINSEL12_A::PIN12,
             1 => EXTIPINSEL12_A::PIN13,
@@ -398,49 +380,53 @@ impl EXTIPINSEL12_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PIN12`"]
+    #[doc = "Pin 12"]
     #[inline(always)]
     pub fn is_pin12(&self) -> bool {
         *self == EXTIPINSEL12_A::PIN12
     }
-    #[doc = "Checks if the value of the field is `PIN13`"]
+    #[doc = "Pin 13"]
     #[inline(always)]
     pub fn is_pin13(&self) -> bool {
         *self == EXTIPINSEL12_A::PIN13
     }
-    #[doc = "Checks if the value of the field is `PIN14`"]
+    #[doc = "Pin 14"]
     #[inline(always)]
     pub fn is_pin14(&self) -> bool {
         *self == EXTIPINSEL12_A::PIN14
     }
-    #[doc = "Checks if the value of the field is `PIN15`"]
+    #[doc = "Pin 15"]
     #[inline(always)]
     pub fn is_pin15(&self) -> bool {
         *self == EXTIPINSEL12_A::PIN15
     }
 }
 #[doc = "Field `EXTIPINSEL12` writer - External Interrupt 12 Pin Select"]
-pub type EXTIPINSEL12_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL12_A>;
-impl<'a, const O: u8> EXTIPINSEL12_W<'a, O> {
+pub type EXTIPINSEL12_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, EXTIPINSEL12_A>;
+impl<'a, REG, const O: u8> EXTIPINSEL12_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Pin 12"]
     #[inline(always)]
-    pub fn pin12(self) -> &'a mut W {
+    pub fn pin12(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL12_A::PIN12)
     }
     #[doc = "Pin 13"]
     #[inline(always)]
-    pub fn pin13(self) -> &'a mut W {
+    pub fn pin13(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL12_A::PIN13)
     }
     #[doc = "Pin 14"]
     #[inline(always)]
-    pub fn pin14(self) -> &'a mut W {
+    pub fn pin14(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL12_A::PIN14)
     }
     #[doc = "Pin 15"]
     #[inline(always)]
-    pub fn pin15(self) -> &'a mut W {
+    pub fn pin15(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL12_A::PIN15)
     }
 }
@@ -471,7 +457,7 @@ impl crate::FieldSpec for EXTIPINSEL13_A {
 impl EXTIPINSEL13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTIPINSEL13_A {
+    pub const fn variant(&self) -> EXTIPINSEL13_A {
         match self.bits {
             0 => EXTIPINSEL13_A::PIN12,
             1 => EXTIPINSEL13_A::PIN13,
@@ -480,49 +466,53 @@ impl EXTIPINSEL13_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PIN12`"]
+    #[doc = "Pin 12"]
     #[inline(always)]
     pub fn is_pin12(&self) -> bool {
         *self == EXTIPINSEL13_A::PIN12
     }
-    #[doc = "Checks if the value of the field is `PIN13`"]
+    #[doc = "Pin 13"]
     #[inline(always)]
     pub fn is_pin13(&self) -> bool {
         *self == EXTIPINSEL13_A::PIN13
     }
-    #[doc = "Checks if the value of the field is `PIN14`"]
+    #[doc = "Pin 14"]
     #[inline(always)]
     pub fn is_pin14(&self) -> bool {
         *self == EXTIPINSEL13_A::PIN14
     }
-    #[doc = "Checks if the value of the field is `PIN15`"]
+    #[doc = "Pin 15"]
     #[inline(always)]
     pub fn is_pin15(&self) -> bool {
         *self == EXTIPINSEL13_A::PIN15
     }
 }
 #[doc = "Field `EXTIPINSEL13` writer - External Interrupt 13 Pin Select"]
-pub type EXTIPINSEL13_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL13_A>;
-impl<'a, const O: u8> EXTIPINSEL13_W<'a, O> {
+pub type EXTIPINSEL13_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, EXTIPINSEL13_A>;
+impl<'a, REG, const O: u8> EXTIPINSEL13_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Pin 12"]
     #[inline(always)]
-    pub fn pin12(self) -> &'a mut W {
+    pub fn pin12(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL13_A::PIN12)
     }
     #[doc = "Pin 13"]
     #[inline(always)]
-    pub fn pin13(self) -> &'a mut W {
+    pub fn pin13(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL13_A::PIN13)
     }
     #[doc = "Pin 14"]
     #[inline(always)]
-    pub fn pin14(self) -> &'a mut W {
+    pub fn pin14(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL13_A::PIN14)
     }
     #[doc = "Pin 15"]
     #[inline(always)]
-    pub fn pin15(self) -> &'a mut W {
+    pub fn pin15(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL13_A::PIN15)
     }
 }
@@ -553,7 +543,7 @@ impl crate::FieldSpec for EXTIPINSEL14_A {
 impl EXTIPINSEL14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTIPINSEL14_A {
+    pub const fn variant(&self) -> EXTIPINSEL14_A {
         match self.bits {
             0 => EXTIPINSEL14_A::PIN12,
             1 => EXTIPINSEL14_A::PIN13,
@@ -562,49 +552,53 @@ impl EXTIPINSEL14_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PIN12`"]
+    #[doc = "Pin 12"]
     #[inline(always)]
     pub fn is_pin12(&self) -> bool {
         *self == EXTIPINSEL14_A::PIN12
     }
-    #[doc = "Checks if the value of the field is `PIN13`"]
+    #[doc = "Pin 13"]
     #[inline(always)]
     pub fn is_pin13(&self) -> bool {
         *self == EXTIPINSEL14_A::PIN13
     }
-    #[doc = "Checks if the value of the field is `PIN14`"]
+    #[doc = "Pin 14"]
     #[inline(always)]
     pub fn is_pin14(&self) -> bool {
         *self == EXTIPINSEL14_A::PIN14
     }
-    #[doc = "Checks if the value of the field is `PIN15`"]
+    #[doc = "Pin 15"]
     #[inline(always)]
     pub fn is_pin15(&self) -> bool {
         *self == EXTIPINSEL14_A::PIN15
     }
 }
 #[doc = "Field `EXTIPINSEL14` writer - External Interrupt 14 Pin Select"]
-pub type EXTIPINSEL14_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL14_A>;
-impl<'a, const O: u8> EXTIPINSEL14_W<'a, O> {
+pub type EXTIPINSEL14_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, EXTIPINSEL14_A>;
+impl<'a, REG, const O: u8> EXTIPINSEL14_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Pin 12"]
     #[inline(always)]
-    pub fn pin12(self) -> &'a mut W {
+    pub fn pin12(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL14_A::PIN12)
     }
     #[doc = "Pin 13"]
     #[inline(always)]
-    pub fn pin13(self) -> &'a mut W {
+    pub fn pin13(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL14_A::PIN13)
     }
     #[doc = "Pin 14"]
     #[inline(always)]
-    pub fn pin14(self) -> &'a mut W {
+    pub fn pin14(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL14_A::PIN14)
     }
     #[doc = "Pin 15"]
     #[inline(always)]
-    pub fn pin15(self) -> &'a mut W {
+    pub fn pin15(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL14_A::PIN15)
     }
 }
@@ -635,7 +629,7 @@ impl crate::FieldSpec for EXTIPINSEL15_A {
 impl EXTIPINSEL15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTIPINSEL15_A {
+    pub const fn variant(&self) -> EXTIPINSEL15_A {
         match self.bits {
             0 => EXTIPINSEL15_A::PIN12,
             1 => EXTIPINSEL15_A::PIN13,
@@ -644,49 +638,53 @@ impl EXTIPINSEL15_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PIN12`"]
+    #[doc = "Pin 12"]
     #[inline(always)]
     pub fn is_pin12(&self) -> bool {
         *self == EXTIPINSEL15_A::PIN12
     }
-    #[doc = "Checks if the value of the field is `PIN13`"]
+    #[doc = "Pin 13"]
     #[inline(always)]
     pub fn is_pin13(&self) -> bool {
         *self == EXTIPINSEL15_A::PIN13
     }
-    #[doc = "Checks if the value of the field is `PIN14`"]
+    #[doc = "Pin 14"]
     #[inline(always)]
     pub fn is_pin14(&self) -> bool {
         *self == EXTIPINSEL15_A::PIN14
     }
-    #[doc = "Checks if the value of the field is `PIN15`"]
+    #[doc = "Pin 15"]
     #[inline(always)]
     pub fn is_pin15(&self) -> bool {
         *self == EXTIPINSEL15_A::PIN15
     }
 }
 #[doc = "Field `EXTIPINSEL15` writer - External Interrupt 15 Pin Select"]
-pub type EXTIPINSEL15_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, EXTIPINSELH_SPEC, 2, O, EXTIPINSEL15_A>;
-impl<'a, const O: u8> EXTIPINSEL15_W<'a, O> {
+pub type EXTIPINSEL15_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, EXTIPINSEL15_A>;
+impl<'a, REG, const O: u8> EXTIPINSEL15_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Pin 12"]
     #[inline(always)]
-    pub fn pin12(self) -> &'a mut W {
+    pub fn pin12(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL15_A::PIN12)
     }
     #[doc = "Pin 13"]
     #[inline(always)]
-    pub fn pin13(self) -> &'a mut W {
+    pub fn pin13(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL15_A::PIN13)
     }
     #[doc = "Pin 14"]
     #[inline(always)]
-    pub fn pin14(self) -> &'a mut W {
+    pub fn pin14(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL15_A::PIN14)
     }
     #[doc = "Pin 15"]
     #[inline(always)]
-    pub fn pin15(self) -> &'a mut W {
+    pub fn pin15(self) -> &'a mut crate::W<REG> {
         self.variant(EXTIPINSEL15_A::PIN15)
     }
 }
@@ -732,74 +730,118 @@ impl R {
         EXTIPINSEL15_R::new(((self.bits >> 28) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EXTIPINSELH")
+            .field(
+                "extipinsel8",
+                &format_args!("{}", self.extipinsel8().bits()),
+            )
+            .field(
+                "extipinsel9",
+                &format_args!("{}", self.extipinsel9().bits()),
+            )
+            .field(
+                "extipinsel10",
+                &format_args!("{}", self.extipinsel10().bits()),
+            )
+            .field(
+                "extipinsel11",
+                &format_args!("{}", self.extipinsel11().bits()),
+            )
+            .field(
+                "extipinsel12",
+                &format_args!("{}", self.extipinsel12().bits()),
+            )
+            .field(
+                "extipinsel13",
+                &format_args!("{}", self.extipinsel13().bits()),
+            )
+            .field(
+                "extipinsel14",
+                &format_args!("{}", self.extipinsel14().bits()),
+            )
+            .field(
+                "extipinsel15",
+                &format_args!("{}", self.extipinsel15().bits()),
+            )
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<EXTIPINSELH_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - External Interrupt 8 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel8(&mut self) -> EXTIPINSEL8_W<0> {
+    pub fn extipinsel8(&mut self) -> EXTIPINSEL8_W<EXTIPINSELH_SPEC, 0> {
         EXTIPINSEL8_W::new(self)
     }
     #[doc = "Bits 4:5 - External Interrupt 9 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel9(&mut self) -> EXTIPINSEL9_W<4> {
+    pub fn extipinsel9(&mut self) -> EXTIPINSEL9_W<EXTIPINSELH_SPEC, 4> {
         EXTIPINSEL9_W::new(self)
     }
     #[doc = "Bits 8:9 - External Interrupt 10 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel10(&mut self) -> EXTIPINSEL10_W<8> {
+    pub fn extipinsel10(&mut self) -> EXTIPINSEL10_W<EXTIPINSELH_SPEC, 8> {
         EXTIPINSEL10_W::new(self)
     }
     #[doc = "Bits 12:13 - External Interrupt 11 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel11(&mut self) -> EXTIPINSEL11_W<12> {
+    pub fn extipinsel11(&mut self) -> EXTIPINSEL11_W<EXTIPINSELH_SPEC, 12> {
         EXTIPINSEL11_W::new(self)
     }
     #[doc = "Bits 16:17 - External Interrupt 12 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel12(&mut self) -> EXTIPINSEL12_W<16> {
+    pub fn extipinsel12(&mut self) -> EXTIPINSEL12_W<EXTIPINSELH_SPEC, 16> {
         EXTIPINSEL12_W::new(self)
     }
     #[doc = "Bits 20:21 - External Interrupt 13 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel13(&mut self) -> EXTIPINSEL13_W<20> {
+    pub fn extipinsel13(&mut self) -> EXTIPINSEL13_W<EXTIPINSELH_SPEC, 20> {
         EXTIPINSEL13_W::new(self)
     }
     #[doc = "Bits 24:25 - External Interrupt 14 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel14(&mut self) -> EXTIPINSEL14_W<24> {
+    pub fn extipinsel14(&mut self) -> EXTIPINSEL14_W<EXTIPINSELH_SPEC, 24> {
         EXTIPINSEL14_W::new(self)
     }
     #[doc = "Bits 28:29 - External Interrupt 15 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel15(&mut self) -> EXTIPINSEL15_W<28> {
+    pub fn extipinsel15(&mut self) -> EXTIPINSEL15_W<EXTIPINSELH_SPEC, 28> {
         EXTIPINSEL15_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "External Interrupt Pin Select High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extipinselh](index.html) module"]
+#[doc = "External Interrupt Pin Select High Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`extipinselh::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`extipinselh::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EXTIPINSELH_SPEC;
 impl crate::RegisterSpec for EXTIPINSELH_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [extipinselh::R](R) reader structure"]
-impl crate::Readable for EXTIPINSELH_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [extipinselh::W](W) writer structure"]
+#[doc = "`read()` method returns [`extipinselh::R`](R) reader structure"]
+impl crate::Readable for EXTIPINSELH_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`extipinselh::W`](W) writer structure"]
 impl crate::Writable for EXTIPINSELH_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

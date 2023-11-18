@@ -1,24 +1,5 @@
 #[doc = "Register `HFCLKSEL` writer"]
-pub struct W(crate::W<HFCLKSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HFCLKSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HFCLKSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HFCLKSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HFCLKSEL_SPEC>;
 #[doc = "HFCLK Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -42,51 +23,63 @@ impl crate::FieldSpec for HF_AW {
     type Ux = u8;
 }
 #[doc = "Field `HF` writer - HFCLK Select"]
-pub type HF_W<'a, const O: u8> = crate::FieldWriter<'a, HFCLKSEL_SPEC, 3, O, HF_AW>;
-impl<'a, const O: u8> HF_W<'a, O> {
+pub type HF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, HF_AW>;
+impl<'a, REG, const O: u8> HF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select HFRCO as HFCLK"]
     #[inline(always)]
-    pub fn hfrco(self) -> &'a mut W {
+    pub fn hfrco(self) -> &'a mut crate::W<REG> {
         self.variant(HF_AW::HFRCO)
     }
     #[doc = "Select HFXO as HFCLK"]
     #[inline(always)]
-    pub fn hfxo(self) -> &'a mut W {
+    pub fn hfxo(self) -> &'a mut crate::W<REG> {
         self.variant(HF_AW::HFXO)
     }
     #[doc = "Select LFRCO as HFCLK"]
     #[inline(always)]
-    pub fn lfrco(self) -> &'a mut W {
+    pub fn lfrco(self) -> &'a mut crate::W<REG> {
         self.variant(HF_AW::LFRCO)
     }
     #[doc = "Select LFXO as HFCLK"]
     #[inline(always)]
-    pub fn lfxo(self) -> &'a mut W {
+    pub fn lfxo(self) -> &'a mut crate::W<REG> {
         self.variant(HF_AW::LFXO)
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<HFCLKSEL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {
     #[doc = "Bits 0:2 - HFCLK Select"]
     #[inline(always)]
     #[must_use]
-    pub fn hf(&mut self) -> HF_W<0> {
+    pub fn hf(&mut self) -> HF_W<HFCLKSEL_SPEC, 0> {
         HF_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "High Frequency Clock Select Command Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfclksel](index.html) module"]
+#[doc = "High Frequency Clock Select Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfclksel::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFCLKSEL_SPEC;
 impl crate::RegisterSpec for HFCLKSEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [hfclksel::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`hfclksel::W`](W) writer structure"]
 impl crate::Writable for HFCLKSEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

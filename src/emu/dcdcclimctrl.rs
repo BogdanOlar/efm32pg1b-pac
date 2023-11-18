@@ -1,47 +1,15 @@
 #[doc = "Register `DCDCCLIMCTRL` reader"]
-pub struct R(crate::R<DCDCCLIMCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DCDCCLIMCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DCDCCLIMCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DCDCCLIMCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DCDCCLIMCTRL_SPEC>;
 #[doc = "Register `DCDCCLIMCTRL` writer"]
-pub struct W(crate::W<DCDCCLIMCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DCDCCLIMCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DCDCCLIMCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DCDCCLIMCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DCDCCLIMCTRL_SPEC>;
 #[doc = "Field `CLIMBLANKDLY` reader - Reserved for internal use. Do not change."]
 pub type CLIMBLANKDLY_R = crate::FieldReader;
 #[doc = "Field `CLIMBLANKDLY` writer - Reserved for internal use. Do not change."]
-pub type CLIMBLANKDLY_W<'a, const O: u8> = crate::FieldWriter<'a, DCDCCLIMCTRL_SPEC, 2, O>;
+pub type CLIMBLANKDLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `BYPLIMEN` reader - Bypass Current Limit Enable"]
 pub type BYPLIMEN_R = crate::BitReader;
 #[doc = "Field `BYPLIMEN` writer - Bypass Current Limit Enable"]
-pub type BYPLIMEN_W<'a, const O: u8> = crate::BitWriter<'a, DCDCCLIMCTRL_SPEC, O>;
+pub type BYPLIMEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
     #[inline(always)]
@@ -54,38 +22,55 @@ impl R {
         BYPLIMEN_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCCLIMCTRL")
+            .field(
+                "climblankdly",
+                &format_args!("{}", self.climblankdly().bits()),
+            )
+            .field("byplimen", &format_args!("{}", self.byplimen().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<DCDCCLIMCTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
     #[inline(always)]
     #[must_use]
-    pub fn climblankdly(&mut self) -> CLIMBLANKDLY_W<8> {
+    pub fn climblankdly(&mut self) -> CLIMBLANKDLY_W<DCDCCLIMCTRL_SPEC, 8> {
         CLIMBLANKDLY_W::new(self)
     }
     #[doc = "Bit 13 - Bypass Current Limit Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn byplimen(&mut self) -> BYPLIMEN_W<13> {
+    pub fn byplimen(&mut self) -> BYPLIMEN_W<DCDCCLIMCTRL_SPEC, 13> {
         BYPLIMEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DCDC Power Train PFET Current Limiter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcdcclimctrl](index.html) module"]
+#[doc = "DCDC Power Train PFET Current Limiter Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdcclimctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdcclimctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCCLIMCTRL_SPEC;
 impl crate::RegisterSpec for DCDCCLIMCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dcdcclimctrl::R](R) reader structure"]
-impl crate::Readable for DCDCCLIMCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dcdcclimctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`dcdcclimctrl::R`](R) reader structure"]
+impl crate::Readable for DCDCCLIMCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dcdcclimctrl::W`](W) writer structure"]
 impl crate::Writable for DCDCCLIMCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

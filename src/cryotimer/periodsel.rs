@@ -1,43 +1,11 @@
 #[doc = "Register `PERIODSEL` reader"]
-pub struct R(crate::R<PERIODSEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PERIODSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PERIODSEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PERIODSEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PERIODSEL_SPEC>;
 #[doc = "Register `PERIODSEL` writer"]
-pub struct W(crate::W<PERIODSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PERIODSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PERIODSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PERIODSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PERIODSEL_SPEC>;
 #[doc = "Field `PERIODSEL` reader - Interrupts/Wakeup Events Period Setting"]
 pub type PERIODSEL_R = crate::FieldReader;
 #[doc = "Field `PERIODSEL` writer - Interrupts/Wakeup Events Period Setting"]
-pub type PERIODSEL_W<'a, const O: u8> = crate::FieldWriter<'a, PERIODSEL_SPEC, 6, O>;
+pub type PERIODSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Interrupts/Wakeup Events Period Setting"]
     #[inline(always)]
@@ -45,32 +13,45 @@ impl R {
         PERIODSEL_R::new((self.bits & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PERIODSEL")
+            .field("periodsel", &format_args!("{}", self.periodsel().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<PERIODSEL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - Interrupts/Wakeup Events Period Setting"]
     #[inline(always)]
     #[must_use]
-    pub fn periodsel(&mut self) -> PERIODSEL_W<0> {
+    pub fn periodsel(&mut self) -> PERIODSEL_W<PERIODSEL_SPEC, 0> {
         PERIODSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Duration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [periodsel](index.html) module"]
+#[doc = "Interrupt Duration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`periodsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`periodsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PERIODSEL_SPEC;
 impl crate::RegisterSpec for PERIODSEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [periodsel::R](R) reader structure"]
-impl crate::Readable for PERIODSEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [periodsel::W](W) writer structure"]
+#[doc = "`read()` method returns [`periodsel::R`](R) reader structure"]
+impl crate::Readable for PERIODSEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`periodsel::W`](W) writer structure"]
 impl crate::Writable for PERIODSEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

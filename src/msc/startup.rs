@@ -1,63 +1,31 @@
 #[doc = "Register `STARTUP` reader"]
-pub struct R(crate::R<STARTUP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STARTUP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STARTUP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STARTUP_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STARTUP_SPEC>;
 #[doc = "Register `STARTUP` writer"]
-pub struct W(crate::W<STARTUP_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<STARTUP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<STARTUP_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<STARTUP_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<STARTUP_SPEC>;
 #[doc = "Field `STDLY0` reader - Startup Delay 0"]
 pub type STDLY0_R = crate::FieldReader<u16>;
 #[doc = "Field `STDLY0` writer - Startup Delay 0"]
-pub type STDLY0_W<'a, const O: u8> = crate::FieldWriter<'a, STARTUP_SPEC, 10, O, u16>;
+pub type STDLY0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
 #[doc = "Field `STDLY1` reader - Startup Delay 0"]
 pub type STDLY1_R = crate::FieldReader<u16>;
 #[doc = "Field `STDLY1` writer - Startup Delay 0"]
-pub type STDLY1_W<'a, const O: u8> = crate::FieldWriter<'a, STARTUP_SPEC, 10, O, u16>;
+pub type STDLY1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
 #[doc = "Field `ASTWAIT` reader - Active Startup Wait"]
 pub type ASTWAIT_R = crate::BitReader;
 #[doc = "Field `ASTWAIT` writer - Active Startup Wait"]
-pub type ASTWAIT_W<'a, const O: u8> = crate::BitWriter<'a, STARTUP_SPEC, O>;
+pub type ASTWAIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `STWSEN` reader - Startup Waitstates Enable"]
 pub type STWSEN_R = crate::BitReader;
 #[doc = "Field `STWSEN` writer - Startup Waitstates Enable"]
-pub type STWSEN_W<'a, const O: u8> = crate::BitWriter<'a, STARTUP_SPEC, O>;
+pub type STWSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `STWSAEN` reader - Startup Waitstates Always Enable"]
 pub type STWSAEN_R = crate::BitReader;
 #[doc = "Field `STWSAEN` writer - Startup Waitstates Always Enable"]
-pub type STWSAEN_W<'a, const O: u8> = crate::BitWriter<'a, STARTUP_SPEC, O>;
+pub type STWSAEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `STWS` reader - Startup Waitstates"]
 pub type STWS_R = crate::FieldReader;
 #[doc = "Field `STWS` writer - Startup Waitstates"]
-pub type STWS_W<'a, const O: u8> = crate::FieldWriter<'a, STARTUP_SPEC, 3, O>;
+pub type STWS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 impl R {
     #[doc = "Bits 0:9 - Startup Delay 0"]
     #[inline(always)]
@@ -90,62 +58,80 @@ impl R {
         STWS_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STARTUP")
+            .field("stdly0", &format_args!("{}", self.stdly0().bits()))
+            .field("stdly1", &format_args!("{}", self.stdly1().bits()))
+            .field("astwait", &format_args!("{}", self.astwait().bit()))
+            .field("stwsen", &format_args!("{}", self.stwsen().bit()))
+            .field("stwsaen", &format_args!("{}", self.stwsaen().bit()))
+            .field("stws", &format_args!("{}", self.stws().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<STARTUP_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:9 - Startup Delay 0"]
     #[inline(always)]
     #[must_use]
-    pub fn stdly0(&mut self) -> STDLY0_W<0> {
+    pub fn stdly0(&mut self) -> STDLY0_W<STARTUP_SPEC, 0> {
         STDLY0_W::new(self)
     }
     #[doc = "Bits 12:21 - Startup Delay 0"]
     #[inline(always)]
     #[must_use]
-    pub fn stdly1(&mut self) -> STDLY1_W<12> {
+    pub fn stdly1(&mut self) -> STDLY1_W<STARTUP_SPEC, 12> {
         STDLY1_W::new(self)
     }
     #[doc = "Bit 24 - Active Startup Wait"]
     #[inline(always)]
     #[must_use]
-    pub fn astwait(&mut self) -> ASTWAIT_W<24> {
+    pub fn astwait(&mut self) -> ASTWAIT_W<STARTUP_SPEC, 24> {
         ASTWAIT_W::new(self)
     }
     #[doc = "Bit 25 - Startup Waitstates Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stwsen(&mut self) -> STWSEN_W<25> {
+    pub fn stwsen(&mut self) -> STWSEN_W<STARTUP_SPEC, 25> {
         STWSEN_W::new(self)
     }
     #[doc = "Bit 26 - Startup Waitstates Always Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stwsaen(&mut self) -> STWSAEN_W<26> {
+    pub fn stwsaen(&mut self) -> STWSAEN_W<STARTUP_SPEC, 26> {
         STWSAEN_W::new(self)
     }
     #[doc = "Bits 28:30 - Startup Waitstates"]
     #[inline(always)]
     #[must_use]
-    pub fn stws(&mut self) -> STWS_W<28> {
+    pub fn stws(&mut self) -> STWS_W<STARTUP_SPEC, 28> {
         STWS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Startup Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [startup](index.html) module"]
+#[doc = "Startup Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`startup::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`startup::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STARTUP_SPEC;
 impl crate::RegisterSpec for STARTUP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [startup::R](R) reader structure"]
-impl crate::Readable for STARTUP_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [startup::W](W) writer structure"]
+#[doc = "`read()` method returns [`startup::R`](R) reader structure"]
+impl crate::Readable for STARTUP_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`startup::W`](W) writer structure"]
 impl crate::Writable for STARTUP_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

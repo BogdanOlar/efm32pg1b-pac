@@ -1,39 +1,7 @@
 #[doc = "Register `TESTLOCK` reader"]
-pub struct R(crate::R<TESTLOCK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TESTLOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TESTLOCK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TESTLOCK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TESTLOCK_SPEC>;
 #[doc = "Register `TESTLOCK` writer"]
-pub struct W(crate::W<TESTLOCK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TESTLOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TESTLOCK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TESTLOCK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TESTLOCK_SPEC>;
 #[doc = "Field `LOCKKEY` reader - Configuration Lock Key"]
 pub type LOCKKEY_R = crate::FieldReader<LOCKKEY_A>;
 #[doc = "Configuration Lock Key\n\nValue on reset: 0"]
@@ -57,35 +25,39 @@ impl crate::FieldSpec for LOCKKEY_A {
 impl LOCKKEY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LOCKKEY_A> {
+    pub const fn variant(&self) -> Option<LOCKKEY_A> {
         match self.bits {
             0 => Some(LOCKKEY_A::UNLOCKED),
             1 => Some(LOCKKEY_A::LOCKED),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `UNLOCKED`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
         *self == LOCKKEY_A::UNLOCKED
     }
-    #[doc = "Checks if the value of the field is `LOCKED`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
         *self == LOCKKEY_A::LOCKED
     }
 }
 #[doc = "Field `LOCKKEY` writer - Configuration Lock Key"]
-pub type LOCKKEY_W<'a, const O: u8> = crate::FieldWriter<'a, TESTLOCK_SPEC, 16, O, LOCKKEY_A>;
-impl<'a, const O: u8> LOCKKEY_W<'a, O> {
+pub type LOCKKEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, LOCKKEY_A>;
+impl<'a, REG, const O: u8> LOCKKEY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u16>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn unlocked(self) -> &'a mut W {
+    pub fn unlocked(self) -> &'a mut crate::W<REG> {
         self.variant(LOCKKEY_A::UNLOCKED)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn locked(self) -> &'a mut W {
+    pub fn locked(self) -> &'a mut crate::W<REG> {
         self.variant(LOCKKEY_A::LOCKED)
     }
 }
@@ -96,32 +68,45 @@ impl R {
         LOCKKEY_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TESTLOCK")
+            .field("lockkey", &format_args!("{}", self.lockkey().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<TESTLOCK_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Configuration Lock Key"]
     #[inline(always)]
     #[must_use]
-    pub fn lockkey(&mut self) -> LOCKKEY_W<0> {
+    pub fn lockkey(&mut self) -> LOCKKEY_W<TESTLOCK_SPEC, 0> {
         LOCKKEY_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Test Lock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [testlock](index.html) module"]
+#[doc = "Test Lock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`testlock::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`testlock::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TESTLOCK_SPEC;
 impl crate::RegisterSpec for TESTLOCK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [testlock::R](R) reader structure"]
-impl crate::Readable for TESTLOCK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [testlock::W](W) writer structure"]
+#[doc = "`read()` method returns [`testlock::R`](R) reader structure"]
+impl crate::Readable for TESTLOCK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`testlock::W`](W) writer structure"]
 impl crate::Writable for TESTLOCK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

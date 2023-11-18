@@ -4,12 +4,17 @@
 [![docs.rs](https://docs.rs/efm32pg1b-pac/badge.svg)](https://docs.rs/efm32pg1b-pac)
 
 Low-level register mappings for the [Silicon Labs EFM32PG1B](https://www.silabs.com/mcu/32-bit/efm32-pearl-gecko/device.EFM32PG1B200F256GM48) family of ARM Cortex-M4 microcontrollers, written in Rust.
-The code is generated automatically from a vendor-supplied SVD file, using [svd2rust](https://docs.rs/svd2rust).
+The code is generated automatically from a vendor-supplied SVD file, using [svd2rust](https://docs.rs/svd2rust):
+
+```sh
+svd2rust -i EFM32PG1B.svd --impl_debug
+rm -rf src
+form -i lib.rs -o src/ && rm lib.rs
+cargo fmt
+```
 
 The purpose of this crate is to give embedded programs or libraries written Rust access to the complete functionality
 of EFM32PG1B MCUs.
-
-This PAC is closely based on Timo Kröger's [PAC for the efm32pg12](https://github.com/timokroeger/efm32pg12-pac) microcontrollers.
 
 The SVD file used is based on all the files in the [EFM32PG1B CMSIS-Pack](https://www.silabs.com/documents/public/cmsis-packs/SiliconLabs.EFM32PG1B_DFP.5.8.2.pack). The only differences between them are the `<name>`, `<description>` and `<flashSize>` field values. Here are the flash sizes for each MCU:
 

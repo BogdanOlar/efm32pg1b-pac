@@ -1,43 +1,11 @@
 #[doc = "Register `INPUTDATABYTE` reader"]
-pub struct R(crate::R<INPUTDATABYTE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INPUTDATABYTE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INPUTDATABYTE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INPUTDATABYTE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INPUTDATABYTE_SPEC>;
 #[doc = "Register `INPUTDATABYTE` writer"]
-pub struct W(crate::W<INPUTDATABYTE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INPUTDATABYTE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INPUTDATABYTE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INPUTDATABYTE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<INPUTDATABYTE_SPEC>;
 #[doc = "Field `INPUTDATABYTE` reader - Input Data for 8-bit"]
 pub type INPUTDATABYTE_R = crate::FieldReader;
 #[doc = "Field `INPUTDATABYTE` writer - Input Data for 8-bit"]
-pub type INPUTDATABYTE_W<'a, const O: u8> = crate::FieldWriter<'a, INPUTDATABYTE_SPEC, 8, O>;
+pub type INPUTDATABYTE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Input Data for 8-bit"]
     #[inline(always)]
@@ -45,32 +13,48 @@ impl R {
         INPUTDATABYTE_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INPUTDATABYTE")
+            .field(
+                "inputdatabyte",
+                &format_args!("{}", self.inputdatabyte().bits()),
+            )
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<INPUTDATABYTE_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Input Data for 8-bit"]
     #[inline(always)]
     #[must_use]
-    pub fn inputdatabyte(&mut self) -> INPUTDATABYTE_W<0> {
+    pub fn inputdatabyte(&mut self) -> INPUTDATABYTE_W<INPUTDATABYTE_SPEC, 0> {
         INPUTDATABYTE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Input 8-bit Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inputdatabyte](index.html) module"]
+#[doc = "Input 8-bit Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inputdatabyte::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inputdatabyte::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INPUTDATABYTE_SPEC;
 impl crate::RegisterSpec for INPUTDATABYTE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [inputdatabyte::R](R) reader structure"]
-impl crate::Readable for INPUTDATABYTE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [inputdatabyte::W](W) writer structure"]
+#[doc = "`read()` method returns [`inputdatabyte::R`](R) reader structure"]
+impl crate::Readable for INPUTDATABYTE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`inputdatabyte::W`](W) writer structure"]
 impl crate::Writable for INPUTDATABYTE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

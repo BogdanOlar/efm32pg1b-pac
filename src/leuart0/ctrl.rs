@@ -1,47 +1,15 @@
 #[doc = "Register `CTRL` reader"]
-pub struct R(crate::R<CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CTRL_SPEC>;
 #[doc = "Register `CTRL` writer"]
-pub struct W(crate::W<CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `AUTOTRI` reader - Automatic Transmitter Tristate"]
 pub type AUTOTRI_R = crate::BitReader;
 #[doc = "Field `AUTOTRI` writer - Automatic Transmitter Tristate"]
-pub type AUTOTRI_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type AUTOTRI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DATABITS` reader - Data-Bit Mode"]
 pub type DATABITS_R = crate::BitReader;
 #[doc = "Field `DATABITS` writer - Data-Bit Mode"]
-pub type DATABITS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type DATABITS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PARITY` reader - Parity-Bit Mode"]
 pub type PARITY_R = crate::FieldReader<PARITY_A>;
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
@@ -67,7 +35,7 @@ impl crate::FieldSpec for PARITY_A {
 impl PARITY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PARITY_A> {
+    pub const fn variant(&self) -> Option<PARITY_A> {
         match self.bits {
             0 => Some(PARITY_A::NONE),
             2 => Some(PARITY_A::EVEN),
@@ -75,81 +43,85 @@ impl PARITY_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Parity bits are not used"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == PARITY_A::NONE
     }
-    #[doc = "Checks if the value of the field is `EVEN`"]
+    #[doc = "Even parity are used. Parity bits are automatically generated and checked by hardware."]
     #[inline(always)]
     pub fn is_even(&self) -> bool {
         *self == PARITY_A::EVEN
     }
-    #[doc = "Checks if the value of the field is `ODD`"]
+    #[doc = "Odd parity is used. Parity bits are automatically generated and checked by hardware."]
     #[inline(always)]
     pub fn is_odd(&self) -> bool {
         *self == PARITY_A::ODD
     }
 }
 #[doc = "Field `PARITY` writer - Parity-Bit Mode"]
-pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O, PARITY_A>;
-impl<'a, const O: u8> PARITY_W<'a, O> {
+pub type PARITY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PARITY_A>;
+impl<'a, REG, const O: u8> PARITY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Parity bits are not used"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(PARITY_A::NONE)
     }
     #[doc = "Even parity are used. Parity bits are automatically generated and checked by hardware."]
     #[inline(always)]
-    pub fn even(self) -> &'a mut W {
+    pub fn even(self) -> &'a mut crate::W<REG> {
         self.variant(PARITY_A::EVEN)
     }
     #[doc = "Odd parity is used. Parity bits are automatically generated and checked by hardware."]
     #[inline(always)]
-    pub fn odd(self) -> &'a mut W {
+    pub fn odd(self) -> &'a mut crate::W<REG> {
         self.variant(PARITY_A::ODD)
     }
 }
 #[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
 pub type STOPBITS_R = crate::BitReader;
 #[doc = "Field `STOPBITS` writer - Stop-Bit Mode"]
-pub type STOPBITS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type STOPBITS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INV` reader - Invert Input and Output"]
 pub type INV_R = crate::BitReader;
 #[doc = "Field `INV` writer - Invert Input and Output"]
-pub type INV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type INV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ERRSDMA` reader - Clear RX DMA on Error"]
 pub type ERRSDMA_R = crate::BitReader;
 #[doc = "Field `ERRSDMA` writer - Clear RX DMA on Error"]
-pub type ERRSDMA_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type ERRSDMA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LOOPBK` reader - Loopback Enable"]
 pub type LOOPBK_R = crate::BitReader;
 #[doc = "Field `LOOPBK` writer - Loopback Enable"]
-pub type LOOPBK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type LOOPBK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SFUBRX` reader - Start-Frame UnBlock RX"]
 pub type SFUBRX_R = crate::BitReader;
 #[doc = "Field `SFUBRX` writer - Start-Frame UnBlock RX"]
-pub type SFUBRX_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type SFUBRX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MPM` reader - Multi-Processor Mode"]
 pub type MPM_R = crate::BitReader;
 #[doc = "Field `MPM` writer - Multi-Processor Mode"]
-pub type MPM_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type MPM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MPAB` reader - Multi-Processor Address-Bit"]
 pub type MPAB_R = crate::BitReader;
 #[doc = "Field `MPAB` writer - Multi-Processor Address-Bit"]
-pub type MPAB_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type MPAB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `BIT8DV` reader - Bit 8 Default Value"]
 pub type BIT8DV_R = crate::BitReader;
 #[doc = "Field `BIT8DV` writer - Bit 8 Default Value"]
-pub type BIT8DV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type BIT8DV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RXDMAWU` reader - RX DMA Wakeup"]
 pub type RXDMAWU_R = crate::BitReader;
 #[doc = "Field `RXDMAWU` writer - RX DMA Wakeup"]
-pub type RXDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type RXDMAWU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TXDMAWU` reader - TX DMA Wakeup"]
 pub type TXDMAWU_R = crate::BitReader;
 #[doc = "Field `TXDMAWU` writer - TX DMA Wakeup"]
-pub type TXDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type TXDMAWU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TXDELAY` reader - TX Delay Transmission"]
 pub type TXDELAY_R = crate::FieldReader<TXDELAY_A>;
 #[doc = "TX Delay Transmission\n\nValue on reset: 0"]
@@ -177,7 +149,7 @@ impl crate::FieldSpec for TXDELAY_A {
 impl TXDELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXDELAY_A {
+    pub const fn variant(&self) -> TXDELAY_A {
         match self.bits {
             0 => TXDELAY_A::NONE,
             1 => TXDELAY_A::SINGLE,
@@ -186,48 +158,52 @@ impl TXDELAY_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Frames are transmitted immediately"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == TXDELAY_A::NONE
     }
-    #[doc = "Checks if the value of the field is `SINGLE`"]
+    #[doc = "Transmission of new frames are delayed by a single bit period"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
         *self == TXDELAY_A::SINGLE
     }
-    #[doc = "Checks if the value of the field is `DOUBLE`"]
+    #[doc = "Transmission of new frames are delayed by two bit periods"]
     #[inline(always)]
     pub fn is_double(&self) -> bool {
         *self == TXDELAY_A::DOUBLE
     }
-    #[doc = "Checks if the value of the field is `TRIPLE`"]
+    #[doc = "Transmission of new frames are delayed by three bit periods"]
     #[inline(always)]
     pub fn is_triple(&self) -> bool {
         *self == TXDELAY_A::TRIPLE
     }
 }
 #[doc = "Field `TXDELAY` writer - TX Delay Transmission"]
-pub type TXDELAY_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, TXDELAY_A>;
-impl<'a, const O: u8> TXDELAY_W<'a, O> {
+pub type TXDELAY_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TXDELAY_A>;
+impl<'a, REG, const O: u8> TXDELAY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Frames are transmitted immediately"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(TXDELAY_A::NONE)
     }
     #[doc = "Transmission of new frames are delayed by a single bit period"]
     #[inline(always)]
-    pub fn single(self) -> &'a mut W {
+    pub fn single(self) -> &'a mut crate::W<REG> {
         self.variant(TXDELAY_A::SINGLE)
     }
     #[doc = "Transmission of new frames are delayed by two bit periods"]
     #[inline(always)]
-    pub fn double(self) -> &'a mut W {
+    pub fn double(self) -> &'a mut crate::W<REG> {
         self.variant(TXDELAY_A::DOUBLE)
     }
     #[doc = "Transmission of new frames are delayed by three bit periods"]
     #[inline(always)]
-    pub fn triple(self) -> &'a mut W {
+    pub fn triple(self) -> &'a mut crate::W<REG> {
         self.variant(TXDELAY_A::TRIPLE)
     }
 }
@@ -303,110 +279,136 @@ impl R {
         TXDELAY_R::new(((self.bits >> 14) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("autotri", &format_args!("{}", self.autotri().bit()))
+            .field("databits", &format_args!("{}", self.databits().bit()))
+            .field("parity", &format_args!("{}", self.parity().bits()))
+            .field("stopbits", &format_args!("{}", self.stopbits().bit()))
+            .field("inv", &format_args!("{}", self.inv().bit()))
+            .field("errsdma", &format_args!("{}", self.errsdma().bit()))
+            .field("loopbk", &format_args!("{}", self.loopbk().bit()))
+            .field("sfubrx", &format_args!("{}", self.sfubrx().bit()))
+            .field("mpm", &format_args!("{}", self.mpm().bit()))
+            .field("mpab", &format_args!("{}", self.mpab().bit()))
+            .field("bit8dv", &format_args!("{}", self.bit8dv().bit()))
+            .field("rxdmawu", &format_args!("{}", self.rxdmawu().bit()))
+            .field("txdmawu", &format_args!("{}", self.txdmawu().bit()))
+            .field("txdelay", &format_args!("{}", self.txdelay().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - Automatic Transmitter Tristate"]
     #[inline(always)]
     #[must_use]
-    pub fn autotri(&mut self) -> AUTOTRI_W<0> {
+    pub fn autotri(&mut self) -> AUTOTRI_W<CTRL_SPEC, 0> {
         AUTOTRI_W::new(self)
     }
     #[doc = "Bit 1 - Data-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn databits(&mut self) -> DATABITS_W<1> {
+    pub fn databits(&mut self) -> DATABITS_W<CTRL_SPEC, 1> {
         DATABITS_W::new(self)
     }
     #[doc = "Bits 2:3 - Parity-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn parity(&mut self) -> PARITY_W<2> {
+    pub fn parity(&mut self) -> PARITY_W<CTRL_SPEC, 2> {
         PARITY_W::new(self)
     }
     #[doc = "Bit 4 - Stop-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn stopbits(&mut self) -> STOPBITS_W<4> {
+    pub fn stopbits(&mut self) -> STOPBITS_W<CTRL_SPEC, 4> {
         STOPBITS_W::new(self)
     }
     #[doc = "Bit 5 - Invert Input and Output"]
     #[inline(always)]
     #[must_use]
-    pub fn inv(&mut self) -> INV_W<5> {
+    pub fn inv(&mut self) -> INV_W<CTRL_SPEC, 5> {
         INV_W::new(self)
     }
     #[doc = "Bit 6 - Clear RX DMA on Error"]
     #[inline(always)]
     #[must_use]
-    pub fn errsdma(&mut self) -> ERRSDMA_W<6> {
+    pub fn errsdma(&mut self) -> ERRSDMA_W<CTRL_SPEC, 6> {
         ERRSDMA_W::new(self)
     }
     #[doc = "Bit 7 - Loopback Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn loopbk(&mut self) -> LOOPBK_W<7> {
+    pub fn loopbk(&mut self) -> LOOPBK_W<CTRL_SPEC, 7> {
         LOOPBK_W::new(self)
     }
     #[doc = "Bit 8 - Start-Frame UnBlock RX"]
     #[inline(always)]
     #[must_use]
-    pub fn sfubrx(&mut self) -> SFUBRX_W<8> {
+    pub fn sfubrx(&mut self) -> SFUBRX_W<CTRL_SPEC, 8> {
         SFUBRX_W::new(self)
     }
     #[doc = "Bit 9 - Multi-Processor Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mpm(&mut self) -> MPM_W<9> {
+    pub fn mpm(&mut self) -> MPM_W<CTRL_SPEC, 9> {
         MPM_W::new(self)
     }
     #[doc = "Bit 10 - Multi-Processor Address-Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn mpab(&mut self) -> MPAB_W<10> {
+    pub fn mpab(&mut self) -> MPAB_W<CTRL_SPEC, 10> {
         MPAB_W::new(self)
     }
     #[doc = "Bit 11 - Bit 8 Default Value"]
     #[inline(always)]
     #[must_use]
-    pub fn bit8dv(&mut self) -> BIT8DV_W<11> {
+    pub fn bit8dv(&mut self) -> BIT8DV_W<CTRL_SPEC, 11> {
         BIT8DV_W::new(self)
     }
     #[doc = "Bit 12 - RX DMA Wakeup"]
     #[inline(always)]
     #[must_use]
-    pub fn rxdmawu(&mut self) -> RXDMAWU_W<12> {
+    pub fn rxdmawu(&mut self) -> RXDMAWU_W<CTRL_SPEC, 12> {
         RXDMAWU_W::new(self)
     }
     #[doc = "Bit 13 - TX DMA Wakeup"]
     #[inline(always)]
     #[must_use]
-    pub fn txdmawu(&mut self) -> TXDMAWU_W<13> {
+    pub fn txdmawu(&mut self) -> TXDMAWU_W<CTRL_SPEC, 13> {
         TXDMAWU_W::new(self)
     }
     #[doc = "Bits 14:15 - TX Delay Transmission"]
     #[inline(always)]
     #[must_use]
-    pub fn txdelay(&mut self) -> TXDELAY_W<14> {
+    pub fn txdelay(&mut self) -> TXDELAY_W<CTRL_SPEC, 14> {
         TXDELAY_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRL_SPEC;
 impl crate::RegisterSpec for CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
-impl crate::Readable for CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`ctrl::R`](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

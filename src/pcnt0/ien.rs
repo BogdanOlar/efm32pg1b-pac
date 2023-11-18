@@ -1,63 +1,31 @@
 #[doc = "Register `IEN` reader"]
-pub struct R(crate::R<IEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IEN_SPEC>;
 #[doc = "Register `IEN` writer"]
-pub struct W(crate::W<IEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<IEN_SPEC>;
 #[doc = "Field `UF` reader - UF Interrupt Enable"]
 pub type UF_R = crate::BitReader;
 #[doc = "Field `UF` writer - UF Interrupt Enable"]
-pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type UF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OF` reader - OF Interrupt Enable"]
 pub type OF_R = crate::BitReader;
 #[doc = "Field `OF` writer - OF Interrupt Enable"]
-pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type OF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIRCNG` reader - DIRCNG Interrupt Enable"]
 pub type DIRCNG_R = crate::BitReader;
 #[doc = "Field `DIRCNG` writer - DIRCNG Interrupt Enable"]
-pub type DIRCNG_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type DIRCNG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AUXOF` reader - AUXOF Interrupt Enable"]
 pub type AUXOF_R = crate::BitReader;
 #[doc = "Field `AUXOF` writer - AUXOF Interrupt Enable"]
-pub type AUXOF_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type AUXOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TCC` reader - TCC Interrupt Enable"]
 pub type TCC_R = crate::BitReader;
 #[doc = "Field `TCC` writer - TCC Interrupt Enable"]
-pub type TCC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type TCC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OQSTERR` reader - OQSTERR Interrupt Enable"]
 pub type OQSTERR_R = crate::BitReader;
 #[doc = "Field `OQSTERR` writer - OQSTERR Interrupt Enable"]
-pub type OQSTERR_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type OQSTERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - UF Interrupt Enable"]
     #[inline(always)]
@@ -90,62 +58,80 @@ impl R {
         OQSTERR_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("uf", &format_args!("{}", self.uf().bit()))
+            .field("of", &format_args!("{}", self.of().bit()))
+            .field("dircng", &format_args!("{}", self.dircng().bit()))
+            .field("auxof", &format_args!("{}", self.auxof().bit()))
+            .field("tcc", &format_args!("{}", self.tcc().bit()))
+            .field("oqsterr", &format_args!("{}", self.oqsterr().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<IEN_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - UF Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn uf(&mut self) -> UF_W<0> {
+    pub fn uf(&mut self) -> UF_W<IEN_SPEC, 0> {
         UF_W::new(self)
     }
     #[doc = "Bit 1 - OF Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn of(&mut self) -> OF_W<1> {
+    pub fn of(&mut self) -> OF_W<IEN_SPEC, 1> {
         OF_W::new(self)
     }
     #[doc = "Bit 2 - DIRCNG Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dircng(&mut self) -> DIRCNG_W<2> {
+    pub fn dircng(&mut self) -> DIRCNG_W<IEN_SPEC, 2> {
         DIRCNG_W::new(self)
     }
     #[doc = "Bit 3 - AUXOF Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn auxof(&mut self) -> AUXOF_W<3> {
+    pub fn auxof(&mut self) -> AUXOF_W<IEN_SPEC, 3> {
         AUXOF_W::new(self)
     }
     #[doc = "Bit 4 - TCC Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tcc(&mut self) -> TCC_W<4> {
+    pub fn tcc(&mut self) -> TCC_W<IEN_SPEC, 4> {
         TCC_W::new(self)
     }
     #[doc = "Bit 5 - OQSTERR Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn oqsterr(&mut self) -> OQSTERR_W<5> {
+    pub fn oqsterr(&mut self) -> OQSTERR_W<IEN_SPEC, 5> {
         OQSTERR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ien](index.html) module"]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IEN_SPEC;
 impl crate::RegisterSpec for IEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ien::R](R) reader structure"]
-impl crate::Readable for IEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
+#[doc = "`read()` method returns [`ien::R`](R) reader structure"]
+impl crate::Readable for IEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ien::W`](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

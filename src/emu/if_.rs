@@ -1,18 +1,5 @@
 #[doc = "Register `IF` reader"]
-pub struct R(crate::R<IF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IF_SPEC>;
 #[doc = "Field `VMONAVDDFALL` reader - VMON AVDD Channel Fall"]
 pub type VMONAVDDFALL_R = crate::BitReader;
 #[doc = "Field `VMONAVDDRISE` reader - VMON AVDD Channel Rise"]
@@ -148,15 +135,82 @@ impl R {
         TEMPHIGH_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IF")
+            .field(
+                "vmonavddfall",
+                &format_args!("{}", self.vmonavddfall().bit()),
+            )
+            .field(
+                "vmonavddrise",
+                &format_args!("{}", self.vmonavddrise().bit()),
+            )
+            .field(
+                "vmonaltavddfall",
+                &format_args!("{}", self.vmonaltavddfall().bit()),
+            )
+            .field(
+                "vmonaltavddrise",
+                &format_args!("{}", self.vmonaltavddrise().bit()),
+            )
+            .field(
+                "vmondvddfall",
+                &format_args!("{}", self.vmondvddfall().bit()),
+            )
+            .field(
+                "vmondvddrise",
+                &format_args!("{}", self.vmondvddrise().bit()),
+            )
+            .field("vmonio0fall", &format_args!("{}", self.vmonio0fall().bit()))
+            .field("vmonio0rise", &format_args!("{}", self.vmonio0rise().bit()))
+            .field(
+                "vmonfvddfall",
+                &format_args!("{}", self.vmonfvddfall().bit()),
+            )
+            .field(
+                "vmonfvddrise",
+                &format_args!("{}", self.vmonfvddrise().bit()),
+            )
+            .field(
+                "pfetovercurrentlimit",
+                &format_args!("{}", self.pfetovercurrentlimit().bit()),
+            )
+            .field(
+                "nfetovercurrentlimit",
+                &format_args!("{}", self.nfetovercurrentlimit().bit()),
+            )
+            .field(
+                "dcdclprunning",
+                &format_args!("{}", self.dcdclprunning().bit()),
+            )
+            .field(
+                "dcdclnrunning",
+                &format_args!("{}", self.dcdclnrunning().bit()),
+            )
+            .field(
+                "dcdcinbypass",
+                &format_args!("{}", self.dcdcinbypass().bit()),
+            )
+            .field("em23wakeup", &format_args!("{}", self.em23wakeup().bit()))
+            .field("temp", &format_args!("{}", self.temp().bit()))
+            .field("templow", &format_args!("{}", self.templow().bit()))
+            .field("temphigh", &format_args!("{}", self.temphigh().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<IF_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IF_SPEC;
 impl crate::RegisterSpec for IF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [if_::R](R) reader structure"]
-impl crate::Readable for IF_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`if_::R`](R) reader structure"]
+impl crate::Readable for IF_SPEC {}
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
     const RESET_VALUE: Self::Ux = 0;

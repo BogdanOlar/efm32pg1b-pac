@@ -1,18 +1,5 @@
 #[doc = "Register `DSTATUS` reader"]
-pub struct R(crate::R<DSTATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DSTATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DSTATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DSTATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DSTATUS_SPEC>;
 #[doc = "Field `DATA0ZERO` reader - Data 0 Zero"]
 pub type DATA0ZERO_R = crate::FieldReader<DATA0ZERO_A>;
 #[doc = "Data 0 Zero\n\nValue on reset: 0"]
@@ -40,7 +27,7 @@ impl crate::FieldSpec for DATA0ZERO_A {
 impl DATA0ZERO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DATA0ZERO_A> {
+    pub const fn variant(&self) -> Option<DATA0ZERO_A> {
         match self.bits {
             1 => Some(DATA0ZERO_A::ZERO0TO31),
             2 => Some(DATA0ZERO_A::ZERO32TO63),
@@ -49,22 +36,22 @@ impl DATA0ZERO_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ZERO0TO31`"]
+    #[doc = "In DATA0 bits 0 to 31 are all zero."]
     #[inline(always)]
     pub fn is_zero0to31(&self) -> bool {
         *self == DATA0ZERO_A::ZERO0TO31
     }
-    #[doc = "Checks if the value of the field is `ZERO32TO63`"]
+    #[doc = "In DATA0 bits 32 to 63 are all zero."]
     #[inline(always)]
     pub fn is_zero32to63(&self) -> bool {
         *self == DATA0ZERO_A::ZERO32TO63
     }
-    #[doc = "Checks if the value of the field is `ZERO64TO95`"]
+    #[doc = "In DATA0 bits 64 to 95 are all zero."]
     #[inline(always)]
     pub fn is_zero64to95(&self) -> bool {
         *self == DATA0ZERO_A::ZERO64TO95
     }
-    #[doc = "Checks if the value of the field is `ZERO96TO127`"]
+    #[doc = "In DATA0 bits 96 to 127 are all zero."]
     #[inline(always)]
     pub fn is_zero96to127(&self) -> bool {
         *self == DATA0ZERO_A::ZERO96TO127
@@ -105,15 +92,29 @@ impl R {
         CARRY_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "Data Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dstatus](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DSTATUS")
+            .field("data0zero", &format_args!("{}", self.data0zero().bits()))
+            .field("ddata0lsbs", &format_args!("{}", self.ddata0lsbs().bits()))
+            .field("ddata0msbs", &format_args!("{}", self.ddata0msbs().bits()))
+            .field("ddata1msb", &format_args!("{}", self.ddata1msb().bit()))
+            .field("carry", &format_args!("{}", self.carry().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<DSTATUS_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Data Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DSTATUS_SPEC;
 impl crate::RegisterSpec for DSTATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dstatus::R](R) reader structure"]
-impl crate::Readable for DSTATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dstatus::R`](R) reader structure"]
+impl crate::Readable for DSTATUS_SPEC {}
 #[doc = "`reset()` method sets DSTATUS to value 0"]
 impl crate::Resettable for DSTATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

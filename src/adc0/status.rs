@@ -1,18 +1,5 @@
 #[doc = "Register `STATUS` reader"]
-pub struct R(crate::R<STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STATUS_SPEC>;
 #[doc = "Field `SINGLEACT` reader - Single Channel Conversion Active"]
 pub type SINGLEACT_R = crate::BitReader;
 #[doc = "Field `SCANACT` reader - Scan Conversion Active"]
@@ -44,19 +31,19 @@ impl crate::FieldSpec for PROGERR_A {
 impl PROGERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PROGERR_A> {
+    pub const fn variant(&self) -> Option<PROGERR_A> {
         match self.bits {
             1 => Some(PROGERR_A::BUSCONF),
             2 => Some(PROGERR_A::NEGSELCONF),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BUSCONF`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_busconf(&self) -> bool {
         *self == PROGERR_A::BUSCONF
     }
-    #[doc = "Checks if the value of the field is `NEGSELCONF`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_negselconf(&self) -> bool {
         *self == PROGERR_A::NEGSELCONF
@@ -110,15 +97,35 @@ impl R {
         SCANDV_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("singleact", &format_args!("{}", self.singleact().bit()))
+            .field("scanact", &format_args!("{}", self.scanact().bit()))
+            .field(
+                "singlerefwarm",
+                &format_args!("{}", self.singlerefwarm().bit()),
+            )
+            .field("scanrefwarm", &format_args!("{}", self.scanrefwarm().bit()))
+            .field("progerr", &format_args!("{}", self.progerr().bits()))
+            .field("warm", &format_args!("{}", self.warm().bit()))
+            .field("singledv", &format_args!("{}", self.singledv().bit()))
+            .field("scandv", &format_args!("{}", self.scandv().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<STATUS_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUS_SPEC;
 impl crate::RegisterSpec for STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [status::R](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`status::R`](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {}
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

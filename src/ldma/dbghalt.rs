@@ -1,43 +1,11 @@
 #[doc = "Register `DBGHALT` reader"]
-pub struct R(crate::R<DBGHALT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DBGHALT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DBGHALT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DBGHALT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DBGHALT_SPEC>;
 #[doc = "Register `DBGHALT` writer"]
-pub struct W(crate::W<DBGHALT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DBGHALT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DBGHALT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DBGHALT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DBGHALT_SPEC>;
 #[doc = "Field `DBGHALT` reader - DMA Debug Halt"]
 pub type DBGHALT_R = crate::FieldReader;
 #[doc = "Field `DBGHALT` writer - DMA Debug Halt"]
-pub type DBGHALT_W<'a, const O: u8> = crate::FieldWriter<'a, DBGHALT_SPEC, 8, O>;
+pub type DBGHALT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - DMA Debug Halt"]
     #[inline(always)]
@@ -45,32 +13,45 @@ impl R {
         DBGHALT_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBGHALT")
+            .field("dbghalt", &format_args!("{}", self.dbghalt().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<DBGHALT_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - DMA Debug Halt"]
     #[inline(always)]
     #[must_use]
-    pub fn dbghalt(&mut self) -> DBGHALT_W<0> {
+    pub fn dbghalt(&mut self) -> DBGHALT_W<DBGHALT_SPEC, 0> {
         DBGHALT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DMA Channel Debug Halt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbghalt](index.html) module"]
+#[doc = "DMA Channel Debug Halt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dbghalt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dbghalt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DBGHALT_SPEC;
 impl crate::RegisterSpec for DBGHALT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dbghalt::R](R) reader structure"]
-impl crate::Readable for DBGHALT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dbghalt::W](W) writer structure"]
+#[doc = "`read()` method returns [`dbghalt::R`](R) reader structure"]
+impl crate::Readable for DBGHALT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dbghalt::W`](W) writer structure"]
 impl crate::Writable for DBGHALT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

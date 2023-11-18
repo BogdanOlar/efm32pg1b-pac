@@ -1,47 +1,15 @@
 #[doc = "Register `CLKDIV` reader"]
-pub struct R(crate::R<CLKDIV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLKDIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLKDIV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLKDIV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CLKDIV_SPEC>;
 #[doc = "Register `CLKDIV` writer"]
-pub struct W(crate::W<CLKDIV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CLKDIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CLKDIV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CLKDIV_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CLKDIV_SPEC>;
 #[doc = "Field `DIV` reader - Fractional Clock Divider"]
 pub type DIV_R = crate::FieldReader<u32>;
 #[doc = "Field `DIV` writer - Fractional Clock Divider"]
-pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, CLKDIV_SPEC, 20, O, u32>;
+pub type DIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 20, O, u32>;
 #[doc = "Field `AUTOBAUDEN` reader - AUTOBAUD Detection Enable"]
 pub type AUTOBAUDEN_R = crate::BitReader;
 #[doc = "Field `AUTOBAUDEN` writer - AUTOBAUD Detection Enable"]
-pub type AUTOBAUDEN_W<'a, const O: u8> = crate::BitWriter<'a, CLKDIV_SPEC, O>;
+pub type AUTOBAUDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 3:22 - Fractional Clock Divider"]
     #[inline(always)]
@@ -54,38 +22,52 @@ impl R {
         AUTOBAUDEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLKDIV")
+            .field("div", &format_args!("{}", self.div().bits()))
+            .field("autobauden", &format_args!("{}", self.autobauden().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CLKDIV_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 3:22 - Fractional Clock Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn div(&mut self) -> DIV_W<3> {
+    pub fn div(&mut self) -> DIV_W<CLKDIV_SPEC, 3> {
         DIV_W::new(self)
     }
     #[doc = "Bit 31 - AUTOBAUD Detection Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn autobauden(&mut self) -> AUTOBAUDEN_W<31> {
+    pub fn autobauden(&mut self) -> AUTOBAUDEN_W<CLKDIV_SPEC, 31> {
         AUTOBAUDEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkdiv](index.html) module"]
+#[doc = "Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkdiv::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkdiv::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLKDIV_SPEC;
 impl crate::RegisterSpec for CLKDIV_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clkdiv::R](R) reader structure"]
-impl crate::Readable for CLKDIV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [clkdiv::W](W) writer structure"]
+#[doc = "`read()` method returns [`clkdiv::R`](R) reader structure"]
+impl crate::Readable for CLKDIV_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`clkdiv::W`](W) writer structure"]
 impl crate::Writable for CLKDIV_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

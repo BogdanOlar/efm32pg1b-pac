@@ -1,55 +1,23 @@
 #[doc = "Register `CTRL` reader"]
-pub struct R(crate::R<CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CTRL_SPEC>;
 #[doc = "Register `CTRL` writer"]
-pub struct W(crate::W<CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `EN` reader - Current DAC Enable"]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Current DAC Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CURSINK` reader - Current Sink Enable"]
 pub type CURSINK_R = crate::BitReader;
 #[doc = "Field `CURSINK` writer - Current Sink Enable"]
-pub type CURSINK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type CURSINK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `MINOUTTRANS` reader - Minimum Output Transition Enable"]
 pub type MINOUTTRANS_R = crate::BitReader;
 #[doc = "Field `MINOUTTRANS` writer - Minimum Output Transition Enable"]
-pub type MINOUTTRANS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type MINOUTTRANS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `APORTOUTEN` reader - APORT Output Enable"]
 pub type APORTOUTEN_R = crate::BitReader;
 #[doc = "Field `APORTOUTEN` writer - APORT Output Enable"]
-pub type APORTOUTEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type APORTOUTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `APORTOUTSEL` reader - APORT Output Select"]
 pub type APORTOUTSEL_R = crate::FieldReader<APORTOUTSEL_A>;
 #[doc = "APORT Output Select\n\nValue on reset: 0"]
@@ -133,7 +101,7 @@ impl crate::FieldSpec for APORTOUTSEL_A {
 impl APORTOUTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<APORTOUTSEL_A> {
+    pub const fn variant(&self) -> Option<APORTOUTSEL_A> {
         match self.bits {
             32 => Some(APORTOUTSEL_A::APORT1XCH0),
             33 => Some(APORTOUTSEL_A::APORT1YCH1),
@@ -170,347 +138,351 @@ impl APORTOUTSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH0`"]
+    #[doc = "APORT1X Channel 0"]
     #[inline(always)]
     pub fn is_aport1xch0(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH0
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH1`"]
+    #[doc = "APORT1Y Channel 1"]
     #[inline(always)]
     pub fn is_aport1ych1(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH1
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH2`"]
+    #[doc = "APORT1X Channel 2"]
     #[inline(always)]
     pub fn is_aport1xch2(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH2
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH3`"]
+    #[doc = "APORT1Y Channel 3"]
     #[inline(always)]
     pub fn is_aport1ych3(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH3
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH4`"]
+    #[doc = "APORT1X Channel 4"]
     #[inline(always)]
     pub fn is_aport1xch4(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH4
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH5`"]
+    #[doc = "APORT1Y Channel 5"]
     #[inline(always)]
     pub fn is_aport1ych5(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH5
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH6`"]
+    #[doc = "APORT1X Channel 6"]
     #[inline(always)]
     pub fn is_aport1xch6(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH6
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH7`"]
+    #[doc = "APORT1Y Channel 7"]
     #[inline(always)]
     pub fn is_aport1ych7(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH7
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH8`"]
+    #[doc = "APORT1X Channel 8"]
     #[inline(always)]
     pub fn is_aport1xch8(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH8
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH9`"]
+    #[doc = "APORT1Y Channel 9"]
     #[inline(always)]
     pub fn is_aport1ych9(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH9
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH10`"]
+    #[doc = "APORT1X Channel 10"]
     #[inline(always)]
     pub fn is_aport1xch10(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH10
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH11`"]
+    #[doc = "APORT1Y Channel 11"]
     #[inline(always)]
     pub fn is_aport1ych11(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH11
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH12`"]
+    #[doc = "APORT1X Channel 12"]
     #[inline(always)]
     pub fn is_aport1xch12(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH12
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH13`"]
+    #[doc = "APORT1Y Channel 13"]
     #[inline(always)]
     pub fn is_aport1ych13(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH13
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH14`"]
+    #[doc = "APORT1X Channel 14"]
     #[inline(always)]
     pub fn is_aport1xch14(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH14
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH15`"]
+    #[doc = "APORT1Y Channel 15"]
     #[inline(always)]
     pub fn is_aport1ych15(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH15
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH16`"]
+    #[doc = "APORT1X Channel 16"]
     #[inline(always)]
     pub fn is_aport1xch16(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH16
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH17`"]
+    #[doc = "APORT1Y Channel 17"]
     #[inline(always)]
     pub fn is_aport1ych17(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH17
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH18`"]
+    #[doc = "APORT1X Channel 18"]
     #[inline(always)]
     pub fn is_aport1xch18(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH18
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH19`"]
+    #[doc = "APORT1Y Channel 19"]
     #[inline(always)]
     pub fn is_aport1ych19(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH19
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH20`"]
+    #[doc = "APORT1X Channel 20"]
     #[inline(always)]
     pub fn is_aport1xch20(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH20
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH21`"]
+    #[doc = "APORT1Y Channel 21"]
     #[inline(always)]
     pub fn is_aport1ych21(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH21
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH22`"]
+    #[doc = "APORT1X Channel 22"]
     #[inline(always)]
     pub fn is_aport1xch22(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH22
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH23`"]
+    #[doc = "APORT1Y Channel 23"]
     #[inline(always)]
     pub fn is_aport1ych23(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH23
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH24`"]
+    #[doc = "APORT1X Channel 24"]
     #[inline(always)]
     pub fn is_aport1xch24(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH24
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH25`"]
+    #[doc = "APORT1Y Channel 25"]
     #[inline(always)]
     pub fn is_aport1ych25(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH25
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH26`"]
+    #[doc = "APORT1X Channel 26"]
     #[inline(always)]
     pub fn is_aport1xch26(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH26
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH27`"]
+    #[doc = "APORT1Y Channel 27"]
     #[inline(always)]
     pub fn is_aport1ych27(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH27
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH28`"]
+    #[doc = "APORT1X Channel 28"]
     #[inline(always)]
     pub fn is_aport1xch28(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH28
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH29`"]
+    #[doc = "APORT1Y Channel 29"]
     #[inline(always)]
     pub fn is_aport1ych29(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH29
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH30`"]
+    #[doc = "APORT1X Channel 30"]
     #[inline(always)]
     pub fn is_aport1xch30(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1XCH30
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH31`"]
+    #[doc = "APORT1Y Channel 31"]
     #[inline(always)]
     pub fn is_aport1ych31(&self) -> bool {
         *self == APORTOUTSEL_A::APORT1YCH31
     }
 }
 #[doc = "Field `APORTOUTSEL` writer - APORT Output Select"]
-pub type APORTOUTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 8, O, APORTOUTSEL_A>;
-impl<'a, const O: u8> APORTOUTSEL_W<'a, O> {
+pub type APORTOUTSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, APORTOUTSEL_A>;
+impl<'a, REG, const O: u8> APORTOUTSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "APORT1X Channel 0"]
     #[inline(always)]
-    pub fn aport1xch0(self) -> &'a mut W {
+    pub fn aport1xch0(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH0)
     }
     #[doc = "APORT1Y Channel 1"]
     #[inline(always)]
-    pub fn aport1ych1(self) -> &'a mut W {
+    pub fn aport1ych1(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH1)
     }
     #[doc = "APORT1X Channel 2"]
     #[inline(always)]
-    pub fn aport1xch2(self) -> &'a mut W {
+    pub fn aport1xch2(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH2)
     }
     #[doc = "APORT1Y Channel 3"]
     #[inline(always)]
-    pub fn aport1ych3(self) -> &'a mut W {
+    pub fn aport1ych3(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH3)
     }
     #[doc = "APORT1X Channel 4"]
     #[inline(always)]
-    pub fn aport1xch4(self) -> &'a mut W {
+    pub fn aport1xch4(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH4)
     }
     #[doc = "APORT1Y Channel 5"]
     #[inline(always)]
-    pub fn aport1ych5(self) -> &'a mut W {
+    pub fn aport1ych5(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH5)
     }
     #[doc = "APORT1X Channel 6"]
     #[inline(always)]
-    pub fn aport1xch6(self) -> &'a mut W {
+    pub fn aport1xch6(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH6)
     }
     #[doc = "APORT1Y Channel 7"]
     #[inline(always)]
-    pub fn aport1ych7(self) -> &'a mut W {
+    pub fn aport1ych7(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH7)
     }
     #[doc = "APORT1X Channel 8"]
     #[inline(always)]
-    pub fn aport1xch8(self) -> &'a mut W {
+    pub fn aport1xch8(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH8)
     }
     #[doc = "APORT1Y Channel 9"]
     #[inline(always)]
-    pub fn aport1ych9(self) -> &'a mut W {
+    pub fn aport1ych9(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH9)
     }
     #[doc = "APORT1X Channel 10"]
     #[inline(always)]
-    pub fn aport1xch10(self) -> &'a mut W {
+    pub fn aport1xch10(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH10)
     }
     #[doc = "APORT1Y Channel 11"]
     #[inline(always)]
-    pub fn aport1ych11(self) -> &'a mut W {
+    pub fn aport1ych11(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH11)
     }
     #[doc = "APORT1X Channel 12"]
     #[inline(always)]
-    pub fn aport1xch12(self) -> &'a mut W {
+    pub fn aport1xch12(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH12)
     }
     #[doc = "APORT1Y Channel 13"]
     #[inline(always)]
-    pub fn aport1ych13(self) -> &'a mut W {
+    pub fn aport1ych13(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH13)
     }
     #[doc = "APORT1X Channel 14"]
     #[inline(always)]
-    pub fn aport1xch14(self) -> &'a mut W {
+    pub fn aport1xch14(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH14)
     }
     #[doc = "APORT1Y Channel 15"]
     #[inline(always)]
-    pub fn aport1ych15(self) -> &'a mut W {
+    pub fn aport1ych15(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH15)
     }
     #[doc = "APORT1X Channel 16"]
     #[inline(always)]
-    pub fn aport1xch16(self) -> &'a mut W {
+    pub fn aport1xch16(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH16)
     }
     #[doc = "APORT1Y Channel 17"]
     #[inline(always)]
-    pub fn aport1ych17(self) -> &'a mut W {
+    pub fn aport1ych17(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH17)
     }
     #[doc = "APORT1X Channel 18"]
     #[inline(always)]
-    pub fn aport1xch18(self) -> &'a mut W {
+    pub fn aport1xch18(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH18)
     }
     #[doc = "APORT1Y Channel 19"]
     #[inline(always)]
-    pub fn aport1ych19(self) -> &'a mut W {
+    pub fn aport1ych19(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH19)
     }
     #[doc = "APORT1X Channel 20"]
     #[inline(always)]
-    pub fn aport1xch20(self) -> &'a mut W {
+    pub fn aport1xch20(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH20)
     }
     #[doc = "APORT1Y Channel 21"]
     #[inline(always)]
-    pub fn aport1ych21(self) -> &'a mut W {
+    pub fn aport1ych21(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH21)
     }
     #[doc = "APORT1X Channel 22"]
     #[inline(always)]
-    pub fn aport1xch22(self) -> &'a mut W {
+    pub fn aport1xch22(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH22)
     }
     #[doc = "APORT1Y Channel 23"]
     #[inline(always)]
-    pub fn aport1ych23(self) -> &'a mut W {
+    pub fn aport1ych23(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH23)
     }
     #[doc = "APORT1X Channel 24"]
     #[inline(always)]
-    pub fn aport1xch24(self) -> &'a mut W {
+    pub fn aport1xch24(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH24)
     }
     #[doc = "APORT1Y Channel 25"]
     #[inline(always)]
-    pub fn aport1ych25(self) -> &'a mut W {
+    pub fn aport1ych25(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH25)
     }
     #[doc = "APORT1X Channel 26"]
     #[inline(always)]
-    pub fn aport1xch26(self) -> &'a mut W {
+    pub fn aport1xch26(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH26)
     }
     #[doc = "APORT1Y Channel 27"]
     #[inline(always)]
-    pub fn aport1ych27(self) -> &'a mut W {
+    pub fn aport1ych27(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH27)
     }
     #[doc = "APORT1X Channel 28"]
     #[inline(always)]
-    pub fn aport1xch28(self) -> &'a mut W {
+    pub fn aport1xch28(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH28)
     }
     #[doc = "APORT1Y Channel 29"]
     #[inline(always)]
-    pub fn aport1ych29(self) -> &'a mut W {
+    pub fn aport1ych29(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH29)
     }
     #[doc = "APORT1X Channel 30"]
     #[inline(always)]
-    pub fn aport1xch30(self) -> &'a mut W {
+    pub fn aport1xch30(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1XCH30)
     }
     #[doc = "APORT1Y Channel 31"]
     #[inline(always)]
-    pub fn aport1ych31(self) -> &'a mut W {
+    pub fn aport1ych31(self) -> &'a mut crate::W<REG> {
         self.variant(APORTOUTSEL_A::APORT1YCH31)
     }
 }
 #[doc = "Field `PWRSEL` reader - Power Select"]
 pub type PWRSEL_R = crate::BitReader;
 #[doc = "Field `PWRSEL` writer - Power Select"]
-pub type PWRSEL_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type PWRSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EM2DELAY` reader - EM2 Delay"]
 pub type EM2DELAY_R = crate::BitReader;
 #[doc = "Field `EM2DELAY` writer - EM2 Delay"]
-pub type EM2DELAY_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type EM2DELAY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `APORTMASTERDIS` reader - APORT Bus Master Disable"]
 pub type APORTMASTERDIS_R = crate::BitReader;
 #[doc = "Field `APORTMASTERDIS` writer - APORT Bus Master Disable"]
-pub type APORTMASTERDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type APORTMASTERDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `APORTOUTENPRS` reader - PRS Controlled APORT Output Enable"]
 pub type APORTOUTENPRS_R = crate::BitReader;
 #[doc = "Field `APORTOUTENPRS` writer - PRS Controlled APORT Output Enable"]
-pub type APORTOUTENPRS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type APORTOUTENPRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PRSSEL` reader - IDAC Output Enable PRS Channel Select"]
 pub type PRSSEL_R = crate::FieldReader<PRSSEL_A>;
 #[doc = "IDAC Output Enable PRS Channel Select\n\nValue on reset: 0"]
@@ -554,7 +526,7 @@ impl crate::FieldSpec for PRSSEL_A {
 impl PRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRSSEL_A> {
+    pub const fn variant(&self) -> Option<PRSSEL_A> {
         match self.bits {
             0 => Some(PRSSEL_A::PRSCH0),
             1 => Some(PRSSEL_A::PRSCH1),
@@ -571,128 +543,132 @@ impl PRSSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PRSCH0`"]
+    #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
         *self == PRSSEL_A::PRSCH0
     }
-    #[doc = "Checks if the value of the field is `PRSCH1`"]
+    #[doc = "PRS Channel 1 selected."]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
         *self == PRSSEL_A::PRSCH1
     }
-    #[doc = "Checks if the value of the field is `PRSCH2`"]
+    #[doc = "PRS Channel 2 selected."]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
         *self == PRSSEL_A::PRSCH2
     }
-    #[doc = "Checks if the value of the field is `PRSCH3`"]
+    #[doc = "PRS Channel 3 selected."]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
         *self == PRSSEL_A::PRSCH3
     }
-    #[doc = "Checks if the value of the field is `PRSCH4`"]
+    #[doc = "PRS Channel 4 selected."]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
         *self == PRSSEL_A::PRSCH4
     }
-    #[doc = "Checks if the value of the field is `PRSCH5`"]
+    #[doc = "PRS Channel 5 selected."]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
         *self == PRSSEL_A::PRSCH5
     }
-    #[doc = "Checks if the value of the field is `PRSCH6`"]
+    #[doc = "PRS Channel 6 selected."]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
         *self == PRSSEL_A::PRSCH6
     }
-    #[doc = "Checks if the value of the field is `PRSCH7`"]
+    #[doc = "PRS Channel 7 selected."]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
         *self == PRSSEL_A::PRSCH7
     }
-    #[doc = "Checks if the value of the field is `PRSCH8`"]
+    #[doc = "PRS Channel 8 selected."]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
         *self == PRSSEL_A::PRSCH8
     }
-    #[doc = "Checks if the value of the field is `PRSCH9`"]
+    #[doc = "PRS Channel 9 selected."]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
         *self == PRSSEL_A::PRSCH9
     }
-    #[doc = "Checks if the value of the field is `PRSCH10`"]
+    #[doc = "PRS Channel 10 selected."]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
         *self == PRSSEL_A::PRSCH10
     }
-    #[doc = "Checks if the value of the field is `PRSCH11`"]
+    #[doc = "PRS Channel 11 selected."]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
         *self == PRSSEL_A::PRSCH11
     }
 }
 #[doc = "Field `PRSSEL` writer - IDAC Output Enable PRS Channel Select"]
-pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 4, O, PRSSEL_A>;
-impl<'a, const O: u8> PRSSEL_W<'a, O> {
+pub type PRSSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, PRSSEL_A>;
+impl<'a, REG, const O: u8> PRSSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PRS Channel 0 selected."]
     #[inline(always)]
-    pub fn prsch0(self) -> &'a mut W {
+    pub fn prsch0(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH0)
     }
     #[doc = "PRS Channel 1 selected."]
     #[inline(always)]
-    pub fn prsch1(self) -> &'a mut W {
+    pub fn prsch1(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH1)
     }
     #[doc = "PRS Channel 2 selected."]
     #[inline(always)]
-    pub fn prsch2(self) -> &'a mut W {
+    pub fn prsch2(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH2)
     }
     #[doc = "PRS Channel 3 selected."]
     #[inline(always)]
-    pub fn prsch3(self) -> &'a mut W {
+    pub fn prsch3(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH3)
     }
     #[doc = "PRS Channel 4 selected."]
     #[inline(always)]
-    pub fn prsch4(self) -> &'a mut W {
+    pub fn prsch4(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH4)
     }
     #[doc = "PRS Channel 5 selected."]
     #[inline(always)]
-    pub fn prsch5(self) -> &'a mut W {
+    pub fn prsch5(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH5)
     }
     #[doc = "PRS Channel 6 selected."]
     #[inline(always)]
-    pub fn prsch6(self) -> &'a mut W {
+    pub fn prsch6(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH6)
     }
     #[doc = "PRS Channel 7 selected."]
     #[inline(always)]
-    pub fn prsch7(self) -> &'a mut W {
+    pub fn prsch7(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH7)
     }
     #[doc = "PRS Channel 8 selected."]
     #[inline(always)]
-    pub fn prsch8(self) -> &'a mut W {
+    pub fn prsch8(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH8)
     }
     #[doc = "PRS Channel 9 selected."]
     #[inline(always)]
-    pub fn prsch9(self) -> &'a mut W {
+    pub fn prsch9(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH9)
     }
     #[doc = "PRS Channel 10 selected."]
     #[inline(always)]
-    pub fn prsch10(self) -> &'a mut W {
+    pub fn prsch10(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH10)
     }
     #[doc = "PRS Channel 11 selected."]
     #[inline(always)]
-    pub fn prsch11(self) -> &'a mut W {
+    pub fn prsch11(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH11)
     }
 }
@@ -748,86 +724,117 @@ impl R {
         PRSSEL_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("en", &format_args!("{}", self.en().bit()))
+            .field("cursink", &format_args!("{}", self.cursink().bit()))
+            .field("minouttrans", &format_args!("{}", self.minouttrans().bit()))
+            .field("aportouten", &format_args!("{}", self.aportouten().bit()))
+            .field(
+                "aportoutsel",
+                &format_args!("{}", self.aportoutsel().bits()),
+            )
+            .field("pwrsel", &format_args!("{}", self.pwrsel().bit()))
+            .field("em2delay", &format_args!("{}", self.em2delay().bit()))
+            .field(
+                "aportmasterdis",
+                &format_args!("{}", self.aportmasterdis().bit()),
+            )
+            .field(
+                "aportoutenprs",
+                &format_args!("{}", self.aportoutenprs().bit()),
+            )
+            .field("prssel", &format_args!("{}", self.prssel().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - Current DAC Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<0> {
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
         EN_W::new(self)
     }
     #[doc = "Bit 1 - Current Sink Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cursink(&mut self) -> CURSINK_W<1> {
+    pub fn cursink(&mut self) -> CURSINK_W<CTRL_SPEC, 1> {
         CURSINK_W::new(self)
     }
     #[doc = "Bit 2 - Minimum Output Transition Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn minouttrans(&mut self) -> MINOUTTRANS_W<2> {
+    pub fn minouttrans(&mut self) -> MINOUTTRANS_W<CTRL_SPEC, 2> {
         MINOUTTRANS_W::new(self)
     }
     #[doc = "Bit 3 - APORT Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn aportouten(&mut self) -> APORTOUTEN_W<3> {
+    pub fn aportouten(&mut self) -> APORTOUTEN_W<CTRL_SPEC, 3> {
         APORTOUTEN_W::new(self)
     }
     #[doc = "Bits 4:11 - APORT Output Select"]
     #[inline(always)]
     #[must_use]
-    pub fn aportoutsel(&mut self) -> APORTOUTSEL_W<4> {
+    pub fn aportoutsel(&mut self) -> APORTOUTSEL_W<CTRL_SPEC, 4> {
         APORTOUTSEL_W::new(self)
     }
     #[doc = "Bit 12 - Power Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pwrsel(&mut self) -> PWRSEL_W<12> {
+    pub fn pwrsel(&mut self) -> PWRSEL_W<CTRL_SPEC, 12> {
         PWRSEL_W::new(self)
     }
     #[doc = "Bit 13 - EM2 Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn em2delay(&mut self) -> EM2DELAY_W<13> {
+    pub fn em2delay(&mut self) -> EM2DELAY_W<CTRL_SPEC, 13> {
         EM2DELAY_W::new(self)
     }
     #[doc = "Bit 14 - APORT Bus Master Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn aportmasterdis(&mut self) -> APORTMASTERDIS_W<14> {
+    pub fn aportmasterdis(&mut self) -> APORTMASTERDIS_W<CTRL_SPEC, 14> {
         APORTMASTERDIS_W::new(self)
     }
     #[doc = "Bit 16 - PRS Controlled APORT Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn aportoutenprs(&mut self) -> APORTOUTENPRS_W<16> {
+    pub fn aportoutenprs(&mut self) -> APORTOUTENPRS_W<CTRL_SPEC, 16> {
         APORTOUTENPRS_W::new(self)
     }
     #[doc = "Bits 20:23 - IDAC Output Enable PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn prssel(&mut self) -> PRSSEL_W<20> {
+    pub fn prssel(&mut self) -> PRSSEL_W<CTRL_SPEC, 20> {
         PRSSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRL_SPEC;
 impl crate::RegisterSpec for CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
-impl crate::Readable for CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`ctrl::R`](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

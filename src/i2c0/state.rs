@@ -1,18 +1,5 @@
 #[doc = "Register `STATE` reader"]
-pub struct R(crate::R<STATE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STATE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STATE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STATE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STATE_SPEC>;
 #[doc = "Field `BUSY` reader - Bus Busy"]
 pub type BUSY_R = crate::BitReader;
 #[doc = "Field `MASTER` reader - Master"]
@@ -56,7 +43,7 @@ impl crate::FieldSpec for STATE_A {
 impl STATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STATE_A> {
+    pub const fn variant(&self) -> Option<STATE_A> {
         match self.bits {
             0 => Some(STATE_A::IDLE),
             1 => Some(STATE_A::WAIT),
@@ -68,37 +55,37 @@ impl STATE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "No transmission is being performed."]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == STATE_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `WAIT`"]
+    #[doc = "Waiting for idle. Will send a start condition as soon as the bus is idle."]
     #[inline(always)]
     pub fn is_wait(&self) -> bool {
         *self == STATE_A::WAIT
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "Start transmitted or received"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
         *self == STATE_A::START
     }
-    #[doc = "Checks if the value of the field is `ADDR`"]
+    #[doc = "Address transmitted or received"]
     #[inline(always)]
     pub fn is_addr(&self) -> bool {
         *self == STATE_A::ADDR
     }
-    #[doc = "Checks if the value of the field is `ADDRACK`"]
+    #[doc = "Address ack/nack transmitted or received"]
     #[inline(always)]
     pub fn is_addrack(&self) -> bool {
         *self == STATE_A::ADDRACK
     }
-    #[doc = "Checks if the value of the field is `DATA`"]
+    #[doc = "Data transmitted or received"]
     #[inline(always)]
     pub fn is_data(&self) -> bool {
         *self == STATE_A::DATA
     }
-    #[doc = "Checks if the value of the field is `DATAACK`"]
+    #[doc = "Data ack/nack transmitted or received"]
     #[inline(always)]
     pub fn is_dataack(&self) -> bool {
         *self == STATE_A::DATAACK
@@ -136,15 +123,30 @@ impl R {
         STATE_R::new(((self.bits >> 5) & 7) as u8)
     }
 }
-#[doc = "State Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [state](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATE")
+            .field("busy", &format_args!("{}", self.busy().bit()))
+            .field("master", &format_args!("{}", self.master().bit()))
+            .field("transmitter", &format_args!("{}", self.transmitter().bit()))
+            .field("nacked", &format_args!("{}", self.nacked().bit()))
+            .field("bushold", &format_args!("{}", self.bushold().bit()))
+            .field("state", &format_args!("{}", self.state().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<STATE_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "State Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATE_SPEC;
 impl crate::RegisterSpec for STATE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [state::R](R) reader structure"]
-impl crate::Readable for STATE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`state::R`](R) reader structure"]
+impl crate::Readable for STATE_SPEC {}
 #[doc = "`reset()` method sets STATE to value 0x01"]
 impl crate::Resettable for STATE_SPEC {
     const RESET_VALUE: Self::Ux = 0x01;

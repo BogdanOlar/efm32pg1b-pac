@@ -1,39 +1,7 @@
 #[doc = "Register `SCANNEGSEL` reader"]
-pub struct R(crate::R<SCANNEGSEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCANNEGSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCANNEGSEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCANNEGSEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SCANNEGSEL_SPEC>;
 #[doc = "Register `SCANNEGSEL` writer"]
-pub struct W(crate::W<SCANNEGSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCANNEGSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCANNEGSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCANNEGSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SCANNEGSEL_SPEC>;
 #[doc = "Field `INPUT0NEGSEL` reader - Negative Input Select Register for ADCn_INPUT0 in Differential Scan Mode"]
 pub type INPUT0NEGSEL_R = crate::FieldReader<INPUT0NEGSEL_A>;
 #[doc = "Negative Input Select Register for ADCn_INPUT0 in Differential Scan Mode\n\nValue on reset: 0"]
@@ -61,7 +29,7 @@ impl crate::FieldSpec for INPUT0NEGSEL_A {
 impl INPUT0NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT0NEGSEL_A {
+    pub const fn variant(&self) -> INPUT0NEGSEL_A {
         match self.bits {
             0 => INPUT0NEGSEL_A::INPUT1,
             1 => INPUT0NEGSEL_A::INPUT3,
@@ -70,49 +38,53 @@ impl INPUT0NEGSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT1`"]
+    #[doc = "Selects ADCn_INPUT1 as negative channel input"]
     #[inline(always)]
     pub fn is_input1(&self) -> bool {
         *self == INPUT0NEGSEL_A::INPUT1
     }
-    #[doc = "Checks if the value of the field is `INPUT3`"]
+    #[doc = "Selects ADCn_INPUT3 as negative channel input"]
     #[inline(always)]
     pub fn is_input3(&self) -> bool {
         *self == INPUT0NEGSEL_A::INPUT3
     }
-    #[doc = "Checks if the value of the field is `INPUT5`"]
+    #[doc = "Selects ADCn_INPUT5 as negative channel input"]
     #[inline(always)]
     pub fn is_input5(&self) -> bool {
         *self == INPUT0NEGSEL_A::INPUT5
     }
-    #[doc = "Checks if the value of the field is `INPUT7`"]
+    #[doc = "Selects ADCn_INPUT7 as negative channel input"]
     #[inline(always)]
     pub fn is_input7(&self) -> bool {
         *self == INPUT0NEGSEL_A::INPUT7
     }
 }
 #[doc = "Field `INPUT0NEGSEL` writer - Negative Input Select Register for ADCn_INPUT0 in Differential Scan Mode"]
-pub type INPUT0NEGSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, SCANNEGSEL_SPEC, 2, O, INPUT0NEGSEL_A>;
-impl<'a, const O: u8> INPUT0NEGSEL_W<'a, O> {
+pub type INPUT0NEGSEL_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, INPUT0NEGSEL_A>;
+impl<'a, REG, const O: u8> INPUT0NEGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Selects ADCn_INPUT1 as negative channel input"]
     #[inline(always)]
-    pub fn input1(self) -> &'a mut W {
+    pub fn input1(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT0NEGSEL_A::INPUT1)
     }
     #[doc = "Selects ADCn_INPUT3 as negative channel input"]
     #[inline(always)]
-    pub fn input3(self) -> &'a mut W {
+    pub fn input3(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT0NEGSEL_A::INPUT3)
     }
     #[doc = "Selects ADCn_INPUT5 as negative channel input"]
     #[inline(always)]
-    pub fn input5(self) -> &'a mut W {
+    pub fn input5(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT0NEGSEL_A::INPUT5)
     }
     #[doc = "Selects ADCn_INPUT7 as negative channel input"]
     #[inline(always)]
-    pub fn input7(self) -> &'a mut W {
+    pub fn input7(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT0NEGSEL_A::INPUT7)
     }
 }
@@ -143,7 +115,7 @@ impl crate::FieldSpec for INPUT2NEGSEL_A {
 impl INPUT2NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT2NEGSEL_A {
+    pub const fn variant(&self) -> INPUT2NEGSEL_A {
         match self.bits {
             0 => INPUT2NEGSEL_A::INPUT1,
             1 => INPUT2NEGSEL_A::INPUT3,
@@ -152,49 +124,53 @@ impl INPUT2NEGSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT1`"]
+    #[doc = "Selects ADCn_INPUT1 as negative channel input"]
     #[inline(always)]
     pub fn is_input1(&self) -> bool {
         *self == INPUT2NEGSEL_A::INPUT1
     }
-    #[doc = "Checks if the value of the field is `INPUT3`"]
+    #[doc = "Selects ADCn_INPUT3 as negative channel input"]
     #[inline(always)]
     pub fn is_input3(&self) -> bool {
         *self == INPUT2NEGSEL_A::INPUT3
     }
-    #[doc = "Checks if the value of the field is `INPUT5`"]
+    #[doc = "Selects ADCn_INPUT5 as negative channel input"]
     #[inline(always)]
     pub fn is_input5(&self) -> bool {
         *self == INPUT2NEGSEL_A::INPUT5
     }
-    #[doc = "Checks if the value of the field is `INPUT7`"]
+    #[doc = "Selects ADCn_INPUT7 as negative channel input"]
     #[inline(always)]
     pub fn is_input7(&self) -> bool {
         *self == INPUT2NEGSEL_A::INPUT7
     }
 }
 #[doc = "Field `INPUT2NEGSEL` writer - Negative Input Select Register for ADCn_INPUT2 in Differential Scan Mode"]
-pub type INPUT2NEGSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, SCANNEGSEL_SPEC, 2, O, INPUT2NEGSEL_A>;
-impl<'a, const O: u8> INPUT2NEGSEL_W<'a, O> {
+pub type INPUT2NEGSEL_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, INPUT2NEGSEL_A>;
+impl<'a, REG, const O: u8> INPUT2NEGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Selects ADCn_INPUT1 as negative channel input"]
     #[inline(always)]
-    pub fn input1(self) -> &'a mut W {
+    pub fn input1(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT2NEGSEL_A::INPUT1)
     }
     #[doc = "Selects ADCn_INPUT3 as negative channel input"]
     #[inline(always)]
-    pub fn input3(self) -> &'a mut W {
+    pub fn input3(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT2NEGSEL_A::INPUT3)
     }
     #[doc = "Selects ADCn_INPUT5 as negative channel input"]
     #[inline(always)]
-    pub fn input5(self) -> &'a mut W {
+    pub fn input5(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT2NEGSEL_A::INPUT5)
     }
     #[doc = "Selects ADCn_INPUT7 as negative channel input"]
     #[inline(always)]
-    pub fn input7(self) -> &'a mut W {
+    pub fn input7(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT2NEGSEL_A::INPUT7)
     }
 }
@@ -225,7 +201,7 @@ impl crate::FieldSpec for INPUT4NEGSEL_A {
 impl INPUT4NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT4NEGSEL_A {
+    pub const fn variant(&self) -> INPUT4NEGSEL_A {
         match self.bits {
             0 => INPUT4NEGSEL_A::INPUT1,
             1 => INPUT4NEGSEL_A::INPUT3,
@@ -234,49 +210,53 @@ impl INPUT4NEGSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT1`"]
+    #[doc = "Selects ADCn_INPUT1 as negative channel input"]
     #[inline(always)]
     pub fn is_input1(&self) -> bool {
         *self == INPUT4NEGSEL_A::INPUT1
     }
-    #[doc = "Checks if the value of the field is `INPUT3`"]
+    #[doc = "Selects ADCn_INPUT3 as negative channel input"]
     #[inline(always)]
     pub fn is_input3(&self) -> bool {
         *self == INPUT4NEGSEL_A::INPUT3
     }
-    #[doc = "Checks if the value of the field is `INPUT5`"]
+    #[doc = "Selects ADCn_INPUT5 as negative channel input"]
     #[inline(always)]
     pub fn is_input5(&self) -> bool {
         *self == INPUT4NEGSEL_A::INPUT5
     }
-    #[doc = "Checks if the value of the field is `INPUT7`"]
+    #[doc = "Selects ADCn_INPUT7 as negative channel input"]
     #[inline(always)]
     pub fn is_input7(&self) -> bool {
         *self == INPUT4NEGSEL_A::INPUT7
     }
 }
 #[doc = "Field `INPUT4NEGSEL` writer - Negative Input Select Register for ADCn_INPUT4 in Differential Scan Mode"]
-pub type INPUT4NEGSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, SCANNEGSEL_SPEC, 2, O, INPUT4NEGSEL_A>;
-impl<'a, const O: u8> INPUT4NEGSEL_W<'a, O> {
+pub type INPUT4NEGSEL_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, INPUT4NEGSEL_A>;
+impl<'a, REG, const O: u8> INPUT4NEGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Selects ADCn_INPUT1 as negative channel input"]
     #[inline(always)]
-    pub fn input1(self) -> &'a mut W {
+    pub fn input1(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT4NEGSEL_A::INPUT1)
     }
     #[doc = "Selects ADCn_INPUT3 as negative channel input"]
     #[inline(always)]
-    pub fn input3(self) -> &'a mut W {
+    pub fn input3(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT4NEGSEL_A::INPUT3)
     }
     #[doc = "Selects ADCn_INPUT5 as negative channel input"]
     #[inline(always)]
-    pub fn input5(self) -> &'a mut W {
+    pub fn input5(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT4NEGSEL_A::INPUT5)
     }
     #[doc = "Selects ADCn_INPUT7 as negative channel input"]
     #[inline(always)]
-    pub fn input7(self) -> &'a mut W {
+    pub fn input7(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT4NEGSEL_A::INPUT7)
     }
 }
@@ -307,7 +287,7 @@ impl crate::FieldSpec for INPUT6NEGSEL_A {
 impl INPUT6NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT6NEGSEL_A {
+    pub const fn variant(&self) -> INPUT6NEGSEL_A {
         match self.bits {
             0 => INPUT6NEGSEL_A::INPUT1,
             1 => INPUT6NEGSEL_A::INPUT3,
@@ -316,49 +296,53 @@ impl INPUT6NEGSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT1`"]
+    #[doc = "Selects ADCn_INPUT1 as negative channel input"]
     #[inline(always)]
     pub fn is_input1(&self) -> bool {
         *self == INPUT6NEGSEL_A::INPUT1
     }
-    #[doc = "Checks if the value of the field is `INPUT3`"]
+    #[doc = "Selects ADCn_INPUT3 as negative channel input"]
     #[inline(always)]
     pub fn is_input3(&self) -> bool {
         *self == INPUT6NEGSEL_A::INPUT3
     }
-    #[doc = "Checks if the value of the field is `INPUT5`"]
+    #[doc = "Selects ADCn_INPUT5 as negative channel input"]
     #[inline(always)]
     pub fn is_input5(&self) -> bool {
         *self == INPUT6NEGSEL_A::INPUT5
     }
-    #[doc = "Checks if the value of the field is `INPUT7`"]
+    #[doc = "Selects ADCn_INPUT7 as negative channel input"]
     #[inline(always)]
     pub fn is_input7(&self) -> bool {
         *self == INPUT6NEGSEL_A::INPUT7
     }
 }
 #[doc = "Field `INPUT6NEGSEL` writer - Negative Input Select Register for ADCn_INPUT1 in Differential Scan Mode"]
-pub type INPUT6NEGSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, SCANNEGSEL_SPEC, 2, O, INPUT6NEGSEL_A>;
-impl<'a, const O: u8> INPUT6NEGSEL_W<'a, O> {
+pub type INPUT6NEGSEL_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, INPUT6NEGSEL_A>;
+impl<'a, REG, const O: u8> INPUT6NEGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Selects ADCn_INPUT1 as negative channel input"]
     #[inline(always)]
-    pub fn input1(self) -> &'a mut W {
+    pub fn input1(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT6NEGSEL_A::INPUT1)
     }
     #[doc = "Selects ADCn_INPUT3 as negative channel input"]
     #[inline(always)]
-    pub fn input3(self) -> &'a mut W {
+    pub fn input3(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT6NEGSEL_A::INPUT3)
     }
     #[doc = "Selects ADCn_INPUT5 as negative channel input"]
     #[inline(always)]
-    pub fn input5(self) -> &'a mut W {
+    pub fn input5(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT6NEGSEL_A::INPUT5)
     }
     #[doc = "Selects ADCn_INPUT7 as negative channel input"]
     #[inline(always)]
-    pub fn input7(self) -> &'a mut W {
+    pub fn input7(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT6NEGSEL_A::INPUT7)
     }
 }
@@ -389,7 +373,7 @@ impl crate::FieldSpec for INPUT9NEGSEL_A {
 impl INPUT9NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT9NEGSEL_A {
+    pub const fn variant(&self) -> INPUT9NEGSEL_A {
         match self.bits {
             0 => INPUT9NEGSEL_A::INPUT8,
             1 => INPUT9NEGSEL_A::INPUT10,
@@ -398,49 +382,53 @@ impl INPUT9NEGSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT8`"]
+    #[doc = "Selects ADCn_INPUT8 as negative channel input"]
     #[inline(always)]
     pub fn is_input8(&self) -> bool {
         *self == INPUT9NEGSEL_A::INPUT8
     }
-    #[doc = "Checks if the value of the field is `INPUT10`"]
+    #[doc = "Selects ADCn_INPUT10 as negative channel input"]
     #[inline(always)]
     pub fn is_input10(&self) -> bool {
         *self == INPUT9NEGSEL_A::INPUT10
     }
-    #[doc = "Checks if the value of the field is `INPUT12`"]
+    #[doc = "Selects ADCn_INPUT12 as negative channel input"]
     #[inline(always)]
     pub fn is_input12(&self) -> bool {
         *self == INPUT9NEGSEL_A::INPUT12
     }
-    #[doc = "Checks if the value of the field is `INPUT14`"]
+    #[doc = "Selects ADCn_INPUT14 as negative channel input"]
     #[inline(always)]
     pub fn is_input14(&self) -> bool {
         *self == INPUT9NEGSEL_A::INPUT14
     }
 }
 #[doc = "Field `INPUT9NEGSEL` writer - Negative Input Select Register for ADCn_INPUT9 in Differential Scan Mode"]
-pub type INPUT9NEGSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, SCANNEGSEL_SPEC, 2, O, INPUT9NEGSEL_A>;
-impl<'a, const O: u8> INPUT9NEGSEL_W<'a, O> {
+pub type INPUT9NEGSEL_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, INPUT9NEGSEL_A>;
+impl<'a, REG, const O: u8> INPUT9NEGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Selects ADCn_INPUT8 as negative channel input"]
     #[inline(always)]
-    pub fn input8(self) -> &'a mut W {
+    pub fn input8(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT9NEGSEL_A::INPUT8)
     }
     #[doc = "Selects ADCn_INPUT10 as negative channel input"]
     #[inline(always)]
-    pub fn input10(self) -> &'a mut W {
+    pub fn input10(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT9NEGSEL_A::INPUT10)
     }
     #[doc = "Selects ADCn_INPUT12 as negative channel input"]
     #[inline(always)]
-    pub fn input12(self) -> &'a mut W {
+    pub fn input12(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT9NEGSEL_A::INPUT12)
     }
     #[doc = "Selects ADCn_INPUT14 as negative channel input"]
     #[inline(always)]
-    pub fn input14(self) -> &'a mut W {
+    pub fn input14(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT9NEGSEL_A::INPUT14)
     }
 }
@@ -471,7 +459,7 @@ impl crate::FieldSpec for INPUT11NEGSEL_A {
 impl INPUT11NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT11NEGSEL_A {
+    pub const fn variant(&self) -> INPUT11NEGSEL_A {
         match self.bits {
             0 => INPUT11NEGSEL_A::INPUT8,
             1 => INPUT11NEGSEL_A::INPUT10,
@@ -480,49 +468,53 @@ impl INPUT11NEGSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT8`"]
+    #[doc = "Selects ADCn_INPUT8 as negative channel input"]
     #[inline(always)]
     pub fn is_input8(&self) -> bool {
         *self == INPUT11NEGSEL_A::INPUT8
     }
-    #[doc = "Checks if the value of the field is `INPUT10`"]
+    #[doc = "Selects ADCn_INPUT10 as negative channel input"]
     #[inline(always)]
     pub fn is_input10(&self) -> bool {
         *self == INPUT11NEGSEL_A::INPUT10
     }
-    #[doc = "Checks if the value of the field is `INPUT12`"]
+    #[doc = "Selects ADCn_INPUT12 as negative channel input"]
     #[inline(always)]
     pub fn is_input12(&self) -> bool {
         *self == INPUT11NEGSEL_A::INPUT12
     }
-    #[doc = "Checks if the value of the field is `INPUT14`"]
+    #[doc = "Selects ADCn_INPUT14 as negative channel input"]
     #[inline(always)]
     pub fn is_input14(&self) -> bool {
         *self == INPUT11NEGSEL_A::INPUT14
     }
 }
 #[doc = "Field `INPUT11NEGSEL` writer - Negative Input Select Register for ADCn_INPUT11 in Differential Scan Mode"]
-pub type INPUT11NEGSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, SCANNEGSEL_SPEC, 2, O, INPUT11NEGSEL_A>;
-impl<'a, const O: u8> INPUT11NEGSEL_W<'a, O> {
+pub type INPUT11NEGSEL_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, INPUT11NEGSEL_A>;
+impl<'a, REG, const O: u8> INPUT11NEGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Selects ADCn_INPUT8 as negative channel input"]
     #[inline(always)]
-    pub fn input8(self) -> &'a mut W {
+    pub fn input8(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT11NEGSEL_A::INPUT8)
     }
     #[doc = "Selects ADCn_INPUT10 as negative channel input"]
     #[inline(always)]
-    pub fn input10(self) -> &'a mut W {
+    pub fn input10(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT11NEGSEL_A::INPUT10)
     }
     #[doc = "Selects ADCn_INPUT12 as negative channel input"]
     #[inline(always)]
-    pub fn input12(self) -> &'a mut W {
+    pub fn input12(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT11NEGSEL_A::INPUT12)
     }
     #[doc = "Selects ADCn_INPUT14 as negative channel input"]
     #[inline(always)]
-    pub fn input14(self) -> &'a mut W {
+    pub fn input14(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT11NEGSEL_A::INPUT14)
     }
 }
@@ -553,7 +545,7 @@ impl crate::FieldSpec for INPUT13NEGSEL_A {
 impl INPUT13NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT13NEGSEL_A {
+    pub const fn variant(&self) -> INPUT13NEGSEL_A {
         match self.bits {
             0 => INPUT13NEGSEL_A::INPUT8,
             1 => INPUT13NEGSEL_A::INPUT10,
@@ -562,49 +554,53 @@ impl INPUT13NEGSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT8`"]
+    #[doc = "Selects ADCn_INPUT8 as negative channel input"]
     #[inline(always)]
     pub fn is_input8(&self) -> bool {
         *self == INPUT13NEGSEL_A::INPUT8
     }
-    #[doc = "Checks if the value of the field is `INPUT10`"]
+    #[doc = "Selects ADCn_INPUT10 as negative channel input"]
     #[inline(always)]
     pub fn is_input10(&self) -> bool {
         *self == INPUT13NEGSEL_A::INPUT10
     }
-    #[doc = "Checks if the value of the field is `INPUT12`"]
+    #[doc = "Selects ADCn_INPUT12 as negative channel input"]
     #[inline(always)]
     pub fn is_input12(&self) -> bool {
         *self == INPUT13NEGSEL_A::INPUT12
     }
-    #[doc = "Checks if the value of the field is `INPUT14`"]
+    #[doc = "Selects ADCn_INPUT14 as negative channel input"]
     #[inline(always)]
     pub fn is_input14(&self) -> bool {
         *self == INPUT13NEGSEL_A::INPUT14
     }
 }
 #[doc = "Field `INPUT13NEGSEL` writer - Negative Input Select Register for ADCn_INPUT13 in Differential Scan Mode"]
-pub type INPUT13NEGSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, SCANNEGSEL_SPEC, 2, O, INPUT13NEGSEL_A>;
-impl<'a, const O: u8> INPUT13NEGSEL_W<'a, O> {
+pub type INPUT13NEGSEL_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, INPUT13NEGSEL_A>;
+impl<'a, REG, const O: u8> INPUT13NEGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Selects ADCn_INPUT8 as negative channel input"]
     #[inline(always)]
-    pub fn input8(self) -> &'a mut W {
+    pub fn input8(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT13NEGSEL_A::INPUT8)
     }
     #[doc = "Selects ADCn_INPUT10 as negative channel input"]
     #[inline(always)]
-    pub fn input10(self) -> &'a mut W {
+    pub fn input10(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT13NEGSEL_A::INPUT10)
     }
     #[doc = "Selects ADCn_INPUT12 as negative channel input"]
     #[inline(always)]
-    pub fn input12(self) -> &'a mut W {
+    pub fn input12(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT13NEGSEL_A::INPUT12)
     }
     #[doc = "Selects ADCn_INPUT14 as negative channel input"]
     #[inline(always)]
-    pub fn input14(self) -> &'a mut W {
+    pub fn input14(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT13NEGSEL_A::INPUT14)
     }
 }
@@ -635,7 +631,7 @@ impl crate::FieldSpec for INPUT15NEGSEL_A {
 impl INPUT15NEGSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT15NEGSEL_A {
+    pub const fn variant(&self) -> INPUT15NEGSEL_A {
         match self.bits {
             0 => INPUT15NEGSEL_A::INPUT8,
             1 => INPUT15NEGSEL_A::INPUT10,
@@ -644,49 +640,53 @@ impl INPUT15NEGSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT8`"]
+    #[doc = "Selects ADCn_INPUT8 as negative channel input"]
     #[inline(always)]
     pub fn is_input8(&self) -> bool {
         *self == INPUT15NEGSEL_A::INPUT8
     }
-    #[doc = "Checks if the value of the field is `INPUT10`"]
+    #[doc = "Selects ADCn_INPUT10 as negative channel input"]
     #[inline(always)]
     pub fn is_input10(&self) -> bool {
         *self == INPUT15NEGSEL_A::INPUT10
     }
-    #[doc = "Checks if the value of the field is `INPUT12`"]
+    #[doc = "Selects ADCn_INPUT12 as negative channel input"]
     #[inline(always)]
     pub fn is_input12(&self) -> bool {
         *self == INPUT15NEGSEL_A::INPUT12
     }
-    #[doc = "Checks if the value of the field is `INPUT14`"]
+    #[doc = "Selects ADCn_INPUT14 as negative channel input"]
     #[inline(always)]
     pub fn is_input14(&self) -> bool {
         *self == INPUT15NEGSEL_A::INPUT14
     }
 }
 #[doc = "Field `INPUT15NEGSEL` writer - Negative Input Select Register for ADCn_INPUT15 in Differential Scan Mode"]
-pub type INPUT15NEGSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, SCANNEGSEL_SPEC, 2, O, INPUT15NEGSEL_A>;
-impl<'a, const O: u8> INPUT15NEGSEL_W<'a, O> {
+pub type INPUT15NEGSEL_W<'a, REG, const O: u8> =
+    crate::FieldWriterSafe<'a, REG, 2, O, INPUT15NEGSEL_A>;
+impl<'a, REG, const O: u8> INPUT15NEGSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Selects ADCn_INPUT8 as negative channel input"]
     #[inline(always)]
-    pub fn input8(self) -> &'a mut W {
+    pub fn input8(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT15NEGSEL_A::INPUT8)
     }
     #[doc = "Selects ADCn_INPUT10 as negative channel input"]
     #[inline(always)]
-    pub fn input10(self) -> &'a mut W {
+    pub fn input10(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT15NEGSEL_A::INPUT10)
     }
     #[doc = "Selects ADCn_INPUT12 as negative channel input"]
     #[inline(always)]
-    pub fn input12(self) -> &'a mut W {
+    pub fn input12(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT15NEGSEL_A::INPUT12)
     }
     #[doc = "Selects ADCn_INPUT14 as negative channel input"]
     #[inline(always)]
-    pub fn input14(self) -> &'a mut W {
+    pub fn input14(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT15NEGSEL_A::INPUT14)
     }
 }
@@ -732,74 +732,118 @@ impl R {
         INPUT15NEGSEL_R::new(((self.bits >> 14) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANNEGSEL")
+            .field(
+                "input0negsel",
+                &format_args!("{}", self.input0negsel().bits()),
+            )
+            .field(
+                "input2negsel",
+                &format_args!("{}", self.input2negsel().bits()),
+            )
+            .field(
+                "input4negsel",
+                &format_args!("{}", self.input4negsel().bits()),
+            )
+            .field(
+                "input6negsel",
+                &format_args!("{}", self.input6negsel().bits()),
+            )
+            .field(
+                "input9negsel",
+                &format_args!("{}", self.input9negsel().bits()),
+            )
+            .field(
+                "input11negsel",
+                &format_args!("{}", self.input11negsel().bits()),
+            )
+            .field(
+                "input13negsel",
+                &format_args!("{}", self.input13negsel().bits()),
+            )
+            .field(
+                "input15negsel",
+                &format_args!("{}", self.input15negsel().bits()),
+            )
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<SCANNEGSEL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Negative Input Select Register for ADCn_INPUT0 in Differential Scan Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn input0negsel(&mut self) -> INPUT0NEGSEL_W<0> {
+    pub fn input0negsel(&mut self) -> INPUT0NEGSEL_W<SCANNEGSEL_SPEC, 0> {
         INPUT0NEGSEL_W::new(self)
     }
     #[doc = "Bits 2:3 - Negative Input Select Register for ADCn_INPUT2 in Differential Scan Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn input2negsel(&mut self) -> INPUT2NEGSEL_W<2> {
+    pub fn input2negsel(&mut self) -> INPUT2NEGSEL_W<SCANNEGSEL_SPEC, 2> {
         INPUT2NEGSEL_W::new(self)
     }
     #[doc = "Bits 4:5 - Negative Input Select Register for ADCn_INPUT4 in Differential Scan Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn input4negsel(&mut self) -> INPUT4NEGSEL_W<4> {
+    pub fn input4negsel(&mut self) -> INPUT4NEGSEL_W<SCANNEGSEL_SPEC, 4> {
         INPUT4NEGSEL_W::new(self)
     }
     #[doc = "Bits 6:7 - Negative Input Select Register for ADCn_INPUT1 in Differential Scan Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn input6negsel(&mut self) -> INPUT6NEGSEL_W<6> {
+    pub fn input6negsel(&mut self) -> INPUT6NEGSEL_W<SCANNEGSEL_SPEC, 6> {
         INPUT6NEGSEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Negative Input Select Register for ADCn_INPUT9 in Differential Scan Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn input9negsel(&mut self) -> INPUT9NEGSEL_W<8> {
+    pub fn input9negsel(&mut self) -> INPUT9NEGSEL_W<SCANNEGSEL_SPEC, 8> {
         INPUT9NEGSEL_W::new(self)
     }
     #[doc = "Bits 10:11 - Negative Input Select Register for ADCn_INPUT11 in Differential Scan Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn input11negsel(&mut self) -> INPUT11NEGSEL_W<10> {
+    pub fn input11negsel(&mut self) -> INPUT11NEGSEL_W<SCANNEGSEL_SPEC, 10> {
         INPUT11NEGSEL_W::new(self)
     }
     #[doc = "Bits 12:13 - Negative Input Select Register for ADCn_INPUT13 in Differential Scan Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn input13negsel(&mut self) -> INPUT13NEGSEL_W<12> {
+    pub fn input13negsel(&mut self) -> INPUT13NEGSEL_W<SCANNEGSEL_SPEC, 12> {
         INPUT13NEGSEL_W::new(self)
     }
     #[doc = "Bits 14:15 - Negative Input Select Register for ADCn_INPUT15 in Differential Scan Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn input15negsel(&mut self) -> INPUT15NEGSEL_W<14> {
+    pub fn input15negsel(&mut self) -> INPUT15NEGSEL_W<SCANNEGSEL_SPEC, 14> {
         INPUT15NEGSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Negative Input Select Register for Scan\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scannegsel](index.html) module"]
+#[doc = "Negative Input Select Register for Scan\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scannegsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scannegsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANNEGSEL_SPEC;
 impl crate::RegisterSpec for SCANNEGSEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [scannegsel::R](R) reader structure"]
-impl crate::Readable for SCANNEGSEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [scannegsel::W](W) writer structure"]
+#[doc = "`read()` method returns [`scannegsel::R`](R) reader structure"]
+impl crate::Readable for SCANNEGSEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`scannegsel::W`](W) writer structure"]
 impl crate::Writable for SCANNEGSEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

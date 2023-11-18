@@ -1,18 +1,5 @@
 #[doc = "Register `IF` reader"]
-pub struct R(crate::R<IF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IF_SPEC>;
 #[doc = "Field `OF` reader - Overflow Interrupt Flag"]
 pub type OF_R = crate::BitReader;
 #[doc = "Field `UF` reader - Underflow Interrupt Flag"]
@@ -92,15 +79,35 @@ impl R {
         ICBOF3_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IF")
+            .field("of", &format_args!("{}", self.of().bit()))
+            .field("uf", &format_args!("{}", self.uf().bit()))
+            .field("dirchg", &format_args!("{}", self.dirchg().bit()))
+            .field("cc0", &format_args!("{}", self.cc0().bit()))
+            .field("cc1", &format_args!("{}", self.cc1().bit()))
+            .field("cc2", &format_args!("{}", self.cc2().bit()))
+            .field("cc3", &format_args!("{}", self.cc3().bit()))
+            .field("icbof0", &format_args!("{}", self.icbof0().bit()))
+            .field("icbof1", &format_args!("{}", self.icbof1().bit()))
+            .field("icbof2", &format_args!("{}", self.icbof2().bit()))
+            .field("icbof3", &format_args!("{}", self.icbof3().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<IF_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IF_SPEC;
 impl crate::RegisterSpec for IF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [if_::R](R) reader structure"]
-impl crate::Readable for IF_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`if_::R`](R) reader structure"]
+impl crate::Readable for IF_SPEC {}
 #[doc = "`reset()` method sets IF to value 0"]
 impl crate::Resettable for IF_SPEC {
     const RESET_VALUE: Self::Ux = 0;

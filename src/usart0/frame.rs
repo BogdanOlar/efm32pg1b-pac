@@ -1,39 +1,7 @@
 #[doc = "Register `FRAME` reader"]
-pub struct R(crate::R<FRAME_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FRAME_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FRAME_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FRAME_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FRAME_SPEC>;
 #[doc = "Register `FRAME` writer"]
-pub struct W(crate::W<FRAME_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FRAME_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FRAME_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FRAME_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FRAME_SPEC>;
 #[doc = "Field `DATABITS` reader - Data-Bit Mode"]
 pub type DATABITS_R = crate::FieldReader<DATABITS_A>;
 #[doc = "Data-Bit Mode\n\nValue on reset: 5"]
@@ -79,7 +47,7 @@ impl crate::FieldSpec for DATABITS_A {
 impl DATABITS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DATABITS_A> {
+    pub const fn variant(&self) -> Option<DATABITS_A> {
         match self.bits {
             1 => Some(DATABITS_A::FOUR),
             2 => Some(DATABITS_A::FIVE),
@@ -97,138 +65,142 @@ impl DATABITS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `FOUR`"]
+    #[doc = "Each frame contains 4 data bits"]
     #[inline(always)]
     pub fn is_four(&self) -> bool {
         *self == DATABITS_A::FOUR
     }
-    #[doc = "Checks if the value of the field is `FIVE`"]
+    #[doc = "Each frame contains 5 data bits"]
     #[inline(always)]
     pub fn is_five(&self) -> bool {
         *self == DATABITS_A::FIVE
     }
-    #[doc = "Checks if the value of the field is `SIX`"]
+    #[doc = "Each frame contains 6 data bits"]
     #[inline(always)]
     pub fn is_six(&self) -> bool {
         *self == DATABITS_A::SIX
     }
-    #[doc = "Checks if the value of the field is `SEVEN`"]
+    #[doc = "Each frame contains 7 data bits"]
     #[inline(always)]
     pub fn is_seven(&self) -> bool {
         *self == DATABITS_A::SEVEN
     }
-    #[doc = "Checks if the value of the field is `EIGHT`"]
+    #[doc = "Each frame contains 8 data bits"]
     #[inline(always)]
     pub fn is_eight(&self) -> bool {
         *self == DATABITS_A::EIGHT
     }
-    #[doc = "Checks if the value of the field is `NINE`"]
+    #[doc = "Each frame contains 9 data bits"]
     #[inline(always)]
     pub fn is_nine(&self) -> bool {
         *self == DATABITS_A::NINE
     }
-    #[doc = "Checks if the value of the field is `TEN`"]
+    #[doc = "Each frame contains 10 data bits"]
     #[inline(always)]
     pub fn is_ten(&self) -> bool {
         *self == DATABITS_A::TEN
     }
-    #[doc = "Checks if the value of the field is `ELEVEN`"]
+    #[doc = "Each frame contains 11 data bits"]
     #[inline(always)]
     pub fn is_eleven(&self) -> bool {
         *self == DATABITS_A::ELEVEN
     }
-    #[doc = "Checks if the value of the field is `TWELVE`"]
+    #[doc = "Each frame contains 12 data bits"]
     #[inline(always)]
     pub fn is_twelve(&self) -> bool {
         *self == DATABITS_A::TWELVE
     }
-    #[doc = "Checks if the value of the field is `THIRTEEN`"]
+    #[doc = "Each frame contains 13 data bits"]
     #[inline(always)]
     pub fn is_thirteen(&self) -> bool {
         *self == DATABITS_A::THIRTEEN
     }
-    #[doc = "Checks if the value of the field is `FOURTEEN`"]
+    #[doc = "Each frame contains 14 data bits"]
     #[inline(always)]
     pub fn is_fourteen(&self) -> bool {
         *self == DATABITS_A::FOURTEEN
     }
-    #[doc = "Checks if the value of the field is `FIFTEEN`"]
+    #[doc = "Each frame contains 15 data bits"]
     #[inline(always)]
     pub fn is_fifteen(&self) -> bool {
         *self == DATABITS_A::FIFTEEN
     }
-    #[doc = "Checks if the value of the field is `SIXTEEN`"]
+    #[doc = "Each frame contains 16 data bits"]
     #[inline(always)]
     pub fn is_sixteen(&self) -> bool {
         *self == DATABITS_A::SIXTEEN
     }
 }
 #[doc = "Field `DATABITS` writer - Data-Bit Mode"]
-pub type DATABITS_W<'a, const O: u8> = crate::FieldWriter<'a, FRAME_SPEC, 4, O, DATABITS_A>;
-impl<'a, const O: u8> DATABITS_W<'a, O> {
+pub type DATABITS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DATABITS_A>;
+impl<'a, REG, const O: u8> DATABITS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Each frame contains 4 data bits"]
     #[inline(always)]
-    pub fn four(self) -> &'a mut W {
+    pub fn four(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::FOUR)
     }
     #[doc = "Each frame contains 5 data bits"]
     #[inline(always)]
-    pub fn five(self) -> &'a mut W {
+    pub fn five(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::FIVE)
     }
     #[doc = "Each frame contains 6 data bits"]
     #[inline(always)]
-    pub fn six(self) -> &'a mut W {
+    pub fn six(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::SIX)
     }
     #[doc = "Each frame contains 7 data bits"]
     #[inline(always)]
-    pub fn seven(self) -> &'a mut W {
+    pub fn seven(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::SEVEN)
     }
     #[doc = "Each frame contains 8 data bits"]
     #[inline(always)]
-    pub fn eight(self) -> &'a mut W {
+    pub fn eight(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::EIGHT)
     }
     #[doc = "Each frame contains 9 data bits"]
     #[inline(always)]
-    pub fn nine(self) -> &'a mut W {
+    pub fn nine(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::NINE)
     }
     #[doc = "Each frame contains 10 data bits"]
     #[inline(always)]
-    pub fn ten(self) -> &'a mut W {
+    pub fn ten(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::TEN)
     }
     #[doc = "Each frame contains 11 data bits"]
     #[inline(always)]
-    pub fn eleven(self) -> &'a mut W {
+    pub fn eleven(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::ELEVEN)
     }
     #[doc = "Each frame contains 12 data bits"]
     #[inline(always)]
-    pub fn twelve(self) -> &'a mut W {
+    pub fn twelve(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::TWELVE)
     }
     #[doc = "Each frame contains 13 data bits"]
     #[inline(always)]
-    pub fn thirteen(self) -> &'a mut W {
+    pub fn thirteen(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::THIRTEEN)
     }
     #[doc = "Each frame contains 14 data bits"]
     #[inline(always)]
-    pub fn fourteen(self) -> &'a mut W {
+    pub fn fourteen(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::FOURTEEN)
     }
     #[doc = "Each frame contains 15 data bits"]
     #[inline(always)]
-    pub fn fifteen(self) -> &'a mut W {
+    pub fn fifteen(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::FIFTEEN)
     }
     #[doc = "Each frame contains 16 data bits"]
     #[inline(always)]
-    pub fn sixteen(self) -> &'a mut W {
+    pub fn sixteen(self) -> &'a mut crate::W<REG> {
         self.variant(DATABITS_A::SIXTEEN)
     }
 }
@@ -257,7 +229,7 @@ impl crate::FieldSpec for PARITY_A {
 impl PARITY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PARITY_A> {
+    pub const fn variant(&self) -> Option<PARITY_A> {
         match self.bits {
             0 => Some(PARITY_A::NONE),
             2 => Some(PARITY_A::EVEN),
@@ -265,38 +237,42 @@ impl PARITY_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "Parity bits are not used"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == PARITY_A::NONE
     }
-    #[doc = "Checks if the value of the field is `EVEN`"]
+    #[doc = "Even parity are used. Parity bits are automatically generated and checked by hardware."]
     #[inline(always)]
     pub fn is_even(&self) -> bool {
         *self == PARITY_A::EVEN
     }
-    #[doc = "Checks if the value of the field is `ODD`"]
+    #[doc = "Odd parity is used. Parity bits are automatically generated and checked by hardware."]
     #[inline(always)]
     pub fn is_odd(&self) -> bool {
         *self == PARITY_A::ODD
     }
 }
 #[doc = "Field `PARITY` writer - Parity-Bit Mode"]
-pub type PARITY_W<'a, const O: u8> = crate::FieldWriter<'a, FRAME_SPEC, 2, O, PARITY_A>;
-impl<'a, const O: u8> PARITY_W<'a, O> {
+pub type PARITY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PARITY_A>;
+impl<'a, REG, const O: u8> PARITY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Parity bits are not used"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(PARITY_A::NONE)
     }
     #[doc = "Even parity are used. Parity bits are automatically generated and checked by hardware."]
     #[inline(always)]
-    pub fn even(self) -> &'a mut W {
+    pub fn even(self) -> &'a mut crate::W<REG> {
         self.variant(PARITY_A::EVEN)
     }
     #[doc = "Odd parity is used. Parity bits are automatically generated and checked by hardware."]
     #[inline(always)]
-    pub fn odd(self) -> &'a mut W {
+    pub fn odd(self) -> &'a mut crate::W<REG> {
         self.variant(PARITY_A::ODD)
     }
 }
@@ -327,7 +303,7 @@ impl crate::FieldSpec for STOPBITS_A {
 impl STOPBITS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STOPBITS_A {
+    pub const fn variant(&self) -> STOPBITS_A {
         match self.bits {
             0 => STOPBITS_A::HALF,
             1 => STOPBITS_A::ONE,
@@ -336,48 +312,52 @@ impl STOPBITS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `HALF`"]
+    #[doc = "The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
     #[inline(always)]
     pub fn is_half(&self) -> bool {
         *self == STOPBITS_A::HALF
     }
-    #[doc = "Checks if the value of the field is `ONE`"]
+    #[doc = "One stop bit is generated and verified"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
         *self == STOPBITS_A::ONE
     }
-    #[doc = "Checks if the value of the field is `ONEANDAHALF`"]
+    #[doc = "The transmitter generates one and a half stop bit. The receiver verifies the first stop bit"]
     #[inline(always)]
     pub fn is_oneandahalf(&self) -> bool {
         *self == STOPBITS_A::ONEANDAHALF
     }
-    #[doc = "Checks if the value of the field is `TWO`"]
+    #[doc = "The transmitter generates two stop bits. The receiver checks the first stop-bit only"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
         *self == STOPBITS_A::TWO
     }
 }
 #[doc = "Field `STOPBITS` writer - Stop-Bit Mode"]
-pub type STOPBITS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FRAME_SPEC, 2, O, STOPBITS_A>;
-impl<'a, const O: u8> STOPBITS_W<'a, O> {
+pub type STOPBITS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, STOPBITS_A>;
+impl<'a, REG, const O: u8> STOPBITS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The transmitter generates a half stop bit. Stop-bits are not verified by receiver"]
     #[inline(always)]
-    pub fn half(self) -> &'a mut W {
+    pub fn half(self) -> &'a mut crate::W<REG> {
         self.variant(STOPBITS_A::HALF)
     }
     #[doc = "One stop bit is generated and verified"]
     #[inline(always)]
-    pub fn one(self) -> &'a mut W {
+    pub fn one(self) -> &'a mut crate::W<REG> {
         self.variant(STOPBITS_A::ONE)
     }
     #[doc = "The transmitter generates one and a half stop bit. The receiver verifies the first stop bit"]
     #[inline(always)]
-    pub fn oneandahalf(self) -> &'a mut W {
+    pub fn oneandahalf(self) -> &'a mut crate::W<REG> {
         self.variant(STOPBITS_A::ONEANDAHALF)
     }
     #[doc = "The transmitter generates two stop bits. The receiver checks the first stop-bit only"]
     #[inline(always)]
-    pub fn two(self) -> &'a mut W {
+    pub fn two(self) -> &'a mut crate::W<REG> {
         self.variant(STOPBITS_A::TWO)
     }
 }
@@ -398,44 +378,59 @@ impl R {
         STOPBITS_R::new(((self.bits >> 12) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FRAME")
+            .field("databits", &format_args!("{}", self.databits().bits()))
+            .field("parity", &format_args!("{}", self.parity().bits()))
+            .field("stopbits", &format_args!("{}", self.stopbits().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<FRAME_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Data-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn databits(&mut self) -> DATABITS_W<0> {
+    pub fn databits(&mut self) -> DATABITS_W<FRAME_SPEC, 0> {
         DATABITS_W::new(self)
     }
     #[doc = "Bits 8:9 - Parity-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn parity(&mut self) -> PARITY_W<8> {
+    pub fn parity(&mut self) -> PARITY_W<FRAME_SPEC, 8> {
         PARITY_W::new(self)
     }
     #[doc = "Bits 12:13 - Stop-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn stopbits(&mut self) -> STOPBITS_W<12> {
+    pub fn stopbits(&mut self) -> STOPBITS_W<FRAME_SPEC, 12> {
         STOPBITS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "USART Frame Format Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [frame](index.html) module"]
+#[doc = "USART Frame Format Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frame::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frame::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FRAME_SPEC;
 impl crate::RegisterSpec for FRAME_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [frame::R](R) reader structure"]
-impl crate::Readable for FRAME_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [frame::W](W) writer structure"]
+#[doc = "`read()` method returns [`frame::R`](R) reader structure"]
+impl crate::Readable for FRAME_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`frame::W`](W) writer structure"]
 impl crate::Writable for FRAME_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

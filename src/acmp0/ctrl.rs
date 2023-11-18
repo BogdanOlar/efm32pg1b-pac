@@ -1,63 +1,31 @@
 #[doc = "Register `CTRL` reader"]
-pub struct R(crate::R<CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CTRL_SPEC>;
 #[doc = "Register `CTRL` writer"]
-pub struct W(crate::W<CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `EN` reader - Analog Comparator Enable"]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - Analog Comparator Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INACTVAL` reader - Inactive Value"]
 pub type INACTVAL_R = crate::BitReader;
 #[doc = "Field `INACTVAL` writer - Inactive Value"]
-pub type INACTVAL_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type INACTVAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `GPIOINV` reader - Comparator GPIO Output Invert"]
 pub type GPIOINV_R = crate::BitReader;
 #[doc = "Field `GPIOINV` writer - Comparator GPIO Output Invert"]
-pub type GPIOINV_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type GPIOINV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `APORTXMASTERDIS` reader - APORT Bus X Master Disable"]
 pub type APORTXMASTERDIS_R = crate::BitReader;
 #[doc = "Field `APORTXMASTERDIS` writer - APORT Bus X Master Disable"]
-pub type APORTXMASTERDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type APORTXMASTERDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `APORTYMASTERDIS` reader - APORT Bus Y Master Disable"]
 pub type APORTYMASTERDIS_R = crate::BitReader;
 #[doc = "Field `APORTYMASTERDIS` writer - APORT Bus Y Master Disable"]
-pub type APORTYMASTERDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type APORTYMASTERDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `APORTVMASTERDIS` reader - APORT Bus Master Disable for Bus Selected By VASEL"]
 pub type APORTVMASTERDIS_R = crate::BitReader;
 #[doc = "Field `APORTVMASTERDIS` writer - APORT Bus Master Disable for Bus Selected By VASEL"]
-pub type APORTVMASTERDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type APORTVMASTERDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PWRSEL` reader - Power Select"]
 pub type PWRSEL_R = crate::FieldReader<PWRSEL_A>;
 #[doc = "Power Select\n\nValue on reset: 0"]
@@ -85,7 +53,7 @@ impl crate::FieldSpec for PWRSEL_A {
 impl PWRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PWRSEL_A> {
+    pub const fn variant(&self) -> Option<PWRSEL_A> {
         match self.bits {
             0 => Some(PWRSEL_A::AVDD),
             1 => Some(PWRSEL_A::DVDD),
@@ -94,55 +62,59 @@ impl PWRSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `AVDD`"]
+    #[doc = "AVDD supply"]
     #[inline(always)]
     pub fn is_avdd(&self) -> bool {
         *self == PWRSEL_A::AVDD
     }
-    #[doc = "Checks if the value of the field is `DVDD`"]
+    #[doc = "DVDD supply"]
     #[inline(always)]
     pub fn is_dvdd(&self) -> bool {
         *self == PWRSEL_A::DVDD
     }
-    #[doc = "Checks if the value of the field is `IOVDD0`"]
+    #[doc = "IOVDD/IOVDD0 supply"]
     #[inline(always)]
     pub fn is_iovdd0(&self) -> bool {
         *self == PWRSEL_A::IOVDD0
     }
-    #[doc = "Checks if the value of the field is `IOVDD1`"]
+    #[doc = "IOVDD1 supply (if part has two I/O voltages)"]
     #[inline(always)]
     pub fn is_iovdd1(&self) -> bool {
         *self == PWRSEL_A::IOVDD1
     }
 }
 #[doc = "Field `PWRSEL` writer - Power Select"]
-pub type PWRSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O, PWRSEL_A>;
-impl<'a, const O: u8> PWRSEL_W<'a, O> {
+pub type PWRSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PWRSEL_A>;
+impl<'a, REG, const O: u8> PWRSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "AVDD supply"]
     #[inline(always)]
-    pub fn avdd(self) -> &'a mut W {
+    pub fn avdd(self) -> &'a mut crate::W<REG> {
         self.variant(PWRSEL_A::AVDD)
     }
     #[doc = "DVDD supply"]
     #[inline(always)]
-    pub fn dvdd(self) -> &'a mut W {
+    pub fn dvdd(self) -> &'a mut crate::W<REG> {
         self.variant(PWRSEL_A::DVDD)
     }
     #[doc = "IOVDD/IOVDD0 supply"]
     #[inline(always)]
-    pub fn iovdd0(self) -> &'a mut W {
+    pub fn iovdd0(self) -> &'a mut crate::W<REG> {
         self.variant(PWRSEL_A::IOVDD0)
     }
     #[doc = "IOVDD1 supply (if part has two I/O voltages)"]
     #[inline(always)]
-    pub fn iovdd1(self) -> &'a mut W {
+    pub fn iovdd1(self) -> &'a mut crate::W<REG> {
         self.variant(PWRSEL_A::IOVDD1)
     }
 }
 #[doc = "Field `ACCURACY` reader - ACMP Accuracy Mode"]
 pub type ACCURACY_R = crate::BitReader;
 #[doc = "Field `ACCURACY` writer - ACMP Accuracy Mode"]
-pub type ACCURACY_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type ACCURACY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INPUTRANGE` reader - Input Range"]
 pub type INPUTRANGE_R = crate::FieldReader<INPUTRANGE_A>;
 #[doc = "Input Range\n\nValue on reset: 0"]
@@ -168,7 +140,7 @@ impl crate::FieldSpec for INPUTRANGE_A {
 impl INPUTRANGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<INPUTRANGE_A> {
+    pub const fn variant(&self) -> Option<INPUTRANGE_A> {
         match self.bits {
             0 => Some(INPUTRANGE_A::FULL),
             1 => Some(INPUTRANGE_A::GTVDDDIV2),
@@ -176,57 +148,61 @@ impl INPUTRANGE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `FULL`"]
+    #[doc = "Setting when the input can be from 0 to ACMPVDD."]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
         *self == INPUTRANGE_A::FULL
     }
-    #[doc = "Checks if the value of the field is `GTVDDDIV2`"]
+    #[doc = "Setting when the input will always be greater than ACMPVDD/2."]
     #[inline(always)]
     pub fn is_gtvdddiv2(&self) -> bool {
         *self == INPUTRANGE_A::GTVDDDIV2
     }
-    #[doc = "Checks if the value of the field is `LTVDDDIV2`"]
+    #[doc = "Setting when the input will always be less than ACMPVDD/2."]
     #[inline(always)]
     pub fn is_ltvdddiv2(&self) -> bool {
         *self == INPUTRANGE_A::LTVDDDIV2
     }
 }
 #[doc = "Field `INPUTRANGE` writer - Input Range"]
-pub type INPUTRANGE_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O, INPUTRANGE_A>;
-impl<'a, const O: u8> INPUTRANGE_W<'a, O> {
+pub type INPUTRANGE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, INPUTRANGE_A>;
+impl<'a, REG, const O: u8> INPUTRANGE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Setting when the input can be from 0 to ACMPVDD."]
     #[inline(always)]
-    pub fn full(self) -> &'a mut W {
+    pub fn full(self) -> &'a mut crate::W<REG> {
         self.variant(INPUTRANGE_A::FULL)
     }
     #[doc = "Setting when the input will always be greater than ACMPVDD/2."]
     #[inline(always)]
-    pub fn gtvdddiv2(self) -> &'a mut W {
+    pub fn gtvdddiv2(self) -> &'a mut crate::W<REG> {
         self.variant(INPUTRANGE_A::GTVDDDIV2)
     }
     #[doc = "Setting when the input will always be less than ACMPVDD/2."]
     #[inline(always)]
-    pub fn ltvdddiv2(self) -> &'a mut W {
+    pub fn ltvdddiv2(self) -> &'a mut crate::W<REG> {
         self.variant(INPUTRANGE_A::LTVDDDIV2)
     }
 }
 #[doc = "Field `IRISE` reader - Rising Edge Interrupt Sense"]
 pub type IRISE_R = crate::BitReader;
 #[doc = "Field `IRISE` writer - Rising Edge Interrupt Sense"]
-pub type IRISE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type IRISE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `IFALL` reader - Falling Edge Interrupt Sense"]
 pub type IFALL_R = crate::BitReader;
 #[doc = "Field `IFALL` writer - Falling Edge Interrupt Sense"]
-pub type IFALL_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type IFALL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `BIASPROG` reader - Bias Configuration"]
 pub type BIASPROG_R = crate::FieldReader;
 #[doc = "Field `BIASPROG` writer - Bias Configuration"]
-pub type BIASPROG_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 6, O>;
+pub type BIASPROG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `FULLBIAS` reader - Full Bias Current"]
 pub type FULLBIAS_R = crate::BitReader;
 #[doc = "Field `FULLBIAS` writer - Full Bias Current"]
-pub type FULLBIAS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type FULLBIAS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Analog Comparator Enable"]
     #[inline(always)]
@@ -294,104 +270,138 @@ impl R {
         FULLBIAS_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("en", &format_args!("{}", self.en().bit()))
+            .field("inactval", &format_args!("{}", self.inactval().bit()))
+            .field("gpioinv", &format_args!("{}", self.gpioinv().bit()))
+            .field(
+                "aportxmasterdis",
+                &format_args!("{}", self.aportxmasterdis().bit()),
+            )
+            .field(
+                "aportymasterdis",
+                &format_args!("{}", self.aportymasterdis().bit()),
+            )
+            .field(
+                "aportvmasterdis",
+                &format_args!("{}", self.aportvmasterdis().bit()),
+            )
+            .field("pwrsel", &format_args!("{}", self.pwrsel().bits()))
+            .field("accuracy", &format_args!("{}", self.accuracy().bit()))
+            .field("inputrange", &format_args!("{}", self.inputrange().bits()))
+            .field("irise", &format_args!("{}", self.irise().bit()))
+            .field("ifall", &format_args!("{}", self.ifall().bit()))
+            .field("biasprog", &format_args!("{}", self.biasprog().bits()))
+            .field("fullbias", &format_args!("{}", self.fullbias().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - Analog Comparator Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<0> {
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
         EN_W::new(self)
     }
     #[doc = "Bit 2 - Inactive Value"]
     #[inline(always)]
     #[must_use]
-    pub fn inactval(&mut self) -> INACTVAL_W<2> {
+    pub fn inactval(&mut self) -> INACTVAL_W<CTRL_SPEC, 2> {
         INACTVAL_W::new(self)
     }
     #[doc = "Bit 3 - Comparator GPIO Output Invert"]
     #[inline(always)]
     #[must_use]
-    pub fn gpioinv(&mut self) -> GPIOINV_W<3> {
+    pub fn gpioinv(&mut self) -> GPIOINV_W<CTRL_SPEC, 3> {
         GPIOINV_W::new(self)
     }
     #[doc = "Bit 8 - APORT Bus X Master Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn aportxmasterdis(&mut self) -> APORTXMASTERDIS_W<8> {
+    pub fn aportxmasterdis(&mut self) -> APORTXMASTERDIS_W<CTRL_SPEC, 8> {
         APORTXMASTERDIS_W::new(self)
     }
     #[doc = "Bit 9 - APORT Bus Y Master Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn aportymasterdis(&mut self) -> APORTYMASTERDIS_W<9> {
+    pub fn aportymasterdis(&mut self) -> APORTYMASTERDIS_W<CTRL_SPEC, 9> {
         APORTYMASTERDIS_W::new(self)
     }
     #[doc = "Bit 10 - APORT Bus Master Disable for Bus Selected By VASEL"]
     #[inline(always)]
     #[must_use]
-    pub fn aportvmasterdis(&mut self) -> APORTVMASTERDIS_W<10> {
+    pub fn aportvmasterdis(&mut self) -> APORTVMASTERDIS_W<CTRL_SPEC, 10> {
         APORTVMASTERDIS_W::new(self)
     }
     #[doc = "Bits 12:14 - Power Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pwrsel(&mut self) -> PWRSEL_W<12> {
+    pub fn pwrsel(&mut self) -> PWRSEL_W<CTRL_SPEC, 12> {
         PWRSEL_W::new(self)
     }
     #[doc = "Bit 15 - ACMP Accuracy Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn accuracy(&mut self) -> ACCURACY_W<15> {
+    pub fn accuracy(&mut self) -> ACCURACY_W<CTRL_SPEC, 15> {
         ACCURACY_W::new(self)
     }
     #[doc = "Bits 18:19 - Input Range"]
     #[inline(always)]
     #[must_use]
-    pub fn inputrange(&mut self) -> INPUTRANGE_W<18> {
+    pub fn inputrange(&mut self) -> INPUTRANGE_W<CTRL_SPEC, 18> {
         INPUTRANGE_W::new(self)
     }
     #[doc = "Bit 20 - Rising Edge Interrupt Sense"]
     #[inline(always)]
     #[must_use]
-    pub fn irise(&mut self) -> IRISE_W<20> {
+    pub fn irise(&mut self) -> IRISE_W<CTRL_SPEC, 20> {
         IRISE_W::new(self)
     }
     #[doc = "Bit 21 - Falling Edge Interrupt Sense"]
     #[inline(always)]
     #[must_use]
-    pub fn ifall(&mut self) -> IFALL_W<21> {
+    pub fn ifall(&mut self) -> IFALL_W<CTRL_SPEC, 21> {
         IFALL_W::new(self)
     }
     #[doc = "Bits 24:29 - Bias Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn biasprog(&mut self) -> BIASPROG_W<24> {
+    pub fn biasprog(&mut self) -> BIASPROG_W<CTRL_SPEC, 24> {
         BIASPROG_W::new(self)
     }
     #[doc = "Bit 31 - Full Bias Current"]
     #[inline(always)]
     #[must_use]
-    pub fn fullbias(&mut self) -> FULLBIAS_W<31> {
+    pub fn fullbias(&mut self) -> FULLBIAS_W<CTRL_SPEC, 31> {
         FULLBIAS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRL_SPEC;
 impl crate::RegisterSpec for CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
-impl crate::Readable for CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`ctrl::R`](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

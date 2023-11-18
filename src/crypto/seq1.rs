@@ -1,55 +1,23 @@
 #[doc = "Register `SEQ1` reader"]
-pub struct R(crate::R<SEQ1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SEQ1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SEQ1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SEQ1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SEQ1_SPEC>;
 #[doc = "Register `SEQ1` writer"]
-pub struct W(crate::W<SEQ1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SEQ1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SEQ1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SEQ1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SEQ1_SPEC>;
 #[doc = "Field `INSTR4` reader - Sequence Instruction 4"]
 pub type INSTR4_R = crate::FieldReader;
 #[doc = "Field `INSTR4` writer - Sequence Instruction 4"]
-pub type INSTR4_W<'a, const O: u8> = crate::FieldWriter<'a, SEQ1_SPEC, 8, O>;
+pub type INSTR4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `INSTR5` reader - Sequence Instruction 5"]
 pub type INSTR5_R = crate::FieldReader;
 #[doc = "Field `INSTR5` writer - Sequence Instruction 5"]
-pub type INSTR5_W<'a, const O: u8> = crate::FieldWriter<'a, SEQ1_SPEC, 8, O>;
+pub type INSTR5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `INSTR6` reader - Sequence Instruction 6"]
 pub type INSTR6_R = crate::FieldReader;
 #[doc = "Field `INSTR6` writer - Sequence Instruction 6"]
-pub type INSTR6_W<'a, const O: u8> = crate::FieldWriter<'a, SEQ1_SPEC, 8, O>;
+pub type INSTR6_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `INSTR7` reader - Sequence Instruction 7"]
 pub type INSTR7_R = crate::FieldReader;
 #[doc = "Field `INSTR7` writer - Sequence Instruction 7"]
-pub type INSTR7_W<'a, const O: u8> = crate::FieldWriter<'a, SEQ1_SPEC, 8, O>;
+pub type INSTR7_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Sequence Instruction 4"]
     #[inline(always)]
@@ -72,50 +40,66 @@ impl R {
         INSTR7_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEQ1")
+            .field("instr4", &format_args!("{}", self.instr4().bits()))
+            .field("instr5", &format_args!("{}", self.instr5().bits()))
+            .field("instr6", &format_args!("{}", self.instr6().bits()))
+            .field("instr7", &format_args!("{}", self.instr7().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<SEQ1_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Sequence Instruction 4"]
     #[inline(always)]
     #[must_use]
-    pub fn instr4(&mut self) -> INSTR4_W<0> {
+    pub fn instr4(&mut self) -> INSTR4_W<SEQ1_SPEC, 0> {
         INSTR4_W::new(self)
     }
     #[doc = "Bits 8:15 - Sequence Instruction 5"]
     #[inline(always)]
     #[must_use]
-    pub fn instr5(&mut self) -> INSTR5_W<8> {
+    pub fn instr5(&mut self) -> INSTR5_W<SEQ1_SPEC, 8> {
         INSTR5_W::new(self)
     }
     #[doc = "Bits 16:23 - Sequence Instruction 6"]
     #[inline(always)]
     #[must_use]
-    pub fn instr6(&mut self) -> INSTR6_W<16> {
+    pub fn instr6(&mut self) -> INSTR6_W<SEQ1_SPEC, 16> {
         INSTR6_W::new(self)
     }
     #[doc = "Bits 24:31 - Sequence Instruction 7"]
     #[inline(always)]
     #[must_use]
-    pub fn instr7(&mut self) -> INSTR7_W<24> {
+    pub fn instr7(&mut self) -> INSTR7_W<SEQ1_SPEC, 24> {
         INSTR7_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Sequence Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq1](index.html) module"]
+#[doc = "Sequence Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`seq1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`seq1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SEQ1_SPEC;
 impl crate::RegisterSpec for SEQ1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [seq1::R](R) reader structure"]
-impl crate::Readable for SEQ1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [seq1::W](W) writer structure"]
+#[doc = "`read()` method returns [`seq1::R`](R) reader structure"]
+impl crate::Readable for SEQ1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`seq1::W`](W) writer structure"]
 impl crate::Writable for SEQ1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

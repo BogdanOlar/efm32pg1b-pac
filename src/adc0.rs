@@ -1,5 +1,6 @@
 #[doc = r"Register block"]
 #[repr(C)]
+#[derive(Debug)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Control Register"]
     pub ctrl: CTRL,
@@ -65,123 +66,153 @@ pub struct RegisterBlock {
     #[doc = "0x94 - APORT Bus Master Disable Register"]
     pub aportmasterdis: APORTMASTERDIS,
 }
-#[doc = "CTRL (rw) register accessor: an alias for `Reg<CTRL_SPEC>`"]
+#[doc = "CTRL (rw) register accessor: Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
+module"]
 pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "Control Register"]
 pub mod ctrl;
-#[doc = "CMD (w) register accessor: an alias for `Reg<CMD_SPEC>`"]
+#[doc = "CMD (w) register accessor: Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmd::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmd`]
+module"]
 pub type CMD = crate::Reg<cmd::CMD_SPEC>;
 #[doc = "Command Register"]
 pub mod cmd;
-#[doc = "STATUS (r) register accessor: an alias for `Reg<STATUS_SPEC>`"]
+#[doc = "STATUS (r) register accessor: Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@status`]
+module"]
 pub type STATUS = crate::Reg<status::STATUS_SPEC>;
 #[doc = "Status Register"]
 pub mod status;
-#[doc = "SINGLECTRL (rw) register accessor: an alias for `Reg<SINGLECTRL_SPEC>`"]
+#[doc = "SINGLECTRL (rw) register accessor: Single Channel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singlectrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`singlectrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@singlectrl`]
+module"]
 pub type SINGLECTRL = crate::Reg<singlectrl::SINGLECTRL_SPEC>;
 #[doc = "Single Channel Control Register"]
 pub mod singlectrl;
-#[doc = "SINGLECTRLX (rw) register accessor: an alias for `Reg<SINGLECTRLX_SPEC>`"]
+#[doc = "SINGLECTRLX (rw) register accessor: Single Channel Control Register Continued\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singlectrlx::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`singlectrlx::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@singlectrlx`]
+module"]
 pub type SINGLECTRLX = crate::Reg<singlectrlx::SINGLECTRLX_SPEC>;
 #[doc = "Single Channel Control Register Continued"]
 pub mod singlectrlx;
-#[doc = "SCANCTRL (rw) register accessor: an alias for `Reg<SCANCTRL_SPEC>`"]
+#[doc = "SCANCTRL (rw) register accessor: Scan Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scanctrl`]
+module"]
 pub type SCANCTRL = crate::Reg<scanctrl::SCANCTRL_SPEC>;
 #[doc = "Scan Control Register"]
 pub mod scanctrl;
-#[doc = "SCANCTRLX (rw) register accessor: an alias for `Reg<SCANCTRLX_SPEC>`"]
+#[doc = "SCANCTRLX (rw) register accessor: Scan Control Register Continued\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanctrlx::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanctrlx::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scanctrlx`]
+module"]
 pub type SCANCTRLX = crate::Reg<scanctrlx::SCANCTRLX_SPEC>;
 #[doc = "Scan Control Register Continued"]
 pub mod scanctrlx;
-#[doc = "SCANMASK (rw) register accessor: an alias for `Reg<SCANMASK_SPEC>`"]
+#[doc = "SCANMASK (rw) register accessor: Scan Sequence Input Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanmask::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanmask::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scanmask`]
+module"]
 pub type SCANMASK = crate::Reg<scanmask::SCANMASK_SPEC>;
 #[doc = "Scan Sequence Input Mask Register"]
 pub mod scanmask;
-#[doc = "SCANINPUTSEL (rw) register accessor: an alias for `Reg<SCANINPUTSEL_SPEC>`"]
+#[doc = "SCANINPUTSEL (rw) register accessor: Input Selection Register for Scan Mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scaninputsel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scaninputsel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scaninputsel`]
+module"]
 pub type SCANINPUTSEL = crate::Reg<scaninputsel::SCANINPUTSEL_SPEC>;
 #[doc = "Input Selection Register for Scan Mode"]
 pub mod scaninputsel;
-#[doc = "SCANNEGSEL (rw) register accessor: an alias for `Reg<SCANNEGSEL_SPEC>`"]
+#[doc = "SCANNEGSEL (rw) register accessor: Negative Input Select Register for Scan\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scannegsel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scannegsel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scannegsel`]
+module"]
 pub type SCANNEGSEL = crate::Reg<scannegsel::SCANNEGSEL_SPEC>;
 #[doc = "Negative Input Select Register for Scan"]
 pub mod scannegsel;
-#[doc = "CMPTHR (rw) register accessor: an alias for `Reg<CMPTHR_SPEC>`"]
+#[doc = "CMPTHR (rw) register accessor: Compare Threshold Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmpthr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmpthr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmpthr`]
+module"]
 pub type CMPTHR = crate::Reg<cmpthr::CMPTHR_SPEC>;
 #[doc = "Compare Threshold Register"]
 pub mod cmpthr;
-#[doc = "BIASPROG (rw) register accessor: an alias for `Reg<BIASPROG_SPEC>`"]
+#[doc = "BIASPROG (rw) register accessor: Bias Programming Register for Various Analog Blocks Used in ADC Operation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`biasprog::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`biasprog::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@biasprog`]
+module"]
 pub type BIASPROG = crate::Reg<biasprog::BIASPROG_SPEC>;
 #[doc = "Bias Programming Register for Various Analog Blocks Used in ADC Operation"]
 pub mod biasprog;
-#[doc = "CAL (rw) register accessor: an alias for `Reg<CAL_SPEC>`"]
+#[doc = "CAL (rw) register accessor: Calibration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cal::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cal::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cal`]
+module"]
 pub type CAL = crate::Reg<cal::CAL_SPEC>;
 #[doc = "Calibration Register"]
 pub mod cal;
-#[doc = "IF (r) register accessor: an alias for `Reg<IF_SPEC>`"]
+#[doc = "IF (r) register accessor: Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@if_`]
+module"]
 pub type IF = crate::Reg<if_::IF_SPEC>;
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
-#[doc = "IFS (w) register accessor: an alias for `Reg<IFS_SPEC>`"]
+#[doc = "IFS (w) register accessor: Interrupt Flag Set Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifs`]
+module"]
 pub type IFS = crate::Reg<ifs::IFS_SPEC>;
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
-#[doc = "IFC (w) register accessor: an alias for `Reg<IFC_SPEC>`"]
+#[doc = "IFC (w) register accessor: Interrupt Flag Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifc`]
+module"]
 pub type IFC = crate::Reg<ifc::IFC_SPEC>;
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
-#[doc = "IEN (rw) register accessor: an alias for `Reg<IEN_SPEC>`"]
+#[doc = "IEN (rw) register accessor: Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ien`]
+module"]
 pub type IEN = crate::Reg<ien::IEN_SPEC>;
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
-#[doc = "SINGLEDATA (r) register accessor: an alias for `Reg<SINGLEDATA_SPEC>`"]
+#[doc = "SINGLEDATA (r) register accessor: Single Conversion Result Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singledata::R`]. WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@singledata`]
+module"]
 pub type SINGLEDATA = crate::Reg<singledata::SINGLEDATA_SPEC>;
 #[doc = "Single Conversion Result Data"]
 pub mod singledata;
-#[doc = "SCANDATA (r) register accessor: an alias for `Reg<SCANDATA_SPEC>`"]
+#[doc = "SCANDATA (r) register accessor: Scan Conversion Result Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scandata::R`]. WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scandata`]
+module"]
 pub type SCANDATA = crate::Reg<scandata::SCANDATA_SPEC>;
 #[doc = "Scan Conversion Result Data"]
 pub mod scandata;
-#[doc = "SINGLEDATAP (r) register accessor: an alias for `Reg<SINGLEDATAP_SPEC>`"]
+#[doc = "SINGLEDATAP (r) register accessor: Single Conversion Result Data Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singledatap::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@singledatap`]
+module"]
 pub type SINGLEDATAP = crate::Reg<singledatap::SINGLEDATAP_SPEC>;
 #[doc = "Single Conversion Result Data Peek Register"]
 pub mod singledatap;
-#[doc = "SCANDATAP (r) register accessor: an alias for `Reg<SCANDATAP_SPEC>`"]
+#[doc = "SCANDATAP (r) register accessor: Scan Sequence Result Data Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scandatap::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scandatap`]
+module"]
 pub type SCANDATAP = crate::Reg<scandatap::SCANDATAP_SPEC>;
 #[doc = "Scan Sequence Result Data Peek Register"]
 pub mod scandatap;
-#[doc = "SCANDATAX (r) register accessor: an alias for `Reg<SCANDATAX_SPEC>`"]
+#[doc = "SCANDATAX (r) register accessor: Scan Sequence Result Data + Data Source Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scandatax::R`]. WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scandatax`]
+module"]
 pub type SCANDATAX = crate::Reg<scandatax::SCANDATAX_SPEC>;
 #[doc = "Scan Sequence Result Data + Data Source Register"]
 pub mod scandatax;
-#[doc = "SCANDATAXP (r) register accessor: an alias for `Reg<SCANDATAXP_SPEC>`"]
+#[doc = "SCANDATAXP (r) register accessor: Scan Sequence Result Data + Data Source Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scandataxp::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scandataxp`]
+module"]
 pub type SCANDATAXP = crate::Reg<scandataxp::SCANDATAXP_SPEC>;
 #[doc = "Scan Sequence Result Data + Data Source Peek Register"]
 pub mod scandataxp;
-#[doc = "APORTREQ (r) register accessor: an alias for `Reg<APORTREQ_SPEC>`"]
+#[doc = "APORTREQ (r) register accessor: APORT Request Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportreq::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aportreq`]
+module"]
 pub type APORTREQ = crate::Reg<aportreq::APORTREQ_SPEC>;
 #[doc = "APORT Request Status Register"]
 pub mod aportreq;
-#[doc = "APORTCONFLICT (r) register accessor: an alias for `Reg<APORTCONFLICT_SPEC>`"]
+#[doc = "APORTCONFLICT (r) register accessor: APORT Conflict Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportconflict::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aportconflict`]
+module"]
 pub type APORTCONFLICT = crate::Reg<aportconflict::APORTCONFLICT_SPEC>;
 #[doc = "APORT Conflict Status Register"]
 pub mod aportconflict;
-#[doc = "SINGLEFIFOCOUNT (r) register accessor: an alias for `Reg<SINGLEFIFOCOUNT_SPEC>`"]
+#[doc = "SINGLEFIFOCOUNT (r) register accessor: Single FIFO Count Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singlefifocount::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@singlefifocount`]
+module"]
 pub type SINGLEFIFOCOUNT = crate::Reg<singlefifocount::SINGLEFIFOCOUNT_SPEC>;
 #[doc = "Single FIFO Count Register"]
 pub mod singlefifocount;
-#[doc = "SCANFIFOCOUNT (r) register accessor: an alias for `Reg<SCANFIFOCOUNT_SPEC>`"]
+#[doc = "SCANFIFOCOUNT (r) register accessor: Scan FIFO Count Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanfifocount::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scanfifocount`]
+module"]
 pub type SCANFIFOCOUNT = crate::Reg<scanfifocount::SCANFIFOCOUNT_SPEC>;
 #[doc = "Scan FIFO Count Register"]
 pub mod scanfifocount;
-#[doc = "SINGLEFIFOCLEAR (w) register accessor: an alias for `Reg<SINGLEFIFOCLEAR_SPEC>`"]
+#[doc = "SINGLEFIFOCLEAR (w) register accessor: Single FIFO Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`singlefifoclear::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@singlefifoclear`]
+module"]
 pub type SINGLEFIFOCLEAR = crate::Reg<singlefifoclear::SINGLEFIFOCLEAR_SPEC>;
 #[doc = "Single FIFO Clear Register"]
 pub mod singlefifoclear;
-#[doc = "SCANFIFOCLEAR (w) register accessor: an alias for `Reg<SCANFIFOCLEAR_SPEC>`"]
+#[doc = "SCANFIFOCLEAR (w) register accessor: Scan FIFO Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanfifoclear::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scanfifoclear`]
+module"]
 pub type SCANFIFOCLEAR = crate::Reg<scanfifoclear::SCANFIFOCLEAR_SPEC>;
 #[doc = "Scan FIFO Clear Register"]
 pub mod scanfifoclear;
-#[doc = "APORTMASTERDIS (rw) register accessor: an alias for `Reg<APORTMASTERDIS_SPEC>`"]
+#[doc = "APORTMASTERDIS (rw) register accessor: APORT Bus Master Disable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportmasterdis::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aportmasterdis::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aportmasterdis`]
+module"]
 pub type APORTMASTERDIS = crate::Reg<aportmasterdis::APORTMASTERDIS_SPEC>;
 #[doc = "APORT Bus Master Disable Register"]
 pub mod aportmasterdis;

@@ -1,18 +1,5 @@
 #[doc = "Register `SCANDATAX` reader"]
-pub struct R(crate::R<SCANDATAX_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCANDATAX_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCANDATAX_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCANDATAX_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SCANDATAX_SPEC>;
 #[doc = "Field `DATA` reader - Scan Conversion Result Data"]
 pub type DATA_R = crate::FieldReader<u16>;
 #[doc = "Field `SCANINPUTID` reader - Scan Conversion Input ID"]
@@ -29,15 +16,18 @@ impl R {
         SCANINPUTID_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
-#[doc = "Scan Sequence Result Data + Data Source Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scandatax](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
+impl core::fmt::Debug for crate::generic::Reg<SCANDATAX_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
+#[doc = "Scan Sequence Result Data + Data Source Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scandatax::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANDATAX_SPEC;
 impl crate::RegisterSpec for SCANDATAX_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [scandatax::R](R) reader structure"]
-impl crate::Readable for SCANDATAX_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`scandatax::R`](R) reader structure"]
+impl crate::Readable for SCANDATAX_SPEC {}
 #[doc = "`reset()` method sets SCANDATAX to value 0"]
 impl crate::Resettable for SCANDATAX_SPEC {
     const RESET_VALUE: Self::Ux = 0;

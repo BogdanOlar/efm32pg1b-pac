@@ -1,43 +1,11 @@
 #[doc = "Register `IRCTRL` reader"]
-pub struct R(crate::R<IRCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IRCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IRCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IRCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IRCTRL_SPEC>;
 #[doc = "Register `IRCTRL` writer"]
-pub struct W(crate::W<IRCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IRCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IRCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IRCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<IRCTRL_SPEC>;
 #[doc = "Field `IREN` reader - Enable IrDA Module"]
 pub type IREN_R = crate::BitReader;
 #[doc = "Field `IREN` writer - Enable IrDA Module"]
-pub type IREN_W<'a, const O: u8> = crate::BitWriter<'a, IRCTRL_SPEC, O>;
+pub type IREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `IRPW` reader - IrDA TX Pulse Width"]
 pub type IRPW_R = crate::FieldReader<IRPW_A>;
 #[doc = "IrDA TX Pulse Width\n\nValue on reset: 0"]
@@ -65,7 +33,7 @@ impl crate::FieldSpec for IRPW_A {
 impl IRPW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IRPW_A {
+    pub const fn variant(&self) -> IRPW_A {
         match self.bits {
             0 => IRPW_A::ONE,
             1 => IRPW_A::TWO,
@@ -74,59 +42,63 @@ impl IRPW_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ONE`"]
+    #[doc = "IrDA pulse width is 1/16 for OVS=0 and 1/8 for OVS=1"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
         *self == IRPW_A::ONE
     }
-    #[doc = "Checks if the value of the field is `TWO`"]
+    #[doc = "IrDA pulse width is 2/16 for OVS=0 and 2/8 for OVS=1"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
         *self == IRPW_A::TWO
     }
-    #[doc = "Checks if the value of the field is `THREE`"]
+    #[doc = "IrDA pulse width is 3/16 for OVS=0 and 3/8 for OVS=1"]
     #[inline(always)]
     pub fn is_three(&self) -> bool {
         *self == IRPW_A::THREE
     }
-    #[doc = "Checks if the value of the field is `FOUR`"]
+    #[doc = "IrDA pulse width is 4/16 for OVS=0 and 4/8 for OVS=1"]
     #[inline(always)]
     pub fn is_four(&self) -> bool {
         *self == IRPW_A::FOUR
     }
 }
 #[doc = "Field `IRPW` writer - IrDA TX Pulse Width"]
-pub type IRPW_W<'a, const O: u8> = crate::FieldWriterSafe<'a, IRCTRL_SPEC, 2, O, IRPW_A>;
-impl<'a, const O: u8> IRPW_W<'a, O> {
+pub type IRPW_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, IRPW_A>;
+impl<'a, REG, const O: u8> IRPW_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "IrDA pulse width is 1/16 for OVS=0 and 1/8 for OVS=1"]
     #[inline(always)]
-    pub fn one(self) -> &'a mut W {
+    pub fn one(self) -> &'a mut crate::W<REG> {
         self.variant(IRPW_A::ONE)
     }
     #[doc = "IrDA pulse width is 2/16 for OVS=0 and 2/8 for OVS=1"]
     #[inline(always)]
-    pub fn two(self) -> &'a mut W {
+    pub fn two(self) -> &'a mut crate::W<REG> {
         self.variant(IRPW_A::TWO)
     }
     #[doc = "IrDA pulse width is 3/16 for OVS=0 and 3/8 for OVS=1"]
     #[inline(always)]
-    pub fn three(self) -> &'a mut W {
+    pub fn three(self) -> &'a mut crate::W<REG> {
         self.variant(IRPW_A::THREE)
     }
     #[doc = "IrDA pulse width is 4/16 for OVS=0 and 4/8 for OVS=1"]
     #[inline(always)]
-    pub fn four(self) -> &'a mut W {
+    pub fn four(self) -> &'a mut crate::W<REG> {
         self.variant(IRPW_A::FOUR)
     }
 }
 #[doc = "Field `IRFILT` reader - IrDA RX Filter"]
 pub type IRFILT_R = crate::BitReader;
 #[doc = "Field `IRFILT` writer - IrDA RX Filter"]
-pub type IRFILT_W<'a, const O: u8> = crate::BitWriter<'a, IRCTRL_SPEC, O>;
+pub type IRFILT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `IRPRSEN` reader - IrDA PRS Channel Enable"]
 pub type IRPRSEN_R = crate::BitReader;
 #[doc = "Field `IRPRSEN` writer - IrDA PRS Channel Enable"]
-pub type IRPRSEN_W<'a, const O: u8> = crate::BitWriter<'a, IRCTRL_SPEC, O>;
+pub type IRPRSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `IRPRSSEL` reader - IrDA PRS Channel Select"]
 pub type IRPRSSEL_R = crate::FieldReader<IRPRSSEL_A>;
 #[doc = "IrDA PRS Channel Select\n\nValue on reset: 0"]
@@ -170,7 +142,7 @@ impl crate::FieldSpec for IRPRSSEL_A {
 impl IRPRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<IRPRSSEL_A> {
+    pub const fn variant(&self) -> Option<IRPRSSEL_A> {
         match self.bits {
             0 => Some(IRPRSSEL_A::PRSCH0),
             1 => Some(IRPRSSEL_A::PRSCH1),
@@ -187,128 +159,132 @@ impl IRPRSSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PRSCH0`"]
+    #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH0
     }
-    #[doc = "Checks if the value of the field is `PRSCH1`"]
+    #[doc = "PRS Channel 1 selected"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH1
     }
-    #[doc = "Checks if the value of the field is `PRSCH2`"]
+    #[doc = "PRS Channel 2 selected"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH2
     }
-    #[doc = "Checks if the value of the field is `PRSCH3`"]
+    #[doc = "PRS Channel 3 selected"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH3
     }
-    #[doc = "Checks if the value of the field is `PRSCH4`"]
+    #[doc = "PRS Channel 4 selected"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH4
     }
-    #[doc = "Checks if the value of the field is `PRSCH5`"]
+    #[doc = "PRS Channel 5 selected"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH5
     }
-    #[doc = "Checks if the value of the field is `PRSCH6`"]
+    #[doc = "PRS Channel 6 selected"]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH6
     }
-    #[doc = "Checks if the value of the field is `PRSCH7`"]
+    #[doc = "PRS Channel 7 selected"]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH7
     }
-    #[doc = "Checks if the value of the field is `PRSCH8`"]
+    #[doc = "PRS Channel 8 selected"]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH8
     }
-    #[doc = "Checks if the value of the field is `PRSCH9`"]
+    #[doc = "PRS Channel 9 selected"]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH9
     }
-    #[doc = "Checks if the value of the field is `PRSCH10`"]
+    #[doc = "PRS Channel 10 selected"]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH10
     }
-    #[doc = "Checks if the value of the field is `PRSCH11`"]
+    #[doc = "PRS Channel 11 selected"]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
         *self == IRPRSSEL_A::PRSCH11
     }
 }
 #[doc = "Field `IRPRSSEL` writer - IrDA PRS Channel Select"]
-pub type IRPRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, IRCTRL_SPEC, 4, O, IRPRSSEL_A>;
-impl<'a, const O: u8> IRPRSSEL_W<'a, O> {
+pub type IRPRSSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, IRPRSSEL_A>;
+impl<'a, REG, const O: u8> IRPRSSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
-    pub fn prsch0(self) -> &'a mut W {
+    pub fn prsch0(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH0)
     }
     #[doc = "PRS Channel 1 selected"]
     #[inline(always)]
-    pub fn prsch1(self) -> &'a mut W {
+    pub fn prsch1(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH1)
     }
     #[doc = "PRS Channel 2 selected"]
     #[inline(always)]
-    pub fn prsch2(self) -> &'a mut W {
+    pub fn prsch2(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH2)
     }
     #[doc = "PRS Channel 3 selected"]
     #[inline(always)]
-    pub fn prsch3(self) -> &'a mut W {
+    pub fn prsch3(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH3)
     }
     #[doc = "PRS Channel 4 selected"]
     #[inline(always)]
-    pub fn prsch4(self) -> &'a mut W {
+    pub fn prsch4(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH4)
     }
     #[doc = "PRS Channel 5 selected"]
     #[inline(always)]
-    pub fn prsch5(self) -> &'a mut W {
+    pub fn prsch5(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH5)
     }
     #[doc = "PRS Channel 6 selected"]
     #[inline(always)]
-    pub fn prsch6(self) -> &'a mut W {
+    pub fn prsch6(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH6)
     }
     #[doc = "PRS Channel 7 selected"]
     #[inline(always)]
-    pub fn prsch7(self) -> &'a mut W {
+    pub fn prsch7(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH7)
     }
     #[doc = "PRS Channel 8 selected"]
     #[inline(always)]
-    pub fn prsch8(self) -> &'a mut W {
+    pub fn prsch8(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH8)
     }
     #[doc = "PRS Channel 9 selected"]
     #[inline(always)]
-    pub fn prsch9(self) -> &'a mut W {
+    pub fn prsch9(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH9)
     }
     #[doc = "PRS Channel 10 selected"]
     #[inline(always)]
-    pub fn prsch10(self) -> &'a mut W {
+    pub fn prsch10(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH10)
     }
     #[doc = "PRS Channel 11 selected"]
     #[inline(always)]
-    pub fn prsch11(self) -> &'a mut W {
+    pub fn prsch11(self) -> &'a mut crate::W<REG> {
         self.variant(IRPRSSEL_A::PRSCH11)
     }
 }
@@ -339,56 +315,73 @@ impl R {
         IRPRSSEL_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IRCTRL")
+            .field("iren", &format_args!("{}", self.iren().bit()))
+            .field("irpw", &format_args!("{}", self.irpw().bits()))
+            .field("irfilt", &format_args!("{}", self.irfilt().bit()))
+            .field("irprsen", &format_args!("{}", self.irprsen().bit()))
+            .field("irprssel", &format_args!("{}", self.irprssel().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<IRCTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable IrDA Module"]
     #[inline(always)]
     #[must_use]
-    pub fn iren(&mut self) -> IREN_W<0> {
+    pub fn iren(&mut self) -> IREN_W<IRCTRL_SPEC, 0> {
         IREN_W::new(self)
     }
     #[doc = "Bits 1:2 - IrDA TX Pulse Width"]
     #[inline(always)]
     #[must_use]
-    pub fn irpw(&mut self) -> IRPW_W<1> {
+    pub fn irpw(&mut self) -> IRPW_W<IRCTRL_SPEC, 1> {
         IRPW_W::new(self)
     }
     #[doc = "Bit 3 - IrDA RX Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn irfilt(&mut self) -> IRFILT_W<3> {
+    pub fn irfilt(&mut self) -> IRFILT_W<IRCTRL_SPEC, 3> {
         IRFILT_W::new(self)
     }
     #[doc = "Bit 7 - IrDA PRS Channel Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn irprsen(&mut self) -> IRPRSEN_W<7> {
+    pub fn irprsen(&mut self) -> IRPRSEN_W<IRCTRL_SPEC, 7> {
         IRPRSEN_W::new(self)
     }
     #[doc = "Bits 8:11 - IrDA PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn irprssel(&mut self) -> IRPRSSEL_W<8> {
+    pub fn irprssel(&mut self) -> IRPRSSEL_W<IRCTRL_SPEC, 8> {
         IRPRSSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "IrDA Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [irctrl](index.html) module"]
+#[doc = "IrDA Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`irctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`irctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IRCTRL_SPEC;
 impl crate::RegisterSpec for IRCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [irctrl::R](R) reader structure"]
-impl crate::Readable for IRCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [irctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`irctrl::R`](R) reader structure"]
+impl crate::Readable for IRCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`irctrl::W`](W) writer structure"]
 impl crate::Writable for IRCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

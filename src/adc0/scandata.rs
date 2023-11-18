@@ -1,18 +1,5 @@
 #[doc = "Register `SCANDATA` reader"]
-pub struct R(crate::R<SCANDATA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCANDATA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCANDATA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCANDATA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SCANDATA_SPEC>;
 #[doc = "Field `DATA` reader - Scan Conversion Result Data"]
 pub type DATA_R = crate::FieldReader<u32>;
 impl R {
@@ -22,15 +9,18 @@ impl R {
         DATA_R::new(self.bits)
     }
 }
-#[doc = "Scan Conversion Result Data\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scandata](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
+impl core::fmt::Debug for crate::generic::Reg<SCANDATA_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
+#[doc = "Scan Conversion Result Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scandata::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANDATA_SPEC;
 impl crate::RegisterSpec for SCANDATA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [scandata::R](R) reader structure"]
-impl crate::Readable for SCANDATA_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`scandata::R`](R) reader structure"]
+impl crate::Readable for SCANDATA_SPEC {}
 #[doc = "`reset()` method sets SCANDATA to value 0"]
 impl crate::Resettable for SCANDATA_SPEC {
     const RESET_VALUE: Self::Ux = 0;

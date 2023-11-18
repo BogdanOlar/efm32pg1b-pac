@@ -1,43 +1,11 @@
 #[doc = "Register `COMP0` reader"]
-pub struct R(crate::R<COMP0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<COMP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<COMP0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<COMP0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<COMP0_SPEC>;
 #[doc = "Register `COMP0` writer"]
-pub struct W(crate::W<COMP0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<COMP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<COMP0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<COMP0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<COMP0_SPEC>;
 #[doc = "Field `COMP0` reader - Compare Value 0"]
 pub type COMP0_R = crate::FieldReader<u16>;
 #[doc = "Field `COMP0` writer - Compare Value 0"]
-pub type COMP0_W<'a, const O: u8> = crate::FieldWriter<'a, COMP0_SPEC, 16, O, u16>;
+pub type COMP0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Value 0"]
     #[inline(always)]
@@ -45,32 +13,45 @@ impl R {
         COMP0_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("COMP0")
+            .field("comp0", &format_args!("{}", self.comp0().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<COMP0_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Compare Value 0"]
     #[inline(always)]
     #[must_use]
-    pub fn comp0(&mut self) -> COMP0_W<0> {
+    pub fn comp0(&mut self) -> COMP0_W<COMP0_SPEC, 0> {
         COMP0_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Compare Value Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [comp0](index.html) module"]
+#[doc = "Compare Value Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`comp0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`comp0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct COMP0_SPEC;
 impl crate::RegisterSpec for COMP0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [comp0::R](R) reader structure"]
-impl crate::Readable for COMP0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [comp0::W](W) writer structure"]
+#[doc = "`read()` method returns [`comp0::R`](R) reader structure"]
+impl crate::Readable for COMP0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`comp0::W`](W) writer structure"]
 impl crate::Writable for COMP0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

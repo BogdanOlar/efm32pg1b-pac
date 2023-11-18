@@ -1,18 +1,5 @@
 #[doc = "Register `RXDOUBLEXP` reader"]
-pub struct R(crate::R<RXDOUBLEXP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RXDOUBLEXP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RXDOUBLEXP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RXDOUBLEXP_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RXDOUBLEXP_SPEC>;
 #[doc = "Field `RXDATAP0` reader - RX Data 0 Peek"]
 pub type RXDATAP0_R = crate::FieldReader<u16>;
 #[doc = "Field `PERRP0` reader - Data Parity Error 0 Peek"]
@@ -57,15 +44,30 @@ impl R {
         FERRP1_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "RX Buffer Double Data Extended Peek Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdoublexp](index.html) module"]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RXDOUBLEXP")
+            .field("rxdatap0", &format_args!("{}", self.rxdatap0().bits()))
+            .field("perrp0", &format_args!("{}", self.perrp0().bit()))
+            .field("ferrp0", &format_args!("{}", self.ferrp0().bit()))
+            .field("rxdatap1", &format_args!("{}", self.rxdatap1().bits()))
+            .field("perrp1", &format_args!("{}", self.perrp1().bit()))
+            .field("ferrp1", &format_args!("{}", self.ferrp1().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<RXDOUBLEXP_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
+#[doc = "RX Buffer Double Data Extended Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdoublexp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDOUBLEXP_SPEC;
 impl crate::RegisterSpec for RXDOUBLEXP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxdoublexp::R](R) reader structure"]
-impl crate::Readable for RXDOUBLEXP_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rxdoublexp::R`](R) reader structure"]
+impl crate::Readable for RXDOUBLEXP_SPEC {}
 #[doc = "`reset()` method sets RXDOUBLEXP to value 0"]
 impl crate::Resettable for RXDOUBLEXP_SPEC {
     const RESET_VALUE: Self::Ux = 0;

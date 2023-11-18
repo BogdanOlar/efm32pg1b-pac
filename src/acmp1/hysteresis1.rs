@@ -1,39 +1,7 @@
 #[doc = "Register `HYSTERESIS1` reader"]
-pub struct R(crate::R<HYSTERESIS1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HYSTERESIS1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HYSTERESIS1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HYSTERESIS1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HYSTERESIS1_SPEC>;
 #[doc = "Register `HYSTERESIS1` writer"]
-pub struct W(crate::W<HYSTERESIS1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HYSTERESIS1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HYSTERESIS1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HYSTERESIS1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HYSTERESIS1_SPEC>;
 #[doc = "Field `HYST` reader - Hysteresis Select When ACMPOUT=1"]
 pub type HYST_R = crate::FieldReader<HYST_A>;
 #[doc = "Hysteresis Select When ACMPOUT=1\n\nValue on reset: 0"]
@@ -85,7 +53,7 @@ impl crate::FieldSpec for HYST_A {
 impl HYST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HYST_A {
+    pub const fn variant(&self) -> HYST_A {
         match self.bits {
             0 => HYST_A::HYST0,
             1 => HYST_A::HYST1,
@@ -106,179 +74,183 @@ impl HYST_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `HYST0`"]
+    #[doc = "No hysteresis"]
     #[inline(always)]
     pub fn is_hyst0(&self) -> bool {
         *self == HYST_A::HYST0
     }
-    #[doc = "Checks if the value of the field is `HYST1`"]
+    #[doc = "14 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst1(&self) -> bool {
         *self == HYST_A::HYST1
     }
-    #[doc = "Checks if the value of the field is `HYST2`"]
+    #[doc = "25 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst2(&self) -> bool {
         *self == HYST_A::HYST2
     }
-    #[doc = "Checks if the value of the field is `HYST3`"]
+    #[doc = "30 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst3(&self) -> bool {
         *self == HYST_A::HYST3
     }
-    #[doc = "Checks if the value of the field is `HYST4`"]
+    #[doc = "35 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst4(&self) -> bool {
         *self == HYST_A::HYST4
     }
-    #[doc = "Checks if the value of the field is `HYST5`"]
+    #[doc = "39 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst5(&self) -> bool {
         *self == HYST_A::HYST5
     }
-    #[doc = "Checks if the value of the field is `HYST6`"]
+    #[doc = "42 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst6(&self) -> bool {
         *self == HYST_A::HYST6
     }
-    #[doc = "Checks if the value of the field is `HYST7`"]
+    #[doc = "45 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst7(&self) -> bool {
         *self == HYST_A::HYST7
     }
-    #[doc = "Checks if the value of the field is `HYST8`"]
+    #[doc = "No hysteresis"]
     #[inline(always)]
     pub fn is_hyst8(&self) -> bool {
         *self == HYST_A::HYST8
     }
-    #[doc = "Checks if the value of the field is `HYST9`"]
+    #[doc = "-14 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst9(&self) -> bool {
         *self == HYST_A::HYST9
     }
-    #[doc = "Checks if the value of the field is `HYST10`"]
+    #[doc = "-25 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst10(&self) -> bool {
         *self == HYST_A::HYST10
     }
-    #[doc = "Checks if the value of the field is `HYST11`"]
+    #[doc = "-30 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst11(&self) -> bool {
         *self == HYST_A::HYST11
     }
-    #[doc = "Checks if the value of the field is `HYST12`"]
+    #[doc = "-35 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst12(&self) -> bool {
         *self == HYST_A::HYST12
     }
-    #[doc = "Checks if the value of the field is `HYST13`"]
+    #[doc = "-39 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst13(&self) -> bool {
         *self == HYST_A::HYST13
     }
-    #[doc = "Checks if the value of the field is `HYST14`"]
+    #[doc = "-42 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst14(&self) -> bool {
         *self == HYST_A::HYST14
     }
-    #[doc = "Checks if the value of the field is `HYST15`"]
+    #[doc = "-45 mV hysteresis"]
     #[inline(always)]
     pub fn is_hyst15(&self) -> bool {
         *self == HYST_A::HYST15
     }
 }
 #[doc = "Field `HYST` writer - Hysteresis Select When ACMPOUT=1"]
-pub type HYST_W<'a, const O: u8> = crate::FieldWriterSafe<'a, HYSTERESIS1_SPEC, 4, O, HYST_A>;
-impl<'a, const O: u8> HYST_W<'a, O> {
+pub type HYST_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, HYST_A>;
+impl<'a, REG, const O: u8> HYST_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No hysteresis"]
     #[inline(always)]
-    pub fn hyst0(self) -> &'a mut W {
+    pub fn hyst0(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST0)
     }
     #[doc = "14 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst1(self) -> &'a mut W {
+    pub fn hyst1(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST1)
     }
     #[doc = "25 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst2(self) -> &'a mut W {
+    pub fn hyst2(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST2)
     }
     #[doc = "30 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst3(self) -> &'a mut W {
+    pub fn hyst3(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST3)
     }
     #[doc = "35 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst4(self) -> &'a mut W {
+    pub fn hyst4(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST4)
     }
     #[doc = "39 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst5(self) -> &'a mut W {
+    pub fn hyst5(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST5)
     }
     #[doc = "42 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst6(self) -> &'a mut W {
+    pub fn hyst6(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST6)
     }
     #[doc = "45 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst7(self) -> &'a mut W {
+    pub fn hyst7(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST7)
     }
     #[doc = "No hysteresis"]
     #[inline(always)]
-    pub fn hyst8(self) -> &'a mut W {
+    pub fn hyst8(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST8)
     }
     #[doc = "-14 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst9(self) -> &'a mut W {
+    pub fn hyst9(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST9)
     }
     #[doc = "-25 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst10(self) -> &'a mut W {
+    pub fn hyst10(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST10)
     }
     #[doc = "-30 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst11(self) -> &'a mut W {
+    pub fn hyst11(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST11)
     }
     #[doc = "-35 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst12(self) -> &'a mut W {
+    pub fn hyst12(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST12)
     }
     #[doc = "-39 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst13(self) -> &'a mut W {
+    pub fn hyst13(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST13)
     }
     #[doc = "-42 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst14(self) -> &'a mut W {
+    pub fn hyst14(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST14)
     }
     #[doc = "-45 mV hysteresis"]
     #[inline(always)]
-    pub fn hyst15(self) -> &'a mut W {
+    pub fn hyst15(self) -> &'a mut crate::W<REG> {
         self.variant(HYST_A::HYST15)
     }
 }
 #[doc = "Field `DIVVA` reader - Divider for VA Voltage When ACMPOUT=1"]
 pub type DIVVA_R = crate::FieldReader;
 #[doc = "Field `DIVVA` writer - Divider for VA Voltage When ACMPOUT=1"]
-pub type DIVVA_W<'a, const O: u8> = crate::FieldWriter<'a, HYSTERESIS1_SPEC, 6, O>;
+pub type DIVVA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `DIVVB` reader - Divider for VB Voltage When ACMPOUT=1"]
 pub type DIVVB_R = crate::FieldReader;
 #[doc = "Field `DIVVB` writer - Divider for VB Voltage When ACMPOUT=1"]
-pub type DIVVB_W<'a, const O: u8> = crate::FieldWriter<'a, HYSTERESIS1_SPEC, 6, O>;
+pub type DIVVB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 impl R {
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=1"]
     #[inline(always)]
@@ -296,44 +268,59 @@ impl R {
         DIVVB_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HYSTERESIS1")
+            .field("hyst", &format_args!("{}", self.hyst().bits()))
+            .field("divva", &format_args!("{}", self.divva().bits()))
+            .field("divvb", &format_args!("{}", self.divvb().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<HYSTERESIS1_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=1"]
     #[inline(always)]
     #[must_use]
-    pub fn hyst(&mut self) -> HYST_W<0> {
+    pub fn hyst(&mut self) -> HYST_W<HYSTERESIS1_SPEC, 0> {
         HYST_W::new(self)
     }
     #[doc = "Bits 16:21 - Divider for VA Voltage When ACMPOUT=1"]
     #[inline(always)]
     #[must_use]
-    pub fn divva(&mut self) -> DIVVA_W<16> {
+    pub fn divva(&mut self) -> DIVVA_W<HYSTERESIS1_SPEC, 16> {
         DIVVA_W::new(self)
     }
     #[doc = "Bits 24:29 - Divider for VB Voltage When ACMPOUT=1"]
     #[inline(always)]
     #[must_use]
-    pub fn divvb(&mut self) -> DIVVB_W<24> {
+    pub fn divvb(&mut self) -> DIVVB_W<HYSTERESIS1_SPEC, 24> {
         DIVVB_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Hysteresis 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hysteresis1](index.html) module"]
+#[doc = "Hysteresis 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hysteresis1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hysteresis1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HYSTERESIS1_SPEC;
 impl crate::RegisterSpec for HYSTERESIS1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hysteresis1::R](R) reader structure"]
-impl crate::Readable for HYSTERESIS1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hysteresis1::W](W) writer structure"]
+#[doc = "`read()` method returns [`hysteresis1::R`](R) reader structure"]
+impl crate::Readable for HYSTERESIS1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hysteresis1::W`](W) writer structure"]
 impl crate::Writable for HYSTERESIS1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `LFBCLKSEL` reader"]
-pub struct R(crate::R<LFBCLKSEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LFBCLKSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LFBCLKSEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LFBCLKSEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LFBCLKSEL_SPEC>;
 #[doc = "Register `LFBCLKSEL` writer"]
-pub struct W(crate::W<LFBCLKSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LFBCLKSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LFBCLKSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LFBCLKSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LFBCLKSEL_SPEC>;
 #[doc = "Field `LFB` reader - Clock Select for LFB"]
 pub type LFB_R = crate::FieldReader<LFB_A>;
 #[doc = "Clock Select for LFB\n\nValue on reset: 0"]
@@ -63,7 +31,7 @@ impl crate::FieldSpec for LFB_A {
 impl LFB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LFB_A> {
+    pub const fn variant(&self) -> Option<LFB_A> {
         match self.bits {
             0 => Some(LFB_A::DISABLED),
             1 => Some(LFB_A::LFRCO),
@@ -73,58 +41,62 @@ impl LFB_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "LFBCLK is disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == LFB_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `LFRCO`"]
+    #[doc = "LFRCO selected as LFBCLK"]
     #[inline(always)]
     pub fn is_lfrco(&self) -> bool {
         *self == LFB_A::LFRCO
     }
-    #[doc = "Checks if the value of the field is `LFXO`"]
+    #[doc = "LFXO selected as LFBCLK"]
     #[inline(always)]
     pub fn is_lfxo(&self) -> bool {
         *self == LFB_A::LFXO
     }
-    #[doc = "Checks if the value of the field is `HFCLKLE`"]
+    #[doc = "HFCLK divided by two/four is selected as LFBCLK"]
     #[inline(always)]
     pub fn is_hfclkle(&self) -> bool {
         *self == LFB_A::HFCLKLE
     }
-    #[doc = "Checks if the value of the field is `ULFRCO`"]
+    #[doc = "ULFRCO selected as LFBCLK"]
     #[inline(always)]
     pub fn is_ulfrco(&self) -> bool {
         *self == LFB_A::ULFRCO
     }
 }
 #[doc = "Field `LFB` writer - Clock Select for LFB"]
-pub type LFB_W<'a, const O: u8> = crate::FieldWriter<'a, LFBCLKSEL_SPEC, 3, O, LFB_A>;
-impl<'a, const O: u8> LFB_W<'a, O> {
+pub type LFB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, LFB_A>;
+impl<'a, REG, const O: u8> LFB_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "LFBCLK is disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(LFB_A::DISABLED)
     }
     #[doc = "LFRCO selected as LFBCLK"]
     #[inline(always)]
-    pub fn lfrco(self) -> &'a mut W {
+    pub fn lfrco(self) -> &'a mut crate::W<REG> {
         self.variant(LFB_A::LFRCO)
     }
     #[doc = "LFXO selected as LFBCLK"]
     #[inline(always)]
-    pub fn lfxo(self) -> &'a mut W {
+    pub fn lfxo(self) -> &'a mut crate::W<REG> {
         self.variant(LFB_A::LFXO)
     }
     #[doc = "HFCLK divided by two/four is selected as LFBCLK"]
     #[inline(always)]
-    pub fn hfclkle(self) -> &'a mut W {
+    pub fn hfclkle(self) -> &'a mut crate::W<REG> {
         self.variant(LFB_A::HFCLKLE)
     }
     #[doc = "ULFRCO selected as LFBCLK"]
     #[inline(always)]
-    pub fn ulfrco(self) -> &'a mut W {
+    pub fn ulfrco(self) -> &'a mut crate::W<REG> {
         self.variant(LFB_A::ULFRCO)
     }
 }
@@ -135,32 +107,45 @@ impl R {
         LFB_R::new((self.bits & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LFBCLKSEL")
+            .field("lfb", &format_args!("{}", self.lfb().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<LFBCLKSEL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - Clock Select for LFB"]
     #[inline(always)]
     #[must_use]
-    pub fn lfb(&mut self) -> LFB_W<0> {
+    pub fn lfb(&mut self) -> LFB_W<LFBCLKSEL_SPEC, 0> {
         LFB_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Low Frequency B Clock Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lfbclksel](index.html) module"]
+#[doc = "Low Frequency B Clock Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfbclksel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfbclksel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LFBCLKSEL_SPEC;
 impl crate::RegisterSpec for LFBCLKSEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lfbclksel::R](R) reader structure"]
-impl crate::Readable for LFBCLKSEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lfbclksel::W](W) writer structure"]
+#[doc = "`read()` method returns [`lfbclksel::R`](R) reader structure"]
+impl crate::Readable for LFBCLKSEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`lfbclksel::W`](W) writer structure"]
 impl crate::Writable for LFBCLKSEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

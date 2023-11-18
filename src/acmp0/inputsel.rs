@@ -1,47 +1,15 @@
 #[doc = "Register `INPUTSEL` reader"]
-pub struct R(crate::R<INPUTSEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INPUTSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INPUTSEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INPUTSEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INPUTSEL_SPEC>;
 #[doc = "Register `INPUTSEL` writer"]
-pub struct W(crate::W<INPUTSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INPUTSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INPUTSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INPUTSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<INPUTSEL_SPEC>;
 #[doc = "Field `POSSEL` reader - Positive Input Select"]
 pub type POSSEL_R = crate::FieldReader;
 #[doc = "Field `POSSEL` writer - Positive Input Select"]
-pub type POSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, INPUTSEL_SPEC, 8, O>;
+pub type POSSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `NEGSEL` reader - Negative Input Select"]
 pub type NEGSEL_R = crate::FieldReader;
 #[doc = "Field `NEGSEL` writer - Negative Input Select"]
-pub type NEGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, INPUTSEL_SPEC, 8, O>;
+pub type NEGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `VASEL` reader - VA Selection"]
 pub type VASEL_R = crate::FieldReader<VASEL_A>;
 #[doc = "VA Selection\n\nValue on reset: 0"]
@@ -159,7 +127,7 @@ impl crate::FieldSpec for VASEL_A {
 impl VASEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VASEL_A> {
+    pub const fn variant(&self) -> Option<VASEL_A> {
         match self.bits {
             0 => Some(VASEL_A::VDD),
             1 => Some(VASEL_A::APORT2YCH0),
@@ -213,513 +181,517 @@ impl VASEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VDD`"]
+    #[doc = "ACMPVDD"]
     #[inline(always)]
     pub fn is_vdd(&self) -> bool {
         *self == VASEL_A::VDD
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH0`"]
+    #[doc = "APORT2Y Channel 0"]
     #[inline(always)]
     pub fn is_aport2ych0(&self) -> bool {
         *self == VASEL_A::APORT2YCH0
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH2`"]
+    #[doc = "APORT2Y Channel 2"]
     #[inline(always)]
     pub fn is_aport2ych2(&self) -> bool {
         *self == VASEL_A::APORT2YCH2
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH4`"]
+    #[doc = "APORT2Y Channel 4"]
     #[inline(always)]
     pub fn is_aport2ych4(&self) -> bool {
         *self == VASEL_A::APORT2YCH4
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH6`"]
+    #[doc = "APORT2Y Channel 6"]
     #[inline(always)]
     pub fn is_aport2ych6(&self) -> bool {
         *self == VASEL_A::APORT2YCH6
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH8`"]
+    #[doc = "APORT2Y Channel 8"]
     #[inline(always)]
     pub fn is_aport2ych8(&self) -> bool {
         *self == VASEL_A::APORT2YCH8
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH10`"]
+    #[doc = "APORT2Y Channel 10"]
     #[inline(always)]
     pub fn is_aport2ych10(&self) -> bool {
         *self == VASEL_A::APORT2YCH10
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH12`"]
+    #[doc = "APORT2Y Channel 12"]
     #[inline(always)]
     pub fn is_aport2ych12(&self) -> bool {
         *self == VASEL_A::APORT2YCH12
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH14`"]
+    #[doc = "APORT2Y Channel 14"]
     #[inline(always)]
     pub fn is_aport2ych14(&self) -> bool {
         *self == VASEL_A::APORT2YCH14
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH16`"]
+    #[doc = "APORT2Y Channel 16"]
     #[inline(always)]
     pub fn is_aport2ych16(&self) -> bool {
         *self == VASEL_A::APORT2YCH16
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH18`"]
+    #[doc = "APORT2Y Channel 18"]
     #[inline(always)]
     pub fn is_aport2ych18(&self) -> bool {
         *self == VASEL_A::APORT2YCH18
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH20`"]
+    #[doc = "APORT2Y Channel 20"]
     #[inline(always)]
     pub fn is_aport2ych20(&self) -> bool {
         *self == VASEL_A::APORT2YCH20
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH22`"]
+    #[doc = "APORT2Y Channel 22"]
     #[inline(always)]
     pub fn is_aport2ych22(&self) -> bool {
         *self == VASEL_A::APORT2YCH22
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH24`"]
+    #[doc = "APORT2Y Channel 24"]
     #[inline(always)]
     pub fn is_aport2ych24(&self) -> bool {
         *self == VASEL_A::APORT2YCH24
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH26`"]
+    #[doc = "APORT2Y Channel 26"]
     #[inline(always)]
     pub fn is_aport2ych26(&self) -> bool {
         *self == VASEL_A::APORT2YCH26
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH28`"]
+    #[doc = "APORT2Y Channel 28"]
     #[inline(always)]
     pub fn is_aport2ych28(&self) -> bool {
         *self == VASEL_A::APORT2YCH28
     }
-    #[doc = "Checks if the value of the field is `APORT2YCH30`"]
+    #[doc = "APORT2Y Channel 30"]
     #[inline(always)]
     pub fn is_aport2ych30(&self) -> bool {
         *self == VASEL_A::APORT2YCH30
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH0`"]
+    #[doc = "APORT1X Channel 0"]
     #[inline(always)]
     pub fn is_aport1xch0(&self) -> bool {
         *self == VASEL_A::APORT1XCH0
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH1`"]
+    #[doc = "APORT1Y Channel 1"]
     #[inline(always)]
     pub fn is_aport1ych1(&self) -> bool {
         *self == VASEL_A::APORT1YCH1
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH2`"]
+    #[doc = "APORT1X Channel 2"]
     #[inline(always)]
     pub fn is_aport1xch2(&self) -> bool {
         *self == VASEL_A::APORT1XCH2
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH3`"]
+    #[doc = "APORT1Y Channel 3"]
     #[inline(always)]
     pub fn is_aport1ych3(&self) -> bool {
         *self == VASEL_A::APORT1YCH3
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH4`"]
+    #[doc = "APORT1X Channel 4"]
     #[inline(always)]
     pub fn is_aport1xch4(&self) -> bool {
         *self == VASEL_A::APORT1XCH4
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH5`"]
+    #[doc = "APORT1Y Channel 5"]
     #[inline(always)]
     pub fn is_aport1ych5(&self) -> bool {
         *self == VASEL_A::APORT1YCH5
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH6`"]
+    #[doc = "APORT1X Channel 6"]
     #[inline(always)]
     pub fn is_aport1xch6(&self) -> bool {
         *self == VASEL_A::APORT1XCH6
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH7`"]
+    #[doc = "APORT1Y Channel 7"]
     #[inline(always)]
     pub fn is_aport1ych7(&self) -> bool {
         *self == VASEL_A::APORT1YCH7
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH8`"]
+    #[doc = "APORT1X Channel 8"]
     #[inline(always)]
     pub fn is_aport1xch8(&self) -> bool {
         *self == VASEL_A::APORT1XCH8
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH9`"]
+    #[doc = "APORT1Y Channel 9"]
     #[inline(always)]
     pub fn is_aport1ych9(&self) -> bool {
         *self == VASEL_A::APORT1YCH9
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH10`"]
+    #[doc = "APORT1X Channel 10"]
     #[inline(always)]
     pub fn is_aport1xch10(&self) -> bool {
         *self == VASEL_A::APORT1XCH10
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH11`"]
+    #[doc = "APORT1Y Channel 11"]
     #[inline(always)]
     pub fn is_aport1ych11(&self) -> bool {
         *self == VASEL_A::APORT1YCH11
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH12`"]
+    #[doc = "APORT1X Channel 12"]
     #[inline(always)]
     pub fn is_aport1xch12(&self) -> bool {
         *self == VASEL_A::APORT1XCH12
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH13`"]
+    #[doc = "APORT1Y Channel 13"]
     #[inline(always)]
     pub fn is_aport1ych13(&self) -> bool {
         *self == VASEL_A::APORT1YCH13
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH14`"]
+    #[doc = "APORT1X Channel 14"]
     #[inline(always)]
     pub fn is_aport1xch14(&self) -> bool {
         *self == VASEL_A::APORT1XCH14
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH15`"]
+    #[doc = "APORT1Y Channel 15"]
     #[inline(always)]
     pub fn is_aport1ych15(&self) -> bool {
         *self == VASEL_A::APORT1YCH15
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH16`"]
+    #[doc = "APORT1X Channel 16"]
     #[inline(always)]
     pub fn is_aport1xch16(&self) -> bool {
         *self == VASEL_A::APORT1XCH16
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH17`"]
+    #[doc = "APORT1Y Channel 17"]
     #[inline(always)]
     pub fn is_aport1ych17(&self) -> bool {
         *self == VASEL_A::APORT1YCH17
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH18`"]
+    #[doc = "APORT1X Channel 18"]
     #[inline(always)]
     pub fn is_aport1xch18(&self) -> bool {
         *self == VASEL_A::APORT1XCH18
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH19`"]
+    #[doc = "APORT1Y Channel 19"]
     #[inline(always)]
     pub fn is_aport1ych19(&self) -> bool {
         *self == VASEL_A::APORT1YCH19
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH20`"]
+    #[doc = "APORT1X Channel 20"]
     #[inline(always)]
     pub fn is_aport1xch20(&self) -> bool {
         *self == VASEL_A::APORT1XCH20
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH21`"]
+    #[doc = "APORT1Y Channel 21"]
     #[inline(always)]
     pub fn is_aport1ych21(&self) -> bool {
         *self == VASEL_A::APORT1YCH21
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH22`"]
+    #[doc = "APORT1X Channel 22"]
     #[inline(always)]
     pub fn is_aport1xch22(&self) -> bool {
         *self == VASEL_A::APORT1XCH22
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH23`"]
+    #[doc = "APORT1Y Channel 23"]
     #[inline(always)]
     pub fn is_aport1ych23(&self) -> bool {
         *self == VASEL_A::APORT1YCH23
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH24`"]
+    #[doc = "APORT1X Channel 24"]
     #[inline(always)]
     pub fn is_aport1xch24(&self) -> bool {
         *self == VASEL_A::APORT1XCH24
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH25`"]
+    #[doc = "APORT1Y Channel 25"]
     #[inline(always)]
     pub fn is_aport1ych25(&self) -> bool {
         *self == VASEL_A::APORT1YCH25
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH26`"]
+    #[doc = "APORT1X Channel 26"]
     #[inline(always)]
     pub fn is_aport1xch26(&self) -> bool {
         *self == VASEL_A::APORT1XCH26
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH27`"]
+    #[doc = "APORT1Y Channel 27"]
     #[inline(always)]
     pub fn is_aport1ych27(&self) -> bool {
         *self == VASEL_A::APORT1YCH27
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH28`"]
+    #[doc = "APORT1X Channel 28"]
     #[inline(always)]
     pub fn is_aport1xch28(&self) -> bool {
         *self == VASEL_A::APORT1XCH28
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH29`"]
+    #[doc = "APORT1Y Channel 29"]
     #[inline(always)]
     pub fn is_aport1ych29(&self) -> bool {
         *self == VASEL_A::APORT1YCH29
     }
-    #[doc = "Checks if the value of the field is `APORT1XCH30`"]
+    #[doc = "APORT1X Channel 30"]
     #[inline(always)]
     pub fn is_aport1xch30(&self) -> bool {
         *self == VASEL_A::APORT1XCH30
     }
-    #[doc = "Checks if the value of the field is `APORT1YCH31`"]
+    #[doc = "APORT1Y Channel 31"]
     #[inline(always)]
     pub fn is_aport1ych31(&self) -> bool {
         *self == VASEL_A::APORT1YCH31
     }
 }
 #[doc = "Field `VASEL` writer - VA Selection"]
-pub type VASEL_W<'a, const O: u8> = crate::FieldWriter<'a, INPUTSEL_SPEC, 6, O, VASEL_A>;
-impl<'a, const O: u8> VASEL_W<'a, O> {
+pub type VASEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, VASEL_A>;
+impl<'a, REG, const O: u8> VASEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "ACMPVDD"]
     #[inline(always)]
-    pub fn vdd(self) -> &'a mut W {
+    pub fn vdd(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::VDD)
     }
     #[doc = "APORT2Y Channel 0"]
     #[inline(always)]
-    pub fn aport2ych0(self) -> &'a mut W {
+    pub fn aport2ych0(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH0)
     }
     #[doc = "APORT2Y Channel 2"]
     #[inline(always)]
-    pub fn aport2ych2(self) -> &'a mut W {
+    pub fn aport2ych2(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH2)
     }
     #[doc = "APORT2Y Channel 4"]
     #[inline(always)]
-    pub fn aport2ych4(self) -> &'a mut W {
+    pub fn aport2ych4(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH4)
     }
     #[doc = "APORT2Y Channel 6"]
     #[inline(always)]
-    pub fn aport2ych6(self) -> &'a mut W {
+    pub fn aport2ych6(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH6)
     }
     #[doc = "APORT2Y Channel 8"]
     #[inline(always)]
-    pub fn aport2ych8(self) -> &'a mut W {
+    pub fn aport2ych8(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH8)
     }
     #[doc = "APORT2Y Channel 10"]
     #[inline(always)]
-    pub fn aport2ych10(self) -> &'a mut W {
+    pub fn aport2ych10(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH10)
     }
     #[doc = "APORT2Y Channel 12"]
     #[inline(always)]
-    pub fn aport2ych12(self) -> &'a mut W {
+    pub fn aport2ych12(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH12)
     }
     #[doc = "APORT2Y Channel 14"]
     #[inline(always)]
-    pub fn aport2ych14(self) -> &'a mut W {
+    pub fn aport2ych14(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH14)
     }
     #[doc = "APORT2Y Channel 16"]
     #[inline(always)]
-    pub fn aport2ych16(self) -> &'a mut W {
+    pub fn aport2ych16(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH16)
     }
     #[doc = "APORT2Y Channel 18"]
     #[inline(always)]
-    pub fn aport2ych18(self) -> &'a mut W {
+    pub fn aport2ych18(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH18)
     }
     #[doc = "APORT2Y Channel 20"]
     #[inline(always)]
-    pub fn aport2ych20(self) -> &'a mut W {
+    pub fn aport2ych20(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH20)
     }
     #[doc = "APORT2Y Channel 22"]
     #[inline(always)]
-    pub fn aport2ych22(self) -> &'a mut W {
+    pub fn aport2ych22(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH22)
     }
     #[doc = "APORT2Y Channel 24"]
     #[inline(always)]
-    pub fn aport2ych24(self) -> &'a mut W {
+    pub fn aport2ych24(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH24)
     }
     #[doc = "APORT2Y Channel 26"]
     #[inline(always)]
-    pub fn aport2ych26(self) -> &'a mut W {
+    pub fn aport2ych26(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH26)
     }
     #[doc = "APORT2Y Channel 28"]
     #[inline(always)]
-    pub fn aport2ych28(self) -> &'a mut W {
+    pub fn aport2ych28(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH28)
     }
     #[doc = "APORT2Y Channel 30"]
     #[inline(always)]
-    pub fn aport2ych30(self) -> &'a mut W {
+    pub fn aport2ych30(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT2YCH30)
     }
     #[doc = "APORT1X Channel 0"]
     #[inline(always)]
-    pub fn aport1xch0(self) -> &'a mut W {
+    pub fn aport1xch0(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH0)
     }
     #[doc = "APORT1Y Channel 1"]
     #[inline(always)]
-    pub fn aport1ych1(self) -> &'a mut W {
+    pub fn aport1ych1(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH1)
     }
     #[doc = "APORT1X Channel 2"]
     #[inline(always)]
-    pub fn aport1xch2(self) -> &'a mut W {
+    pub fn aport1xch2(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH2)
     }
     #[doc = "APORT1Y Channel 3"]
     #[inline(always)]
-    pub fn aport1ych3(self) -> &'a mut W {
+    pub fn aport1ych3(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH3)
     }
     #[doc = "APORT1X Channel 4"]
     #[inline(always)]
-    pub fn aport1xch4(self) -> &'a mut W {
+    pub fn aport1xch4(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH4)
     }
     #[doc = "APORT1Y Channel 5"]
     #[inline(always)]
-    pub fn aport1ych5(self) -> &'a mut W {
+    pub fn aport1ych5(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH5)
     }
     #[doc = "APORT1X Channel 6"]
     #[inline(always)]
-    pub fn aport1xch6(self) -> &'a mut W {
+    pub fn aport1xch6(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH6)
     }
     #[doc = "APORT1Y Channel 7"]
     #[inline(always)]
-    pub fn aport1ych7(self) -> &'a mut W {
+    pub fn aport1ych7(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH7)
     }
     #[doc = "APORT1X Channel 8"]
     #[inline(always)]
-    pub fn aport1xch8(self) -> &'a mut W {
+    pub fn aport1xch8(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH8)
     }
     #[doc = "APORT1Y Channel 9"]
     #[inline(always)]
-    pub fn aport1ych9(self) -> &'a mut W {
+    pub fn aport1ych9(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH9)
     }
     #[doc = "APORT1X Channel 10"]
     #[inline(always)]
-    pub fn aport1xch10(self) -> &'a mut W {
+    pub fn aport1xch10(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH10)
     }
     #[doc = "APORT1Y Channel 11"]
     #[inline(always)]
-    pub fn aport1ych11(self) -> &'a mut W {
+    pub fn aport1ych11(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH11)
     }
     #[doc = "APORT1X Channel 12"]
     #[inline(always)]
-    pub fn aport1xch12(self) -> &'a mut W {
+    pub fn aport1xch12(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH12)
     }
     #[doc = "APORT1Y Channel 13"]
     #[inline(always)]
-    pub fn aport1ych13(self) -> &'a mut W {
+    pub fn aport1ych13(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH13)
     }
     #[doc = "APORT1X Channel 14"]
     #[inline(always)]
-    pub fn aport1xch14(self) -> &'a mut W {
+    pub fn aport1xch14(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH14)
     }
     #[doc = "APORT1Y Channel 15"]
     #[inline(always)]
-    pub fn aport1ych15(self) -> &'a mut W {
+    pub fn aport1ych15(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH15)
     }
     #[doc = "APORT1X Channel 16"]
     #[inline(always)]
-    pub fn aport1xch16(self) -> &'a mut W {
+    pub fn aport1xch16(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH16)
     }
     #[doc = "APORT1Y Channel 17"]
     #[inline(always)]
-    pub fn aport1ych17(self) -> &'a mut W {
+    pub fn aport1ych17(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH17)
     }
     #[doc = "APORT1X Channel 18"]
     #[inline(always)]
-    pub fn aport1xch18(self) -> &'a mut W {
+    pub fn aport1xch18(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH18)
     }
     #[doc = "APORT1Y Channel 19"]
     #[inline(always)]
-    pub fn aport1ych19(self) -> &'a mut W {
+    pub fn aport1ych19(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH19)
     }
     #[doc = "APORT1X Channel 20"]
     #[inline(always)]
-    pub fn aport1xch20(self) -> &'a mut W {
+    pub fn aport1xch20(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH20)
     }
     #[doc = "APORT1Y Channel 21"]
     #[inline(always)]
-    pub fn aport1ych21(self) -> &'a mut W {
+    pub fn aport1ych21(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH21)
     }
     #[doc = "APORT1X Channel 22"]
     #[inline(always)]
-    pub fn aport1xch22(self) -> &'a mut W {
+    pub fn aport1xch22(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH22)
     }
     #[doc = "APORT1Y Channel 23"]
     #[inline(always)]
-    pub fn aport1ych23(self) -> &'a mut W {
+    pub fn aport1ych23(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH23)
     }
     #[doc = "APORT1X Channel 24"]
     #[inline(always)]
-    pub fn aport1xch24(self) -> &'a mut W {
+    pub fn aport1xch24(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH24)
     }
     #[doc = "APORT1Y Channel 25"]
     #[inline(always)]
-    pub fn aport1ych25(self) -> &'a mut W {
+    pub fn aport1ych25(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH25)
     }
     #[doc = "APORT1X Channel 26"]
     #[inline(always)]
-    pub fn aport1xch26(self) -> &'a mut W {
+    pub fn aport1xch26(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH26)
     }
     #[doc = "APORT1Y Channel 27"]
     #[inline(always)]
-    pub fn aport1ych27(self) -> &'a mut W {
+    pub fn aport1ych27(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH27)
     }
     #[doc = "APORT1X Channel 28"]
     #[inline(always)]
-    pub fn aport1xch28(self) -> &'a mut W {
+    pub fn aport1xch28(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH28)
     }
     #[doc = "APORT1Y Channel 29"]
     #[inline(always)]
-    pub fn aport1ych29(self) -> &'a mut W {
+    pub fn aport1ych29(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH29)
     }
     #[doc = "APORT1X Channel 30"]
     #[inline(always)]
-    pub fn aport1xch30(self) -> &'a mut W {
+    pub fn aport1xch30(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1XCH30)
     }
     #[doc = "APORT1Y Channel 31"]
     #[inline(always)]
-    pub fn aport1ych31(self) -> &'a mut W {
+    pub fn aport1ych31(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL_A::APORT1YCH31)
     }
 }
 #[doc = "Field `VBSEL` reader - VB Selection"]
 pub type VBSEL_R = crate::BitReader;
 #[doc = "Field `VBSEL` writer - VB Selection"]
-pub type VBSEL_W<'a, const O: u8> = crate::BitWriter<'a, INPUTSEL_SPEC, O>;
+pub type VBSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `VLPSEL` reader - Low-Power Sampled Voltage Selection"]
 pub type VLPSEL_R = crate::BitReader;
 #[doc = "Field `VLPSEL` writer - Low-Power Sampled Voltage Selection"]
-pub type VLPSEL_W<'a, const O: u8> = crate::BitWriter<'a, INPUTSEL_SPEC, O>;
+pub type VLPSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CSRESEN` reader - Capacitive Sense Mode Internal Resistor Enable"]
 pub type CSRESEN_R = crate::BitReader;
 #[doc = "Field `CSRESEN` writer - Capacitive Sense Mode Internal Resistor Enable"]
-pub type CSRESEN_W<'a, const O: u8> = crate::BitWriter<'a, INPUTSEL_SPEC, O>;
+pub type CSRESEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CSRESSEL` reader - Capacitive Sense Mode Internal Resistor Select"]
 pub type CSRESSEL_R = crate::FieldReader<CSRESSEL_A>;
 #[doc = "Capacitive Sense Mode Internal Resistor Select\n\nValue on reset: 0"]
@@ -755,7 +727,7 @@ impl crate::FieldSpec for CSRESSEL_A {
 impl CSRESSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CSRESSEL_A {
+    pub const fn variant(&self) -> CSRESSEL_A {
         match self.bits {
             0 => CSRESSEL_A::RES0,
             1 => CSRESSEL_A::RES1,
@@ -768,88 +740,92 @@ impl CSRESSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `RES0`"]
+    #[doc = "Internal capacitive sense resistor value 0"]
     #[inline(always)]
     pub fn is_res0(&self) -> bool {
         *self == CSRESSEL_A::RES0
     }
-    #[doc = "Checks if the value of the field is `RES1`"]
+    #[doc = "Internal capacitive sense resistor value 1"]
     #[inline(always)]
     pub fn is_res1(&self) -> bool {
         *self == CSRESSEL_A::RES1
     }
-    #[doc = "Checks if the value of the field is `RES2`"]
+    #[doc = "Internal capacitive sense resistor value 2"]
     #[inline(always)]
     pub fn is_res2(&self) -> bool {
         *self == CSRESSEL_A::RES2
     }
-    #[doc = "Checks if the value of the field is `RES3`"]
+    #[doc = "Internal capacitive sense resistor value 3"]
     #[inline(always)]
     pub fn is_res3(&self) -> bool {
         *self == CSRESSEL_A::RES3
     }
-    #[doc = "Checks if the value of the field is `RES4`"]
+    #[doc = "Internal capacitive sense resistor value 4"]
     #[inline(always)]
     pub fn is_res4(&self) -> bool {
         *self == CSRESSEL_A::RES4
     }
-    #[doc = "Checks if the value of the field is `RES5`"]
+    #[doc = "Internal capacitive sense resistor value 5"]
     #[inline(always)]
     pub fn is_res5(&self) -> bool {
         *self == CSRESSEL_A::RES5
     }
-    #[doc = "Checks if the value of the field is `RES6`"]
+    #[doc = "Internal capacitive sense resistor value 6"]
     #[inline(always)]
     pub fn is_res6(&self) -> bool {
         *self == CSRESSEL_A::RES6
     }
-    #[doc = "Checks if the value of the field is `RES7`"]
+    #[doc = "Internal capacitive sense resistor value 7"]
     #[inline(always)]
     pub fn is_res7(&self) -> bool {
         *self == CSRESSEL_A::RES7
     }
 }
 #[doc = "Field `CSRESSEL` writer - Capacitive Sense Mode Internal Resistor Select"]
-pub type CSRESSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INPUTSEL_SPEC, 3, O, CSRESSEL_A>;
-impl<'a, const O: u8> CSRESSEL_W<'a, O> {
+pub type CSRESSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, CSRESSEL_A>;
+impl<'a, REG, const O: u8> CSRESSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Internal capacitive sense resistor value 0"]
     #[inline(always)]
-    pub fn res0(self) -> &'a mut W {
+    pub fn res0(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL_A::RES0)
     }
     #[doc = "Internal capacitive sense resistor value 1"]
     #[inline(always)]
-    pub fn res1(self) -> &'a mut W {
+    pub fn res1(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL_A::RES1)
     }
     #[doc = "Internal capacitive sense resistor value 2"]
     #[inline(always)]
-    pub fn res2(self) -> &'a mut W {
+    pub fn res2(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL_A::RES2)
     }
     #[doc = "Internal capacitive sense resistor value 3"]
     #[inline(always)]
-    pub fn res3(self) -> &'a mut W {
+    pub fn res3(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL_A::RES3)
     }
     #[doc = "Internal capacitive sense resistor value 4"]
     #[inline(always)]
-    pub fn res4(self) -> &'a mut W {
+    pub fn res4(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL_A::RES4)
     }
     #[doc = "Internal capacitive sense resistor value 5"]
     #[inline(always)]
-    pub fn res5(self) -> &'a mut W {
+    pub fn res5(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL_A::RES5)
     }
     #[doc = "Internal capacitive sense resistor value 6"]
     #[inline(always)]
-    pub fn res6(self) -> &'a mut W {
+    pub fn res6(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL_A::RES6)
     }
     #[doc = "Internal capacitive sense resistor value 7"]
     #[inline(always)]
-    pub fn res7(self) -> &'a mut W {
+    pub fn res7(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL_A::RES7)
     }
 }
@@ -890,68 +866,87 @@ impl R {
         CSRESSEL_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INPUTSEL")
+            .field("possel", &format_args!("{}", self.possel().bits()))
+            .field("negsel", &format_args!("{}", self.negsel().bits()))
+            .field("vasel", &format_args!("{}", self.vasel().bits()))
+            .field("vbsel", &format_args!("{}", self.vbsel().bit()))
+            .field("vlpsel", &format_args!("{}", self.vlpsel().bit()))
+            .field("csresen", &format_args!("{}", self.csresen().bit()))
+            .field("csressel", &format_args!("{}", self.csressel().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<INPUTSEL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Positive Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn possel(&mut self) -> POSSEL_W<0> {
+    pub fn possel(&mut self) -> POSSEL_W<INPUTSEL_SPEC, 0> {
         POSSEL_W::new(self)
     }
     #[doc = "Bits 8:15 - Negative Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn negsel(&mut self) -> NEGSEL_W<8> {
+    pub fn negsel(&mut self) -> NEGSEL_W<INPUTSEL_SPEC, 8> {
         NEGSEL_W::new(self)
     }
     #[doc = "Bits 16:21 - VA Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn vasel(&mut self) -> VASEL_W<16> {
+    pub fn vasel(&mut self) -> VASEL_W<INPUTSEL_SPEC, 16> {
         VASEL_W::new(self)
     }
     #[doc = "Bit 22 - VB Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn vbsel(&mut self) -> VBSEL_W<22> {
+    pub fn vbsel(&mut self) -> VBSEL_W<INPUTSEL_SPEC, 22> {
         VBSEL_W::new(self)
     }
     #[doc = "Bit 24 - Low-Power Sampled Voltage Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn vlpsel(&mut self) -> VLPSEL_W<24> {
+    pub fn vlpsel(&mut self) -> VLPSEL_W<INPUTSEL_SPEC, 24> {
         VLPSEL_W::new(self)
     }
     #[doc = "Bit 26 - Capacitive Sense Mode Internal Resistor Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn csresen(&mut self) -> CSRESEN_W<26> {
+    pub fn csresen(&mut self) -> CSRESEN_W<INPUTSEL_SPEC, 26> {
         CSRESEN_W::new(self)
     }
     #[doc = "Bits 28:30 - Capacitive Sense Mode Internal Resistor Select"]
     #[inline(always)]
     #[must_use]
-    pub fn csressel(&mut self) -> CSRESSEL_W<28> {
+    pub fn csressel(&mut self) -> CSRESSEL_W<INPUTSEL_SPEC, 28> {
         CSRESSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Input Selection Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inputsel](index.html) module"]
+#[doc = "Input Selection Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inputsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inputsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INPUTSEL_SPEC;
 impl crate::RegisterSpec for INPUTSEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [inputsel::R](R) reader structure"]
-impl crate::Readable for INPUTSEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [inputsel::W](W) writer structure"]
+#[doc = "`read()` method returns [`inputsel::R`](R) reader structure"]
+impl crate::Readable for INPUTSEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`inputsel::W`](W) writer structure"]
 impl crate::Writable for INPUTSEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

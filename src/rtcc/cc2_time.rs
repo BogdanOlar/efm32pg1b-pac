@@ -1,63 +1,31 @@
 #[doc = "Register `CC2_TIME` reader"]
-pub struct R(crate::R<CC2_TIME_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CC2_TIME_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CC2_TIME_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CC2_TIME_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CC2_TIME_SPEC>;
 #[doc = "Register `CC2_TIME` writer"]
-pub struct W(crate::W<CC2_TIME_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CC2_TIME_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CC2_TIME_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CC2_TIME_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CC2_TIME_SPEC>;
 #[doc = "Field `SECU` reader - Seconds, Units"]
 pub type SECU_R = crate::FieldReader;
 #[doc = "Field `SECU` writer - Seconds, Units"]
-pub type SECU_W<'a, const O: u8> = crate::FieldWriter<'a, CC2_TIME_SPEC, 4, O>;
+pub type SECU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `SECT` reader - Seconds, Tens"]
 pub type SECT_R = crate::FieldReader;
 #[doc = "Field `SECT` writer - Seconds, Tens"]
-pub type SECT_W<'a, const O: u8> = crate::FieldWriter<'a, CC2_TIME_SPEC, 3, O>;
+pub type SECT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `MINU` reader - Minutes, Units"]
 pub type MINU_R = crate::FieldReader;
 #[doc = "Field `MINU` writer - Minutes, Units"]
-pub type MINU_W<'a, const O: u8> = crate::FieldWriter<'a, CC2_TIME_SPEC, 4, O>;
+pub type MINU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `MINT` reader - Minutes, Tens"]
 pub type MINT_R = crate::FieldReader;
 #[doc = "Field `MINT` writer - Minutes, Tens"]
-pub type MINT_W<'a, const O: u8> = crate::FieldWriter<'a, CC2_TIME_SPEC, 3, O>;
+pub type MINT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `HOURU` reader - Hours, Units"]
 pub type HOURU_R = crate::FieldReader;
 #[doc = "Field `HOURU` writer - Hours, Units"]
-pub type HOURU_W<'a, const O: u8> = crate::FieldWriter<'a, CC2_TIME_SPEC, 4, O>;
+pub type HOURU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `HOURT` reader - Hours, Tens"]
 pub type HOURT_R = crate::FieldReader;
 #[doc = "Field `HOURT` writer - Hours, Tens"]
-pub type HOURT_W<'a, const O: u8> = crate::FieldWriter<'a, CC2_TIME_SPEC, 2, O>;
+pub type HOURT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 impl R {
     #[doc = "Bits 0:3 - Seconds, Units"]
     #[inline(always)]
@@ -90,62 +58,80 @@ impl R {
         HOURT_R::new(((self.bits >> 20) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CC2_TIME")
+            .field("secu", &format_args!("{}", self.secu().bits()))
+            .field("sect", &format_args!("{}", self.sect().bits()))
+            .field("minu", &format_args!("{}", self.minu().bits()))
+            .field("mint", &format_args!("{}", self.mint().bits()))
+            .field("houru", &format_args!("{}", self.houru().bits()))
+            .field("hourt", &format_args!("{}", self.hourt().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CC2_TIME_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Seconds, Units"]
     #[inline(always)]
     #[must_use]
-    pub fn secu(&mut self) -> SECU_W<0> {
+    pub fn secu(&mut self) -> SECU_W<CC2_TIME_SPEC, 0> {
         SECU_W::new(self)
     }
     #[doc = "Bits 4:6 - Seconds, Tens"]
     #[inline(always)]
     #[must_use]
-    pub fn sect(&mut self) -> SECT_W<4> {
+    pub fn sect(&mut self) -> SECT_W<CC2_TIME_SPEC, 4> {
         SECT_W::new(self)
     }
     #[doc = "Bits 8:11 - Minutes, Units"]
     #[inline(always)]
     #[must_use]
-    pub fn minu(&mut self) -> MINU_W<8> {
+    pub fn minu(&mut self) -> MINU_W<CC2_TIME_SPEC, 8> {
         MINU_W::new(self)
     }
     #[doc = "Bits 12:14 - Minutes, Tens"]
     #[inline(always)]
     #[must_use]
-    pub fn mint(&mut self) -> MINT_W<12> {
+    pub fn mint(&mut self) -> MINT_W<CC2_TIME_SPEC, 12> {
         MINT_W::new(self)
     }
     #[doc = "Bits 16:19 - Hours, Units"]
     #[inline(always)]
     #[must_use]
-    pub fn houru(&mut self) -> HOURU_W<16> {
+    pub fn houru(&mut self) -> HOURU_W<CC2_TIME_SPEC, 16> {
         HOURU_W::new(self)
     }
     #[doc = "Bits 20:21 - Hours, Tens"]
     #[inline(always)]
     #[must_use]
-    pub fn hourt(&mut self) -> HOURT_W<20> {
+    pub fn hourt(&mut self) -> HOURT_W<CC2_TIME_SPEC, 20> {
         HOURT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Capture/Compare Time Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc2_time](index.html) module"]
+#[doc = "Capture/Compare Time Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc2_time::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cc2_time::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CC2_TIME_SPEC;
 impl crate::RegisterSpec for CC2_TIME_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cc2_time::R](R) reader structure"]
-impl crate::Readable for CC2_TIME_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cc2_time::W](W) writer structure"]
+#[doc = "`read()` method returns [`cc2_time::R`](R) reader structure"]
+impl crate::Readable for CC2_TIME_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cc2_time::W`](W) writer structure"]
 impl crate::Writable for CC2_TIME_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,71 +1,39 @@
 #[doc = "Register `CTRL` reader"]
-pub struct R(crate::R<CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CTRL_SPEC>;
 #[doc = "Register `CTRL` writer"]
-pub struct W(crate::W<CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CTRL_SPEC>;
 #[doc = "Field `EN` reader - I2C Enable"]
 pub type EN_R = crate::BitReader;
 #[doc = "Field `EN` writer - I2C Enable"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SLAVE` reader - Addressable as Slave"]
 pub type SLAVE_R = crate::BitReader;
 #[doc = "Field `SLAVE` writer - Addressable as Slave"]
-pub type SLAVE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type SLAVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AUTOACK` reader - Automatic Acknowledge"]
 pub type AUTOACK_R = crate::BitReader;
 #[doc = "Field `AUTOACK` writer - Automatic Acknowledge"]
-pub type AUTOACK_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type AUTOACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AUTOSE` reader - Automatic STOP When Empty"]
 pub type AUTOSE_R = crate::BitReader;
 #[doc = "Field `AUTOSE` writer - Automatic STOP When Empty"]
-pub type AUTOSE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type AUTOSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AUTOSN` reader - Automatic STOP on NACK"]
 pub type AUTOSN_R = crate::BitReader;
 #[doc = "Field `AUTOSN` writer - Automatic STOP on NACK"]
-pub type AUTOSN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type AUTOSN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ARBDIS` reader - Arbitration Disable"]
 pub type ARBDIS_R = crate::BitReader;
 #[doc = "Field `ARBDIS` writer - Arbitration Disable"]
-pub type ARBDIS_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type ARBDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `GCAMEN` reader - General Call Address Match Enable"]
 pub type GCAMEN_R = crate::BitReader;
 #[doc = "Field `GCAMEN` writer - General Call Address Match Enable"]
-pub type GCAMEN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type GCAMEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TXBIL` reader - TX Buffer Interrupt Level"]
 pub type TXBIL_R = crate::BitReader;
 #[doc = "Field `TXBIL` writer - TX Buffer Interrupt Level"]
-pub type TXBIL_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type TXBIL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CLHR` reader - Clock Low High Ratio"]
 pub type CLHR_R = crate::FieldReader<CLHR_A>;
 #[doc = "Clock Low High Ratio\n\nValue on reset: 0"]
@@ -91,7 +59,7 @@ impl crate::FieldSpec for CLHR_A {
 impl CLHR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLHR_A> {
+    pub const fn variant(&self) -> Option<CLHR_A> {
         match self.bits {
             0 => Some(CLHR_A::STANDARD),
             1 => Some(CLHR_A::ASYMMETRIC),
@@ -99,38 +67,42 @@ impl CLHR_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `STANDARD`"]
+    #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 4:4"]
     #[inline(always)]
     pub fn is_standard(&self) -> bool {
         *self == CLHR_A::STANDARD
     }
-    #[doc = "Checks if the value of the field is `ASYMMETRIC`"]
+    #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 6:3"]
     #[inline(always)]
     pub fn is_asymmetric(&self) -> bool {
         *self == CLHR_A::ASYMMETRIC
     }
-    #[doc = "Checks if the value of the field is `FAST`"]
+    #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 11:6"]
     #[inline(always)]
     pub fn is_fast(&self) -> bool {
         *self == CLHR_A::FAST
     }
 }
 #[doc = "Field `CLHR` writer - Clock Low High Ratio"]
-pub type CLHR_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 2, O, CLHR_A>;
-impl<'a, const O: u8> CLHR_W<'a, O> {
+pub type CLHR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CLHR_A>;
+impl<'a, REG, const O: u8> CLHR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 4:4"]
     #[inline(always)]
-    pub fn standard(self) -> &'a mut W {
+    pub fn standard(self) -> &'a mut crate::W<REG> {
         self.variant(CLHR_A::STANDARD)
     }
     #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 6:3"]
     #[inline(always)]
-    pub fn asymmetric(self) -> &'a mut W {
+    pub fn asymmetric(self) -> &'a mut crate::W<REG> {
         self.variant(CLHR_A::ASYMMETRIC)
     }
     #[doc = "The ratio between low period and high period counters (Nlow:Nhigh) is 11:6"]
     #[inline(always)]
-    pub fn fast(self) -> &'a mut W {
+    pub fn fast(self) -> &'a mut crate::W<REG> {
         self.variant(CLHR_A::FAST)
     }
 }
@@ -161,7 +133,7 @@ impl crate::FieldSpec for BITO_A {
 impl BITO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BITO_A {
+    pub const fn variant(&self) -> BITO_A {
         match self.bits {
             0 => BITO_A::OFF,
             1 => BITO_A::_40PCC,
@@ -170,55 +142,59 @@ impl BITO_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `OFF`"]
+    #[doc = "Timeout disabled"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
         *self == BITO_A::OFF
     }
-    #[doc = "Checks if the value of the field is `_40PCC`"]
+    #[doc = "Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
     #[inline(always)]
     pub fn is_40pcc(&self) -> bool {
         *self == BITO_A::_40PCC
     }
-    #[doc = "Checks if the value of the field is `_80PCC`"]
+    #[doc = "Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
     #[inline(always)]
     pub fn is_80pcc(&self) -> bool {
         *self == BITO_A::_80PCC
     }
-    #[doc = "Checks if the value of the field is `_160PCC`"]
+    #[doc = "Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
     #[inline(always)]
     pub fn is_160pcc(&self) -> bool {
         *self == BITO_A::_160PCC
     }
 }
 #[doc = "Field `BITO` writer - Bus Idle Timeout"]
-pub type BITO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CTRL_SPEC, 2, O, BITO_A>;
-impl<'a, const O: u8> BITO_W<'a, O> {
+pub type BITO_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BITO_A>;
+impl<'a, REG, const O: u8> BITO_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Timeout disabled"]
     #[inline(always)]
-    pub fn off(self) -> &'a mut W {
+    pub fn off(self) -> &'a mut crate::W<REG> {
         self.variant(BITO_A::OFF)
     }
     #[doc = "Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
     #[inline(always)]
-    pub fn _40pcc(self) -> &'a mut W {
+    pub fn _40pcc(self) -> &'a mut crate::W<REG> {
         self.variant(BITO_A::_40PCC)
     }
     #[doc = "Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
     #[inline(always)]
-    pub fn _80pcc(self) -> &'a mut W {
+    pub fn _80pcc(self) -> &'a mut crate::W<REG> {
         self.variant(BITO_A::_80PCC)
     }
     #[doc = "Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
     #[inline(always)]
-    pub fn _160pcc(self) -> &'a mut W {
+    pub fn _160pcc(self) -> &'a mut crate::W<REG> {
         self.variant(BITO_A::_160PCC)
     }
 }
 #[doc = "Field `GIBITO` reader - Go Idle on Bus Idle Timeout"]
 pub type GIBITO_R = crate::BitReader;
 #[doc = "Field `GIBITO` writer - Go Idle on Bus Idle Timeout"]
-pub type GIBITO_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_SPEC, O>;
+pub type GIBITO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CLTO` reader - Clock Low Timeout"]
 pub type CLTO_R = crate::FieldReader<CLTO_A>;
 #[doc = "Clock Low Timeout\n\nValue on reset: 0"]
@@ -250,7 +226,7 @@ impl crate::FieldSpec for CLTO_A {
 impl CLTO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLTO_A> {
+    pub const fn variant(&self) -> Option<CLTO_A> {
         match self.bits {
             0 => Some(CLTO_A::OFF),
             1 => Some(CLTO_A::_40PCC),
@@ -261,68 +237,72 @@ impl CLTO_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `OFF`"]
+    #[doc = "Timeout disabled"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
         *self == CLTO_A::OFF
     }
-    #[doc = "Checks if the value of the field is `_40PCC`"]
+    #[doc = "Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
     #[inline(always)]
     pub fn is_40pcc(&self) -> bool {
         *self == CLTO_A::_40PCC
     }
-    #[doc = "Checks if the value of the field is `_80PCC`"]
+    #[doc = "Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
     #[inline(always)]
     pub fn is_80pcc(&self) -> bool {
         *self == CLTO_A::_80PCC
     }
-    #[doc = "Checks if the value of the field is `_160PCC`"]
+    #[doc = "Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
     #[inline(always)]
     pub fn is_160pcc(&self) -> bool {
         *self == CLTO_A::_160PCC
     }
-    #[doc = "Checks if the value of the field is `_320PCC`"]
+    #[doc = "Timeout after 320 prescaled clock cycles. In standard mode at 100 kHz, this results in a 400us timeout."]
     #[inline(always)]
     pub fn is_320pcc(&self) -> bool {
         *self == CLTO_A::_320PCC
     }
-    #[doc = "Checks if the value of the field is `_1024PCC`"]
+    #[doc = "Timeout after 1024 prescaled clock cycles. In standard mode at 100 kHz, this results in a 1280us timeout."]
     #[inline(always)]
     pub fn is_1024pcc(&self) -> bool {
         *self == CLTO_A::_1024PCC
     }
 }
 #[doc = "Field `CLTO` writer - Clock Low Timeout"]
-pub type CLTO_W<'a, const O: u8> = crate::FieldWriter<'a, CTRL_SPEC, 3, O, CLTO_A>;
-impl<'a, const O: u8> CLTO_W<'a, O> {
+pub type CLTO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CLTO_A>;
+impl<'a, REG, const O: u8> CLTO_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Timeout disabled"]
     #[inline(always)]
-    pub fn off(self) -> &'a mut W {
+    pub fn off(self) -> &'a mut crate::W<REG> {
         self.variant(CLTO_A::OFF)
     }
     #[doc = "Timeout after 40 prescaled clock cycles. In standard mode at 100 kHz, this results in a 50us timeout."]
     #[inline(always)]
-    pub fn _40pcc(self) -> &'a mut W {
+    pub fn _40pcc(self) -> &'a mut crate::W<REG> {
         self.variant(CLTO_A::_40PCC)
     }
     #[doc = "Timeout after 80 prescaled clock cycles. In standard mode at 100 kHz, this results in a 100us timeout."]
     #[inline(always)]
-    pub fn _80pcc(self) -> &'a mut W {
+    pub fn _80pcc(self) -> &'a mut crate::W<REG> {
         self.variant(CLTO_A::_80PCC)
     }
     #[doc = "Timeout after 160 prescaled clock cycles. In standard mode at 100 kHz, this results in a 200us timeout."]
     #[inline(always)]
-    pub fn _160pcc(self) -> &'a mut W {
+    pub fn _160pcc(self) -> &'a mut crate::W<REG> {
         self.variant(CLTO_A::_160PCC)
     }
     #[doc = "Timeout after 320 prescaled clock cycles. In standard mode at 100 kHz, this results in a 400us timeout."]
     #[inline(always)]
-    pub fn _320pcc(self) -> &'a mut W {
+    pub fn _320pcc(self) -> &'a mut crate::W<REG> {
         self.variant(CLTO_A::_320PCC)
     }
     #[doc = "Timeout after 1024 prescaled clock cycles. In standard mode at 100 kHz, this results in a 1280us timeout."]
     #[inline(always)]
-    pub fn _1024pcc(self) -> &'a mut W {
+    pub fn _1024pcc(self) -> &'a mut crate::W<REG> {
         self.variant(CLTO_A::_1024PCC)
     }
 }
@@ -388,98 +368,122 @@ impl R {
         CLTO_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("en", &format_args!("{}", self.en().bit()))
+            .field("slave", &format_args!("{}", self.slave().bit()))
+            .field("autoack", &format_args!("{}", self.autoack().bit()))
+            .field("autose", &format_args!("{}", self.autose().bit()))
+            .field("autosn", &format_args!("{}", self.autosn().bit()))
+            .field("arbdis", &format_args!("{}", self.arbdis().bit()))
+            .field("gcamen", &format_args!("{}", self.gcamen().bit()))
+            .field("txbil", &format_args!("{}", self.txbil().bit()))
+            .field("clhr", &format_args!("{}", self.clhr().bits()))
+            .field("bito", &format_args!("{}", self.bito().bits()))
+            .field("gibito", &format_args!("{}", self.gibito().bit()))
+            .field("clto", &format_args!("{}", self.clto().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - I2C Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<0> {
+    pub fn en(&mut self) -> EN_W<CTRL_SPEC, 0> {
         EN_W::new(self)
     }
     #[doc = "Bit 1 - Addressable as Slave"]
     #[inline(always)]
     #[must_use]
-    pub fn slave(&mut self) -> SLAVE_W<1> {
+    pub fn slave(&mut self) -> SLAVE_W<CTRL_SPEC, 1> {
         SLAVE_W::new(self)
     }
     #[doc = "Bit 2 - Automatic Acknowledge"]
     #[inline(always)]
     #[must_use]
-    pub fn autoack(&mut self) -> AUTOACK_W<2> {
+    pub fn autoack(&mut self) -> AUTOACK_W<CTRL_SPEC, 2> {
         AUTOACK_W::new(self)
     }
     #[doc = "Bit 3 - Automatic STOP When Empty"]
     #[inline(always)]
     #[must_use]
-    pub fn autose(&mut self) -> AUTOSE_W<3> {
+    pub fn autose(&mut self) -> AUTOSE_W<CTRL_SPEC, 3> {
         AUTOSE_W::new(self)
     }
     #[doc = "Bit 4 - Automatic STOP on NACK"]
     #[inline(always)]
     #[must_use]
-    pub fn autosn(&mut self) -> AUTOSN_W<4> {
+    pub fn autosn(&mut self) -> AUTOSN_W<CTRL_SPEC, 4> {
         AUTOSN_W::new(self)
     }
     #[doc = "Bit 5 - Arbitration Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn arbdis(&mut self) -> ARBDIS_W<5> {
+    pub fn arbdis(&mut self) -> ARBDIS_W<CTRL_SPEC, 5> {
         ARBDIS_W::new(self)
     }
     #[doc = "Bit 6 - General Call Address Match Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn gcamen(&mut self) -> GCAMEN_W<6> {
+    pub fn gcamen(&mut self) -> GCAMEN_W<CTRL_SPEC, 6> {
         GCAMEN_W::new(self)
     }
     #[doc = "Bit 7 - TX Buffer Interrupt Level"]
     #[inline(always)]
     #[must_use]
-    pub fn txbil(&mut self) -> TXBIL_W<7> {
+    pub fn txbil(&mut self) -> TXBIL_W<CTRL_SPEC, 7> {
         TXBIL_W::new(self)
     }
     #[doc = "Bits 8:9 - Clock Low High Ratio"]
     #[inline(always)]
     #[must_use]
-    pub fn clhr(&mut self) -> CLHR_W<8> {
+    pub fn clhr(&mut self) -> CLHR_W<CTRL_SPEC, 8> {
         CLHR_W::new(self)
     }
     #[doc = "Bits 12:13 - Bus Idle Timeout"]
     #[inline(always)]
     #[must_use]
-    pub fn bito(&mut self) -> BITO_W<12> {
+    pub fn bito(&mut self) -> BITO_W<CTRL_SPEC, 12> {
         BITO_W::new(self)
     }
     #[doc = "Bit 15 - Go Idle on Bus Idle Timeout"]
     #[inline(always)]
     #[must_use]
-    pub fn gibito(&mut self) -> GIBITO_W<15> {
+    pub fn gibito(&mut self) -> GIBITO_W<CTRL_SPEC, 15> {
         GIBITO_W::new(self)
     }
     #[doc = "Bits 16:18 - Clock Low Timeout"]
     #[inline(always)]
     #[must_use]
-    pub fn clto(&mut self) -> CLTO_W<16> {
+    pub fn clto(&mut self) -> CLTO_W<CTRL_SPEC, 16> {
         CLTO_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRL_SPEC;
 impl crate::RegisterSpec for CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
-impl crate::Readable for CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`ctrl::R`](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

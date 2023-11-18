@@ -1,59 +1,27 @@
 #[doc = "Register `IEN` reader"]
-pub struct R(crate::R<IEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IEN_SPEC>;
 #[doc = "Register `IEN` writer"]
-pub struct W(crate::W<IEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<IEN_SPEC>;
 #[doc = "Field `TOUT` reader - TOUT Interrupt Enable"]
 pub type TOUT_R = crate::BitReader;
 #[doc = "Field `TOUT` writer - TOUT Interrupt Enable"]
-pub type TOUT_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type TOUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `WARN` reader - WARN Interrupt Enable"]
 pub type WARN_R = crate::BitReader;
 #[doc = "Field `WARN` writer - WARN Interrupt Enable"]
-pub type WARN_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type WARN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `WIN` reader - WIN Interrupt Enable"]
 pub type WIN_R = crate::BitReader;
 #[doc = "Field `WIN` writer - WIN Interrupt Enable"]
-pub type WIN_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type WIN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PEM0` reader - PEM0 Interrupt Enable"]
 pub type PEM0_R = crate::BitReader;
 #[doc = "Field `PEM0` writer - PEM0 Interrupt Enable"]
-pub type PEM0_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type PEM0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PEM1` reader - PEM1 Interrupt Enable"]
 pub type PEM1_R = crate::BitReader;
 #[doc = "Field `PEM1` writer - PEM1 Interrupt Enable"]
-pub type PEM1_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type PEM1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - TOUT Interrupt Enable"]
     #[inline(always)]
@@ -81,56 +49,73 @@ impl R {
         PEM1_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("tout", &format_args!("{}", self.tout().bit()))
+            .field("warn", &format_args!("{}", self.warn().bit()))
+            .field("win", &format_args!("{}", self.win().bit()))
+            .field("pem0", &format_args!("{}", self.pem0().bit()))
+            .field("pem1", &format_args!("{}", self.pem1().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<IEN_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - TOUT Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tout(&mut self) -> TOUT_W<0> {
+    pub fn tout(&mut self) -> TOUT_W<IEN_SPEC, 0> {
         TOUT_W::new(self)
     }
     #[doc = "Bit 1 - WARN Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn warn(&mut self) -> WARN_W<1> {
+    pub fn warn(&mut self) -> WARN_W<IEN_SPEC, 1> {
         WARN_W::new(self)
     }
     #[doc = "Bit 2 - WIN Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn win(&mut self) -> WIN_W<2> {
+    pub fn win(&mut self) -> WIN_W<IEN_SPEC, 2> {
         WIN_W::new(self)
     }
     #[doc = "Bit 3 - PEM0 Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pem0(&mut self) -> PEM0_W<3> {
+    pub fn pem0(&mut self) -> PEM0_W<IEN_SPEC, 3> {
         PEM0_W::new(self)
     }
     #[doc = "Bit 4 - PEM1 Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pem1(&mut self) -> PEM1_W<4> {
+    pub fn pem1(&mut self) -> PEM1_W<IEN_SPEC, 4> {
         PEM1_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ien](index.html) module"]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IEN_SPEC;
 impl crate::RegisterSpec for IEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ien::R](R) reader structure"]
-impl crate::Readable for IEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
+#[doc = "`read()` method returns [`ien::R`](R) reader structure"]
+impl crate::Readable for IEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ien::W`](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

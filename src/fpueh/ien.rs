@@ -1,63 +1,31 @@
 #[doc = "Register `IEN` reader"]
-pub struct R(crate::R<IEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IEN_SPEC>;
 #[doc = "Register `IEN` writer"]
-pub struct W(crate::W<IEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<IEN_SPEC>;
 #[doc = "Field `FPIOC` reader - FPIOC Interrupt Enable"]
 pub type FPIOC_R = crate::BitReader;
 #[doc = "Field `FPIOC` writer - FPIOC Interrupt Enable"]
-pub type FPIOC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type FPIOC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FPDZC` reader - FPDZC Interrupt Enable"]
 pub type FPDZC_R = crate::BitReader;
 #[doc = "Field `FPDZC` writer - FPDZC Interrupt Enable"]
-pub type FPDZC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type FPDZC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FPUFC` reader - FPUFC Interrupt Enable"]
 pub type FPUFC_R = crate::BitReader;
 #[doc = "Field `FPUFC` writer - FPUFC Interrupt Enable"]
-pub type FPUFC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type FPUFC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FPOFC` reader - FPOFC Interrupt Enable"]
 pub type FPOFC_R = crate::BitReader;
 #[doc = "Field `FPOFC` writer - FPOFC Interrupt Enable"]
-pub type FPOFC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type FPOFC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FPIDC` reader - FPIDC Interrupt Enable"]
 pub type FPIDC_R = crate::BitReader;
 #[doc = "Field `FPIDC` writer - FPIDC Interrupt Enable"]
-pub type FPIDC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type FPIDC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FPIXC` reader - FPIXC Interrupt Enable"]
 pub type FPIXC_R = crate::BitReader;
 #[doc = "Field `FPIXC` writer - FPIXC Interrupt Enable"]
-pub type FPIXC_W<'a, const O: u8> = crate::BitWriter<'a, IEN_SPEC, O>;
+pub type FPIXC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - FPIOC Interrupt Enable"]
     #[inline(always)]
@@ -90,62 +58,80 @@ impl R {
         FPIXC_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("fpioc", &format_args!("{}", self.fpioc().bit()))
+            .field("fpdzc", &format_args!("{}", self.fpdzc().bit()))
+            .field("fpufc", &format_args!("{}", self.fpufc().bit()))
+            .field("fpofc", &format_args!("{}", self.fpofc().bit()))
+            .field("fpidc", &format_args!("{}", self.fpidc().bit()))
+            .field("fpixc", &format_args!("{}", self.fpixc().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<IEN_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bit 0 - FPIOC Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fpioc(&mut self) -> FPIOC_W<0> {
+    pub fn fpioc(&mut self) -> FPIOC_W<IEN_SPEC, 0> {
         FPIOC_W::new(self)
     }
     #[doc = "Bit 1 - FPDZC Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fpdzc(&mut self) -> FPDZC_W<1> {
+    pub fn fpdzc(&mut self) -> FPDZC_W<IEN_SPEC, 1> {
         FPDZC_W::new(self)
     }
     #[doc = "Bit 2 - FPUFC Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fpufc(&mut self) -> FPUFC_W<2> {
+    pub fn fpufc(&mut self) -> FPUFC_W<IEN_SPEC, 2> {
         FPUFC_W::new(self)
     }
     #[doc = "Bit 3 - FPOFC Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fpofc(&mut self) -> FPOFC_W<3> {
+    pub fn fpofc(&mut self) -> FPOFC_W<IEN_SPEC, 3> {
         FPOFC_W::new(self)
     }
     #[doc = "Bit 4 - FPIDC Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fpidc(&mut self) -> FPIDC_W<4> {
+    pub fn fpidc(&mut self) -> FPIDC_W<IEN_SPEC, 4> {
         FPIDC_W::new(self)
     }
     #[doc = "Bit 5 - FPIXC Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fpixc(&mut self) -> FPIXC_W<5> {
+    pub fn fpixc(&mut self) -> FPIXC_W<IEN_SPEC, 5> {
         FPIXC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ien](index.html) module"]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IEN_SPEC;
 impl crate::RegisterSpec for IEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ien::R](R) reader structure"]
-impl crate::Readable for IEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
+#[doc = "`read()` method returns [`ien::R`](R) reader structure"]
+impl crate::Readable for IEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ien::W`](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

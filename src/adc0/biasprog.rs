@@ -1,39 +1,7 @@
 #[doc = "Register `BIASPROG` reader"]
-pub struct R(crate::R<BIASPROG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BIASPROG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BIASPROG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BIASPROG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BIASPROG_SPEC>;
 #[doc = "Register `BIASPROG` writer"]
-pub struct W(crate::W<BIASPROG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BIASPROG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BIASPROG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BIASPROG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BIASPROG_SPEC>;
 #[doc = "Field `ADCBIASPROG` reader - Bias Programming Value of Analog ADC Block"]
 pub type ADCBIASPROG_R = crate::FieldReader<ADCBIASPROG_A>;
 #[doc = "Bias Programming Value of Analog ADC Block\n\nValue on reset: 0"]
@@ -65,7 +33,7 @@ impl crate::FieldSpec for ADCBIASPROG_A {
 impl ADCBIASPROG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ADCBIASPROG_A> {
+    pub const fn variant(&self) -> Option<ADCBIASPROG_A> {
         match self.bits {
             0 => Some(ADCBIASPROG_A::NORMAL),
             4 => Some(ADCBIASPROG_A::SCALE2),
@@ -76,80 +44,83 @@ impl ADCBIASPROG_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal power (use for 1Msps operation)"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == ADCBIASPROG_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `SCALE2`"]
+    #[doc = "Scaling bias to 1/2"]
     #[inline(always)]
     pub fn is_scale2(&self) -> bool {
         *self == ADCBIASPROG_A::SCALE2
     }
-    #[doc = "Checks if the value of the field is `SCALE4`"]
+    #[doc = "Scaling bias to 1/4"]
     #[inline(always)]
     pub fn is_scale4(&self) -> bool {
         *self == ADCBIASPROG_A::SCALE4
     }
-    #[doc = "Checks if the value of the field is `SCALE8`"]
+    #[doc = "Scaling bias to 1/8"]
     #[inline(always)]
     pub fn is_scale8(&self) -> bool {
         *self == ADCBIASPROG_A::SCALE8
     }
-    #[doc = "Checks if the value of the field is `SCALE16`"]
+    #[doc = "Scaling bias to 1/16"]
     #[inline(always)]
     pub fn is_scale16(&self) -> bool {
         *self == ADCBIASPROG_A::SCALE16
     }
-    #[doc = "Checks if the value of the field is `SCALE32`"]
+    #[doc = "Scaling bias to 1/32"]
     #[inline(always)]
     pub fn is_scale32(&self) -> bool {
         *self == ADCBIASPROG_A::SCALE32
     }
 }
 #[doc = "Field `ADCBIASPROG` writer - Bias Programming Value of Analog ADC Block"]
-pub type ADCBIASPROG_W<'a, const O: u8> =
-    crate::FieldWriter<'a, BIASPROG_SPEC, 4, O, ADCBIASPROG_A>;
-impl<'a, const O: u8> ADCBIASPROG_W<'a, O> {
+pub type ADCBIASPROG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, ADCBIASPROG_A>;
+impl<'a, REG, const O: u8> ADCBIASPROG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Normal power (use for 1Msps operation)"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(ADCBIASPROG_A::NORMAL)
     }
     #[doc = "Scaling bias to 1/2"]
     #[inline(always)]
-    pub fn scale2(self) -> &'a mut W {
+    pub fn scale2(self) -> &'a mut crate::W<REG> {
         self.variant(ADCBIASPROG_A::SCALE2)
     }
     #[doc = "Scaling bias to 1/4"]
     #[inline(always)]
-    pub fn scale4(self) -> &'a mut W {
+    pub fn scale4(self) -> &'a mut crate::W<REG> {
         self.variant(ADCBIASPROG_A::SCALE4)
     }
     #[doc = "Scaling bias to 1/8"]
     #[inline(always)]
-    pub fn scale8(self) -> &'a mut W {
+    pub fn scale8(self) -> &'a mut crate::W<REG> {
         self.variant(ADCBIASPROG_A::SCALE8)
     }
     #[doc = "Scaling bias to 1/16"]
     #[inline(always)]
-    pub fn scale16(self) -> &'a mut W {
+    pub fn scale16(self) -> &'a mut crate::W<REG> {
         self.variant(ADCBIASPROG_A::SCALE16)
     }
     #[doc = "Scaling bias to 1/32"]
     #[inline(always)]
-    pub fn scale32(self) -> &'a mut W {
+    pub fn scale32(self) -> &'a mut crate::W<REG> {
         self.variant(ADCBIASPROG_A::SCALE32)
     }
 }
 #[doc = "Field `VFAULTCLR` reader - Clear VREFOF Flag"]
 pub type VFAULTCLR_R = crate::BitReader;
 #[doc = "Field `VFAULTCLR` writer - Clear VREFOF Flag"]
-pub type VFAULTCLR_W<'a, const O: u8> = crate::BitWriter<'a, BIASPROG_SPEC, O>;
+pub type VFAULTCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `GPBIASACC` reader - Accuracy Setting for the System Bias During ADC Operation"]
 pub type GPBIASACC_R = crate::BitReader;
 #[doc = "Field `GPBIASACC` writer - Accuracy Setting for the System Bias During ADC Operation"]
-pub type GPBIASACC_W<'a, const O: u8> = crate::BitWriter<'a, BIASPROG_SPEC, O>;
+pub type GPBIASACC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:3 - Bias Programming Value of Analog ADC Block"]
     #[inline(always)]
@@ -167,44 +138,62 @@ impl R {
         GPBIASACC_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BIASPROG")
+            .field(
+                "adcbiasprog",
+                &format_args!("{}", self.adcbiasprog().bits()),
+            )
+            .field("vfaultclr", &format_args!("{}", self.vfaultclr().bit()))
+            .field("gpbiasacc", &format_args!("{}", self.gpbiasacc().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<BIASPROG_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Bias Programming Value of Analog ADC Block"]
     #[inline(always)]
     #[must_use]
-    pub fn adcbiasprog(&mut self) -> ADCBIASPROG_W<0> {
+    pub fn adcbiasprog(&mut self) -> ADCBIASPROG_W<BIASPROG_SPEC, 0> {
         ADCBIASPROG_W::new(self)
     }
     #[doc = "Bit 12 - Clear VREFOF Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn vfaultclr(&mut self) -> VFAULTCLR_W<12> {
+    pub fn vfaultclr(&mut self) -> VFAULTCLR_W<BIASPROG_SPEC, 12> {
         VFAULTCLR_W::new(self)
     }
     #[doc = "Bit 16 - Accuracy Setting for the System Bias During ADC Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn gpbiasacc(&mut self) -> GPBIASACC_W<16> {
+    pub fn gpbiasacc(&mut self) -> GPBIASACC_W<BIASPROG_SPEC, 16> {
         GPBIASACC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Bias Programming Register for Various Analog Blocks Used in ADC Operation\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [biasprog](index.html) module"]
+#[doc = "Bias Programming Register for Various Analog Blocks Used in ADC Operation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`biasprog::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`biasprog::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BIASPROG_SPEC;
 impl crate::RegisterSpec for BIASPROG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [biasprog::R](R) reader structure"]
-impl crate::Readable for BIASPROG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [biasprog::W](W) writer structure"]
+#[doc = "`read()` method returns [`biasprog::R`](R) reader structure"]
+impl crate::Readable for BIASPROG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`biasprog::W`](W) writer structure"]
 impl crate::Writable for BIASPROG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,48 +1,37 @@
 #[doc = "Register `LINKLOAD` writer"]
-pub struct W(crate::W<LINKLOAD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LINKLOAD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LINKLOAD_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LINKLOAD_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LINKLOAD_SPEC>;
 #[doc = "Field `LINKLOAD` writer - DMA Link Loads"]
-pub type LINKLOAD_W<'a, const O: u8> = crate::FieldWriter<'a, LINKLOAD_SPEC, 8, O>;
+pub type LINKLOAD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+impl core::fmt::Debug for crate::generic::Reg<LINKLOAD_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - DMA Link Loads"]
     #[inline(always)]
     #[must_use]
-    pub fn linkload(&mut self) -> LINKLOAD_W<0> {
+    pub fn linkload(&mut self) -> LINKLOAD_W<LINKLOAD_SPEC, 0> {
         LINKLOAD_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DMA Channel Link Load Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [linkload](index.html) module"]
+#[doc = "DMA Channel Link Load Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`linkload::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LINKLOAD_SPEC;
 impl crate::RegisterSpec for LINKLOAD_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [linkload::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`linkload::W`](W) writer structure"]
 impl crate::Writable for LINKLOAD_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

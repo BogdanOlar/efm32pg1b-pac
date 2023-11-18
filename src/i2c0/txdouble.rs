@@ -1,47 +1,15 @@
 #[doc = "Register `TXDOUBLE` reader"]
-pub struct R(crate::R<TXDOUBLE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TXDOUBLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TXDOUBLE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TXDOUBLE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TXDOUBLE_SPEC>;
 #[doc = "Register `TXDOUBLE` writer"]
-pub struct W(crate::W<TXDOUBLE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TXDOUBLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TXDOUBLE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TXDOUBLE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TXDOUBLE_SPEC>;
 #[doc = "Field `TXDATA0` reader - TX Data"]
 pub type TXDATA0_R = crate::FieldReader;
 #[doc = "Field `TXDATA0` writer - TX Data"]
-pub type TXDATA0_W<'a, const O: u8> = crate::FieldWriter<'a, TXDOUBLE_SPEC, 8, O>;
+pub type TXDATA0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `TXDATA1` reader - TX Data"]
 pub type TXDATA1_R = crate::FieldReader;
 #[doc = "Field `TXDATA1` writer - TX Data"]
-pub type TXDATA1_W<'a, const O: u8> = crate::FieldWriter<'a, TXDOUBLE_SPEC, 8, O>;
+pub type TXDATA1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - TX Data"]
     #[inline(always)]
@@ -54,38 +22,52 @@ impl R {
         TXDATA1_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TXDOUBLE")
+            .field("txdata0", &format_args!("{}", self.txdata0().bits()))
+            .field("txdata1", &format_args!("{}", self.txdata1().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<TXDOUBLE_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - TX Data"]
     #[inline(always)]
     #[must_use]
-    pub fn txdata0(&mut self) -> TXDATA0_W<0> {
+    pub fn txdata0(&mut self) -> TXDATA0_W<TXDOUBLE_SPEC, 0> {
         TXDATA0_W::new(self)
     }
     #[doc = "Bits 8:15 - TX Data"]
     #[inline(always)]
     #[must_use]
-    pub fn txdata1(&mut self) -> TXDATA1_W<8> {
+    pub fn txdata1(&mut self) -> TXDATA1_W<TXDOUBLE_SPEC, 8> {
         TXDATA1_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Transmit Buffer Double Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [txdouble](index.html) module"]
+#[doc = "Transmit Buffer Double Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdouble::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdouble::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TXDOUBLE_SPEC;
 impl crate::RegisterSpec for TXDOUBLE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [txdouble::R](R) reader structure"]
-impl crate::Readable for TXDOUBLE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [txdouble::W](W) writer structure"]
+#[doc = "`read()` method returns [`txdouble::R`](R) reader structure"]
+impl crate::Readable for TXDOUBLE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`txdouble::W`](W) writer structure"]
 impl crate::Writable for TXDOUBLE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `CC0_CTRL` reader"]
-pub struct R(crate::R<CC0_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CC0_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CC0_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CC0_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CC0_CTRL_SPEC>;
 #[doc = "Register `CC0_CTRL` writer"]
-pub struct W(crate::W<CC0_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CC0_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CC0_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CC0_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CC0_CTRL_SPEC>;
 #[doc = "Field `MODE` reader - CC Channel Mode"]
 pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "CC Channel Mode\n\nValue on reset: 0"]
@@ -59,7 +27,7 @@ impl crate::FieldSpec for MODE_A {
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MODE_A> {
+    pub const fn variant(&self) -> Option<MODE_A> {
         match self.bits {
             0 => Some(MODE_A::OFF),
             1 => Some(MODE_A::INPUTCAPTURE),
@@ -67,38 +35,42 @@ impl MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `OFF`"]
+    #[doc = "Compare/Capture channel turned off"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
         *self == MODE_A::OFF
     }
-    #[doc = "Checks if the value of the field is `INPUTCAPTURE`"]
+    #[doc = "Input capture"]
     #[inline(always)]
     pub fn is_inputcapture(&self) -> bool {
         *self == MODE_A::INPUTCAPTURE
     }
-    #[doc = "Checks if the value of the field is `OUTPUTCOMPARE`"]
+    #[doc = "Output compare"]
     #[inline(always)]
     pub fn is_outputcompare(&self) -> bool {
         *self == MODE_A::OUTPUTCOMPARE
     }
 }
 #[doc = "Field `MODE` writer - CC Channel Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, CC0_CTRL_SPEC, 2, O, MODE_A>;
-impl<'a, const O: u8> MODE_W<'a, O> {
+pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, MODE_A>;
+impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Compare/Capture channel turned off"]
     #[inline(always)]
-    pub fn off(self) -> &'a mut W {
+    pub fn off(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::OFF)
     }
     #[doc = "Input capture"]
     #[inline(always)]
-    pub fn inputcapture(self) -> &'a mut W {
+    pub fn inputcapture(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::INPUTCAPTURE)
     }
     #[doc = "Output compare"]
     #[inline(always)]
-    pub fn outputcompare(self) -> &'a mut W {
+    pub fn outputcompare(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::OUTPUTCOMPARE)
     }
 }
@@ -129,7 +101,7 @@ impl crate::FieldSpec for CMOA_A {
 impl CMOA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMOA_A {
+    pub const fn variant(&self) -> CMOA_A {
         match self.bits {
             0 => CMOA_A::PULSE,
             1 => CMOA_A::TOGGLE,
@@ -138,48 +110,52 @@ impl CMOA_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PULSE`"]
+    #[doc = "A single clock cycle pulse is generated on output"]
     #[inline(always)]
     pub fn is_pulse(&self) -> bool {
         *self == CMOA_A::PULSE
     }
-    #[doc = "Checks if the value of the field is `TOGGLE`"]
+    #[doc = "Toggle output on compare match"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
         *self == CMOA_A::TOGGLE
     }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[doc = "Clear output on compare match"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
         *self == CMOA_A::CLEAR
     }
-    #[doc = "Checks if the value of the field is `SET`"]
+    #[doc = "Set output on compare match"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
         *self == CMOA_A::SET
     }
 }
 #[doc = "Field `CMOA` writer - Compare Match Output Action"]
-pub type CMOA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CC0_CTRL_SPEC, 2, O, CMOA_A>;
-impl<'a, const O: u8> CMOA_W<'a, O> {
+pub type CMOA_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CMOA_A>;
+impl<'a, REG, const O: u8> CMOA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A single clock cycle pulse is generated on output"]
     #[inline(always)]
-    pub fn pulse(self) -> &'a mut W {
+    pub fn pulse(self) -> &'a mut crate::W<REG> {
         self.variant(CMOA_A::PULSE)
     }
     #[doc = "Toggle output on compare match"]
     #[inline(always)]
-    pub fn toggle(self) -> &'a mut W {
+    pub fn toggle(self) -> &'a mut crate::W<REG> {
         self.variant(CMOA_A::TOGGLE)
     }
     #[doc = "Clear output on compare match"]
     #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
+    pub fn clear(self) -> &'a mut crate::W<REG> {
         self.variant(CMOA_A::CLEAR)
     }
     #[doc = "Set output on compare match"]
     #[inline(always)]
-    pub fn set(self) -> &'a mut W {
+    pub fn set(self) -> &'a mut crate::W<REG> {
         self.variant(CMOA_A::SET)
     }
 }
@@ -210,7 +186,7 @@ impl crate::FieldSpec for ICEDGE_A {
 impl ICEDGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ICEDGE_A {
+    pub const fn variant(&self) -> ICEDGE_A {
         match self.bits {
             0 => ICEDGE_A::RISING,
             1 => ICEDGE_A::FALLING,
@@ -219,48 +195,52 @@ impl ICEDGE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `RISING`"]
+    #[doc = "Rising edges detected"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
         *self == ICEDGE_A::RISING
     }
-    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[doc = "Falling edges detected"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
         *self == ICEDGE_A::FALLING
     }
-    #[doc = "Checks if the value of the field is `BOTH`"]
+    #[doc = "Both edges detected"]
     #[inline(always)]
     pub fn is_both(&self) -> bool {
         *self == ICEDGE_A::BOTH
     }
-    #[doc = "Checks if the value of the field is `NONE`"]
+    #[doc = "No edge detection, signal is left as it is"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
         *self == ICEDGE_A::NONE
     }
 }
 #[doc = "Field `ICEDGE` writer - Input Capture Edge Select"]
-pub type ICEDGE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CC0_CTRL_SPEC, 2, O, ICEDGE_A>;
-impl<'a, const O: u8> ICEDGE_W<'a, O> {
+pub type ICEDGE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ICEDGE_A>;
+impl<'a, REG, const O: u8> ICEDGE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Rising edges detected"]
     #[inline(always)]
-    pub fn rising(self) -> &'a mut W {
+    pub fn rising(self) -> &'a mut crate::W<REG> {
         self.variant(ICEDGE_A::RISING)
     }
     #[doc = "Falling edges detected"]
     #[inline(always)]
-    pub fn falling(self) -> &'a mut W {
+    pub fn falling(self) -> &'a mut crate::W<REG> {
         self.variant(ICEDGE_A::FALLING)
     }
     #[doc = "Both edges detected"]
     #[inline(always)]
-    pub fn both(self) -> &'a mut W {
+    pub fn both(self) -> &'a mut crate::W<REG> {
         self.variant(ICEDGE_A::BOTH)
     }
     #[doc = "No edge detection, signal is left as it is"]
     #[inline(always)]
-    pub fn none(self) -> &'a mut W {
+    pub fn none(self) -> &'a mut crate::W<REG> {
         self.variant(ICEDGE_A::NONE)
     }
 }
@@ -307,7 +287,7 @@ impl crate::FieldSpec for PRSSEL_A {
 impl PRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRSSEL_A> {
+    pub const fn variant(&self) -> Option<PRSSEL_A> {
         match self.bits {
             0 => Some(PRSSEL_A::PRSCH0),
             1 => Some(PRSSEL_A::PRSCH1),
@@ -324,143 +304,147 @@ impl PRSSEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `PRSCH0`"]
+    #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
         *self == PRSSEL_A::PRSCH0
     }
-    #[doc = "Checks if the value of the field is `PRSCH1`"]
+    #[doc = "PRS Channel 1 selected as input"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
         *self == PRSSEL_A::PRSCH1
     }
-    #[doc = "Checks if the value of the field is `PRSCH2`"]
+    #[doc = "PRS Channel 2 selected as input"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
         *self == PRSSEL_A::PRSCH2
     }
-    #[doc = "Checks if the value of the field is `PRSCH3`"]
+    #[doc = "PRS Channel 3 selected as input"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
         *self == PRSSEL_A::PRSCH3
     }
-    #[doc = "Checks if the value of the field is `PRSCH4`"]
+    #[doc = "PRS Channel 4 selected as input"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
         *self == PRSSEL_A::PRSCH4
     }
-    #[doc = "Checks if the value of the field is `PRSCH5`"]
+    #[doc = "PRS Channel 5 selected as input"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
         *self == PRSSEL_A::PRSCH5
     }
-    #[doc = "Checks if the value of the field is `PRSCH6`"]
+    #[doc = "PRS Channel 6 selected as input"]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
         *self == PRSSEL_A::PRSCH6
     }
-    #[doc = "Checks if the value of the field is `PRSCH7`"]
+    #[doc = "PRS Channel 7 selected as input"]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
         *self == PRSSEL_A::PRSCH7
     }
-    #[doc = "Checks if the value of the field is `PRSCH8`"]
+    #[doc = "PRS Channel 8 selected as input"]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
         *self == PRSSEL_A::PRSCH8
     }
-    #[doc = "Checks if the value of the field is `PRSCH9`"]
+    #[doc = "PRS Channel 9 selected as input"]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
         *self == PRSSEL_A::PRSCH9
     }
-    #[doc = "Checks if the value of the field is `PRSCH10`"]
+    #[doc = "PRS Channel 10 selected as input"]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
         *self == PRSSEL_A::PRSCH10
     }
-    #[doc = "Checks if the value of the field is `PRSCH11`"]
+    #[doc = "PRS Channel 11 selected as input"]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
         *self == PRSSEL_A::PRSCH11
     }
 }
 #[doc = "Field `PRSSEL` writer - Compare/Capture Channel PRS Input Channel Selection"]
-pub type PRSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, CC0_CTRL_SPEC, 4, O, PRSSEL_A>;
-impl<'a, const O: u8> PRSSEL_W<'a, O> {
+pub type PRSSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, PRSSEL_A>;
+impl<'a, REG, const O: u8> PRSSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
-    pub fn prsch0(self) -> &'a mut W {
+    pub fn prsch0(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH0)
     }
     #[doc = "PRS Channel 1 selected as input"]
     #[inline(always)]
-    pub fn prsch1(self) -> &'a mut W {
+    pub fn prsch1(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH1)
     }
     #[doc = "PRS Channel 2 selected as input"]
     #[inline(always)]
-    pub fn prsch2(self) -> &'a mut W {
+    pub fn prsch2(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH2)
     }
     #[doc = "PRS Channel 3 selected as input"]
     #[inline(always)]
-    pub fn prsch3(self) -> &'a mut W {
+    pub fn prsch3(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH3)
     }
     #[doc = "PRS Channel 4 selected as input"]
     #[inline(always)]
-    pub fn prsch4(self) -> &'a mut W {
+    pub fn prsch4(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH4)
     }
     #[doc = "PRS Channel 5 selected as input"]
     #[inline(always)]
-    pub fn prsch5(self) -> &'a mut W {
+    pub fn prsch5(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH5)
     }
     #[doc = "PRS Channel 6 selected as input"]
     #[inline(always)]
-    pub fn prsch6(self) -> &'a mut W {
+    pub fn prsch6(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH6)
     }
     #[doc = "PRS Channel 7 selected as input"]
     #[inline(always)]
-    pub fn prsch7(self) -> &'a mut W {
+    pub fn prsch7(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH7)
     }
     #[doc = "PRS Channel 8 selected as input"]
     #[inline(always)]
-    pub fn prsch8(self) -> &'a mut W {
+    pub fn prsch8(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH8)
     }
     #[doc = "PRS Channel 9 selected as input"]
     #[inline(always)]
-    pub fn prsch9(self) -> &'a mut W {
+    pub fn prsch9(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH9)
     }
     #[doc = "PRS Channel 10 selected as input"]
     #[inline(always)]
-    pub fn prsch10(self) -> &'a mut W {
+    pub fn prsch10(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH10)
     }
     #[doc = "PRS Channel 11 selected as input"]
     #[inline(always)]
-    pub fn prsch11(self) -> &'a mut W {
+    pub fn prsch11(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL_A::PRSCH11)
     }
 }
 #[doc = "Field `COMPBASE` reader - Capture Compare Channel Comparison Base"]
 pub type COMPBASE_R = crate::BitReader;
 #[doc = "Field `COMPBASE` writer - Capture Compare Channel Comparison Base"]
-pub type COMPBASE_W<'a, const O: u8> = crate::BitWriter<'a, CC0_CTRL_SPEC, O>;
+pub type COMPBASE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `COMPMASK` reader - Capture Compare Channel Comparison Mask"]
 pub type COMPMASK_R = crate::FieldReader;
 #[doc = "Field `COMPMASK` writer - Capture Compare Channel Comparison Mask"]
-pub type COMPMASK_W<'a, const O: u8> = crate::FieldWriter<'a, CC0_CTRL_SPEC, 5, O>;
+pub type COMPMASK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
 #[doc = "Field `DAYCC` reader - Day Capture/Compare Selection"]
 pub type DAYCC_R = crate::BitReader;
 #[doc = "Field `DAYCC` writer - Day Capture/Compare Selection"]
-pub type DAYCC_W<'a, const O: u8> = crate::BitWriter<'a, CC0_CTRL_SPEC, O>;
+pub type DAYCC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 0:1 - CC Channel Mode"]
     #[inline(always)]
@@ -498,68 +482,87 @@ impl R {
         DAYCC_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CC0_CTRL")
+            .field("mode", &format_args!("{}", self.mode().bits()))
+            .field("cmoa", &format_args!("{}", self.cmoa().bits()))
+            .field("icedge", &format_args!("{}", self.icedge().bits()))
+            .field("prssel", &format_args!("{}", self.prssel().bits()))
+            .field("compbase", &format_args!("{}", self.compbase().bit()))
+            .field("compmask", &format_args!("{}", self.compmask().bits()))
+            .field("daycc", &format_args!("{}", self.daycc().bit()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<CC0_CTRL_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - CC Channel Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<0> {
+    pub fn mode(&mut self) -> MODE_W<CC0_CTRL_SPEC, 0> {
         MODE_W::new(self)
     }
     #[doc = "Bits 2:3 - Compare Match Output Action"]
     #[inline(always)]
     #[must_use]
-    pub fn cmoa(&mut self) -> CMOA_W<2> {
+    pub fn cmoa(&mut self) -> CMOA_W<CC0_CTRL_SPEC, 2> {
         CMOA_W::new(self)
     }
     #[doc = "Bits 4:5 - Input Capture Edge Select"]
     #[inline(always)]
     #[must_use]
-    pub fn icedge(&mut self) -> ICEDGE_W<4> {
+    pub fn icedge(&mut self) -> ICEDGE_W<CC0_CTRL_SPEC, 4> {
         ICEDGE_W::new(self)
     }
     #[doc = "Bits 6:9 - Compare/Capture Channel PRS Input Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn prssel(&mut self) -> PRSSEL_W<6> {
+    pub fn prssel(&mut self) -> PRSSEL_W<CC0_CTRL_SPEC, 6> {
         PRSSEL_W::new(self)
     }
     #[doc = "Bit 11 - Capture Compare Channel Comparison Base"]
     #[inline(always)]
     #[must_use]
-    pub fn compbase(&mut self) -> COMPBASE_W<11> {
+    pub fn compbase(&mut self) -> COMPBASE_W<CC0_CTRL_SPEC, 11> {
         COMPBASE_W::new(self)
     }
     #[doc = "Bits 12:16 - Capture Compare Channel Comparison Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn compmask(&mut self) -> COMPMASK_W<12> {
+    pub fn compmask(&mut self) -> COMPMASK_W<CC0_CTRL_SPEC, 12> {
         COMPMASK_W::new(self)
     }
     #[doc = "Bit 17 - Day Capture/Compare Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn daycc(&mut self) -> DAYCC_W<17> {
+    pub fn daycc(&mut self) -> DAYCC_W<CC0_CTRL_SPEC, 17> {
         DAYCC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CC Channel Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc0_ctrl](index.html) module"]
+#[doc = "CC Channel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc0_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cc0_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CC0_CTRL_SPEC;
 impl crate::RegisterSpec for CC0_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cc0_ctrl::R](R) reader structure"]
-impl crate::Readable for CC0_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cc0_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`cc0_ctrl::R`](R) reader structure"]
+impl crate::Readable for CC0_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cc0_ctrl::W`](W) writer structure"]
 impl crate::Writable for CC0_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

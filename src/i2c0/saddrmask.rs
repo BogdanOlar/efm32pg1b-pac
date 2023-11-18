@@ -1,43 +1,11 @@
 #[doc = "Register `SADDRMASK` reader"]
-pub struct R(crate::R<SADDRMASK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SADDRMASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SADDRMASK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SADDRMASK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SADDRMASK_SPEC>;
 #[doc = "Register `SADDRMASK` writer"]
-pub struct W(crate::W<SADDRMASK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SADDRMASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SADDRMASK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SADDRMASK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SADDRMASK_SPEC>;
 #[doc = "Field `MASK` reader - Slave Address Mask"]
 pub type MASK_R = crate::FieldReader;
 #[doc = "Field `MASK` writer - Slave Address Mask"]
-pub type MASK_W<'a, const O: u8> = crate::FieldWriter<'a, SADDRMASK_SPEC, 7, O>;
+pub type MASK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
 impl R {
     #[doc = "Bits 1:7 - Slave Address Mask"]
     #[inline(always)]
@@ -45,32 +13,45 @@ impl R {
         MASK_R::new(((self.bits >> 1) & 0x7f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SADDRMASK")
+            .field("mask", &format_args!("{}", self.mask().bits()))
+            .finish()
+    }
+}
+impl core::fmt::Debug for crate::generic::Reg<SADDRMASK_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        self.read().fmt(f)
+    }
+}
 impl W {
     #[doc = "Bits 1:7 - Slave Address Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mask(&mut self) -> MASK_W<1> {
+    pub fn mask(&mut self) -> MASK_W<SADDRMASK_SPEC, 1> {
         MASK_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Slave Address Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [saddrmask](index.html) module"]
+#[doc = "Slave Address Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`saddrmask::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`saddrmask::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SADDRMASK_SPEC;
 impl crate::RegisterSpec for SADDRMASK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [saddrmask::R](R) reader structure"]
-impl crate::Readable for SADDRMASK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [saddrmask::W](W) writer structure"]
+#[doc = "`read()` method returns [`saddrmask::R`](R) reader structure"]
+impl crate::Readable for SADDRMASK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`saddrmask::W`](W) writer structure"]
 impl crate::Writable for SADDRMASK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
