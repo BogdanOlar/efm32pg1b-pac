@@ -1,5 +1,5 @@
 #[doc = "Register `SYNCBUSY` reader"]
-pub type R = crate::R<SYNCBUSY_SPEC>;
+pub type R = crate::R<SYNCBUSYrs>;
 #[doc = "Field `CTRL` reader - CTRL Register Busy"]
 pub type CTRL_R = crate::BitReader;
 #[doc = "Field `CMD` reader - CMD Register Busy"]
@@ -58,33 +58,14 @@ impl R {
         PULSECTRL_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SYNCBUSY")
-            .field("ctrl", &format_args!("{}", self.ctrl().bit()))
-            .field("cmd", &format_args!("{}", self.cmd().bit()))
-            .field("clkdiv", &format_args!("{}", self.clkdiv().bit()))
-            .field("startframe", &format_args!("{}", self.startframe().bit()))
-            .field("sigframe", &format_args!("{}", self.sigframe().bit()))
-            .field("txdatax", &format_args!("{}", self.txdatax().bit()))
-            .field("txdata", &format_args!("{}", self.txdata().bit()))
-            .field("pulsectrl", &format_args!("{}", self.pulsectrl().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<SYNCBUSY_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Synchronization Busy Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`syncbusy::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SYNCBUSY_SPEC;
-impl crate::RegisterSpec for SYNCBUSY_SPEC {
+pub struct SYNCBUSYrs;
+impl crate::RegisterSpec for SYNCBUSYrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`syncbusy::R`](R) reader structure"]
-impl crate::Readable for SYNCBUSY_SPEC {}
+impl crate::Readable for SYNCBUSYrs {}
 #[doc = "`reset()` method sets SYNCBUSY to value 0"]
-impl crate::Resettable for SYNCBUSY_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for SYNCBUSYrs {
+    const RESET_VALUE: u32 = 0;
 }

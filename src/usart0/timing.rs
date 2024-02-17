@@ -1,99 +1,99 @@
 #[doc = "Register `TIMING` reader"]
-pub type R = crate::R<TIMING_SPEC>;
+pub type R = crate::R<TIMINGrs>;
 #[doc = "Register `TIMING` writer"]
-pub type W = crate::W<TIMING_SPEC>;
+pub type W = crate::W<TIMINGrs>;
 #[doc = "Field `TXDELAY` reader - TX Frame Start Delay"]
-pub type TXDELAY_R = crate::FieldReader<TXDELAY_A>;
+pub type TXDELAY_R = crate::FieldReader<TXDELAY>;
 #[doc = "TX Frame Start Delay\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TXDELAY_A {
+pub enum TXDELAY {
     #[doc = "0: Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
-    DISABLE = 0,
+    Disable = 0,
     #[doc = "1: Start of transmission is delayed for 1 baud-times"]
-    ONE = 1,
+    One = 1,
     #[doc = "2: Start of transmission is delayed for 2 baud-times"]
-    TWO = 2,
+    Two = 2,
     #[doc = "3: Start of transmission is delayed for 3 baud-times"]
-    THREE = 3,
+    Three = 3,
     #[doc = "4: Start of transmission is delayed for 7 baud-times"]
-    SEVEN = 4,
+    Seven = 4,
     #[doc = "5: Start of transmission is delayed for TCMPVAL0 baud-times"]
-    TCMP0 = 5,
+    Tcmp0 = 5,
     #[doc = "6: Start of transmission is delayed for TCMPVAL1 baud-times"]
-    TCMP1 = 6,
+    Tcmp1 = 6,
     #[doc = "7: Start of transmission is delayed for TCMPVAL2 baud-times"]
-    TCMP2 = 7,
+    Tcmp2 = 7,
 }
-impl From<TXDELAY_A> for u8 {
+impl From<TXDELAY> for u8 {
     #[inline(always)]
-    fn from(variant: TXDELAY_A) -> Self {
+    fn from(variant: TXDELAY) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for TXDELAY_A {
+impl crate::FieldSpec for TXDELAY {
     type Ux = u8;
 }
 impl TXDELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TXDELAY_A {
+    pub const fn variant(&self) -> TXDELAY {
         match self.bits {
-            0 => TXDELAY_A::DISABLE,
-            1 => TXDELAY_A::ONE,
-            2 => TXDELAY_A::TWO,
-            3 => TXDELAY_A::THREE,
-            4 => TXDELAY_A::SEVEN,
-            5 => TXDELAY_A::TCMP0,
-            6 => TXDELAY_A::TCMP1,
-            7 => TXDELAY_A::TCMP2,
+            0 => TXDELAY::Disable,
+            1 => TXDELAY::One,
+            2 => TXDELAY::Two,
+            3 => TXDELAY::Three,
+            4 => TXDELAY::Seven,
+            5 => TXDELAY::Tcmp0,
+            6 => TXDELAY::Tcmp1,
+            7 => TXDELAY::Tcmp2,
             _ => unreachable!(),
         }
     }
     #[doc = "Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == TXDELAY_A::DISABLE
+        *self == TXDELAY::Disable
     }
     #[doc = "Start of transmission is delayed for 1 baud-times"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == TXDELAY_A::ONE
+        *self == TXDELAY::One
     }
     #[doc = "Start of transmission is delayed for 2 baud-times"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == TXDELAY_A::TWO
+        *self == TXDELAY::Two
     }
     #[doc = "Start of transmission is delayed for 3 baud-times"]
     #[inline(always)]
     pub fn is_three(&self) -> bool {
-        *self == TXDELAY_A::THREE
+        *self == TXDELAY::Three
     }
     #[doc = "Start of transmission is delayed for 7 baud-times"]
     #[inline(always)]
     pub fn is_seven(&self) -> bool {
-        *self == TXDELAY_A::SEVEN
+        *self == TXDELAY::Seven
     }
     #[doc = "Start of transmission is delayed for TCMPVAL0 baud-times"]
     #[inline(always)]
     pub fn is_tcmp0(&self) -> bool {
-        *self == TXDELAY_A::TCMP0
+        *self == TXDELAY::Tcmp0
     }
     #[doc = "Start of transmission is delayed for TCMPVAL1 baud-times"]
     #[inline(always)]
     pub fn is_tcmp1(&self) -> bool {
-        *self == TXDELAY_A::TCMP1
+        *self == TXDELAY::Tcmp1
     }
     #[doc = "Start of transmission is delayed for TCMPVAL2 baud-times"]
     #[inline(always)]
     pub fn is_tcmp2(&self) -> bool {
-        *self == TXDELAY_A::TCMP2
+        *self == TXDELAY::Tcmp2
     }
 }
 #[doc = "Field `TXDELAY` writer - TX Frame Start Delay"]
-pub type TXDELAY_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, TXDELAY_A>;
-impl<'a, REG, const O: u8> TXDELAY_W<'a, REG, O>
+pub type TXDELAY_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, TXDELAY>;
+impl<'a, REG> TXDELAY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -101,136 +101,136 @@ where
     #[doc = "Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut crate::W<REG> {
-        self.variant(TXDELAY_A::DISABLE)
+        self.variant(TXDELAY::Disable)
     }
     #[doc = "Start of transmission is delayed for 1 baud-times"]
     #[inline(always)]
     pub fn one(self) -> &'a mut crate::W<REG> {
-        self.variant(TXDELAY_A::ONE)
+        self.variant(TXDELAY::One)
     }
     #[doc = "Start of transmission is delayed for 2 baud-times"]
     #[inline(always)]
     pub fn two(self) -> &'a mut crate::W<REG> {
-        self.variant(TXDELAY_A::TWO)
+        self.variant(TXDELAY::Two)
     }
     #[doc = "Start of transmission is delayed for 3 baud-times"]
     #[inline(always)]
     pub fn three(self) -> &'a mut crate::W<REG> {
-        self.variant(TXDELAY_A::THREE)
+        self.variant(TXDELAY::Three)
     }
     #[doc = "Start of transmission is delayed for 7 baud-times"]
     #[inline(always)]
     pub fn seven(self) -> &'a mut crate::W<REG> {
-        self.variant(TXDELAY_A::SEVEN)
+        self.variant(TXDELAY::Seven)
     }
     #[doc = "Start of transmission is delayed for TCMPVAL0 baud-times"]
     #[inline(always)]
     pub fn tcmp0(self) -> &'a mut crate::W<REG> {
-        self.variant(TXDELAY_A::TCMP0)
+        self.variant(TXDELAY::Tcmp0)
     }
     #[doc = "Start of transmission is delayed for TCMPVAL1 baud-times"]
     #[inline(always)]
     pub fn tcmp1(self) -> &'a mut crate::W<REG> {
-        self.variant(TXDELAY_A::TCMP1)
+        self.variant(TXDELAY::Tcmp1)
     }
     #[doc = "Start of transmission is delayed for TCMPVAL2 baud-times"]
     #[inline(always)]
     pub fn tcmp2(self) -> &'a mut crate::W<REG> {
-        self.variant(TXDELAY_A::TCMP2)
+        self.variant(TXDELAY::Tcmp2)
     }
 }
 #[doc = "Field `CSSETUP` reader - Chip Select Setup"]
-pub type CSSETUP_R = crate::FieldReader<CSSETUP_A>;
+pub type CSSETUP_R = crate::FieldReader<CSSETUP>;
 #[doc = "Chip Select Setup\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CSSETUP_A {
+pub enum CSSETUP {
     #[doc = "0: CS is not asserted before start of transmission"]
-    ZERO = 0,
+    Zero = 0,
     #[doc = "1: CS is asserted for 1 baud-times before start of transmission"]
-    ONE = 1,
+    One = 1,
     #[doc = "2: CS is asserted for 2 baud-times before start of transmission"]
-    TWO = 2,
+    Two = 2,
     #[doc = "3: CS is asserted for 3 baud-times before start of transmission"]
-    THREE = 3,
+    Three = 3,
     #[doc = "4: CS is asserted for 7 baud-times before start of transmission"]
-    SEVEN = 4,
+    Seven = 4,
     #[doc = "5: CS is asserted before the start of transmission for TCMPVAL0 baud-times"]
-    TCMP0 = 5,
+    Tcmp0 = 5,
     #[doc = "6: CS is asserted before the start of transmission for TCMPVAL1 baud-times"]
-    TCMP1 = 6,
+    Tcmp1 = 6,
     #[doc = "7: CS is asserted before the start of transmission for TCMPVAL2 baud-times"]
-    TCMP2 = 7,
+    Tcmp2 = 7,
 }
-impl From<CSSETUP_A> for u8 {
+impl From<CSSETUP> for u8 {
     #[inline(always)]
-    fn from(variant: CSSETUP_A) -> Self {
+    fn from(variant: CSSETUP) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CSSETUP_A {
+impl crate::FieldSpec for CSSETUP {
     type Ux = u8;
 }
 impl CSSETUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CSSETUP_A {
+    pub const fn variant(&self) -> CSSETUP {
         match self.bits {
-            0 => CSSETUP_A::ZERO,
-            1 => CSSETUP_A::ONE,
-            2 => CSSETUP_A::TWO,
-            3 => CSSETUP_A::THREE,
-            4 => CSSETUP_A::SEVEN,
-            5 => CSSETUP_A::TCMP0,
-            6 => CSSETUP_A::TCMP1,
-            7 => CSSETUP_A::TCMP2,
+            0 => CSSETUP::Zero,
+            1 => CSSETUP::One,
+            2 => CSSETUP::Two,
+            3 => CSSETUP::Three,
+            4 => CSSETUP::Seven,
+            5 => CSSETUP::Tcmp0,
+            6 => CSSETUP::Tcmp1,
+            7 => CSSETUP::Tcmp2,
             _ => unreachable!(),
         }
     }
     #[doc = "CS is not asserted before start of transmission"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
-        *self == CSSETUP_A::ZERO
+        *self == CSSETUP::Zero
     }
     #[doc = "CS is asserted for 1 baud-times before start of transmission"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == CSSETUP_A::ONE
+        *self == CSSETUP::One
     }
     #[doc = "CS is asserted for 2 baud-times before start of transmission"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == CSSETUP_A::TWO
+        *self == CSSETUP::Two
     }
     #[doc = "CS is asserted for 3 baud-times before start of transmission"]
     #[inline(always)]
     pub fn is_three(&self) -> bool {
-        *self == CSSETUP_A::THREE
+        *self == CSSETUP::Three
     }
     #[doc = "CS is asserted for 7 baud-times before start of transmission"]
     #[inline(always)]
     pub fn is_seven(&self) -> bool {
-        *self == CSSETUP_A::SEVEN
+        *self == CSSETUP::Seven
     }
     #[doc = "CS is asserted before the start of transmission for TCMPVAL0 baud-times"]
     #[inline(always)]
     pub fn is_tcmp0(&self) -> bool {
-        *self == CSSETUP_A::TCMP0
+        *self == CSSETUP::Tcmp0
     }
     #[doc = "CS is asserted before the start of transmission for TCMPVAL1 baud-times"]
     #[inline(always)]
     pub fn is_tcmp1(&self) -> bool {
-        *self == CSSETUP_A::TCMP1
+        *self == CSSETUP::Tcmp1
     }
     #[doc = "CS is asserted before the start of transmission for TCMPVAL2 baud-times"]
     #[inline(always)]
     pub fn is_tcmp2(&self) -> bool {
-        *self == CSSETUP_A::TCMP2
+        *self == CSSETUP::Tcmp2
     }
 }
 #[doc = "Field `CSSETUP` writer - Chip Select Setup"]
-pub type CSSETUP_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, CSSETUP_A>;
-impl<'a, REG, const O: u8> CSSETUP_W<'a, REG, O>
+pub type CSSETUP_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, CSSETUP>;
+impl<'a, REG> CSSETUP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -238,136 +238,136 @@ where
     #[doc = "CS is not asserted before start of transmission"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut crate::W<REG> {
-        self.variant(CSSETUP_A::ZERO)
+        self.variant(CSSETUP::Zero)
     }
     #[doc = "CS is asserted for 1 baud-times before start of transmission"]
     #[inline(always)]
     pub fn one(self) -> &'a mut crate::W<REG> {
-        self.variant(CSSETUP_A::ONE)
+        self.variant(CSSETUP::One)
     }
     #[doc = "CS is asserted for 2 baud-times before start of transmission"]
     #[inline(always)]
     pub fn two(self) -> &'a mut crate::W<REG> {
-        self.variant(CSSETUP_A::TWO)
+        self.variant(CSSETUP::Two)
     }
     #[doc = "CS is asserted for 3 baud-times before start of transmission"]
     #[inline(always)]
     pub fn three(self) -> &'a mut crate::W<REG> {
-        self.variant(CSSETUP_A::THREE)
+        self.variant(CSSETUP::Three)
     }
     #[doc = "CS is asserted for 7 baud-times before start of transmission"]
     #[inline(always)]
     pub fn seven(self) -> &'a mut crate::W<REG> {
-        self.variant(CSSETUP_A::SEVEN)
+        self.variant(CSSETUP::Seven)
     }
     #[doc = "CS is asserted before the start of transmission for TCMPVAL0 baud-times"]
     #[inline(always)]
     pub fn tcmp0(self) -> &'a mut crate::W<REG> {
-        self.variant(CSSETUP_A::TCMP0)
+        self.variant(CSSETUP::Tcmp0)
     }
     #[doc = "CS is asserted before the start of transmission for TCMPVAL1 baud-times"]
     #[inline(always)]
     pub fn tcmp1(self) -> &'a mut crate::W<REG> {
-        self.variant(CSSETUP_A::TCMP1)
+        self.variant(CSSETUP::Tcmp1)
     }
     #[doc = "CS is asserted before the start of transmission for TCMPVAL2 baud-times"]
     #[inline(always)]
     pub fn tcmp2(self) -> &'a mut crate::W<REG> {
-        self.variant(CSSETUP_A::TCMP2)
+        self.variant(CSSETUP::Tcmp2)
     }
 }
 #[doc = "Field `ICS` reader - Inter-character Spacing"]
-pub type ICS_R = crate::FieldReader<ICS_A>;
+pub type ICS_R = crate::FieldReader<ICS>;
 #[doc = "Inter-character Spacing\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ICS_A {
+pub enum ICS {
     #[doc = "0: There is no space between charcters"]
-    ZERO = 0,
+    Zero = 0,
     #[doc = "1: Create a space of 1 baud-times before start of transmission"]
-    ONE = 1,
+    One = 1,
     #[doc = "2: Create a space of 2 baud-times before start of transmission"]
-    TWO = 2,
+    Two = 2,
     #[doc = "3: Create a space of 3 baud-times before start of transmission"]
-    THREE = 3,
+    Three = 3,
     #[doc = "4: Create a space of 7 baud-times before start of transmission"]
-    SEVEN = 4,
+    Seven = 4,
     #[doc = "5: Create a space of before the start of transmission for TCMPVAL0 baud-times"]
-    TCMP0 = 5,
+    Tcmp0 = 5,
     #[doc = "6: Create a space of before the start of transmission for TCMPVAL1 baud-times"]
-    TCMP1 = 6,
+    Tcmp1 = 6,
     #[doc = "7: Create a space of before the start of transmission for TCMPVAL2 baud-times"]
-    TCMP2 = 7,
+    Tcmp2 = 7,
 }
-impl From<ICS_A> for u8 {
+impl From<ICS> for u8 {
     #[inline(always)]
-    fn from(variant: ICS_A) -> Self {
+    fn from(variant: ICS) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for ICS_A {
+impl crate::FieldSpec for ICS {
     type Ux = u8;
 }
 impl ICS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ICS_A {
+    pub const fn variant(&self) -> ICS {
         match self.bits {
-            0 => ICS_A::ZERO,
-            1 => ICS_A::ONE,
-            2 => ICS_A::TWO,
-            3 => ICS_A::THREE,
-            4 => ICS_A::SEVEN,
-            5 => ICS_A::TCMP0,
-            6 => ICS_A::TCMP1,
-            7 => ICS_A::TCMP2,
+            0 => ICS::Zero,
+            1 => ICS::One,
+            2 => ICS::Two,
+            3 => ICS::Three,
+            4 => ICS::Seven,
+            5 => ICS::Tcmp0,
+            6 => ICS::Tcmp1,
+            7 => ICS::Tcmp2,
             _ => unreachable!(),
         }
     }
     #[doc = "There is no space between charcters"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
-        *self == ICS_A::ZERO
+        *self == ICS::Zero
     }
     #[doc = "Create a space of 1 baud-times before start of transmission"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == ICS_A::ONE
+        *self == ICS::One
     }
     #[doc = "Create a space of 2 baud-times before start of transmission"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == ICS_A::TWO
+        *self == ICS::Two
     }
     #[doc = "Create a space of 3 baud-times before start of transmission"]
     #[inline(always)]
     pub fn is_three(&self) -> bool {
-        *self == ICS_A::THREE
+        *self == ICS::Three
     }
     #[doc = "Create a space of 7 baud-times before start of transmission"]
     #[inline(always)]
     pub fn is_seven(&self) -> bool {
-        *self == ICS_A::SEVEN
+        *self == ICS::Seven
     }
     #[doc = "Create a space of before the start of transmission for TCMPVAL0 baud-times"]
     #[inline(always)]
     pub fn is_tcmp0(&self) -> bool {
-        *self == ICS_A::TCMP0
+        *self == ICS::Tcmp0
     }
     #[doc = "Create a space of before the start of transmission for TCMPVAL1 baud-times"]
     #[inline(always)]
     pub fn is_tcmp1(&self) -> bool {
-        *self == ICS_A::TCMP1
+        *self == ICS::Tcmp1
     }
     #[doc = "Create a space of before the start of transmission for TCMPVAL2 baud-times"]
     #[inline(always)]
     pub fn is_tcmp2(&self) -> bool {
-        *self == ICS_A::TCMP2
+        *self == ICS::Tcmp2
     }
 }
 #[doc = "Field `ICS` writer - Inter-character Spacing"]
-pub type ICS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, ICS_A>;
-impl<'a, REG, const O: u8> ICS_W<'a, REG, O>
+pub type ICS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, ICS>;
+impl<'a, REG> ICS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -375,136 +375,136 @@ where
     #[doc = "There is no space between charcters"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut crate::W<REG> {
-        self.variant(ICS_A::ZERO)
+        self.variant(ICS::Zero)
     }
     #[doc = "Create a space of 1 baud-times before start of transmission"]
     #[inline(always)]
     pub fn one(self) -> &'a mut crate::W<REG> {
-        self.variant(ICS_A::ONE)
+        self.variant(ICS::One)
     }
     #[doc = "Create a space of 2 baud-times before start of transmission"]
     #[inline(always)]
     pub fn two(self) -> &'a mut crate::W<REG> {
-        self.variant(ICS_A::TWO)
+        self.variant(ICS::Two)
     }
     #[doc = "Create a space of 3 baud-times before start of transmission"]
     #[inline(always)]
     pub fn three(self) -> &'a mut crate::W<REG> {
-        self.variant(ICS_A::THREE)
+        self.variant(ICS::Three)
     }
     #[doc = "Create a space of 7 baud-times before start of transmission"]
     #[inline(always)]
     pub fn seven(self) -> &'a mut crate::W<REG> {
-        self.variant(ICS_A::SEVEN)
+        self.variant(ICS::Seven)
     }
     #[doc = "Create a space of before the start of transmission for TCMPVAL0 baud-times"]
     #[inline(always)]
     pub fn tcmp0(self) -> &'a mut crate::W<REG> {
-        self.variant(ICS_A::TCMP0)
+        self.variant(ICS::Tcmp0)
     }
     #[doc = "Create a space of before the start of transmission for TCMPVAL1 baud-times"]
     #[inline(always)]
     pub fn tcmp1(self) -> &'a mut crate::W<REG> {
-        self.variant(ICS_A::TCMP1)
+        self.variant(ICS::Tcmp1)
     }
     #[doc = "Create a space of before the start of transmission for TCMPVAL2 baud-times"]
     #[inline(always)]
     pub fn tcmp2(self) -> &'a mut crate::W<REG> {
-        self.variant(ICS_A::TCMP2)
+        self.variant(ICS::Tcmp2)
     }
 }
 #[doc = "Field `CSHOLD` reader - Chip Select Hold"]
-pub type CSHOLD_R = crate::FieldReader<CSHOLD_A>;
+pub type CSHOLD_R = crate::FieldReader<CSHOLD>;
 #[doc = "Chip Select Hold\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CSHOLD_A {
+pub enum CSHOLD {
     #[doc = "0: Disable CS being asserted after the end of transmission"]
-    ZERO = 0,
+    Zero = 0,
     #[doc = "1: CS is asserted for 1 baud-times after the end of transmission"]
-    ONE = 1,
+    One = 1,
     #[doc = "2: CS is asserted for 2 baud-times after the end of transmission"]
-    TWO = 2,
+    Two = 2,
     #[doc = "3: CS is asserted for 3 baud-times after the end of transmission"]
-    THREE = 3,
+    Three = 3,
     #[doc = "4: CS is asserted for 7 baud-times after the end of transmission"]
-    SEVEN = 4,
+    Seven = 4,
     #[doc = "5: CS is asserted after the end of transmission for TCMPVAL0 baud-times"]
-    TCMP0 = 5,
+    Tcmp0 = 5,
     #[doc = "6: CS is asserted after the end of transmission for TCMPVAL1 baud-times"]
-    TCMP1 = 6,
+    Tcmp1 = 6,
     #[doc = "7: CS is asserted after the end of transmission for TCMPVAL2 baud-times"]
-    TCMP2 = 7,
+    Tcmp2 = 7,
 }
-impl From<CSHOLD_A> for u8 {
+impl From<CSHOLD> for u8 {
     #[inline(always)]
-    fn from(variant: CSHOLD_A) -> Self {
+    fn from(variant: CSHOLD) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CSHOLD_A {
+impl crate::FieldSpec for CSHOLD {
     type Ux = u8;
 }
 impl CSHOLD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CSHOLD_A {
+    pub const fn variant(&self) -> CSHOLD {
         match self.bits {
-            0 => CSHOLD_A::ZERO,
-            1 => CSHOLD_A::ONE,
-            2 => CSHOLD_A::TWO,
-            3 => CSHOLD_A::THREE,
-            4 => CSHOLD_A::SEVEN,
-            5 => CSHOLD_A::TCMP0,
-            6 => CSHOLD_A::TCMP1,
-            7 => CSHOLD_A::TCMP2,
+            0 => CSHOLD::Zero,
+            1 => CSHOLD::One,
+            2 => CSHOLD::Two,
+            3 => CSHOLD::Three,
+            4 => CSHOLD::Seven,
+            5 => CSHOLD::Tcmp0,
+            6 => CSHOLD::Tcmp1,
+            7 => CSHOLD::Tcmp2,
             _ => unreachable!(),
         }
     }
     #[doc = "Disable CS being asserted after the end of transmission"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
-        *self == CSHOLD_A::ZERO
+        *self == CSHOLD::Zero
     }
     #[doc = "CS is asserted for 1 baud-times after the end of transmission"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == CSHOLD_A::ONE
+        *self == CSHOLD::One
     }
     #[doc = "CS is asserted for 2 baud-times after the end of transmission"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == CSHOLD_A::TWO
+        *self == CSHOLD::Two
     }
     #[doc = "CS is asserted for 3 baud-times after the end of transmission"]
     #[inline(always)]
     pub fn is_three(&self) -> bool {
-        *self == CSHOLD_A::THREE
+        *self == CSHOLD::Three
     }
     #[doc = "CS is asserted for 7 baud-times after the end of transmission"]
     #[inline(always)]
     pub fn is_seven(&self) -> bool {
-        *self == CSHOLD_A::SEVEN
+        *self == CSHOLD::Seven
     }
     #[doc = "CS is asserted after the end of transmission for TCMPVAL0 baud-times"]
     #[inline(always)]
     pub fn is_tcmp0(&self) -> bool {
-        *self == CSHOLD_A::TCMP0
+        *self == CSHOLD::Tcmp0
     }
     #[doc = "CS is asserted after the end of transmission for TCMPVAL1 baud-times"]
     #[inline(always)]
     pub fn is_tcmp1(&self) -> bool {
-        *self == CSHOLD_A::TCMP1
+        *self == CSHOLD::Tcmp1
     }
     #[doc = "CS is asserted after the end of transmission for TCMPVAL2 baud-times"]
     #[inline(always)]
     pub fn is_tcmp2(&self) -> bool {
-        *self == CSHOLD_A::TCMP2
+        *self == CSHOLD::Tcmp2
     }
 }
 #[doc = "Field `CSHOLD` writer - Chip Select Hold"]
-pub type CSHOLD_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, CSHOLD_A>;
-impl<'a, REG, const O: u8> CSHOLD_W<'a, REG, O>
+pub type CSHOLD_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, CSHOLD>;
+impl<'a, REG> CSHOLD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -512,42 +512,42 @@ where
     #[doc = "Disable CS being asserted after the end of transmission"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut crate::W<REG> {
-        self.variant(CSHOLD_A::ZERO)
+        self.variant(CSHOLD::Zero)
     }
     #[doc = "CS is asserted for 1 baud-times after the end of transmission"]
     #[inline(always)]
     pub fn one(self) -> &'a mut crate::W<REG> {
-        self.variant(CSHOLD_A::ONE)
+        self.variant(CSHOLD::One)
     }
     #[doc = "CS is asserted for 2 baud-times after the end of transmission"]
     #[inline(always)]
     pub fn two(self) -> &'a mut crate::W<REG> {
-        self.variant(CSHOLD_A::TWO)
+        self.variant(CSHOLD::Two)
     }
     #[doc = "CS is asserted for 3 baud-times after the end of transmission"]
     #[inline(always)]
     pub fn three(self) -> &'a mut crate::W<REG> {
-        self.variant(CSHOLD_A::THREE)
+        self.variant(CSHOLD::Three)
     }
     #[doc = "CS is asserted for 7 baud-times after the end of transmission"]
     #[inline(always)]
     pub fn seven(self) -> &'a mut crate::W<REG> {
-        self.variant(CSHOLD_A::SEVEN)
+        self.variant(CSHOLD::Seven)
     }
     #[doc = "CS is asserted after the end of transmission for TCMPVAL0 baud-times"]
     #[inline(always)]
     pub fn tcmp0(self) -> &'a mut crate::W<REG> {
-        self.variant(CSHOLD_A::TCMP0)
+        self.variant(CSHOLD::Tcmp0)
     }
     #[doc = "CS is asserted after the end of transmission for TCMPVAL1 baud-times"]
     #[inline(always)]
     pub fn tcmp1(self) -> &'a mut crate::W<REG> {
-        self.variant(CSHOLD_A::TCMP1)
+        self.variant(CSHOLD::Tcmp1)
     }
     #[doc = "CS is asserted after the end of transmission for TCMPVAL2 baud-times"]
     #[inline(always)]
     pub fn tcmp2(self) -> &'a mut crate::W<REG> {
-        self.variant(CSHOLD_A::TCMP2)
+        self.variant(CSHOLD::Tcmp2)
     }
 }
 impl R {
@@ -572,45 +572,30 @@ impl R {
         CSHOLD_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("TIMING")
-            .field("txdelay", &format_args!("{}", self.txdelay().bits()))
-            .field("cssetup", &format_args!("{}", self.cssetup().bits()))
-            .field("ics", &format_args!("{}", self.ics().bits()))
-            .field("cshold", &format_args!("{}", self.cshold().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<TIMING_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 16:18 - TX Frame Start Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn txdelay(&mut self) -> TXDELAY_W<TIMING_SPEC, 16> {
-        TXDELAY_W::new(self)
+    pub fn txdelay(&mut self) -> TXDELAY_W<TIMINGrs> {
+        TXDELAY_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - Chip Select Setup"]
     #[inline(always)]
     #[must_use]
-    pub fn cssetup(&mut self) -> CSSETUP_W<TIMING_SPEC, 20> {
-        CSSETUP_W::new(self)
+    pub fn cssetup(&mut self) -> CSSETUP_W<TIMINGrs> {
+        CSSETUP_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - Inter-character Spacing"]
     #[inline(always)]
     #[must_use]
-    pub fn ics(&mut self) -> ICS_W<TIMING_SPEC, 24> {
-        ICS_W::new(self)
+    pub fn ics(&mut self) -> ICS_W<TIMINGrs> {
+        ICS_W::new(self, 24)
     }
     #[doc = "Bits 28:30 - Chip Select Hold"]
     #[inline(always)]
     #[must_use]
-    pub fn cshold(&mut self) -> CSHOLD_W<TIMING_SPEC, 28> {
-        CSHOLD_W::new(self)
+    pub fn cshold(&mut self) -> CSHOLD_W<TIMINGrs> {
+        CSHOLD_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -624,18 +609,18 @@ impl W {
     }
 }
 #[doc = "Timing Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timing::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timing::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TIMING_SPEC;
-impl crate::RegisterSpec for TIMING_SPEC {
+pub struct TIMINGrs;
+impl crate::RegisterSpec for TIMINGrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`timing::R`](R) reader structure"]
-impl crate::Readable for TIMING_SPEC {}
+impl crate::Readable for TIMINGrs {}
 #[doc = "`write(|w| ..)` method takes [`timing::W`](W) writer structure"]
-impl crate::Writable for TIMING_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for TIMINGrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TIMING to value 0"]
-impl crate::Resettable for TIMING_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for TIMINGrs {
+    const RESET_VALUE: u32 = 0;
 }

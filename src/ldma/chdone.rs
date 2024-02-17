@@ -1,11 +1,11 @@
 #[doc = "Register `CHDONE` reader"]
-pub type R = crate::R<CHDONE_SPEC>;
+pub type R = crate::R<CHDONErs>;
 #[doc = "Register `CHDONE` writer"]
-pub type W = crate::W<CHDONE_SPEC>;
+pub type W = crate::W<CHDONErs>;
 #[doc = "Field `CHDONE` reader - DMA Channel Linking or Done"]
 pub type CHDONE_R = crate::FieldReader;
 #[doc = "Field `CHDONE` writer - DMA Channel Linking or Done"]
-pub type CHDONE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CHDONE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - DMA Channel Linking or Done"]
     #[inline(always)]
@@ -13,24 +13,12 @@ impl R {
         CHDONE_R::new((self.bits & 0xff) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CHDONE")
-            .field("chdone", &format_args!("{}", self.chdone().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<CHDONE_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:7 - DMA Channel Linking or Done"]
     #[inline(always)]
     #[must_use]
-    pub fn chdone(&mut self) -> CHDONE_W<CHDONE_SPEC, 0> {
-        CHDONE_W::new(self)
+    pub fn chdone(&mut self) -> CHDONE_W<CHDONErs> {
+        CHDONE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -44,18 +32,18 @@ impl W {
     }
 }
 #[doc = "DMA Channel Linking Done Register (Single-Cycle RMW)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chdone::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chdone::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CHDONE_SPEC;
-impl crate::RegisterSpec for CHDONE_SPEC {
+pub struct CHDONErs;
+impl crate::RegisterSpec for CHDONErs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`chdone::R`](R) reader structure"]
-impl crate::Readable for CHDONE_SPEC {}
+impl crate::Readable for CHDONErs {}
 #[doc = "`write(|w| ..)` method takes [`chdone::W`](W) writer structure"]
-impl crate::Writable for CHDONE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for CHDONErs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CHDONE to value 0"]
-impl crate::Resettable for CHDONE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for CHDONErs {
+    const RESET_VALUE: u32 = 0;
 }

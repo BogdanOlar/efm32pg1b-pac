@@ -1,5 +1,5 @@
 #[doc = "Register `STATUS` reader"]
-pub type R = crate::R<STATUS_SPEC>;
+pub type R = crate::R<STATUSrs>;
 #[doc = "Field `HFRCOENS` reader - HFRCO Enable Status"]
 pub type HFRCOENS_R = crate::BitReader;
 #[doc = "Field `HFRCORDY` reader - HFRCO Ready"]
@@ -121,48 +121,14 @@ impl R {
         HFXOREGILOW_R::new(((self.bits >> 26) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("STATUS")
-            .field("hfrcoens", &format_args!("{}", self.hfrcoens().bit()))
-            .field("hfrcordy", &format_args!("{}", self.hfrcordy().bit()))
-            .field("hfxoens", &format_args!("{}", self.hfxoens().bit()))
-            .field("hfxordy", &format_args!("{}", self.hfxordy().bit()))
-            .field("auxhfrcoens", &format_args!("{}", self.auxhfrcoens().bit()))
-            .field("auxhfrcordy", &format_args!("{}", self.auxhfrcordy().bit()))
-            .field("lfrcoens", &format_args!("{}", self.lfrcoens().bit()))
-            .field("lfrcordy", &format_args!("{}", self.lfrcordy().bit()))
-            .field("lfxoens", &format_args!("{}", self.lfxoens().bit()))
-            .field("lfxordy", &format_args!("{}", self.lfxordy().bit()))
-            .field("calrdy", &format_args!("{}", self.calrdy().bit()))
-            .field("hfxoreq", &format_args!("{}", self.hfxoreq().bit()))
-            .field(
-                "hfxopeakdetrdy",
-                &format_args!("{}", self.hfxopeakdetrdy().bit()),
-            )
-            .field(
-                "hfxoshuntoptrdy",
-                &format_args!("{}", self.hfxoshuntoptrdy().bit()),
-            )
-            .field("hfxoamphigh", &format_args!("{}", self.hfxoamphigh().bit()))
-            .field("hfxoamplow", &format_args!("{}", self.hfxoamplow().bit()))
-            .field("hfxoregilow", &format_args!("{}", self.hfxoregilow().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<STATUS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STATUS_SPEC;
-impl crate::RegisterSpec for STATUS_SPEC {
+pub struct STATUSrs;
+impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`status::R`](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {}
+impl crate::Readable for STATUSrs {}
 #[doc = "`reset()` method sets STATUS to value 0x0001_0003"]
-impl crate::Resettable for STATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0001_0003;
+impl crate::Resettable for STATUSrs {
+    const RESET_VALUE: u32 = 0x0001_0003;
 }

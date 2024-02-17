@@ -1,19 +1,19 @@
 #[doc = "Register `PULSECTRL` reader"]
-pub type R = crate::R<PULSECTRL_SPEC>;
+pub type R = crate::R<PULSECTRLrs>;
 #[doc = "Register `PULSECTRL` writer"]
-pub type W = crate::W<PULSECTRL_SPEC>;
+pub type W = crate::W<PULSECTRLrs>;
 #[doc = "Field `PULSEW` reader - Pulse Width"]
 pub type PULSEW_R = crate::FieldReader;
 #[doc = "Field `PULSEW` writer - Pulse Width"]
-pub type PULSEW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PULSEW_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `PULSEEN` reader - Pulse Generator/Extender Enable"]
 pub type PULSEEN_R = crate::BitReader;
 #[doc = "Field `PULSEEN` writer - Pulse Generator/Extender Enable"]
-pub type PULSEEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PULSEEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PULSEFILT` reader - Pulse Filter"]
 pub type PULSEFILT_R = crate::BitReader;
 #[doc = "Field `PULSEFILT` writer - Pulse Filter"]
-pub type PULSEFILT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PULSEFILT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Pulse Width"]
     #[inline(always)]
@@ -31,38 +31,24 @@ impl R {
         PULSEFILT_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PULSECTRL")
-            .field("pulsew", &format_args!("{}", self.pulsew().bits()))
-            .field("pulseen", &format_args!("{}", self.pulseen().bit()))
-            .field("pulsefilt", &format_args!("{}", self.pulsefilt().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<PULSECTRL_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:3 - Pulse Width"]
     #[inline(always)]
     #[must_use]
-    pub fn pulsew(&mut self) -> PULSEW_W<PULSECTRL_SPEC, 0> {
-        PULSEW_W::new(self)
+    pub fn pulsew(&mut self) -> PULSEW_W<PULSECTRLrs> {
+        PULSEW_W::new(self, 0)
     }
     #[doc = "Bit 4 - Pulse Generator/Extender Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pulseen(&mut self) -> PULSEEN_W<PULSECTRL_SPEC, 4> {
-        PULSEEN_W::new(self)
+    pub fn pulseen(&mut self) -> PULSEEN_W<PULSECTRLrs> {
+        PULSEEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Pulse Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn pulsefilt(&mut self) -> PULSEFILT_W<PULSECTRL_SPEC, 5> {
-        PULSEFILT_W::new(self)
+    pub fn pulsefilt(&mut self) -> PULSEFILT_W<PULSECTRLrs> {
+        PULSEFILT_W::new(self, 5)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -76,18 +62,18 @@ impl W {
     }
 }
 #[doc = "Pulse Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulsectrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulsectrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PULSECTRL_SPEC;
-impl crate::RegisterSpec for PULSECTRL_SPEC {
+pub struct PULSECTRLrs;
+impl crate::RegisterSpec for PULSECTRLrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pulsectrl::R`](R) reader structure"]
-impl crate::Readable for PULSECTRL_SPEC {}
+impl crate::Readable for PULSECTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`pulsectrl::W`](W) writer structure"]
-impl crate::Writable for PULSECTRL_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for PULSECTRLrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PULSECTRL to value 0"]
-impl crate::Resettable for PULSECTRL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for PULSECTRLrs {
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,11 +1,11 @@
 #[doc = "Register `STARTFRAME` reader"]
-pub type R = crate::R<STARTFRAME_SPEC>;
+pub type R = crate::R<STARTFRAMErs>;
 #[doc = "Register `STARTFRAME` writer"]
-pub type W = crate::W<STARTFRAME_SPEC>;
+pub type W = crate::W<STARTFRAMErs>;
 #[doc = "Field `STARTFRAME` reader - Start Frame"]
 pub type STARTFRAME_R = crate::FieldReader<u16>;
 #[doc = "Field `STARTFRAME` writer - Start Frame"]
-pub type STARTFRAME_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type STARTFRAME_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
     #[doc = "Bits 0:8 - Start Frame"]
     #[inline(always)]
@@ -13,24 +13,12 @@ impl R {
         STARTFRAME_R::new((self.bits & 0x01ff) as u16)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("STARTFRAME")
-            .field("startframe", &format_args!("{}", self.startframe().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<STARTFRAME_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:8 - Start Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn startframe(&mut self) -> STARTFRAME_W<STARTFRAME_SPEC, 0> {
-        STARTFRAME_W::new(self)
+    pub fn startframe(&mut self) -> STARTFRAME_W<STARTFRAMErs> {
+        STARTFRAME_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -44,18 +32,18 @@ impl W {
     }
 }
 #[doc = "Start Frame Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`startframe::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`startframe::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STARTFRAME_SPEC;
-impl crate::RegisterSpec for STARTFRAME_SPEC {
+pub struct STARTFRAMErs;
+impl crate::RegisterSpec for STARTFRAMErs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`startframe::R`](R) reader structure"]
-impl crate::Readable for STARTFRAME_SPEC {}
+impl crate::Readable for STARTFRAMErs {}
 #[doc = "`write(|w| ..)` method takes [`startframe::W`](W) writer structure"]
-impl crate::Writable for STARTFRAME_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for STARTFRAMErs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets STARTFRAME to value 0"]
-impl crate::Resettable for STARTFRAME_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for STARTFRAMErs {
+    const RESET_VALUE: u32 = 0;
 }

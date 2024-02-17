@@ -1,15 +1,15 @@
 #[doc = "Register `INSENSE` reader"]
-pub type R = crate::R<INSENSE_SPEC>;
+pub type R = crate::R<INSENSErs>;
 #[doc = "Register `INSENSE` writer"]
-pub type W = crate::W<INSENSE_SPEC>;
+pub type W = crate::W<INSENSErs>;
 #[doc = "Field `INT` reader - Interrupt Sense Enable"]
 pub type INT_R = crate::BitReader;
 #[doc = "Field `INT` writer - Interrupt Sense Enable"]
-pub type INT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EM4WU` reader - EM4WU Interrupt Sense Enable"]
 pub type EM4WU_R = crate::BitReader;
 #[doc = "Field `EM4WU` writer - EM4WU Interrupt Sense Enable"]
-pub type EM4WU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EM4WU_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Interrupt Sense Enable"]
     #[inline(always)]
@@ -22,31 +22,18 @@ impl R {
         EM4WU_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("INSENSE")
-            .field("int", &format_args!("{}", self.int().bit()))
-            .field("em4wu", &format_args!("{}", self.em4wu().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<INSENSE_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bit 0 - Interrupt Sense Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn int(&mut self) -> INT_W<INSENSE_SPEC, 0> {
-        INT_W::new(self)
+    pub fn int(&mut self) -> INT_W<INSENSErs> {
+        INT_W::new(self, 0)
     }
     #[doc = "Bit 1 - EM4WU Interrupt Sense Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn em4wu(&mut self) -> EM4WU_W<INSENSE_SPEC, 1> {
-        EM4WU_W::new(self)
+    pub fn em4wu(&mut self) -> EM4WU_W<INSENSErs> {
+        EM4WU_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -60,18 +47,18 @@ impl W {
     }
 }
 #[doc = "Input Sense Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`insense::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`insense::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct INSENSE_SPEC;
-impl crate::RegisterSpec for INSENSE_SPEC {
+pub struct INSENSErs;
+impl crate::RegisterSpec for INSENSErs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`insense::R`](R) reader structure"]
-impl crate::Readable for INSENSE_SPEC {}
+impl crate::Readable for INSENSErs {}
 #[doc = "`write(|w| ..)` method takes [`insense::W`](W) writer structure"]
-impl crate::Writable for INSENSE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for INSENSErs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INSENSE to value 0x03"]
-impl crate::Resettable for INSENSE_SPEC {
-    const RESET_VALUE: Self::Ux = 0x03;
+impl crate::Resettable for INSENSErs {
+    const RESET_VALUE: u32 = 0x03;
 }

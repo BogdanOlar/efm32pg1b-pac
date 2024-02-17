@@ -1,19 +1,19 @@
 #[doc = "Register `TEMPLIMITS` reader"]
-pub type R = crate::R<TEMPLIMITS_SPEC>;
+pub type R = crate::R<TEMPLIMITSrs>;
 #[doc = "Register `TEMPLIMITS` writer"]
-pub type W = crate::W<TEMPLIMITS_SPEC>;
+pub type W = crate::W<TEMPLIMITSrs>;
 #[doc = "Field `TEMPLOW` reader - Temperature Low Limit"]
 pub type TEMPLOW_R = crate::FieldReader;
 #[doc = "Field `TEMPLOW` writer - Temperature Low Limit"]
-pub type TEMPLOW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TEMPLOW_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `TEMPHIGH` reader - Temperature High Limit"]
 pub type TEMPHIGH_R = crate::FieldReader;
 #[doc = "Field `TEMPHIGH` writer - Temperature High Limit"]
-pub type TEMPHIGH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TEMPHIGH_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `EM4WUEN` reader - Enable EM4 Wakeup Due to Low/high Temperature"]
 pub type EM4WUEN_R = crate::BitReader;
 #[doc = "Field `EM4WUEN` writer - Enable EM4 Wakeup Due to Low/high Temperature"]
-pub type EM4WUEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EM4WUEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:7 - Temperature Low Limit"]
     #[inline(always)]
@@ -31,38 +31,24 @@ impl R {
         EM4WUEN_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("TEMPLIMITS")
-            .field("templow", &format_args!("{}", self.templow().bits()))
-            .field("temphigh", &format_args!("{}", self.temphigh().bits()))
-            .field("em4wuen", &format_args!("{}", self.em4wuen().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<TEMPLIMITS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:7 - Temperature Low Limit"]
     #[inline(always)]
     #[must_use]
-    pub fn templow(&mut self) -> TEMPLOW_W<TEMPLIMITS_SPEC, 0> {
-        TEMPLOW_W::new(self)
+    pub fn templow(&mut self) -> TEMPLOW_W<TEMPLIMITSrs> {
+        TEMPLOW_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Temperature High Limit"]
     #[inline(always)]
     #[must_use]
-    pub fn temphigh(&mut self) -> TEMPHIGH_W<TEMPLIMITS_SPEC, 8> {
-        TEMPHIGH_W::new(self)
+    pub fn temphigh(&mut self) -> TEMPHIGH_W<TEMPLIMITSrs> {
+        TEMPHIGH_W::new(self, 8)
     }
     #[doc = "Bit 16 - Enable EM4 Wakeup Due to Low/high Temperature"]
     #[inline(always)]
     #[must_use]
-    pub fn em4wuen(&mut self) -> EM4WUEN_W<TEMPLIMITS_SPEC, 16> {
-        EM4WUEN_W::new(self)
+    pub fn em4wuen(&mut self) -> EM4WUEN_W<TEMPLIMITSrs> {
+        EM4WUEN_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -76,18 +62,18 @@ impl W {
     }
 }
 #[doc = "Temperature Limits for Interrupt Generation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`templimits::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`templimits::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TEMPLIMITS_SPEC;
-impl crate::RegisterSpec for TEMPLIMITS_SPEC {
+pub struct TEMPLIMITSrs;
+impl crate::RegisterSpec for TEMPLIMITSrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`templimits::R`](R) reader structure"]
-impl crate::Readable for TEMPLIMITS_SPEC {}
+impl crate::Readable for TEMPLIMITSrs {}
 #[doc = "`write(|w| ..)` method takes [`templimits::W`](W) writer structure"]
-impl crate::Writable for TEMPLIMITS_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for TEMPLIMITSrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TEMPLIMITS to value 0xff00"]
-impl crate::Resettable for TEMPLIMITS_SPEC {
-    const RESET_VALUE: Self::Ux = 0xff00;
+impl crate::Resettable for TEMPLIMITSrs {
+    const RESET_VALUE: u32 = 0xff00;
 }

@@ -1,18 +1,13 @@
 #[doc = "Register `IFC` writer"]
-pub type W = crate::W<IFC_SPEC>;
+pub type W = crate::W<IFCrs>;
 #[doc = "Field `PERIOD` writer - Clear PERIOD Interrupt Flag"]
-pub type PERIOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
-impl core::fmt::Debug for crate::generic::Reg<IFC_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "(not readable)")
-    }
-}
+pub type PERIOD_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Clear PERIOD Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn period(&mut self) -> PERIOD_W<IFC_SPEC, 0> {
-        PERIOD_W::new(self)
+    pub fn period(&mut self) -> PERIOD_W<IFCrs> {
+        PERIOD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -26,16 +21,16 @@ impl W {
     }
 }
 #[doc = "Interrupt Flag Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IFC_SPEC;
-impl crate::RegisterSpec for IFC_SPEC {
+pub struct IFCrs;
+impl crate::RegisterSpec for IFCrs {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`ifc::W`](W) writer structure"]
-impl crate::Writable for IFC_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for IFCrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IFC to value 0"]
-impl crate::Resettable for IFC_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for IFCrs {
+    const RESET_VALUE: u32 = 0;
 }

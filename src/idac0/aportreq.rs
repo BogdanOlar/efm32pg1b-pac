@@ -1,5 +1,5 @@
 #[doc = "Register `APORTREQ` reader"]
-pub type R = crate::R<APORTREQ_SPEC>;
+pub type R = crate::R<APORTREQrs>;
 #[doc = "Field `APORT1XREQ` reader - 1 If the APORT Bus Connected to APORT1X is Requested"]
 pub type APORT1XREQ_R = crate::BitReader;
 #[doc = "Field `APORT1YREQ` reader - 1 If the Bus Connected to APORT1Y is Requested"]
@@ -16,27 +16,14 @@ impl R {
         APORT1YREQ_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("APORTREQ")
-            .field("aport1xreq", &format_args!("{}", self.aport1xreq().bit()))
-            .field("aport1yreq", &format_args!("{}", self.aport1yreq().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<APORTREQ_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "APORT Request Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportreq::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct APORTREQ_SPEC;
-impl crate::RegisterSpec for APORTREQ_SPEC {
+pub struct APORTREQrs;
+impl crate::RegisterSpec for APORTREQrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`aportreq::R`](R) reader structure"]
-impl crate::Readable for APORTREQ_SPEC {}
+impl crate::Readable for APORTREQrs {}
 #[doc = "`reset()` method sets APORTREQ to value 0"]
-impl crate::Resettable for APORTREQ_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for APORTREQrs {
+    const RESET_VALUE: u32 = 0;
 }

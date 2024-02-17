@@ -1,5 +1,5 @@
 #[doc = "Register `COMBCNT` reader"]
-pub type R = crate::R<COMBCNT_SPEC>;
+pub type R = crate::R<COMBCNTrs>;
 #[doc = "Field `PRECNT` reader - Pre-Counter Value"]
 pub type PRECNT_R = crate::FieldReader<u16>;
 #[doc = "Field `CNTLSB` reader - Counter Value"]
@@ -16,27 +16,14 @@ impl R {
         CNTLSB_R::new((self.bits >> 15) & 0x0001_ffff)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("COMBCNT")
-            .field("precnt", &format_args!("{}", self.precnt().bits()))
-            .field("cntlsb", &format_args!("{}", self.cntlsb().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<COMBCNT_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Combined Pre-Counter and Counter Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`combcnt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct COMBCNT_SPEC;
-impl crate::RegisterSpec for COMBCNT_SPEC {
+pub struct COMBCNTrs;
+impl crate::RegisterSpec for COMBCNTrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`combcnt::R`](R) reader structure"]
-impl crate::Readable for COMBCNT_SPEC {}
+impl crate::Readable for COMBCNTrs {}
 #[doc = "`reset()` method sets COMBCNT to value 0"]
-impl crate::Resettable for COMBCNT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for COMBCNTrs {
+    const RESET_VALUE: u32 = 0;
 }

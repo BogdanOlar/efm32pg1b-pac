@@ -1,181 +1,181 @@
 #[doc = "Register `CSTATUS` reader"]
-pub type R = crate::R<CSTATUS_SPEC>;
+pub type R = crate::R<CSTATUSrs>;
 #[doc = "Field `V0` reader - Selected ALU Operand 0"]
-pub type V0_R = crate::FieldReader<V0_A>;
+pub type V0_R = crate::FieldReader<V0>;
 #[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum V0_A {
+pub enum V0 {
     #[doc = "0: `0`"]
-    DDATA0 = 0,
+    Ddata0 = 0,
     #[doc = "1: `1`"]
-    DDATA1 = 1,
+    Ddata1 = 1,
     #[doc = "2: `10`"]
-    DDATA2 = 2,
+    Ddata2 = 2,
     #[doc = "3: `11`"]
-    DDATA3 = 3,
+    Ddata3 = 3,
     #[doc = "4: `100`"]
-    DDATA4 = 4,
+    Ddata4 = 4,
     #[doc = "5: `101`"]
-    DATA0 = 5,
+    Data0 = 5,
     #[doc = "6: `110`"]
-    DATA1 = 6,
+    Data1 = 6,
     #[doc = "7: `111`"]
-    DATA2 = 7,
+    Data2 = 7,
 }
-impl From<V0_A> for u8 {
+impl From<V0> for u8 {
     #[inline(always)]
-    fn from(variant: V0_A) -> Self {
+    fn from(variant: V0) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for V0_A {
+impl crate::FieldSpec for V0 {
     type Ux = u8;
 }
 impl V0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> V0_A {
+    pub const fn variant(&self) -> V0 {
         match self.bits {
-            0 => V0_A::DDATA0,
-            1 => V0_A::DDATA1,
-            2 => V0_A::DDATA2,
-            3 => V0_A::DDATA3,
-            4 => V0_A::DDATA4,
-            5 => V0_A::DATA0,
-            6 => V0_A::DATA1,
-            7 => V0_A::DATA2,
+            0 => V0::Ddata0,
+            1 => V0::Ddata1,
+            2 => V0::Ddata2,
+            3 => V0::Ddata3,
+            4 => V0::Ddata4,
+            5 => V0::Data0,
+            6 => V0::Data1,
+            7 => V0::Data2,
             _ => unreachable!(),
         }
     }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn is_ddata0(&self) -> bool {
-        *self == V0_A::DDATA0
+        *self == V0::Ddata0
     }
     #[doc = "`1`"]
     #[inline(always)]
     pub fn is_ddata1(&self) -> bool {
-        *self == V0_A::DDATA1
+        *self == V0::Ddata1
     }
     #[doc = "`10`"]
     #[inline(always)]
     pub fn is_ddata2(&self) -> bool {
-        *self == V0_A::DDATA2
+        *self == V0::Ddata2
     }
     #[doc = "`11`"]
     #[inline(always)]
     pub fn is_ddata3(&self) -> bool {
-        *self == V0_A::DDATA3
+        *self == V0::Ddata3
     }
     #[doc = "`100`"]
     #[inline(always)]
     pub fn is_ddata4(&self) -> bool {
-        *self == V0_A::DDATA4
+        *self == V0::Ddata4
     }
     #[doc = "`101`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        *self == V0_A::DATA0
+        *self == V0::Data0
     }
     #[doc = "`110`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        *self == V0_A::DATA1
+        *self == V0::Data1
     }
     #[doc = "`111`"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
-        *self == V0_A::DATA2
+        *self == V0::Data2
     }
 }
 #[doc = "Field `V1` reader - Selected ALU Operand 1"]
-pub type V1_R = crate::FieldReader<V1_A>;
+pub type V1_R = crate::FieldReader<V1>;
 #[doc = "Selected ALU Operand 1\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum V1_A {
+pub enum V1 {
     #[doc = "0: `0`"]
-    DDATA0 = 0,
+    Ddata0 = 0,
     #[doc = "1: `1`"]
-    DDATA1 = 1,
+    Ddata1 = 1,
     #[doc = "2: `10`"]
-    DDATA2 = 2,
+    Ddata2 = 2,
     #[doc = "3: `11`"]
-    DDATA3 = 3,
+    Ddata3 = 3,
     #[doc = "4: `100`"]
-    DDATA4 = 4,
+    Ddata4 = 4,
     #[doc = "5: `101`"]
-    DATA0 = 5,
+    Data0 = 5,
     #[doc = "6: `110`"]
-    DATA1 = 6,
+    Data1 = 6,
     #[doc = "7: `111`"]
-    DATA2 = 7,
+    Data2 = 7,
 }
-impl From<V1_A> for u8 {
+impl From<V1> for u8 {
     #[inline(always)]
-    fn from(variant: V1_A) -> Self {
+    fn from(variant: V1) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for V1_A {
+impl crate::FieldSpec for V1 {
     type Ux = u8;
 }
 impl V1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> V1_A {
+    pub const fn variant(&self) -> V1 {
         match self.bits {
-            0 => V1_A::DDATA0,
-            1 => V1_A::DDATA1,
-            2 => V1_A::DDATA2,
-            3 => V1_A::DDATA3,
-            4 => V1_A::DDATA4,
-            5 => V1_A::DATA0,
-            6 => V1_A::DATA1,
-            7 => V1_A::DATA2,
+            0 => V1::Ddata0,
+            1 => V1::Ddata1,
+            2 => V1::Ddata2,
+            3 => V1::Ddata3,
+            4 => V1::Ddata4,
+            5 => V1::Data0,
+            6 => V1::Data1,
+            7 => V1::Data2,
             _ => unreachable!(),
         }
     }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn is_ddata0(&self) -> bool {
-        *self == V1_A::DDATA0
+        *self == V1::Ddata0
     }
     #[doc = "`1`"]
     #[inline(always)]
     pub fn is_ddata1(&self) -> bool {
-        *self == V1_A::DDATA1
+        *self == V1::Ddata1
     }
     #[doc = "`10`"]
     #[inline(always)]
     pub fn is_ddata2(&self) -> bool {
-        *self == V1_A::DDATA2
+        *self == V1::Ddata2
     }
     #[doc = "`11`"]
     #[inline(always)]
     pub fn is_ddata3(&self) -> bool {
-        *self == V1_A::DDATA3
+        *self == V1::Ddata3
     }
     #[doc = "`100`"]
     #[inline(always)]
     pub fn is_ddata4(&self) -> bool {
-        *self == V1_A::DDATA4
+        *self == V1::Ddata4
     }
     #[doc = "`101`"]
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
-        *self == V1_A::DATA0
+        *self == V1::Data0
     }
     #[doc = "`110`"]
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
-        *self == V1_A::DATA1
+        *self == V1::Data1
     }
     #[doc = "`111`"]
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
-        *self == V1_A::DATA2
+        *self == V1::Data2
     }
 }
 #[doc = "Field `SEQPART` reader - Sequence Part"]
@@ -211,30 +211,14 @@ impl R {
         SEQIP_R::new(((self.bits >> 20) & 0x1f) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CSTATUS")
-            .field("v0", &format_args!("{}", self.v0().bits()))
-            .field("v1", &format_args!("{}", self.v1().bits()))
-            .field("seqpart", &format_args!("{}", self.seqpart().bit()))
-            .field("seqskip", &format_args!("{}", self.seqskip().bit()))
-            .field("seqip", &format_args!("{}", self.seqip().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<CSTATUS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Control Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CSTATUS_SPEC;
-impl crate::RegisterSpec for CSTATUS_SPEC {
+pub struct CSTATUSrs;
+impl crate::RegisterSpec for CSTATUSrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`cstatus::R`](R) reader structure"]
-impl crate::Readable for CSTATUS_SPEC {}
+impl crate::Readable for CSTATUSrs {}
 #[doc = "`reset()` method sets CSTATUS to value 0x0201"]
-impl crate::Resettable for CSTATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0201;
+impl crate::Resettable for CSTATUSrs {
+    const RESET_VALUE: u32 = 0x0201;
 }

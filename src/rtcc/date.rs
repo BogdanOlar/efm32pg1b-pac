@@ -1,35 +1,35 @@
 #[doc = "Register `DATE` reader"]
-pub type R = crate::R<DATE_SPEC>;
+pub type R = crate::R<DATErs>;
 #[doc = "Register `DATE` writer"]
-pub type W = crate::W<DATE_SPEC>;
+pub type W = crate::W<DATErs>;
 #[doc = "Field `DAYOMU` reader - Day of Month, Units"]
 pub type DAYOMU_R = crate::FieldReader;
 #[doc = "Field `DAYOMU` writer - Day of Month, Units"]
-pub type DAYOMU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DAYOMU_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DAYOMT` reader - Day of Month, Tens"]
 pub type DAYOMT_R = crate::FieldReader;
 #[doc = "Field `DAYOMT` writer - Day of Month, Tens"]
-pub type DAYOMT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type DAYOMT_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `MONTHU` reader - Month, Units"]
 pub type MONTHU_R = crate::FieldReader;
 #[doc = "Field `MONTHU` writer - Month, Units"]
-pub type MONTHU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type MONTHU_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `MONTHT` reader - Month, Tens"]
 pub type MONTHT_R = crate::BitReader;
 #[doc = "Field `MONTHT` writer - Month, Tens"]
-pub type MONTHT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MONTHT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `YEARU` reader - Year, Units"]
 pub type YEARU_R = crate::FieldReader;
 #[doc = "Field `YEARU` writer - Year, Units"]
-pub type YEARU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type YEARU_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `YEART` reader - Year, Tens"]
 pub type YEART_R = crate::FieldReader;
 #[doc = "Field `YEART` writer - Year, Tens"]
-pub type YEART_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type YEART_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DAYOW` reader - Day of Week"]
 pub type DAYOW_R = crate::FieldReader;
 #[doc = "Field `DAYOW` writer - Day of Week"]
-pub type DAYOW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type DAYOW_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:3 - Day of Month, Units"]
     #[inline(always)]
@@ -67,66 +67,48 @@ impl R {
         DAYOW_R::new(((self.bits >> 24) & 7) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DATE")
-            .field("dayomu", &format_args!("{}", self.dayomu().bits()))
-            .field("dayomt", &format_args!("{}", self.dayomt().bits()))
-            .field("monthu", &format_args!("{}", self.monthu().bits()))
-            .field("montht", &format_args!("{}", self.montht().bit()))
-            .field("yearu", &format_args!("{}", self.yearu().bits()))
-            .field("yeart", &format_args!("{}", self.yeart().bits()))
-            .field("dayow", &format_args!("{}", self.dayow().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<DATE_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:3 - Day of Month, Units"]
     #[inline(always)]
     #[must_use]
-    pub fn dayomu(&mut self) -> DAYOMU_W<DATE_SPEC, 0> {
-        DAYOMU_W::new(self)
+    pub fn dayomu(&mut self) -> DAYOMU_W<DATErs> {
+        DAYOMU_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Day of Month, Tens"]
     #[inline(always)]
     #[must_use]
-    pub fn dayomt(&mut self) -> DAYOMT_W<DATE_SPEC, 4> {
-        DAYOMT_W::new(self)
+    pub fn dayomt(&mut self) -> DAYOMT_W<DATErs> {
+        DAYOMT_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Month, Units"]
     #[inline(always)]
     #[must_use]
-    pub fn monthu(&mut self) -> MONTHU_W<DATE_SPEC, 8> {
-        MONTHU_W::new(self)
+    pub fn monthu(&mut self) -> MONTHU_W<DATErs> {
+        MONTHU_W::new(self, 8)
     }
     #[doc = "Bit 12 - Month, Tens"]
     #[inline(always)]
     #[must_use]
-    pub fn montht(&mut self) -> MONTHT_W<DATE_SPEC, 12> {
-        MONTHT_W::new(self)
+    pub fn montht(&mut self) -> MONTHT_W<DATErs> {
+        MONTHT_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Year, Units"]
     #[inline(always)]
     #[must_use]
-    pub fn yearu(&mut self) -> YEARU_W<DATE_SPEC, 16> {
-        YEARU_W::new(self)
+    pub fn yearu(&mut self) -> YEARU_W<DATErs> {
+        YEARU_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Year, Tens"]
     #[inline(always)]
     #[must_use]
-    pub fn yeart(&mut self) -> YEART_W<DATE_SPEC, 20> {
-        YEART_W::new(self)
+    pub fn yeart(&mut self) -> YEART_W<DATErs> {
+        YEART_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - Day of Week"]
     #[inline(always)]
     #[must_use]
-    pub fn dayow(&mut self) -> DAYOW_W<DATE_SPEC, 24> {
-        DAYOW_W::new(self)
+    pub fn dayow(&mut self) -> DAYOW_W<DATErs> {
+        DAYOW_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -140,18 +122,18 @@ impl W {
     }
 }
 #[doc = "Date Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`date::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`date::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DATE_SPEC;
-impl crate::RegisterSpec for DATE_SPEC {
+pub struct DATErs;
+impl crate::RegisterSpec for DATErs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`date::R`](R) reader structure"]
-impl crate::Readable for DATE_SPEC {}
+impl crate::Readable for DATErs {}
 #[doc = "`write(|w| ..)` method takes [`date::W`](W) writer structure"]
-impl crate::Writable for DATE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for DATErs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DATE to value 0"]
-impl crate::Resettable for DATE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for DATErs {
+    const RESET_VALUE: u32 = 0;
 }

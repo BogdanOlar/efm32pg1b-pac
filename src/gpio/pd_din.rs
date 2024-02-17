@@ -1,5 +1,5 @@
 #[doc = "Register `PD_DIN` reader"]
-pub type R = crate::R<PD_DIN_SPEC>;
+pub type R = crate::R<PD_DINrs>;
 #[doc = "Field `DIN` reader - Data in"]
 pub type DIN_R = crate::FieldReader<u16>;
 impl R {
@@ -9,26 +9,14 @@ impl R {
         DIN_R::new((self.bits & 0xffff) as u16)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PD_DIN")
-            .field("din", &format_args!("{}", self.din().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<PD_DIN_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Port Data in Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pd_din::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PD_DIN_SPEC;
-impl crate::RegisterSpec for PD_DIN_SPEC {
+pub struct PD_DINrs;
+impl crate::RegisterSpec for PD_DINrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pd_din::R`](R) reader structure"]
-impl crate::Readable for PD_DIN_SPEC {}
+impl crate::Readable for PD_DINrs {}
 #[doc = "`reset()` method sets PD_DIN to value 0"]
-impl crate::Resettable for PD_DIN_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for PD_DINrs {
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,11 +1,11 @@
 #[doc = "Register `COMP1` reader"]
-pub type R = crate::R<COMP1_SPEC>;
+pub type R = crate::R<COMP1rs>;
 #[doc = "Register `COMP1` writer"]
-pub type W = crate::W<COMP1_SPEC>;
+pub type W = crate::W<COMP1rs>;
 #[doc = "Field `COMP1` reader - Compare Value 1"]
 pub type COMP1_R = crate::FieldReader<u16>;
 #[doc = "Field `COMP1` writer - Compare Value 1"]
-pub type COMP1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type COMP1_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Value 1"]
     #[inline(always)]
@@ -13,24 +13,12 @@ impl R {
         COMP1_R::new((self.bits & 0xffff) as u16)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("COMP1")
-            .field("comp1", &format_args!("{}", self.comp1().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<COMP1_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:15 - Compare Value 1"]
     #[inline(always)]
     #[must_use]
-    pub fn comp1(&mut self) -> COMP1_W<COMP1_SPEC, 0> {
-        COMP1_W::new(self)
+    pub fn comp1(&mut self) -> COMP1_W<COMP1rs> {
+        COMP1_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -44,18 +32,18 @@ impl W {
     }
 }
 #[doc = "Compare Value Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`comp1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`comp1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct COMP1_SPEC;
-impl crate::RegisterSpec for COMP1_SPEC {
+pub struct COMP1rs;
+impl crate::RegisterSpec for COMP1rs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`comp1::R`](R) reader structure"]
-impl crate::Readable for COMP1_SPEC {}
+impl crate::Readable for COMP1rs {}
 #[doc = "`write(|w| ..)` method takes [`comp1::W`](W) writer structure"]
-impl crate::Writable for COMP1_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for COMP1rs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets COMP1 to value 0"]
-impl crate::Resettable for COMP1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for COMP1rs {
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,74 +1,69 @@
 #[doc = "Register `CMD` writer"]
-pub type W = crate::W<CMD_SPEC>;
+pub type W = crate::W<CMDrs>;
 #[doc = "Field `START` writer - Send Start Condition"]
-pub type START_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STOP` writer - Send Stop Condition"]
-pub type STOP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STOP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ACK` writer - Send ACK"]
-pub type ACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ACK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NACK` writer - Send NACK"]
-pub type NACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NACK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CONT` writer - Continue Transmission"]
-pub type CONT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CONT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ABORT` writer - Abort Transmission"]
-pub type ABORT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ABORT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLEARTX` writer - Clear TX"]
-pub type CLEARTX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLEARTX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLEARPC` writer - Clear Pending Commands"]
-pub type CLEARPC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
-impl core::fmt::Debug for crate::generic::Reg<CMD_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "(not readable)")
-    }
-}
+pub type CLEARPC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Send Start Condition"]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<CMD_SPEC, 0> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<CMDrs> {
+        START_W::new(self, 0)
     }
     #[doc = "Bit 1 - Send Stop Condition"]
     #[inline(always)]
     #[must_use]
-    pub fn stop(&mut self) -> STOP_W<CMD_SPEC, 1> {
-        STOP_W::new(self)
+    pub fn stop(&mut self) -> STOP_W<CMDrs> {
+        STOP_W::new(self, 1)
     }
     #[doc = "Bit 2 - Send ACK"]
     #[inline(always)]
     #[must_use]
-    pub fn ack(&mut self) -> ACK_W<CMD_SPEC, 2> {
-        ACK_W::new(self)
+    pub fn ack(&mut self) -> ACK_W<CMDrs> {
+        ACK_W::new(self, 2)
     }
     #[doc = "Bit 3 - Send NACK"]
     #[inline(always)]
     #[must_use]
-    pub fn nack(&mut self) -> NACK_W<CMD_SPEC, 3> {
-        NACK_W::new(self)
+    pub fn nack(&mut self) -> NACK_W<CMDrs> {
+        NACK_W::new(self, 3)
     }
     #[doc = "Bit 4 - Continue Transmission"]
     #[inline(always)]
     #[must_use]
-    pub fn cont(&mut self) -> CONT_W<CMD_SPEC, 4> {
-        CONT_W::new(self)
+    pub fn cont(&mut self) -> CONT_W<CMDrs> {
+        CONT_W::new(self, 4)
     }
     #[doc = "Bit 5 - Abort Transmission"]
     #[inline(always)]
     #[must_use]
-    pub fn abort(&mut self) -> ABORT_W<CMD_SPEC, 5> {
-        ABORT_W::new(self)
+    pub fn abort(&mut self) -> ABORT_W<CMDrs> {
+        ABORT_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear TX"]
     #[inline(always)]
     #[must_use]
-    pub fn cleartx(&mut self) -> CLEARTX_W<CMD_SPEC, 6> {
-        CLEARTX_W::new(self)
+    pub fn cleartx(&mut self) -> CLEARTX_W<CMDrs> {
+        CLEARTX_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Pending Commands"]
     #[inline(always)]
     #[must_use]
-    pub fn clearpc(&mut self) -> CLEARPC_W<CMD_SPEC, 7> {
-        CLEARPC_W::new(self)
+    pub fn clearpc(&mut self) -> CLEARPC_W<CMDrs> {
+        CLEARPC_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -82,16 +77,16 @@ impl W {
     }
 }
 #[doc = "Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CMD_SPEC;
-impl crate::RegisterSpec for CMD_SPEC {
+pub struct CMDrs;
+impl crate::RegisterSpec for CMDrs {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`cmd::W`](W) writer structure"]
-impl crate::Writable for CMD_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for CMDrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
-impl crate::Resettable for CMD_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for CMDrs {
+    const RESET_VALUE: u32 = 0;
 }

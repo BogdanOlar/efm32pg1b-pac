@@ -1,5 +1,5 @@
 #[doc = "Register `PEEK` reader"]
-pub type R = crate::R<PEEK_SPEC>;
+pub type R = crate::R<PEEKrs>;
 #[doc = "Field `CH0VAL` reader - Channel 0 Current Value"]
 pub type CH0VAL_R = crate::BitReader;
 #[doc = "Field `CH1VAL` reader - Channel 1 Current Value"]
@@ -86,37 +86,14 @@ impl R {
         CH11VAL_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PEEK")
-            .field("ch0val", &format_args!("{}", self.ch0val().bit()))
-            .field("ch1val", &format_args!("{}", self.ch1val().bit()))
-            .field("ch2val", &format_args!("{}", self.ch2val().bit()))
-            .field("ch3val", &format_args!("{}", self.ch3val().bit()))
-            .field("ch4val", &format_args!("{}", self.ch4val().bit()))
-            .field("ch5val", &format_args!("{}", self.ch5val().bit()))
-            .field("ch6val", &format_args!("{}", self.ch6val().bit()))
-            .field("ch7val", &format_args!("{}", self.ch7val().bit()))
-            .field("ch8val", &format_args!("{}", self.ch8val().bit()))
-            .field("ch9val", &format_args!("{}", self.ch9val().bit()))
-            .field("ch10val", &format_args!("{}", self.ch10val().bit()))
-            .field("ch11val", &format_args!("{}", self.ch11val().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<PEEK_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "PRS Channel Values\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`peek::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PEEK_SPEC;
-impl crate::RegisterSpec for PEEK_SPEC {
+pub struct PEEKrs;
+impl crate::RegisterSpec for PEEKrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`peek::R`](R) reader structure"]
-impl crate::Readable for PEEK_SPEC {}
+impl crate::Readable for PEEKrs {}
 #[doc = "`reset()` method sets PEEK to value 0"]
-impl crate::Resettable for PEEK_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for PEEKrs {
+    const RESET_VALUE: u32 = 0;
 }

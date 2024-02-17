@@ -1,127 +1,127 @@
 #[doc = "Register `CH7_REQSEL` reader"]
-pub type R = crate::R<CH7_REQSEL_SPEC>;
+pub type R = crate::R<CH7_REQSELrs>;
 #[doc = "Register `CH7_REQSEL` writer"]
-pub type W = crate::W<CH7_REQSEL_SPEC>;
+pub type W = crate::W<CH7_REQSELrs>;
 #[doc = "Field `SIGSEL` reader - Signal Select"]
 pub type SIGSEL_R = crate::FieldReader;
 #[doc = "Field `SIGSEL` writer - Signal Select"]
-pub type SIGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type SIGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `SOURCESEL` reader - Source Select"]
-pub type SOURCESEL_R = crate::FieldReader<SOURCESEL_A>;
+pub type SOURCESEL_R = crate::FieldReader<SOURCESEL>;
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SOURCESEL_A {
+pub enum SOURCESEL {
     #[doc = "0: No source selected"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Peripheral Reflex System"]
-    PRS = 1,
+    Prs = 1,
     #[doc = "8: Analog to Digital Converter 0"]
-    ADC0 = 8,
+    Adc0 = 8,
     #[doc = "12: Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
-    USART0 = 12,
+    Usart0 = 12,
     #[doc = "13: Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
-    USART1 = 13,
+    Usart1 = 13,
     #[doc = "16: Low Energy UART 0"]
-    LEUART0 = 16,
+    Leuart0 = 16,
     #[doc = "20: I2C 0"]
-    I2C0 = 20,
+    I2c0 = 20,
     #[doc = "24: Timer 0"]
-    TIMER0 = 24,
+    Timer0 = 24,
     #[doc = "25: Timer 1"]
-    TIMER1 = 25,
+    Timer1 = 25,
     #[doc = "48: Memory System Controller"]
-    MSC = 48,
+    Msc = 48,
     #[doc = "49: Advanced Encryption Standard Accelerator"]
-    CRYPTO = 49,
+    Crypto = 49,
 }
-impl From<SOURCESEL_A> for u8 {
+impl From<SOURCESEL> for u8 {
     #[inline(always)]
-    fn from(variant: SOURCESEL_A) -> Self {
+    fn from(variant: SOURCESEL) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SOURCESEL_A {
+impl crate::FieldSpec for SOURCESEL {
     type Ux = u8;
 }
 impl SOURCESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<SOURCESEL_A> {
+    pub const fn variant(&self) -> Option<SOURCESEL> {
         match self.bits {
-            0 => Some(SOURCESEL_A::NONE),
-            1 => Some(SOURCESEL_A::PRS),
-            8 => Some(SOURCESEL_A::ADC0),
-            12 => Some(SOURCESEL_A::USART0),
-            13 => Some(SOURCESEL_A::USART1),
-            16 => Some(SOURCESEL_A::LEUART0),
-            20 => Some(SOURCESEL_A::I2C0),
-            24 => Some(SOURCESEL_A::TIMER0),
-            25 => Some(SOURCESEL_A::TIMER1),
-            48 => Some(SOURCESEL_A::MSC),
-            49 => Some(SOURCESEL_A::CRYPTO),
+            0 => Some(SOURCESEL::None),
+            1 => Some(SOURCESEL::Prs),
+            8 => Some(SOURCESEL::Adc0),
+            12 => Some(SOURCESEL::Usart0),
+            13 => Some(SOURCESEL::Usart1),
+            16 => Some(SOURCESEL::Leuart0),
+            20 => Some(SOURCESEL::I2c0),
+            24 => Some(SOURCESEL::Timer0),
+            25 => Some(SOURCESEL::Timer1),
+            48 => Some(SOURCESEL::Msc),
+            49 => Some(SOURCESEL::Crypto),
             _ => None,
         }
     }
     #[doc = "No source selected"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == SOURCESEL_A::NONE
+        *self == SOURCESEL::None
     }
     #[doc = "Peripheral Reflex System"]
     #[inline(always)]
     pub fn is_prs(&self) -> bool {
-        *self == SOURCESEL_A::PRS
+        *self == SOURCESEL::Prs
     }
     #[doc = "Analog to Digital Converter 0"]
     #[inline(always)]
     pub fn is_adc0(&self) -> bool {
-        *self == SOURCESEL_A::ADC0
+        *self == SOURCESEL::Adc0
     }
     #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
     #[inline(always)]
     pub fn is_usart0(&self) -> bool {
-        *self == SOURCESEL_A::USART0
+        *self == SOURCESEL::Usart0
     }
     #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
     #[inline(always)]
     pub fn is_usart1(&self) -> bool {
-        *self == SOURCESEL_A::USART1
+        *self == SOURCESEL::Usart1
     }
     #[doc = "Low Energy UART 0"]
     #[inline(always)]
     pub fn is_leuart0(&self) -> bool {
-        *self == SOURCESEL_A::LEUART0
+        *self == SOURCESEL::Leuart0
     }
     #[doc = "I2C 0"]
     #[inline(always)]
     pub fn is_i2c0(&self) -> bool {
-        *self == SOURCESEL_A::I2C0
+        *self == SOURCESEL::I2c0
     }
     #[doc = "Timer 0"]
     #[inline(always)]
     pub fn is_timer0(&self) -> bool {
-        *self == SOURCESEL_A::TIMER0
+        *self == SOURCESEL::Timer0
     }
     #[doc = "Timer 1"]
     #[inline(always)]
     pub fn is_timer1(&self) -> bool {
-        *self == SOURCESEL_A::TIMER1
+        *self == SOURCESEL::Timer1
     }
     #[doc = "Memory System Controller"]
     #[inline(always)]
     pub fn is_msc(&self) -> bool {
-        *self == SOURCESEL_A::MSC
+        *self == SOURCESEL::Msc
     }
     #[doc = "Advanced Encryption Standard Accelerator"]
     #[inline(always)]
     pub fn is_crypto(&self) -> bool {
-        *self == SOURCESEL_A::CRYPTO
+        *self == SOURCESEL::Crypto
     }
 }
 #[doc = "Field `SOURCESEL` writer - Source Select"]
-pub type SOURCESEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, SOURCESEL_A>;
-impl<'a, REG, const O: u8> SOURCESEL_W<'a, REG, O>
+pub type SOURCESEL_W<'a, REG> = crate::FieldWriter<'a, REG, 6, SOURCESEL>;
+impl<'a, REG> SOURCESEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -129,57 +129,57 @@ where
     #[doc = "No source selected"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::NONE)
+        self.variant(SOURCESEL::None)
     }
     #[doc = "Peripheral Reflex System"]
     #[inline(always)]
     pub fn prs(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::PRS)
+        self.variant(SOURCESEL::Prs)
     }
     #[doc = "Analog to Digital Converter 0"]
     #[inline(always)]
     pub fn adc0(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::ADC0)
+        self.variant(SOURCESEL::Adc0)
     }
     #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 0"]
     #[inline(always)]
     pub fn usart0(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::USART0)
+        self.variant(SOURCESEL::Usart0)
     }
     #[doc = "Universal Synchronous/Asynchronous Receiver/Transmitter 1"]
     #[inline(always)]
     pub fn usart1(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::USART1)
+        self.variant(SOURCESEL::Usart1)
     }
     #[doc = "Low Energy UART 0"]
     #[inline(always)]
     pub fn leuart0(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::LEUART0)
+        self.variant(SOURCESEL::Leuart0)
     }
     #[doc = "I2C 0"]
     #[inline(always)]
     pub fn i2c0(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::I2C0)
+        self.variant(SOURCESEL::I2c0)
     }
     #[doc = "Timer 0"]
     #[inline(always)]
     pub fn timer0(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::TIMER0)
+        self.variant(SOURCESEL::Timer0)
     }
     #[doc = "Timer 1"]
     #[inline(always)]
     pub fn timer1(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::TIMER1)
+        self.variant(SOURCESEL::Timer1)
     }
     #[doc = "Memory System Controller"]
     #[inline(always)]
     pub fn msc(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::MSC)
+        self.variant(SOURCESEL::Msc)
     }
     #[doc = "Advanced Encryption Standard Accelerator"]
     #[inline(always)]
     pub fn crypto(self) -> &'a mut crate::W<REG> {
-        self.variant(SOURCESEL_A::CRYPTO)
+        self.variant(SOURCESEL::Crypto)
     }
 }
 impl R {
@@ -194,31 +194,18 @@ impl R {
         SOURCESEL_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CH7_REQSEL")
-            .field("sigsel", &format_args!("{}", self.sigsel().bits()))
-            .field("sourcesel", &format_args!("{}", self.sourcesel().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<CH7_REQSEL_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:3 - Signal Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sigsel(&mut self) -> SIGSEL_W<CH7_REQSEL_SPEC, 0> {
-        SIGSEL_W::new(self)
+    pub fn sigsel(&mut self) -> SIGSEL_W<CH7_REQSELrs> {
+        SIGSEL_W::new(self, 0)
     }
     #[doc = "Bits 16:21 - Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sourcesel(&mut self) -> SOURCESEL_W<CH7_REQSEL_SPEC, 16> {
-        SOURCESEL_W::new(self)
+    pub fn sourcesel(&mut self) -> SOURCESEL_W<CH7_REQSELrs> {
+        SOURCESEL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -232,18 +219,18 @@ impl W {
     }
 }
 #[doc = "Channel Peripheral Request Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ch7_reqsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ch7_reqsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CH7_REQSEL_SPEC;
-impl crate::RegisterSpec for CH7_REQSEL_SPEC {
+pub struct CH7_REQSELrs;
+impl crate::RegisterSpec for CH7_REQSELrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ch7_reqsel::R`](R) reader structure"]
-impl crate::Readable for CH7_REQSEL_SPEC {}
+impl crate::Readable for CH7_REQSELrs {}
 #[doc = "`write(|w| ..)` method takes [`ch7_reqsel::W`](W) writer structure"]
-impl crate::Writable for CH7_REQSEL_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for CH7_REQSELrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CH7_REQSEL to value 0"]
-impl crate::Resettable for CH7_REQSEL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for CH7_REQSELrs {
+    const RESET_VALUE: u32 = 0;
 }

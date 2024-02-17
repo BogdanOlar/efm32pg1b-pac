@@ -1,5 +1,5 @@
 #[doc = "Register `STATUS` reader"]
-pub type R = crate::R<STATUS_SPEC>;
+pub type R = crate::R<STATUSrs>;
 #[doc = "Field `BUSY` reader - Erase/Write Busy"]
 pub type BUSY_R = crate::BitReader;
 #[doc = "Field `LOCKED` reader - Access Locked"]
@@ -51,35 +51,14 @@ impl R {
         PCRUNNING_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("STATUS")
-            .field("busy", &format_args!("{}", self.busy().bit()))
-            .field("locked", &format_args!("{}", self.locked().bit()))
-            .field("invaddr", &format_args!("{}", self.invaddr().bit()))
-            .field("wdataready", &format_args!("{}", self.wdataready().bit()))
-            .field("wordtimeout", &format_args!("{}", self.wordtimeout().bit()))
-            .field(
-                "eraseaborted",
-                &format_args!("{}", self.eraseaborted().bit()),
-            )
-            .field("pcrunning", &format_args!("{}", self.pcrunning().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<STATUS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STATUS_SPEC;
-impl crate::RegisterSpec for STATUS_SPEC {
+pub struct STATUSrs;
+impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`status::R`](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {}
+impl crate::Readable for STATUSrs {}
 #[doc = "`reset()` method sets STATUS to value 0x08"]
-impl crate::Resettable for STATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0x08;
+impl crate::Resettable for STATUSrs {
+    const RESET_VALUE: u32 = 0x08;
 }

@@ -1,5 +1,5 @@
 #[doc = "Register `STATE` reader"]
-pub type R = crate::R<STATE_SPEC>;
+pub type R = crate::R<STATErs>;
 #[doc = "Field `BUSY` reader - Bus Busy"]
 pub type BUSY_R = crate::BitReader;
 #[doc = "Field `MASTER` reader - Master"]
@@ -11,84 +11,84 @@ pub type NACKED_R = crate::BitReader;
 #[doc = "Field `BUSHOLD` reader - Bus Held"]
 pub type BUSHOLD_R = crate::BitReader;
 #[doc = "Field `STATE` reader - Transmission State"]
-pub type STATE_R = crate::FieldReader<STATE_A>;
+pub type STATE_R = crate::FieldReader<STATE>;
 #[doc = "Transmission State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum STATE_A {
+pub enum STATE {
     #[doc = "0: No transmission is being performed."]
-    IDLE = 0,
+    Idle = 0,
     #[doc = "1: Waiting for idle. Will send a start condition as soon as the bus is idle."]
-    WAIT = 1,
+    Wait = 1,
     #[doc = "2: Start transmitted or received"]
-    START = 2,
+    Start = 2,
     #[doc = "3: Address transmitted or received"]
-    ADDR = 3,
+    Addr = 3,
     #[doc = "4: Address ack/nack transmitted or received"]
-    ADDRACK = 4,
+    Addrack = 4,
     #[doc = "5: Data transmitted or received"]
-    DATA = 5,
+    Data = 5,
     #[doc = "6: Data ack/nack transmitted or received"]
-    DATAACK = 6,
+    Dataack = 6,
 }
-impl From<STATE_A> for u8 {
+impl From<STATE> for u8 {
     #[inline(always)]
-    fn from(variant: STATE_A) -> Self {
+    fn from(variant: STATE) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for STATE_A {
+impl crate::FieldSpec for STATE {
     type Ux = u8;
 }
 impl STATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<STATE_A> {
+    pub const fn variant(&self) -> Option<STATE> {
         match self.bits {
-            0 => Some(STATE_A::IDLE),
-            1 => Some(STATE_A::WAIT),
-            2 => Some(STATE_A::START),
-            3 => Some(STATE_A::ADDR),
-            4 => Some(STATE_A::ADDRACK),
-            5 => Some(STATE_A::DATA),
-            6 => Some(STATE_A::DATAACK),
+            0 => Some(STATE::Idle),
+            1 => Some(STATE::Wait),
+            2 => Some(STATE::Start),
+            3 => Some(STATE::Addr),
+            4 => Some(STATE::Addrack),
+            5 => Some(STATE::Data),
+            6 => Some(STATE::Dataack),
             _ => None,
         }
     }
     #[doc = "No transmission is being performed."]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        *self == STATE_A::IDLE
+        *self == STATE::Idle
     }
     #[doc = "Waiting for idle. Will send a start condition as soon as the bus is idle."]
     #[inline(always)]
     pub fn is_wait(&self) -> bool {
-        *self == STATE_A::WAIT
+        *self == STATE::Wait
     }
     #[doc = "Start transmitted or received"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
-        *self == STATE_A::START
+        *self == STATE::Start
     }
     #[doc = "Address transmitted or received"]
     #[inline(always)]
     pub fn is_addr(&self) -> bool {
-        *self == STATE_A::ADDR
+        *self == STATE::Addr
     }
     #[doc = "Address ack/nack transmitted or received"]
     #[inline(always)]
     pub fn is_addrack(&self) -> bool {
-        *self == STATE_A::ADDRACK
+        *self == STATE::Addrack
     }
     #[doc = "Data transmitted or received"]
     #[inline(always)]
     pub fn is_data(&self) -> bool {
-        *self == STATE_A::DATA
+        *self == STATE::Data
     }
     #[doc = "Data ack/nack transmitted or received"]
     #[inline(always)]
     pub fn is_dataack(&self) -> bool {
-        *self == STATE_A::DATAACK
+        *self == STATE::Dataack
     }
 }
 impl R {
@@ -123,31 +123,14 @@ impl R {
         STATE_R::new(((self.bits >> 5) & 7) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("STATE")
-            .field("busy", &format_args!("{}", self.busy().bit()))
-            .field("master", &format_args!("{}", self.master().bit()))
-            .field("transmitter", &format_args!("{}", self.transmitter().bit()))
-            .field("nacked", &format_args!("{}", self.nacked().bit()))
-            .field("bushold", &format_args!("{}", self.bushold().bit()))
-            .field("state", &format_args!("{}", self.state().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<STATE_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "State Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STATE_SPEC;
-impl crate::RegisterSpec for STATE_SPEC {
+pub struct STATErs;
+impl crate::RegisterSpec for STATErs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`state::R`](R) reader structure"]
-impl crate::Readable for STATE_SPEC {}
+impl crate::Readable for STATErs {}
 #[doc = "`reset()` method sets STATE to value 0x01"]
-impl crate::Resettable for STATE_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01;
+impl crate::Resettable for STATErs {
+    const RESET_VALUE: u32 = 0x01;
 }

@@ -1,5 +1,5 @@
 #[doc = "Register `STATUS` reader"]
-pub type R = crate::R<STATUS_SPEC>;
+pub type R = crate::R<STATUSrs>;
 #[doc = "Field `PSTART` reader - Pending START"]
 pub type PSTART_R = crate::BitReader;
 #[doc = "Field `PSTOP` reader - Pending STOP"]
@@ -72,35 +72,14 @@ impl R {
         RXFULL_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("STATUS")
-            .field("pstart", &format_args!("{}", self.pstart().bit()))
-            .field("pstop", &format_args!("{}", self.pstop().bit()))
-            .field("pack", &format_args!("{}", self.pack().bit()))
-            .field("pnack", &format_args!("{}", self.pnack().bit()))
-            .field("pcont", &format_args!("{}", self.pcont().bit()))
-            .field("pabort", &format_args!("{}", self.pabort().bit()))
-            .field("txc", &format_args!("{}", self.txc().bit()))
-            .field("txbl", &format_args!("{}", self.txbl().bit()))
-            .field("rxdatav", &format_args!("{}", self.rxdatav().bit()))
-            .field("rxfull", &format_args!("{}", self.rxfull().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<STATUS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STATUS_SPEC;
-impl crate::RegisterSpec for STATUS_SPEC {
+pub struct STATUSrs;
+impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`status::R`](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {}
+impl crate::Readable for STATUSrs {}
 #[doc = "`reset()` method sets STATUS to value 0x80"]
-impl crate::Resettable for STATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0x80;
+impl crate::Resettable for STATUSrs {
+    const RESET_VALUE: u32 = 0x80;
 }

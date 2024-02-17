@@ -1,5 +1,5 @@
 #[doc = "Register `RXDATAXP` reader"]
-pub type R = crate::R<RXDATAXP_SPEC>;
+pub type R = crate::R<RXDATAXPrs>;
 #[doc = "Field `RXDATAP` reader - RX Data Peek"]
 pub type RXDATAP_R = crate::FieldReader<u16>;
 #[doc = "Field `PERRP` reader - Receive Data Parity Error Peek"]
@@ -23,28 +23,14 @@ impl R {
         FERRP_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("RXDATAXP")
-            .field("rxdatap", &format_args!("{}", self.rxdatap().bits()))
-            .field("perrp", &format_args!("{}", self.perrp().bit()))
-            .field("ferrp", &format_args!("{}", self.ferrp().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<RXDATAXP_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Receive Buffer Data Extended Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdataxp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RXDATAXP_SPEC;
-impl crate::RegisterSpec for RXDATAXP_SPEC {
+pub struct RXDATAXPrs;
+impl crate::RegisterSpec for RXDATAXPrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rxdataxp::R`](R) reader structure"]
-impl crate::Readable for RXDATAXP_SPEC {}
+impl crate::Readable for RXDATAXPrs {}
 #[doc = "`reset()` method sets RXDATAXP to value 0"]
-impl crate::Resettable for RXDATAXP_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for RXDATAXPrs {
+    const RESET_VALUE: u32 = 0;
 }

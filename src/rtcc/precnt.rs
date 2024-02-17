@@ -1,11 +1,11 @@
 #[doc = "Register `PRECNT` reader"]
-pub type R = crate::R<PRECNT_SPEC>;
+pub type R = crate::R<PRECNTrs>;
 #[doc = "Register `PRECNT` writer"]
-pub type W = crate::W<PRECNT_SPEC>;
+pub type W = crate::W<PRECNTrs>;
 #[doc = "Field `PRECNT` reader - Pre-Counter Value"]
 pub type PRECNT_R = crate::FieldReader<u16>;
 #[doc = "Field `PRECNT` writer - Pre-Counter Value"]
-pub type PRECNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 15, O, u16>;
+pub type PRECNT_W<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 impl R {
     #[doc = "Bits 0:14 - Pre-Counter Value"]
     #[inline(always)]
@@ -13,24 +13,12 @@ impl R {
         PRECNT_R::new((self.bits & 0x7fff) as u16)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PRECNT")
-            .field("precnt", &format_args!("{}", self.precnt().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<PRECNT_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:14 - Pre-Counter Value"]
     #[inline(always)]
     #[must_use]
-    pub fn precnt(&mut self) -> PRECNT_W<PRECNT_SPEC, 0> {
-        PRECNT_W::new(self)
+    pub fn precnt(&mut self) -> PRECNT_W<PRECNTrs> {
+        PRECNT_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -44,18 +32,18 @@ impl W {
     }
 }
 #[doc = "Pre-Counter Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`precnt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`precnt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PRECNT_SPEC;
-impl crate::RegisterSpec for PRECNT_SPEC {
+pub struct PRECNTrs;
+impl crate::RegisterSpec for PRECNTrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`precnt::R`](R) reader structure"]
-impl crate::Readable for PRECNT_SPEC {}
+impl crate::Readable for PRECNTrs {}
 #[doc = "`write(|w| ..)` method takes [`precnt::W`](W) writer structure"]
-impl crate::Writable for PRECNT_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for PRECNTrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRECNT to value 0"]
-impl crate::Resettable for PRECNT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for PRECNTrs {
+    const RESET_VALUE: u32 = 0;
 }

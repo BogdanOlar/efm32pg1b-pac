@@ -1,15 +1,15 @@
 #[doc = "Register `PCNTCTRL` reader"]
-pub type R = crate::R<PCNTCTRL_SPEC>;
+pub type R = crate::R<PCNTCTRLrs>;
 #[doc = "Register `PCNTCTRL` writer"]
-pub type W = crate::W<PCNTCTRL_SPEC>;
+pub type W = crate::W<PCNTCTRLrs>;
 #[doc = "Field `PCNT0CLKEN` reader - PCNT0 Clock Enable"]
 pub type PCNT0CLKEN_R = crate::BitReader;
 #[doc = "Field `PCNT0CLKEN` writer - PCNT0 Clock Enable"]
-pub type PCNT0CLKEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PCNT0CLKEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCNT0CLKSEL` reader - PCNT0 Clock Select"]
 pub type PCNT0CLKSEL_R = crate::BitReader;
 #[doc = "Field `PCNT0CLKSEL` writer - PCNT0 Clock Select"]
-pub type PCNT0CLKSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PCNT0CLKSEL_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
     #[inline(always)]
@@ -22,31 +22,18 @@ impl R {
         PCNT0CLKSEL_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PCNTCTRL")
-            .field("pcnt0clken", &format_args!("{}", self.pcnt0clken().bit()))
-            .field("pcnt0clksel", &format_args!("{}", self.pcnt0clksel().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<PCNTCTRL_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pcnt0clken(&mut self) -> PCNT0CLKEN_W<PCNTCTRL_SPEC, 0> {
-        PCNT0CLKEN_W::new(self)
+    pub fn pcnt0clken(&mut self) -> PCNT0CLKEN_W<PCNTCTRLrs> {
+        PCNT0CLKEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - PCNT0 Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pcnt0clksel(&mut self) -> PCNT0CLKSEL_W<PCNTCTRL_SPEC, 1> {
-        PCNT0CLKSEL_W::new(self)
+    pub fn pcnt0clksel(&mut self) -> PCNT0CLKSEL_W<PCNTCTRLrs> {
+        PCNT0CLKSEL_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -60,18 +47,18 @@ impl W {
     }
 }
 #[doc = "PCNT Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcntctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcntctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PCNTCTRL_SPEC;
-impl crate::RegisterSpec for PCNTCTRL_SPEC {
+pub struct PCNTCTRLrs;
+impl crate::RegisterSpec for PCNTCTRLrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pcntctrl::R`](R) reader structure"]
-impl crate::Readable for PCNTCTRL_SPEC {}
+impl crate::Readable for PCNTCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`pcntctrl::W`](W) writer structure"]
-impl crate::Writable for PCNTCTRL_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for PCNTCTRLrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PCNTCTRL to value 0"]
-impl crate::Resettable for PCNTCTRL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for PCNTCTRLrs {
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,5 +1,5 @@
 #[doc = "Register `SCANDATAXP` reader"]
-pub type R = crate::R<SCANDATAXP_SPEC>;
+pub type R = crate::R<SCANDATAXPrs>;
 #[doc = "Field `DATAP` reader - Scan Conversion Result Data Peek"]
 pub type DATAP_R = crate::FieldReader<u16>;
 #[doc = "Field `SCANINPUTIDPEEK` reader - Scan Conversion Data Source Peek"]
@@ -16,30 +16,14 @@ impl R {
         SCANINPUTIDPEEK_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCANDATAXP")
-            .field("datap", &format_args!("{}", self.datap().bits()))
-            .field(
-                "scaninputidpeek",
-                &format_args!("{}", self.scaninputidpeek().bits()),
-            )
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<SCANDATAXP_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Scan Sequence Result Data + Data Source Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scandataxp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SCANDATAXP_SPEC;
-impl crate::RegisterSpec for SCANDATAXP_SPEC {
+pub struct SCANDATAXPrs;
+impl crate::RegisterSpec for SCANDATAXPrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`scandataxp::R`](R) reader structure"]
-impl crate::Readable for SCANDATAXP_SPEC {}
+impl crate::Readable for SCANDATAXPrs {}
 #[doc = "`reset()` method sets SCANDATAXP to value 0"]
-impl crate::Resettable for SCANDATAXP_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for SCANDATAXPrs {
+    const RESET_VALUE: u32 = 0;
 }

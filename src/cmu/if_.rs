@@ -1,5 +1,5 @@
 #[doc = "Register `IF` reader"]
-pub type R = crate::R<IF_SPEC>;
+pub type R = crate::R<IFrs>;
 #[doc = "Field `HFRCORDY` reader - HFRCO Ready Interrupt Flag"]
 pub type HFRCORDY_R = crate::BitReader;
 #[doc = "Field `HFXORDY` reader - HFXO Ready Interrupt Flag"]
@@ -107,52 +107,14 @@ impl R {
         CMUERR_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("IF")
-            .field("hfrcordy", &format_args!("{}", self.hfrcordy().bit()))
-            .field("hfxordy", &format_args!("{}", self.hfxordy().bit()))
-            .field("lfrcordy", &format_args!("{}", self.lfrcordy().bit()))
-            .field("lfxordy", &format_args!("{}", self.lfxordy().bit()))
-            .field("auxhfrcordy", &format_args!("{}", self.auxhfrcordy().bit()))
-            .field("calrdy", &format_args!("{}", self.calrdy().bit()))
-            .field("calof", &format_args!("{}", self.calof().bit()))
-            .field("hfxodiserr", &format_args!("{}", self.hfxodiserr().bit()))
-            .field("hfxoautosw", &format_args!("{}", self.hfxoautosw().bit()))
-            .field(
-                "hfxopeakdeterr",
-                &format_args!("{}", self.hfxopeakdeterr().bit()),
-            )
-            .field(
-                "hfxopeakdetrdy",
-                &format_args!("{}", self.hfxopeakdetrdy().bit()),
-            )
-            .field(
-                "hfxoshuntoptrdy",
-                &format_args!("{}", self.hfxoshuntoptrdy().bit()),
-            )
-            .field("hfrcodis", &format_args!("{}", self.hfrcodis().bit()))
-            .field(
-                "lftimeouterr",
-                &format_args!("{}", self.lftimeouterr().bit()),
-            )
-            .field("cmuerr", &format_args!("{}", self.cmuerr().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<IF_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IF_SPEC;
-impl crate::RegisterSpec for IF_SPEC {
+pub struct IFrs;
+impl crate::RegisterSpec for IFrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`if_::R`](R) reader structure"]
-impl crate::Readable for IF_SPEC {}
+impl crate::Readable for IFrs {}
 #[doc = "`reset()` method sets IF to value 0x01"]
-impl crate::Resettable for IF_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01;
+impl crate::Resettable for IFrs {
+    const RESET_VALUE: u32 = 0x01;
 }

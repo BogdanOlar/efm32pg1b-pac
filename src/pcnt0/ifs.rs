@@ -1,58 +1,53 @@
 #[doc = "Register `IFS` writer"]
-pub type W = crate::W<IFS_SPEC>;
+pub type W = crate::W<IFSrs>;
 #[doc = "Field `UF` writer - Set UF Interrupt Flag"]
-pub type UF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type UF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OF` writer - Set OF Interrupt Flag"]
-pub type OF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DIRCNG` writer - Set DIRCNG Interrupt Flag"]
-pub type DIRCNG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DIRCNG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AUXOF` writer - Set AUXOF Interrupt Flag"]
-pub type AUXOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AUXOF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TCC` writer - Set TCC Interrupt Flag"]
-pub type TCC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TCC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OQSTERR` writer - Set OQSTERR Interrupt Flag"]
-pub type OQSTERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
-impl core::fmt::Debug for crate::generic::Reg<IFS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "(not readable)")
-    }
-}
+pub type OQSTERR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Set UF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn uf(&mut self) -> UF_W<IFS_SPEC, 0> {
-        UF_W::new(self)
+    pub fn uf(&mut self) -> UF_W<IFSrs> {
+        UF_W::new(self, 0)
     }
     #[doc = "Bit 1 - Set OF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn of(&mut self) -> OF_W<IFS_SPEC, 1> {
-        OF_W::new(self)
+    pub fn of(&mut self) -> OF_W<IFSrs> {
+        OF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Set DIRCNG Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn dircng(&mut self) -> DIRCNG_W<IFS_SPEC, 2> {
-        DIRCNG_W::new(self)
+    pub fn dircng(&mut self) -> DIRCNG_W<IFSrs> {
+        DIRCNG_W::new(self, 2)
     }
     #[doc = "Bit 3 - Set AUXOF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn auxof(&mut self) -> AUXOF_W<IFS_SPEC, 3> {
-        AUXOF_W::new(self)
+    pub fn auxof(&mut self) -> AUXOF_W<IFSrs> {
+        AUXOF_W::new(self, 3)
     }
     #[doc = "Bit 4 - Set TCC Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn tcc(&mut self) -> TCC_W<IFS_SPEC, 4> {
-        TCC_W::new(self)
+    pub fn tcc(&mut self) -> TCC_W<IFSrs> {
+        TCC_W::new(self, 4)
     }
     #[doc = "Bit 5 - Set OQSTERR Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn oqsterr(&mut self) -> OQSTERR_W<IFS_SPEC, 5> {
-        OQSTERR_W::new(self)
+    pub fn oqsterr(&mut self) -> OQSTERR_W<IFSrs> {
+        OQSTERR_W::new(self, 5)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -66,16 +61,16 @@ impl W {
     }
 }
 #[doc = "Interrupt Flag Set Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifs::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IFS_SPEC;
-impl crate::RegisterSpec for IFS_SPEC {
+pub struct IFSrs;
+impl crate::RegisterSpec for IFSrs {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`ifs::W`](W) writer structure"]
-impl crate::Writable for IFS_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for IFSrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IFS to value 0"]
-impl crate::Resettable for IFS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for IFSrs {
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,18 +1,13 @@
 #[doc = "Register `CMD` writer"]
-pub type W = crate::W<CMD_SPEC>;
+pub type W = crate::W<CMDrs>;
 #[doc = "Field `INIT` writer - Initialization Enable"]
-pub type INIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
-impl core::fmt::Debug for crate::generic::Reg<CMD_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "(not readable)")
-    }
-}
+pub type INIT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Initialization Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn init(&mut self) -> INIT_W<CMD_SPEC, 0> {
-        INIT_W::new(self)
+    pub fn init(&mut self) -> INIT_W<CMDrs> {
+        INIT_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -26,16 +21,16 @@ impl W {
     }
 }
 #[doc = "Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CMD_SPEC;
-impl crate::RegisterSpec for CMD_SPEC {
+pub struct CMDrs;
+impl crate::RegisterSpec for CMDrs {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`cmd::W`](W) writer structure"]
-impl crate::Writable for CMD_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for CMDrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
-impl crate::Resettable for CMD_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for CMDrs {
+    const RESET_VALUE: u32 = 0;
 }

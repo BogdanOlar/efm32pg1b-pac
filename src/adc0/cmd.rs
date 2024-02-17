@@ -1,42 +1,37 @@
 #[doc = "Register `CMD` writer"]
-pub type W = crate::W<CMD_SPEC>;
+pub type W = crate::W<CMDrs>;
 #[doc = "Field `SINGLESTART` writer - Single Channel Conversion Start"]
-pub type SINGLESTART_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SINGLESTART_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SINGLESTOP` writer - Single Channel Conversion Stop"]
-pub type SINGLESTOP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SINGLESTOP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCANSTART` writer - Scan Sequence Start"]
-pub type SCANSTART_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCANSTART_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCANSTOP` writer - Scan Sequence Stop"]
-pub type SCANSTOP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
-impl core::fmt::Debug for crate::generic::Reg<CMD_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "(not readable)")
-    }
-}
+pub type SCANSTOP_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Single Channel Conversion Start"]
     #[inline(always)]
     #[must_use]
-    pub fn singlestart(&mut self) -> SINGLESTART_W<CMD_SPEC, 0> {
-        SINGLESTART_W::new(self)
+    pub fn singlestart(&mut self) -> SINGLESTART_W<CMDrs> {
+        SINGLESTART_W::new(self, 0)
     }
     #[doc = "Bit 1 - Single Channel Conversion Stop"]
     #[inline(always)]
     #[must_use]
-    pub fn singlestop(&mut self) -> SINGLESTOP_W<CMD_SPEC, 1> {
-        SINGLESTOP_W::new(self)
+    pub fn singlestop(&mut self) -> SINGLESTOP_W<CMDrs> {
+        SINGLESTOP_W::new(self, 1)
     }
     #[doc = "Bit 2 - Scan Sequence Start"]
     #[inline(always)]
     #[must_use]
-    pub fn scanstart(&mut self) -> SCANSTART_W<CMD_SPEC, 2> {
-        SCANSTART_W::new(self)
+    pub fn scanstart(&mut self) -> SCANSTART_W<CMDrs> {
+        SCANSTART_W::new(self, 2)
     }
     #[doc = "Bit 3 - Scan Sequence Stop"]
     #[inline(always)]
     #[must_use]
-    pub fn scanstop(&mut self) -> SCANSTOP_W<CMD_SPEC, 3> {
-        SCANSTOP_W::new(self)
+    pub fn scanstop(&mut self) -> SCANSTOP_W<CMDrs> {
+        SCANSTOP_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -50,16 +45,16 @@ impl W {
     }
 }
 #[doc = "Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CMD_SPEC;
-impl crate::RegisterSpec for CMD_SPEC {
+pub struct CMDrs;
+impl crate::RegisterSpec for CMDrs {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`cmd::W`](W) writer structure"]
-impl crate::Writable for CMD_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for CMDrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
-impl crate::Resettable for CMD_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for CMDrs {
+    const RESET_VALUE: u32 = 0;
 }

@@ -1,5 +1,5 @@
 #[doc = "Register `STATUS` reader"]
-pub type R = crate::R<STATUS_SPEC>;
+pub type R = crate::R<STATUSrs>;
 #[doc = "Field `SINGLEACT` reader - Single Channel Conversion Active"]
 pub type SINGLEACT_R = crate::BitReader;
 #[doc = "Field `SCANACT` reader - Scan Conversion Active"]
@@ -9,44 +9,44 @@ pub type SINGLEREFWARM_R = crate::BitReader;
 #[doc = "Field `SCANREFWARM` reader - Scan Reference Warmed Up"]
 pub type SCANREFWARM_R = crate::BitReader;
 #[doc = "Field `PROGERR` reader - Programming Error Status"]
-pub type PROGERR_R = crate::FieldReader<PROGERR_A>;
+pub type PROGERR_R = crate::FieldReader<PROGERR>;
 #[doc = "Programming Error Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PROGERR_A {
+pub enum PROGERR {
     #[doc = "1: `1`"]
-    BUSCONF = 1,
+    Busconf = 1,
     #[doc = "2: `10`"]
-    NEGSELCONF = 2,
+    Negselconf = 2,
 }
-impl From<PROGERR_A> for u8 {
+impl From<PROGERR> for u8 {
     #[inline(always)]
-    fn from(variant: PROGERR_A) -> Self {
+    fn from(variant: PROGERR) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PROGERR_A {
+impl crate::FieldSpec for PROGERR {
     type Ux = u8;
 }
 impl PROGERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<PROGERR_A> {
+    pub const fn variant(&self) -> Option<PROGERR> {
         match self.bits {
-            1 => Some(PROGERR_A::BUSCONF),
-            2 => Some(PROGERR_A::NEGSELCONF),
+            1 => Some(PROGERR::Busconf),
+            2 => Some(PROGERR::Negselconf),
             _ => None,
         }
     }
     #[doc = "`1`"]
     #[inline(always)]
     pub fn is_busconf(&self) -> bool {
-        *self == PROGERR_A::BUSCONF
+        *self == PROGERR::Busconf
     }
     #[doc = "`10`"]
     #[inline(always)]
     pub fn is_negselconf(&self) -> bool {
-        *self == PROGERR_A::NEGSELCONF
+        *self == PROGERR::Negselconf
     }
 }
 #[doc = "Field `WARM` reader - ADC Warmed Up"]
@@ -97,36 +97,14 @@ impl R {
         SCANDV_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("STATUS")
-            .field("singleact", &format_args!("{}", self.singleact().bit()))
-            .field("scanact", &format_args!("{}", self.scanact().bit()))
-            .field(
-                "singlerefwarm",
-                &format_args!("{}", self.singlerefwarm().bit()),
-            )
-            .field("scanrefwarm", &format_args!("{}", self.scanrefwarm().bit()))
-            .field("progerr", &format_args!("{}", self.progerr().bits()))
-            .field("warm", &format_args!("{}", self.warm().bit()))
-            .field("singledv", &format_args!("{}", self.singledv().bit()))
-            .field("scandv", &format_args!("{}", self.scandv().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<STATUS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STATUS_SPEC;
-impl crate::RegisterSpec for STATUS_SPEC {
+pub struct STATUSrs;
+impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`status::R`](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {}
+impl crate::Readable for STATUSrs {}
 #[doc = "`reset()` method sets STATUS to value 0"]
-impl crate::Resettable for STATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for STATUSrs {
+    const RESET_VALUE: u32 = 0;
 }

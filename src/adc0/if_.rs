@@ -1,5 +1,5 @@
 #[doc = "Register `IF` reader"]
-pub type R = crate::R<IF_SPEC>;
+pub type R = crate::R<IFrs>;
 #[doc = "Field `SINGLE` reader - Single Conversion Complete Interrupt Flag"]
 pub type SINGLE_R = crate::BitReader;
 #[doc = "Field `SCAN` reader - Scan Conversion Complete Interrupt Flag"]
@@ -72,35 +72,14 @@ impl R {
         PROGERR_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("IF")
-            .field("single", &format_args!("{}", self.single().bit()))
-            .field("scan", &format_args!("{}", self.scan().bit()))
-            .field("singleof", &format_args!("{}", self.singleof().bit()))
-            .field("scanof", &format_args!("{}", self.scanof().bit()))
-            .field("singleuf", &format_args!("{}", self.singleuf().bit()))
-            .field("scanuf", &format_args!("{}", self.scanuf().bit()))
-            .field("singlecmp", &format_args!("{}", self.singlecmp().bit()))
-            .field("scancmp", &format_args!("{}", self.scancmp().bit()))
-            .field("vrefov", &format_args!("{}", self.vrefov().bit()))
-            .field("progerr", &format_args!("{}", self.progerr().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<IF_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IF_SPEC;
-impl crate::RegisterSpec for IF_SPEC {
+pub struct IFrs;
+impl crate::RegisterSpec for IFrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`if_::R`](R) reader structure"]
-impl crate::Readable for IF_SPEC {}
+impl crate::Readable for IFrs {}
 #[doc = "`reset()` method sets IF to value 0"]
-impl crate::Resettable for IF_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for IFrs {
+    const RESET_VALUE: u32 = 0;
 }

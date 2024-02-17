@@ -1,155 +1,155 @@
 #[doc = "Register `WAC` reader"]
-pub type R = crate::R<WAC_SPEC>;
+pub type R = crate::R<WACrs>;
 #[doc = "Register `WAC` writer"]
-pub type W = crate::W<WAC_SPEC>;
+pub type W = crate::W<WACrs>;
 #[doc = "Field `MODULUS` reader - Modular Operation Modulus"]
-pub type MODULUS_R = crate::FieldReader<MODULUS_A>;
+pub type MODULUS_R = crate::FieldReader<MODULUS>;
 #[doc = "Modular Operation Modulus\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum MODULUS_A {
+pub enum MODULUS {
     #[doc = "0: Generic modulus. p = 2^256"]
-    BIN256 = 0,
+    Bin256 = 0,
     #[doc = "1: Generic modulus. p = 2^128"]
-    BIN128 = 1,
+    Bin128 = 1,
     #[doc = "2: Modulus for B-233 and K-233 ECC curves. p(t) = t^233 + t^74 + 1"]
-    ECCBIN233P = 2,
+    Eccbin233p = 2,
     #[doc = "3: Modulus for B-163 and K-163 ECC curves. p(t) = t^163 + t^7 + t^6 + t^3 + 1"]
-    ECCBIN163P = 3,
+    Eccbin163p = 3,
     #[doc = "4: Modulus for GCM. P(t) = t^128 + t^7 + t^2 + t + 1"]
-    GCMBIN128 = 4,
+    Gcmbin128 = 4,
     #[doc = "5: Modulus for P-256 ECC curve. p = 2^256 - 2^224 + 2^192 + 2^96 - 1"]
-    ECCPRIME256P = 5,
+    Eccprime256p = 5,
     #[doc = "6: Modulus for P-224 ECC curve. p = 2^224 - 2^96 - 1"]
-    ECCPRIME224P = 6,
+    Eccprime224p = 6,
     #[doc = "7: Modulus for P-192 ECC curve. p = 2^192 - 2^64 - 1"]
-    ECCPRIME192P = 7,
+    Eccprime192p = 7,
     #[doc = "8: P modulus for B-233 ECC curve"]
-    ECCBIN233N = 8,
+    Eccbin233n = 8,
     #[doc = "9: P modulus for K-233 ECC curve"]
-    ECCBIN233KN = 9,
+    Eccbin233kn = 9,
     #[doc = "10: P modulus for B-163 ECC curve"]
-    ECCBIN163N = 10,
+    Eccbin163n = 10,
     #[doc = "11: P modulus for K-163 ECC curve"]
-    ECCBIN163KN = 11,
+    Eccbin163kn = 11,
     #[doc = "12: P modulus for P-256 ECC curve"]
-    ECCPRIME256N = 12,
+    Eccprime256n = 12,
     #[doc = "13: P modulus for P-224 ECC curve"]
-    ECCPRIME224N = 13,
+    Eccprime224n = 13,
     #[doc = "14: P modulus for P-192 ECC curve"]
-    ECCPRIME192N = 14,
+    Eccprime192n = 14,
 }
-impl From<MODULUS_A> for u8 {
+impl From<MODULUS> for u8 {
     #[inline(always)]
-    fn from(variant: MODULUS_A) -> Self {
+    fn from(variant: MODULUS) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for MODULUS_A {
+impl crate::FieldSpec for MODULUS {
     type Ux = u8;
 }
 impl MODULUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<MODULUS_A> {
+    pub const fn variant(&self) -> Option<MODULUS> {
         match self.bits {
-            0 => Some(MODULUS_A::BIN256),
-            1 => Some(MODULUS_A::BIN128),
-            2 => Some(MODULUS_A::ECCBIN233P),
-            3 => Some(MODULUS_A::ECCBIN163P),
-            4 => Some(MODULUS_A::GCMBIN128),
-            5 => Some(MODULUS_A::ECCPRIME256P),
-            6 => Some(MODULUS_A::ECCPRIME224P),
-            7 => Some(MODULUS_A::ECCPRIME192P),
-            8 => Some(MODULUS_A::ECCBIN233N),
-            9 => Some(MODULUS_A::ECCBIN233KN),
-            10 => Some(MODULUS_A::ECCBIN163N),
-            11 => Some(MODULUS_A::ECCBIN163KN),
-            12 => Some(MODULUS_A::ECCPRIME256N),
-            13 => Some(MODULUS_A::ECCPRIME224N),
-            14 => Some(MODULUS_A::ECCPRIME192N),
+            0 => Some(MODULUS::Bin256),
+            1 => Some(MODULUS::Bin128),
+            2 => Some(MODULUS::Eccbin233p),
+            3 => Some(MODULUS::Eccbin163p),
+            4 => Some(MODULUS::Gcmbin128),
+            5 => Some(MODULUS::Eccprime256p),
+            6 => Some(MODULUS::Eccprime224p),
+            7 => Some(MODULUS::Eccprime192p),
+            8 => Some(MODULUS::Eccbin233n),
+            9 => Some(MODULUS::Eccbin233kn),
+            10 => Some(MODULUS::Eccbin163n),
+            11 => Some(MODULUS::Eccbin163kn),
+            12 => Some(MODULUS::Eccprime256n),
+            13 => Some(MODULUS::Eccprime224n),
+            14 => Some(MODULUS::Eccprime192n),
             _ => None,
         }
     }
     #[doc = "Generic modulus. p = 2^256"]
     #[inline(always)]
     pub fn is_bin256(&self) -> bool {
-        *self == MODULUS_A::BIN256
+        *self == MODULUS::Bin256
     }
     #[doc = "Generic modulus. p = 2^128"]
     #[inline(always)]
     pub fn is_bin128(&self) -> bool {
-        *self == MODULUS_A::BIN128
+        *self == MODULUS::Bin128
     }
     #[doc = "Modulus for B-233 and K-233 ECC curves. p(t) = t^233 + t^74 + 1"]
     #[inline(always)]
     pub fn is_eccbin233p(&self) -> bool {
-        *self == MODULUS_A::ECCBIN233P
+        *self == MODULUS::Eccbin233p
     }
     #[doc = "Modulus for B-163 and K-163 ECC curves. p(t) = t^163 + t^7 + t^6 + t^3 + 1"]
     #[inline(always)]
     pub fn is_eccbin163p(&self) -> bool {
-        *self == MODULUS_A::ECCBIN163P
+        *self == MODULUS::Eccbin163p
     }
     #[doc = "Modulus for GCM. P(t) = t^128 + t^7 + t^2 + t + 1"]
     #[inline(always)]
     pub fn is_gcmbin128(&self) -> bool {
-        *self == MODULUS_A::GCMBIN128
+        *self == MODULUS::Gcmbin128
     }
     #[doc = "Modulus for P-256 ECC curve. p = 2^256 - 2^224 + 2^192 + 2^96 - 1"]
     #[inline(always)]
     pub fn is_eccprime256p(&self) -> bool {
-        *self == MODULUS_A::ECCPRIME256P
+        *self == MODULUS::Eccprime256p
     }
     #[doc = "Modulus for P-224 ECC curve. p = 2^224 - 2^96 - 1"]
     #[inline(always)]
     pub fn is_eccprime224p(&self) -> bool {
-        *self == MODULUS_A::ECCPRIME224P
+        *self == MODULUS::Eccprime224p
     }
     #[doc = "Modulus for P-192 ECC curve. p = 2^192 - 2^64 - 1"]
     #[inline(always)]
     pub fn is_eccprime192p(&self) -> bool {
-        *self == MODULUS_A::ECCPRIME192P
+        *self == MODULUS::Eccprime192p
     }
     #[doc = "P modulus for B-233 ECC curve"]
     #[inline(always)]
     pub fn is_eccbin233n(&self) -> bool {
-        *self == MODULUS_A::ECCBIN233N
+        *self == MODULUS::Eccbin233n
     }
     #[doc = "P modulus for K-233 ECC curve"]
     #[inline(always)]
     pub fn is_eccbin233kn(&self) -> bool {
-        *self == MODULUS_A::ECCBIN233KN
+        *self == MODULUS::Eccbin233kn
     }
     #[doc = "P modulus for B-163 ECC curve"]
     #[inline(always)]
     pub fn is_eccbin163n(&self) -> bool {
-        *self == MODULUS_A::ECCBIN163N
+        *self == MODULUS::Eccbin163n
     }
     #[doc = "P modulus for K-163 ECC curve"]
     #[inline(always)]
     pub fn is_eccbin163kn(&self) -> bool {
-        *self == MODULUS_A::ECCBIN163KN
+        *self == MODULUS::Eccbin163kn
     }
     #[doc = "P modulus for P-256 ECC curve"]
     #[inline(always)]
     pub fn is_eccprime256n(&self) -> bool {
-        *self == MODULUS_A::ECCPRIME256N
+        *self == MODULUS::Eccprime256n
     }
     #[doc = "P modulus for P-224 ECC curve"]
     #[inline(always)]
     pub fn is_eccprime224n(&self) -> bool {
-        *self == MODULUS_A::ECCPRIME224N
+        *self == MODULUS::Eccprime224n
     }
     #[doc = "P modulus for P-192 ECC curve"]
     #[inline(always)]
     pub fn is_eccprime192n(&self) -> bool {
-        *self == MODULUS_A::ECCPRIME192N
+        *self == MODULUS::Eccprime192n
     }
 }
 #[doc = "Field `MODULUS` writer - Modular Operation Modulus"]
-pub type MODULUS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, MODULUS_A>;
-impl<'a, REG, const O: u8> MODULUS_W<'a, REG, O>
+pub type MODULUS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODULUS>;
+impl<'a, REG> MODULUS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -157,135 +157,135 @@ where
     #[doc = "Generic modulus. p = 2^256"]
     #[inline(always)]
     pub fn bin256(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::BIN256)
+        self.variant(MODULUS::Bin256)
     }
     #[doc = "Generic modulus. p = 2^128"]
     #[inline(always)]
     pub fn bin128(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::BIN128)
+        self.variant(MODULUS::Bin128)
     }
     #[doc = "Modulus for B-233 and K-233 ECC curves. p(t) = t^233 + t^74 + 1"]
     #[inline(always)]
     pub fn eccbin233p(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCBIN233P)
+        self.variant(MODULUS::Eccbin233p)
     }
     #[doc = "Modulus for B-163 and K-163 ECC curves. p(t) = t^163 + t^7 + t^6 + t^3 + 1"]
     #[inline(always)]
     pub fn eccbin163p(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCBIN163P)
+        self.variant(MODULUS::Eccbin163p)
     }
     #[doc = "Modulus for GCM. P(t) = t^128 + t^7 + t^2 + t + 1"]
     #[inline(always)]
     pub fn gcmbin128(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::GCMBIN128)
+        self.variant(MODULUS::Gcmbin128)
     }
     #[doc = "Modulus for P-256 ECC curve. p = 2^256 - 2^224 + 2^192 + 2^96 - 1"]
     #[inline(always)]
     pub fn eccprime256p(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCPRIME256P)
+        self.variant(MODULUS::Eccprime256p)
     }
     #[doc = "Modulus for P-224 ECC curve. p = 2^224 - 2^96 - 1"]
     #[inline(always)]
     pub fn eccprime224p(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCPRIME224P)
+        self.variant(MODULUS::Eccprime224p)
     }
     #[doc = "Modulus for P-192 ECC curve. p = 2^192 - 2^64 - 1"]
     #[inline(always)]
     pub fn eccprime192p(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCPRIME192P)
+        self.variant(MODULUS::Eccprime192p)
     }
     #[doc = "P modulus for B-233 ECC curve"]
     #[inline(always)]
     pub fn eccbin233n(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCBIN233N)
+        self.variant(MODULUS::Eccbin233n)
     }
     #[doc = "P modulus for K-233 ECC curve"]
     #[inline(always)]
     pub fn eccbin233kn(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCBIN233KN)
+        self.variant(MODULUS::Eccbin233kn)
     }
     #[doc = "P modulus for B-163 ECC curve"]
     #[inline(always)]
     pub fn eccbin163n(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCBIN163N)
+        self.variant(MODULUS::Eccbin163n)
     }
     #[doc = "P modulus for K-163 ECC curve"]
     #[inline(always)]
     pub fn eccbin163kn(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCBIN163KN)
+        self.variant(MODULUS::Eccbin163kn)
     }
     #[doc = "P modulus for P-256 ECC curve"]
     #[inline(always)]
     pub fn eccprime256n(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCPRIME256N)
+        self.variant(MODULUS::Eccprime256n)
     }
     #[doc = "P modulus for P-224 ECC curve"]
     #[inline(always)]
     pub fn eccprime224n(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCPRIME224N)
+        self.variant(MODULUS::Eccprime224n)
     }
     #[doc = "P modulus for P-192 ECC curve"]
     #[inline(always)]
     pub fn eccprime192n(self) -> &'a mut crate::W<REG> {
-        self.variant(MODULUS_A::ECCPRIME192N)
+        self.variant(MODULUS::Eccprime192n)
     }
 }
 #[doc = "Field `MODOP` reader - Modular Operation Field Type"]
 pub type MODOP_R = crate::BitReader;
 #[doc = "Field `MODOP` writer - Modular Operation Field Type"]
-pub type MODOP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MODOP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MULWIDTH` reader - Multiply Width"]
-pub type MULWIDTH_R = crate::FieldReader<MULWIDTH_A>;
+pub type MULWIDTH_R = crate::FieldReader<MULWIDTH>;
 #[doc = "Multiply Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum MULWIDTH_A {
+pub enum MULWIDTH {
     #[doc = "0: Multiply 256 bits"]
-    MUL256 = 0,
+    Mul256 = 0,
     #[doc = "1: Multiply 128 bits"]
-    MUL128 = 1,
+    Mul128 = 1,
     #[doc = "2: Same number of bits as specified by MODULUS"]
-    MULMOD = 2,
+    Mulmod = 2,
 }
-impl From<MULWIDTH_A> for u8 {
+impl From<MULWIDTH> for u8 {
     #[inline(always)]
-    fn from(variant: MULWIDTH_A) -> Self {
+    fn from(variant: MULWIDTH) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for MULWIDTH_A {
+impl crate::FieldSpec for MULWIDTH {
     type Ux = u8;
 }
 impl MULWIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<MULWIDTH_A> {
+    pub const fn variant(&self) -> Option<MULWIDTH> {
         match self.bits {
-            0 => Some(MULWIDTH_A::MUL256),
-            1 => Some(MULWIDTH_A::MUL128),
-            2 => Some(MULWIDTH_A::MULMOD),
+            0 => Some(MULWIDTH::Mul256),
+            1 => Some(MULWIDTH::Mul128),
+            2 => Some(MULWIDTH::Mulmod),
             _ => None,
         }
     }
     #[doc = "Multiply 256 bits"]
     #[inline(always)]
     pub fn is_mul256(&self) -> bool {
-        *self == MULWIDTH_A::MUL256
+        *self == MULWIDTH::Mul256
     }
     #[doc = "Multiply 128 bits"]
     #[inline(always)]
     pub fn is_mul128(&self) -> bool {
-        *self == MULWIDTH_A::MUL128
+        *self == MULWIDTH::Mul128
     }
     #[doc = "Same number of bits as specified by MODULUS"]
     #[inline(always)]
     pub fn is_mulmod(&self) -> bool {
-        *self == MULWIDTH_A::MULMOD
+        *self == MULWIDTH::Mulmod
     }
 }
 #[doc = "Field `MULWIDTH` writer - Multiply Width"]
-pub type MULWIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, MULWIDTH_A>;
-impl<'a, REG, const O: u8> MULWIDTH_W<'a, REG, O>
+pub type MULWIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MULWIDTH>;
+impl<'a, REG> MULWIDTH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -293,71 +293,71 @@ where
     #[doc = "Multiply 256 bits"]
     #[inline(always)]
     pub fn mul256(self) -> &'a mut crate::W<REG> {
-        self.variant(MULWIDTH_A::MUL256)
+        self.variant(MULWIDTH::Mul256)
     }
     #[doc = "Multiply 128 bits"]
     #[inline(always)]
     pub fn mul128(self) -> &'a mut crate::W<REG> {
-        self.variant(MULWIDTH_A::MUL128)
+        self.variant(MULWIDTH::Mul128)
     }
     #[doc = "Same number of bits as specified by MODULUS"]
     #[inline(always)]
     pub fn mulmod(self) -> &'a mut crate::W<REG> {
-        self.variant(MULWIDTH_A::MULMOD)
+        self.variant(MULWIDTH::Mulmod)
     }
 }
 #[doc = "Field `RESULTWIDTH` reader - Result Width"]
-pub type RESULTWIDTH_R = crate::FieldReader<RESULTWIDTH_A>;
+pub type RESULTWIDTH_R = crate::FieldReader<RESULTWIDTH>;
 #[doc = "Result Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RESULTWIDTH_A {
+pub enum RESULTWIDTH {
     #[doc = "0: Results have 256 bits"]
-    _256BIT = 0,
+    _256bit = 0,
     #[doc = "1: Results have 128 bits"]
-    _128BIT = 1,
+    _128bit = 1,
     #[doc = "2: Results have 260 bits. Upper bits of result can be read through DDATA0MSBS in CRYPTO_STATUS"]
-    _260BIT = 2,
+    _260bit = 2,
 }
-impl From<RESULTWIDTH_A> for u8 {
+impl From<RESULTWIDTH> for u8 {
     #[inline(always)]
-    fn from(variant: RESULTWIDTH_A) -> Self {
+    fn from(variant: RESULTWIDTH) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for RESULTWIDTH_A {
+impl crate::FieldSpec for RESULTWIDTH {
     type Ux = u8;
 }
 impl RESULTWIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<RESULTWIDTH_A> {
+    pub const fn variant(&self) -> Option<RESULTWIDTH> {
         match self.bits {
-            0 => Some(RESULTWIDTH_A::_256BIT),
-            1 => Some(RESULTWIDTH_A::_128BIT),
-            2 => Some(RESULTWIDTH_A::_260BIT),
+            0 => Some(RESULTWIDTH::_256bit),
+            1 => Some(RESULTWIDTH::_128bit),
+            2 => Some(RESULTWIDTH::_260bit),
             _ => None,
         }
     }
     #[doc = "Results have 256 bits"]
     #[inline(always)]
     pub fn is_256bit(&self) -> bool {
-        *self == RESULTWIDTH_A::_256BIT
+        *self == RESULTWIDTH::_256bit
     }
     #[doc = "Results have 128 bits"]
     #[inline(always)]
     pub fn is_128bit(&self) -> bool {
-        *self == RESULTWIDTH_A::_128BIT
+        *self == RESULTWIDTH::_128bit
     }
     #[doc = "Results have 260 bits. Upper bits of result can be read through DDATA0MSBS in CRYPTO_STATUS"]
     #[inline(always)]
     pub fn is_260bit(&self) -> bool {
-        *self == RESULTWIDTH_A::_260BIT
+        *self == RESULTWIDTH::_260bit
     }
 }
 #[doc = "Field `RESULTWIDTH` writer - Result Width"]
-pub type RESULTWIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, RESULTWIDTH_A>;
-impl<'a, REG, const O: u8> RESULTWIDTH_W<'a, REG, O>
+pub type RESULTWIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RESULTWIDTH>;
+impl<'a, REG> RESULTWIDTH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -365,17 +365,17 @@ where
     #[doc = "Results have 256 bits"]
     #[inline(always)]
     pub fn _256bit(self) -> &'a mut crate::W<REG> {
-        self.variant(RESULTWIDTH_A::_256BIT)
+        self.variant(RESULTWIDTH::_256bit)
     }
     #[doc = "Results have 128 bits"]
     #[inline(always)]
     pub fn _128bit(self) -> &'a mut crate::W<REG> {
-        self.variant(RESULTWIDTH_A::_128BIT)
+        self.variant(RESULTWIDTH::_128bit)
     }
     #[doc = "Results have 260 bits. Upper bits of result can be read through DDATA0MSBS in CRYPTO_STATUS"]
     #[inline(always)]
     pub fn _260bit(self) -> &'a mut crate::W<REG> {
-        self.variant(RESULTWIDTH_A::_260BIT)
+        self.variant(RESULTWIDTH::_260bit)
     }
 }
 impl R {
@@ -400,48 +400,30 @@ impl R {
         RESULTWIDTH_R::new(((self.bits >> 10) & 3) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("WAC")
-            .field("modulus", &format_args!("{}", self.modulus().bits()))
-            .field("modop", &format_args!("{}", self.modop().bit()))
-            .field("mulwidth", &format_args!("{}", self.mulwidth().bits()))
-            .field(
-                "resultwidth",
-                &format_args!("{}", self.resultwidth().bits()),
-            )
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<WAC_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:3 - Modular Operation Modulus"]
     #[inline(always)]
     #[must_use]
-    pub fn modulus(&mut self) -> MODULUS_W<WAC_SPEC, 0> {
-        MODULUS_W::new(self)
+    pub fn modulus(&mut self) -> MODULUS_W<WACrs> {
+        MODULUS_W::new(self, 0)
     }
     #[doc = "Bit 4 - Modular Operation Field Type"]
     #[inline(always)]
     #[must_use]
-    pub fn modop(&mut self) -> MODOP_W<WAC_SPEC, 4> {
-        MODOP_W::new(self)
+    pub fn modop(&mut self) -> MODOP_W<WACrs> {
+        MODOP_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Multiply Width"]
     #[inline(always)]
     #[must_use]
-    pub fn mulwidth(&mut self) -> MULWIDTH_W<WAC_SPEC, 8> {
-        MULWIDTH_W::new(self)
+    pub fn mulwidth(&mut self) -> MULWIDTH_W<WACrs> {
+        MULWIDTH_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Result Width"]
     #[inline(always)]
     #[must_use]
-    pub fn resultwidth(&mut self) -> RESULTWIDTH_W<WAC_SPEC, 10> {
-        RESULTWIDTH_W::new(self)
+    pub fn resultwidth(&mut self) -> RESULTWIDTH_W<WACrs> {
+        RESULTWIDTH_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -455,18 +437,18 @@ impl W {
     }
 }
 #[doc = "Wide Arithmetic Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wac::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wac::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct WAC_SPEC;
-impl crate::RegisterSpec for WAC_SPEC {
+pub struct WACrs;
+impl crate::RegisterSpec for WACrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`wac::R`](R) reader structure"]
-impl crate::Readable for WAC_SPEC {}
+impl crate::Readable for WACrs {}
 #[doc = "`write(|w| ..)` method takes [`wac::W`](W) writer structure"]
-impl crate::Writable for WAC_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for WACrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets WAC to value 0"]
-impl crate::Resettable for WAC_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for WACrs {
+    const RESET_VALUE: u32 = 0;
 }

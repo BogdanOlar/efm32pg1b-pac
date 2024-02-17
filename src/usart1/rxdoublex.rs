@@ -1,5 +1,5 @@
 #[doc = "Register `RXDOUBLEX` reader"]
-pub type R = crate::R<RXDOUBLEX_SPEC>;
+pub type R = crate::R<RXDOUBLEXrs>;
 #[doc = "Field `RXDATA0` reader - RX Data 0"]
 pub type RXDATA0_R = crate::FieldReader<u16>;
 #[doc = "Field `PERR0` reader - Data Parity Error 0"]
@@ -44,19 +44,14 @@ impl R {
         FERR1_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-impl core::fmt::Debug for crate::generic::Reg<RXDOUBLEX_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "(not readable)")
-    }
-}
 #[doc = "RX Buffer Double Data Extended Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdoublex::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RXDOUBLEX_SPEC;
-impl crate::RegisterSpec for RXDOUBLEX_SPEC {
+pub struct RXDOUBLEXrs;
+impl crate::RegisterSpec for RXDOUBLEXrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rxdoublex::R`](R) reader structure"]
-impl crate::Readable for RXDOUBLEX_SPEC {}
+impl crate::Readable for RXDOUBLEXrs {}
 #[doc = "`reset()` method sets RXDOUBLEX to value 0"]
-impl crate::Resettable for RXDOUBLEX_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for RXDOUBLEXrs {
+    const RESET_VALUE: u32 = 0;
 }

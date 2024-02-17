@@ -1,5 +1,5 @@
 #[doc = "Register `RSTCAUSE` reader"]
-pub type R = crate::R<RSTCAUSE_SPEC>;
+pub type R = crate::R<RSTCAUSErs>;
 #[doc = "Field `PORST` reader - Power on Reset"]
 pub type PORST_R = crate::BitReader;
 #[doc = "Field `AVDDBOD` reader - Brown Out Detector AVDD Reset"]
@@ -65,34 +65,14 @@ impl R {
         EM4RST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("RSTCAUSE")
-            .field("porst", &format_args!("{}", self.porst().bit()))
-            .field("avddbod", &format_args!("{}", self.avddbod().bit()))
-            .field("dvddbod", &format_args!("{}", self.dvddbod().bit()))
-            .field("decbod", &format_args!("{}", self.decbod().bit()))
-            .field("extrst", &format_args!("{}", self.extrst().bit()))
-            .field("lockuprst", &format_args!("{}", self.lockuprst().bit()))
-            .field("sysreqrst", &format_args!("{}", self.sysreqrst().bit()))
-            .field("wdogrst", &format_args!("{}", self.wdogrst().bit()))
-            .field("em4rst", &format_args!("{}", self.em4rst().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<RSTCAUSE_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Reset Cause Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rstcause::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RSTCAUSE_SPEC;
-impl crate::RegisterSpec for RSTCAUSE_SPEC {
+pub struct RSTCAUSErs;
+impl crate::RegisterSpec for RSTCAUSErs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rstcause::R`](R) reader structure"]
-impl crate::Readable for RSTCAUSE_SPEC {}
+impl crate::Readable for RSTCAUSErs {}
 #[doc = "`reset()` method sets RSTCAUSE to value 0"]
-impl crate::Resettable for RSTCAUSE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for RSTCAUSErs {
+    const RESET_VALUE: u32 = 0;
 }

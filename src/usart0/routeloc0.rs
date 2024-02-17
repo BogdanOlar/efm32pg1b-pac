@@ -1,291 +1,291 @@
 #[doc = "Register `ROUTELOC0` reader"]
-pub type R = crate::R<ROUTELOC0_SPEC>;
+pub type R = crate::R<ROUTELOC0rs>;
 #[doc = "Register `ROUTELOC0` writer"]
-pub type W = crate::W<ROUTELOC0_SPEC>;
+pub type W = crate::W<ROUTELOC0rs>;
 #[doc = "Field `RXLOC` reader - I/O Location"]
-pub type RXLOC_R = crate::FieldReader<RXLOC_A>;
+pub type RXLOC_R = crate::FieldReader<RXLOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RXLOC_A {
+pub enum RXLOC {
     #[doc = "0: Location 0"]
-    LOC0 = 0,
+    Loc0 = 0,
     #[doc = "1: Location 1"]
-    LOC1 = 1,
+    Loc1 = 1,
     #[doc = "2: Location 2"]
-    LOC2 = 2,
+    Loc2 = 2,
     #[doc = "3: Location 3"]
-    LOC3 = 3,
+    Loc3 = 3,
     #[doc = "4: Location 4"]
-    LOC4 = 4,
+    Loc4 = 4,
     #[doc = "5: Location 5"]
-    LOC5 = 5,
+    Loc5 = 5,
     #[doc = "6: Location 6"]
-    LOC6 = 6,
+    Loc6 = 6,
     #[doc = "7: Location 7"]
-    LOC7 = 7,
+    Loc7 = 7,
     #[doc = "8: Location 8"]
-    LOC8 = 8,
+    Loc8 = 8,
     #[doc = "9: Location 9"]
-    LOC9 = 9,
+    Loc9 = 9,
     #[doc = "10: Location 10"]
-    LOC10 = 10,
+    Loc10 = 10,
     #[doc = "11: Location 11"]
-    LOC11 = 11,
+    Loc11 = 11,
     #[doc = "12: Location 12"]
-    LOC12 = 12,
+    Loc12 = 12,
     #[doc = "13: Location 13"]
-    LOC13 = 13,
+    Loc13 = 13,
     #[doc = "14: Location 14"]
-    LOC14 = 14,
+    Loc14 = 14,
     #[doc = "15: Location 15"]
-    LOC15 = 15,
+    Loc15 = 15,
     #[doc = "16: Location 16"]
-    LOC16 = 16,
+    Loc16 = 16,
     #[doc = "17: Location 17"]
-    LOC17 = 17,
+    Loc17 = 17,
     #[doc = "18: Location 18"]
-    LOC18 = 18,
+    Loc18 = 18,
     #[doc = "19: Location 19"]
-    LOC19 = 19,
+    Loc19 = 19,
     #[doc = "20: Location 20"]
-    LOC20 = 20,
+    Loc20 = 20,
     #[doc = "21: Location 21"]
-    LOC21 = 21,
+    Loc21 = 21,
     #[doc = "22: Location 22"]
-    LOC22 = 22,
+    Loc22 = 22,
     #[doc = "23: Location 23"]
-    LOC23 = 23,
+    Loc23 = 23,
     #[doc = "24: Location 24"]
-    LOC24 = 24,
+    Loc24 = 24,
     #[doc = "25: Location 25"]
-    LOC25 = 25,
+    Loc25 = 25,
     #[doc = "26: Location 26"]
-    LOC26 = 26,
+    Loc26 = 26,
     #[doc = "27: Location 27"]
-    LOC27 = 27,
+    Loc27 = 27,
     #[doc = "28: Location 28"]
-    LOC28 = 28,
+    Loc28 = 28,
     #[doc = "29: Location 29"]
-    LOC29 = 29,
+    Loc29 = 29,
     #[doc = "30: Location 30"]
-    LOC30 = 30,
+    Loc30 = 30,
     #[doc = "31: Location 31"]
-    LOC31 = 31,
+    Loc31 = 31,
 }
-impl From<RXLOC_A> for u8 {
+impl From<RXLOC> for u8 {
     #[inline(always)]
-    fn from(variant: RXLOC_A) -> Self {
+    fn from(variant: RXLOC) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for RXLOC_A {
+impl crate::FieldSpec for RXLOC {
     type Ux = u8;
 }
 impl RXLOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<RXLOC_A> {
+    pub const fn variant(&self) -> Option<RXLOC> {
         match self.bits {
-            0 => Some(RXLOC_A::LOC0),
-            1 => Some(RXLOC_A::LOC1),
-            2 => Some(RXLOC_A::LOC2),
-            3 => Some(RXLOC_A::LOC3),
-            4 => Some(RXLOC_A::LOC4),
-            5 => Some(RXLOC_A::LOC5),
-            6 => Some(RXLOC_A::LOC6),
-            7 => Some(RXLOC_A::LOC7),
-            8 => Some(RXLOC_A::LOC8),
-            9 => Some(RXLOC_A::LOC9),
-            10 => Some(RXLOC_A::LOC10),
-            11 => Some(RXLOC_A::LOC11),
-            12 => Some(RXLOC_A::LOC12),
-            13 => Some(RXLOC_A::LOC13),
-            14 => Some(RXLOC_A::LOC14),
-            15 => Some(RXLOC_A::LOC15),
-            16 => Some(RXLOC_A::LOC16),
-            17 => Some(RXLOC_A::LOC17),
-            18 => Some(RXLOC_A::LOC18),
-            19 => Some(RXLOC_A::LOC19),
-            20 => Some(RXLOC_A::LOC20),
-            21 => Some(RXLOC_A::LOC21),
-            22 => Some(RXLOC_A::LOC22),
-            23 => Some(RXLOC_A::LOC23),
-            24 => Some(RXLOC_A::LOC24),
-            25 => Some(RXLOC_A::LOC25),
-            26 => Some(RXLOC_A::LOC26),
-            27 => Some(RXLOC_A::LOC27),
-            28 => Some(RXLOC_A::LOC28),
-            29 => Some(RXLOC_A::LOC29),
-            30 => Some(RXLOC_A::LOC30),
-            31 => Some(RXLOC_A::LOC31),
+            0 => Some(RXLOC::Loc0),
+            1 => Some(RXLOC::Loc1),
+            2 => Some(RXLOC::Loc2),
+            3 => Some(RXLOC::Loc3),
+            4 => Some(RXLOC::Loc4),
+            5 => Some(RXLOC::Loc5),
+            6 => Some(RXLOC::Loc6),
+            7 => Some(RXLOC::Loc7),
+            8 => Some(RXLOC::Loc8),
+            9 => Some(RXLOC::Loc9),
+            10 => Some(RXLOC::Loc10),
+            11 => Some(RXLOC::Loc11),
+            12 => Some(RXLOC::Loc12),
+            13 => Some(RXLOC::Loc13),
+            14 => Some(RXLOC::Loc14),
+            15 => Some(RXLOC::Loc15),
+            16 => Some(RXLOC::Loc16),
+            17 => Some(RXLOC::Loc17),
+            18 => Some(RXLOC::Loc18),
+            19 => Some(RXLOC::Loc19),
+            20 => Some(RXLOC::Loc20),
+            21 => Some(RXLOC::Loc21),
+            22 => Some(RXLOC::Loc22),
+            23 => Some(RXLOC::Loc23),
+            24 => Some(RXLOC::Loc24),
+            25 => Some(RXLOC::Loc25),
+            26 => Some(RXLOC::Loc26),
+            27 => Some(RXLOC::Loc27),
+            28 => Some(RXLOC::Loc28),
+            29 => Some(RXLOC::Loc29),
+            30 => Some(RXLOC::Loc30),
+            31 => Some(RXLOC::Loc31),
             _ => None,
         }
     }
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == RXLOC_A::LOC0
+        *self == RXLOC::Loc0
     }
     #[doc = "Location 1"]
     #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == RXLOC_A::LOC1
+        *self == RXLOC::Loc1
     }
     #[doc = "Location 2"]
     #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == RXLOC_A::LOC2
+        *self == RXLOC::Loc2
     }
     #[doc = "Location 3"]
     #[inline(always)]
     pub fn is_loc3(&self) -> bool {
-        *self == RXLOC_A::LOC3
+        *self == RXLOC::Loc3
     }
     #[doc = "Location 4"]
     #[inline(always)]
     pub fn is_loc4(&self) -> bool {
-        *self == RXLOC_A::LOC4
+        *self == RXLOC::Loc4
     }
     #[doc = "Location 5"]
     #[inline(always)]
     pub fn is_loc5(&self) -> bool {
-        *self == RXLOC_A::LOC5
+        *self == RXLOC::Loc5
     }
     #[doc = "Location 6"]
     #[inline(always)]
     pub fn is_loc6(&self) -> bool {
-        *self == RXLOC_A::LOC6
+        *self == RXLOC::Loc6
     }
     #[doc = "Location 7"]
     #[inline(always)]
     pub fn is_loc7(&self) -> bool {
-        *self == RXLOC_A::LOC7
+        *self == RXLOC::Loc7
     }
     #[doc = "Location 8"]
     #[inline(always)]
     pub fn is_loc8(&self) -> bool {
-        *self == RXLOC_A::LOC8
+        *self == RXLOC::Loc8
     }
     #[doc = "Location 9"]
     #[inline(always)]
     pub fn is_loc9(&self) -> bool {
-        *self == RXLOC_A::LOC9
+        *self == RXLOC::Loc9
     }
     #[doc = "Location 10"]
     #[inline(always)]
     pub fn is_loc10(&self) -> bool {
-        *self == RXLOC_A::LOC10
+        *self == RXLOC::Loc10
     }
     #[doc = "Location 11"]
     #[inline(always)]
     pub fn is_loc11(&self) -> bool {
-        *self == RXLOC_A::LOC11
+        *self == RXLOC::Loc11
     }
     #[doc = "Location 12"]
     #[inline(always)]
     pub fn is_loc12(&self) -> bool {
-        *self == RXLOC_A::LOC12
+        *self == RXLOC::Loc12
     }
     #[doc = "Location 13"]
     #[inline(always)]
     pub fn is_loc13(&self) -> bool {
-        *self == RXLOC_A::LOC13
+        *self == RXLOC::Loc13
     }
     #[doc = "Location 14"]
     #[inline(always)]
     pub fn is_loc14(&self) -> bool {
-        *self == RXLOC_A::LOC14
+        *self == RXLOC::Loc14
     }
     #[doc = "Location 15"]
     #[inline(always)]
     pub fn is_loc15(&self) -> bool {
-        *self == RXLOC_A::LOC15
+        *self == RXLOC::Loc15
     }
     #[doc = "Location 16"]
     #[inline(always)]
     pub fn is_loc16(&self) -> bool {
-        *self == RXLOC_A::LOC16
+        *self == RXLOC::Loc16
     }
     #[doc = "Location 17"]
     #[inline(always)]
     pub fn is_loc17(&self) -> bool {
-        *self == RXLOC_A::LOC17
+        *self == RXLOC::Loc17
     }
     #[doc = "Location 18"]
     #[inline(always)]
     pub fn is_loc18(&self) -> bool {
-        *self == RXLOC_A::LOC18
+        *self == RXLOC::Loc18
     }
     #[doc = "Location 19"]
     #[inline(always)]
     pub fn is_loc19(&self) -> bool {
-        *self == RXLOC_A::LOC19
+        *self == RXLOC::Loc19
     }
     #[doc = "Location 20"]
     #[inline(always)]
     pub fn is_loc20(&self) -> bool {
-        *self == RXLOC_A::LOC20
+        *self == RXLOC::Loc20
     }
     #[doc = "Location 21"]
     #[inline(always)]
     pub fn is_loc21(&self) -> bool {
-        *self == RXLOC_A::LOC21
+        *self == RXLOC::Loc21
     }
     #[doc = "Location 22"]
     #[inline(always)]
     pub fn is_loc22(&self) -> bool {
-        *self == RXLOC_A::LOC22
+        *self == RXLOC::Loc22
     }
     #[doc = "Location 23"]
     #[inline(always)]
     pub fn is_loc23(&self) -> bool {
-        *self == RXLOC_A::LOC23
+        *self == RXLOC::Loc23
     }
     #[doc = "Location 24"]
     #[inline(always)]
     pub fn is_loc24(&self) -> bool {
-        *self == RXLOC_A::LOC24
+        *self == RXLOC::Loc24
     }
     #[doc = "Location 25"]
     #[inline(always)]
     pub fn is_loc25(&self) -> bool {
-        *self == RXLOC_A::LOC25
+        *self == RXLOC::Loc25
     }
     #[doc = "Location 26"]
     #[inline(always)]
     pub fn is_loc26(&self) -> bool {
-        *self == RXLOC_A::LOC26
+        *self == RXLOC::Loc26
     }
     #[doc = "Location 27"]
     #[inline(always)]
     pub fn is_loc27(&self) -> bool {
-        *self == RXLOC_A::LOC27
+        *self == RXLOC::Loc27
     }
     #[doc = "Location 28"]
     #[inline(always)]
     pub fn is_loc28(&self) -> bool {
-        *self == RXLOC_A::LOC28
+        *self == RXLOC::Loc28
     }
     #[doc = "Location 29"]
     #[inline(always)]
     pub fn is_loc29(&self) -> bool {
-        *self == RXLOC_A::LOC29
+        *self == RXLOC::Loc29
     }
     #[doc = "Location 30"]
     #[inline(always)]
     pub fn is_loc30(&self) -> bool {
-        *self == RXLOC_A::LOC30
+        *self == RXLOC::Loc30
     }
     #[doc = "Location 31"]
     #[inline(always)]
     pub fn is_loc31(&self) -> bool {
-        *self == RXLOC_A::LOC31
+        *self == RXLOC::Loc31
     }
 }
 #[doc = "Field `RXLOC` writer - I/O Location"]
-pub type RXLOC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, RXLOC_A>;
-impl<'a, REG, const O: u8> RXLOC_W<'a, REG, O>
+pub type RXLOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, RXLOC>;
+impl<'a, REG> RXLOC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -293,448 +293,448 @@ where
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC0)
+        self.variant(RXLOC::Loc0)
     }
     #[doc = "Location 1"]
     #[inline(always)]
     pub fn loc1(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC1)
+        self.variant(RXLOC::Loc1)
     }
     #[doc = "Location 2"]
     #[inline(always)]
     pub fn loc2(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC2)
+        self.variant(RXLOC::Loc2)
     }
     #[doc = "Location 3"]
     #[inline(always)]
     pub fn loc3(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC3)
+        self.variant(RXLOC::Loc3)
     }
     #[doc = "Location 4"]
     #[inline(always)]
     pub fn loc4(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC4)
+        self.variant(RXLOC::Loc4)
     }
     #[doc = "Location 5"]
     #[inline(always)]
     pub fn loc5(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC5)
+        self.variant(RXLOC::Loc5)
     }
     #[doc = "Location 6"]
     #[inline(always)]
     pub fn loc6(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC6)
+        self.variant(RXLOC::Loc6)
     }
     #[doc = "Location 7"]
     #[inline(always)]
     pub fn loc7(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC7)
+        self.variant(RXLOC::Loc7)
     }
     #[doc = "Location 8"]
     #[inline(always)]
     pub fn loc8(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC8)
+        self.variant(RXLOC::Loc8)
     }
     #[doc = "Location 9"]
     #[inline(always)]
     pub fn loc9(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC9)
+        self.variant(RXLOC::Loc9)
     }
     #[doc = "Location 10"]
     #[inline(always)]
     pub fn loc10(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC10)
+        self.variant(RXLOC::Loc10)
     }
     #[doc = "Location 11"]
     #[inline(always)]
     pub fn loc11(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC11)
+        self.variant(RXLOC::Loc11)
     }
     #[doc = "Location 12"]
     #[inline(always)]
     pub fn loc12(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC12)
+        self.variant(RXLOC::Loc12)
     }
     #[doc = "Location 13"]
     #[inline(always)]
     pub fn loc13(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC13)
+        self.variant(RXLOC::Loc13)
     }
     #[doc = "Location 14"]
     #[inline(always)]
     pub fn loc14(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC14)
+        self.variant(RXLOC::Loc14)
     }
     #[doc = "Location 15"]
     #[inline(always)]
     pub fn loc15(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC15)
+        self.variant(RXLOC::Loc15)
     }
     #[doc = "Location 16"]
     #[inline(always)]
     pub fn loc16(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC16)
+        self.variant(RXLOC::Loc16)
     }
     #[doc = "Location 17"]
     #[inline(always)]
     pub fn loc17(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC17)
+        self.variant(RXLOC::Loc17)
     }
     #[doc = "Location 18"]
     #[inline(always)]
     pub fn loc18(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC18)
+        self.variant(RXLOC::Loc18)
     }
     #[doc = "Location 19"]
     #[inline(always)]
     pub fn loc19(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC19)
+        self.variant(RXLOC::Loc19)
     }
     #[doc = "Location 20"]
     #[inline(always)]
     pub fn loc20(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC20)
+        self.variant(RXLOC::Loc20)
     }
     #[doc = "Location 21"]
     #[inline(always)]
     pub fn loc21(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC21)
+        self.variant(RXLOC::Loc21)
     }
     #[doc = "Location 22"]
     #[inline(always)]
     pub fn loc22(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC22)
+        self.variant(RXLOC::Loc22)
     }
     #[doc = "Location 23"]
     #[inline(always)]
     pub fn loc23(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC23)
+        self.variant(RXLOC::Loc23)
     }
     #[doc = "Location 24"]
     #[inline(always)]
     pub fn loc24(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC24)
+        self.variant(RXLOC::Loc24)
     }
     #[doc = "Location 25"]
     #[inline(always)]
     pub fn loc25(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC25)
+        self.variant(RXLOC::Loc25)
     }
     #[doc = "Location 26"]
     #[inline(always)]
     pub fn loc26(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC26)
+        self.variant(RXLOC::Loc26)
     }
     #[doc = "Location 27"]
     #[inline(always)]
     pub fn loc27(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC27)
+        self.variant(RXLOC::Loc27)
     }
     #[doc = "Location 28"]
     #[inline(always)]
     pub fn loc28(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC28)
+        self.variant(RXLOC::Loc28)
     }
     #[doc = "Location 29"]
     #[inline(always)]
     pub fn loc29(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC29)
+        self.variant(RXLOC::Loc29)
     }
     #[doc = "Location 30"]
     #[inline(always)]
     pub fn loc30(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC30)
+        self.variant(RXLOC::Loc30)
     }
     #[doc = "Location 31"]
     #[inline(always)]
     pub fn loc31(self) -> &'a mut crate::W<REG> {
-        self.variant(RXLOC_A::LOC31)
+        self.variant(RXLOC::Loc31)
     }
 }
 #[doc = "Field `TXLOC` reader - I/O Location"]
-pub type TXLOC_R = crate::FieldReader<TXLOC_A>;
+pub type TXLOC_R = crate::FieldReader<TXLOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TXLOC_A {
+pub enum TXLOC {
     #[doc = "0: Location 0"]
-    LOC0 = 0,
+    Loc0 = 0,
     #[doc = "1: Location 1"]
-    LOC1 = 1,
+    Loc1 = 1,
     #[doc = "2: Location 2"]
-    LOC2 = 2,
+    Loc2 = 2,
     #[doc = "3: Location 3"]
-    LOC3 = 3,
+    Loc3 = 3,
     #[doc = "4: Location 4"]
-    LOC4 = 4,
+    Loc4 = 4,
     #[doc = "5: Location 5"]
-    LOC5 = 5,
+    Loc5 = 5,
     #[doc = "6: Location 6"]
-    LOC6 = 6,
+    Loc6 = 6,
     #[doc = "7: Location 7"]
-    LOC7 = 7,
+    Loc7 = 7,
     #[doc = "8: Location 8"]
-    LOC8 = 8,
+    Loc8 = 8,
     #[doc = "9: Location 9"]
-    LOC9 = 9,
+    Loc9 = 9,
     #[doc = "10: Location 10"]
-    LOC10 = 10,
+    Loc10 = 10,
     #[doc = "11: Location 11"]
-    LOC11 = 11,
+    Loc11 = 11,
     #[doc = "12: Location 12"]
-    LOC12 = 12,
+    Loc12 = 12,
     #[doc = "13: Location 13"]
-    LOC13 = 13,
+    Loc13 = 13,
     #[doc = "14: Location 14"]
-    LOC14 = 14,
+    Loc14 = 14,
     #[doc = "15: Location 15"]
-    LOC15 = 15,
+    Loc15 = 15,
     #[doc = "16: Location 16"]
-    LOC16 = 16,
+    Loc16 = 16,
     #[doc = "17: Location 17"]
-    LOC17 = 17,
+    Loc17 = 17,
     #[doc = "18: Location 18"]
-    LOC18 = 18,
+    Loc18 = 18,
     #[doc = "19: Location 19"]
-    LOC19 = 19,
+    Loc19 = 19,
     #[doc = "20: Location 20"]
-    LOC20 = 20,
+    Loc20 = 20,
     #[doc = "21: Location 21"]
-    LOC21 = 21,
+    Loc21 = 21,
     #[doc = "22: Location 22"]
-    LOC22 = 22,
+    Loc22 = 22,
     #[doc = "23: Location 23"]
-    LOC23 = 23,
+    Loc23 = 23,
     #[doc = "24: Location 24"]
-    LOC24 = 24,
+    Loc24 = 24,
     #[doc = "25: Location 25"]
-    LOC25 = 25,
+    Loc25 = 25,
     #[doc = "26: Location 26"]
-    LOC26 = 26,
+    Loc26 = 26,
     #[doc = "27: Location 27"]
-    LOC27 = 27,
+    Loc27 = 27,
     #[doc = "28: Location 28"]
-    LOC28 = 28,
+    Loc28 = 28,
     #[doc = "29: Location 29"]
-    LOC29 = 29,
+    Loc29 = 29,
     #[doc = "30: Location 30"]
-    LOC30 = 30,
+    Loc30 = 30,
     #[doc = "31: Location 31"]
-    LOC31 = 31,
+    Loc31 = 31,
 }
-impl From<TXLOC_A> for u8 {
+impl From<TXLOC> for u8 {
     #[inline(always)]
-    fn from(variant: TXLOC_A) -> Self {
+    fn from(variant: TXLOC) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for TXLOC_A {
+impl crate::FieldSpec for TXLOC {
     type Ux = u8;
 }
 impl TXLOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<TXLOC_A> {
+    pub const fn variant(&self) -> Option<TXLOC> {
         match self.bits {
-            0 => Some(TXLOC_A::LOC0),
-            1 => Some(TXLOC_A::LOC1),
-            2 => Some(TXLOC_A::LOC2),
-            3 => Some(TXLOC_A::LOC3),
-            4 => Some(TXLOC_A::LOC4),
-            5 => Some(TXLOC_A::LOC5),
-            6 => Some(TXLOC_A::LOC6),
-            7 => Some(TXLOC_A::LOC7),
-            8 => Some(TXLOC_A::LOC8),
-            9 => Some(TXLOC_A::LOC9),
-            10 => Some(TXLOC_A::LOC10),
-            11 => Some(TXLOC_A::LOC11),
-            12 => Some(TXLOC_A::LOC12),
-            13 => Some(TXLOC_A::LOC13),
-            14 => Some(TXLOC_A::LOC14),
-            15 => Some(TXLOC_A::LOC15),
-            16 => Some(TXLOC_A::LOC16),
-            17 => Some(TXLOC_A::LOC17),
-            18 => Some(TXLOC_A::LOC18),
-            19 => Some(TXLOC_A::LOC19),
-            20 => Some(TXLOC_A::LOC20),
-            21 => Some(TXLOC_A::LOC21),
-            22 => Some(TXLOC_A::LOC22),
-            23 => Some(TXLOC_A::LOC23),
-            24 => Some(TXLOC_A::LOC24),
-            25 => Some(TXLOC_A::LOC25),
-            26 => Some(TXLOC_A::LOC26),
-            27 => Some(TXLOC_A::LOC27),
-            28 => Some(TXLOC_A::LOC28),
-            29 => Some(TXLOC_A::LOC29),
-            30 => Some(TXLOC_A::LOC30),
-            31 => Some(TXLOC_A::LOC31),
+            0 => Some(TXLOC::Loc0),
+            1 => Some(TXLOC::Loc1),
+            2 => Some(TXLOC::Loc2),
+            3 => Some(TXLOC::Loc3),
+            4 => Some(TXLOC::Loc4),
+            5 => Some(TXLOC::Loc5),
+            6 => Some(TXLOC::Loc6),
+            7 => Some(TXLOC::Loc7),
+            8 => Some(TXLOC::Loc8),
+            9 => Some(TXLOC::Loc9),
+            10 => Some(TXLOC::Loc10),
+            11 => Some(TXLOC::Loc11),
+            12 => Some(TXLOC::Loc12),
+            13 => Some(TXLOC::Loc13),
+            14 => Some(TXLOC::Loc14),
+            15 => Some(TXLOC::Loc15),
+            16 => Some(TXLOC::Loc16),
+            17 => Some(TXLOC::Loc17),
+            18 => Some(TXLOC::Loc18),
+            19 => Some(TXLOC::Loc19),
+            20 => Some(TXLOC::Loc20),
+            21 => Some(TXLOC::Loc21),
+            22 => Some(TXLOC::Loc22),
+            23 => Some(TXLOC::Loc23),
+            24 => Some(TXLOC::Loc24),
+            25 => Some(TXLOC::Loc25),
+            26 => Some(TXLOC::Loc26),
+            27 => Some(TXLOC::Loc27),
+            28 => Some(TXLOC::Loc28),
+            29 => Some(TXLOC::Loc29),
+            30 => Some(TXLOC::Loc30),
+            31 => Some(TXLOC::Loc31),
             _ => None,
         }
     }
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == TXLOC_A::LOC0
+        *self == TXLOC::Loc0
     }
     #[doc = "Location 1"]
     #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == TXLOC_A::LOC1
+        *self == TXLOC::Loc1
     }
     #[doc = "Location 2"]
     #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == TXLOC_A::LOC2
+        *self == TXLOC::Loc2
     }
     #[doc = "Location 3"]
     #[inline(always)]
     pub fn is_loc3(&self) -> bool {
-        *self == TXLOC_A::LOC3
+        *self == TXLOC::Loc3
     }
     #[doc = "Location 4"]
     #[inline(always)]
     pub fn is_loc4(&self) -> bool {
-        *self == TXLOC_A::LOC4
+        *self == TXLOC::Loc4
     }
     #[doc = "Location 5"]
     #[inline(always)]
     pub fn is_loc5(&self) -> bool {
-        *self == TXLOC_A::LOC5
+        *self == TXLOC::Loc5
     }
     #[doc = "Location 6"]
     #[inline(always)]
     pub fn is_loc6(&self) -> bool {
-        *self == TXLOC_A::LOC6
+        *self == TXLOC::Loc6
     }
     #[doc = "Location 7"]
     #[inline(always)]
     pub fn is_loc7(&self) -> bool {
-        *self == TXLOC_A::LOC7
+        *self == TXLOC::Loc7
     }
     #[doc = "Location 8"]
     #[inline(always)]
     pub fn is_loc8(&self) -> bool {
-        *self == TXLOC_A::LOC8
+        *self == TXLOC::Loc8
     }
     #[doc = "Location 9"]
     #[inline(always)]
     pub fn is_loc9(&self) -> bool {
-        *self == TXLOC_A::LOC9
+        *self == TXLOC::Loc9
     }
     #[doc = "Location 10"]
     #[inline(always)]
     pub fn is_loc10(&self) -> bool {
-        *self == TXLOC_A::LOC10
+        *self == TXLOC::Loc10
     }
     #[doc = "Location 11"]
     #[inline(always)]
     pub fn is_loc11(&self) -> bool {
-        *self == TXLOC_A::LOC11
+        *self == TXLOC::Loc11
     }
     #[doc = "Location 12"]
     #[inline(always)]
     pub fn is_loc12(&self) -> bool {
-        *self == TXLOC_A::LOC12
+        *self == TXLOC::Loc12
     }
     #[doc = "Location 13"]
     #[inline(always)]
     pub fn is_loc13(&self) -> bool {
-        *self == TXLOC_A::LOC13
+        *self == TXLOC::Loc13
     }
     #[doc = "Location 14"]
     #[inline(always)]
     pub fn is_loc14(&self) -> bool {
-        *self == TXLOC_A::LOC14
+        *self == TXLOC::Loc14
     }
     #[doc = "Location 15"]
     #[inline(always)]
     pub fn is_loc15(&self) -> bool {
-        *self == TXLOC_A::LOC15
+        *self == TXLOC::Loc15
     }
     #[doc = "Location 16"]
     #[inline(always)]
     pub fn is_loc16(&self) -> bool {
-        *self == TXLOC_A::LOC16
+        *self == TXLOC::Loc16
     }
     #[doc = "Location 17"]
     #[inline(always)]
     pub fn is_loc17(&self) -> bool {
-        *self == TXLOC_A::LOC17
+        *self == TXLOC::Loc17
     }
     #[doc = "Location 18"]
     #[inline(always)]
     pub fn is_loc18(&self) -> bool {
-        *self == TXLOC_A::LOC18
+        *self == TXLOC::Loc18
     }
     #[doc = "Location 19"]
     #[inline(always)]
     pub fn is_loc19(&self) -> bool {
-        *self == TXLOC_A::LOC19
+        *self == TXLOC::Loc19
     }
     #[doc = "Location 20"]
     #[inline(always)]
     pub fn is_loc20(&self) -> bool {
-        *self == TXLOC_A::LOC20
+        *self == TXLOC::Loc20
     }
     #[doc = "Location 21"]
     #[inline(always)]
     pub fn is_loc21(&self) -> bool {
-        *self == TXLOC_A::LOC21
+        *self == TXLOC::Loc21
     }
     #[doc = "Location 22"]
     #[inline(always)]
     pub fn is_loc22(&self) -> bool {
-        *self == TXLOC_A::LOC22
+        *self == TXLOC::Loc22
     }
     #[doc = "Location 23"]
     #[inline(always)]
     pub fn is_loc23(&self) -> bool {
-        *self == TXLOC_A::LOC23
+        *self == TXLOC::Loc23
     }
     #[doc = "Location 24"]
     #[inline(always)]
     pub fn is_loc24(&self) -> bool {
-        *self == TXLOC_A::LOC24
+        *self == TXLOC::Loc24
     }
     #[doc = "Location 25"]
     #[inline(always)]
     pub fn is_loc25(&self) -> bool {
-        *self == TXLOC_A::LOC25
+        *self == TXLOC::Loc25
     }
     #[doc = "Location 26"]
     #[inline(always)]
     pub fn is_loc26(&self) -> bool {
-        *self == TXLOC_A::LOC26
+        *self == TXLOC::Loc26
     }
     #[doc = "Location 27"]
     #[inline(always)]
     pub fn is_loc27(&self) -> bool {
-        *self == TXLOC_A::LOC27
+        *self == TXLOC::Loc27
     }
     #[doc = "Location 28"]
     #[inline(always)]
     pub fn is_loc28(&self) -> bool {
-        *self == TXLOC_A::LOC28
+        *self == TXLOC::Loc28
     }
     #[doc = "Location 29"]
     #[inline(always)]
     pub fn is_loc29(&self) -> bool {
-        *self == TXLOC_A::LOC29
+        *self == TXLOC::Loc29
     }
     #[doc = "Location 30"]
     #[inline(always)]
     pub fn is_loc30(&self) -> bool {
-        *self == TXLOC_A::LOC30
+        *self == TXLOC::Loc30
     }
     #[doc = "Location 31"]
     #[inline(always)]
     pub fn is_loc31(&self) -> bool {
-        *self == TXLOC_A::LOC31
+        *self == TXLOC::Loc31
     }
 }
 #[doc = "Field `TXLOC` writer - I/O Location"]
-pub type TXLOC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, TXLOC_A>;
-impl<'a, REG, const O: u8> TXLOC_W<'a, REG, O>
+pub type TXLOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, TXLOC>;
+impl<'a, REG> TXLOC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -742,448 +742,448 @@ where
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC0)
+        self.variant(TXLOC::Loc0)
     }
     #[doc = "Location 1"]
     #[inline(always)]
     pub fn loc1(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC1)
+        self.variant(TXLOC::Loc1)
     }
     #[doc = "Location 2"]
     #[inline(always)]
     pub fn loc2(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC2)
+        self.variant(TXLOC::Loc2)
     }
     #[doc = "Location 3"]
     #[inline(always)]
     pub fn loc3(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC3)
+        self.variant(TXLOC::Loc3)
     }
     #[doc = "Location 4"]
     #[inline(always)]
     pub fn loc4(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC4)
+        self.variant(TXLOC::Loc4)
     }
     #[doc = "Location 5"]
     #[inline(always)]
     pub fn loc5(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC5)
+        self.variant(TXLOC::Loc5)
     }
     #[doc = "Location 6"]
     #[inline(always)]
     pub fn loc6(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC6)
+        self.variant(TXLOC::Loc6)
     }
     #[doc = "Location 7"]
     #[inline(always)]
     pub fn loc7(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC7)
+        self.variant(TXLOC::Loc7)
     }
     #[doc = "Location 8"]
     #[inline(always)]
     pub fn loc8(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC8)
+        self.variant(TXLOC::Loc8)
     }
     #[doc = "Location 9"]
     #[inline(always)]
     pub fn loc9(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC9)
+        self.variant(TXLOC::Loc9)
     }
     #[doc = "Location 10"]
     #[inline(always)]
     pub fn loc10(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC10)
+        self.variant(TXLOC::Loc10)
     }
     #[doc = "Location 11"]
     #[inline(always)]
     pub fn loc11(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC11)
+        self.variant(TXLOC::Loc11)
     }
     #[doc = "Location 12"]
     #[inline(always)]
     pub fn loc12(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC12)
+        self.variant(TXLOC::Loc12)
     }
     #[doc = "Location 13"]
     #[inline(always)]
     pub fn loc13(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC13)
+        self.variant(TXLOC::Loc13)
     }
     #[doc = "Location 14"]
     #[inline(always)]
     pub fn loc14(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC14)
+        self.variant(TXLOC::Loc14)
     }
     #[doc = "Location 15"]
     #[inline(always)]
     pub fn loc15(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC15)
+        self.variant(TXLOC::Loc15)
     }
     #[doc = "Location 16"]
     #[inline(always)]
     pub fn loc16(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC16)
+        self.variant(TXLOC::Loc16)
     }
     #[doc = "Location 17"]
     #[inline(always)]
     pub fn loc17(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC17)
+        self.variant(TXLOC::Loc17)
     }
     #[doc = "Location 18"]
     #[inline(always)]
     pub fn loc18(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC18)
+        self.variant(TXLOC::Loc18)
     }
     #[doc = "Location 19"]
     #[inline(always)]
     pub fn loc19(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC19)
+        self.variant(TXLOC::Loc19)
     }
     #[doc = "Location 20"]
     #[inline(always)]
     pub fn loc20(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC20)
+        self.variant(TXLOC::Loc20)
     }
     #[doc = "Location 21"]
     #[inline(always)]
     pub fn loc21(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC21)
+        self.variant(TXLOC::Loc21)
     }
     #[doc = "Location 22"]
     #[inline(always)]
     pub fn loc22(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC22)
+        self.variant(TXLOC::Loc22)
     }
     #[doc = "Location 23"]
     #[inline(always)]
     pub fn loc23(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC23)
+        self.variant(TXLOC::Loc23)
     }
     #[doc = "Location 24"]
     #[inline(always)]
     pub fn loc24(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC24)
+        self.variant(TXLOC::Loc24)
     }
     #[doc = "Location 25"]
     #[inline(always)]
     pub fn loc25(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC25)
+        self.variant(TXLOC::Loc25)
     }
     #[doc = "Location 26"]
     #[inline(always)]
     pub fn loc26(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC26)
+        self.variant(TXLOC::Loc26)
     }
     #[doc = "Location 27"]
     #[inline(always)]
     pub fn loc27(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC27)
+        self.variant(TXLOC::Loc27)
     }
     #[doc = "Location 28"]
     #[inline(always)]
     pub fn loc28(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC28)
+        self.variant(TXLOC::Loc28)
     }
     #[doc = "Location 29"]
     #[inline(always)]
     pub fn loc29(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC29)
+        self.variant(TXLOC::Loc29)
     }
     #[doc = "Location 30"]
     #[inline(always)]
     pub fn loc30(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC30)
+        self.variant(TXLOC::Loc30)
     }
     #[doc = "Location 31"]
     #[inline(always)]
     pub fn loc31(self) -> &'a mut crate::W<REG> {
-        self.variant(TXLOC_A::LOC31)
+        self.variant(TXLOC::Loc31)
     }
 }
 #[doc = "Field `CSLOC` reader - I/O Location"]
-pub type CSLOC_R = crate::FieldReader<CSLOC_A>;
+pub type CSLOC_R = crate::FieldReader<CSLOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CSLOC_A {
+pub enum CSLOC {
     #[doc = "0: Location 0"]
-    LOC0 = 0,
+    Loc0 = 0,
     #[doc = "1: Location 1"]
-    LOC1 = 1,
+    Loc1 = 1,
     #[doc = "2: Location 2"]
-    LOC2 = 2,
+    Loc2 = 2,
     #[doc = "3: Location 3"]
-    LOC3 = 3,
+    Loc3 = 3,
     #[doc = "4: Location 4"]
-    LOC4 = 4,
+    Loc4 = 4,
     #[doc = "5: Location 5"]
-    LOC5 = 5,
+    Loc5 = 5,
     #[doc = "6: Location 6"]
-    LOC6 = 6,
+    Loc6 = 6,
     #[doc = "7: Location 7"]
-    LOC7 = 7,
+    Loc7 = 7,
     #[doc = "8: Location 8"]
-    LOC8 = 8,
+    Loc8 = 8,
     #[doc = "9: Location 9"]
-    LOC9 = 9,
+    Loc9 = 9,
     #[doc = "10: Location 10"]
-    LOC10 = 10,
+    Loc10 = 10,
     #[doc = "11: Location 11"]
-    LOC11 = 11,
+    Loc11 = 11,
     #[doc = "12: Location 12"]
-    LOC12 = 12,
+    Loc12 = 12,
     #[doc = "13: Location 13"]
-    LOC13 = 13,
+    Loc13 = 13,
     #[doc = "14: Location 14"]
-    LOC14 = 14,
+    Loc14 = 14,
     #[doc = "15: Location 15"]
-    LOC15 = 15,
+    Loc15 = 15,
     #[doc = "16: Location 16"]
-    LOC16 = 16,
+    Loc16 = 16,
     #[doc = "17: Location 17"]
-    LOC17 = 17,
+    Loc17 = 17,
     #[doc = "18: Location 18"]
-    LOC18 = 18,
+    Loc18 = 18,
     #[doc = "19: Location 19"]
-    LOC19 = 19,
+    Loc19 = 19,
     #[doc = "20: Location 20"]
-    LOC20 = 20,
+    Loc20 = 20,
     #[doc = "21: Location 21"]
-    LOC21 = 21,
+    Loc21 = 21,
     #[doc = "22: Location 22"]
-    LOC22 = 22,
+    Loc22 = 22,
     #[doc = "23: Location 23"]
-    LOC23 = 23,
+    Loc23 = 23,
     #[doc = "24: Location 24"]
-    LOC24 = 24,
+    Loc24 = 24,
     #[doc = "25: Location 25"]
-    LOC25 = 25,
+    Loc25 = 25,
     #[doc = "26: Location 26"]
-    LOC26 = 26,
+    Loc26 = 26,
     #[doc = "27: Location 27"]
-    LOC27 = 27,
+    Loc27 = 27,
     #[doc = "28: Location 28"]
-    LOC28 = 28,
+    Loc28 = 28,
     #[doc = "29: Location 29"]
-    LOC29 = 29,
+    Loc29 = 29,
     #[doc = "30: Location 30"]
-    LOC30 = 30,
+    Loc30 = 30,
     #[doc = "31: Location 31"]
-    LOC31 = 31,
+    Loc31 = 31,
 }
-impl From<CSLOC_A> for u8 {
+impl From<CSLOC> for u8 {
     #[inline(always)]
-    fn from(variant: CSLOC_A) -> Self {
+    fn from(variant: CSLOC) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CSLOC_A {
+impl crate::FieldSpec for CSLOC {
     type Ux = u8;
 }
 impl CSLOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<CSLOC_A> {
+    pub const fn variant(&self) -> Option<CSLOC> {
         match self.bits {
-            0 => Some(CSLOC_A::LOC0),
-            1 => Some(CSLOC_A::LOC1),
-            2 => Some(CSLOC_A::LOC2),
-            3 => Some(CSLOC_A::LOC3),
-            4 => Some(CSLOC_A::LOC4),
-            5 => Some(CSLOC_A::LOC5),
-            6 => Some(CSLOC_A::LOC6),
-            7 => Some(CSLOC_A::LOC7),
-            8 => Some(CSLOC_A::LOC8),
-            9 => Some(CSLOC_A::LOC9),
-            10 => Some(CSLOC_A::LOC10),
-            11 => Some(CSLOC_A::LOC11),
-            12 => Some(CSLOC_A::LOC12),
-            13 => Some(CSLOC_A::LOC13),
-            14 => Some(CSLOC_A::LOC14),
-            15 => Some(CSLOC_A::LOC15),
-            16 => Some(CSLOC_A::LOC16),
-            17 => Some(CSLOC_A::LOC17),
-            18 => Some(CSLOC_A::LOC18),
-            19 => Some(CSLOC_A::LOC19),
-            20 => Some(CSLOC_A::LOC20),
-            21 => Some(CSLOC_A::LOC21),
-            22 => Some(CSLOC_A::LOC22),
-            23 => Some(CSLOC_A::LOC23),
-            24 => Some(CSLOC_A::LOC24),
-            25 => Some(CSLOC_A::LOC25),
-            26 => Some(CSLOC_A::LOC26),
-            27 => Some(CSLOC_A::LOC27),
-            28 => Some(CSLOC_A::LOC28),
-            29 => Some(CSLOC_A::LOC29),
-            30 => Some(CSLOC_A::LOC30),
-            31 => Some(CSLOC_A::LOC31),
+            0 => Some(CSLOC::Loc0),
+            1 => Some(CSLOC::Loc1),
+            2 => Some(CSLOC::Loc2),
+            3 => Some(CSLOC::Loc3),
+            4 => Some(CSLOC::Loc4),
+            5 => Some(CSLOC::Loc5),
+            6 => Some(CSLOC::Loc6),
+            7 => Some(CSLOC::Loc7),
+            8 => Some(CSLOC::Loc8),
+            9 => Some(CSLOC::Loc9),
+            10 => Some(CSLOC::Loc10),
+            11 => Some(CSLOC::Loc11),
+            12 => Some(CSLOC::Loc12),
+            13 => Some(CSLOC::Loc13),
+            14 => Some(CSLOC::Loc14),
+            15 => Some(CSLOC::Loc15),
+            16 => Some(CSLOC::Loc16),
+            17 => Some(CSLOC::Loc17),
+            18 => Some(CSLOC::Loc18),
+            19 => Some(CSLOC::Loc19),
+            20 => Some(CSLOC::Loc20),
+            21 => Some(CSLOC::Loc21),
+            22 => Some(CSLOC::Loc22),
+            23 => Some(CSLOC::Loc23),
+            24 => Some(CSLOC::Loc24),
+            25 => Some(CSLOC::Loc25),
+            26 => Some(CSLOC::Loc26),
+            27 => Some(CSLOC::Loc27),
+            28 => Some(CSLOC::Loc28),
+            29 => Some(CSLOC::Loc29),
+            30 => Some(CSLOC::Loc30),
+            31 => Some(CSLOC::Loc31),
             _ => None,
         }
     }
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == CSLOC_A::LOC0
+        *self == CSLOC::Loc0
     }
     #[doc = "Location 1"]
     #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == CSLOC_A::LOC1
+        *self == CSLOC::Loc1
     }
     #[doc = "Location 2"]
     #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == CSLOC_A::LOC2
+        *self == CSLOC::Loc2
     }
     #[doc = "Location 3"]
     #[inline(always)]
     pub fn is_loc3(&self) -> bool {
-        *self == CSLOC_A::LOC3
+        *self == CSLOC::Loc3
     }
     #[doc = "Location 4"]
     #[inline(always)]
     pub fn is_loc4(&self) -> bool {
-        *self == CSLOC_A::LOC4
+        *self == CSLOC::Loc4
     }
     #[doc = "Location 5"]
     #[inline(always)]
     pub fn is_loc5(&self) -> bool {
-        *self == CSLOC_A::LOC5
+        *self == CSLOC::Loc5
     }
     #[doc = "Location 6"]
     #[inline(always)]
     pub fn is_loc6(&self) -> bool {
-        *self == CSLOC_A::LOC6
+        *self == CSLOC::Loc6
     }
     #[doc = "Location 7"]
     #[inline(always)]
     pub fn is_loc7(&self) -> bool {
-        *self == CSLOC_A::LOC7
+        *self == CSLOC::Loc7
     }
     #[doc = "Location 8"]
     #[inline(always)]
     pub fn is_loc8(&self) -> bool {
-        *self == CSLOC_A::LOC8
+        *self == CSLOC::Loc8
     }
     #[doc = "Location 9"]
     #[inline(always)]
     pub fn is_loc9(&self) -> bool {
-        *self == CSLOC_A::LOC9
+        *self == CSLOC::Loc9
     }
     #[doc = "Location 10"]
     #[inline(always)]
     pub fn is_loc10(&self) -> bool {
-        *self == CSLOC_A::LOC10
+        *self == CSLOC::Loc10
     }
     #[doc = "Location 11"]
     #[inline(always)]
     pub fn is_loc11(&self) -> bool {
-        *self == CSLOC_A::LOC11
+        *self == CSLOC::Loc11
     }
     #[doc = "Location 12"]
     #[inline(always)]
     pub fn is_loc12(&self) -> bool {
-        *self == CSLOC_A::LOC12
+        *self == CSLOC::Loc12
     }
     #[doc = "Location 13"]
     #[inline(always)]
     pub fn is_loc13(&self) -> bool {
-        *self == CSLOC_A::LOC13
+        *self == CSLOC::Loc13
     }
     #[doc = "Location 14"]
     #[inline(always)]
     pub fn is_loc14(&self) -> bool {
-        *self == CSLOC_A::LOC14
+        *self == CSLOC::Loc14
     }
     #[doc = "Location 15"]
     #[inline(always)]
     pub fn is_loc15(&self) -> bool {
-        *self == CSLOC_A::LOC15
+        *self == CSLOC::Loc15
     }
     #[doc = "Location 16"]
     #[inline(always)]
     pub fn is_loc16(&self) -> bool {
-        *self == CSLOC_A::LOC16
+        *self == CSLOC::Loc16
     }
     #[doc = "Location 17"]
     #[inline(always)]
     pub fn is_loc17(&self) -> bool {
-        *self == CSLOC_A::LOC17
+        *self == CSLOC::Loc17
     }
     #[doc = "Location 18"]
     #[inline(always)]
     pub fn is_loc18(&self) -> bool {
-        *self == CSLOC_A::LOC18
+        *self == CSLOC::Loc18
     }
     #[doc = "Location 19"]
     #[inline(always)]
     pub fn is_loc19(&self) -> bool {
-        *self == CSLOC_A::LOC19
+        *self == CSLOC::Loc19
     }
     #[doc = "Location 20"]
     #[inline(always)]
     pub fn is_loc20(&self) -> bool {
-        *self == CSLOC_A::LOC20
+        *self == CSLOC::Loc20
     }
     #[doc = "Location 21"]
     #[inline(always)]
     pub fn is_loc21(&self) -> bool {
-        *self == CSLOC_A::LOC21
+        *self == CSLOC::Loc21
     }
     #[doc = "Location 22"]
     #[inline(always)]
     pub fn is_loc22(&self) -> bool {
-        *self == CSLOC_A::LOC22
+        *self == CSLOC::Loc22
     }
     #[doc = "Location 23"]
     #[inline(always)]
     pub fn is_loc23(&self) -> bool {
-        *self == CSLOC_A::LOC23
+        *self == CSLOC::Loc23
     }
     #[doc = "Location 24"]
     #[inline(always)]
     pub fn is_loc24(&self) -> bool {
-        *self == CSLOC_A::LOC24
+        *self == CSLOC::Loc24
     }
     #[doc = "Location 25"]
     #[inline(always)]
     pub fn is_loc25(&self) -> bool {
-        *self == CSLOC_A::LOC25
+        *self == CSLOC::Loc25
     }
     #[doc = "Location 26"]
     #[inline(always)]
     pub fn is_loc26(&self) -> bool {
-        *self == CSLOC_A::LOC26
+        *self == CSLOC::Loc26
     }
     #[doc = "Location 27"]
     #[inline(always)]
     pub fn is_loc27(&self) -> bool {
-        *self == CSLOC_A::LOC27
+        *self == CSLOC::Loc27
     }
     #[doc = "Location 28"]
     #[inline(always)]
     pub fn is_loc28(&self) -> bool {
-        *self == CSLOC_A::LOC28
+        *self == CSLOC::Loc28
     }
     #[doc = "Location 29"]
     #[inline(always)]
     pub fn is_loc29(&self) -> bool {
-        *self == CSLOC_A::LOC29
+        *self == CSLOC::Loc29
     }
     #[doc = "Location 30"]
     #[inline(always)]
     pub fn is_loc30(&self) -> bool {
-        *self == CSLOC_A::LOC30
+        *self == CSLOC::Loc30
     }
     #[doc = "Location 31"]
     #[inline(always)]
     pub fn is_loc31(&self) -> bool {
-        *self == CSLOC_A::LOC31
+        *self == CSLOC::Loc31
     }
 }
 #[doc = "Field `CSLOC` writer - I/O Location"]
-pub type CSLOC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, CSLOC_A>;
-impl<'a, REG, const O: u8> CSLOC_W<'a, REG, O>
+pub type CSLOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CSLOC>;
+impl<'a, REG> CSLOC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1191,448 +1191,448 @@ where
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC0)
+        self.variant(CSLOC::Loc0)
     }
     #[doc = "Location 1"]
     #[inline(always)]
     pub fn loc1(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC1)
+        self.variant(CSLOC::Loc1)
     }
     #[doc = "Location 2"]
     #[inline(always)]
     pub fn loc2(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC2)
+        self.variant(CSLOC::Loc2)
     }
     #[doc = "Location 3"]
     #[inline(always)]
     pub fn loc3(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC3)
+        self.variant(CSLOC::Loc3)
     }
     #[doc = "Location 4"]
     #[inline(always)]
     pub fn loc4(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC4)
+        self.variant(CSLOC::Loc4)
     }
     #[doc = "Location 5"]
     #[inline(always)]
     pub fn loc5(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC5)
+        self.variant(CSLOC::Loc5)
     }
     #[doc = "Location 6"]
     #[inline(always)]
     pub fn loc6(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC6)
+        self.variant(CSLOC::Loc6)
     }
     #[doc = "Location 7"]
     #[inline(always)]
     pub fn loc7(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC7)
+        self.variant(CSLOC::Loc7)
     }
     #[doc = "Location 8"]
     #[inline(always)]
     pub fn loc8(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC8)
+        self.variant(CSLOC::Loc8)
     }
     #[doc = "Location 9"]
     #[inline(always)]
     pub fn loc9(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC9)
+        self.variant(CSLOC::Loc9)
     }
     #[doc = "Location 10"]
     #[inline(always)]
     pub fn loc10(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC10)
+        self.variant(CSLOC::Loc10)
     }
     #[doc = "Location 11"]
     #[inline(always)]
     pub fn loc11(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC11)
+        self.variant(CSLOC::Loc11)
     }
     #[doc = "Location 12"]
     #[inline(always)]
     pub fn loc12(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC12)
+        self.variant(CSLOC::Loc12)
     }
     #[doc = "Location 13"]
     #[inline(always)]
     pub fn loc13(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC13)
+        self.variant(CSLOC::Loc13)
     }
     #[doc = "Location 14"]
     #[inline(always)]
     pub fn loc14(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC14)
+        self.variant(CSLOC::Loc14)
     }
     #[doc = "Location 15"]
     #[inline(always)]
     pub fn loc15(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC15)
+        self.variant(CSLOC::Loc15)
     }
     #[doc = "Location 16"]
     #[inline(always)]
     pub fn loc16(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC16)
+        self.variant(CSLOC::Loc16)
     }
     #[doc = "Location 17"]
     #[inline(always)]
     pub fn loc17(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC17)
+        self.variant(CSLOC::Loc17)
     }
     #[doc = "Location 18"]
     #[inline(always)]
     pub fn loc18(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC18)
+        self.variant(CSLOC::Loc18)
     }
     #[doc = "Location 19"]
     #[inline(always)]
     pub fn loc19(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC19)
+        self.variant(CSLOC::Loc19)
     }
     #[doc = "Location 20"]
     #[inline(always)]
     pub fn loc20(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC20)
+        self.variant(CSLOC::Loc20)
     }
     #[doc = "Location 21"]
     #[inline(always)]
     pub fn loc21(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC21)
+        self.variant(CSLOC::Loc21)
     }
     #[doc = "Location 22"]
     #[inline(always)]
     pub fn loc22(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC22)
+        self.variant(CSLOC::Loc22)
     }
     #[doc = "Location 23"]
     #[inline(always)]
     pub fn loc23(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC23)
+        self.variant(CSLOC::Loc23)
     }
     #[doc = "Location 24"]
     #[inline(always)]
     pub fn loc24(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC24)
+        self.variant(CSLOC::Loc24)
     }
     #[doc = "Location 25"]
     #[inline(always)]
     pub fn loc25(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC25)
+        self.variant(CSLOC::Loc25)
     }
     #[doc = "Location 26"]
     #[inline(always)]
     pub fn loc26(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC26)
+        self.variant(CSLOC::Loc26)
     }
     #[doc = "Location 27"]
     #[inline(always)]
     pub fn loc27(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC27)
+        self.variant(CSLOC::Loc27)
     }
     #[doc = "Location 28"]
     #[inline(always)]
     pub fn loc28(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC28)
+        self.variant(CSLOC::Loc28)
     }
     #[doc = "Location 29"]
     #[inline(always)]
     pub fn loc29(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC29)
+        self.variant(CSLOC::Loc29)
     }
     #[doc = "Location 30"]
     #[inline(always)]
     pub fn loc30(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC30)
+        self.variant(CSLOC::Loc30)
     }
     #[doc = "Location 31"]
     #[inline(always)]
     pub fn loc31(self) -> &'a mut crate::W<REG> {
-        self.variant(CSLOC_A::LOC31)
+        self.variant(CSLOC::Loc31)
     }
 }
 #[doc = "Field `CLKLOC` reader - I/O Location"]
-pub type CLKLOC_R = crate::FieldReader<CLKLOC_A>;
+pub type CLKLOC_R = crate::FieldReader<CLKLOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CLKLOC_A {
+pub enum CLKLOC {
     #[doc = "0: Location 0"]
-    LOC0 = 0,
+    Loc0 = 0,
     #[doc = "1: Location 1"]
-    LOC1 = 1,
+    Loc1 = 1,
     #[doc = "2: Location 2"]
-    LOC2 = 2,
+    Loc2 = 2,
     #[doc = "3: Location 3"]
-    LOC3 = 3,
+    Loc3 = 3,
     #[doc = "4: Location 4"]
-    LOC4 = 4,
+    Loc4 = 4,
     #[doc = "5: Location 5"]
-    LOC5 = 5,
+    Loc5 = 5,
     #[doc = "6: Location 6"]
-    LOC6 = 6,
+    Loc6 = 6,
     #[doc = "7: Location 7"]
-    LOC7 = 7,
+    Loc7 = 7,
     #[doc = "8: Location 8"]
-    LOC8 = 8,
+    Loc8 = 8,
     #[doc = "9: Location 9"]
-    LOC9 = 9,
+    Loc9 = 9,
     #[doc = "10: Location 10"]
-    LOC10 = 10,
+    Loc10 = 10,
     #[doc = "11: Location 11"]
-    LOC11 = 11,
+    Loc11 = 11,
     #[doc = "12: Location 12"]
-    LOC12 = 12,
+    Loc12 = 12,
     #[doc = "13: Location 13"]
-    LOC13 = 13,
+    Loc13 = 13,
     #[doc = "14: Location 14"]
-    LOC14 = 14,
+    Loc14 = 14,
     #[doc = "15: Location 15"]
-    LOC15 = 15,
+    Loc15 = 15,
     #[doc = "16: Location 16"]
-    LOC16 = 16,
+    Loc16 = 16,
     #[doc = "17: Location 17"]
-    LOC17 = 17,
+    Loc17 = 17,
     #[doc = "18: Location 18"]
-    LOC18 = 18,
+    Loc18 = 18,
     #[doc = "19: Location 19"]
-    LOC19 = 19,
+    Loc19 = 19,
     #[doc = "20: Location 20"]
-    LOC20 = 20,
+    Loc20 = 20,
     #[doc = "21: Location 21"]
-    LOC21 = 21,
+    Loc21 = 21,
     #[doc = "22: Location 22"]
-    LOC22 = 22,
+    Loc22 = 22,
     #[doc = "23: Location 23"]
-    LOC23 = 23,
+    Loc23 = 23,
     #[doc = "24: Location 24"]
-    LOC24 = 24,
+    Loc24 = 24,
     #[doc = "25: Location 25"]
-    LOC25 = 25,
+    Loc25 = 25,
     #[doc = "26: Location 26"]
-    LOC26 = 26,
+    Loc26 = 26,
     #[doc = "27: Location 27"]
-    LOC27 = 27,
+    Loc27 = 27,
     #[doc = "28: Location 28"]
-    LOC28 = 28,
+    Loc28 = 28,
     #[doc = "29: Location 29"]
-    LOC29 = 29,
+    Loc29 = 29,
     #[doc = "30: Location 30"]
-    LOC30 = 30,
+    Loc30 = 30,
     #[doc = "31: Location 31"]
-    LOC31 = 31,
+    Loc31 = 31,
 }
-impl From<CLKLOC_A> for u8 {
+impl From<CLKLOC> for u8 {
     #[inline(always)]
-    fn from(variant: CLKLOC_A) -> Self {
+    fn from(variant: CLKLOC) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CLKLOC_A {
+impl crate::FieldSpec for CLKLOC {
     type Ux = u8;
 }
 impl CLKLOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<CLKLOC_A> {
+    pub const fn variant(&self) -> Option<CLKLOC> {
         match self.bits {
-            0 => Some(CLKLOC_A::LOC0),
-            1 => Some(CLKLOC_A::LOC1),
-            2 => Some(CLKLOC_A::LOC2),
-            3 => Some(CLKLOC_A::LOC3),
-            4 => Some(CLKLOC_A::LOC4),
-            5 => Some(CLKLOC_A::LOC5),
-            6 => Some(CLKLOC_A::LOC6),
-            7 => Some(CLKLOC_A::LOC7),
-            8 => Some(CLKLOC_A::LOC8),
-            9 => Some(CLKLOC_A::LOC9),
-            10 => Some(CLKLOC_A::LOC10),
-            11 => Some(CLKLOC_A::LOC11),
-            12 => Some(CLKLOC_A::LOC12),
-            13 => Some(CLKLOC_A::LOC13),
-            14 => Some(CLKLOC_A::LOC14),
-            15 => Some(CLKLOC_A::LOC15),
-            16 => Some(CLKLOC_A::LOC16),
-            17 => Some(CLKLOC_A::LOC17),
-            18 => Some(CLKLOC_A::LOC18),
-            19 => Some(CLKLOC_A::LOC19),
-            20 => Some(CLKLOC_A::LOC20),
-            21 => Some(CLKLOC_A::LOC21),
-            22 => Some(CLKLOC_A::LOC22),
-            23 => Some(CLKLOC_A::LOC23),
-            24 => Some(CLKLOC_A::LOC24),
-            25 => Some(CLKLOC_A::LOC25),
-            26 => Some(CLKLOC_A::LOC26),
-            27 => Some(CLKLOC_A::LOC27),
-            28 => Some(CLKLOC_A::LOC28),
-            29 => Some(CLKLOC_A::LOC29),
-            30 => Some(CLKLOC_A::LOC30),
-            31 => Some(CLKLOC_A::LOC31),
+            0 => Some(CLKLOC::Loc0),
+            1 => Some(CLKLOC::Loc1),
+            2 => Some(CLKLOC::Loc2),
+            3 => Some(CLKLOC::Loc3),
+            4 => Some(CLKLOC::Loc4),
+            5 => Some(CLKLOC::Loc5),
+            6 => Some(CLKLOC::Loc6),
+            7 => Some(CLKLOC::Loc7),
+            8 => Some(CLKLOC::Loc8),
+            9 => Some(CLKLOC::Loc9),
+            10 => Some(CLKLOC::Loc10),
+            11 => Some(CLKLOC::Loc11),
+            12 => Some(CLKLOC::Loc12),
+            13 => Some(CLKLOC::Loc13),
+            14 => Some(CLKLOC::Loc14),
+            15 => Some(CLKLOC::Loc15),
+            16 => Some(CLKLOC::Loc16),
+            17 => Some(CLKLOC::Loc17),
+            18 => Some(CLKLOC::Loc18),
+            19 => Some(CLKLOC::Loc19),
+            20 => Some(CLKLOC::Loc20),
+            21 => Some(CLKLOC::Loc21),
+            22 => Some(CLKLOC::Loc22),
+            23 => Some(CLKLOC::Loc23),
+            24 => Some(CLKLOC::Loc24),
+            25 => Some(CLKLOC::Loc25),
+            26 => Some(CLKLOC::Loc26),
+            27 => Some(CLKLOC::Loc27),
+            28 => Some(CLKLOC::Loc28),
+            29 => Some(CLKLOC::Loc29),
+            30 => Some(CLKLOC::Loc30),
+            31 => Some(CLKLOC::Loc31),
             _ => None,
         }
     }
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn is_loc0(&self) -> bool {
-        *self == CLKLOC_A::LOC0
+        *self == CLKLOC::Loc0
     }
     #[doc = "Location 1"]
     #[inline(always)]
     pub fn is_loc1(&self) -> bool {
-        *self == CLKLOC_A::LOC1
+        *self == CLKLOC::Loc1
     }
     #[doc = "Location 2"]
     #[inline(always)]
     pub fn is_loc2(&self) -> bool {
-        *self == CLKLOC_A::LOC2
+        *self == CLKLOC::Loc2
     }
     #[doc = "Location 3"]
     #[inline(always)]
     pub fn is_loc3(&self) -> bool {
-        *self == CLKLOC_A::LOC3
+        *self == CLKLOC::Loc3
     }
     #[doc = "Location 4"]
     #[inline(always)]
     pub fn is_loc4(&self) -> bool {
-        *self == CLKLOC_A::LOC4
+        *self == CLKLOC::Loc4
     }
     #[doc = "Location 5"]
     #[inline(always)]
     pub fn is_loc5(&self) -> bool {
-        *self == CLKLOC_A::LOC5
+        *self == CLKLOC::Loc5
     }
     #[doc = "Location 6"]
     #[inline(always)]
     pub fn is_loc6(&self) -> bool {
-        *self == CLKLOC_A::LOC6
+        *self == CLKLOC::Loc6
     }
     #[doc = "Location 7"]
     #[inline(always)]
     pub fn is_loc7(&self) -> bool {
-        *self == CLKLOC_A::LOC7
+        *self == CLKLOC::Loc7
     }
     #[doc = "Location 8"]
     #[inline(always)]
     pub fn is_loc8(&self) -> bool {
-        *self == CLKLOC_A::LOC8
+        *self == CLKLOC::Loc8
     }
     #[doc = "Location 9"]
     #[inline(always)]
     pub fn is_loc9(&self) -> bool {
-        *self == CLKLOC_A::LOC9
+        *self == CLKLOC::Loc9
     }
     #[doc = "Location 10"]
     #[inline(always)]
     pub fn is_loc10(&self) -> bool {
-        *self == CLKLOC_A::LOC10
+        *self == CLKLOC::Loc10
     }
     #[doc = "Location 11"]
     #[inline(always)]
     pub fn is_loc11(&self) -> bool {
-        *self == CLKLOC_A::LOC11
+        *self == CLKLOC::Loc11
     }
     #[doc = "Location 12"]
     #[inline(always)]
     pub fn is_loc12(&self) -> bool {
-        *self == CLKLOC_A::LOC12
+        *self == CLKLOC::Loc12
     }
     #[doc = "Location 13"]
     #[inline(always)]
     pub fn is_loc13(&self) -> bool {
-        *self == CLKLOC_A::LOC13
+        *self == CLKLOC::Loc13
     }
     #[doc = "Location 14"]
     #[inline(always)]
     pub fn is_loc14(&self) -> bool {
-        *self == CLKLOC_A::LOC14
+        *self == CLKLOC::Loc14
     }
     #[doc = "Location 15"]
     #[inline(always)]
     pub fn is_loc15(&self) -> bool {
-        *self == CLKLOC_A::LOC15
+        *self == CLKLOC::Loc15
     }
     #[doc = "Location 16"]
     #[inline(always)]
     pub fn is_loc16(&self) -> bool {
-        *self == CLKLOC_A::LOC16
+        *self == CLKLOC::Loc16
     }
     #[doc = "Location 17"]
     #[inline(always)]
     pub fn is_loc17(&self) -> bool {
-        *self == CLKLOC_A::LOC17
+        *self == CLKLOC::Loc17
     }
     #[doc = "Location 18"]
     #[inline(always)]
     pub fn is_loc18(&self) -> bool {
-        *self == CLKLOC_A::LOC18
+        *self == CLKLOC::Loc18
     }
     #[doc = "Location 19"]
     #[inline(always)]
     pub fn is_loc19(&self) -> bool {
-        *self == CLKLOC_A::LOC19
+        *self == CLKLOC::Loc19
     }
     #[doc = "Location 20"]
     #[inline(always)]
     pub fn is_loc20(&self) -> bool {
-        *self == CLKLOC_A::LOC20
+        *self == CLKLOC::Loc20
     }
     #[doc = "Location 21"]
     #[inline(always)]
     pub fn is_loc21(&self) -> bool {
-        *self == CLKLOC_A::LOC21
+        *self == CLKLOC::Loc21
     }
     #[doc = "Location 22"]
     #[inline(always)]
     pub fn is_loc22(&self) -> bool {
-        *self == CLKLOC_A::LOC22
+        *self == CLKLOC::Loc22
     }
     #[doc = "Location 23"]
     #[inline(always)]
     pub fn is_loc23(&self) -> bool {
-        *self == CLKLOC_A::LOC23
+        *self == CLKLOC::Loc23
     }
     #[doc = "Location 24"]
     #[inline(always)]
     pub fn is_loc24(&self) -> bool {
-        *self == CLKLOC_A::LOC24
+        *self == CLKLOC::Loc24
     }
     #[doc = "Location 25"]
     #[inline(always)]
     pub fn is_loc25(&self) -> bool {
-        *self == CLKLOC_A::LOC25
+        *self == CLKLOC::Loc25
     }
     #[doc = "Location 26"]
     #[inline(always)]
     pub fn is_loc26(&self) -> bool {
-        *self == CLKLOC_A::LOC26
+        *self == CLKLOC::Loc26
     }
     #[doc = "Location 27"]
     #[inline(always)]
     pub fn is_loc27(&self) -> bool {
-        *self == CLKLOC_A::LOC27
+        *self == CLKLOC::Loc27
     }
     #[doc = "Location 28"]
     #[inline(always)]
     pub fn is_loc28(&self) -> bool {
-        *self == CLKLOC_A::LOC28
+        *self == CLKLOC::Loc28
     }
     #[doc = "Location 29"]
     #[inline(always)]
     pub fn is_loc29(&self) -> bool {
-        *self == CLKLOC_A::LOC29
+        *self == CLKLOC::Loc29
     }
     #[doc = "Location 30"]
     #[inline(always)]
     pub fn is_loc30(&self) -> bool {
-        *self == CLKLOC_A::LOC30
+        *self == CLKLOC::Loc30
     }
     #[doc = "Location 31"]
     #[inline(always)]
     pub fn is_loc31(&self) -> bool {
-        *self == CLKLOC_A::LOC31
+        *self == CLKLOC::Loc31
     }
 }
 #[doc = "Field `CLKLOC` writer - I/O Location"]
-pub type CLKLOC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, CLKLOC_A>;
-impl<'a, REG, const O: u8> CLKLOC_W<'a, REG, O>
+pub type CLKLOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CLKLOC>;
+impl<'a, REG> CLKLOC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1640,162 +1640,162 @@ where
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC0)
+        self.variant(CLKLOC::Loc0)
     }
     #[doc = "Location 1"]
     #[inline(always)]
     pub fn loc1(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC1)
+        self.variant(CLKLOC::Loc1)
     }
     #[doc = "Location 2"]
     #[inline(always)]
     pub fn loc2(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC2)
+        self.variant(CLKLOC::Loc2)
     }
     #[doc = "Location 3"]
     #[inline(always)]
     pub fn loc3(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC3)
+        self.variant(CLKLOC::Loc3)
     }
     #[doc = "Location 4"]
     #[inline(always)]
     pub fn loc4(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC4)
+        self.variant(CLKLOC::Loc4)
     }
     #[doc = "Location 5"]
     #[inline(always)]
     pub fn loc5(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC5)
+        self.variant(CLKLOC::Loc5)
     }
     #[doc = "Location 6"]
     #[inline(always)]
     pub fn loc6(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC6)
+        self.variant(CLKLOC::Loc6)
     }
     #[doc = "Location 7"]
     #[inline(always)]
     pub fn loc7(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC7)
+        self.variant(CLKLOC::Loc7)
     }
     #[doc = "Location 8"]
     #[inline(always)]
     pub fn loc8(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC8)
+        self.variant(CLKLOC::Loc8)
     }
     #[doc = "Location 9"]
     #[inline(always)]
     pub fn loc9(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC9)
+        self.variant(CLKLOC::Loc9)
     }
     #[doc = "Location 10"]
     #[inline(always)]
     pub fn loc10(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC10)
+        self.variant(CLKLOC::Loc10)
     }
     #[doc = "Location 11"]
     #[inline(always)]
     pub fn loc11(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC11)
+        self.variant(CLKLOC::Loc11)
     }
     #[doc = "Location 12"]
     #[inline(always)]
     pub fn loc12(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC12)
+        self.variant(CLKLOC::Loc12)
     }
     #[doc = "Location 13"]
     #[inline(always)]
     pub fn loc13(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC13)
+        self.variant(CLKLOC::Loc13)
     }
     #[doc = "Location 14"]
     #[inline(always)]
     pub fn loc14(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC14)
+        self.variant(CLKLOC::Loc14)
     }
     #[doc = "Location 15"]
     #[inline(always)]
     pub fn loc15(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC15)
+        self.variant(CLKLOC::Loc15)
     }
     #[doc = "Location 16"]
     #[inline(always)]
     pub fn loc16(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC16)
+        self.variant(CLKLOC::Loc16)
     }
     #[doc = "Location 17"]
     #[inline(always)]
     pub fn loc17(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC17)
+        self.variant(CLKLOC::Loc17)
     }
     #[doc = "Location 18"]
     #[inline(always)]
     pub fn loc18(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC18)
+        self.variant(CLKLOC::Loc18)
     }
     #[doc = "Location 19"]
     #[inline(always)]
     pub fn loc19(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC19)
+        self.variant(CLKLOC::Loc19)
     }
     #[doc = "Location 20"]
     #[inline(always)]
     pub fn loc20(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC20)
+        self.variant(CLKLOC::Loc20)
     }
     #[doc = "Location 21"]
     #[inline(always)]
     pub fn loc21(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC21)
+        self.variant(CLKLOC::Loc21)
     }
     #[doc = "Location 22"]
     #[inline(always)]
     pub fn loc22(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC22)
+        self.variant(CLKLOC::Loc22)
     }
     #[doc = "Location 23"]
     #[inline(always)]
     pub fn loc23(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC23)
+        self.variant(CLKLOC::Loc23)
     }
     #[doc = "Location 24"]
     #[inline(always)]
     pub fn loc24(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC24)
+        self.variant(CLKLOC::Loc24)
     }
     #[doc = "Location 25"]
     #[inline(always)]
     pub fn loc25(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC25)
+        self.variant(CLKLOC::Loc25)
     }
     #[doc = "Location 26"]
     #[inline(always)]
     pub fn loc26(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC26)
+        self.variant(CLKLOC::Loc26)
     }
     #[doc = "Location 27"]
     #[inline(always)]
     pub fn loc27(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC27)
+        self.variant(CLKLOC::Loc27)
     }
     #[doc = "Location 28"]
     #[inline(always)]
     pub fn loc28(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC28)
+        self.variant(CLKLOC::Loc28)
     }
     #[doc = "Location 29"]
     #[inline(always)]
     pub fn loc29(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC29)
+        self.variant(CLKLOC::Loc29)
     }
     #[doc = "Location 30"]
     #[inline(always)]
     pub fn loc30(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC30)
+        self.variant(CLKLOC::Loc30)
     }
     #[doc = "Location 31"]
     #[inline(always)]
     pub fn loc31(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKLOC_A::LOC31)
+        self.variant(CLKLOC::Loc31)
     }
 }
 impl R {
@@ -1820,45 +1820,30 @@ impl R {
         CLKLOC_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ROUTELOC0")
-            .field("rxloc", &format_args!("{}", self.rxloc().bits()))
-            .field("txloc", &format_args!("{}", self.txloc().bits()))
-            .field("csloc", &format_args!("{}", self.csloc().bits()))
-            .field("clkloc", &format_args!("{}", self.clkloc().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<ROUTELOC0_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn rxloc(&mut self) -> RXLOC_W<ROUTELOC0_SPEC, 0> {
-        RXLOC_W::new(self)
+    pub fn rxloc(&mut self) -> RXLOC_W<ROUTELOC0rs> {
+        RXLOC_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn txloc(&mut self) -> TXLOC_W<ROUTELOC0_SPEC, 8> {
-        TXLOC_W::new(self)
+    pub fn txloc(&mut self) -> TXLOC_W<ROUTELOC0rs> {
+        TXLOC_W::new(self, 8)
     }
     #[doc = "Bits 16:21 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn csloc(&mut self) -> CSLOC_W<ROUTELOC0_SPEC, 16> {
-        CSLOC_W::new(self)
+    pub fn csloc(&mut self) -> CSLOC_W<ROUTELOC0rs> {
+        CSLOC_W::new(self, 16)
     }
     #[doc = "Bits 24:29 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn clkloc(&mut self) -> CLKLOC_W<ROUTELOC0_SPEC, 24> {
-        CLKLOC_W::new(self)
+    pub fn clkloc(&mut self) -> CLKLOC_W<ROUTELOC0rs> {
+        CLKLOC_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -1872,18 +1857,18 @@ impl W {
     }
 }
 #[doc = "I/O Routing Location Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routeloc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routeloc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ROUTELOC0_SPEC;
-impl crate::RegisterSpec for ROUTELOC0_SPEC {
+pub struct ROUTELOC0rs;
+impl crate::RegisterSpec for ROUTELOC0rs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`routeloc0::R`](R) reader structure"]
-impl crate::Readable for ROUTELOC0_SPEC {}
+impl crate::Readable for ROUTELOC0rs {}
 #[doc = "`write(|w| ..)` method takes [`routeloc0::W`](W) writer structure"]
-impl crate::Writable for ROUTELOC0_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for ROUTELOC0rs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ROUTELOC0 to value 0"]
-impl crate::Resettable for ROUTELOC0_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for ROUTELOC0rs {
+    const RESET_VALUE: u32 = 0;
 }

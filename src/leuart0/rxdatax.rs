@@ -1,5 +1,5 @@
 #[doc = "Register `RXDATAX` reader"]
-pub type R = crate::R<RXDATAX_SPEC>;
+pub type R = crate::R<RXDATAXrs>;
 #[doc = "Field `RXDATA` reader - RX Data"]
 pub type RXDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `PERR` reader - Receive Data Parity Error"]
@@ -23,19 +23,14 @@ impl R {
         FERR_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-impl core::fmt::Debug for crate::generic::Reg<RXDATAX_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "(not readable)")
-    }
-}
 #[doc = "Receive Buffer Data Extended Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdatax::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RXDATAX_SPEC;
-impl crate::RegisterSpec for RXDATAX_SPEC {
+pub struct RXDATAXrs;
+impl crate::RegisterSpec for RXDATAXrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rxdatax::R`](R) reader structure"]
-impl crate::Readable for RXDATAX_SPEC {}
+impl crate::Readable for RXDATAXrs {}
 #[doc = "`reset()` method sets RXDATAX to value 0"]
-impl crate::Resettable for RXDATAX_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for RXDATAXrs {
+    const RESET_VALUE: u32 = 0;
 }

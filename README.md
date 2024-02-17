@@ -7,7 +7,7 @@ Low-level register mappings for the [Silicon Labs EFM32PG1B](https://www.silabs.
 The code is generated automatically from a vendor-supplied SVD file, using [svd2rust](https://docs.rs/svd2rust):
 
 ```sh
-svd2rust -i EFM32PG1B.svd --impl_debug
+svd2rust -i EFM32PG1B.svd -c svd2rust.toml
 rm -rf src
 form -i lib.rs -o src/ && rm lib.rs
 cargo fmt

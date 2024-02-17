@@ -1,19 +1,19 @@
 #[doc = "Register `CTRL` reader"]
-pub type R = crate::R<CTRL_SPEC>;
+pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
-pub type W = crate::W<CTRL_SPEC>;
+pub type W = crate::W<CTRLrs>;
 #[doc = "Field `SYNCPRSSETEN` reader - Synchronization PRS Set Enable"]
 pub type SYNCPRSSETEN_R = crate::FieldReader;
 #[doc = "Field `SYNCPRSSETEN` writer - Synchronization PRS Set Enable"]
-pub type SYNCPRSSETEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SYNCPRSSETEN_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `SYNCPRSCLREN` reader - Synchronization PRS Clear Enable"]
 pub type SYNCPRSCLREN_R = crate::FieldReader;
 #[doc = "Field `SYNCPRSCLREN` writer - Synchronization PRS Clear Enable"]
-pub type SYNCPRSCLREN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SYNCPRSCLREN_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `NUMFIXED` reader - Number of Fixed Priority Channels"]
 pub type NUMFIXED_R = crate::FieldReader;
 #[doc = "Field `NUMFIXED` writer - Number of Fixed Priority Channels"]
-pub type NUMFIXED_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type NUMFIXED_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:7 - Synchronization PRS Set Enable"]
     #[inline(always)]
@@ -31,44 +31,24 @@ impl R {
         NUMFIXED_R::new(((self.bits >> 24) & 7) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CTRL")
-            .field(
-                "syncprsseten",
-                &format_args!("{}", self.syncprsseten().bits()),
-            )
-            .field(
-                "syncprsclren",
-                &format_args!("{}", self.syncprsclren().bits()),
-            )
-            .field("numfixed", &format_args!("{}", self.numfixed().bits()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<CTRL_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:7 - Synchronization PRS Set Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn syncprsseten(&mut self) -> SYNCPRSSETEN_W<CTRL_SPEC, 0> {
-        SYNCPRSSETEN_W::new(self)
+    pub fn syncprsseten(&mut self) -> SYNCPRSSETEN_W<CTRLrs> {
+        SYNCPRSSETEN_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Synchronization PRS Clear Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn syncprsclren(&mut self) -> SYNCPRSCLREN_W<CTRL_SPEC, 8> {
-        SYNCPRSCLREN_W::new(self)
+    pub fn syncprsclren(&mut self) -> SYNCPRSCLREN_W<CTRLrs> {
+        SYNCPRSCLREN_W::new(self, 8)
     }
     #[doc = "Bits 24:26 - Number of Fixed Priority Channels"]
     #[inline(always)]
     #[must_use]
-    pub fn numfixed(&mut self) -> NUMFIXED_W<CTRL_SPEC, 24> {
-        NUMFIXED_W::new(self)
+    pub fn numfixed(&mut self) -> NUMFIXED_W<CTRLrs> {
+        NUMFIXED_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -82,18 +62,18 @@ impl W {
     }
 }
 #[doc = "DMA Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CTRL_SPEC;
-impl crate::RegisterSpec for CTRL_SPEC {
+pub struct CTRLrs;
+impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ctrl::R`](R) reader structure"]
-impl crate::Readable for CTRL_SPEC {}
+impl crate::Readable for CTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
-impl crate::Writable for CTRL_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for CTRLrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0700_0000"]
-impl crate::Resettable for CTRL_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0700_0000;
+impl crate::Resettable for CTRLrs {
+    const RESET_VALUE: u32 = 0x0700_0000;
 }

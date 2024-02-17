@@ -1,131 +1,131 @@
 #[doc = "Register `PRSSEL` reader"]
-pub type R = crate::R<PRSSEL_SPEC>;
+pub type R = crate::R<PRSSELrs>;
 #[doc = "Register `PRSSEL` writer"]
-pub type W = crate::W<PRSSEL_SPEC>;
+pub type W = crate::W<PRSSELrs>;
 #[doc = "Field `PRSSTARTSEL` reader - PRS Start Select"]
-pub type PRSSTARTSEL_R = crate::FieldReader<PRSSTARTSEL_A>;
+pub type PRSSTARTSEL_R = crate::FieldReader<PRSSTARTSEL>;
 #[doc = "PRS Start Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PRSSTARTSEL_A {
+pub enum PRSSTARTSEL {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0 = 0,
+    Prsch0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1 = 1,
+    Prsch1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2 = 2,
+    Prsch2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3 = 3,
+    Prsch3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4 = 4,
+    Prsch4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5 = 5,
+    Prsch5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6 = 6,
+    Prsch6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7 = 7,
+    Prsch7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8 = 8,
+    Prsch8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9 = 9,
+    Prsch9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10 = 10,
+    Prsch10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11 = 11,
+    Prsch11 = 11,
 }
-impl From<PRSSTARTSEL_A> for u8 {
+impl From<PRSSTARTSEL> for u8 {
     #[inline(always)]
-    fn from(variant: PRSSTARTSEL_A) -> Self {
+    fn from(variant: PRSSTARTSEL) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PRSSTARTSEL_A {
+impl crate::FieldSpec for PRSSTARTSEL {
     type Ux = u8;
 }
 impl PRSSTARTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<PRSSTARTSEL_A> {
+    pub const fn variant(&self) -> Option<PRSSTARTSEL> {
         match self.bits {
-            0 => Some(PRSSTARTSEL_A::PRSCH0),
-            1 => Some(PRSSTARTSEL_A::PRSCH1),
-            2 => Some(PRSSTARTSEL_A::PRSCH2),
-            3 => Some(PRSSTARTSEL_A::PRSCH3),
-            4 => Some(PRSSTARTSEL_A::PRSCH4),
-            5 => Some(PRSSTARTSEL_A::PRSCH5),
-            6 => Some(PRSSTARTSEL_A::PRSCH6),
-            7 => Some(PRSSTARTSEL_A::PRSCH7),
-            8 => Some(PRSSTARTSEL_A::PRSCH8),
-            9 => Some(PRSSTARTSEL_A::PRSCH9),
-            10 => Some(PRSSTARTSEL_A::PRSCH10),
-            11 => Some(PRSSTARTSEL_A::PRSCH11),
+            0 => Some(PRSSTARTSEL::Prsch0),
+            1 => Some(PRSSTARTSEL::Prsch1),
+            2 => Some(PRSSTARTSEL::Prsch2),
+            3 => Some(PRSSTARTSEL::Prsch3),
+            4 => Some(PRSSTARTSEL::Prsch4),
+            5 => Some(PRSSTARTSEL::Prsch5),
+            6 => Some(PRSSTARTSEL::Prsch6),
+            7 => Some(PRSSTARTSEL::Prsch7),
+            8 => Some(PRSSTARTSEL::Prsch8),
+            9 => Some(PRSSTARTSEL::Prsch9),
+            10 => Some(PRSSTARTSEL::Prsch10),
+            11 => Some(PRSSTARTSEL::Prsch11),
             _ => None,
         }
     }
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH0
+        *self == PRSSTARTSEL::Prsch0
     }
     #[doc = "PRS Channel 1 selected as input"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH1
+        *self == PRSSTARTSEL::Prsch1
     }
     #[doc = "PRS Channel 2 selected as input"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH2
+        *self == PRSSTARTSEL::Prsch2
     }
     #[doc = "PRS Channel 3 selected as input"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH3
+        *self == PRSSTARTSEL::Prsch3
     }
     #[doc = "PRS Channel 4 selected as input"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH4
+        *self == PRSSTARTSEL::Prsch4
     }
     #[doc = "PRS Channel 5 selected as input"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH5
+        *self == PRSSTARTSEL::Prsch5
     }
     #[doc = "PRS Channel 6 selected as input"]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH6
+        *self == PRSSTARTSEL::Prsch6
     }
     #[doc = "PRS Channel 7 selected as input"]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH7
+        *self == PRSSTARTSEL::Prsch7
     }
     #[doc = "PRS Channel 8 selected as input"]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH8
+        *self == PRSSTARTSEL::Prsch8
     }
     #[doc = "PRS Channel 9 selected as input"]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH9
+        *self == PRSSTARTSEL::Prsch9
     }
     #[doc = "PRS Channel 10 selected as input"]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH10
+        *self == PRSSTARTSEL::Prsch10
     }
     #[doc = "PRS Channel 11 selected as input"]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
-        *self == PRSSTARTSEL_A::PRSCH11
+        *self == PRSSTARTSEL::Prsch11
     }
 }
 #[doc = "Field `PRSSTARTSEL` writer - PRS Start Select"]
-pub type PRSSTARTSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, PRSSTARTSEL_A>;
-impl<'a, REG, const O: u8> PRSSTARTSEL_W<'a, REG, O>
+pub type PRSSTARTSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSTARTSEL>;
+impl<'a, REG> PRSSTARTSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -133,188 +133,188 @@ where
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH0)
+        self.variant(PRSSTARTSEL::Prsch0)
     }
     #[doc = "PRS Channel 1 selected as input"]
     #[inline(always)]
     pub fn prsch1(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH1)
+        self.variant(PRSSTARTSEL::Prsch1)
     }
     #[doc = "PRS Channel 2 selected as input"]
     #[inline(always)]
     pub fn prsch2(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH2)
+        self.variant(PRSSTARTSEL::Prsch2)
     }
     #[doc = "PRS Channel 3 selected as input"]
     #[inline(always)]
     pub fn prsch3(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH3)
+        self.variant(PRSSTARTSEL::Prsch3)
     }
     #[doc = "PRS Channel 4 selected as input"]
     #[inline(always)]
     pub fn prsch4(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH4)
+        self.variant(PRSSTARTSEL::Prsch4)
     }
     #[doc = "PRS Channel 5 selected as input"]
     #[inline(always)]
     pub fn prsch5(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH5)
+        self.variant(PRSSTARTSEL::Prsch5)
     }
     #[doc = "PRS Channel 6 selected as input"]
     #[inline(always)]
     pub fn prsch6(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH6)
+        self.variant(PRSSTARTSEL::Prsch6)
     }
     #[doc = "PRS Channel 7 selected as input"]
     #[inline(always)]
     pub fn prsch7(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH7)
+        self.variant(PRSSTARTSEL::Prsch7)
     }
     #[doc = "PRS Channel 8 selected as input"]
     #[inline(always)]
     pub fn prsch8(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH8)
+        self.variant(PRSSTARTSEL::Prsch8)
     }
     #[doc = "PRS Channel 9 selected as input"]
     #[inline(always)]
     pub fn prsch9(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH9)
+        self.variant(PRSSTARTSEL::Prsch9)
     }
     #[doc = "PRS Channel 10 selected as input"]
     #[inline(always)]
     pub fn prsch10(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH10)
+        self.variant(PRSSTARTSEL::Prsch10)
     }
     #[doc = "PRS Channel 11 selected as input"]
     #[inline(always)]
     pub fn prsch11(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTSEL_A::PRSCH11)
+        self.variant(PRSSTARTSEL::Prsch11)
     }
 }
 #[doc = "Field `PRSSTOPSEL` reader - PRS Stop Select"]
-pub type PRSSTOPSEL_R = crate::FieldReader<PRSSTOPSEL_A>;
+pub type PRSSTOPSEL_R = crate::FieldReader<PRSSTOPSEL>;
 #[doc = "PRS Stop Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PRSSTOPSEL_A {
+pub enum PRSSTOPSEL {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0 = 0,
+    Prsch0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1 = 1,
+    Prsch1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2 = 2,
+    Prsch2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3 = 3,
+    Prsch3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4 = 4,
+    Prsch4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5 = 5,
+    Prsch5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6 = 6,
+    Prsch6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7 = 7,
+    Prsch7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8 = 8,
+    Prsch8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9 = 9,
+    Prsch9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10 = 10,
+    Prsch10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11 = 11,
+    Prsch11 = 11,
 }
-impl From<PRSSTOPSEL_A> for u8 {
+impl From<PRSSTOPSEL> for u8 {
     #[inline(always)]
-    fn from(variant: PRSSTOPSEL_A) -> Self {
+    fn from(variant: PRSSTOPSEL) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PRSSTOPSEL_A {
+impl crate::FieldSpec for PRSSTOPSEL {
     type Ux = u8;
 }
 impl PRSSTOPSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<PRSSTOPSEL_A> {
+    pub const fn variant(&self) -> Option<PRSSTOPSEL> {
         match self.bits {
-            0 => Some(PRSSTOPSEL_A::PRSCH0),
-            1 => Some(PRSSTOPSEL_A::PRSCH1),
-            2 => Some(PRSSTOPSEL_A::PRSCH2),
-            3 => Some(PRSSTOPSEL_A::PRSCH3),
-            4 => Some(PRSSTOPSEL_A::PRSCH4),
-            5 => Some(PRSSTOPSEL_A::PRSCH5),
-            6 => Some(PRSSTOPSEL_A::PRSCH6),
-            7 => Some(PRSSTOPSEL_A::PRSCH7),
-            8 => Some(PRSSTOPSEL_A::PRSCH8),
-            9 => Some(PRSSTOPSEL_A::PRSCH9),
-            10 => Some(PRSSTOPSEL_A::PRSCH10),
-            11 => Some(PRSSTOPSEL_A::PRSCH11),
+            0 => Some(PRSSTOPSEL::Prsch0),
+            1 => Some(PRSSTOPSEL::Prsch1),
+            2 => Some(PRSSTOPSEL::Prsch2),
+            3 => Some(PRSSTOPSEL::Prsch3),
+            4 => Some(PRSSTOPSEL::Prsch4),
+            5 => Some(PRSSTOPSEL::Prsch5),
+            6 => Some(PRSSTOPSEL::Prsch6),
+            7 => Some(PRSSTOPSEL::Prsch7),
+            8 => Some(PRSSTOPSEL::Prsch8),
+            9 => Some(PRSSTOPSEL::Prsch9),
+            10 => Some(PRSSTOPSEL::Prsch10),
+            11 => Some(PRSSTOPSEL::Prsch11),
             _ => None,
         }
     }
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH0
+        *self == PRSSTOPSEL::Prsch0
     }
     #[doc = "PRS Channel 1 selected as input"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH1
+        *self == PRSSTOPSEL::Prsch1
     }
     #[doc = "PRS Channel 2 selected as input"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH2
+        *self == PRSSTOPSEL::Prsch2
     }
     #[doc = "PRS Channel 3 selected as input"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH3
+        *self == PRSSTOPSEL::Prsch3
     }
     #[doc = "PRS Channel 4 selected as input"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH4
+        *self == PRSSTOPSEL::Prsch4
     }
     #[doc = "PRS Channel 5 selected as input"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH5
+        *self == PRSSTOPSEL::Prsch5
     }
     #[doc = "PRS Channel 6 selected as input"]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH6
+        *self == PRSSTOPSEL::Prsch6
     }
     #[doc = "PRS Channel 7 selected as input"]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH7
+        *self == PRSSTOPSEL::Prsch7
     }
     #[doc = "PRS Channel 8 selected as input"]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH8
+        *self == PRSSTOPSEL::Prsch8
     }
     #[doc = "PRS Channel 9 selected as input"]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH9
+        *self == PRSSTOPSEL::Prsch9
     }
     #[doc = "PRS Channel 10 selected as input"]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH10
+        *self == PRSSTOPSEL::Prsch10
     }
     #[doc = "PRS Channel 11 selected as input"]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
-        *self == PRSSTOPSEL_A::PRSCH11
+        *self == PRSSTOPSEL::Prsch11
     }
 }
 #[doc = "Field `PRSSTOPSEL` writer - PRS Stop Select"]
-pub type PRSSTOPSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, PRSSTOPSEL_A>;
-impl<'a, REG, const O: u8> PRSSTOPSEL_W<'a, REG, O>
+pub type PRSSTOPSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSTOPSEL>;
+impl<'a, REG> PRSSTOPSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -322,188 +322,188 @@ where
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH0)
+        self.variant(PRSSTOPSEL::Prsch0)
     }
     #[doc = "PRS Channel 1 selected as input"]
     #[inline(always)]
     pub fn prsch1(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH1)
+        self.variant(PRSSTOPSEL::Prsch1)
     }
     #[doc = "PRS Channel 2 selected as input"]
     #[inline(always)]
     pub fn prsch2(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH2)
+        self.variant(PRSSTOPSEL::Prsch2)
     }
     #[doc = "PRS Channel 3 selected as input"]
     #[inline(always)]
     pub fn prsch3(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH3)
+        self.variant(PRSSTOPSEL::Prsch3)
     }
     #[doc = "PRS Channel 4 selected as input"]
     #[inline(always)]
     pub fn prsch4(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH4)
+        self.variant(PRSSTOPSEL::Prsch4)
     }
     #[doc = "PRS Channel 5 selected as input"]
     #[inline(always)]
     pub fn prsch5(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH5)
+        self.variant(PRSSTOPSEL::Prsch5)
     }
     #[doc = "PRS Channel 6 selected as input"]
     #[inline(always)]
     pub fn prsch6(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH6)
+        self.variant(PRSSTOPSEL::Prsch6)
     }
     #[doc = "PRS Channel 7 selected as input"]
     #[inline(always)]
     pub fn prsch7(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH7)
+        self.variant(PRSSTOPSEL::Prsch7)
     }
     #[doc = "PRS Channel 8 selected as input"]
     #[inline(always)]
     pub fn prsch8(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH8)
+        self.variant(PRSSTOPSEL::Prsch8)
     }
     #[doc = "PRS Channel 9 selected as input"]
     #[inline(always)]
     pub fn prsch9(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH9)
+        self.variant(PRSSTOPSEL::Prsch9)
     }
     #[doc = "PRS Channel 10 selected as input"]
     #[inline(always)]
     pub fn prsch10(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH10)
+        self.variant(PRSSTOPSEL::Prsch10)
     }
     #[doc = "PRS Channel 11 selected as input"]
     #[inline(always)]
     pub fn prsch11(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPSEL_A::PRSCH11)
+        self.variant(PRSSTOPSEL::Prsch11)
     }
 }
 #[doc = "Field `PRSCLEARSEL` reader - PRS Clear Select"]
-pub type PRSCLEARSEL_R = crate::FieldReader<PRSCLEARSEL_A>;
+pub type PRSCLEARSEL_R = crate::FieldReader<PRSCLEARSEL>;
 #[doc = "PRS Clear Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PRSCLEARSEL_A {
+pub enum PRSCLEARSEL {
     #[doc = "0: PRS Channel 0 selected as input"]
-    PRSCH0 = 0,
+    Prsch0 = 0,
     #[doc = "1: PRS Channel 1 selected as input"]
-    PRSCH1 = 1,
+    Prsch1 = 1,
     #[doc = "2: PRS Channel 2 selected as input"]
-    PRSCH2 = 2,
+    Prsch2 = 2,
     #[doc = "3: PRS Channel 3 selected as input"]
-    PRSCH3 = 3,
+    Prsch3 = 3,
     #[doc = "4: PRS Channel 4 selected as input"]
-    PRSCH4 = 4,
+    Prsch4 = 4,
     #[doc = "5: PRS Channel 5 selected as input"]
-    PRSCH5 = 5,
+    Prsch5 = 5,
     #[doc = "6: PRS Channel 6 selected as input"]
-    PRSCH6 = 6,
+    Prsch6 = 6,
     #[doc = "7: PRS Channel 7 selected as input"]
-    PRSCH7 = 7,
+    Prsch7 = 7,
     #[doc = "8: PRS Channel 8 selected as input"]
-    PRSCH8 = 8,
+    Prsch8 = 8,
     #[doc = "9: PRS Channel 9 selected as input"]
-    PRSCH9 = 9,
+    Prsch9 = 9,
     #[doc = "10: PRS Channel 10 selected as input"]
-    PRSCH10 = 10,
+    Prsch10 = 10,
     #[doc = "11: PRS Channel 11 selected as input"]
-    PRSCH11 = 11,
+    Prsch11 = 11,
 }
-impl From<PRSCLEARSEL_A> for u8 {
+impl From<PRSCLEARSEL> for u8 {
     #[inline(always)]
-    fn from(variant: PRSCLEARSEL_A) -> Self {
+    fn from(variant: PRSCLEARSEL) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PRSCLEARSEL_A {
+impl crate::FieldSpec for PRSCLEARSEL {
     type Ux = u8;
 }
 impl PRSCLEARSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<PRSCLEARSEL_A> {
+    pub const fn variant(&self) -> Option<PRSCLEARSEL> {
         match self.bits {
-            0 => Some(PRSCLEARSEL_A::PRSCH0),
-            1 => Some(PRSCLEARSEL_A::PRSCH1),
-            2 => Some(PRSCLEARSEL_A::PRSCH2),
-            3 => Some(PRSCLEARSEL_A::PRSCH3),
-            4 => Some(PRSCLEARSEL_A::PRSCH4),
-            5 => Some(PRSCLEARSEL_A::PRSCH5),
-            6 => Some(PRSCLEARSEL_A::PRSCH6),
-            7 => Some(PRSCLEARSEL_A::PRSCH7),
-            8 => Some(PRSCLEARSEL_A::PRSCH8),
-            9 => Some(PRSCLEARSEL_A::PRSCH9),
-            10 => Some(PRSCLEARSEL_A::PRSCH10),
-            11 => Some(PRSCLEARSEL_A::PRSCH11),
+            0 => Some(PRSCLEARSEL::Prsch0),
+            1 => Some(PRSCLEARSEL::Prsch1),
+            2 => Some(PRSCLEARSEL::Prsch2),
+            3 => Some(PRSCLEARSEL::Prsch3),
+            4 => Some(PRSCLEARSEL::Prsch4),
+            5 => Some(PRSCLEARSEL::Prsch5),
+            6 => Some(PRSCLEARSEL::Prsch6),
+            7 => Some(PRSCLEARSEL::Prsch7),
+            8 => Some(PRSCLEARSEL::Prsch8),
+            9 => Some(PRSCLEARSEL::Prsch9),
+            10 => Some(PRSCLEARSEL::Prsch10),
+            11 => Some(PRSCLEARSEL::Prsch11),
             _ => None,
         }
     }
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH0
+        *self == PRSCLEARSEL::Prsch0
     }
     #[doc = "PRS Channel 1 selected as input"]
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH1
+        *self == PRSCLEARSEL::Prsch1
     }
     #[doc = "PRS Channel 2 selected as input"]
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH2
+        *self == PRSCLEARSEL::Prsch2
     }
     #[doc = "PRS Channel 3 selected as input"]
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH3
+        *self == PRSCLEARSEL::Prsch3
     }
     #[doc = "PRS Channel 4 selected as input"]
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH4
+        *self == PRSCLEARSEL::Prsch4
     }
     #[doc = "PRS Channel 5 selected as input"]
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH5
+        *self == PRSCLEARSEL::Prsch5
     }
     #[doc = "PRS Channel 6 selected as input"]
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH6
+        *self == PRSCLEARSEL::Prsch6
     }
     #[doc = "PRS Channel 7 selected as input"]
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH7
+        *self == PRSCLEARSEL::Prsch7
     }
     #[doc = "PRS Channel 8 selected as input"]
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH8
+        *self == PRSCLEARSEL::Prsch8
     }
     #[doc = "PRS Channel 9 selected as input"]
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH9
+        *self == PRSCLEARSEL::Prsch9
     }
     #[doc = "PRS Channel 10 selected as input"]
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH10
+        *self == PRSCLEARSEL::Prsch10
     }
     #[doc = "PRS Channel 11 selected as input"]
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
-        *self == PRSCLEARSEL_A::PRSCH11
+        *self == PRSCLEARSEL::Prsch11
     }
 }
 #[doc = "Field `PRSCLEARSEL` writer - PRS Clear Select"]
-pub type PRSCLEARSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, PRSCLEARSEL_A>;
-impl<'a, REG, const O: u8> PRSCLEARSEL_W<'a, REG, O>
+pub type PRSCLEARSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSCLEARSEL>;
+impl<'a, REG> PRSCLEARSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -511,125 +511,124 @@ where
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH0)
+        self.variant(PRSCLEARSEL::Prsch0)
     }
     #[doc = "PRS Channel 1 selected as input"]
     #[inline(always)]
     pub fn prsch1(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH1)
+        self.variant(PRSCLEARSEL::Prsch1)
     }
     #[doc = "PRS Channel 2 selected as input"]
     #[inline(always)]
     pub fn prsch2(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH2)
+        self.variant(PRSCLEARSEL::Prsch2)
     }
     #[doc = "PRS Channel 3 selected as input"]
     #[inline(always)]
     pub fn prsch3(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH3)
+        self.variant(PRSCLEARSEL::Prsch3)
     }
     #[doc = "PRS Channel 4 selected as input"]
     #[inline(always)]
     pub fn prsch4(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH4)
+        self.variant(PRSCLEARSEL::Prsch4)
     }
     #[doc = "PRS Channel 5 selected as input"]
     #[inline(always)]
     pub fn prsch5(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH5)
+        self.variant(PRSCLEARSEL::Prsch5)
     }
     #[doc = "PRS Channel 6 selected as input"]
     #[inline(always)]
     pub fn prsch6(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH6)
+        self.variant(PRSCLEARSEL::Prsch6)
     }
     #[doc = "PRS Channel 7 selected as input"]
     #[inline(always)]
     pub fn prsch7(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH7)
+        self.variant(PRSCLEARSEL::Prsch7)
     }
     #[doc = "PRS Channel 8 selected as input"]
     #[inline(always)]
     pub fn prsch8(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH8)
+        self.variant(PRSCLEARSEL::Prsch8)
     }
     #[doc = "PRS Channel 9 selected as input"]
     #[inline(always)]
     pub fn prsch9(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH9)
+        self.variant(PRSCLEARSEL::Prsch9)
     }
     #[doc = "PRS Channel 10 selected as input"]
     #[inline(always)]
     pub fn prsch10(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH10)
+        self.variant(PRSCLEARSEL::Prsch10)
     }
     #[doc = "PRS Channel 11 selected as input"]
     #[inline(always)]
     pub fn prsch11(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARSEL_A::PRSCH11)
+        self.variant(PRSCLEARSEL::Prsch11)
     }
 }
 #[doc = "Field `PRSSTARTMODE` reader - PRS Start Mode"]
-pub type PRSSTARTMODE_R = crate::FieldReader<PRSSTARTMODE_A>;
+pub type PRSSTARTMODE_R = crate::FieldReader<PRSSTARTMODE>;
 #[doc = "PRS Start Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PRSSTARTMODE_A {
+pub enum PRSSTARTMODE {
     #[doc = "0: PRS cannot start the LETIMER"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Rising edge of selected PRS input can start the LETIMER"]
-    RISING = 1,
+    Rising = 1,
     #[doc = "2: Falling edge of selected PRS input can start the LETIMER"]
-    FALLING = 2,
+    Falling = 2,
     #[doc = "3: Both the rising or falling edge of the selected PRS input can start the LETIMER"]
-    BOTH = 3,
+    Both = 3,
 }
-impl From<PRSSTARTMODE_A> for u8 {
+impl From<PRSSTARTMODE> for u8 {
     #[inline(always)]
-    fn from(variant: PRSSTARTMODE_A) -> Self {
+    fn from(variant: PRSSTARTMODE) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PRSSTARTMODE_A {
+impl crate::FieldSpec for PRSSTARTMODE {
     type Ux = u8;
 }
 impl PRSSTARTMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PRSSTARTMODE_A {
+    pub const fn variant(&self) -> PRSSTARTMODE {
         match self.bits {
-            0 => PRSSTARTMODE_A::NONE,
-            1 => PRSSTARTMODE_A::RISING,
-            2 => PRSSTARTMODE_A::FALLING,
-            3 => PRSSTARTMODE_A::BOTH,
+            0 => PRSSTARTMODE::None,
+            1 => PRSSTARTMODE::Rising,
+            2 => PRSSTARTMODE::Falling,
+            3 => PRSSTARTMODE::Both,
             _ => unreachable!(),
         }
     }
     #[doc = "PRS cannot start the LETIMER"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == PRSSTARTMODE_A::NONE
+        *self == PRSSTARTMODE::None
     }
     #[doc = "Rising edge of selected PRS input can start the LETIMER"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == PRSSTARTMODE_A::RISING
+        *self == PRSSTARTMODE::Rising
     }
     #[doc = "Falling edge of selected PRS input can start the LETIMER"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == PRSSTARTMODE_A::FALLING
+        *self == PRSSTARTMODE::Falling
     }
     #[doc = "Both the rising or falling edge of the selected PRS input can start the LETIMER"]
     #[inline(always)]
     pub fn is_both(&self) -> bool {
-        *self == PRSSTARTMODE_A::BOTH
+        *self == PRSSTARTMODE::Both
     }
 }
 #[doc = "Field `PRSSTARTMODE` writer - PRS Start Mode"]
-pub type PRSSTARTMODE_W<'a, REG, const O: u8> =
-    crate::FieldWriterSafe<'a, REG, 2, O, PRSSTARTMODE_A>;
-impl<'a, REG, const O: u8> PRSSTARTMODE_W<'a, REG, O>
+pub type PRSSTARTMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PRSSTARTMODE>;
+impl<'a, REG> PRSSTARTMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -637,84 +636,84 @@ where
     #[doc = "PRS cannot start the LETIMER"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTMODE_A::NONE)
+        self.variant(PRSSTARTMODE::None)
     }
     #[doc = "Rising edge of selected PRS input can start the LETIMER"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTMODE_A::RISING)
+        self.variant(PRSSTARTMODE::Rising)
     }
     #[doc = "Falling edge of selected PRS input can start the LETIMER"]
     #[inline(always)]
     pub fn falling(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTMODE_A::FALLING)
+        self.variant(PRSSTARTMODE::Falling)
     }
     #[doc = "Both the rising or falling edge of the selected PRS input can start the LETIMER"]
     #[inline(always)]
     pub fn both(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTARTMODE_A::BOTH)
+        self.variant(PRSSTARTMODE::Both)
     }
 }
 #[doc = "Field `PRSSTOPMODE` reader - PRS Stop Mode"]
-pub type PRSSTOPMODE_R = crate::FieldReader<PRSSTOPMODE_A>;
+pub type PRSSTOPMODE_R = crate::FieldReader<PRSSTOPMODE>;
 #[doc = "PRS Stop Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PRSSTOPMODE_A {
+pub enum PRSSTOPMODE {
     #[doc = "0: PRS cannot stop the LETIMER"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Rising edge of selected PRS input can stop the LETIMER"]
-    RISING = 1,
+    Rising = 1,
     #[doc = "2: Falling edge of selected PRS input can stop the LETIMER"]
-    FALLING = 2,
+    Falling = 2,
     #[doc = "3: Both the rising or falling edge of the selected PRS input can stop the LETIMER"]
-    BOTH = 3,
+    Both = 3,
 }
-impl From<PRSSTOPMODE_A> for u8 {
+impl From<PRSSTOPMODE> for u8 {
     #[inline(always)]
-    fn from(variant: PRSSTOPMODE_A) -> Self {
+    fn from(variant: PRSSTOPMODE) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PRSSTOPMODE_A {
+impl crate::FieldSpec for PRSSTOPMODE {
     type Ux = u8;
 }
 impl PRSSTOPMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PRSSTOPMODE_A {
+    pub const fn variant(&self) -> PRSSTOPMODE {
         match self.bits {
-            0 => PRSSTOPMODE_A::NONE,
-            1 => PRSSTOPMODE_A::RISING,
-            2 => PRSSTOPMODE_A::FALLING,
-            3 => PRSSTOPMODE_A::BOTH,
+            0 => PRSSTOPMODE::None,
+            1 => PRSSTOPMODE::Rising,
+            2 => PRSSTOPMODE::Falling,
+            3 => PRSSTOPMODE::Both,
             _ => unreachable!(),
         }
     }
     #[doc = "PRS cannot stop the LETIMER"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == PRSSTOPMODE_A::NONE
+        *self == PRSSTOPMODE::None
     }
     #[doc = "Rising edge of selected PRS input can stop the LETIMER"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == PRSSTOPMODE_A::RISING
+        *self == PRSSTOPMODE::Rising
     }
     #[doc = "Falling edge of selected PRS input can stop the LETIMER"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == PRSSTOPMODE_A::FALLING
+        *self == PRSSTOPMODE::Falling
     }
     #[doc = "Both the rising or falling edge of the selected PRS input can stop the LETIMER"]
     #[inline(always)]
     pub fn is_both(&self) -> bool {
-        *self == PRSSTOPMODE_A::BOTH
+        *self == PRSSTOPMODE::Both
     }
 }
 #[doc = "Field `PRSSTOPMODE` writer - PRS Stop Mode"]
-pub type PRSSTOPMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PRSSTOPMODE_A>;
-impl<'a, REG, const O: u8> PRSSTOPMODE_W<'a, REG, O>
+pub type PRSSTOPMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PRSSTOPMODE>;
+impl<'a, REG> PRSSTOPMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -722,85 +721,84 @@ where
     #[doc = "PRS cannot stop the LETIMER"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPMODE_A::NONE)
+        self.variant(PRSSTOPMODE::None)
     }
     #[doc = "Rising edge of selected PRS input can stop the LETIMER"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPMODE_A::RISING)
+        self.variant(PRSSTOPMODE::Rising)
     }
     #[doc = "Falling edge of selected PRS input can stop the LETIMER"]
     #[inline(always)]
     pub fn falling(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPMODE_A::FALLING)
+        self.variant(PRSSTOPMODE::Falling)
     }
     #[doc = "Both the rising or falling edge of the selected PRS input can stop the LETIMER"]
     #[inline(always)]
     pub fn both(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSSTOPMODE_A::BOTH)
+        self.variant(PRSSTOPMODE::Both)
     }
 }
 #[doc = "Field `PRSCLEARMODE` reader - PRS Clear Mode"]
-pub type PRSCLEARMODE_R = crate::FieldReader<PRSCLEARMODE_A>;
+pub type PRSCLEARMODE_R = crate::FieldReader<PRSCLEARMODE>;
 #[doc = "PRS Clear Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PRSCLEARMODE_A {
+pub enum PRSCLEARMODE {
     #[doc = "0: PRS cannot clear the LETIMER"]
-    NONE = 0,
+    None = 0,
     #[doc = "1: Rising edge of selected PRS input can clear the LETIMER"]
-    RISING = 1,
+    Rising = 1,
     #[doc = "2: Falling edge of selected PRS input can clear the LETIMER"]
-    FALLING = 2,
+    Falling = 2,
     #[doc = "3: Both the rising or falling edge of the selected PRS input can clear the LETIMER"]
-    BOTH = 3,
+    Both = 3,
 }
-impl From<PRSCLEARMODE_A> for u8 {
+impl From<PRSCLEARMODE> for u8 {
     #[inline(always)]
-    fn from(variant: PRSCLEARMODE_A) -> Self {
+    fn from(variant: PRSCLEARMODE) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for PRSCLEARMODE_A {
+impl crate::FieldSpec for PRSCLEARMODE {
     type Ux = u8;
 }
 impl PRSCLEARMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PRSCLEARMODE_A {
+    pub const fn variant(&self) -> PRSCLEARMODE {
         match self.bits {
-            0 => PRSCLEARMODE_A::NONE,
-            1 => PRSCLEARMODE_A::RISING,
-            2 => PRSCLEARMODE_A::FALLING,
-            3 => PRSCLEARMODE_A::BOTH,
+            0 => PRSCLEARMODE::None,
+            1 => PRSCLEARMODE::Rising,
+            2 => PRSCLEARMODE::Falling,
+            3 => PRSCLEARMODE::Both,
             _ => unreachable!(),
         }
     }
     #[doc = "PRS cannot clear the LETIMER"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == PRSCLEARMODE_A::NONE
+        *self == PRSCLEARMODE::None
     }
     #[doc = "Rising edge of selected PRS input can clear the LETIMER"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == PRSCLEARMODE_A::RISING
+        *self == PRSCLEARMODE::Rising
     }
     #[doc = "Falling edge of selected PRS input can clear the LETIMER"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == PRSCLEARMODE_A::FALLING
+        *self == PRSCLEARMODE::Falling
     }
     #[doc = "Both the rising or falling edge of the selected PRS input can clear the LETIMER"]
     #[inline(always)]
     pub fn is_both(&self) -> bool {
-        *self == PRSCLEARMODE_A::BOTH
+        *self == PRSCLEARMODE::Both
     }
 }
 #[doc = "Field `PRSCLEARMODE` writer - PRS Clear Mode"]
-pub type PRSCLEARMODE_W<'a, REG, const O: u8> =
-    crate::FieldWriterSafe<'a, REG, 2, O, PRSCLEARMODE_A>;
-impl<'a, REG, const O: u8> PRSCLEARMODE_W<'a, REG, O>
+pub type PRSCLEARMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PRSCLEARMODE>;
+impl<'a, REG> PRSCLEARMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -808,22 +806,22 @@ where
     #[doc = "PRS cannot clear the LETIMER"]
     #[inline(always)]
     pub fn none(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARMODE_A::NONE)
+        self.variant(PRSCLEARMODE::None)
     }
     #[doc = "Rising edge of selected PRS input can clear the LETIMER"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARMODE_A::RISING)
+        self.variant(PRSCLEARMODE::Rising)
     }
     #[doc = "Falling edge of selected PRS input can clear the LETIMER"]
     #[inline(always)]
     pub fn falling(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARMODE_A::FALLING)
+        self.variant(PRSCLEARMODE::Falling)
     }
     #[doc = "Both the rising or falling edge of the selected PRS input can clear the LETIMER"]
     #[inline(always)]
     pub fn both(self) -> &'a mut crate::W<REG> {
-        self.variant(PRSCLEARMODE_A::BOTH)
+        self.variant(PRSCLEARMODE::Both)
     }
 }
 impl R {
@@ -858,74 +856,42 @@ impl R {
         PRSCLEARMODE_R::new(((self.bits >> 26) & 3) as u8)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PRSSEL")
-            .field(
-                "prsstartsel",
-                &format_args!("{}", self.prsstartsel().bits()),
-            )
-            .field("prsstopsel", &format_args!("{}", self.prsstopsel().bits()))
-            .field(
-                "prsclearsel",
-                &format_args!("{}", self.prsclearsel().bits()),
-            )
-            .field(
-                "prsstartmode",
-                &format_args!("{}", self.prsstartmode().bits()),
-            )
-            .field(
-                "prsstopmode",
-                &format_args!("{}", self.prsstopmode().bits()),
-            )
-            .field(
-                "prsclearmode",
-                &format_args!("{}", self.prsclearmode().bits()),
-            )
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<PRSSEL_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 impl W {
     #[doc = "Bits 0:3 - PRS Start Select"]
     #[inline(always)]
     #[must_use]
-    pub fn prsstartsel(&mut self) -> PRSSTARTSEL_W<PRSSEL_SPEC, 0> {
-        PRSSTARTSEL_W::new(self)
+    pub fn prsstartsel(&mut self) -> PRSSTARTSEL_W<PRSSELrs> {
+        PRSSTARTSEL_W::new(self, 0)
     }
     #[doc = "Bits 6:9 - PRS Stop Select"]
     #[inline(always)]
     #[must_use]
-    pub fn prsstopsel(&mut self) -> PRSSTOPSEL_W<PRSSEL_SPEC, 6> {
-        PRSSTOPSEL_W::new(self)
+    pub fn prsstopsel(&mut self) -> PRSSTOPSEL_W<PRSSELrs> {
+        PRSSTOPSEL_W::new(self, 6)
     }
     #[doc = "Bits 12:15 - PRS Clear Select"]
     #[inline(always)]
     #[must_use]
-    pub fn prsclearsel(&mut self) -> PRSCLEARSEL_W<PRSSEL_SPEC, 12> {
-        PRSCLEARSEL_W::new(self)
+    pub fn prsclearsel(&mut self) -> PRSCLEARSEL_W<PRSSELrs> {
+        PRSCLEARSEL_W::new(self, 12)
     }
     #[doc = "Bits 18:19 - PRS Start Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn prsstartmode(&mut self) -> PRSSTARTMODE_W<PRSSEL_SPEC, 18> {
-        PRSSTARTMODE_W::new(self)
+    pub fn prsstartmode(&mut self) -> PRSSTARTMODE_W<PRSSELrs> {
+        PRSSTARTMODE_W::new(self, 18)
     }
     #[doc = "Bits 22:23 - PRS Stop Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn prsstopmode(&mut self) -> PRSSTOPMODE_W<PRSSEL_SPEC, 22> {
-        PRSSTOPMODE_W::new(self)
+    pub fn prsstopmode(&mut self) -> PRSSTOPMODE_W<PRSSELrs> {
+        PRSSTOPMODE_W::new(self, 22)
     }
     #[doc = "Bits 26:27 - PRS Clear Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn prsclearmode(&mut self) -> PRSCLEARMODE_W<PRSSEL_SPEC, 26> {
-        PRSCLEARMODE_W::new(self)
+    pub fn prsclearmode(&mut self) -> PRSCLEARMODE_W<PRSSELrs> {
+        PRSCLEARMODE_W::new(self, 26)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -939,18 +905,18 @@ impl W {
     }
 }
 #[doc = "PRS Input Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prssel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prssel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PRSSEL_SPEC;
-impl crate::RegisterSpec for PRSSEL_SPEC {
+pub struct PRSSELrs;
+impl crate::RegisterSpec for PRSSELrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`prssel::R`](R) reader structure"]
-impl crate::Readable for PRSSEL_SPEC {}
+impl crate::Readable for PRSSELrs {}
 #[doc = "`write(|w| ..)` method takes [`prssel::W`](W) writer structure"]
-impl crate::Writable for PRSSEL_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for PRSSELrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRSSEL to value 0"]
-impl crate::Resettable for PRSSEL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for PRSSELrs {
+    const RESET_VALUE: u32 = 0;
 }

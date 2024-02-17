@@ -1,74 +1,69 @@
 #[doc = "Register `IFC` writer"]
-pub type W = crate::W<IFC_SPEC>;
+pub type W = crate::W<IFCrs>;
 #[doc = "Field `SINGLEOF` writer - Clear SINGLEOF Interrupt Flag"]
-pub type SINGLEOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SINGLEOF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCANOF` writer - Clear SCANOF Interrupt Flag"]
-pub type SCANOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCANOF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SINGLEUF` writer - Clear SINGLEUF Interrupt Flag"]
-pub type SINGLEUF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SINGLEUF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCANUF` writer - Clear SCANUF Interrupt Flag"]
-pub type SCANUF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCANUF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SINGLECMP` writer - Clear SINGLECMP Interrupt Flag"]
-pub type SINGLECMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SINGLECMP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCANCMP` writer - Clear SCANCMP Interrupt Flag"]
-pub type SCANCMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SCANCMP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VREFOV` writer - Clear VREFOV Interrupt Flag"]
-pub type VREFOV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VREFOV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PROGERR` writer - Clear PROGERR Interrupt Flag"]
-pub type PROGERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
-impl core::fmt::Debug for crate::generic::Reg<IFC_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "(not readable)")
-    }
-}
+pub type PROGERR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 8 - Clear SINGLEOF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn singleof(&mut self) -> SINGLEOF_W<IFC_SPEC, 8> {
-        SINGLEOF_W::new(self)
+    pub fn singleof(&mut self) -> SINGLEOF_W<IFCrs> {
+        SINGLEOF_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear SCANOF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn scanof(&mut self) -> SCANOF_W<IFC_SPEC, 9> {
-        SCANOF_W::new(self)
+    pub fn scanof(&mut self) -> SCANOF_W<IFCrs> {
+        SCANOF_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear SINGLEUF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn singleuf(&mut self) -> SINGLEUF_W<IFC_SPEC, 10> {
-        SINGLEUF_W::new(self)
+    pub fn singleuf(&mut self) -> SINGLEUF_W<IFCrs> {
+        SINGLEUF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear SCANUF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn scanuf(&mut self) -> SCANUF_W<IFC_SPEC, 11> {
-        SCANUF_W::new(self)
+    pub fn scanuf(&mut self) -> SCANUF_W<IFCrs> {
+        SCANUF_W::new(self, 11)
     }
     #[doc = "Bit 16 - Clear SINGLECMP Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn singlecmp(&mut self) -> SINGLECMP_W<IFC_SPEC, 16> {
-        SINGLECMP_W::new(self)
+    pub fn singlecmp(&mut self) -> SINGLECMP_W<IFCrs> {
+        SINGLECMP_W::new(self, 16)
     }
     #[doc = "Bit 17 - Clear SCANCMP Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn scancmp(&mut self) -> SCANCMP_W<IFC_SPEC, 17> {
-        SCANCMP_W::new(self)
+    pub fn scancmp(&mut self) -> SCANCMP_W<IFCrs> {
+        SCANCMP_W::new(self, 17)
     }
     #[doc = "Bit 24 - Clear VREFOV Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn vrefov(&mut self) -> VREFOV_W<IFC_SPEC, 24> {
-        VREFOV_W::new(self)
+    pub fn vrefov(&mut self) -> VREFOV_W<IFCrs> {
+        VREFOV_W::new(self, 24)
     }
     #[doc = "Bit 25 - Clear PROGERR Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn progerr(&mut self) -> PROGERR_W<IFC_SPEC, 25> {
-        PROGERR_W::new(self)
+    pub fn progerr(&mut self) -> PROGERR_W<IFCrs> {
+        PROGERR_W::new(self, 25)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
@@ -82,16 +77,16 @@ impl W {
     }
 }
 #[doc = "Interrupt Flag Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IFC_SPEC;
-impl crate::RegisterSpec for IFC_SPEC {
+pub struct IFCrs;
+impl crate::RegisterSpec for IFCrs {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`ifc::W`](W) writer structure"]
-impl crate::Writable for IFC_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+impl crate::Writable for IFCrs {
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IFC to value 0"]
-impl crate::Resettable for IFC_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for IFCrs {
+    const RESET_VALUE: u32 = 0;
 }

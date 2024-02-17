@@ -1,60 +1,60 @@
 #[doc = "Register `DSTATUS` reader"]
-pub type R = crate::R<DSTATUS_SPEC>;
+pub type R = crate::R<DSTATUSrs>;
 #[doc = "Field `DATA0ZERO` reader - Data 0 Zero"]
-pub type DATA0ZERO_R = crate::FieldReader<DATA0ZERO_A>;
+pub type DATA0ZERO_R = crate::FieldReader<DATA0ZERO>;
 #[doc = "Data 0 Zero\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DATA0ZERO_A {
+pub enum DATA0ZERO {
     #[doc = "1: In DATA0 bits 0 to 31 are all zero."]
-    ZERO0TO31 = 1,
+    Zero0to31 = 1,
     #[doc = "2: In DATA0 bits 32 to 63 are all zero."]
-    ZERO32TO63 = 2,
+    Zero32to63 = 2,
     #[doc = "4: In DATA0 bits 64 to 95 are all zero."]
-    ZERO64TO95 = 4,
+    Zero64to95 = 4,
     #[doc = "8: In DATA0 bits 96 to 127 are all zero."]
-    ZERO96TO127 = 8,
+    Zero96to127 = 8,
 }
-impl From<DATA0ZERO_A> for u8 {
+impl From<DATA0ZERO> for u8 {
     #[inline(always)]
-    fn from(variant: DATA0ZERO_A) -> Self {
+    fn from(variant: DATA0ZERO) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for DATA0ZERO_A {
+impl crate::FieldSpec for DATA0ZERO {
     type Ux = u8;
 }
 impl DATA0ZERO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<DATA0ZERO_A> {
+    pub const fn variant(&self) -> Option<DATA0ZERO> {
         match self.bits {
-            1 => Some(DATA0ZERO_A::ZERO0TO31),
-            2 => Some(DATA0ZERO_A::ZERO32TO63),
-            4 => Some(DATA0ZERO_A::ZERO64TO95),
-            8 => Some(DATA0ZERO_A::ZERO96TO127),
+            1 => Some(DATA0ZERO::Zero0to31),
+            2 => Some(DATA0ZERO::Zero32to63),
+            4 => Some(DATA0ZERO::Zero64to95),
+            8 => Some(DATA0ZERO::Zero96to127),
             _ => None,
         }
     }
     #[doc = "In DATA0 bits 0 to 31 are all zero."]
     #[inline(always)]
     pub fn is_zero0to31(&self) -> bool {
-        *self == DATA0ZERO_A::ZERO0TO31
+        *self == DATA0ZERO::Zero0to31
     }
     #[doc = "In DATA0 bits 32 to 63 are all zero."]
     #[inline(always)]
     pub fn is_zero32to63(&self) -> bool {
-        *self == DATA0ZERO_A::ZERO32TO63
+        *self == DATA0ZERO::Zero32to63
     }
     #[doc = "In DATA0 bits 64 to 95 are all zero."]
     #[inline(always)]
     pub fn is_zero64to95(&self) -> bool {
-        *self == DATA0ZERO_A::ZERO64TO95
+        *self == DATA0ZERO::Zero64to95
     }
     #[doc = "In DATA0 bits 96 to 127 are all zero."]
     #[inline(always)]
     pub fn is_zero96to127(&self) -> bool {
-        *self == DATA0ZERO_A::ZERO96TO127
+        *self == DATA0ZERO::Zero96to127
     }
 }
 #[doc = "Field `DDATA0LSBS` reader - LSBs in DDATA0"]
@@ -92,30 +92,14 @@ impl R {
         CARRY_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DSTATUS")
-            .field("data0zero", &format_args!("{}", self.data0zero().bits()))
-            .field("ddata0lsbs", &format_args!("{}", self.ddata0lsbs().bits()))
-            .field("ddata0msbs", &format_args!("{}", self.ddata0msbs().bits()))
-            .field("ddata1msb", &format_args!("{}", self.ddata1msb().bit()))
-            .field("carry", &format_args!("{}", self.carry().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<DSTATUS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Data Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DSTATUS_SPEC;
-impl crate::RegisterSpec for DSTATUS_SPEC {
+pub struct DSTATUSrs;
+impl crate::RegisterSpec for DSTATUSrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`dstatus::R`](R) reader structure"]
-impl crate::Readable for DSTATUS_SPEC {}
+impl crate::Readable for DSTATUSrs {}
 #[doc = "`reset()` method sets DSTATUS to value 0"]
-impl crate::Resettable for DSTATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for DSTATUSrs {
+    const RESET_VALUE: u32 = 0;
 }

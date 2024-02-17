@@ -1,5 +1,5 @@
 #[doc = "Register `STATUS` reader"]
-pub type R = crate::R<STATUS_SPEC>;
+pub type R = crate::R<STATUSrs>;
 #[doc = "Field `RUNNING` reader - Running"]
 pub type RUNNING_R = crate::BitReader;
 #[doc = "Field `DIR` reader - Direction"]
@@ -107,40 +107,14 @@ impl R {
         CCPOL3_R::new(((self.bits >> 27) & 1) != 0)
     }
 }
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("STATUS")
-            .field("running", &format_args!("{}", self.running().bit()))
-            .field("dir", &format_args!("{}", self.dir().bit()))
-            .field("topbv", &format_args!("{}", self.topbv().bit()))
-            .field("ccvbv0", &format_args!("{}", self.ccvbv0().bit()))
-            .field("ccvbv1", &format_args!("{}", self.ccvbv1().bit()))
-            .field("ccvbv2", &format_args!("{}", self.ccvbv2().bit()))
-            .field("ccvbv3", &format_args!("{}", self.ccvbv3().bit()))
-            .field("icv0", &format_args!("{}", self.icv0().bit()))
-            .field("icv1", &format_args!("{}", self.icv1().bit()))
-            .field("icv2", &format_args!("{}", self.icv2().bit()))
-            .field("icv3", &format_args!("{}", self.icv3().bit()))
-            .field("ccpol0", &format_args!("{}", self.ccpol0().bit()))
-            .field("ccpol1", &format_args!("{}", self.ccpol1().bit()))
-            .field("ccpol2", &format_args!("{}", self.ccpol2().bit()))
-            .field("ccpol3", &format_args!("{}", self.ccpol3().bit()))
-            .finish()
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<STATUS_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        self.read().fmt(f)
-    }
-}
 #[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STATUS_SPEC;
-impl crate::RegisterSpec for STATUS_SPEC {
+pub struct STATUSrs;
+impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`status::R`](R) reader structure"]
-impl crate::Readable for STATUS_SPEC {}
+impl crate::Readable for STATUSrs {}
 #[doc = "`reset()` method sets STATUS to value 0"]
-impl crate::Resettable for STATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+impl crate::Resettable for STATUSrs {
+    const RESET_VALUE: u32 = 0;
 }
