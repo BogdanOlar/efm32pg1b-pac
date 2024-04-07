@@ -3,15 +3,13 @@ pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRLrs>;
 #[doc = "Field `AUTOTRI` reader - Automatic Transmitter Tristate"]
-pub type AUTOTRI_R = crate::BitReader;
+pub type AutotriR = crate::BitReader;
 #[doc = "Field `AUTOTRI` writer - Automatic Transmitter Tristate"]
-pub type AUTOTRI_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AutotriW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DATABITS` reader - Data-Bit Mode"]
-pub type DATABITS_R = crate::BitReader;
+pub type DatabitsR = crate::BitReader;
 #[doc = "Field `DATABITS` writer - Data-Bit Mode"]
-pub type DATABITS_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PARITY` reader - Parity-Bit Mode"]
-pub type PARITY_R = crate::FieldReader<PARITY>;
+pub type DatabitsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -32,7 +30,10 @@ impl From<PARITY> for u8 {
 impl crate::FieldSpec for PARITY {
     type Ux = u8;
 }
-impl PARITY_R {
+impl crate::IsEnum for PARITY {}
+#[doc = "Field `PARITY` reader - Parity-Bit Mode"]
+pub type ParityR = crate::FieldReader<PARITY>;
+impl ParityR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PARITY> {
@@ -60,8 +61,8 @@ impl PARITY_R {
     }
 }
 #[doc = "Field `PARITY` writer - Parity-Bit Mode"]
-pub type PARITY_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PARITY>;
-impl<'a, REG> PARITY_W<'a, REG>
+pub type ParityW<'a, REG> = crate::FieldWriter<'a, REG, 2, PARITY>;
+impl<'a, REG> ParityW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -83,47 +84,45 @@ where
     }
 }
 #[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
-pub type STOPBITS_R = crate::BitReader;
+pub type StopbitsR = crate::BitReader;
 #[doc = "Field `STOPBITS` writer - Stop-Bit Mode"]
-pub type STOPBITS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StopbitsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INV` reader - Invert Input and Output"]
-pub type INV_R = crate::BitReader;
+pub type InvR = crate::BitReader;
 #[doc = "Field `INV` writer - Invert Input and Output"]
-pub type INV_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type InvW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ERRSDMA` reader - Clear RX DMA on Error"]
-pub type ERRSDMA_R = crate::BitReader;
+pub type ErrsdmaR = crate::BitReader;
 #[doc = "Field `ERRSDMA` writer - Clear RX DMA on Error"]
-pub type ERRSDMA_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ErrsdmaW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LOOPBK` reader - Loopback Enable"]
-pub type LOOPBK_R = crate::BitReader;
+pub type LoopbkR = crate::BitReader;
 #[doc = "Field `LOOPBK` writer - Loopback Enable"]
-pub type LOOPBK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type LoopbkW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SFUBRX` reader - Start-Frame UnBlock RX"]
-pub type SFUBRX_R = crate::BitReader;
+pub type SfubrxR = crate::BitReader;
 #[doc = "Field `SFUBRX` writer - Start-Frame UnBlock RX"]
-pub type SFUBRX_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SfubrxW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPM` reader - Multi-Processor Mode"]
-pub type MPM_R = crate::BitReader;
+pub type MpmR = crate::BitReader;
 #[doc = "Field `MPM` writer - Multi-Processor Mode"]
-pub type MPM_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type MpmW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPAB` reader - Multi-Processor Address-Bit"]
-pub type MPAB_R = crate::BitReader;
+pub type MpabR = crate::BitReader;
 #[doc = "Field `MPAB` writer - Multi-Processor Address-Bit"]
-pub type MPAB_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type MpabW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BIT8DV` reader - Bit 8 Default Value"]
-pub type BIT8DV_R = crate::BitReader;
+pub type Bit8dvR = crate::BitReader;
 #[doc = "Field `BIT8DV` writer - Bit 8 Default Value"]
-pub type BIT8DV_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Bit8dvW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXDMAWU` reader - RX DMA Wakeup"]
-pub type RXDMAWU_R = crate::BitReader;
+pub type RxdmawuR = crate::BitReader;
 #[doc = "Field `RXDMAWU` writer - RX DMA Wakeup"]
-pub type RXDMAWU_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxdmawuW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXDMAWU` reader - TX DMA Wakeup"]
-pub type TXDMAWU_R = crate::BitReader;
+pub type TxdmawuR = crate::BitReader;
 #[doc = "Field `TXDMAWU` writer - TX DMA Wakeup"]
-pub type TXDMAWU_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TXDELAY` reader - TX Delay Transmission"]
-pub type TXDELAY_R = crate::FieldReader<TXDELAY>;
+pub type TxdmawuW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "TX Delay Transmission\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -146,7 +145,10 @@ impl From<TXDELAY> for u8 {
 impl crate::FieldSpec for TXDELAY {
     type Ux = u8;
 }
-impl TXDELAY_R {
+impl crate::IsEnum for TXDELAY {}
+#[doc = "Field `TXDELAY` reader - TX Delay Transmission"]
+pub type TxdelayR = crate::FieldReader<TXDELAY>;
+impl TxdelayR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> TXDELAY {
@@ -180,8 +182,8 @@ impl TXDELAY_R {
     }
 }
 #[doc = "Field `TXDELAY` writer - TX Delay Transmission"]
-pub type TXDELAY_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TXDELAY>;
-impl<'a, REG> TXDELAY_W<'a, REG>
+pub type TxdelayW<'a, REG> = crate::FieldWriter<'a, REG, 2, TXDELAY, crate::Safe>;
+impl<'a, REG> TxdelayW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -210,169 +212,159 @@ where
 impl R {
     #[doc = "Bit 0 - Automatic Transmitter Tristate"]
     #[inline(always)]
-    pub fn autotri(&self) -> AUTOTRI_R {
-        AUTOTRI_R::new((self.bits & 1) != 0)
+    pub fn autotri(&self) -> AutotriR {
+        AutotriR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Data-Bit Mode"]
     #[inline(always)]
-    pub fn databits(&self) -> DATABITS_R {
-        DATABITS_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn databits(&self) -> DatabitsR {
+        DatabitsR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - Parity-Bit Mode"]
     #[inline(always)]
-    pub fn parity(&self) -> PARITY_R {
-        PARITY_R::new(((self.bits >> 2) & 3) as u8)
+    pub fn parity(&self) -> ParityR {
+        ParityR::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bit 4 - Stop-Bit Mode"]
     #[inline(always)]
-    pub fn stopbits(&self) -> STOPBITS_R {
-        STOPBITS_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn stopbits(&self) -> StopbitsR {
+        StopbitsR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Invert Input and Output"]
     #[inline(always)]
-    pub fn inv(&self) -> INV_R {
-        INV_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn inv(&self) -> InvR {
+        InvR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Clear RX DMA on Error"]
     #[inline(always)]
-    pub fn errsdma(&self) -> ERRSDMA_R {
-        ERRSDMA_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn errsdma(&self) -> ErrsdmaR {
+        ErrsdmaR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Loopback Enable"]
     #[inline(always)]
-    pub fn loopbk(&self) -> LOOPBK_R {
-        LOOPBK_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn loopbk(&self) -> LoopbkR {
+        LoopbkR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Start-Frame UnBlock RX"]
     #[inline(always)]
-    pub fn sfubrx(&self) -> SFUBRX_R {
-        SFUBRX_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn sfubrx(&self) -> SfubrxR {
+        SfubrxR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Multi-Processor Mode"]
     #[inline(always)]
-    pub fn mpm(&self) -> MPM_R {
-        MPM_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn mpm(&self) -> MpmR {
+        MpmR::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Multi-Processor Address-Bit"]
     #[inline(always)]
-    pub fn mpab(&self) -> MPAB_R {
-        MPAB_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn mpab(&self) -> MpabR {
+        MpabR::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Bit 8 Default Value"]
     #[inline(always)]
-    pub fn bit8dv(&self) -> BIT8DV_R {
-        BIT8DV_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn bit8dv(&self) -> Bit8dvR {
+        Bit8dvR::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - RX DMA Wakeup"]
     #[inline(always)]
-    pub fn rxdmawu(&self) -> RXDMAWU_R {
-        RXDMAWU_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn rxdmawu(&self) -> RxdmawuR {
+        RxdmawuR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - TX DMA Wakeup"]
     #[inline(always)]
-    pub fn txdmawu(&self) -> TXDMAWU_R {
-        TXDMAWU_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn txdmawu(&self) -> TxdmawuR {
+        TxdmawuR::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bits 14:15 - TX Delay Transmission"]
     #[inline(always)]
-    pub fn txdelay(&self) -> TXDELAY_R {
-        TXDELAY_R::new(((self.bits >> 14) & 3) as u8)
+    pub fn txdelay(&self) -> TxdelayR {
+        TxdelayR::new(((self.bits >> 14) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Automatic Transmitter Tristate"]
     #[inline(always)]
     #[must_use]
-    pub fn autotri(&mut self) -> AUTOTRI_W<CTRLrs> {
-        AUTOTRI_W::new(self, 0)
+    pub fn autotri(&mut self) -> AutotriW<CTRLrs> {
+        AutotriW::new(self, 0)
     }
     #[doc = "Bit 1 - Data-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn databits(&mut self) -> DATABITS_W<CTRLrs> {
-        DATABITS_W::new(self, 1)
+    pub fn databits(&mut self) -> DatabitsW<CTRLrs> {
+        DatabitsW::new(self, 1)
     }
     #[doc = "Bits 2:3 - Parity-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn parity(&mut self) -> PARITY_W<CTRLrs> {
-        PARITY_W::new(self, 2)
+    pub fn parity(&mut self) -> ParityW<CTRLrs> {
+        ParityW::new(self, 2)
     }
     #[doc = "Bit 4 - Stop-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn stopbits(&mut self) -> STOPBITS_W<CTRLrs> {
-        STOPBITS_W::new(self, 4)
+    pub fn stopbits(&mut self) -> StopbitsW<CTRLrs> {
+        StopbitsW::new(self, 4)
     }
     #[doc = "Bit 5 - Invert Input and Output"]
     #[inline(always)]
     #[must_use]
-    pub fn inv(&mut self) -> INV_W<CTRLrs> {
-        INV_W::new(self, 5)
+    pub fn inv(&mut self) -> InvW<CTRLrs> {
+        InvW::new(self, 5)
     }
     #[doc = "Bit 6 - Clear RX DMA on Error"]
     #[inline(always)]
     #[must_use]
-    pub fn errsdma(&mut self) -> ERRSDMA_W<CTRLrs> {
-        ERRSDMA_W::new(self, 6)
+    pub fn errsdma(&mut self) -> ErrsdmaW<CTRLrs> {
+        ErrsdmaW::new(self, 6)
     }
     #[doc = "Bit 7 - Loopback Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn loopbk(&mut self) -> LOOPBK_W<CTRLrs> {
-        LOOPBK_W::new(self, 7)
+    pub fn loopbk(&mut self) -> LoopbkW<CTRLrs> {
+        LoopbkW::new(self, 7)
     }
     #[doc = "Bit 8 - Start-Frame UnBlock RX"]
     #[inline(always)]
     #[must_use]
-    pub fn sfubrx(&mut self) -> SFUBRX_W<CTRLrs> {
-        SFUBRX_W::new(self, 8)
+    pub fn sfubrx(&mut self) -> SfubrxW<CTRLrs> {
+        SfubrxW::new(self, 8)
     }
     #[doc = "Bit 9 - Multi-Processor Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mpm(&mut self) -> MPM_W<CTRLrs> {
-        MPM_W::new(self, 9)
+    pub fn mpm(&mut self) -> MpmW<CTRLrs> {
+        MpmW::new(self, 9)
     }
     #[doc = "Bit 10 - Multi-Processor Address-Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn mpab(&mut self) -> MPAB_W<CTRLrs> {
-        MPAB_W::new(self, 10)
+    pub fn mpab(&mut self) -> MpabW<CTRLrs> {
+        MpabW::new(self, 10)
     }
     #[doc = "Bit 11 - Bit 8 Default Value"]
     #[inline(always)]
     #[must_use]
-    pub fn bit8dv(&mut self) -> BIT8DV_W<CTRLrs> {
-        BIT8DV_W::new(self, 11)
+    pub fn bit8dv(&mut self) -> Bit8dvW<CTRLrs> {
+        Bit8dvW::new(self, 11)
     }
     #[doc = "Bit 12 - RX DMA Wakeup"]
     #[inline(always)]
     #[must_use]
-    pub fn rxdmawu(&mut self) -> RXDMAWU_W<CTRLrs> {
-        RXDMAWU_W::new(self, 12)
+    pub fn rxdmawu(&mut self) -> RxdmawuW<CTRLrs> {
+        RxdmawuW::new(self, 12)
     }
     #[doc = "Bit 13 - TX DMA Wakeup"]
     #[inline(always)]
     #[must_use]
-    pub fn txdmawu(&mut self) -> TXDMAWU_W<CTRLrs> {
-        TXDMAWU_W::new(self, 13)
+    pub fn txdmawu(&mut self) -> TxdmawuW<CTRLrs> {
+        TxdmawuW::new(self, 13)
     }
     #[doc = "Bits 14:15 - TX Delay Transmission"]
     #[inline(always)]
     #[must_use]
-    pub fn txdelay(&mut self) -> TXDELAY_W<CTRLrs> {
-        TXDELAY_W::new(self, 14)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn txdelay(&mut self) -> TxdelayW<CTRLrs> {
+        TxdelayW::new(self, 14)
     }
 }
 #[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -384,6 +376,7 @@ impl crate::RegisterSpec for CTRLrs {
 impl crate::Readable for CTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

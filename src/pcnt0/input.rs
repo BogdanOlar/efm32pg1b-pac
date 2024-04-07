@@ -2,8 +2,6 @@
 pub type R = crate::R<INPUTrs>;
 #[doc = "Register `INPUT` writer"]
 pub type W = crate::W<INPUTrs>;
-#[doc = "Field `S0PRSSEL` reader - S0IN PRS Channel Select"]
-pub type S0PRSSEL_R = crate::FieldReader<S0PRSSEL>;
 #[doc = "S0IN PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -42,7 +40,10 @@ impl From<S0PRSSEL> for u8 {
 impl crate::FieldSpec for S0PRSSEL {
     type Ux = u8;
 }
-impl S0PRSSEL_R {
+impl crate::IsEnum for S0PRSSEL {}
+#[doc = "Field `S0PRSSEL` reader - S0IN PRS Channel Select"]
+pub type S0prsselR = crate::FieldReader<S0PRSSEL>;
+impl S0prsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<S0PRSSEL> {
@@ -124,8 +125,8 @@ impl S0PRSSEL_R {
     }
 }
 #[doc = "Field `S0PRSSEL` writer - S0IN PRS Channel Select"]
-pub type S0PRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, S0PRSSEL>;
-impl<'a, REG> S0PRSSEL_W<'a, REG>
+pub type S0prsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, S0PRSSEL>;
+impl<'a, REG> S0prsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -192,11 +193,9 @@ where
     }
 }
 #[doc = "Field `S0PRSEN` reader - S0IN PRS Enable"]
-pub type S0PRSEN_R = crate::BitReader;
+pub type S0prsenR = crate::BitReader;
 #[doc = "Field `S0PRSEN` writer - S0IN PRS Enable"]
-pub type S0PRSEN_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `S1PRSSEL` reader - S1IN PRS Channel Select"]
-pub type S1PRSSEL_R = crate::FieldReader<S1PRSSEL>;
+pub type S0prsenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "S1IN PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -235,7 +234,10 @@ impl From<S1PRSSEL> for u8 {
 impl crate::FieldSpec for S1PRSSEL {
     type Ux = u8;
 }
-impl S1PRSSEL_R {
+impl crate::IsEnum for S1PRSSEL {}
+#[doc = "Field `S1PRSSEL` reader - S1IN PRS Channel Select"]
+pub type S1prsselR = crate::FieldReader<S1PRSSEL>;
+impl S1prsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<S1PRSSEL> {
@@ -317,8 +319,8 @@ impl S1PRSSEL_R {
     }
 }
 #[doc = "Field `S1PRSSEL` writer - S1IN PRS Channel Select"]
-pub type S1PRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, S1PRSSEL>;
-impl<'a, REG> S1PRSSEL_W<'a, REG>
+pub type S1prsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, S1PRSSEL>;
+impl<'a, REG> S1prsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -385,65 +387,55 @@ where
     }
 }
 #[doc = "Field `S1PRSEN` reader - S1IN PRS Enable"]
-pub type S1PRSEN_R = crate::BitReader;
+pub type S1prsenR = crate::BitReader;
 #[doc = "Field `S1PRSEN` writer - S1IN PRS Enable"]
-pub type S1PRSEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type S1prsenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - S0IN PRS Channel Select"]
     #[inline(always)]
-    pub fn s0prssel(&self) -> S0PRSSEL_R {
-        S0PRSSEL_R::new((self.bits & 0x0f) as u8)
+    pub fn s0prssel(&self) -> S0prsselR {
+        S0prsselR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 5 - S0IN PRS Enable"]
     #[inline(always)]
-    pub fn s0prsen(&self) -> S0PRSEN_R {
-        S0PRSEN_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn s0prsen(&self) -> S0prsenR {
+        S0prsenR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:9 - S1IN PRS Channel Select"]
     #[inline(always)]
-    pub fn s1prssel(&self) -> S1PRSSEL_R {
-        S1PRSSEL_R::new(((self.bits >> 6) & 0x0f) as u8)
+    pub fn s1prssel(&self) -> S1prsselR {
+        S1prsselR::new(((self.bits >> 6) & 0x0f) as u8)
     }
     #[doc = "Bit 11 - S1IN PRS Enable"]
     #[inline(always)]
-    pub fn s1prsen(&self) -> S1PRSEN_R {
-        S1PRSEN_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn s1prsen(&self) -> S1prsenR {
+        S1prsenR::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - S0IN PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn s0prssel(&mut self) -> S0PRSSEL_W<INPUTrs> {
-        S0PRSSEL_W::new(self, 0)
+    pub fn s0prssel(&mut self) -> S0prsselW<INPUTrs> {
+        S0prsselW::new(self, 0)
     }
     #[doc = "Bit 5 - S0IN PRS Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn s0prsen(&mut self) -> S0PRSEN_W<INPUTrs> {
-        S0PRSEN_W::new(self, 5)
+    pub fn s0prsen(&mut self) -> S0prsenW<INPUTrs> {
+        S0prsenW::new(self, 5)
     }
     #[doc = "Bits 6:9 - S1IN PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn s1prssel(&mut self) -> S1PRSSEL_W<INPUTrs> {
-        S1PRSSEL_W::new(self, 6)
+    pub fn s1prssel(&mut self) -> S1prsselW<INPUTrs> {
+        S1prsselW::new(self, 6)
     }
     #[doc = "Bit 11 - S1IN PRS Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn s1prsen(&mut self) -> S1PRSEN_W<INPUTrs> {
-        S1PRSEN_W::new(self, 11)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn s1prsen(&mut self) -> S1prsenW<INPUTrs> {
+        S1prsenW::new(self, 11)
     }
 }
 #[doc = "PCNT Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`input::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`input::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -455,6 +447,7 @@ impl crate::RegisterSpec for INPUTrs {
 impl crate::Readable for INPUTrs {}
 #[doc = "`write(|w| ..)` method takes [`input::W`](W) writer structure"]
 impl crate::Writable for INPUTrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

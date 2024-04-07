@@ -2,8 +2,6 @@
 pub type R = crate::R<HFXOTIMEOUTCTRLrs>;
 #[doc = "Register `HFXOTIMEOUTCTRL` writer"]
 pub type W = crate::W<HFXOTIMEOUTCTRLrs>;
-#[doc = "Field `STARTUPTIMEOUT` reader - Wait Duration in HFXO Startup Enable Wait State"]
-pub type STARTUPTIMEOUT_R = crate::FieldReader<STARTUPTIMEOUT>;
 #[doc = "Wait Duration in HFXO Startup Enable Wait State\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -40,7 +38,10 @@ impl From<STARTUPTIMEOUT> for u8 {
 impl crate::FieldSpec for STARTUPTIMEOUT {
     type Ux = u8;
 }
-impl STARTUPTIMEOUT_R {
+impl crate::IsEnum for STARTUPTIMEOUT {}
+#[doc = "Field `STARTUPTIMEOUT` reader - Wait Duration in HFXO Startup Enable Wait State"]
+pub type StartuptimeoutR = crate::FieldReader<STARTUPTIMEOUT>;
+impl StartuptimeoutR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<STARTUPTIMEOUT> {
@@ -116,8 +117,8 @@ impl STARTUPTIMEOUT_R {
     }
 }
 #[doc = "Field `STARTUPTIMEOUT` writer - Wait Duration in HFXO Startup Enable Wait State"]
-pub type STARTUPTIMEOUT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, STARTUPTIMEOUT>;
-impl<'a, REG> STARTUPTIMEOUT_W<'a, REG>
+pub type StartuptimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 4, STARTUPTIMEOUT>;
+impl<'a, REG> StartuptimeoutW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -178,8 +179,6 @@ where
         self.variant(STARTUPTIMEOUT::_32kcycles)
     }
 }
-#[doc = "Field `STEADYTIMEOUT` reader - Wait Duration in HFXO Startup Steady Wait State"]
-pub type STEADYTIMEOUT_R = crate::FieldReader<STEADYTIMEOUT>;
 #[doc = "Wait Duration in HFXO Startup Steady Wait State\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -216,7 +215,10 @@ impl From<STEADYTIMEOUT> for u8 {
 impl crate::FieldSpec for STEADYTIMEOUT {
     type Ux = u8;
 }
-impl STEADYTIMEOUT_R {
+impl crate::IsEnum for STEADYTIMEOUT {}
+#[doc = "Field `STEADYTIMEOUT` reader - Wait Duration in HFXO Startup Steady Wait State"]
+pub type SteadytimeoutR = crate::FieldReader<STEADYTIMEOUT>;
+impl SteadytimeoutR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<STEADYTIMEOUT> {
@@ -292,8 +294,8 @@ impl STEADYTIMEOUT_R {
     }
 }
 #[doc = "Field `STEADYTIMEOUT` writer - Wait Duration in HFXO Startup Steady Wait State"]
-pub type STEADYTIMEOUT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, STEADYTIMEOUT>;
-impl<'a, REG> STEADYTIMEOUT_W<'a, REG>
+pub type SteadytimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 4, STEADYTIMEOUT>;
+impl<'a, REG> SteadytimeoutW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -355,11 +357,9 @@ where
     }
 }
 #[doc = "Field `RESERVED2` reader - Wait Duration in HFXO Warm Startup Steady Wait State"]
-pub type RESERVED2_R = crate::FieldReader;
+pub type Reserved2R = crate::FieldReader;
 #[doc = "Field `RESERVED2` writer - Wait Duration in HFXO Warm Startup Steady Wait State"]
-pub type RESERVED2_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `PEAKDETTIMEOUT` reader - Wait Duration in HFXO Peak Detection Wait State"]
-pub type PEAKDETTIMEOUT_R = crate::FieldReader<PEAKDETTIMEOUT>;
+pub type Reserved2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Wait Duration in HFXO Peak Detection Wait State\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -396,7 +396,10 @@ impl From<PEAKDETTIMEOUT> for u8 {
 impl crate::FieldSpec for PEAKDETTIMEOUT {
     type Ux = u8;
 }
-impl PEAKDETTIMEOUT_R {
+impl crate::IsEnum for PEAKDETTIMEOUT {}
+#[doc = "Field `PEAKDETTIMEOUT` reader - Wait Duration in HFXO Peak Detection Wait State"]
+pub type PeakdettimeoutR = crate::FieldReader<PEAKDETTIMEOUT>;
+impl PeakdettimeoutR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PEAKDETTIMEOUT> {
@@ -472,8 +475,8 @@ impl PEAKDETTIMEOUT_R {
     }
 }
 #[doc = "Field `PEAKDETTIMEOUT` writer - Wait Duration in HFXO Peak Detection Wait State"]
-pub type PEAKDETTIMEOUT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PEAKDETTIMEOUT>;
-impl<'a, REG> PEAKDETTIMEOUT_W<'a, REG>
+pub type PeakdettimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 4, PEAKDETTIMEOUT>;
+impl<'a, REG> PeakdettimeoutW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -534,8 +537,6 @@ where
         self.variant(PEAKDETTIMEOUT::_32kcycles)
     }
 }
-#[doc = "Field `SHUNTOPTTIMEOUT` reader - Wait Duration in HFXO Shunt Current Optimization Wait State"]
-pub type SHUNTOPTTIMEOUT_R = crate::FieldReader<SHUNTOPTTIMEOUT>;
 #[doc = "Wait Duration in HFXO Shunt Current Optimization Wait State\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -572,7 +573,10 @@ impl From<SHUNTOPTTIMEOUT> for u8 {
 impl crate::FieldSpec for SHUNTOPTTIMEOUT {
     type Ux = u8;
 }
-impl SHUNTOPTTIMEOUT_R {
+impl crate::IsEnum for SHUNTOPTTIMEOUT {}
+#[doc = "Field `SHUNTOPTTIMEOUT` reader - Wait Duration in HFXO Shunt Current Optimization Wait State"]
+pub type ShuntopttimeoutR = crate::FieldReader<SHUNTOPTTIMEOUT>;
+impl ShuntopttimeoutR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<SHUNTOPTTIMEOUT> {
@@ -648,8 +652,8 @@ impl SHUNTOPTTIMEOUT_R {
     }
 }
 #[doc = "Field `SHUNTOPTTIMEOUT` writer - Wait Duration in HFXO Shunt Current Optimization Wait State"]
-pub type SHUNTOPTTIMEOUT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SHUNTOPTTIMEOUT>;
-impl<'a, REG> SHUNTOPTTIMEOUT_W<'a, REG>
+pub type ShuntopttimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 4, SHUNTOPTTIMEOUT>;
+impl<'a, REG> ShuntopttimeoutW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -713,70 +717,60 @@ where
 impl R {
     #[doc = "Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State"]
     #[inline(always)]
-    pub fn startuptimeout(&self) -> STARTUPTIMEOUT_R {
-        STARTUPTIMEOUT_R::new((self.bits & 0x0f) as u8)
+    pub fn startuptimeout(&self) -> StartuptimeoutR {
+        StartuptimeoutR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Wait Duration in HFXO Startup Steady Wait State"]
     #[inline(always)]
-    pub fn steadytimeout(&self) -> STEADYTIMEOUT_R {
-        STEADYTIMEOUT_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn steadytimeout(&self) -> SteadytimeoutR {
+        SteadytimeoutR::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Wait Duration in HFXO Warm Startup Steady Wait State"]
     #[inline(always)]
-    pub fn reserved2(&self) -> RESERVED2_R {
-        RESERVED2_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn reserved2(&self) -> Reserved2R {
+        Reserved2R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Wait Duration in HFXO Peak Detection Wait State"]
     #[inline(always)]
-    pub fn peakdettimeout(&self) -> PEAKDETTIMEOUT_R {
-        PEAKDETTIMEOUT_R::new(((self.bits >> 12) & 0x0f) as u8)
+    pub fn peakdettimeout(&self) -> PeakdettimeoutR {
+        PeakdettimeoutR::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Wait Duration in HFXO Shunt Current Optimization Wait State"]
     #[inline(always)]
-    pub fn shuntopttimeout(&self) -> SHUNTOPTTIMEOUT_R {
-        SHUNTOPTTIMEOUT_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn shuntopttimeout(&self) -> ShuntopttimeoutR {
+        ShuntopttimeoutR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State"]
     #[inline(always)]
     #[must_use]
-    pub fn startuptimeout(&mut self) -> STARTUPTIMEOUT_W<HFXOTIMEOUTCTRLrs> {
-        STARTUPTIMEOUT_W::new(self, 0)
+    pub fn startuptimeout(&mut self) -> StartuptimeoutW<HFXOTIMEOUTCTRLrs> {
+        StartuptimeoutW::new(self, 0)
     }
     #[doc = "Bits 4:7 - Wait Duration in HFXO Startup Steady Wait State"]
     #[inline(always)]
     #[must_use]
-    pub fn steadytimeout(&mut self) -> STEADYTIMEOUT_W<HFXOTIMEOUTCTRLrs> {
-        STEADYTIMEOUT_W::new(self, 4)
+    pub fn steadytimeout(&mut self) -> SteadytimeoutW<HFXOTIMEOUTCTRLrs> {
+        SteadytimeoutW::new(self, 4)
     }
     #[doc = "Bits 8:11 - Wait Duration in HFXO Warm Startup Steady Wait State"]
     #[inline(always)]
     #[must_use]
-    pub fn reserved2(&mut self) -> RESERVED2_W<HFXOTIMEOUTCTRLrs> {
-        RESERVED2_W::new(self, 8)
+    pub fn reserved2(&mut self) -> Reserved2W<HFXOTIMEOUTCTRLrs> {
+        Reserved2W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Wait Duration in HFXO Peak Detection Wait State"]
     #[inline(always)]
     #[must_use]
-    pub fn peakdettimeout(&mut self) -> PEAKDETTIMEOUT_W<HFXOTIMEOUTCTRLrs> {
-        PEAKDETTIMEOUT_W::new(self, 12)
+    pub fn peakdettimeout(&mut self) -> PeakdettimeoutW<HFXOTIMEOUTCTRLrs> {
+        PeakdettimeoutW::new(self, 12)
     }
     #[doc = "Bits 16:19 - Wait Duration in HFXO Shunt Current Optimization Wait State"]
     #[inline(always)]
     #[must_use]
-    pub fn shuntopttimeout(&mut self) -> SHUNTOPTTIMEOUT_W<HFXOTIMEOUTCTRLrs> {
-        SHUNTOPTTIMEOUT_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn shuntopttimeout(&mut self) -> ShuntopttimeoutW<HFXOTIMEOUTCTRLrs> {
+        ShuntopttimeoutW::new(self, 16)
     }
 }
 #[doc = "HFXO Timeout Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfxotimeoutctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfxotimeoutctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -788,6 +782,7 @@ impl crate::RegisterSpec for HFXOTIMEOUTCTRLrs {
 impl crate::Readable for HFXOTIMEOUTCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`hfxotimeoutctrl::W`](W) writer structure"]
 impl crate::Writable for HFXOTIMEOUTCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

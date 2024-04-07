@@ -1,12 +1,12 @@
 #[doc = "Register `SINGLEDATAP` reader"]
 pub type R = crate::R<SINGLEDATAPrs>;
 #[doc = "Field `DATAP` reader - Single Conversion Result Data Peek"]
-pub type DATAP_R = crate::FieldReader<u32>;
+pub type DatapR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Single Conversion Result Data Peek"]
     #[inline(always)]
-    pub fn datap(&self) -> DATAP_R {
-        DATAP_R::new(self.bits)
+    pub fn datap(&self) -> DatapR {
+        DatapR::new(self.bits)
     }
 }
 #[doc = "Single Conversion Result Data Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singledatap::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

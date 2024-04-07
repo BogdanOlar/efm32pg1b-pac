@@ -2,8 +2,6 @@
 pub type R = crate::R<LOCKrs>;
 #[doc = "Register `LOCK` writer"]
 pub type W = crate::W<LOCKrs>;
-#[doc = "Field `LOCKKEY` reader - Configuration Lock Key"]
-pub type LOCKKEY_R = crate::FieldReader<LOCKKEY>;
 #[doc = "Configuration Lock Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -22,7 +20,10 @@ impl From<LOCKKEY> for u16 {
 impl crate::FieldSpec for LOCKKEY {
     type Ux = u16;
 }
-impl LOCKKEY_R {
+impl crate::IsEnum for LOCKKEY {}
+#[doc = "Field `LOCKKEY` reader - Configuration Lock Key"]
+pub type LockkeyR = crate::FieldReader<LOCKKEY>;
+impl LockkeyR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<LOCKKEY> {
@@ -44,8 +45,8 @@ impl LOCKKEY_R {
     }
 }
 #[doc = "Field `LOCKKEY` writer - Configuration Lock Key"]
-pub type LOCKKEY_W<'a, REG> = crate::FieldWriter<'a, REG, 16, LOCKKEY>;
-impl<'a, REG> LOCKKEY_W<'a, REG>
+pub type LockkeyW<'a, REG> = crate::FieldWriter<'a, REG, 16, LOCKKEY>;
+impl<'a, REG> LockkeyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
@@ -64,26 +65,16 @@ where
 impl R {
     #[doc = "Bits 0:15 - Configuration Lock Key"]
     #[inline(always)]
-    pub fn lockkey(&self) -> LOCKKEY_R {
-        LOCKKEY_R::new((self.bits & 0xffff) as u16)
+    pub fn lockkey(&self) -> LockkeyR {
+        LockkeyR::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Configuration Lock Key"]
     #[inline(always)]
     #[must_use]
-    pub fn lockkey(&mut self) -> LOCKKEY_W<LOCKrs> {
-        LOCKKEY_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn lockkey(&mut self) -> LockkeyW<LOCKrs> {
+        LockkeyW::new(self, 0)
     }
 }
 #[doc = "Configuration Lock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lock::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lock::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -95,6 +86,7 @@ impl crate::RegisterSpec for LOCKrs {
 impl crate::Readable for LOCKrs {}
 #[doc = "`write(|w| ..)` method takes [`lock::W`](W) writer structure"]
 impl crate::Writable for LOCKrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

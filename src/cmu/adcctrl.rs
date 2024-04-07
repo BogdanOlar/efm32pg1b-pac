@@ -2,8 +2,6 @@
 pub type R = crate::R<ADCCTRLrs>;
 #[doc = "Register `ADCCTRL` writer"]
 pub type W = crate::W<ADCCTRLrs>;
-#[doc = "Field `ADC0CLKSEL` reader - ADC0 Clock Select"]
-pub type ADC0CLKSEL_R = crate::FieldReader<ADC0CLKSEL>;
 #[doc = "ADC0 Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -26,7 +24,10 @@ impl From<ADC0CLKSEL> for u8 {
 impl crate::FieldSpec for ADC0CLKSEL {
     type Ux = u8;
 }
-impl ADC0CLKSEL_R {
+impl crate::IsEnum for ADC0CLKSEL {}
+#[doc = "Field `ADC0CLKSEL` reader - ADC0 Clock Select"]
+pub type Adc0clkselR = crate::FieldReader<ADC0CLKSEL>;
+impl Adc0clkselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> ADC0CLKSEL {
@@ -60,8 +61,8 @@ impl ADC0CLKSEL_R {
     }
 }
 #[doc = "Field `ADC0CLKSEL` writer - ADC0 Clock Select"]
-pub type ADC0CLKSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ADC0CLKSEL>;
-impl<'a, REG> ADC0CLKSEL_W<'a, REG>
+pub type Adc0clkselW<'a, REG> = crate::FieldWriter<'a, REG, 2, ADC0CLKSEL, crate::Safe>;
+impl<'a, REG> Adc0clkselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -88,43 +89,33 @@ where
     }
 }
 #[doc = "Field `ADC0CLKINV` reader - Invert Clock Selected By ADC0CLKSEL"]
-pub type ADC0CLKINV_R = crate::BitReader;
+pub type Adc0clkinvR = crate::BitReader;
 #[doc = "Field `ADC0CLKINV` writer - Invert Clock Selected By ADC0CLKSEL"]
-pub type ADC0CLKINV_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Adc0clkinvW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 4:5 - ADC0 Clock Select"]
     #[inline(always)]
-    pub fn adc0clksel(&self) -> ADC0CLKSEL_R {
-        ADC0CLKSEL_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn adc0clksel(&self) -> Adc0clkselR {
+        Adc0clkselR::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 8 - Invert Clock Selected By ADC0CLKSEL"]
     #[inline(always)]
-    pub fn adc0clkinv(&self) -> ADC0CLKINV_R {
-        ADC0CLKINV_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn adc0clkinv(&self) -> Adc0clkinvR {
+        Adc0clkinvR::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 4:5 - ADC0 Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn adc0clksel(&mut self) -> ADC0CLKSEL_W<ADCCTRLrs> {
-        ADC0CLKSEL_W::new(self, 4)
+    pub fn adc0clksel(&mut self) -> Adc0clkselW<ADCCTRLrs> {
+        Adc0clkselW::new(self, 4)
     }
     #[doc = "Bit 8 - Invert Clock Selected By ADC0CLKSEL"]
     #[inline(always)]
     #[must_use]
-    pub fn adc0clkinv(&mut self) -> ADC0CLKINV_W<ADCCTRLrs> {
-        ADC0CLKINV_W::new(self, 8)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn adc0clkinv(&mut self) -> Adc0clkinvW<ADCCTRLrs> {
+        Adc0clkinvW::new(self, 8)
     }
 }
 #[doc = "ADC Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`adcctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`adcctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -136,6 +127,7 @@ impl crate::RegisterSpec for ADCCTRLrs {
 impl crate::Readable for ADCCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`adcctrl::W`](W) writer structure"]
 impl crate::Writable for ADCCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

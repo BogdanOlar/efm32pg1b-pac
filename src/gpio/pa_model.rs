@@ -2,8 +2,6 @@
 pub type R = crate::R<PA_MODELrs>;
 #[doc = "Register `PA_MODEL` writer"]
 pub type W = crate::W<PA_MODELrs>;
-#[doc = "Field `MODE0` reader - Pin 0 Mode"]
-pub type MODE0_R = crate::FieldReader<MODE0>;
 #[doc = "Pin 0 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,7 +48,10 @@ impl From<MODE0> for u8 {
 impl crate::FieldSpec for MODE0 {
     type Ux = u8;
 }
-impl MODE0_R {
+impl crate::IsEnum for MODE0 {}
+#[doc = "Field `MODE0` reader - Pin 0 Mode"]
+pub type Mode0R = crate::FieldReader<MODE0>;
+impl Mode0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE0 {
@@ -156,8 +157,8 @@ impl MODE0_R {
     }
 }
 #[doc = "Field `MODE0` writer - Pin 0 Mode"]
-pub type MODE0_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, MODE0>;
-impl<'a, REG> MODE0_W<'a, REG>
+pub type Mode0W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE0, crate::Safe>;
+impl<'a, REG> Mode0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -243,8 +244,6 @@ where
         self.variant(MODE0::Wiredandaltpullupfilter)
     }
 }
-#[doc = "Field `MODE1` reader - Pin 1 Mode"]
-pub type MODE1_R = crate::FieldReader<MODE1>;
 #[doc = "Pin 1 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -291,7 +290,10 @@ impl From<MODE1> for u8 {
 impl crate::FieldSpec for MODE1 {
     type Ux = u8;
 }
-impl MODE1_R {
+impl crate::IsEnum for MODE1 {}
+#[doc = "Field `MODE1` reader - Pin 1 Mode"]
+pub type Mode1R = crate::FieldReader<MODE1>;
+impl Mode1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE1 {
@@ -397,8 +399,8 @@ impl MODE1_R {
     }
 }
 #[doc = "Field `MODE1` writer - Pin 1 Mode"]
-pub type MODE1_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, MODE1>;
-impl<'a, REG> MODE1_W<'a, REG>
+pub type Mode1W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE1, crate::Safe>;
+impl<'a, REG> Mode1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -484,8 +486,6 @@ where
         self.variant(MODE1::Wiredandaltpullupfilter)
     }
 }
-#[doc = "Field `MODE2` reader - Pin 2 Mode"]
-pub type MODE2_R = crate::FieldReader<MODE2>;
 #[doc = "Pin 2 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -532,7 +532,10 @@ impl From<MODE2> for u8 {
 impl crate::FieldSpec for MODE2 {
     type Ux = u8;
 }
-impl MODE2_R {
+impl crate::IsEnum for MODE2 {}
+#[doc = "Field `MODE2` reader - Pin 2 Mode"]
+pub type Mode2R = crate::FieldReader<MODE2>;
+impl Mode2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE2 {
@@ -638,8 +641,8 @@ impl MODE2_R {
     }
 }
 #[doc = "Field `MODE2` writer - Pin 2 Mode"]
-pub type MODE2_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, MODE2>;
-impl<'a, REG> MODE2_W<'a, REG>
+pub type Mode2W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE2, crate::Safe>;
+impl<'a, REG> Mode2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -725,8 +728,6 @@ where
         self.variant(MODE2::Wiredandaltpullupfilter)
     }
 }
-#[doc = "Field `MODE3` reader - Pin 3 Mode"]
-pub type MODE3_R = crate::FieldReader<MODE3>;
 #[doc = "Pin 3 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -773,7 +774,10 @@ impl From<MODE3> for u8 {
 impl crate::FieldSpec for MODE3 {
     type Ux = u8;
 }
-impl MODE3_R {
+impl crate::IsEnum for MODE3 {}
+#[doc = "Field `MODE3` reader - Pin 3 Mode"]
+pub type Mode3R = crate::FieldReader<MODE3>;
+impl Mode3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE3 {
@@ -879,8 +883,8 @@ impl MODE3_R {
     }
 }
 #[doc = "Field `MODE3` writer - Pin 3 Mode"]
-pub type MODE3_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, MODE3>;
-impl<'a, REG> MODE3_W<'a, REG>
+pub type Mode3W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE3, crate::Safe>;
+impl<'a, REG> Mode3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -966,8 +970,6 @@ where
         self.variant(MODE3::Wiredandaltpullupfilter)
     }
 }
-#[doc = "Field `MODE4` reader - Pin 4 Mode"]
-pub type MODE4_R = crate::FieldReader<MODE4>;
 #[doc = "Pin 4 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1014,7 +1016,10 @@ impl From<MODE4> for u8 {
 impl crate::FieldSpec for MODE4 {
     type Ux = u8;
 }
-impl MODE4_R {
+impl crate::IsEnum for MODE4 {}
+#[doc = "Field `MODE4` reader - Pin 4 Mode"]
+pub type Mode4R = crate::FieldReader<MODE4>;
+impl Mode4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE4 {
@@ -1120,8 +1125,8 @@ impl MODE4_R {
     }
 }
 #[doc = "Field `MODE4` writer - Pin 4 Mode"]
-pub type MODE4_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, MODE4>;
-impl<'a, REG> MODE4_W<'a, REG>
+pub type Mode4W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE4, crate::Safe>;
+impl<'a, REG> Mode4W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1207,8 +1212,6 @@ where
         self.variant(MODE4::Wiredandaltpullupfilter)
     }
 }
-#[doc = "Field `MODE5` reader - Pin 5 Mode"]
-pub type MODE5_R = crate::FieldReader<MODE5>;
 #[doc = "Pin 5 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1255,7 +1258,10 @@ impl From<MODE5> for u8 {
 impl crate::FieldSpec for MODE5 {
     type Ux = u8;
 }
-impl MODE5_R {
+impl crate::IsEnum for MODE5 {}
+#[doc = "Field `MODE5` reader - Pin 5 Mode"]
+pub type Mode5R = crate::FieldReader<MODE5>;
+impl Mode5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE5 {
@@ -1361,8 +1367,8 @@ impl MODE5_R {
     }
 }
 #[doc = "Field `MODE5` writer - Pin 5 Mode"]
-pub type MODE5_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, MODE5>;
-impl<'a, REG> MODE5_W<'a, REG>
+pub type Mode5W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE5, crate::Safe>;
+impl<'a, REG> Mode5W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1448,8 +1454,6 @@ where
         self.variant(MODE5::Wiredandaltpullupfilter)
     }
 }
-#[doc = "Field `MODE6` reader - Pin 6 Mode"]
-pub type MODE6_R = crate::FieldReader<MODE6>;
 #[doc = "Pin 6 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1496,7 +1500,10 @@ impl From<MODE6> for u8 {
 impl crate::FieldSpec for MODE6 {
     type Ux = u8;
 }
-impl MODE6_R {
+impl crate::IsEnum for MODE6 {}
+#[doc = "Field `MODE6` reader - Pin 6 Mode"]
+pub type Mode6R = crate::FieldReader<MODE6>;
+impl Mode6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE6 {
@@ -1602,8 +1609,8 @@ impl MODE6_R {
     }
 }
 #[doc = "Field `MODE6` writer - Pin 6 Mode"]
-pub type MODE6_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, MODE6>;
-impl<'a, REG> MODE6_W<'a, REG>
+pub type Mode6W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE6, crate::Safe>;
+impl<'a, REG> Mode6W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1689,8 +1696,6 @@ where
         self.variant(MODE6::Wiredandaltpullupfilter)
     }
 }
-#[doc = "Field `MODE7` reader - Pin 7 Mode"]
-pub type MODE7_R = crate::FieldReader<MODE7>;
 #[doc = "Pin 7 Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1737,7 +1742,10 @@ impl From<MODE7> for u8 {
 impl crate::FieldSpec for MODE7 {
     type Ux = u8;
 }
-impl MODE7_R {
+impl crate::IsEnum for MODE7 {}
+#[doc = "Field `MODE7` reader - Pin 7 Mode"]
+pub type Mode7R = crate::FieldReader<MODE7>;
+impl Mode7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE7 {
@@ -1843,8 +1851,8 @@ impl MODE7_R {
     }
 }
 #[doc = "Field `MODE7` writer - Pin 7 Mode"]
-pub type MODE7_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, MODE7>;
-impl<'a, REG> MODE7_W<'a, REG>
+pub type Mode7W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE7, crate::Safe>;
+impl<'a, REG> Mode7W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1933,103 +1941,93 @@ where
 impl R {
     #[doc = "Bits 0:3 - Pin 0 Mode"]
     #[inline(always)]
-    pub fn mode0(&self) -> MODE0_R {
-        MODE0_R::new((self.bits & 0x0f) as u8)
+    pub fn mode0(&self) -> Mode0R {
+        Mode0R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Pin 1 Mode"]
     #[inline(always)]
-    pub fn mode1(&self) -> MODE1_R {
-        MODE1_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn mode1(&self) -> Mode1R {
+        Mode1R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Pin 2 Mode"]
     #[inline(always)]
-    pub fn mode2(&self) -> MODE2_R {
-        MODE2_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn mode2(&self) -> Mode2R {
+        Mode2R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Pin 3 Mode"]
     #[inline(always)]
-    pub fn mode3(&self) -> MODE3_R {
-        MODE3_R::new(((self.bits >> 12) & 0x0f) as u8)
+    pub fn mode3(&self) -> Mode3R {
+        Mode3R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Pin 4 Mode"]
     #[inline(always)]
-    pub fn mode4(&self) -> MODE4_R {
-        MODE4_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn mode4(&self) -> Mode4R {
+        Mode4R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:23 - Pin 5 Mode"]
     #[inline(always)]
-    pub fn mode5(&self) -> MODE5_R {
-        MODE5_R::new(((self.bits >> 20) & 0x0f) as u8)
+    pub fn mode5(&self) -> Mode5R {
+        Mode5R::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - Pin 6 Mode"]
     #[inline(always)]
-    pub fn mode6(&self) -> MODE6_R {
-        MODE6_R::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn mode6(&self) -> Mode6R {
+        Mode6R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bits 28:31 - Pin 7 Mode"]
     #[inline(always)]
-    pub fn mode7(&self) -> MODE7_R {
-        MODE7_R::new(((self.bits >> 28) & 0x0f) as u8)
+    pub fn mode7(&self) -> Mode7R {
+        Mode7R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Pin 0 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode0(&mut self) -> MODE0_W<PA_MODELrs> {
-        MODE0_W::new(self, 0)
+    pub fn mode0(&mut self) -> Mode0W<PA_MODELrs> {
+        Mode0W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Pin 1 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode1(&mut self) -> MODE1_W<PA_MODELrs> {
-        MODE1_W::new(self, 4)
+    pub fn mode1(&mut self) -> Mode1W<PA_MODELrs> {
+        Mode1W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Pin 2 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode2(&mut self) -> MODE2_W<PA_MODELrs> {
-        MODE2_W::new(self, 8)
+    pub fn mode2(&mut self) -> Mode2W<PA_MODELrs> {
+        Mode2W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Pin 3 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode3(&mut self) -> MODE3_W<PA_MODELrs> {
-        MODE3_W::new(self, 12)
+    pub fn mode3(&mut self) -> Mode3W<PA_MODELrs> {
+        Mode3W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Pin 4 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode4(&mut self) -> MODE4_W<PA_MODELrs> {
-        MODE4_W::new(self, 16)
+    pub fn mode4(&mut self) -> Mode4W<PA_MODELrs> {
+        Mode4W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Pin 5 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode5(&mut self) -> MODE5_W<PA_MODELrs> {
-        MODE5_W::new(self, 20)
+    pub fn mode5(&mut self) -> Mode5W<PA_MODELrs> {
+        Mode5W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Pin 6 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode6(&mut self) -> MODE6_W<PA_MODELrs> {
-        MODE6_W::new(self, 24)
+    pub fn mode6(&mut self) -> Mode6W<PA_MODELrs> {
+        Mode6W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Pin 7 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode7(&mut self) -> MODE7_W<PA_MODELrs> {
-        MODE7_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn mode7(&mut self) -> Mode7W<PA_MODELrs> {
+        Mode7W::new(self, 28)
     }
 }
 #[doc = "Port Pin Mode Low Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pa_model::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pa_model::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -2041,6 +2039,7 @@ impl crate::RegisterSpec for PA_MODELrs {
 impl crate::Readable for PA_MODELrs {}
 #[doc = "`write(|w| ..)` method takes [`pa_model::W`](W) writer structure"]
 impl crate::Writable for PA_MODELrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

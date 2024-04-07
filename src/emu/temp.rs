@@ -1,12 +1,12 @@
 #[doc = "Register `TEMP` reader"]
 pub type R = crate::R<TEMPrs>;
 #[doc = "Field `TEMP` reader - Temperature Measurement"]
-pub type TEMP_R = crate::FieldReader;
+pub type TempR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Temperature Measurement"]
     #[inline(always)]
-    pub fn temp(&self) -> TEMP_R {
-        TEMP_R::new((self.bits & 0xff) as u8)
+    pub fn temp(&self) -> TempR {
+        TempR::new((self.bits & 0xff) as u8)
     }
 }
 #[doc = "Value of Last Temperature Measurement\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`temp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -1,7 +1,5 @@
 #[doc = "Register `CSTATUS` reader"]
 pub type R = crate::R<CSTATUSrs>;
-#[doc = "Field `V0` reader - Selected ALU Operand 0"]
-pub type V0_R = crate::FieldReader<V0>;
 #[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -32,7 +30,10 @@ impl From<V0> for u8 {
 impl crate::FieldSpec for V0 {
     type Ux = u8;
 }
-impl V0_R {
+impl crate::IsEnum for V0 {}
+#[doc = "Field `V0` reader - Selected ALU Operand 0"]
+pub type V0R = crate::FieldReader<V0>;
+impl V0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> V0 {
@@ -89,8 +90,6 @@ impl V0_R {
         *self == V0::Data2
     }
 }
-#[doc = "Field `V1` reader - Selected ALU Operand 1"]
-pub type V1_R = crate::FieldReader<V1>;
 #[doc = "Selected ALU Operand 1\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -121,7 +120,10 @@ impl From<V1> for u8 {
 impl crate::FieldSpec for V1 {
     type Ux = u8;
 }
-impl V1_R {
+impl crate::IsEnum for V1 {}
+#[doc = "Field `V1` reader - Selected ALU Operand 1"]
+pub type V1R = crate::FieldReader<V1>;
+impl V1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> V1 {
@@ -179,36 +181,36 @@ impl V1_R {
     }
 }
 #[doc = "Field `SEQPART` reader - Sequence Part"]
-pub type SEQPART_R = crate::BitReader;
+pub type SeqpartR = crate::BitReader;
 #[doc = "Field `SEQSKIP` reader - Sequence Skip Next Instruction"]
-pub type SEQSKIP_R = crate::BitReader;
+pub type SeqskipR = crate::BitReader;
 #[doc = "Field `SEQIP` reader - Sequence Next Instruction Pointer"]
-pub type SEQIP_R = crate::FieldReader;
+pub type SeqipR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:2 - Selected ALU Operand 0"]
     #[inline(always)]
-    pub fn v0(&self) -> V0_R {
-        V0_R::new((self.bits & 7) as u8)
+    pub fn v0(&self) -> V0R {
+        V0R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 8:10 - Selected ALU Operand 1"]
     #[inline(always)]
-    pub fn v1(&self) -> V1_R {
-        V1_R::new(((self.bits >> 8) & 7) as u8)
+    pub fn v1(&self) -> V1R {
+        V1R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bit 16 - Sequence Part"]
     #[inline(always)]
-    pub fn seqpart(&self) -> SEQPART_R {
-        SEQPART_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn seqpart(&self) -> SeqpartR {
+        SeqpartR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Sequence Skip Next Instruction"]
     #[inline(always)]
-    pub fn seqskip(&self) -> SEQSKIP_R {
-        SEQSKIP_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn seqskip(&self) -> SeqskipR {
+        SeqskipR::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bits 20:24 - Sequence Next Instruction Pointer"]
     #[inline(always)]
-    pub fn seqip(&self) -> SEQIP_R {
-        SEQIP_R::new(((self.bits >> 20) & 0x1f) as u8)
+    pub fn seqip(&self) -> SeqipR {
+        SeqipR::new(((self.bits >> 20) & 0x1f) as u8)
     }
 }
 #[doc = "Control Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -1,12 +1,12 @@
 #[doc = "Register `DATA` reader"]
 pub type R = crate::R<DATArs>;
 #[doc = "Field `DATA` reader - CRC Data Register"]
-pub type DATA_R = crate::FieldReader<u32>;
+pub type DataR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - CRC Data Register"]
     #[inline(always)]
-    pub fn data(&self) -> DATA_R {
-        DATA_R::new(self.bits)
+    pub fn data(&self) -> DataR {
+        DataR::new(self.bits)
     }
 }
 #[doc = "CRC Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`data::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

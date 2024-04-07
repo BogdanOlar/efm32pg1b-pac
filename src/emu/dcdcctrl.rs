@@ -2,8 +2,6 @@
 pub type R = crate::R<DCDCCTRLrs>;
 #[doc = "Register `DCDCCTRL` writer"]
 pub type W = crate::W<DCDCCTRLrs>;
-#[doc = "Field `DCDCMODE` reader - Regulator Mode"]
-pub type DCDCMODE_R = crate::FieldReader<DCDCMODE>;
 #[doc = "Regulator Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -26,7 +24,10 @@ impl From<DCDCMODE> for u8 {
 impl crate::FieldSpec for DCDCMODE {
     type Ux = u8;
 }
-impl DCDCMODE_R {
+impl crate::IsEnum for DCDCMODE {}
+#[doc = "Field `DCDCMODE` reader - Regulator Mode"]
+pub type DcdcmodeR = crate::FieldReader<DCDCMODE>;
+impl DcdcmodeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> DCDCMODE {
@@ -60,8 +61,8 @@ impl DCDCMODE_R {
     }
 }
 #[doc = "Field `DCDCMODE` writer - Regulator Mode"]
-pub type DCDCMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DCDCMODE>;
-impl<'a, REG> DCDCMODE_W<'a, REG>
+pub type DcdcmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, DCDCMODE, crate::Safe>;
+impl<'a, REG> DcdcmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -88,58 +89,48 @@ where
     }
 }
 #[doc = "Field `DCDCMODEEM23` reader - DCDC Mode EM23"]
-pub type DCDCMODEEM23_R = crate::BitReader;
+pub type Dcdcmodeem23R = crate::BitReader;
 #[doc = "Field `DCDCMODEEM23` writer - DCDC Mode EM23"]
-pub type DCDCMODEEM23_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dcdcmodeem23W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DCDCMODEEM4` reader - DCDC Mode EM4H"]
-pub type DCDCMODEEM4_R = crate::BitReader;
+pub type Dcdcmodeem4R = crate::BitReader;
 #[doc = "Field `DCDCMODEEM4` writer - DCDC Mode EM4H"]
-pub type DCDCMODEEM4_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dcdcmodeem4W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - Regulator Mode"]
     #[inline(always)]
-    pub fn dcdcmode(&self) -> DCDCMODE_R {
-        DCDCMODE_R::new((self.bits & 3) as u8)
+    pub fn dcdcmode(&self) -> DcdcmodeR {
+        DcdcmodeR::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 4 - DCDC Mode EM23"]
     #[inline(always)]
-    pub fn dcdcmodeem23(&self) -> DCDCMODEEM23_R {
-        DCDCMODEEM23_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn dcdcmodeem23(&self) -> Dcdcmodeem23R {
+        Dcdcmodeem23R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - DCDC Mode EM4H"]
     #[inline(always)]
-    pub fn dcdcmodeem4(&self) -> DCDCMODEEM4_R {
-        DCDCMODEEM4_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn dcdcmodeem4(&self) -> Dcdcmodeem4R {
+        Dcdcmodeem4R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Regulator Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn dcdcmode(&mut self) -> DCDCMODE_W<DCDCCTRLrs> {
-        DCDCMODE_W::new(self, 0)
+    pub fn dcdcmode(&mut self) -> DcdcmodeW<DCDCCTRLrs> {
+        DcdcmodeW::new(self, 0)
     }
     #[doc = "Bit 4 - DCDC Mode EM23"]
     #[inline(always)]
     #[must_use]
-    pub fn dcdcmodeem23(&mut self) -> DCDCMODEEM23_W<DCDCCTRLrs> {
-        DCDCMODEEM23_W::new(self, 4)
+    pub fn dcdcmodeem23(&mut self) -> Dcdcmodeem23W<DCDCCTRLrs> {
+        Dcdcmodeem23W::new(self, 4)
     }
     #[doc = "Bit 5 - DCDC Mode EM4H"]
     #[inline(always)]
     #[must_use]
-    pub fn dcdcmodeem4(&mut self) -> DCDCMODEEM4_W<DCDCCTRLrs> {
-        DCDCMODEEM4_W::new(self, 5)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn dcdcmodeem4(&mut self) -> Dcdcmodeem4W<DCDCCTRLrs> {
+        Dcdcmodeem4W::new(self, 5)
     }
 }
 #[doc = "DCDC Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdcctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdcctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -151,6 +142,7 @@ impl crate::RegisterSpec for DCDCCTRLrs {
 impl crate::Readable for DCDCCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`dcdcctrl::W`](W) writer structure"]
 impl crate::Writable for DCDCCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

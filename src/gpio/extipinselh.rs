@@ -2,8 +2,6 @@
 pub type R = crate::R<EXTIPINSELHrs>;
 #[doc = "Register `EXTIPINSELH` writer"]
 pub type W = crate::W<EXTIPINSELHrs>;
-#[doc = "Field `EXTIPINSEL8` reader - External Interrupt 8 Pin Select"]
-pub type EXTIPINSEL8_R = crate::FieldReader<EXTIPINSEL8>;
 #[doc = "External Interrupt 8 Pin Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -26,7 +24,10 @@ impl From<EXTIPINSEL8> for u8 {
 impl crate::FieldSpec for EXTIPINSEL8 {
     type Ux = u8;
 }
-impl EXTIPINSEL8_R {
+impl crate::IsEnum for EXTIPINSEL8 {}
+#[doc = "Field `EXTIPINSEL8` reader - External Interrupt 8 Pin Select"]
+pub type Extipinsel8R = crate::FieldReader<EXTIPINSEL8>;
+impl Extipinsel8R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EXTIPINSEL8 {
@@ -60,8 +61,8 @@ impl EXTIPINSEL8_R {
     }
 }
 #[doc = "Field `EXTIPINSEL8` writer - External Interrupt 8 Pin Select"]
-pub type EXTIPINSEL8_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTIPINSEL8>;
-impl<'a, REG> EXTIPINSEL8_W<'a, REG>
+pub type Extipinsel8W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTIPINSEL8, crate::Safe>;
+impl<'a, REG> Extipinsel8W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -87,8 +88,6 @@ where
         self.variant(EXTIPINSEL8::Pin11)
     }
 }
-#[doc = "Field `EXTIPINSEL9` reader - External Interrupt 9 Pin Select"]
-pub type EXTIPINSEL9_R = crate::FieldReader<EXTIPINSEL9>;
 #[doc = "External Interrupt 9 Pin Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -111,7 +110,10 @@ impl From<EXTIPINSEL9> for u8 {
 impl crate::FieldSpec for EXTIPINSEL9 {
     type Ux = u8;
 }
-impl EXTIPINSEL9_R {
+impl crate::IsEnum for EXTIPINSEL9 {}
+#[doc = "Field `EXTIPINSEL9` reader - External Interrupt 9 Pin Select"]
+pub type Extipinsel9R = crate::FieldReader<EXTIPINSEL9>;
+impl Extipinsel9R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EXTIPINSEL9 {
@@ -145,8 +147,8 @@ impl EXTIPINSEL9_R {
     }
 }
 #[doc = "Field `EXTIPINSEL9` writer - External Interrupt 9 Pin Select"]
-pub type EXTIPINSEL9_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTIPINSEL9>;
-impl<'a, REG> EXTIPINSEL9_W<'a, REG>
+pub type Extipinsel9W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTIPINSEL9, crate::Safe>;
+impl<'a, REG> Extipinsel9W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -172,8 +174,6 @@ where
         self.variant(EXTIPINSEL9::Pin11)
     }
 }
-#[doc = "Field `EXTIPINSEL10` reader - External Interrupt 10 Pin Select"]
-pub type EXTIPINSEL10_R = crate::FieldReader<EXTIPINSEL10>;
 #[doc = "External Interrupt 10 Pin Select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -196,7 +196,10 @@ impl From<EXTIPINSEL10> for u8 {
 impl crate::FieldSpec for EXTIPINSEL10 {
     type Ux = u8;
 }
-impl EXTIPINSEL10_R {
+impl crate::IsEnum for EXTIPINSEL10 {}
+#[doc = "Field `EXTIPINSEL10` reader - External Interrupt 10 Pin Select"]
+pub type Extipinsel10R = crate::FieldReader<EXTIPINSEL10>;
+impl Extipinsel10R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EXTIPINSEL10 {
@@ -230,8 +233,8 @@ impl EXTIPINSEL10_R {
     }
 }
 #[doc = "Field `EXTIPINSEL10` writer - External Interrupt 10 Pin Select"]
-pub type EXTIPINSEL10_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTIPINSEL10>;
-impl<'a, REG> EXTIPINSEL10_W<'a, REG>
+pub type Extipinsel10W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTIPINSEL10, crate::Safe>;
+impl<'a, REG> Extipinsel10W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -257,8 +260,6 @@ where
         self.variant(EXTIPINSEL10::Pin11)
     }
 }
-#[doc = "Field `EXTIPINSEL11` reader - External Interrupt 11 Pin Select"]
-pub type EXTIPINSEL11_R = crate::FieldReader<EXTIPINSEL11>;
 #[doc = "External Interrupt 11 Pin Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -281,7 +282,10 @@ impl From<EXTIPINSEL11> for u8 {
 impl crate::FieldSpec for EXTIPINSEL11 {
     type Ux = u8;
 }
-impl EXTIPINSEL11_R {
+impl crate::IsEnum for EXTIPINSEL11 {}
+#[doc = "Field `EXTIPINSEL11` reader - External Interrupt 11 Pin Select"]
+pub type Extipinsel11R = crate::FieldReader<EXTIPINSEL11>;
+impl Extipinsel11R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EXTIPINSEL11 {
@@ -315,8 +319,8 @@ impl EXTIPINSEL11_R {
     }
 }
 #[doc = "Field `EXTIPINSEL11` writer - External Interrupt 11 Pin Select"]
-pub type EXTIPINSEL11_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTIPINSEL11>;
-impl<'a, REG> EXTIPINSEL11_W<'a, REG>
+pub type Extipinsel11W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTIPINSEL11, crate::Safe>;
+impl<'a, REG> Extipinsel11W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -342,8 +346,6 @@ where
         self.variant(EXTIPINSEL11::Pin11)
     }
 }
-#[doc = "Field `EXTIPINSEL12` reader - External Interrupt 12 Pin Select"]
-pub type EXTIPINSEL12_R = crate::FieldReader<EXTIPINSEL12>;
 #[doc = "External Interrupt 12 Pin Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -366,7 +368,10 @@ impl From<EXTIPINSEL12> for u8 {
 impl crate::FieldSpec for EXTIPINSEL12 {
     type Ux = u8;
 }
-impl EXTIPINSEL12_R {
+impl crate::IsEnum for EXTIPINSEL12 {}
+#[doc = "Field `EXTIPINSEL12` reader - External Interrupt 12 Pin Select"]
+pub type Extipinsel12R = crate::FieldReader<EXTIPINSEL12>;
+impl Extipinsel12R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EXTIPINSEL12 {
@@ -400,8 +405,8 @@ impl EXTIPINSEL12_R {
     }
 }
 #[doc = "Field `EXTIPINSEL12` writer - External Interrupt 12 Pin Select"]
-pub type EXTIPINSEL12_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTIPINSEL12>;
-impl<'a, REG> EXTIPINSEL12_W<'a, REG>
+pub type Extipinsel12W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTIPINSEL12, crate::Safe>;
+impl<'a, REG> Extipinsel12W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -427,8 +432,6 @@ where
         self.variant(EXTIPINSEL12::Pin15)
     }
 }
-#[doc = "Field `EXTIPINSEL13` reader - External Interrupt 13 Pin Select"]
-pub type EXTIPINSEL13_R = crate::FieldReader<EXTIPINSEL13>;
 #[doc = "External Interrupt 13 Pin Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -451,7 +454,10 @@ impl From<EXTIPINSEL13> for u8 {
 impl crate::FieldSpec for EXTIPINSEL13 {
     type Ux = u8;
 }
-impl EXTIPINSEL13_R {
+impl crate::IsEnum for EXTIPINSEL13 {}
+#[doc = "Field `EXTIPINSEL13` reader - External Interrupt 13 Pin Select"]
+pub type Extipinsel13R = crate::FieldReader<EXTIPINSEL13>;
+impl Extipinsel13R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EXTIPINSEL13 {
@@ -485,8 +491,8 @@ impl EXTIPINSEL13_R {
     }
 }
 #[doc = "Field `EXTIPINSEL13` writer - External Interrupt 13 Pin Select"]
-pub type EXTIPINSEL13_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTIPINSEL13>;
-impl<'a, REG> EXTIPINSEL13_W<'a, REG>
+pub type Extipinsel13W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTIPINSEL13, crate::Safe>;
+impl<'a, REG> Extipinsel13W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -512,8 +518,6 @@ where
         self.variant(EXTIPINSEL13::Pin15)
     }
 }
-#[doc = "Field `EXTIPINSEL14` reader - External Interrupt 14 Pin Select"]
-pub type EXTIPINSEL14_R = crate::FieldReader<EXTIPINSEL14>;
 #[doc = "External Interrupt 14 Pin Select\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -536,7 +540,10 @@ impl From<EXTIPINSEL14> for u8 {
 impl crate::FieldSpec for EXTIPINSEL14 {
     type Ux = u8;
 }
-impl EXTIPINSEL14_R {
+impl crate::IsEnum for EXTIPINSEL14 {}
+#[doc = "Field `EXTIPINSEL14` reader - External Interrupt 14 Pin Select"]
+pub type Extipinsel14R = crate::FieldReader<EXTIPINSEL14>;
+impl Extipinsel14R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EXTIPINSEL14 {
@@ -570,8 +577,8 @@ impl EXTIPINSEL14_R {
     }
 }
 #[doc = "Field `EXTIPINSEL14` writer - External Interrupt 14 Pin Select"]
-pub type EXTIPINSEL14_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTIPINSEL14>;
-impl<'a, REG> EXTIPINSEL14_W<'a, REG>
+pub type Extipinsel14W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTIPINSEL14, crate::Safe>;
+impl<'a, REG> Extipinsel14W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -597,8 +604,6 @@ where
         self.variant(EXTIPINSEL14::Pin15)
     }
 }
-#[doc = "Field `EXTIPINSEL15` reader - External Interrupt 15 Pin Select"]
-pub type EXTIPINSEL15_R = crate::FieldReader<EXTIPINSEL15>;
 #[doc = "External Interrupt 15 Pin Select\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -621,7 +626,10 @@ impl From<EXTIPINSEL15> for u8 {
 impl crate::FieldSpec for EXTIPINSEL15 {
     type Ux = u8;
 }
-impl EXTIPINSEL15_R {
+impl crate::IsEnum for EXTIPINSEL15 {}
+#[doc = "Field `EXTIPINSEL15` reader - External Interrupt 15 Pin Select"]
+pub type Extipinsel15R = crate::FieldReader<EXTIPINSEL15>;
+impl Extipinsel15R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EXTIPINSEL15 {
@@ -655,8 +663,8 @@ impl EXTIPINSEL15_R {
     }
 }
 #[doc = "Field `EXTIPINSEL15` writer - External Interrupt 15 Pin Select"]
-pub type EXTIPINSEL15_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTIPINSEL15>;
-impl<'a, REG> EXTIPINSEL15_W<'a, REG>
+pub type Extipinsel15W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTIPINSEL15, crate::Safe>;
+impl<'a, REG> Extipinsel15W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -685,103 +693,93 @@ where
 impl R {
     #[doc = "Bits 0:1 - External Interrupt 8 Pin Select"]
     #[inline(always)]
-    pub fn extipinsel8(&self) -> EXTIPINSEL8_R {
-        EXTIPINSEL8_R::new((self.bits & 3) as u8)
+    pub fn extipinsel8(&self) -> Extipinsel8R {
+        Extipinsel8R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:5 - External Interrupt 9 Pin Select"]
     #[inline(always)]
-    pub fn extipinsel9(&self) -> EXTIPINSEL9_R {
-        EXTIPINSEL9_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn extipinsel9(&self) -> Extipinsel9R {
+        Extipinsel9R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - External Interrupt 10 Pin Select"]
     #[inline(always)]
-    pub fn extipinsel10(&self) -> EXTIPINSEL10_R {
-        EXTIPINSEL10_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn extipinsel10(&self) -> Extipinsel10R {
+        Extipinsel10R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - External Interrupt 11 Pin Select"]
     #[inline(always)]
-    pub fn extipinsel11(&self) -> EXTIPINSEL11_R {
-        EXTIPINSEL11_R::new(((self.bits >> 12) & 3) as u8)
+    pub fn extipinsel11(&self) -> Extipinsel11R {
+        Extipinsel11R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:17 - External Interrupt 12 Pin Select"]
     #[inline(always)]
-    pub fn extipinsel12(&self) -> EXTIPINSEL12_R {
-        EXTIPINSEL12_R::new(((self.bits >> 16) & 3) as u8)
+    pub fn extipinsel12(&self) -> Extipinsel12R {
+        Extipinsel12R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 20:21 - External Interrupt 13 Pin Select"]
     #[inline(always)]
-    pub fn extipinsel13(&self) -> EXTIPINSEL13_R {
-        EXTIPINSEL13_R::new(((self.bits >> 20) & 3) as u8)
+    pub fn extipinsel13(&self) -> Extipinsel13R {
+        Extipinsel13R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 24:25 - External Interrupt 14 Pin Select"]
     #[inline(always)]
-    pub fn extipinsel14(&self) -> EXTIPINSEL14_R {
-        EXTIPINSEL14_R::new(((self.bits >> 24) & 3) as u8)
+    pub fn extipinsel14(&self) -> Extipinsel14R {
+        Extipinsel14R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 28:29 - External Interrupt 15 Pin Select"]
     #[inline(always)]
-    pub fn extipinsel15(&self) -> EXTIPINSEL15_R {
-        EXTIPINSEL15_R::new(((self.bits >> 28) & 3) as u8)
+    pub fn extipinsel15(&self) -> Extipinsel15R {
+        Extipinsel15R::new(((self.bits >> 28) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - External Interrupt 8 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel8(&mut self) -> EXTIPINSEL8_W<EXTIPINSELHrs> {
-        EXTIPINSEL8_W::new(self, 0)
+    pub fn extipinsel8(&mut self) -> Extipinsel8W<EXTIPINSELHrs> {
+        Extipinsel8W::new(self, 0)
     }
     #[doc = "Bits 4:5 - External Interrupt 9 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel9(&mut self) -> EXTIPINSEL9_W<EXTIPINSELHrs> {
-        EXTIPINSEL9_W::new(self, 4)
+    pub fn extipinsel9(&mut self) -> Extipinsel9W<EXTIPINSELHrs> {
+        Extipinsel9W::new(self, 4)
     }
     #[doc = "Bits 8:9 - External Interrupt 10 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel10(&mut self) -> EXTIPINSEL10_W<EXTIPINSELHrs> {
-        EXTIPINSEL10_W::new(self, 8)
+    pub fn extipinsel10(&mut self) -> Extipinsel10W<EXTIPINSELHrs> {
+        Extipinsel10W::new(self, 8)
     }
     #[doc = "Bits 12:13 - External Interrupt 11 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel11(&mut self) -> EXTIPINSEL11_W<EXTIPINSELHrs> {
-        EXTIPINSEL11_W::new(self, 12)
+    pub fn extipinsel11(&mut self) -> Extipinsel11W<EXTIPINSELHrs> {
+        Extipinsel11W::new(self, 12)
     }
     #[doc = "Bits 16:17 - External Interrupt 12 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel12(&mut self) -> EXTIPINSEL12_W<EXTIPINSELHrs> {
-        EXTIPINSEL12_W::new(self, 16)
+    pub fn extipinsel12(&mut self) -> Extipinsel12W<EXTIPINSELHrs> {
+        Extipinsel12W::new(self, 16)
     }
     #[doc = "Bits 20:21 - External Interrupt 13 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel13(&mut self) -> EXTIPINSEL13_W<EXTIPINSELHrs> {
-        EXTIPINSEL13_W::new(self, 20)
+    pub fn extipinsel13(&mut self) -> Extipinsel13W<EXTIPINSELHrs> {
+        Extipinsel13W::new(self, 20)
     }
     #[doc = "Bits 24:25 - External Interrupt 14 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel14(&mut self) -> EXTIPINSEL14_W<EXTIPINSELHrs> {
-        EXTIPINSEL14_W::new(self, 24)
+    pub fn extipinsel14(&mut self) -> Extipinsel14W<EXTIPINSELHrs> {
+        Extipinsel14W::new(self, 24)
     }
     #[doc = "Bits 28:29 - External Interrupt 15 Pin Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipinsel15(&mut self) -> EXTIPINSEL15_W<EXTIPINSELHrs> {
-        EXTIPINSEL15_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn extipinsel15(&mut self) -> Extipinsel15W<EXTIPINSELHrs> {
+        Extipinsel15W::new(self, 28)
     }
 }
 #[doc = "External Interrupt Pin Select High Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`extipinselh::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`extipinselh::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -793,6 +791,7 @@ impl crate::RegisterSpec for EXTIPINSELHrs {
 impl crate::Readable for EXTIPINSELHrs {}
 #[doc = "`write(|w| ..)` method takes [`extipinselh::W`](W) writer structure"]
 impl crate::Writable for EXTIPINSELHrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

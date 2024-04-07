@@ -1,103 +1,93 @@
 #[doc = "Register `IFC` writer"]
 pub type W = crate::W<IFCrs>;
 #[doc = "Field `OF` writer - Clear OF Interrupt Flag"]
-pub type OF_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OfW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CC0` writer - Clear CC0 Interrupt Flag"]
-pub type CC0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Cc0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CC1` writer - Clear CC1 Interrupt Flag"]
-pub type CC1_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Cc1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CC2` writer - Clear CC2 Interrupt Flag"]
-pub type CC2_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Cc2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSCFAIL` writer - Clear OSCFAIL Interrupt Flag"]
-pub type OSCFAIL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OscfailW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CNTTICK` writer - Clear CNTTICK Interrupt Flag"]
-pub type CNTTICK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CnttickW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MINTICK` writer - Clear MINTICK Interrupt Flag"]
-pub type MINTICK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type MintickW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HOURTICK` writer - Clear HOURTICK Interrupt Flag"]
-pub type HOURTICK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type HourtickW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DAYTICK` writer - Clear DAYTICK Interrupt Flag"]
-pub type DAYTICK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DaytickW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DAYOWOF` writer - Clear DAYOWOF Interrupt Flag"]
-pub type DAYOWOF_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DayowofW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MONTHTICK` writer - Clear MONTHTICK Interrupt Flag"]
-pub type MONTHTICK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type MonthtickW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Clear OF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn of(&mut self) -> OF_W<IFCrs> {
-        OF_W::new(self, 0)
+    pub fn of(&mut self) -> OfW<IFCrs> {
+        OfW::new(self, 0)
     }
     #[doc = "Bit 1 - Clear CC0 Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cc0(&mut self) -> CC0_W<IFCrs> {
-        CC0_W::new(self, 1)
+    pub fn cc0(&mut self) -> Cc0W<IFCrs> {
+        Cc0W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear CC1 Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cc1(&mut self) -> CC1_W<IFCrs> {
-        CC1_W::new(self, 2)
+    pub fn cc1(&mut self) -> Cc1W<IFCrs> {
+        Cc1W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear CC2 Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cc2(&mut self) -> CC2_W<IFCrs> {
-        CC2_W::new(self, 3)
+    pub fn cc2(&mut self) -> Cc2W<IFCrs> {
+        Cc2W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear OSCFAIL Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn oscfail(&mut self) -> OSCFAIL_W<IFCrs> {
-        OSCFAIL_W::new(self, 4)
+    pub fn oscfail(&mut self) -> OscfailW<IFCrs> {
+        OscfailW::new(self, 4)
     }
     #[doc = "Bit 5 - Clear CNTTICK Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cnttick(&mut self) -> CNTTICK_W<IFCrs> {
-        CNTTICK_W::new(self, 5)
+    pub fn cnttick(&mut self) -> CnttickW<IFCrs> {
+        CnttickW::new(self, 5)
     }
     #[doc = "Bit 6 - Clear MINTICK Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn mintick(&mut self) -> MINTICK_W<IFCrs> {
-        MINTICK_W::new(self, 6)
+    pub fn mintick(&mut self) -> MintickW<IFCrs> {
+        MintickW::new(self, 6)
     }
     #[doc = "Bit 7 - Clear HOURTICK Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn hourtick(&mut self) -> HOURTICK_W<IFCrs> {
-        HOURTICK_W::new(self, 7)
+    pub fn hourtick(&mut self) -> HourtickW<IFCrs> {
+        HourtickW::new(self, 7)
     }
     #[doc = "Bit 8 - Clear DAYTICK Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn daytick(&mut self) -> DAYTICK_W<IFCrs> {
-        DAYTICK_W::new(self, 8)
+    pub fn daytick(&mut self) -> DaytickW<IFCrs> {
+        DaytickW::new(self, 8)
     }
     #[doc = "Bit 9 - Clear DAYOWOF Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn dayowof(&mut self) -> DAYOWOF_W<IFCrs> {
-        DAYOWOF_W::new(self, 9)
+    pub fn dayowof(&mut self) -> DayowofW<IFCrs> {
+        DayowofW::new(self, 9)
     }
     #[doc = "Bit 10 - Clear MONTHTICK Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn monthtick(&mut self) -> MONTHTICK_W<IFCrs> {
-        MONTHTICK_W::new(self, 10)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn monthtick(&mut self) -> MonthtickW<IFCrs> {
+        MonthtickW::new(self, 10)
     }
 }
 #[doc = "Interrupt Flag Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -107,6 +97,7 @@ impl crate::RegisterSpec for IFCrs {
 }
 #[doc = "`write(|w| ..)` method takes [`ifc::W`](W) writer structure"]
 impl crate::Writable for IFCrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

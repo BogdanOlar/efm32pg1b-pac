@@ -2,8 +2,6 @@
 pub type R = crate::R<LFECLKSELrs>;
 #[doc = "Register `LFECLKSEL` writer"]
 pub type W = crate::W<LFECLKSELrs>;
-#[doc = "Field `LFE` reader - Clock Select for LFE"]
-pub type LFE_R = crate::FieldReader<LFE>;
 #[doc = "Clock Select for LFE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -26,7 +24,10 @@ impl From<LFE> for u8 {
 impl crate::FieldSpec for LFE {
     type Ux = u8;
 }
-impl LFE_R {
+impl crate::IsEnum for LFE {}
+#[doc = "Field `LFE` reader - Clock Select for LFE"]
+pub type LfeR = crate::FieldReader<LFE>;
+impl LfeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<LFE> {
@@ -60,8 +61,8 @@ impl LFE_R {
     }
 }
 #[doc = "Field `LFE` writer - Clock Select for LFE"]
-pub type LFE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, LFE>;
-impl<'a, REG> LFE_W<'a, REG>
+pub type LfeW<'a, REG> = crate::FieldWriter<'a, REG, 3, LFE>;
+impl<'a, REG> LfeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -90,26 +91,16 @@ where
 impl R {
     #[doc = "Bits 0:2 - Clock Select for LFE"]
     #[inline(always)]
-    pub fn lfe(&self) -> LFE_R {
-        LFE_R::new((self.bits & 7) as u8)
+    pub fn lfe(&self) -> LfeR {
+        LfeR::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Clock Select for LFE"]
     #[inline(always)]
     #[must_use]
-    pub fn lfe(&mut self) -> LFE_W<LFECLKSELrs> {
-        LFE_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn lfe(&mut self) -> LfeW<LFECLKSELrs> {
+        LfeW::new(self, 0)
     }
 }
 #[doc = "Low Frequency E Clock Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfeclksel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfeclksel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -121,6 +112,7 @@ impl crate::RegisterSpec for LFECLKSELrs {
 impl crate::Readable for LFECLKSELrs {}
 #[doc = "`write(|w| ..)` method takes [`lfeclksel::W`](W) writer structure"]
 impl crate::Writable for LFECLKSELrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -3,23 +3,21 @@ pub type R = crate::R<LFRCOCTRLrs>;
 #[doc = "Register `LFRCOCTRL` writer"]
 pub type W = crate::W<LFRCOCTRLrs>;
 #[doc = "Field `TUNING` reader - LFRCO Tuning Value"]
-pub type TUNING_R = crate::FieldReader<u16>;
+pub type TuningR = crate::FieldReader<u16>;
 #[doc = "Field `TUNING` writer - LFRCO Tuning Value"]
-pub type TUNING_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
+pub type TuningW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 #[doc = "Field `ENVREF` reader - Enable Duty Cycling of Vref"]
-pub type ENVREF_R = crate::BitReader;
+pub type EnvrefR = crate::BitReader;
 #[doc = "Field `ENVREF` writer - Enable Duty Cycling of Vref"]
-pub type ENVREF_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type EnvrefW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ENCHOP` reader - Enable Comparator Chopping"]
-pub type ENCHOP_R = crate::BitReader;
+pub type EnchopR = crate::BitReader;
 #[doc = "Field `ENCHOP` writer - Enable Comparator Chopping"]
-pub type ENCHOP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type EnchopW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ENDEM` reader - Enable Dynamic Element Matching"]
-pub type ENDEM_R = crate::BitReader;
+pub type EndemR = crate::BitReader;
 #[doc = "Field `ENDEM` writer - Enable Dynamic Element Matching"]
-pub type ENDEM_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TIMEOUT` reader - LFRCO Timeout"]
-pub type TIMEOUT_R = crate::FieldReader<TIMEOUT>;
+pub type EndemW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "LFRCO Timeout\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -40,7 +38,10 @@ impl From<TIMEOUT> for u8 {
 impl crate::FieldSpec for TIMEOUT {
     type Ux = u8;
 }
-impl TIMEOUT_R {
+impl crate::IsEnum for TIMEOUT {}
+#[doc = "Field `TIMEOUT` reader - LFRCO Timeout"]
+pub type TimeoutR = crate::FieldReader<TIMEOUT>;
+impl TimeoutR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<TIMEOUT> {
@@ -68,8 +69,8 @@ impl TIMEOUT_R {
     }
 }
 #[doc = "Field `TIMEOUT` writer - LFRCO Timeout"]
-pub type TIMEOUT_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TIMEOUT>;
-impl<'a, REG> TIMEOUT_W<'a, REG>
+pub type TimeoutW<'a, REG> = crate::FieldWriter<'a, REG, 2, TIMEOUT>;
+impl<'a, REG> TimeoutW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -91,87 +92,77 @@ where
     }
 }
 #[doc = "Field `GMCCURTUNE` reader - Tuning of Gmc Current"]
-pub type GMCCURTUNE_R = crate::FieldReader;
+pub type GmccurtuneR = crate::FieldReader;
 #[doc = "Field `GMCCURTUNE` writer - Tuning of Gmc Current"]
-pub type GMCCURTUNE_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type GmccurtuneW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:8 - LFRCO Tuning Value"]
     #[inline(always)]
-    pub fn tuning(&self) -> TUNING_R {
-        TUNING_R::new((self.bits & 0x01ff) as u16)
+    pub fn tuning(&self) -> TuningR {
+        TuningR::new((self.bits & 0x01ff) as u16)
     }
     #[doc = "Bit 16 - Enable Duty Cycling of Vref"]
     #[inline(always)]
-    pub fn envref(&self) -> ENVREF_R {
-        ENVREF_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn envref(&self) -> EnvrefR {
+        EnvrefR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Enable Comparator Chopping"]
     #[inline(always)]
-    pub fn enchop(&self) -> ENCHOP_R {
-        ENCHOP_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn enchop(&self) -> EnchopR {
+        EnchopR::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Enable Dynamic Element Matching"]
     #[inline(always)]
-    pub fn endem(&self) -> ENDEM_R {
-        ENDEM_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn endem(&self) -> EndemR {
+        EndemR::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bits 24:25 - LFRCO Timeout"]
     #[inline(always)]
-    pub fn timeout(&self) -> TIMEOUT_R {
-        TIMEOUT_R::new(((self.bits >> 24) & 3) as u8)
+    pub fn timeout(&self) -> TimeoutR {
+        TimeoutR::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 28:31 - Tuning of Gmc Current"]
     #[inline(always)]
-    pub fn gmccurtune(&self) -> GMCCURTUNE_R {
-        GMCCURTUNE_R::new(((self.bits >> 28) & 0x0f) as u8)
+    pub fn gmccurtune(&self) -> GmccurtuneR {
+        GmccurtuneR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:8 - LFRCO Tuning Value"]
     #[inline(always)]
     #[must_use]
-    pub fn tuning(&mut self) -> TUNING_W<LFRCOCTRLrs> {
-        TUNING_W::new(self, 0)
+    pub fn tuning(&mut self) -> TuningW<LFRCOCTRLrs> {
+        TuningW::new(self, 0)
     }
     #[doc = "Bit 16 - Enable Duty Cycling of Vref"]
     #[inline(always)]
     #[must_use]
-    pub fn envref(&mut self) -> ENVREF_W<LFRCOCTRLrs> {
-        ENVREF_W::new(self, 16)
+    pub fn envref(&mut self) -> EnvrefW<LFRCOCTRLrs> {
+        EnvrefW::new(self, 16)
     }
     #[doc = "Bit 17 - Enable Comparator Chopping"]
     #[inline(always)]
     #[must_use]
-    pub fn enchop(&mut self) -> ENCHOP_W<LFRCOCTRLrs> {
-        ENCHOP_W::new(self, 17)
+    pub fn enchop(&mut self) -> EnchopW<LFRCOCTRLrs> {
+        EnchopW::new(self, 17)
     }
     #[doc = "Bit 18 - Enable Dynamic Element Matching"]
     #[inline(always)]
     #[must_use]
-    pub fn endem(&mut self) -> ENDEM_W<LFRCOCTRLrs> {
-        ENDEM_W::new(self, 18)
+    pub fn endem(&mut self) -> EndemW<LFRCOCTRLrs> {
+        EndemW::new(self, 18)
     }
     #[doc = "Bits 24:25 - LFRCO Timeout"]
     #[inline(always)]
     #[must_use]
-    pub fn timeout(&mut self) -> TIMEOUT_W<LFRCOCTRLrs> {
-        TIMEOUT_W::new(self, 24)
+    pub fn timeout(&mut self) -> TimeoutW<LFRCOCTRLrs> {
+        TimeoutW::new(self, 24)
     }
     #[doc = "Bits 28:31 - Tuning of Gmc Current"]
     #[inline(always)]
     #[must_use]
-    pub fn gmccurtune(&mut self) -> GMCCURTUNE_W<LFRCOCTRLrs> {
-        GMCCURTUNE_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn gmccurtune(&mut self) -> GmccurtuneW<LFRCOCTRLrs> {
+        GmccurtuneW::new(self, 28)
     }
 }
 #[doc = "LFRCO Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfrcoctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfrcoctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -183,6 +174,7 @@ impl crate::RegisterSpec for LFRCOCTRLrs {
 impl crate::Readable for LFRCOCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`lfrcoctrl::W`](W) writer structure"]
 impl crate::Writable for LFRCOCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

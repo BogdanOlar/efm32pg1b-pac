@@ -3,47 +3,37 @@ pub type R = crate::R<OVSCFGrs>;
 #[doc = "Register `OVSCFG` writer"]
 pub type W = crate::W<OVSCFGrs>;
 #[doc = "Field `FILTLEN` reader - Configure Filter Length for Inputs S0IN and S1IN"]
-pub type FILTLEN_R = crate::FieldReader;
+pub type FiltlenR = crate::FieldReader;
 #[doc = "Field `FILTLEN` writer - Configure Filter Length for Inputs S0IN and S1IN"]
-pub type FILTLEN_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type FiltlenW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `FLUTTERRM` reader - Flutter Remove"]
-pub type FLUTTERRM_R = crate::BitReader;
+pub type FlutterrmR = crate::BitReader;
 #[doc = "Field `FLUTTERRM` writer - Flutter Remove"]
-pub type FLUTTERRM_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FlutterrmW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN"]
     #[inline(always)]
-    pub fn filtlen(&self) -> FILTLEN_R {
-        FILTLEN_R::new((self.bits & 0xff) as u8)
+    pub fn filtlen(&self) -> FiltlenR {
+        FiltlenR::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 12 - Flutter Remove"]
     #[inline(always)]
-    pub fn flutterrm(&self) -> FLUTTERRM_R {
-        FLUTTERRM_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn flutterrm(&self) -> FlutterrmR {
+        FlutterrmR::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN"]
     #[inline(always)]
     #[must_use]
-    pub fn filtlen(&mut self) -> FILTLEN_W<OVSCFGrs> {
-        FILTLEN_W::new(self, 0)
+    pub fn filtlen(&mut self) -> FiltlenW<OVSCFGrs> {
+        FiltlenW::new(self, 0)
     }
     #[doc = "Bit 12 - Flutter Remove"]
     #[inline(always)]
     #[must_use]
-    pub fn flutterrm(&mut self) -> FLUTTERRM_W<OVSCFGrs> {
-        FLUTTERRM_W::new(self, 12)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn flutterrm(&mut self) -> FlutterrmW<OVSCFGrs> {
+        FlutterrmW::new(self, 12)
     }
 }
 #[doc = "Oversampling Config Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ovscfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ovscfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -55,6 +45,7 @@ impl crate::RegisterSpec for OVSCFGrs {
 impl crate::Readable for OVSCFGrs {}
 #[doc = "`write(|w| ..)` method takes [`ovscfg::W`](W) writer structure"]
 impl crate::Writable for OVSCFGrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

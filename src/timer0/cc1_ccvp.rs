@@ -1,12 +1,12 @@
 #[doc = "Register `CC1_CCVP` reader"]
 pub type R = crate::R<CC1_CCVPrs>;
 #[doc = "Field `CCVP` reader - CC Channel Value Peek"]
-pub type CCVP_R = crate::FieldReader<u16>;
+pub type CcvpR = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - CC Channel Value Peek"]
     #[inline(always)]
-    pub fn ccvp(&self) -> CCVP_R {
-        CCVP_R::new((self.bits & 0xffff) as u16)
+    pub fn ccvp(&self) -> CcvpR {
+        CcvpR::new((self.bits & 0xffff) as u16)
     }
 }
 #[doc = "CC Channel Value Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc1_ccvp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

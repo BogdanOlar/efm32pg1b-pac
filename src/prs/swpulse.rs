@@ -1,111 +1,101 @@
 #[doc = "Register `SWPULSE` writer"]
 pub type W = crate::W<SWPULSErs>;
 #[doc = "Field `CH0PULSE` writer - Channel 0 Pulse Generation"]
-pub type CH0PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch0pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH1PULSE` writer - Channel 1 Pulse Generation"]
-pub type CH1PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch1pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH2PULSE` writer - Channel 2 Pulse Generation"]
-pub type CH2PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch2pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH3PULSE` writer - Channel 3 Pulse Generation"]
-pub type CH3PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch3pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH4PULSE` writer - Channel 4 Pulse Generation"]
-pub type CH4PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch4pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH5PULSE` writer - Channel 5 Pulse Generation"]
-pub type CH5PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch5pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH6PULSE` writer - Channel 6 Pulse Generation"]
-pub type CH6PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch6pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH7PULSE` writer - Channel 7 Pulse Generation"]
-pub type CH7PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch7pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH8PULSE` writer - Channel 8 Pulse Generation"]
-pub type CH8PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch8pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH9PULSE` writer - Channel 9 Pulse Generation"]
-pub type CH9PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch9pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH10PULSE` writer - Channel 10 Pulse Generation"]
-pub type CH10PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch10pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH11PULSE` writer - Channel 11 Pulse Generation"]
-pub type CH11PULSE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Ch11pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0pulse(&mut self) -> CH0PULSE_W<SWPULSErs> {
-        CH0PULSE_W::new(self, 0)
+    pub fn ch0pulse(&mut self) -> Ch0pulseW<SWPULSErs> {
+        Ch0pulseW::new(self, 0)
     }
     #[doc = "Bit 1 - Channel 1 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1pulse(&mut self) -> CH1PULSE_W<SWPULSErs> {
-        CH1PULSE_W::new(self, 1)
+    pub fn ch1pulse(&mut self) -> Ch1pulseW<SWPULSErs> {
+        Ch1pulseW::new(self, 1)
     }
     #[doc = "Bit 2 - Channel 2 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2pulse(&mut self) -> CH2PULSE_W<SWPULSErs> {
-        CH2PULSE_W::new(self, 2)
+    pub fn ch2pulse(&mut self) -> Ch2pulseW<SWPULSErs> {
+        Ch2pulseW::new(self, 2)
     }
     #[doc = "Bit 3 - Channel 3 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3pulse(&mut self) -> CH3PULSE_W<SWPULSErs> {
-        CH3PULSE_W::new(self, 3)
+    pub fn ch3pulse(&mut self) -> Ch3pulseW<SWPULSErs> {
+        Ch3pulseW::new(self, 3)
     }
     #[doc = "Bit 4 - Channel 4 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch4pulse(&mut self) -> CH4PULSE_W<SWPULSErs> {
-        CH4PULSE_W::new(self, 4)
+    pub fn ch4pulse(&mut self) -> Ch4pulseW<SWPULSErs> {
+        Ch4pulseW::new(self, 4)
     }
     #[doc = "Bit 5 - Channel 5 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch5pulse(&mut self) -> CH5PULSE_W<SWPULSErs> {
-        CH5PULSE_W::new(self, 5)
+    pub fn ch5pulse(&mut self) -> Ch5pulseW<SWPULSErs> {
+        Ch5pulseW::new(self, 5)
     }
     #[doc = "Bit 6 - Channel 6 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch6pulse(&mut self) -> CH6PULSE_W<SWPULSErs> {
-        CH6PULSE_W::new(self, 6)
+    pub fn ch6pulse(&mut self) -> Ch6pulseW<SWPULSErs> {
+        Ch6pulseW::new(self, 6)
     }
     #[doc = "Bit 7 - Channel 7 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch7pulse(&mut self) -> CH7PULSE_W<SWPULSErs> {
-        CH7PULSE_W::new(self, 7)
+    pub fn ch7pulse(&mut self) -> Ch7pulseW<SWPULSErs> {
+        Ch7pulseW::new(self, 7)
     }
     #[doc = "Bit 8 - Channel 8 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch8pulse(&mut self) -> CH8PULSE_W<SWPULSErs> {
-        CH8PULSE_W::new(self, 8)
+    pub fn ch8pulse(&mut self) -> Ch8pulseW<SWPULSErs> {
+        Ch8pulseW::new(self, 8)
     }
     #[doc = "Bit 9 - Channel 9 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch9pulse(&mut self) -> CH9PULSE_W<SWPULSErs> {
-        CH9PULSE_W::new(self, 9)
+    pub fn ch9pulse(&mut self) -> Ch9pulseW<SWPULSErs> {
+        Ch9pulseW::new(self, 9)
     }
     #[doc = "Bit 10 - Channel 10 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch10pulse(&mut self) -> CH10PULSE_W<SWPULSErs> {
-        CH10PULSE_W::new(self, 10)
+    pub fn ch10pulse(&mut self) -> Ch10pulseW<SWPULSErs> {
+        Ch10pulseW::new(self, 10)
     }
     #[doc = "Bit 11 - Channel 11 Pulse Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn ch11pulse(&mut self) -> CH11PULSE_W<SWPULSErs> {
-        CH11PULSE_W::new(self, 11)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn ch11pulse(&mut self) -> Ch11pulseW<SWPULSErs> {
+        Ch11pulseW::new(self, 11)
     }
 }
 #[doc = "Software Pulse Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swpulse::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -115,6 +105,7 @@ impl crate::RegisterSpec for SWPULSErs {
 }
 #[doc = "`write(|w| ..)` method takes [`swpulse::W`](W) writer structure"]
 impl crate::Writable for SWPULSErs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

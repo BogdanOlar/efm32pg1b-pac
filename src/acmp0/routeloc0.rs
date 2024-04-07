@@ -2,8 +2,6 @@
 pub type R = crate::R<ROUTELOC0rs>;
 #[doc = "Register `ROUTELOC0` writer"]
 pub type W = crate::W<ROUTELOC0rs>;
-#[doc = "Field `OUTLOC` reader - I/O Location"]
-pub type OUTLOC_R = crate::FieldReader<OUTLOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -82,7 +80,10 @@ impl From<OUTLOC> for u8 {
 impl crate::FieldSpec for OUTLOC {
     type Ux = u8;
 }
-impl OUTLOC_R {
+impl crate::IsEnum for OUTLOC {}
+#[doc = "Field `OUTLOC` reader - I/O Location"]
+pub type OutlocR = crate::FieldReader<OUTLOC>;
+impl OutlocR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<OUTLOC> {
@@ -284,8 +285,8 @@ impl OUTLOC_R {
     }
 }
 #[doc = "Field `OUTLOC` writer - I/O Location"]
-pub type OUTLOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, OUTLOC>;
-impl<'a, REG> OUTLOC_W<'a, REG>
+pub type OutlocW<'a, REG> = crate::FieldWriter<'a, REG, 6, OUTLOC>;
+impl<'a, REG> OutlocW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -454,26 +455,16 @@ where
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn outloc(&self) -> OUTLOC_R {
-        OUTLOC_R::new((self.bits & 0x3f) as u8)
+    pub fn outloc(&self) -> OutlocR {
+        OutlocR::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn outloc(&mut self) -> OUTLOC_W<ROUTELOC0rs> {
-        OUTLOC_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn outloc(&mut self) -> OutlocW<ROUTELOC0rs> {
+        OutlocW::new(self, 0)
     }
 }
 #[doc = "I/O Routing Location Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routeloc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routeloc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -485,6 +476,7 @@ impl crate::RegisterSpec for ROUTELOC0rs {
 impl crate::Readable for ROUTELOC0rs {}
 #[doc = "`write(|w| ..)` method takes [`routeloc0::W`](W) writer structure"]
 impl crate::Writable for ROUTELOC0rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

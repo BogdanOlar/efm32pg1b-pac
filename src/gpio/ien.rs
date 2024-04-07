@@ -3,47 +3,37 @@ pub type R = crate::R<IENrs>;
 #[doc = "Register `IEN` writer"]
 pub type W = crate::W<IENrs>;
 #[doc = "Field `EXT` reader - EXT Interrupt Enable"]
-pub type EXT_R = crate::FieldReader<u16>;
+pub type ExtR = crate::FieldReader<u16>;
 #[doc = "Field `EXT` writer - EXT Interrupt Enable"]
-pub type EXT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type ExtW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `EM4WU` reader - EM4WU Interrupt Enable"]
-pub type EM4WU_R = crate::FieldReader<u16>;
+pub type Em4wuR = crate::FieldReader<u16>;
 #[doc = "Field `EM4WU` writer - EM4WU Interrupt Enable"]
-pub type EM4WU_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type Em4wuW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - EXT Interrupt Enable"]
     #[inline(always)]
-    pub fn ext(&self) -> EXT_R {
-        EXT_R::new((self.bits & 0xffff) as u16)
+    pub fn ext(&self) -> ExtR {
+        ExtR::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - EM4WU Interrupt Enable"]
     #[inline(always)]
-    pub fn em4wu(&self) -> EM4WU_R {
-        EM4WU_R::new(((self.bits >> 16) & 0xffff) as u16)
+    pub fn em4wu(&self) -> Em4wuR {
+        Em4wuR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - EXT Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ext(&mut self) -> EXT_W<IENrs> {
-        EXT_W::new(self, 0)
+    pub fn ext(&mut self) -> ExtW<IENrs> {
+        ExtW::new(self, 0)
     }
     #[doc = "Bits 16:31 - EM4WU Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn em4wu(&mut self) -> EM4WU_W<IENrs> {
-        EM4WU_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn em4wu(&mut self) -> Em4wuW<IENrs> {
+        Em4wuW::new(self, 16)
     }
 }
 #[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -55,6 +45,7 @@ impl crate::RegisterSpec for IENrs {
 impl crate::Readable for IENrs {}
 #[doc = "`write(|w| ..)` method takes [`ien::W`](W) writer structure"]
 impl crate::Writable for IENrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

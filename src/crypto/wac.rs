@@ -2,8 +2,6 @@
 pub type R = crate::R<WACrs>;
 #[doc = "Register `WAC` writer"]
 pub type W = crate::W<WACrs>;
-#[doc = "Field `MODULUS` reader - Modular Operation Modulus"]
-pub type MODULUS_R = crate::FieldReader<MODULUS>;
 #[doc = "Modular Operation Modulus\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -48,7 +46,10 @@ impl From<MODULUS> for u8 {
 impl crate::FieldSpec for MODULUS {
     type Ux = u8;
 }
-impl MODULUS_R {
+impl crate::IsEnum for MODULUS {}
+#[doc = "Field `MODULUS` reader - Modular Operation Modulus"]
+pub type ModulusR = crate::FieldReader<MODULUS>;
+impl ModulusR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<MODULUS> {
@@ -148,8 +149,8 @@ impl MODULUS_R {
     }
 }
 #[doc = "Field `MODULUS` writer - Modular Operation Modulus"]
-pub type MODULUS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODULUS>;
-impl<'a, REG> MODULUS_W<'a, REG>
+pub type ModulusW<'a, REG> = crate::FieldWriter<'a, REG, 4, MODULUS>;
+impl<'a, REG> ModulusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -231,11 +232,9 @@ where
     }
 }
 #[doc = "Field `MODOP` reader - Modular Operation Field Type"]
-pub type MODOP_R = crate::BitReader;
+pub type ModopR = crate::BitReader;
 #[doc = "Field `MODOP` writer - Modular Operation Field Type"]
-pub type MODOP_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `MULWIDTH` reader - Multiply Width"]
-pub type MULWIDTH_R = crate::FieldReader<MULWIDTH>;
+pub type ModopW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Multiply Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -256,7 +255,10 @@ impl From<MULWIDTH> for u8 {
 impl crate::FieldSpec for MULWIDTH {
     type Ux = u8;
 }
-impl MULWIDTH_R {
+impl crate::IsEnum for MULWIDTH {}
+#[doc = "Field `MULWIDTH` reader - Multiply Width"]
+pub type MulwidthR = crate::FieldReader<MULWIDTH>;
+impl MulwidthR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<MULWIDTH> {
@@ -284,8 +286,8 @@ impl MULWIDTH_R {
     }
 }
 #[doc = "Field `MULWIDTH` writer - Multiply Width"]
-pub type MULWIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MULWIDTH>;
-impl<'a, REG> MULWIDTH_W<'a, REG>
+pub type MulwidthW<'a, REG> = crate::FieldWriter<'a, REG, 2, MULWIDTH>;
+impl<'a, REG> MulwidthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -306,8 +308,6 @@ where
         self.variant(MULWIDTH::Mulmod)
     }
 }
-#[doc = "Field `RESULTWIDTH` reader - Result Width"]
-pub type RESULTWIDTH_R = crate::FieldReader<RESULTWIDTH>;
 #[doc = "Result Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -328,7 +328,10 @@ impl From<RESULTWIDTH> for u8 {
 impl crate::FieldSpec for RESULTWIDTH {
     type Ux = u8;
 }
-impl RESULTWIDTH_R {
+impl crate::IsEnum for RESULTWIDTH {}
+#[doc = "Field `RESULTWIDTH` reader - Result Width"]
+pub type ResultwidthR = crate::FieldReader<RESULTWIDTH>;
+impl ResultwidthR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<RESULTWIDTH> {
@@ -356,8 +359,8 @@ impl RESULTWIDTH_R {
     }
 }
 #[doc = "Field `RESULTWIDTH` writer - Result Width"]
-pub type RESULTWIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RESULTWIDTH>;
-impl<'a, REG> RESULTWIDTH_W<'a, REG>
+pub type ResultwidthW<'a, REG> = crate::FieldWriter<'a, REG, 2, RESULTWIDTH>;
+impl<'a, REG> ResultwidthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -381,59 +384,49 @@ where
 impl R {
     #[doc = "Bits 0:3 - Modular Operation Modulus"]
     #[inline(always)]
-    pub fn modulus(&self) -> MODULUS_R {
-        MODULUS_R::new((self.bits & 0x0f) as u8)
+    pub fn modulus(&self) -> ModulusR {
+        ModulusR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 4 - Modular Operation Field Type"]
     #[inline(always)]
-    pub fn modop(&self) -> MODOP_R {
-        MODOP_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn modop(&self) -> ModopR {
+        ModopR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Multiply Width"]
     #[inline(always)]
-    pub fn mulwidth(&self) -> MULWIDTH_R {
-        MULWIDTH_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn mulwidth(&self) -> MulwidthR {
+        MulwidthR::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Result Width"]
     #[inline(always)]
-    pub fn resultwidth(&self) -> RESULTWIDTH_R {
-        RESULTWIDTH_R::new(((self.bits >> 10) & 3) as u8)
+    pub fn resultwidth(&self) -> ResultwidthR {
+        ResultwidthR::new(((self.bits >> 10) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Modular Operation Modulus"]
     #[inline(always)]
     #[must_use]
-    pub fn modulus(&mut self) -> MODULUS_W<WACrs> {
-        MODULUS_W::new(self, 0)
+    pub fn modulus(&mut self) -> ModulusW<WACrs> {
+        ModulusW::new(self, 0)
     }
     #[doc = "Bit 4 - Modular Operation Field Type"]
     #[inline(always)]
     #[must_use]
-    pub fn modop(&mut self) -> MODOP_W<WACrs> {
-        MODOP_W::new(self, 4)
+    pub fn modop(&mut self) -> ModopW<WACrs> {
+        ModopW::new(self, 4)
     }
     #[doc = "Bits 8:9 - Multiply Width"]
     #[inline(always)]
     #[must_use]
-    pub fn mulwidth(&mut self) -> MULWIDTH_W<WACrs> {
-        MULWIDTH_W::new(self, 8)
+    pub fn mulwidth(&mut self) -> MulwidthW<WACrs> {
+        MulwidthW::new(self, 8)
     }
     #[doc = "Bits 10:11 - Result Width"]
     #[inline(always)]
     #[must_use]
-    pub fn resultwidth(&mut self) -> RESULTWIDTH_W<WACrs> {
-        RESULTWIDTH_W::new(self, 10)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn resultwidth(&mut self) -> ResultwidthW<WACrs> {
+        ResultwidthW::new(self, 10)
     }
 }
 #[doc = "Wide Arithmetic Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wac::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wac::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -445,6 +438,7 @@ impl crate::RegisterSpec for WACrs {
 impl crate::Readable for WACrs {}
 #[doc = "`write(|w| ..)` method takes [`wac::W`](W) writer structure"]
 impl crate::Writable for WACrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

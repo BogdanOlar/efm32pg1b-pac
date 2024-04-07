@@ -2,8 +2,6 @@
 pub type R = crate::R<LFAPRESC0rs>;
 #[doc = "Register `LFAPRESC0` writer"]
 pub type W = crate::W<LFAPRESC0rs>;
-#[doc = "Field `LETIMER0` reader - Low Energy Timer 0 Prescaler"]
-pub type LETIMER0_R = crate::FieldReader<LETIMER0>;
 #[doc = "Low Energy Timer 0 Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,7 +48,10 @@ impl From<LETIMER0> for u8 {
 impl crate::FieldSpec for LETIMER0 {
     type Ux = u8;
 }
-impl LETIMER0_R {
+impl crate::IsEnum for LETIMER0 {}
+#[doc = "Field `LETIMER0` reader - Low Energy Timer 0 Prescaler"]
+pub type Letimer0R = crate::FieldReader<LETIMER0>;
+impl Letimer0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> LETIMER0 {
@@ -156,8 +157,8 @@ impl LETIMER0_R {
     }
 }
 #[doc = "Field `LETIMER0` writer - Low Energy Timer 0 Prescaler"]
-pub type LETIMER0_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, LETIMER0>;
-impl<'a, REG> LETIMER0_W<'a, REG>
+pub type Letimer0W<'a, REG> = crate::FieldWriter<'a, REG, 4, LETIMER0, crate::Safe>;
+impl<'a, REG> Letimer0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -246,26 +247,16 @@ where
 impl R {
     #[doc = "Bits 0:3 - Low Energy Timer 0 Prescaler"]
     #[inline(always)]
-    pub fn letimer0(&self) -> LETIMER0_R {
-        LETIMER0_R::new((self.bits & 0x0f) as u8)
+    pub fn letimer0(&self) -> Letimer0R {
+        Letimer0R::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Low Energy Timer 0 Prescaler"]
     #[inline(always)]
     #[must_use]
-    pub fn letimer0(&mut self) -> LETIMER0_W<LFAPRESC0rs> {
-        LETIMER0_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn letimer0(&mut self) -> Letimer0W<LFAPRESC0rs> {
+        Letimer0W::new(self, 0)
     }
 }
 #[doc = "Low Frequency a Prescaler Register 0 (Async Reg)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfapresc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfapresc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -277,6 +268,7 @@ impl crate::RegisterSpec for LFAPRESC0rs {
 impl crate::Readable for LFAPRESC0rs {}
 #[doc = "`write(|w| ..)` method takes [`lfapresc0::W`](W) writer structure"]
 impl crate::Writable for LFAPRESC0rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

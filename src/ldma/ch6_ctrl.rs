@@ -2,8 +2,6 @@
 pub type R = crate::R<CH6_CTRLrs>;
 #[doc = "Register `CH6_CTRL` writer"]
 pub type W = crate::W<CH6_CTRLrs>;
-#[doc = "Field `STRUCTTYPE` reader - DMA Structure Type"]
-pub type STRUCTTYPE_R = crate::FieldReader<STRUCTTYPE>;
 #[doc = "DMA Structure Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -24,7 +22,10 @@ impl From<STRUCTTYPE> for u8 {
 impl crate::FieldSpec for STRUCTTYPE {
     type Ux = u8;
 }
-impl STRUCTTYPE_R {
+impl crate::IsEnum for STRUCTTYPE {}
+#[doc = "Field `STRUCTTYPE` reader - DMA Structure Type"]
+pub type StructtypeR = crate::FieldReader<STRUCTTYPE>;
+impl StructtypeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<STRUCTTYPE> {
@@ -52,17 +53,15 @@ impl STRUCTTYPE_R {
     }
 }
 #[doc = "Field `STRUCTREQ` writer - Structure DMA Transfer Request"]
-pub type STRUCTREQ_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StructreqW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `XFERCNT` reader - DMA Unit Data Transfer Count"]
-pub type XFERCNT_R = crate::FieldReader<u16>;
+pub type XfercntR = crate::FieldReader<u16>;
 #[doc = "Field `XFERCNT` writer - DMA Unit Data Transfer Count"]
-pub type XFERCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
+pub type XfercntW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 #[doc = "Field `BYTESWAP` reader - Endian Byte Swap"]
-pub type BYTESWAP_R = crate::BitReader;
+pub type ByteswapR = crate::BitReader;
 #[doc = "Field `BYTESWAP` writer - Endian Byte Swap"]
-pub type BYTESWAP_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `BLOCKSIZE` reader - Block Transfer Size"]
-pub type BLOCKSIZE_R = crate::FieldReader<BLOCKSIZE>;
+pub type ByteswapW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Block Transfer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -105,7 +104,10 @@ impl From<BLOCKSIZE> for u8 {
 impl crate::FieldSpec for BLOCKSIZE {
     type Ux = u8;
 }
-impl BLOCKSIZE_R {
+impl crate::IsEnum for BLOCKSIZE {}
+#[doc = "Field `BLOCKSIZE` reader - Block Transfer Size"]
+pub type BlocksizeR = crate::FieldReader<BLOCKSIZE>;
+impl BlocksizeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<BLOCKSIZE> {
@@ -199,8 +201,8 @@ impl BLOCKSIZE_R {
     }
 }
 #[doc = "Field `BLOCKSIZE` writer - Block Transfer Size"]
-pub type BLOCKSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BLOCKSIZE>;
-impl<'a, REG> BLOCKSIZE_W<'a, REG>
+pub type BlocksizeW<'a, REG> = crate::FieldWriter<'a, REG, 4, BLOCKSIZE>;
+impl<'a, REG> BlocksizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -277,23 +279,21 @@ where
     }
 }
 #[doc = "Field `DONEIFSEN` reader - DMA Operation Done Interrupt Flag Set Enable"]
-pub type DONEIFSEN_R = crate::BitReader;
+pub type DoneifsenR = crate::BitReader;
 #[doc = "Field `DONEIFSEN` writer - DMA Operation Done Interrupt Flag Set Enable"]
-pub type DONEIFSEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DoneifsenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `REQMODE` reader - DMA Request Transfer Mode Select"]
-pub type REQMODE_R = crate::BitReader;
+pub type ReqmodeR = crate::BitReader;
 #[doc = "Field `REQMODE` writer - DMA Request Transfer Mode Select"]
-pub type REQMODE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ReqmodeW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DECLOOPCNT` reader - Decrement Loop Count"]
-pub type DECLOOPCNT_R = crate::BitReader;
+pub type DecloopcntR = crate::BitReader;
 #[doc = "Field `DECLOOPCNT` writer - Decrement Loop Count"]
-pub type DECLOOPCNT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DecloopcntW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IGNORESREQ` reader - Ignore Sreq"]
-pub type IGNORESREQ_R = crate::BitReader;
+pub type IgnoresreqR = crate::BitReader;
 #[doc = "Field `IGNORESREQ` writer - Ignore Sreq"]
-pub type IGNORESREQ_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SRCINC` reader - Source Address Increment Size"]
-pub type SRCINC_R = crate::FieldReader<SRCINC>;
+pub type IgnoresreqW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Source Address Increment Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -316,7 +316,10 @@ impl From<SRCINC> for u8 {
 impl crate::FieldSpec for SRCINC {
     type Ux = u8;
 }
-impl SRCINC_R {
+impl crate::IsEnum for SRCINC {}
+#[doc = "Field `SRCINC` reader - Source Address Increment Size"]
+pub type SrcincR = crate::FieldReader<SRCINC>;
+impl SrcincR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> SRCINC {
@@ -350,8 +353,8 @@ impl SRCINC_R {
     }
 }
 #[doc = "Field `SRCINC` writer - Source Address Increment Size"]
-pub type SRCINC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SRCINC>;
-impl<'a, REG> SRCINC_W<'a, REG>
+pub type SrcincW<'a, REG> = crate::FieldWriter<'a, REG, 2, SRCINC, crate::Safe>;
+impl<'a, REG> SrcincW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -377,8 +380,6 @@ where
         self.variant(SRCINC::None)
     }
 }
-#[doc = "Field `SIZE` reader - Unit Data Transfer Size"]
-pub type SIZE_R = crate::FieldReader<SIZE>;
 #[doc = "Unit Data Transfer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -399,7 +400,10 @@ impl From<SIZE> for u8 {
 impl crate::FieldSpec for SIZE {
     type Ux = u8;
 }
-impl SIZE_R {
+impl crate::IsEnum for SIZE {}
+#[doc = "Field `SIZE` reader - Unit Data Transfer Size"]
+pub type SizeR = crate::FieldReader<SIZE>;
+impl SizeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<SIZE> {
@@ -427,8 +431,8 @@ impl SIZE_R {
     }
 }
 #[doc = "Field `SIZE` writer - Unit Data Transfer Size"]
-pub type SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SIZE>;
-impl<'a, REG> SIZE_W<'a, REG>
+pub type SizeW<'a, REG> = crate::FieldWriter<'a, REG, 2, SIZE>;
+impl<'a, REG> SizeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -449,8 +453,6 @@ where
         self.variant(SIZE::Word)
     }
 }
-#[doc = "Field `DSTINC` reader - Destination Address Increment Size"]
-pub type DSTINC_R = crate::FieldReader<DSTINC>;
 #[doc = "Destination Address Increment Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -473,7 +475,10 @@ impl From<DSTINC> for u8 {
 impl crate::FieldSpec for DSTINC {
     type Ux = u8;
 }
-impl DSTINC_R {
+impl crate::IsEnum for DSTINC {}
+#[doc = "Field `DSTINC` reader - Destination Address Increment Size"]
+pub type DstincR = crate::FieldReader<DSTINC>;
+impl DstincR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> DSTINC {
@@ -507,8 +512,8 @@ impl DSTINC_R {
     }
 }
 #[doc = "Field `DSTINC` writer - Destination Address Increment Size"]
-pub type DSTINC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DSTINC>;
-impl<'a, REG> DSTINC_W<'a, REG>
+pub type DstincW<'a, REG> = crate::FieldWriter<'a, REG, 2, DSTINC, crate::Safe>;
+impl<'a, REG> DstincW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -535,152 +540,142 @@ where
     }
 }
 #[doc = "Field `SRCMODE` reader - Source Addressing Mode"]
-pub type SRCMODE_R = crate::BitReader;
+pub type SrcmodeR = crate::BitReader;
 #[doc = "Field `DSTMODE` reader - Destination Addressing Mode"]
-pub type DSTMODE_R = crate::BitReader;
+pub type DstmodeR = crate::BitReader;
 impl R {
     #[doc = "Bits 0:1 - DMA Structure Type"]
     #[inline(always)]
-    pub fn structtype(&self) -> STRUCTTYPE_R {
-        STRUCTTYPE_R::new((self.bits & 3) as u8)
+    pub fn structtype(&self) -> StructtypeR {
+        StructtypeR::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:14 - DMA Unit Data Transfer Count"]
     #[inline(always)]
-    pub fn xfercnt(&self) -> XFERCNT_R {
-        XFERCNT_R::new(((self.bits >> 4) & 0x07ff) as u16)
+    pub fn xfercnt(&self) -> XfercntR {
+        XfercntR::new(((self.bits >> 4) & 0x07ff) as u16)
     }
     #[doc = "Bit 15 - Endian Byte Swap"]
     #[inline(always)]
-    pub fn byteswap(&self) -> BYTESWAP_R {
-        BYTESWAP_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn byteswap(&self) -> ByteswapR {
+        ByteswapR::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:19 - Block Transfer Size"]
     #[inline(always)]
-    pub fn blocksize(&self) -> BLOCKSIZE_R {
-        BLOCKSIZE_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn blocksize(&self) -> BlocksizeR {
+        BlocksizeR::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 20 - DMA Operation Done Interrupt Flag Set Enable"]
     #[inline(always)]
-    pub fn doneifsen(&self) -> DONEIFSEN_R {
-        DONEIFSEN_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn doneifsen(&self) -> DoneifsenR {
+        DoneifsenR::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - DMA Request Transfer Mode Select"]
     #[inline(always)]
-    pub fn reqmode(&self) -> REQMODE_R {
-        REQMODE_R::new(((self.bits >> 21) & 1) != 0)
+    pub fn reqmode(&self) -> ReqmodeR {
+        ReqmodeR::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Decrement Loop Count"]
     #[inline(always)]
-    pub fn decloopcnt(&self) -> DECLOOPCNT_R {
-        DECLOOPCNT_R::new(((self.bits >> 22) & 1) != 0)
+    pub fn decloopcnt(&self) -> DecloopcntR {
+        DecloopcntR::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Ignore Sreq"]
     #[inline(always)]
-    pub fn ignoresreq(&self) -> IGNORESREQ_R {
-        IGNORESREQ_R::new(((self.bits >> 23) & 1) != 0)
+    pub fn ignoresreq(&self) -> IgnoresreqR {
+        IgnoresreqR::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bits 24:25 - Source Address Increment Size"]
     #[inline(always)]
-    pub fn srcinc(&self) -> SRCINC_R {
-        SRCINC_R::new(((self.bits >> 24) & 3) as u8)
+    pub fn srcinc(&self) -> SrcincR {
+        SrcincR::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 26:27 - Unit Data Transfer Size"]
     #[inline(always)]
-    pub fn size(&self) -> SIZE_R {
-        SIZE_R::new(((self.bits >> 26) & 3) as u8)
+    pub fn size(&self) -> SizeR {
+        SizeR::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bits 28:29 - Destination Address Increment Size"]
     #[inline(always)]
-    pub fn dstinc(&self) -> DSTINC_R {
-        DSTINC_R::new(((self.bits >> 28) & 3) as u8)
+    pub fn dstinc(&self) -> DstincR {
+        DstincR::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bit 30 - Source Addressing Mode"]
     #[inline(always)]
-    pub fn srcmode(&self) -> SRCMODE_R {
-        SRCMODE_R::new(((self.bits >> 30) & 1) != 0)
+    pub fn srcmode(&self) -> SrcmodeR {
+        SrcmodeR::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Destination Addressing Mode"]
     #[inline(always)]
-    pub fn dstmode(&self) -> DSTMODE_R {
-        DSTMODE_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn dstmode(&self) -> DstmodeR {
+        DstmodeR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 3 - Structure DMA Transfer Request"]
     #[inline(always)]
     #[must_use]
-    pub fn structreq(&mut self) -> STRUCTREQ_W<CH6_CTRLrs> {
-        STRUCTREQ_W::new(self, 3)
+    pub fn structreq(&mut self) -> StructreqW<CH6_CTRLrs> {
+        StructreqW::new(self, 3)
     }
     #[doc = "Bits 4:14 - DMA Unit Data Transfer Count"]
     #[inline(always)]
     #[must_use]
-    pub fn xfercnt(&mut self) -> XFERCNT_W<CH6_CTRLrs> {
-        XFERCNT_W::new(self, 4)
+    pub fn xfercnt(&mut self) -> XfercntW<CH6_CTRLrs> {
+        XfercntW::new(self, 4)
     }
     #[doc = "Bit 15 - Endian Byte Swap"]
     #[inline(always)]
     #[must_use]
-    pub fn byteswap(&mut self) -> BYTESWAP_W<CH6_CTRLrs> {
-        BYTESWAP_W::new(self, 15)
+    pub fn byteswap(&mut self) -> ByteswapW<CH6_CTRLrs> {
+        ByteswapW::new(self, 15)
     }
     #[doc = "Bits 16:19 - Block Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn blocksize(&mut self) -> BLOCKSIZE_W<CH6_CTRLrs> {
-        BLOCKSIZE_W::new(self, 16)
+    pub fn blocksize(&mut self) -> BlocksizeW<CH6_CTRLrs> {
+        BlocksizeW::new(self, 16)
     }
     #[doc = "Bit 20 - DMA Operation Done Interrupt Flag Set Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn doneifsen(&mut self) -> DONEIFSEN_W<CH6_CTRLrs> {
-        DONEIFSEN_W::new(self, 20)
+    pub fn doneifsen(&mut self) -> DoneifsenW<CH6_CTRLrs> {
+        DoneifsenW::new(self, 20)
     }
     #[doc = "Bit 21 - DMA Request Transfer Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn reqmode(&mut self) -> REQMODE_W<CH6_CTRLrs> {
-        REQMODE_W::new(self, 21)
+    pub fn reqmode(&mut self) -> ReqmodeW<CH6_CTRLrs> {
+        ReqmodeW::new(self, 21)
     }
     #[doc = "Bit 22 - Decrement Loop Count"]
     #[inline(always)]
     #[must_use]
-    pub fn decloopcnt(&mut self) -> DECLOOPCNT_W<CH6_CTRLrs> {
-        DECLOOPCNT_W::new(self, 22)
+    pub fn decloopcnt(&mut self) -> DecloopcntW<CH6_CTRLrs> {
+        DecloopcntW::new(self, 22)
     }
     #[doc = "Bit 23 - Ignore Sreq"]
     #[inline(always)]
     #[must_use]
-    pub fn ignoresreq(&mut self) -> IGNORESREQ_W<CH6_CTRLrs> {
-        IGNORESREQ_W::new(self, 23)
+    pub fn ignoresreq(&mut self) -> IgnoresreqW<CH6_CTRLrs> {
+        IgnoresreqW::new(self, 23)
     }
     #[doc = "Bits 24:25 - Source Address Increment Size"]
     #[inline(always)]
     #[must_use]
-    pub fn srcinc(&mut self) -> SRCINC_W<CH6_CTRLrs> {
-        SRCINC_W::new(self, 24)
+    pub fn srcinc(&mut self) -> SrcincW<CH6_CTRLrs> {
+        SrcincW::new(self, 24)
     }
     #[doc = "Bits 26:27 - Unit Data Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn size(&mut self) -> SIZE_W<CH6_CTRLrs> {
-        SIZE_W::new(self, 26)
+    pub fn size(&mut self) -> SizeW<CH6_CTRLrs> {
+        SizeW::new(self, 26)
     }
     #[doc = "Bits 28:29 - Destination Address Increment Size"]
     #[inline(always)]
     #[must_use]
-    pub fn dstinc(&mut self) -> DSTINC_W<CH6_CTRLrs> {
-        DSTINC_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn dstinc(&mut self) -> DstincW<CH6_CTRLrs> {
+        DstincW::new(self, 28)
     }
 }
 #[doc = "Channel Descriptor Control Word Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ch6_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ch6_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -692,6 +687,7 @@ impl crate::RegisterSpec for CH6_CTRLrs {
 impl crate::Readable for CH6_CTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`ch6_ctrl::W`](W) writer structure"]
 impl crate::Writable for CH6_CTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

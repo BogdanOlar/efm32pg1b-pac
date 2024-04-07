@@ -1,19 +1,19 @@
 #[doc = "Register `HFXOTRIMSTATUS` reader"]
 pub type R = crate::R<HFXOTRIMSTATUSrs>;
 #[doc = "Field `IBTRIMXOCORE` reader - Value of IBTRIMXOCORE Found By Automatic HFXO Peak Detection Algorithm"]
-pub type IBTRIMXOCORE_R = crate::FieldReader;
+pub type IbtrimxocoreR = crate::FieldReader;
 #[doc = "Field `REGISH` reader - Value of REGISH Found By Automatic HFXO Shunt Current Optimization Algorithm"]
-pub type REGISH_R = crate::FieldReader;
+pub type RegishR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:6 - Value of IBTRIMXOCORE Found By Automatic HFXO Peak Detection Algorithm"]
     #[inline(always)]
-    pub fn ibtrimxocore(&self) -> IBTRIMXOCORE_R {
-        IBTRIMXOCORE_R::new((self.bits & 0x7f) as u8)
+    pub fn ibtrimxocore(&self) -> IbtrimxocoreR {
+        IbtrimxocoreR::new((self.bits & 0x7f) as u8)
     }
     #[doc = "Bits 7:10 - Value of REGISH Found By Automatic HFXO Shunt Current Optimization Algorithm"]
     #[inline(always)]
-    pub fn regish(&self) -> REGISH_R {
-        REGISH_R::new(((self.bits >> 7) & 0x0f) as u8)
+    pub fn regish(&self) -> RegishR {
+        RegishR::new(((self.bits >> 7) & 0x0f) as u8)
     }
 }
 #[doc = "HFXO Trim Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfxotrimstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

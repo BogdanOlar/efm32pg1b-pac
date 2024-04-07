@@ -2,8 +2,6 @@
 pub type R = crate::R<FRAMErs>;
 #[doc = "Register `FRAME` writer"]
 pub type W = crate::W<FRAMErs>;
-#[doc = "Field `DATABITS` reader - Data-Bit Mode"]
-pub type DATABITS_R = crate::FieldReader<DATABITS>;
 #[doc = "Data-Bit Mode\n\nValue on reset: 5"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -44,7 +42,10 @@ impl From<DATABITS> for u8 {
 impl crate::FieldSpec for DATABITS {
     type Ux = u8;
 }
-impl DATABITS_R {
+impl crate::IsEnum for DATABITS {}
+#[doc = "Field `DATABITS` reader - Data-Bit Mode"]
+pub type DatabitsR = crate::FieldReader<DATABITS>;
+impl DatabitsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<DATABITS> {
@@ -132,8 +133,8 @@ impl DATABITS_R {
     }
 }
 #[doc = "Field `DATABITS` writer - Data-Bit Mode"]
-pub type DATABITS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DATABITS>;
-impl<'a, REG> DATABITS_W<'a, REG>
+pub type DatabitsW<'a, REG> = crate::FieldWriter<'a, REG, 4, DATABITS>;
+impl<'a, REG> DatabitsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -204,8 +205,6 @@ where
         self.variant(DATABITS::Sixteen)
     }
 }
-#[doc = "Field `PARITY` reader - Parity-Bit Mode"]
-pub type PARITY_R = crate::FieldReader<PARITY>;
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -226,7 +225,10 @@ impl From<PARITY> for u8 {
 impl crate::FieldSpec for PARITY {
     type Ux = u8;
 }
-impl PARITY_R {
+impl crate::IsEnum for PARITY {}
+#[doc = "Field `PARITY` reader - Parity-Bit Mode"]
+pub type ParityR = crate::FieldReader<PARITY>;
+impl ParityR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PARITY> {
@@ -254,8 +256,8 @@ impl PARITY_R {
     }
 }
 #[doc = "Field `PARITY` writer - Parity-Bit Mode"]
-pub type PARITY_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PARITY>;
-impl<'a, REG> PARITY_W<'a, REG>
+pub type ParityW<'a, REG> = crate::FieldWriter<'a, REG, 2, PARITY>;
+impl<'a, REG> ParityW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -276,8 +278,6 @@ where
         self.variant(PARITY::Odd)
     }
 }
-#[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
-pub type STOPBITS_R = crate::FieldReader<STOPBITS>;
 #[doc = "Stop-Bit Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -300,7 +300,10 @@ impl From<STOPBITS> for u8 {
 impl crate::FieldSpec for STOPBITS {
     type Ux = u8;
 }
-impl STOPBITS_R {
+impl crate::IsEnum for STOPBITS {}
+#[doc = "Field `STOPBITS` reader - Stop-Bit Mode"]
+pub type StopbitsR = crate::FieldReader<STOPBITS>;
+impl StopbitsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> STOPBITS {
@@ -334,8 +337,8 @@ impl STOPBITS_R {
     }
 }
 #[doc = "Field `STOPBITS` writer - Stop-Bit Mode"]
-pub type STOPBITS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, STOPBITS>;
-impl<'a, REG> STOPBITS_W<'a, REG>
+pub type StopbitsW<'a, REG> = crate::FieldWriter<'a, REG, 2, STOPBITS, crate::Safe>;
+impl<'a, REG> StopbitsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -364,48 +367,38 @@ where
 impl R {
     #[doc = "Bits 0:3 - Data-Bit Mode"]
     #[inline(always)]
-    pub fn databits(&self) -> DATABITS_R {
-        DATABITS_R::new((self.bits & 0x0f) as u8)
+    pub fn databits(&self) -> DatabitsR {
+        DatabitsR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 8:9 - Parity-Bit Mode"]
     #[inline(always)]
-    pub fn parity(&self) -> PARITY_R {
-        PARITY_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn parity(&self) -> ParityR {
+        ParityR::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Stop-Bit Mode"]
     #[inline(always)]
-    pub fn stopbits(&self) -> STOPBITS_R {
-        STOPBITS_R::new(((self.bits >> 12) & 3) as u8)
+    pub fn stopbits(&self) -> StopbitsR {
+        StopbitsR::new(((self.bits >> 12) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Data-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn databits(&mut self) -> DATABITS_W<FRAMErs> {
-        DATABITS_W::new(self, 0)
+    pub fn databits(&mut self) -> DatabitsW<FRAMErs> {
+        DatabitsW::new(self, 0)
     }
     #[doc = "Bits 8:9 - Parity-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn parity(&mut self) -> PARITY_W<FRAMErs> {
-        PARITY_W::new(self, 8)
+    pub fn parity(&mut self) -> ParityW<FRAMErs> {
+        ParityW::new(self, 8)
     }
     #[doc = "Bits 12:13 - Stop-Bit Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn stopbits(&mut self) -> STOPBITS_W<FRAMErs> {
-        STOPBITS_W::new(self, 12)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn stopbits(&mut self) -> StopbitsW<FRAMErs> {
+        StopbitsW::new(self, 12)
     }
 }
 #[doc = "USART Frame Format Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frame::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frame::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -417,6 +410,7 @@ impl crate::RegisterSpec for FRAMErs {
 impl crate::Readable for FRAMErs {}
 #[doc = "`write(|w| ..)` method takes [`frame::W`](W) writer structure"]
 impl crate::Writable for FRAMErs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -3,32 +3,22 @@ pub type R = crate::R<KEYrs>;
 #[doc = "Register `KEY` writer"]
 pub type W = crate::W<KEYrs>;
 #[doc = "Field `KEY` reader - Key Access"]
-pub type KEY_R = crate::FieldReader<u32>;
+pub type KeyR = crate::FieldReader<u32>;
 #[doc = "Field `KEY` writer - Key Access"]
-pub type KEY_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+pub type KeyW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Key Access"]
     #[inline(always)]
-    pub fn key(&self) -> KEY_R {
-        KEY_R::new(self.bits)
+    pub fn key(&self) -> KeyR {
+        KeyR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Key Access"]
     #[inline(always)]
     #[must_use]
-    pub fn key(&mut self) -> KEY_W<KEYrs> {
-        KEY_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn key(&mut self) -> KeyW<KEYrs> {
+        KeyW::new(self, 0)
     }
 }
 #[doc = "KEY Register Access\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`key::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`key::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -40,6 +30,7 @@ impl crate::RegisterSpec for KEYrs {
 impl crate::Readable for KEYrs {}
 #[doc = "`write(|w| ..)` method takes [`key::W`](W) writer structure"]
 impl crate::Writable for KEYrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -3,32 +3,22 @@ pub type R = crate::R<DDATA0rs>;
 #[doc = "Register `DDATA0` writer"]
 pub type W = crate::W<DDATA0rs>;
 #[doc = "Field `DDATA0` reader - Double Data 0 Access"]
-pub type DDATA0_R = crate::FieldReader<u32>;
+pub type Ddata0R = crate::FieldReader<u32>;
 #[doc = "Field `DDATA0` writer - Double Data 0 Access"]
-pub type DDATA0_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+pub type Ddata0W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Double Data 0 Access"]
     #[inline(always)]
-    pub fn ddata0(&self) -> DDATA0_R {
-        DDATA0_R::new(self.bits)
+    pub fn ddata0(&self) -> Ddata0R {
+        Ddata0R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Double Data 0 Access"]
     #[inline(always)]
     #[must_use]
-    pub fn ddata0(&mut self) -> DDATA0_W<DDATA0rs> {
-        DDATA0_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn ddata0(&mut self) -> Ddata0W<DDATA0rs> {
+        Ddata0W::new(self, 0)
     }
 }
 #[doc = "DDATA0 Register Access\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ddata0::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ddata0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -40,6 +30,7 @@ impl crate::RegisterSpec for DDATA0rs {
 impl crate::Readable for DDATA0rs {}
 #[doc = "`write(|w| ..)` method takes [`ddata0::W`](W) writer structure"]
 impl crate::Writable for DDATA0rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

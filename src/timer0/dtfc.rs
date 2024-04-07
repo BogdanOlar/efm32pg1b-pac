@@ -2,8 +2,6 @@
 pub type R = crate::R<DTFCrs>;
 #[doc = "Register `DTFC` writer"]
 pub type W = crate::W<DTFCrs>;
-#[doc = "Field `DTPRS0FSEL` reader - DTI PRS Fault Source 0 Select"]
-pub type DTPRS0FSEL_R = crate::FieldReader<DTPRS0FSEL>;
 #[doc = "DTI PRS Fault Source 0 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -42,7 +40,10 @@ impl From<DTPRS0FSEL> for u8 {
 impl crate::FieldSpec for DTPRS0FSEL {
     type Ux = u8;
 }
-impl DTPRS0FSEL_R {
+impl crate::IsEnum for DTPRS0FSEL {}
+#[doc = "Field `DTPRS0FSEL` reader - DTI PRS Fault Source 0 Select"]
+pub type Dtprs0fselR = crate::FieldReader<DTPRS0FSEL>;
+impl Dtprs0fselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<DTPRS0FSEL> {
@@ -124,8 +125,8 @@ impl DTPRS0FSEL_R {
     }
 }
 #[doc = "Field `DTPRS0FSEL` writer - DTI PRS Fault Source 0 Select"]
-pub type DTPRS0FSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DTPRS0FSEL>;
-impl<'a, REG> DTPRS0FSEL_W<'a, REG>
+pub type Dtprs0fselW<'a, REG> = crate::FieldWriter<'a, REG, 4, DTPRS0FSEL>;
+impl<'a, REG> Dtprs0fselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -191,8 +192,6 @@ where
         self.variant(DTPRS0FSEL::Prsch11)
     }
 }
-#[doc = "Field `DTPRS1FSEL` reader - DTI PRS Fault Source 1 Select"]
-pub type DTPRS1FSEL_R = crate::FieldReader<DTPRS1FSEL>;
 #[doc = "DTI PRS Fault Source 1 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -231,7 +230,10 @@ impl From<DTPRS1FSEL> for u8 {
 impl crate::FieldSpec for DTPRS1FSEL {
     type Ux = u8;
 }
-impl DTPRS1FSEL_R {
+impl crate::IsEnum for DTPRS1FSEL {}
+#[doc = "Field `DTPRS1FSEL` reader - DTI PRS Fault Source 1 Select"]
+pub type Dtprs1fselR = crate::FieldReader<DTPRS1FSEL>;
+impl Dtprs1fselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<DTPRS1FSEL> {
@@ -313,8 +315,8 @@ impl DTPRS1FSEL_R {
     }
 }
 #[doc = "Field `DTPRS1FSEL` writer - DTI PRS Fault Source 1 Select"]
-pub type DTPRS1FSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DTPRS1FSEL>;
-impl<'a, REG> DTPRS1FSEL_W<'a, REG>
+pub type Dtprs1fselW<'a, REG> = crate::FieldWriter<'a, REG, 4, DTPRS1FSEL>;
+impl<'a, REG> Dtprs1fselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -380,8 +382,6 @@ where
         self.variant(DTPRS1FSEL::Prsch11)
     }
 }
-#[doc = "Field `DTFA` reader - DTI Fault Action"]
-pub type DTFA_R = crate::FieldReader<DTFA>;
 #[doc = "DTI Fault Action\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -404,7 +404,10 @@ impl From<DTFA> for u8 {
 impl crate::FieldSpec for DTFA {
     type Ux = u8;
 }
-impl DTFA_R {
+impl crate::IsEnum for DTFA {}
+#[doc = "Field `DTFA` reader - DTI Fault Action"]
+pub type DtfaR = crate::FieldReader<DTFA>;
+impl DtfaR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> DTFA {
@@ -438,8 +441,8 @@ impl DTFA_R {
     }
 }
 #[doc = "Field `DTFA` writer - DTI Fault Action"]
-pub type DTFA_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DTFA>;
-impl<'a, REG> DTFA_W<'a, REG>
+pub type DtfaW<'a, REG> = crate::FieldWriter<'a, REG, 2, DTFA, crate::Safe>;
+impl<'a, REG> DtfaW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -466,110 +469,100 @@ where
     }
 }
 #[doc = "Field `DTPRS0FEN` reader - DTI PRS 0 Fault Enable"]
-pub type DTPRS0FEN_R = crate::BitReader;
+pub type Dtprs0fenR = crate::BitReader;
 #[doc = "Field `DTPRS0FEN` writer - DTI PRS 0 Fault Enable"]
-pub type DTPRS0FEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dtprs0fenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DTPRS1FEN` reader - DTI PRS 1 Fault Enable"]
-pub type DTPRS1FEN_R = crate::BitReader;
+pub type Dtprs1fenR = crate::BitReader;
 #[doc = "Field `DTPRS1FEN` writer - DTI PRS 1 Fault Enable"]
-pub type DTPRS1FEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Dtprs1fenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DTDBGFEN` reader - DTI Debugger Fault Enable"]
-pub type DTDBGFEN_R = crate::BitReader;
+pub type DtdbgfenR = crate::BitReader;
 #[doc = "Field `DTDBGFEN` writer - DTI Debugger Fault Enable"]
-pub type DTDBGFEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DtdbgfenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DTLOCKUPFEN` reader - DTI Lockup Fault Enable"]
-pub type DTLOCKUPFEN_R = crate::BitReader;
+pub type DtlockupfenR = crate::BitReader;
 #[doc = "Field `DTLOCKUPFEN` writer - DTI Lockup Fault Enable"]
-pub type DTLOCKUPFEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DtlockupfenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - DTI PRS Fault Source 0 Select"]
     #[inline(always)]
-    pub fn dtprs0fsel(&self) -> DTPRS0FSEL_R {
-        DTPRS0FSEL_R::new((self.bits & 0x0f) as u8)
+    pub fn dtprs0fsel(&self) -> Dtprs0fselR {
+        Dtprs0fselR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - DTI PRS Fault Source 1 Select"]
     #[inline(always)]
-    pub fn dtprs1fsel(&self) -> DTPRS1FSEL_R {
-        DTPRS1FSEL_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn dtprs1fsel(&self) -> Dtprs1fselR {
+        Dtprs1fselR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 16:17 - DTI Fault Action"]
     #[inline(always)]
-    pub fn dtfa(&self) -> DTFA_R {
-        DTFA_R::new(((self.bits >> 16) & 3) as u8)
+    pub fn dtfa(&self) -> DtfaR {
+        DtfaR::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bit 24 - DTI PRS 0 Fault Enable"]
     #[inline(always)]
-    pub fn dtprs0fen(&self) -> DTPRS0FEN_R {
-        DTPRS0FEN_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn dtprs0fen(&self) -> Dtprs0fenR {
+        Dtprs0fenR::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - DTI PRS 1 Fault Enable"]
     #[inline(always)]
-    pub fn dtprs1fen(&self) -> DTPRS1FEN_R {
-        DTPRS1FEN_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn dtprs1fen(&self) -> Dtprs1fenR {
+        Dtprs1fenR::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - DTI Debugger Fault Enable"]
     #[inline(always)]
-    pub fn dtdbgfen(&self) -> DTDBGFEN_R {
-        DTDBGFEN_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn dtdbgfen(&self) -> DtdbgfenR {
+        DtdbgfenR::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - DTI Lockup Fault Enable"]
     #[inline(always)]
-    pub fn dtlockupfen(&self) -> DTLOCKUPFEN_R {
-        DTLOCKUPFEN_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn dtlockupfen(&self) -> DtlockupfenR {
+        DtlockupfenR::new(((self.bits >> 27) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - DTI PRS Fault Source 0 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dtprs0fsel(&mut self) -> DTPRS0FSEL_W<DTFCrs> {
-        DTPRS0FSEL_W::new(self, 0)
+    pub fn dtprs0fsel(&mut self) -> Dtprs0fselW<DTFCrs> {
+        Dtprs0fselW::new(self, 0)
     }
     #[doc = "Bits 8:11 - DTI PRS Fault Source 1 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dtprs1fsel(&mut self) -> DTPRS1FSEL_W<DTFCrs> {
-        DTPRS1FSEL_W::new(self, 8)
+    pub fn dtprs1fsel(&mut self) -> Dtprs1fselW<DTFCrs> {
+        Dtprs1fselW::new(self, 8)
     }
     #[doc = "Bits 16:17 - DTI Fault Action"]
     #[inline(always)]
     #[must_use]
-    pub fn dtfa(&mut self) -> DTFA_W<DTFCrs> {
-        DTFA_W::new(self, 16)
+    pub fn dtfa(&mut self) -> DtfaW<DTFCrs> {
+        DtfaW::new(self, 16)
     }
     #[doc = "Bit 24 - DTI PRS 0 Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dtprs0fen(&mut self) -> DTPRS0FEN_W<DTFCrs> {
-        DTPRS0FEN_W::new(self, 24)
+    pub fn dtprs0fen(&mut self) -> Dtprs0fenW<DTFCrs> {
+        Dtprs0fenW::new(self, 24)
     }
     #[doc = "Bit 25 - DTI PRS 1 Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dtprs1fen(&mut self) -> DTPRS1FEN_W<DTFCrs> {
-        DTPRS1FEN_W::new(self, 25)
+    pub fn dtprs1fen(&mut self) -> Dtprs1fenW<DTFCrs> {
+        Dtprs1fenW::new(self, 25)
     }
     #[doc = "Bit 26 - DTI Debugger Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dtdbgfen(&mut self) -> DTDBGFEN_W<DTFCrs> {
-        DTDBGFEN_W::new(self, 26)
+    pub fn dtdbgfen(&mut self) -> DtdbgfenW<DTFCrs> {
+        DtdbgfenW::new(self, 26)
     }
     #[doc = "Bit 27 - DTI Lockup Fault Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dtlockupfen(&mut self) -> DTLOCKUPFEN_W<DTFCrs> {
-        DTLOCKUPFEN_W::new(self, 27)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn dtlockupfen(&mut self) -> DtlockupfenW<DTFCrs> {
+        DtlockupfenW::new(self, 27)
     }
 }
 #[doc = "DTI Fault Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtfc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtfc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -581,6 +574,7 @@ impl crate::RegisterSpec for DTFCrs {
 impl crate::Readable for DTFCrs {}
 #[doc = "`write(|w| ..)` method takes [`dtfc::W`](W) writer structure"]
 impl crate::Writable for DTFCrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

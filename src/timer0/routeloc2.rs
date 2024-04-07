@@ -2,8 +2,6 @@
 pub type R = crate::R<ROUTELOC2rs>;
 #[doc = "Register `ROUTELOC2` writer"]
 pub type W = crate::W<ROUTELOC2rs>;
-#[doc = "Field `CDTI0LOC` reader - I/O Location"]
-pub type CDTI0LOC_R = crate::FieldReader<CDTI0LOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -82,7 +80,10 @@ impl From<CDTI0LOC> for u8 {
 impl crate::FieldSpec for CDTI0LOC {
     type Ux = u8;
 }
-impl CDTI0LOC_R {
+impl crate::IsEnum for CDTI0LOC {}
+#[doc = "Field `CDTI0LOC` reader - I/O Location"]
+pub type Cdti0locR = crate::FieldReader<CDTI0LOC>;
+impl Cdti0locR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CDTI0LOC> {
@@ -284,8 +285,8 @@ impl CDTI0LOC_R {
     }
 }
 #[doc = "Field `CDTI0LOC` writer - I/O Location"]
-pub type CDTI0LOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CDTI0LOC>;
-impl<'a, REG> CDTI0LOC_W<'a, REG>
+pub type Cdti0locW<'a, REG> = crate::FieldWriter<'a, REG, 6, CDTI0LOC>;
+impl<'a, REG> Cdti0locW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -451,8 +452,6 @@ where
         self.variant(CDTI0LOC::Loc31)
     }
 }
-#[doc = "Field `CDTI1LOC` reader - I/O Location"]
-pub type CDTI1LOC_R = crate::FieldReader<CDTI1LOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -531,7 +530,10 @@ impl From<CDTI1LOC> for u8 {
 impl crate::FieldSpec for CDTI1LOC {
     type Ux = u8;
 }
-impl CDTI1LOC_R {
+impl crate::IsEnum for CDTI1LOC {}
+#[doc = "Field `CDTI1LOC` reader - I/O Location"]
+pub type Cdti1locR = crate::FieldReader<CDTI1LOC>;
+impl Cdti1locR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CDTI1LOC> {
@@ -733,8 +735,8 @@ impl CDTI1LOC_R {
     }
 }
 #[doc = "Field `CDTI1LOC` writer - I/O Location"]
-pub type CDTI1LOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CDTI1LOC>;
-impl<'a, REG> CDTI1LOC_W<'a, REG>
+pub type Cdti1locW<'a, REG> = crate::FieldWriter<'a, REG, 6, CDTI1LOC>;
+impl<'a, REG> Cdti1locW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -900,8 +902,6 @@ where
         self.variant(CDTI1LOC::Loc31)
     }
 }
-#[doc = "Field `CDTI2LOC` reader - I/O Location"]
-pub type CDTI2LOC_R = crate::FieldReader<CDTI2LOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -980,7 +980,10 @@ impl From<CDTI2LOC> for u8 {
 impl crate::FieldSpec for CDTI2LOC {
     type Ux = u8;
 }
-impl CDTI2LOC_R {
+impl crate::IsEnum for CDTI2LOC {}
+#[doc = "Field `CDTI2LOC` reader - I/O Location"]
+pub type Cdti2locR = crate::FieldReader<CDTI2LOC>;
+impl Cdti2locR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CDTI2LOC> {
@@ -1182,8 +1185,8 @@ impl CDTI2LOC_R {
     }
 }
 #[doc = "Field `CDTI2LOC` writer - I/O Location"]
-pub type CDTI2LOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CDTI2LOC>;
-impl<'a, REG> CDTI2LOC_W<'a, REG>
+pub type Cdti2locW<'a, REG> = crate::FieldWriter<'a, REG, 6, CDTI2LOC>;
+impl<'a, REG> Cdti2locW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1352,48 +1355,38 @@ where
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn cdti0loc(&self) -> CDTI0LOC_R {
-        CDTI0LOC_R::new((self.bits & 0x3f) as u8)
+    pub fn cdti0loc(&self) -> Cdti0locR {
+        Cdti0locR::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn cdti1loc(&self) -> CDTI1LOC_R {
-        CDTI1LOC_R::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn cdti1loc(&self) -> Cdti1locR {
+        Cdti1locR::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - I/O Location"]
     #[inline(always)]
-    pub fn cdti2loc(&self) -> CDTI2LOC_R {
-        CDTI2LOC_R::new(((self.bits >> 16) & 0x3f) as u8)
+    pub fn cdti2loc(&self) -> Cdti2locR {
+        Cdti2locR::new(((self.bits >> 16) & 0x3f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn cdti0loc(&mut self) -> CDTI0LOC_W<ROUTELOC2rs> {
-        CDTI0LOC_W::new(self, 0)
+    pub fn cdti0loc(&mut self) -> Cdti0locW<ROUTELOC2rs> {
+        Cdti0locW::new(self, 0)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn cdti1loc(&mut self) -> CDTI1LOC_W<ROUTELOC2rs> {
-        CDTI1LOC_W::new(self, 8)
+    pub fn cdti1loc(&mut self) -> Cdti1locW<ROUTELOC2rs> {
+        Cdti1locW::new(self, 8)
     }
     #[doc = "Bits 16:21 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn cdti2loc(&mut self) -> CDTI2LOC_W<ROUTELOC2rs> {
-        CDTI2LOC_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn cdti2loc(&mut self) -> Cdti2locW<ROUTELOC2rs> {
+        Cdti2locW::new(self, 16)
     }
 }
 #[doc = "I/O Routing Location Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routeloc2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routeloc2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -1405,6 +1398,7 @@ impl crate::RegisterSpec for ROUTELOC2rs {
 impl crate::Readable for ROUTELOC2rs {}
 #[doc = "`write(|w| ..)` method takes [`routeloc2::W`](W) writer structure"]
 impl crate::Writable for ROUTELOC2rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

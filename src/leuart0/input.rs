@@ -2,8 +2,6 @@
 pub type R = crate::R<INPUTrs>;
 #[doc = "Register `INPUT` writer"]
 pub type W = crate::W<INPUTrs>;
-#[doc = "Field `RXPRSSEL` reader - RX PRS Channel Select"]
-pub type RXPRSSEL_R = crate::FieldReader<RXPRSSEL>;
 #[doc = "RX PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -42,7 +40,10 @@ impl From<RXPRSSEL> for u8 {
 impl crate::FieldSpec for RXPRSSEL {
     type Ux = u8;
 }
-impl RXPRSSEL_R {
+impl crate::IsEnum for RXPRSSEL {}
+#[doc = "Field `RXPRSSEL` reader - RX PRS Channel Select"]
+pub type RxprsselR = crate::FieldReader<RXPRSSEL>;
+impl RxprsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<RXPRSSEL> {
@@ -124,8 +125,8 @@ impl RXPRSSEL_R {
     }
 }
 #[doc = "Field `RXPRSSEL` writer - RX PRS Channel Select"]
-pub type RXPRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, RXPRSSEL>;
-impl<'a, REG> RXPRSSEL_W<'a, REG>
+pub type RxprsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, RXPRSSEL>;
+impl<'a, REG> RxprsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -192,43 +193,33 @@ where
     }
 }
 #[doc = "Field `RXPRS` reader - PRS RX Enable"]
-pub type RXPRS_R = crate::BitReader;
+pub type RxprsR = crate::BitReader;
 #[doc = "Field `RXPRS` writer - PRS RX Enable"]
-pub type RXPRS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxprsW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - RX PRS Channel Select"]
     #[inline(always)]
-    pub fn rxprssel(&self) -> RXPRSSEL_R {
-        RXPRSSEL_R::new((self.bits & 0x0f) as u8)
+    pub fn rxprssel(&self) -> RxprsselR {
+        RxprsselR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 5 - PRS RX Enable"]
     #[inline(always)]
-    pub fn rxprs(&self) -> RXPRS_R {
-        RXPRS_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn rxprs(&self) -> RxprsR {
+        RxprsR::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - RX PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxprssel(&mut self) -> RXPRSSEL_W<INPUTrs> {
-        RXPRSSEL_W::new(self, 0)
+    pub fn rxprssel(&mut self) -> RxprsselW<INPUTrs> {
+        RxprsselW::new(self, 0)
     }
     #[doc = "Bit 5 - PRS RX Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxprs(&mut self) -> RXPRS_W<INPUTrs> {
-        RXPRS_W::new(self, 5)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn rxprs(&mut self) -> RxprsW<INPUTrs> {
+        RxprsW::new(self, 5)
     }
 }
 #[doc = "LEUART Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`input::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`input::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -240,6 +231,7 @@ impl crate::RegisterSpec for INPUTrs {
 impl crate::Readable for INPUTrs {}
 #[doc = "`write(|w| ..)` method takes [`input::W`](W) writer structure"]
 impl crate::Writable for INPUTrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

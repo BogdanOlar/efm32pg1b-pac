@@ -1,12 +1,12 @@
 #[doc = "Register `STATUS` reader"]
 pub type R = crate::R<STATUSrs>;
 #[doc = "Field `RUNNING` reader - LETIMER Running"]
-pub type RUNNING_R = crate::BitReader;
+pub type RunningR = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - LETIMER Running"]
     #[inline(always)]
-    pub fn running(&self) -> RUNNING_R {
-        RUNNING_R::new((self.bits & 1) != 0)
+    pub fn running(&self) -> RunningR {
+        RunningR::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

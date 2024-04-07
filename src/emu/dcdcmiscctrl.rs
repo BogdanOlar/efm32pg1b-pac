@@ -3,31 +3,29 @@ pub type R = crate::R<DCDCMISCCTRLrs>;
 #[doc = "Register `DCDCMISCCTRL` writer"]
 pub type W = crate::W<DCDCMISCCTRLrs>;
 #[doc = "Field `LNFORCECCM` reader - Force DCDC Into CCM Mode in Low Noise Operation"]
-pub type LNFORCECCM_R = crate::BitReader;
+pub type LnforceccmR = crate::BitReader;
 #[doc = "Field `LNFORCECCM` writer - Force DCDC Into CCM Mode in Low Noise Operation"]
-pub type LNFORCECCM_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type LnforceccmW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PFETCNT` reader - PFET Switch Number Selection"]
-pub type PFETCNT_R = crate::FieldReader;
+pub type PfetcntR = crate::FieldReader;
 #[doc = "Field `PFETCNT` writer - PFET Switch Number Selection"]
-pub type PFETCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type PfetcntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `NFETCNT` reader - NFET Switch Number Selection"]
-pub type NFETCNT_R = crate::FieldReader;
+pub type NfetcntR = crate::FieldReader;
 #[doc = "Field `NFETCNT` writer - NFET Switch Number Selection"]
-pub type NFETCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type NfetcntW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `BYPLIMSEL` reader - Current Limit in Bypass Mode"]
-pub type BYPLIMSEL_R = crate::FieldReader;
+pub type ByplimselR = crate::FieldReader;
 #[doc = "Field `BYPLIMSEL` writer - Current Limit in Bypass Mode"]
-pub type BYPLIMSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type ByplimselW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `LPCLIMILIMSEL` reader - Current Limit Level Selection for Current Limiter in LP Mode"]
-pub type LPCLIMILIMSEL_R = crate::FieldReader;
+pub type LpclimilimselR = crate::FieldReader;
 #[doc = "Field `LPCLIMILIMSEL` writer - Current Limit Level Selection for Current Limiter in LP Mode"]
-pub type LPCLIMILIMSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type LpclimilimselW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `LNCLIMILIMSEL` reader - Current Limit Level Selection for Current Limiter in LN Mode"]
-pub type LNCLIMILIMSEL_R = crate::FieldReader;
+pub type LnclimilimselR = crate::FieldReader;
 #[doc = "Field `LNCLIMILIMSEL` writer - Current Limit Level Selection for Current Limiter in LN Mode"]
-pub type LNCLIMILIMSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `LPCMPBIAS` reader - LP Mode Comparator Bias Selection"]
-pub type LPCMPBIAS_R = crate::FieldReader<LPCMPBIAS>;
+pub type LnclimilimselW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "LP Mode Comparator Bias Selection\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,7 +48,10 @@ impl From<LPCMPBIAS> for u8 {
 impl crate::FieldSpec for LPCMPBIAS {
     type Ux = u8;
 }
-impl LPCMPBIAS_R {
+impl crate::IsEnum for LPCMPBIAS {}
+#[doc = "Field `LPCMPBIAS` reader - LP Mode Comparator Bias Selection"]
+pub type LpcmpbiasR = crate::FieldReader<LPCMPBIAS>;
+impl LpcmpbiasR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> LPCMPBIAS {
@@ -84,8 +85,8 @@ impl LPCMPBIAS_R {
     }
 }
 #[doc = "Field `LPCMPBIAS` writer - LP Mode Comparator Bias Selection"]
-pub type LPCMPBIAS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LPCMPBIAS>;
-impl<'a, REG> LPCMPBIAS_W<'a, REG>
+pub type LpcmpbiasW<'a, REG> = crate::FieldWriter<'a, REG, 2, LPCMPBIAS, crate::Safe>;
+impl<'a, REG> LpcmpbiasW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -114,92 +115,82 @@ where
 impl R {
     #[doc = "Bit 0 - Force DCDC Into CCM Mode in Low Noise Operation"]
     #[inline(always)]
-    pub fn lnforceccm(&self) -> LNFORCECCM_R {
-        LNFORCECCM_R::new((self.bits & 1) != 0)
+    pub fn lnforceccm(&self) -> LnforceccmR {
+        LnforceccmR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 8:11 - PFET Switch Number Selection"]
     #[inline(always)]
-    pub fn pfetcnt(&self) -> PFETCNT_R {
-        PFETCNT_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn pfetcnt(&self) -> PfetcntR {
+        PfetcntR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - NFET Switch Number Selection"]
     #[inline(always)]
-    pub fn nfetcnt(&self) -> NFETCNT_R {
-        NFETCNT_R::new(((self.bits >> 12) & 0x0f) as u8)
+    pub fn nfetcnt(&self) -> NfetcntR {
+        NfetcntR::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - Current Limit in Bypass Mode"]
     #[inline(always)]
-    pub fn byplimsel(&self) -> BYPLIMSEL_R {
-        BYPLIMSEL_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn byplimsel(&self) -> ByplimselR {
+        ByplimselR::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:22 - Current Limit Level Selection for Current Limiter in LP Mode"]
     #[inline(always)]
-    pub fn lpclimilimsel(&self) -> LPCLIMILIMSEL_R {
-        LPCLIMILIMSEL_R::new(((self.bits >> 20) & 7) as u8)
+    pub fn lpclimilimsel(&self) -> LpclimilimselR {
+        LpclimilimselR::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 24:26 - Current Limit Level Selection for Current Limiter in LN Mode"]
     #[inline(always)]
-    pub fn lnclimilimsel(&self) -> LNCLIMILIMSEL_R {
-        LNCLIMILIMSEL_R::new(((self.bits >> 24) & 7) as u8)
+    pub fn lnclimilimsel(&self) -> LnclimilimselR {
+        LnclimilimselR::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 28:29 - LP Mode Comparator Bias Selection"]
     #[inline(always)]
-    pub fn lpcmpbias(&self) -> LPCMPBIAS_R {
-        LPCMPBIAS_R::new(((self.bits >> 28) & 3) as u8)
+    pub fn lpcmpbias(&self) -> LpcmpbiasR {
+        LpcmpbiasR::new(((self.bits >> 28) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Force DCDC Into CCM Mode in Low Noise Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn lnforceccm(&mut self) -> LNFORCECCM_W<DCDCMISCCTRLrs> {
-        LNFORCECCM_W::new(self, 0)
+    pub fn lnforceccm(&mut self) -> LnforceccmW<DCDCMISCCTRLrs> {
+        LnforceccmW::new(self, 0)
     }
     #[doc = "Bits 8:11 - PFET Switch Number Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pfetcnt(&mut self) -> PFETCNT_W<DCDCMISCCTRLrs> {
-        PFETCNT_W::new(self, 8)
+    pub fn pfetcnt(&mut self) -> PfetcntW<DCDCMISCCTRLrs> {
+        PfetcntW::new(self, 8)
     }
     #[doc = "Bits 12:15 - NFET Switch Number Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn nfetcnt(&mut self) -> NFETCNT_W<DCDCMISCCTRLrs> {
-        NFETCNT_W::new(self, 12)
+    pub fn nfetcnt(&mut self) -> NfetcntW<DCDCMISCCTRLrs> {
+        NfetcntW::new(self, 12)
     }
     #[doc = "Bits 16:19 - Current Limit in Bypass Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn byplimsel(&mut self) -> BYPLIMSEL_W<DCDCMISCCTRLrs> {
-        BYPLIMSEL_W::new(self, 16)
+    pub fn byplimsel(&mut self) -> ByplimselW<DCDCMISCCTRLrs> {
+        ByplimselW::new(self, 16)
     }
     #[doc = "Bits 20:22 - Current Limit Level Selection for Current Limiter in LP Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn lpclimilimsel(&mut self) -> LPCLIMILIMSEL_W<DCDCMISCCTRLrs> {
-        LPCLIMILIMSEL_W::new(self, 20)
+    pub fn lpclimilimsel(&mut self) -> LpclimilimselW<DCDCMISCCTRLrs> {
+        LpclimilimselW::new(self, 20)
     }
     #[doc = "Bits 24:26 - Current Limit Level Selection for Current Limiter in LN Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn lnclimilimsel(&mut self) -> LNCLIMILIMSEL_W<DCDCMISCCTRLrs> {
-        LNCLIMILIMSEL_W::new(self, 24)
+    pub fn lnclimilimsel(&mut self) -> LnclimilimselW<DCDCMISCCTRLrs> {
+        LnclimilimselW::new(self, 24)
     }
     #[doc = "Bits 28:29 - LP Mode Comparator Bias Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn lpcmpbias(&mut self) -> LPCMPBIAS_W<DCDCMISCCTRLrs> {
-        LPCMPBIAS_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn lpcmpbias(&mut self) -> LpcmpbiasW<DCDCMISCCTRLrs> {
+        LpcmpbiasW::new(self, 28)
     }
 }
 #[doc = "DCDC Miscellaneous Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdcmiscctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdcmiscctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -211,6 +202,7 @@ impl crate::RegisterSpec for DCDCMISCCTRLrs {
 impl crate::Readable for DCDCMISCCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`dcdcmiscctrl::W`](W) writer structure"]
 impl crate::Writable for DCDCMISCCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -3,47 +3,37 @@ pub type R = crate::R<DCDCLPVCTRLrs>;
 #[doc = "Register `DCDCLPVCTRL` writer"]
 pub type W = crate::W<DCDCLPVCTRLrs>;
 #[doc = "Field `LPATT` reader - Low Power Feedback Attenuation"]
-pub type LPATT_R = crate::BitReader;
+pub type LpattR = crate::BitReader;
 #[doc = "Field `LPATT` writer - Low Power Feedback Attenuation"]
-pub type LPATT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type LpattW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LPVREF` reader - LP Mode Reference Selection for EM23 and EM4H"]
-pub type LPVREF_R = crate::FieldReader;
+pub type LpvrefR = crate::FieldReader;
 #[doc = "Field `LPVREF` writer - LP Mode Reference Selection for EM23 and EM4H"]
-pub type LPVREF_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type LpvrefW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - Low Power Feedback Attenuation"]
     #[inline(always)]
-    pub fn lpatt(&self) -> LPATT_R {
-        LPATT_R::new((self.bits & 1) != 0)
+    pub fn lpatt(&self) -> LpattR {
+        LpattR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:8 - LP Mode Reference Selection for EM23 and EM4H"]
     #[inline(always)]
-    pub fn lpvref(&self) -> LPVREF_R {
-        LPVREF_R::new(((self.bits >> 1) & 0xff) as u8)
+    pub fn lpvref(&self) -> LpvrefR {
+        LpvrefR::new(((self.bits >> 1) & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Low Power Feedback Attenuation"]
     #[inline(always)]
     #[must_use]
-    pub fn lpatt(&mut self) -> LPATT_W<DCDCLPVCTRLrs> {
-        LPATT_W::new(self, 0)
+    pub fn lpatt(&mut self) -> LpattW<DCDCLPVCTRLrs> {
+        LpattW::new(self, 0)
     }
     #[doc = "Bits 1:8 - LP Mode Reference Selection for EM23 and EM4H"]
     #[inline(always)]
     #[must_use]
-    pub fn lpvref(&mut self) -> LPVREF_W<DCDCLPVCTRLrs> {
-        LPVREF_W::new(self, 1)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn lpvref(&mut self) -> LpvrefW<DCDCLPVCTRLrs> {
+        LpvrefW::new(self, 1)
     }
 }
 #[doc = "DCDC Low Power Voltage Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdclpvctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdclpvctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -55,6 +45,7 @@ impl crate::RegisterSpec for DCDCLPVCTRLrs {
 impl crate::Readable for DCDCLPVCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`dcdclpvctrl::W`](W) writer structure"]
 impl crate::Writable for DCDCLPVCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

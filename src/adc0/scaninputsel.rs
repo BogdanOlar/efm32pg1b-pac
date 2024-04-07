@@ -2,8 +2,6 @@
 pub type R = crate::R<SCANINPUTSELrs>;
 #[doc = "Register `SCANINPUTSEL` writer"]
 pub type W = crate::W<SCANINPUTSELrs>;
-#[doc = "Field `INPUT0TO7SEL` reader - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
-pub type INPUT0TO7SEL_R = crate::FieldReader<INPUT0TO7SEL>;
 #[doc = "Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,7 +52,10 @@ impl From<INPUT0TO7SEL> for u8 {
 impl crate::FieldSpec for INPUT0TO7SEL {
     type Ux = u8;
 }
-impl INPUT0TO7SEL_R {
+impl crate::IsEnum for INPUT0TO7SEL {}
+#[doc = "Field `INPUT0TO7SEL` reader - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
+pub type Input0to7selR = crate::FieldReader<INPUT0TO7SEL>;
+impl Input0to7selR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<INPUT0TO7SEL> {
@@ -172,8 +173,8 @@ impl INPUT0TO7SEL_R {
     }
 }
 #[doc = "Field `INPUT0TO7SEL` writer - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
-pub type INPUT0TO7SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 5, INPUT0TO7SEL>;
-impl<'a, REG> INPUT0TO7SEL_W<'a, REG>
+pub type Input0to7selW<'a, REG> = crate::FieldWriter<'a, REG, 5, INPUT0TO7SEL>;
+impl<'a, REG> Input0to7selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -269,8 +270,6 @@ where
         self.variant(INPUT0TO7SEL::Aport4ch24to31)
     }
 }
-#[doc = "Field `INPUT8TO15SEL` reader - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
-pub type INPUT8TO15SEL_R = crate::FieldReader<INPUT8TO15SEL>;
 #[doc = "Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -321,7 +320,10 @@ impl From<INPUT8TO15SEL> for u8 {
 impl crate::FieldSpec for INPUT8TO15SEL {
     type Ux = u8;
 }
-impl INPUT8TO15SEL_R {
+impl crate::IsEnum for INPUT8TO15SEL {}
+#[doc = "Field `INPUT8TO15SEL` reader - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
+pub type Input8to15selR = crate::FieldReader<INPUT8TO15SEL>;
+impl Input8to15selR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<INPUT8TO15SEL> {
@@ -439,8 +441,8 @@ impl INPUT8TO15SEL_R {
     }
 }
 #[doc = "Field `INPUT8TO15SEL` writer - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
-pub type INPUT8TO15SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 5, INPUT8TO15SEL>;
-impl<'a, REG> INPUT8TO15SEL_W<'a, REG>
+pub type Input8to15selW<'a, REG> = crate::FieldWriter<'a, REG, 5, INPUT8TO15SEL>;
+impl<'a, REG> Input8to15selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -536,8 +538,6 @@ where
         self.variant(INPUT8TO15SEL::Aport4ch24to31)
     }
 }
-#[doc = "Field `INPUT16TO23SEL` reader - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
-pub type INPUT16TO23SEL_R = crate::FieldReader<INPUT16TO23SEL>;
 #[doc = "Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -588,7 +588,10 @@ impl From<INPUT16TO23SEL> for u8 {
 impl crate::FieldSpec for INPUT16TO23SEL {
     type Ux = u8;
 }
-impl INPUT16TO23SEL_R {
+impl crate::IsEnum for INPUT16TO23SEL {}
+#[doc = "Field `INPUT16TO23SEL` reader - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
+pub type Input16to23selR = crate::FieldReader<INPUT16TO23SEL>;
+impl Input16to23selR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<INPUT16TO23SEL> {
@@ -706,8 +709,8 @@ impl INPUT16TO23SEL_R {
     }
 }
 #[doc = "Field `INPUT16TO23SEL` writer - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
-pub type INPUT16TO23SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 5, INPUT16TO23SEL>;
-impl<'a, REG> INPUT16TO23SEL_W<'a, REG>
+pub type Input16to23selW<'a, REG> = crate::FieldWriter<'a, REG, 5, INPUT16TO23SEL>;
+impl<'a, REG> Input16to23selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -803,8 +806,6 @@ where
         self.variant(INPUT16TO23SEL::Aport4ch24to31)
     }
 }
-#[doc = "Field `INPUT24TO31SEL` reader - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
-pub type INPUT24TO31SEL_R = crate::FieldReader<INPUT24TO31SEL>;
 #[doc = "Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -855,7 +856,10 @@ impl From<INPUT24TO31SEL> for u8 {
 impl crate::FieldSpec for INPUT24TO31SEL {
     type Ux = u8;
 }
-impl INPUT24TO31SEL_R {
+impl crate::IsEnum for INPUT24TO31SEL {}
+#[doc = "Field `INPUT24TO31SEL` reader - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
+pub type Input24to31selR = crate::FieldReader<INPUT24TO31SEL>;
+impl Input24to31selR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<INPUT24TO31SEL> {
@@ -973,8 +977,8 @@ impl INPUT24TO31SEL_R {
     }
 }
 #[doc = "Field `INPUT24TO31SEL` writer - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
-pub type INPUT24TO31SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 5, INPUT24TO31SEL>;
-impl<'a, REG> INPUT24TO31SEL_W<'a, REG>
+pub type Input24to31selW<'a, REG> = crate::FieldWriter<'a, REG, 5, INPUT24TO31SEL>;
+impl<'a, REG> Input24to31selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1073,59 +1077,49 @@ where
 impl R {
     #[doc = "Bits 0:4 - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
     #[inline(always)]
-    pub fn input0to7sel(&self) -> INPUT0TO7SEL_R {
-        INPUT0TO7SEL_R::new((self.bits & 0x1f) as u8)
+    pub fn input0to7sel(&self) -> Input0to7selR {
+        Input0to7selR::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bits 8:12 - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
     #[inline(always)]
-    pub fn input8to15sel(&self) -> INPUT8TO15SEL_R {
-        INPUT8TO15SEL_R::new(((self.bits >> 8) & 0x1f) as u8)
+    pub fn input8to15sel(&self) -> Input8to15selR {
+        Input8to15selR::new(((self.bits >> 8) & 0x1f) as u8)
     }
     #[doc = "Bits 16:20 - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
     #[inline(always)]
-    pub fn input16to23sel(&self) -> INPUT16TO23SEL_R {
-        INPUT16TO23SEL_R::new(((self.bits >> 16) & 0x1f) as u8)
+    pub fn input16to23sel(&self) -> Input16to23selR {
+        Input16to23selR::new(((self.bits >> 16) & 0x1f) as u8)
     }
     #[doc = "Bits 24:28 - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
     #[inline(always)]
-    pub fn input24to31sel(&self) -> INPUT24TO31SEL_R {
-        INPUT24TO31SEL_R::new(((self.bits >> 24) & 0x1f) as u8)
+    pub fn input24to31sel(&self) -> Input24to31selR {
+        Input24to31selR::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
     #[inline(always)]
     #[must_use]
-    pub fn input0to7sel(&mut self) -> INPUT0TO7SEL_W<SCANINPUTSELrs> {
-        INPUT0TO7SEL_W::new(self, 0)
+    pub fn input0to7sel(&mut self) -> Input0to7selW<SCANINPUTSELrs> {
+        Input0to7selW::new(self, 0)
     }
     #[doc = "Bits 8:12 - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
     #[inline(always)]
     #[must_use]
-    pub fn input8to15sel(&mut self) -> INPUT8TO15SEL_W<SCANINPUTSELrs> {
-        INPUT8TO15SEL_W::new(self, 8)
+    pub fn input8to15sel(&mut self) -> Input8to15selW<SCANINPUTSELrs> {
+        Input8to15selW::new(self, 8)
     }
     #[doc = "Bits 16:20 - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
     #[inline(always)]
     #[must_use]
-    pub fn input16to23sel(&mut self) -> INPUT16TO23SEL_W<SCANINPUTSELrs> {
-        INPUT16TO23SEL_W::new(self, 16)
+    pub fn input16to23sel(&mut self) -> Input16to23selW<SCANINPUTSELrs> {
+        Input16to23selW::new(self, 16)
     }
     #[doc = "Bits 24:28 - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
     #[inline(always)]
     #[must_use]
-    pub fn input24to31sel(&mut self) -> INPUT24TO31SEL_W<SCANINPUTSELrs> {
-        INPUT24TO31SEL_W::new(self, 24)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn input24to31sel(&mut self) -> Input24to31selW<SCANINPUTSELrs> {
+        Input24to31selW::new(self, 24)
     }
 }
 #[doc = "Input Selection Register for Scan Mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scaninputsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scaninputsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -1137,6 +1131,7 @@ impl crate::RegisterSpec for SCANINPUTSELrs {
 impl crate::Readable for SCANINPUTSELrs {}
 #[doc = "`write(|w| ..)` method takes [`scaninputsel::W`](W) writer structure"]
 impl crate::Writable for SCANINPUTSELrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

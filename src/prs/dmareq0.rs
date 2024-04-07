@@ -2,8 +2,6 @@
 pub type R = crate::R<DMAREQ0rs>;
 #[doc = "Register `DMAREQ0` writer"]
 pub type W = crate::W<DMAREQ0rs>;
-#[doc = "Field `PRSSEL` reader - DMA Request 0 PRS Channel Select"]
-pub type PRSSEL_R = crate::FieldReader<PRSSEL>;
 #[doc = "DMA Request 0 PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -42,7 +40,10 @@ impl From<PRSSEL> for u8 {
 impl crate::FieldSpec for PRSSEL {
     type Ux = u8;
 }
-impl PRSSEL_R {
+impl crate::IsEnum for PRSSEL {}
+#[doc = "Field `PRSSEL` reader - DMA Request 0 PRS Channel Select"]
+pub type PrsselR = crate::FieldReader<PRSSEL>;
+impl PrsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PRSSEL> {
@@ -124,8 +125,8 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - DMA Request 0 PRS Channel Select"]
-pub type PRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSEL>;
-impl<'a, REG> PRSSEL_W<'a, REG>
+pub type PrsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSEL>;
+impl<'a, REG> PrsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -194,26 +195,16 @@ where
 impl R {
     #[doc = "Bits 6:9 - DMA Request 0 PRS Channel Select"]
     #[inline(always)]
-    pub fn prssel(&self) -> PRSSEL_R {
-        PRSSEL_R::new(((self.bits >> 6) & 0x0f) as u8)
+    pub fn prssel(&self) -> PrsselR {
+        PrsselR::new(((self.bits >> 6) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 6:9 - DMA Request 0 PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn prssel(&mut self) -> PRSSEL_W<DMAREQ0rs> {
-        PRSSEL_W::new(self, 6)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn prssel(&mut self) -> PrsselW<DMAREQ0rs> {
+        PrsselW::new(self, 6)
     }
 }
 #[doc = "DMA Request 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmareq0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmareq0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -225,6 +216,7 @@ impl crate::RegisterSpec for DMAREQ0rs {
 impl crate::Readable for DMAREQ0rs {}
 #[doc = "`write(|w| ..)` method takes [`dmareq0::W`](W) writer structure"]
 impl crate::Writable for DMAREQ0rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -1,19 +1,19 @@
 #[doc = "Register `RXDOUBLEP` reader"]
 pub type R = crate::R<RXDOUBLEPrs>;
 #[doc = "Field `RXDATAP0` reader - RX Data 0 Peek"]
-pub type RXDATAP0_R = crate::FieldReader;
+pub type Rxdatap0R = crate::FieldReader;
 #[doc = "Field `RXDATAP1` reader - RX Data 1 Peek"]
-pub type RXDATAP1_R = crate::FieldReader;
+pub type Rxdatap1R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - RX Data 0 Peek"]
     #[inline(always)]
-    pub fn rxdatap0(&self) -> RXDATAP0_R {
-        RXDATAP0_R::new((self.bits & 0xff) as u8)
+    pub fn rxdatap0(&self) -> Rxdatap0R {
+        Rxdatap0R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - RX Data 1 Peek"]
     #[inline(always)]
-    pub fn rxdatap1(&self) -> RXDATAP1_R {
-        RXDATAP1_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn rxdatap1(&self) -> Rxdatap1R {
+        Rxdatap1R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 #[doc = "Receive Buffer Double Data Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdoublep::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -2,8 +2,6 @@
 pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRLrs>;
-#[doc = "Field `CLKOUTSEL0` reader - Clock Output Select 0"]
-pub type CLKOUTSEL0_R = crate::FieldReader<CLKOUTSEL0>;
 #[doc = "Clock Output Select 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -44,7 +42,10 @@ impl From<CLKOUTSEL0> for u8 {
 impl crate::FieldSpec for CLKOUTSEL0 {
     type Ux = u8;
 }
-impl CLKOUTSEL0_R {
+impl crate::IsEnum for CLKOUTSEL0 {}
+#[doc = "Field `CLKOUTSEL0` reader - Clock Output Select 0"]
+pub type Clkoutsel0R = crate::FieldReader<CLKOUTSEL0>;
+impl Clkoutsel0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CLKOUTSEL0> {
@@ -132,8 +133,8 @@ impl CLKOUTSEL0_R {
     }
 }
 #[doc = "Field `CLKOUTSEL0` writer - Clock Output Select 0"]
-pub type CLKOUTSEL0_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKOUTSEL0>;
-impl<'a, REG> CLKOUTSEL0_W<'a, REG>
+pub type Clkoutsel0W<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKOUTSEL0>;
+impl<'a, REG> Clkoutsel0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -204,8 +205,6 @@ where
         self.variant(CLKOUTSEL0::Hfsrcclk)
     }
 }
-#[doc = "Field `CLKOUTSEL1` reader - Clock Output Select 1"]
-pub type CLKOUTSEL1_R = crate::FieldReader<CLKOUTSEL1>;
 #[doc = "Clock Output Select 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -246,7 +245,10 @@ impl From<CLKOUTSEL1> for u8 {
 impl crate::FieldSpec for CLKOUTSEL1 {
     type Ux = u8;
 }
-impl CLKOUTSEL1_R {
+impl crate::IsEnum for CLKOUTSEL1 {}
+#[doc = "Field `CLKOUTSEL1` reader - Clock Output Select 1"]
+pub type Clkoutsel1R = crate::FieldReader<CLKOUTSEL1>;
+impl Clkoutsel1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CLKOUTSEL1> {
@@ -334,8 +336,8 @@ impl CLKOUTSEL1_R {
     }
 }
 #[doc = "Field `CLKOUTSEL1` writer - Clock Output Select 1"]
-pub type CLKOUTSEL1_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKOUTSEL1>;
-impl<'a, REG> CLKOUTSEL1_W<'a, REG>
+pub type Clkoutsel1W<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKOUTSEL1>;
+impl<'a, REG> Clkoutsel1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -407,69 +409,59 @@ where
     }
 }
 #[doc = "Field `WSHFLE` reader - Wait State for High-Frequency LE Interface"]
-pub type WSHFLE_R = crate::BitReader;
+pub type WshfleR = crate::BitReader;
 #[doc = "Field `WSHFLE` writer - Wait State for High-Frequency LE Interface"]
-pub type WSHFLE_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type WshfleW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HFPERCLKEN` reader - HFPERCLK Enable"]
-pub type HFPERCLKEN_R = crate::BitReader;
+pub type HfperclkenR = crate::BitReader;
 #[doc = "Field `HFPERCLKEN` writer - HFPERCLK Enable"]
-pub type HFPERCLKEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type HfperclkenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - Clock Output Select 0"]
     #[inline(always)]
-    pub fn clkoutsel0(&self) -> CLKOUTSEL0_R {
-        CLKOUTSEL0_R::new((self.bits & 0x0f) as u8)
+    pub fn clkoutsel0(&self) -> Clkoutsel0R {
+        Clkoutsel0R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 5:8 - Clock Output Select 1"]
     #[inline(always)]
-    pub fn clkoutsel1(&self) -> CLKOUTSEL1_R {
-        CLKOUTSEL1_R::new(((self.bits >> 5) & 0x0f) as u8)
+    pub fn clkoutsel1(&self) -> Clkoutsel1R {
+        Clkoutsel1R::new(((self.bits >> 5) & 0x0f) as u8)
     }
     #[doc = "Bit 16 - Wait State for High-Frequency LE Interface"]
     #[inline(always)]
-    pub fn wshfle(&self) -> WSHFLE_R {
-        WSHFLE_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn wshfle(&self) -> WshfleR {
+        WshfleR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 20 - HFPERCLK Enable"]
     #[inline(always)]
-    pub fn hfperclken(&self) -> HFPERCLKEN_R {
-        HFPERCLKEN_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn hfperclken(&self) -> HfperclkenR {
+        HfperclkenR::new(((self.bits >> 20) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Clock Output Select 0"]
     #[inline(always)]
     #[must_use]
-    pub fn clkoutsel0(&mut self) -> CLKOUTSEL0_W<CTRLrs> {
-        CLKOUTSEL0_W::new(self, 0)
+    pub fn clkoutsel0(&mut self) -> Clkoutsel0W<CTRLrs> {
+        Clkoutsel0W::new(self, 0)
     }
     #[doc = "Bits 5:8 - Clock Output Select 1"]
     #[inline(always)]
     #[must_use]
-    pub fn clkoutsel1(&mut self) -> CLKOUTSEL1_W<CTRLrs> {
-        CLKOUTSEL1_W::new(self, 5)
+    pub fn clkoutsel1(&mut self) -> Clkoutsel1W<CTRLrs> {
+        Clkoutsel1W::new(self, 5)
     }
     #[doc = "Bit 16 - Wait State for High-Frequency LE Interface"]
     #[inline(always)]
     #[must_use]
-    pub fn wshfle(&mut self) -> WSHFLE_W<CTRLrs> {
-        WSHFLE_W::new(self, 16)
+    pub fn wshfle(&mut self) -> WshfleW<CTRLrs> {
+        WshfleW::new(self, 16)
     }
     #[doc = "Bit 20 - HFPERCLK Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hfperclken(&mut self) -> HFPERCLKEN_W<CTRLrs> {
-        HFPERCLKEN_W::new(self, 20)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn hfperclken(&mut self) -> HfperclkenW<CTRLrs> {
+        HfperclkenW::new(self, 20)
     }
 }
 #[doc = "CMU Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -481,6 +473,7 @@ impl crate::RegisterSpec for CTRLrs {
 impl crate::Readable for CTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

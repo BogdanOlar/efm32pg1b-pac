@@ -2,8 +2,6 @@
 pub type R = crate::R<ROUTELOC0rs>;
 #[doc = "Register `ROUTELOC0` writer"]
 pub type W = crate::W<ROUTELOC0rs>;
-#[doc = "Field `CH0LOC` reader - I/O Location"]
-pub type CH0LOC_R = crate::FieldReader<CH0LOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -46,7 +44,10 @@ impl From<CH0LOC> for u8 {
 impl crate::FieldSpec for CH0LOC {
     type Ux = u8;
 }
-impl CH0LOC_R {
+impl crate::IsEnum for CH0LOC {}
+#[doc = "Field `CH0LOC` reader - I/O Location"]
+pub type Ch0locR = crate::FieldReader<CH0LOC>;
+impl Ch0locR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CH0LOC> {
@@ -140,8 +141,8 @@ impl CH0LOC_R {
     }
 }
 #[doc = "Field `CH0LOC` writer - I/O Location"]
-pub type CH0LOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CH0LOC>;
-impl<'a, REG> CH0LOC_W<'a, REG>
+pub type Ch0locW<'a, REG> = crate::FieldWriter<'a, REG, 6, CH0LOC>;
+impl<'a, REG> Ch0locW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -217,8 +218,6 @@ where
         self.variant(CH0LOC::Loc13)
     }
 }
-#[doc = "Field `CH1LOC` reader - I/O Location"]
-pub type CH1LOC_R = crate::FieldReader<CH1LOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -249,7 +248,10 @@ impl From<CH1LOC> for u8 {
 impl crate::FieldSpec for CH1LOC {
     type Ux = u8;
 }
-impl CH1LOC_R {
+impl crate::IsEnum for CH1LOC {}
+#[doc = "Field `CH1LOC` reader - I/O Location"]
+pub type Ch1locR = crate::FieldReader<CH1LOC>;
+impl Ch1locR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CH1LOC> {
@@ -307,8 +309,8 @@ impl CH1LOC_R {
     }
 }
 #[doc = "Field `CH1LOC` writer - I/O Location"]
-pub type CH1LOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CH1LOC>;
-impl<'a, REG> CH1LOC_W<'a, REG>
+pub type Ch1locW<'a, REG> = crate::FieldWriter<'a, REG, 6, CH1LOC>;
+impl<'a, REG> Ch1locW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -354,8 +356,6 @@ where
         self.variant(CH1LOC::Loc7)
     }
 }
-#[doc = "Field `CH2LOC` reader - I/O Location"]
-pub type CH2LOC_R = crate::FieldReader<CH2LOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -386,7 +386,10 @@ impl From<CH2LOC> for u8 {
 impl crate::FieldSpec for CH2LOC {
     type Ux = u8;
 }
-impl CH2LOC_R {
+impl crate::IsEnum for CH2LOC {}
+#[doc = "Field `CH2LOC` reader - I/O Location"]
+pub type Ch2locR = crate::FieldReader<CH2LOC>;
+impl Ch2locR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CH2LOC> {
@@ -444,8 +447,8 @@ impl CH2LOC_R {
     }
 }
 #[doc = "Field `CH2LOC` writer - I/O Location"]
-pub type CH2LOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CH2LOC>;
-impl<'a, REG> CH2LOC_W<'a, REG>
+pub type Ch2locW<'a, REG> = crate::FieldWriter<'a, REG, 6, CH2LOC>;
+impl<'a, REG> Ch2locW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -491,8 +494,6 @@ where
         self.variant(CH2LOC::Loc7)
     }
 }
-#[doc = "Field `CH3LOC` reader - I/O Location"]
-pub type CH3LOC_R = crate::FieldReader<CH3LOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -537,7 +538,10 @@ impl From<CH3LOC> for u8 {
 impl crate::FieldSpec for CH3LOC {
     type Ux = u8;
 }
-impl CH3LOC_R {
+impl crate::IsEnum for CH3LOC {}
+#[doc = "Field `CH3LOC` reader - I/O Location"]
+pub type Ch3locR = crate::FieldReader<CH3LOC>;
+impl Ch3locR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CH3LOC> {
@@ -637,8 +641,8 @@ impl CH3LOC_R {
     }
 }
 #[doc = "Field `CH3LOC` writer - I/O Location"]
-pub type CH3LOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CH3LOC>;
-impl<'a, REG> CH3LOC_W<'a, REG>
+pub type Ch3locW<'a, REG> = crate::FieldWriter<'a, REG, 6, CH3LOC>;
+impl<'a, REG> Ch3locW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -722,59 +726,49 @@ where
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn ch0loc(&self) -> CH0LOC_R {
-        CH0LOC_R::new((self.bits & 0x3f) as u8)
+    pub fn ch0loc(&self) -> Ch0locR {
+        Ch0locR::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn ch1loc(&self) -> CH1LOC_R {
-        CH1LOC_R::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn ch1loc(&self) -> Ch1locR {
+        Ch1locR::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - I/O Location"]
     #[inline(always)]
-    pub fn ch2loc(&self) -> CH2LOC_R {
-        CH2LOC_R::new(((self.bits >> 16) & 0x3f) as u8)
+    pub fn ch2loc(&self) -> Ch2locR {
+        Ch2locR::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - I/O Location"]
     #[inline(always)]
-    pub fn ch3loc(&self) -> CH3LOC_R {
-        CH3LOC_R::new(((self.bits >> 24) & 0x3f) as u8)
+    pub fn ch3loc(&self) -> Ch3locR {
+        Ch3locR::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0loc(&mut self) -> CH0LOC_W<ROUTELOC0rs> {
-        CH0LOC_W::new(self, 0)
+    pub fn ch0loc(&mut self) -> Ch0locW<ROUTELOC0rs> {
+        Ch0locW::new(self, 0)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1loc(&mut self) -> CH1LOC_W<ROUTELOC0rs> {
-        CH1LOC_W::new(self, 8)
+    pub fn ch1loc(&mut self) -> Ch1locW<ROUTELOC0rs> {
+        Ch1locW::new(self, 8)
     }
     #[doc = "Bits 16:21 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2loc(&mut self) -> CH2LOC_W<ROUTELOC0rs> {
-        CH2LOC_W::new(self, 16)
+    pub fn ch2loc(&mut self) -> Ch2locW<ROUTELOC0rs> {
+        Ch2locW::new(self, 16)
     }
     #[doc = "Bits 24:29 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3loc(&mut self) -> CH3LOC_W<ROUTELOC0rs> {
-        CH3LOC_W::new(self, 24)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn ch3loc(&mut self) -> Ch3locW<ROUTELOC0rs> {
+        Ch3locW::new(self, 24)
     }
 }
 #[doc = "I/O Routing Location Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routeloc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routeloc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -786,6 +780,7 @@ impl crate::RegisterSpec for ROUTELOC0rs {
 impl crate::Readable for ROUTELOC0rs {}
 #[doc = "`write(|w| ..)` method takes [`routeloc0::W`](W) writer structure"]
 impl crate::Writable for ROUTELOC0rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

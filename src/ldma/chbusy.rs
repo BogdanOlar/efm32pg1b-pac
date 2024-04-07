@@ -1,12 +1,12 @@
 #[doc = "Register `CHBUSY` reader"]
 pub type R = crate::R<CHBUSYrs>;
 #[doc = "Field `BUSY` reader - Channels Busy"]
-pub type BUSY_R = crate::FieldReader;
+pub type BusyR = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Channels Busy"]
     #[inline(always)]
-    pub fn busy(&self) -> BUSY_R {
-        BUSY_R::new((self.bits & 0xff) as u8)
+    pub fn busy(&self) -> BusyR {
+        BusyR::new((self.bits & 0xff) as u8)
     }
 }
 #[doc = "DMA Channel Busy Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chbusy::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

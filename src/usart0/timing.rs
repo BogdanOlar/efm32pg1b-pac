@@ -2,8 +2,6 @@
 pub type R = crate::R<TIMINGrs>;
 #[doc = "Register `TIMING` writer"]
 pub type W = crate::W<TIMINGrs>;
-#[doc = "Field `TXDELAY` reader - TX Frame Start Delay"]
-pub type TXDELAY_R = crate::FieldReader<TXDELAY>;
 #[doc = "TX Frame Start Delay\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -34,7 +32,10 @@ impl From<TXDELAY> for u8 {
 impl crate::FieldSpec for TXDELAY {
     type Ux = u8;
 }
-impl TXDELAY_R {
+impl crate::IsEnum for TXDELAY {}
+#[doc = "Field `TXDELAY` reader - TX Frame Start Delay"]
+pub type TxdelayR = crate::FieldReader<TXDELAY>;
+impl TxdelayR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> TXDELAY {
@@ -92,8 +93,8 @@ impl TXDELAY_R {
     }
 }
 #[doc = "Field `TXDELAY` writer - TX Frame Start Delay"]
-pub type TXDELAY_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, TXDELAY>;
-impl<'a, REG> TXDELAY_W<'a, REG>
+pub type TxdelayW<'a, REG> = crate::FieldWriter<'a, REG, 3, TXDELAY, crate::Safe>;
+impl<'a, REG> TxdelayW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -139,8 +140,6 @@ where
         self.variant(TXDELAY::Tcmp2)
     }
 }
-#[doc = "Field `CSSETUP` reader - Chip Select Setup"]
-pub type CSSETUP_R = crate::FieldReader<CSSETUP>;
 #[doc = "Chip Select Setup\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -171,7 +170,10 @@ impl From<CSSETUP> for u8 {
 impl crate::FieldSpec for CSSETUP {
     type Ux = u8;
 }
-impl CSSETUP_R {
+impl crate::IsEnum for CSSETUP {}
+#[doc = "Field `CSSETUP` reader - Chip Select Setup"]
+pub type CssetupR = crate::FieldReader<CSSETUP>;
+impl CssetupR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> CSSETUP {
@@ -229,8 +231,8 @@ impl CSSETUP_R {
     }
 }
 #[doc = "Field `CSSETUP` writer - Chip Select Setup"]
-pub type CSSETUP_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, CSSETUP>;
-impl<'a, REG> CSSETUP_W<'a, REG>
+pub type CssetupW<'a, REG> = crate::FieldWriter<'a, REG, 3, CSSETUP, crate::Safe>;
+impl<'a, REG> CssetupW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -276,8 +278,6 @@ where
         self.variant(CSSETUP::Tcmp2)
     }
 }
-#[doc = "Field `ICS` reader - Inter-character Spacing"]
-pub type ICS_R = crate::FieldReader<ICS>;
 #[doc = "Inter-character Spacing\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -308,7 +308,10 @@ impl From<ICS> for u8 {
 impl crate::FieldSpec for ICS {
     type Ux = u8;
 }
-impl ICS_R {
+impl crate::IsEnum for ICS {}
+#[doc = "Field `ICS` reader - Inter-character Spacing"]
+pub type IcsR = crate::FieldReader<ICS>;
+impl IcsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> ICS {
@@ -366,8 +369,8 @@ impl ICS_R {
     }
 }
 #[doc = "Field `ICS` writer - Inter-character Spacing"]
-pub type ICS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, ICS>;
-impl<'a, REG> ICS_W<'a, REG>
+pub type IcsW<'a, REG> = crate::FieldWriter<'a, REG, 3, ICS, crate::Safe>;
+impl<'a, REG> IcsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -413,8 +416,6 @@ where
         self.variant(ICS::Tcmp2)
     }
 }
-#[doc = "Field `CSHOLD` reader - Chip Select Hold"]
-pub type CSHOLD_R = crate::FieldReader<CSHOLD>;
 #[doc = "Chip Select Hold\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -445,7 +446,10 @@ impl From<CSHOLD> for u8 {
 impl crate::FieldSpec for CSHOLD {
     type Ux = u8;
 }
-impl CSHOLD_R {
+impl crate::IsEnum for CSHOLD {}
+#[doc = "Field `CSHOLD` reader - Chip Select Hold"]
+pub type CsholdR = crate::FieldReader<CSHOLD>;
+impl CsholdR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> CSHOLD {
@@ -503,8 +507,8 @@ impl CSHOLD_R {
     }
 }
 #[doc = "Field `CSHOLD` writer - Chip Select Hold"]
-pub type CSHOLD_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, CSHOLD>;
-impl<'a, REG> CSHOLD_W<'a, REG>
+pub type CsholdW<'a, REG> = crate::FieldWriter<'a, REG, 3, CSHOLD, crate::Safe>;
+impl<'a, REG> CsholdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -553,59 +557,49 @@ where
 impl R {
     #[doc = "Bits 16:18 - TX Frame Start Delay"]
     #[inline(always)]
-    pub fn txdelay(&self) -> TXDELAY_R {
-        TXDELAY_R::new(((self.bits >> 16) & 7) as u8)
+    pub fn txdelay(&self) -> TxdelayR {
+        TxdelayR::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - Chip Select Setup"]
     #[inline(always)]
-    pub fn cssetup(&self) -> CSSETUP_R {
-        CSSETUP_R::new(((self.bits >> 20) & 7) as u8)
+    pub fn cssetup(&self) -> CssetupR {
+        CssetupR::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 24:26 - Inter-character Spacing"]
     #[inline(always)]
-    pub fn ics(&self) -> ICS_R {
-        ICS_R::new(((self.bits >> 24) & 7) as u8)
+    pub fn ics(&self) -> IcsR {
+        IcsR::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 28:30 - Chip Select Hold"]
     #[inline(always)]
-    pub fn cshold(&self) -> CSHOLD_R {
-        CSHOLD_R::new(((self.bits >> 28) & 7) as u8)
+    pub fn cshold(&self) -> CsholdR {
+        CsholdR::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 16:18 - TX Frame Start Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn txdelay(&mut self) -> TXDELAY_W<TIMINGrs> {
-        TXDELAY_W::new(self, 16)
+    pub fn txdelay(&mut self) -> TxdelayW<TIMINGrs> {
+        TxdelayW::new(self, 16)
     }
     #[doc = "Bits 20:22 - Chip Select Setup"]
     #[inline(always)]
     #[must_use]
-    pub fn cssetup(&mut self) -> CSSETUP_W<TIMINGrs> {
-        CSSETUP_W::new(self, 20)
+    pub fn cssetup(&mut self) -> CssetupW<TIMINGrs> {
+        CssetupW::new(self, 20)
     }
     #[doc = "Bits 24:26 - Inter-character Spacing"]
     #[inline(always)]
     #[must_use]
-    pub fn ics(&mut self) -> ICS_W<TIMINGrs> {
-        ICS_W::new(self, 24)
+    pub fn ics(&mut self) -> IcsW<TIMINGrs> {
+        IcsW::new(self, 24)
     }
     #[doc = "Bits 28:30 - Chip Select Hold"]
     #[inline(always)]
     #[must_use]
-    pub fn cshold(&mut self) -> CSHOLD_W<TIMINGrs> {
-        CSHOLD_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn cshold(&mut self) -> CsholdW<TIMINGrs> {
+        CsholdW::new(self, 28)
     }
 }
 #[doc = "Timing Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timing::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timing::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -617,6 +611,7 @@ impl crate::RegisterSpec for TIMINGrs {
 impl crate::Readable for TIMINGrs {}
 #[doc = "`write(|w| ..)` method takes [`timing::W`](W) writer structure"]
 impl crate::Writable for TIMINGrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -1,17 +1,15 @@
 #[doc = "Register `STATE` reader"]
 pub type R = crate::R<STATErs>;
 #[doc = "Field `BUSY` reader - Bus Busy"]
-pub type BUSY_R = crate::BitReader;
+pub type BusyR = crate::BitReader;
 #[doc = "Field `MASTER` reader - Master"]
-pub type MASTER_R = crate::BitReader;
+pub type MasterR = crate::BitReader;
 #[doc = "Field `TRANSMITTER` reader - Transmitter"]
-pub type TRANSMITTER_R = crate::BitReader;
+pub type TransmitterR = crate::BitReader;
 #[doc = "Field `NACKED` reader - Nack Received"]
-pub type NACKED_R = crate::BitReader;
+pub type NackedR = crate::BitReader;
 #[doc = "Field `BUSHOLD` reader - Bus Held"]
-pub type BUSHOLD_R = crate::BitReader;
-#[doc = "Field `STATE` reader - Transmission State"]
-pub type STATE_R = crate::FieldReader<STATE>;
+pub type BusholdR = crate::BitReader;
 #[doc = "Transmission State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -40,7 +38,10 @@ impl From<STATE> for u8 {
 impl crate::FieldSpec for STATE {
     type Ux = u8;
 }
-impl STATE_R {
+impl crate::IsEnum for STATE {}
+#[doc = "Field `STATE` reader - Transmission State"]
+pub type StateR = crate::FieldReader<STATE>;
+impl StateR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<STATE> {
@@ -94,33 +95,33 @@ impl STATE_R {
 impl R {
     #[doc = "Bit 0 - Bus Busy"]
     #[inline(always)]
-    pub fn busy(&self) -> BUSY_R {
-        BUSY_R::new((self.bits & 1) != 0)
+    pub fn busy(&self) -> BusyR {
+        BusyR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Master"]
     #[inline(always)]
-    pub fn master(&self) -> MASTER_R {
-        MASTER_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn master(&self) -> MasterR {
+        MasterR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Transmitter"]
     #[inline(always)]
-    pub fn transmitter(&self) -> TRANSMITTER_R {
-        TRANSMITTER_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn transmitter(&self) -> TransmitterR {
+        TransmitterR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Nack Received"]
     #[inline(always)]
-    pub fn nacked(&self) -> NACKED_R {
-        NACKED_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn nacked(&self) -> NackedR {
+        NackedR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Bus Held"]
     #[inline(always)]
-    pub fn bushold(&self) -> BUSHOLD_R {
-        BUSHOLD_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn bushold(&self) -> BusholdR {
+        BusholdR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 5:7 - Transmission State"]
     #[inline(always)]
-    pub fn state(&self) -> STATE_R {
-        STATE_R::new(((self.bits >> 5) & 7) as u8)
+    pub fn state(&self) -> StateR {
+        StateR::new(((self.bits >> 5) & 7) as u8)
     }
 }
 #[doc = "State Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

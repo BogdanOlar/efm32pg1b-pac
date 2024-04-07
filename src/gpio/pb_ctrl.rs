@@ -3,107 +3,97 @@ pub type R = crate::R<PB_CTRLrs>;
 #[doc = "Register `PB_CTRL` writer"]
 pub type W = crate::W<PB_CTRLrs>;
 #[doc = "Field `DRIVESTRENGTH` reader - Drive Strength for Port"]
-pub type DRIVESTRENGTH_R = crate::BitReader;
+pub type DrivestrengthR = crate::BitReader;
 #[doc = "Field `DRIVESTRENGTH` writer - Drive Strength for Port"]
-pub type DRIVESTRENGTH_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DrivestrengthW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SLEWRATE` reader - Slewrate Limit for Port"]
-pub type SLEWRATE_R = crate::FieldReader;
+pub type SlewrateR = crate::FieldReader;
 #[doc = "Field `SLEWRATE` writer - Slewrate Limit for Port"]
-pub type SLEWRATE_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type SlewrateW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DINDIS` reader - Data in Disable"]
-pub type DINDIS_R = crate::BitReader;
+pub type DindisR = crate::BitReader;
 #[doc = "Field `DINDIS` writer - Data in Disable"]
-pub type DINDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DindisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DRIVESTRENGTHALT` reader - Alternate Drive Strength for Port"]
-pub type DRIVESTRENGTHALT_R = crate::BitReader;
+pub type DrivestrengthaltR = crate::BitReader;
 #[doc = "Field `DRIVESTRENGTHALT` writer - Alternate Drive Strength for Port"]
-pub type DRIVESTRENGTHALT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DrivestrengthaltW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SLEWRATEALT` reader - Alternate Slewrate Limit for Port"]
-pub type SLEWRATEALT_R = crate::FieldReader;
+pub type SlewratealtR = crate::FieldReader;
 #[doc = "Field `SLEWRATEALT` writer - Alternate Slewrate Limit for Port"]
-pub type SLEWRATEALT_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type SlewratealtW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DINDISALT` reader - Alternate Data in Disable"]
-pub type DINDISALT_R = crate::BitReader;
+pub type DindisaltR = crate::BitReader;
 #[doc = "Field `DINDISALT` writer - Alternate Data in Disable"]
-pub type DINDISALT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DindisaltW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Drive Strength for Port"]
     #[inline(always)]
-    pub fn drivestrength(&self) -> DRIVESTRENGTH_R {
-        DRIVESTRENGTH_R::new((self.bits & 1) != 0)
+    pub fn drivestrength(&self) -> DrivestrengthR {
+        DrivestrengthR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:6 - Slewrate Limit for Port"]
     #[inline(always)]
-    pub fn slewrate(&self) -> SLEWRATE_R {
-        SLEWRATE_R::new(((self.bits >> 4) & 7) as u8)
+    pub fn slewrate(&self) -> SlewrateR {
+        SlewrateR::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 12 - Data in Disable"]
     #[inline(always)]
-    pub fn dindis(&self) -> DINDIS_R {
-        DINDIS_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn dindis(&self) -> DindisR {
+        DindisR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 16 - Alternate Drive Strength for Port"]
     #[inline(always)]
-    pub fn drivestrengthalt(&self) -> DRIVESTRENGTHALT_R {
-        DRIVESTRENGTHALT_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn drivestrengthalt(&self) -> DrivestrengthaltR {
+        DrivestrengthaltR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bits 20:22 - Alternate Slewrate Limit for Port"]
     #[inline(always)]
-    pub fn slewratealt(&self) -> SLEWRATEALT_R {
-        SLEWRATEALT_R::new(((self.bits >> 20) & 7) as u8)
+    pub fn slewratealt(&self) -> SlewratealtR {
+        SlewratealtR::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bit 28 - Alternate Data in Disable"]
     #[inline(always)]
-    pub fn dindisalt(&self) -> DINDISALT_R {
-        DINDISALT_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn dindisalt(&self) -> DindisaltR {
+        DindisaltR::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Drive Strength for Port"]
     #[inline(always)]
     #[must_use]
-    pub fn drivestrength(&mut self) -> DRIVESTRENGTH_W<PB_CTRLrs> {
-        DRIVESTRENGTH_W::new(self, 0)
+    pub fn drivestrength(&mut self) -> DrivestrengthW<PB_CTRLrs> {
+        DrivestrengthW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Slewrate Limit for Port"]
     #[inline(always)]
     #[must_use]
-    pub fn slewrate(&mut self) -> SLEWRATE_W<PB_CTRLrs> {
-        SLEWRATE_W::new(self, 4)
+    pub fn slewrate(&mut self) -> SlewrateW<PB_CTRLrs> {
+        SlewrateW::new(self, 4)
     }
     #[doc = "Bit 12 - Data in Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn dindis(&mut self) -> DINDIS_W<PB_CTRLrs> {
-        DINDIS_W::new(self, 12)
+    pub fn dindis(&mut self) -> DindisW<PB_CTRLrs> {
+        DindisW::new(self, 12)
     }
     #[doc = "Bit 16 - Alternate Drive Strength for Port"]
     #[inline(always)]
     #[must_use]
-    pub fn drivestrengthalt(&mut self) -> DRIVESTRENGTHALT_W<PB_CTRLrs> {
-        DRIVESTRENGTHALT_W::new(self, 16)
+    pub fn drivestrengthalt(&mut self) -> DrivestrengthaltW<PB_CTRLrs> {
+        DrivestrengthaltW::new(self, 16)
     }
     #[doc = "Bits 20:22 - Alternate Slewrate Limit for Port"]
     #[inline(always)]
     #[must_use]
-    pub fn slewratealt(&mut self) -> SLEWRATEALT_W<PB_CTRLrs> {
-        SLEWRATEALT_W::new(self, 20)
+    pub fn slewratealt(&mut self) -> SlewratealtW<PB_CTRLrs> {
+        SlewratealtW::new(self, 20)
     }
     #[doc = "Bit 28 - Alternate Data in Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn dindisalt(&mut self) -> DINDISALT_W<PB_CTRLrs> {
-        DINDISALT_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn dindisalt(&mut self) -> DindisaltW<PB_CTRLrs> {
+        DindisaltW::new(self, 28)
     }
 }
 #[doc = "Port Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pb_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pb_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -115,6 +105,7 @@ impl crate::RegisterSpec for PB_CTRLrs {
 impl crate::Readable for PB_CTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`pb_ctrl::W`](W) writer structure"]
 impl crate::Writable for PB_CTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -3,11 +3,9 @@ pub type R = crate::R<ULFRCOCTRLrs>;
 #[doc = "Register `ULFRCOCTRL` writer"]
 pub type W = crate::W<ULFRCOCTRLrs>;
 #[doc = "Field `TUNING` reader - ULFRCO TUNING Value"]
-pub type TUNING_R = crate::FieldReader;
+pub type TuningR = crate::FieldReader;
 #[doc = "Field `TUNING` writer - ULFRCO TUNING Value"]
-pub type TUNING_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
-#[doc = "Field `MODE` reader - ULFRCO Mode"]
-pub type MODE_R = crate::FieldReader<MODE>;
+pub type TuningW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "ULFRCO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -30,7 +28,10 @@ impl From<MODE> for u8 {
 impl crate::FieldSpec for MODE {
     type Ux = u8;
 }
-impl MODE_R {
+impl crate::IsEnum for MODE {}
+#[doc = "Field `MODE` reader - ULFRCO Mode"]
+pub type ModeR = crate::FieldReader<MODE>;
+impl ModeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> MODE {
@@ -64,8 +65,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - ULFRCO Mode"]
-pub type MODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MODE>;
-impl<'a, REG> MODE_W<'a, REG>
+pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 2, MODE, crate::Safe>;
+impl<'a, REG> ModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -92,54 +93,44 @@ where
     }
 }
 #[doc = "Field `RESTRIM` reader - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
-pub type RESTRIM_R = crate::FieldReader;
+pub type RestrimR = crate::FieldReader;
 #[doc = "Field `RESTRIM` writer - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
-pub type RESTRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type RestrimW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:5 - ULFRCO TUNING Value"]
     #[inline(always)]
-    pub fn tuning(&self) -> TUNING_R {
-        TUNING_R::new((self.bits & 0x3f) as u8)
+    pub fn tuning(&self) -> TuningR {
+        TuningR::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 10:11 - ULFRCO Mode"]
     #[inline(always)]
-    pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 10) & 3) as u8)
+    pub fn mode(&self) -> ModeR {
+        ModeR::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 16:17 - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
     #[inline(always)]
-    pub fn restrim(&self) -> RESTRIM_R {
-        RESTRIM_R::new(((self.bits >> 16) & 3) as u8)
+    pub fn restrim(&self) -> RestrimR {
+        RestrimR::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - ULFRCO TUNING Value"]
     #[inline(always)]
     #[must_use]
-    pub fn tuning(&mut self) -> TUNING_W<ULFRCOCTRLrs> {
-        TUNING_W::new(self, 0)
+    pub fn tuning(&mut self) -> TuningW<ULFRCOCTRLrs> {
+        TuningW::new(self, 0)
     }
     #[doc = "Bits 10:11 - ULFRCO Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<ULFRCOCTRLrs> {
-        MODE_W::new(self, 10)
+    pub fn mode(&mut self) -> ModeW<ULFRCOCTRLrs> {
+        ModeW::new(self, 10)
     }
     #[doc = "Bits 16:17 - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)"]
     #[inline(always)]
     #[must_use]
-    pub fn restrim(&mut self) -> RESTRIM_W<ULFRCOCTRLrs> {
-        RESTRIM_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn restrim(&mut self) -> RestrimW<ULFRCOCTRLrs> {
+        RestrimW::new(self, 16)
     }
 }
 #[doc = "ULFRCO Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ulfrcoctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ulfrcoctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -151,6 +142,7 @@ impl crate::RegisterSpec for ULFRCOCTRLrs {
 impl crate::Readable for ULFRCOCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`ulfrcoctrl::W`](W) writer structure"]
 impl crate::Writable for ULFRCOCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

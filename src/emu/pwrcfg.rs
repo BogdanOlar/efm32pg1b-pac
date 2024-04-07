@@ -2,8 +2,6 @@
 pub type R = crate::R<PWRCFGrs>;
 #[doc = "Register `PWRCFG` writer"]
 pub type W = crate::W<PWRCFGrs>;
-#[doc = "Field `PWRCFG` reader - Power Configuration"]
-pub type PWRCFG_R = crate::FieldReader<PWRCFG>;
 #[doc = "Power Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -22,7 +20,10 @@ impl From<PWRCFG> for u8 {
 impl crate::FieldSpec for PWRCFG {
     type Ux = u8;
 }
-impl PWRCFG_R {
+impl crate::IsEnum for PWRCFG {}
+#[doc = "Field `PWRCFG` reader - Power Configuration"]
+pub type PwrcfgR = crate::FieldReader<PWRCFG>;
+impl PwrcfgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PWRCFG> {
@@ -44,8 +45,8 @@ impl PWRCFG_R {
     }
 }
 #[doc = "Field `PWRCFG` writer - Power Configuration"]
-pub type PWRCFG_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PWRCFG>;
-impl<'a, REG> PWRCFG_W<'a, REG>
+pub type PwrcfgW<'a, REG> = crate::FieldWriter<'a, REG, 4, PWRCFG>;
+impl<'a, REG> PwrcfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -64,26 +65,16 @@ where
 impl R {
     #[doc = "Bits 0:3 - Power Configuration"]
     #[inline(always)]
-    pub fn pwrcfg(&self) -> PWRCFG_R {
-        PWRCFG_R::new((self.bits & 0x0f) as u8)
+    pub fn pwrcfg(&self) -> PwrcfgR {
+        PwrcfgR::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Power Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn pwrcfg(&mut self) -> PWRCFG_W<PWRCFGrs> {
-        PWRCFG_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn pwrcfg(&mut self) -> PwrcfgW<PWRCFGrs> {
+        PwrcfgW::new(self, 0)
     }
 }
 #[doc = "Power Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -95,6 +86,7 @@ impl crate::RegisterSpec for PWRCFGrs {
 impl crate::Readable for PWRCFGrs {}
 #[doc = "`write(|w| ..)` method takes [`pwrcfg::W`](W) writer structure"]
 impl crate::Writable for PWRCFGrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

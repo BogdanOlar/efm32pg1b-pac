@@ -3,11 +3,9 @@ pub type R = crate::R<CH6_REQSELrs>;
 #[doc = "Register `CH6_REQSEL` writer"]
 pub type W = crate::W<CH6_REQSELrs>;
 #[doc = "Field `SIGSEL` reader - Signal Select"]
-pub type SIGSEL_R = crate::FieldReader;
+pub type SigselR = crate::FieldReader;
 #[doc = "Field `SIGSEL` writer - Signal Select"]
-pub type SIGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `SOURCESEL` reader - Source Select"]
-pub type SOURCESEL_R = crate::FieldReader<SOURCESEL>;
+pub type SigselW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -44,7 +42,10 @@ impl From<SOURCESEL> for u8 {
 impl crate::FieldSpec for SOURCESEL {
     type Ux = u8;
 }
-impl SOURCESEL_R {
+impl crate::IsEnum for SOURCESEL {}
+#[doc = "Field `SOURCESEL` reader - Source Select"]
+pub type SourceselR = crate::FieldReader<SOURCESEL>;
+impl SourceselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<SOURCESEL> {
@@ -120,8 +121,8 @@ impl SOURCESEL_R {
     }
 }
 #[doc = "Field `SOURCESEL` writer - Source Select"]
-pub type SOURCESEL_W<'a, REG> = crate::FieldWriter<'a, REG, 6, SOURCESEL>;
-impl<'a, REG> SOURCESEL_W<'a, REG>
+pub type SourceselW<'a, REG> = crate::FieldWriter<'a, REG, 6, SOURCESEL>;
+impl<'a, REG> SourceselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -185,37 +186,27 @@ where
 impl R {
     #[doc = "Bits 0:3 - Signal Select"]
     #[inline(always)]
-    pub fn sigsel(&self) -> SIGSEL_R {
-        SIGSEL_R::new((self.bits & 0x0f) as u8)
+    pub fn sigsel(&self) -> SigselR {
+        SigselR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 16:21 - Source Select"]
     #[inline(always)]
-    pub fn sourcesel(&self) -> SOURCESEL_R {
-        SOURCESEL_R::new(((self.bits >> 16) & 0x3f) as u8)
+    pub fn sourcesel(&self) -> SourceselR {
+        SourceselR::new(((self.bits >> 16) & 0x3f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Signal Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sigsel(&mut self) -> SIGSEL_W<CH6_REQSELrs> {
-        SIGSEL_W::new(self, 0)
+    pub fn sigsel(&mut self) -> SigselW<CH6_REQSELrs> {
+        SigselW::new(self, 0)
     }
     #[doc = "Bits 16:21 - Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sourcesel(&mut self) -> SOURCESEL_W<CH6_REQSELrs> {
-        SOURCESEL_W::new(self, 16)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn sourcesel(&mut self) -> SourceselW<CH6_REQSELrs> {
+        SourceselW::new(self, 16)
     }
 }
 #[doc = "Channel Peripheral Request Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ch6_reqsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ch6_reqsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -227,6 +218,7 @@ impl crate::RegisterSpec for CH6_REQSELrs {
 impl crate::Readable for CH6_REQSELrs {}
 #[doc = "`write(|w| ..)` method takes [`ch6_reqsel::W`](W) writer structure"]
 impl crate::Writable for CH6_REQSELrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

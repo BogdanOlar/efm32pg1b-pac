@@ -2,8 +2,6 @@
 pub type R = crate::R<EXTIPSELHrs>;
 #[doc = "Register `EXTIPSELH` writer"]
 pub type W = crate::W<EXTIPSELHrs>;
-#[doc = "Field `EXTIPSEL8` reader - External Interrupt 8 Port Select"]
-pub type EXTIPSEL8_R = crate::FieldReader<EXTIPSEL8>;
 #[doc = "External Interrupt 8 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -28,7 +26,10 @@ impl From<EXTIPSEL8> for u8 {
 impl crate::FieldSpec for EXTIPSEL8 {
     type Ux = u8;
 }
-impl EXTIPSEL8_R {
+impl crate::IsEnum for EXTIPSEL8 {}
+#[doc = "Field `EXTIPSEL8` reader - External Interrupt 8 Port Select"]
+pub type Extipsel8R = crate::FieldReader<EXTIPSEL8>;
+impl Extipsel8R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<EXTIPSEL8> {
@@ -68,8 +69,8 @@ impl EXTIPSEL8_R {
     }
 }
 #[doc = "Field `EXTIPSEL8` writer - External Interrupt 8 Port Select"]
-pub type EXTIPSEL8_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL8>;
-impl<'a, REG> EXTIPSEL8_W<'a, REG>
+pub type Extipsel8W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL8>;
+impl<'a, REG> Extipsel8W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -100,8 +101,6 @@ where
         self.variant(EXTIPSEL8::Portf)
     }
 }
-#[doc = "Field `EXTIPSEL9` reader - External Interrupt 9 Port Select"]
-pub type EXTIPSEL9_R = crate::FieldReader<EXTIPSEL9>;
 #[doc = "External Interrupt 9 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -126,7 +125,10 @@ impl From<EXTIPSEL9> for u8 {
 impl crate::FieldSpec for EXTIPSEL9 {
     type Ux = u8;
 }
-impl EXTIPSEL9_R {
+impl crate::IsEnum for EXTIPSEL9 {}
+#[doc = "Field `EXTIPSEL9` reader - External Interrupt 9 Port Select"]
+pub type Extipsel9R = crate::FieldReader<EXTIPSEL9>;
+impl Extipsel9R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<EXTIPSEL9> {
@@ -166,8 +168,8 @@ impl EXTIPSEL9_R {
     }
 }
 #[doc = "Field `EXTIPSEL9` writer - External Interrupt 9 Port Select"]
-pub type EXTIPSEL9_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL9>;
-impl<'a, REG> EXTIPSEL9_W<'a, REG>
+pub type Extipsel9W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL9>;
+impl<'a, REG> Extipsel9W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -198,8 +200,6 @@ where
         self.variant(EXTIPSEL9::Portf)
     }
 }
-#[doc = "Field `EXTIPSEL10` reader - External Interrupt 10 Port Select"]
-pub type EXTIPSEL10_R = crate::FieldReader<EXTIPSEL10>;
 #[doc = "External Interrupt 10 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -224,7 +224,10 @@ impl From<EXTIPSEL10> for u8 {
 impl crate::FieldSpec for EXTIPSEL10 {
     type Ux = u8;
 }
-impl EXTIPSEL10_R {
+impl crate::IsEnum for EXTIPSEL10 {}
+#[doc = "Field `EXTIPSEL10` reader - External Interrupt 10 Port Select"]
+pub type Extipsel10R = crate::FieldReader<EXTIPSEL10>;
+impl Extipsel10R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<EXTIPSEL10> {
@@ -264,8 +267,8 @@ impl EXTIPSEL10_R {
     }
 }
 #[doc = "Field `EXTIPSEL10` writer - External Interrupt 10 Port Select"]
-pub type EXTIPSEL10_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL10>;
-impl<'a, REG> EXTIPSEL10_W<'a, REG>
+pub type Extipsel10W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL10>;
+impl<'a, REG> Extipsel10W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -296,8 +299,6 @@ where
         self.variant(EXTIPSEL10::Portf)
     }
 }
-#[doc = "Field `EXTIPSEL11` reader - External Interrupt 11 Port Select"]
-pub type EXTIPSEL11_R = crate::FieldReader<EXTIPSEL11>;
 #[doc = "External Interrupt 11 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -322,7 +323,10 @@ impl From<EXTIPSEL11> for u8 {
 impl crate::FieldSpec for EXTIPSEL11 {
     type Ux = u8;
 }
-impl EXTIPSEL11_R {
+impl crate::IsEnum for EXTIPSEL11 {}
+#[doc = "Field `EXTIPSEL11` reader - External Interrupt 11 Port Select"]
+pub type Extipsel11R = crate::FieldReader<EXTIPSEL11>;
+impl Extipsel11R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<EXTIPSEL11> {
@@ -362,8 +366,8 @@ impl EXTIPSEL11_R {
     }
 }
 #[doc = "Field `EXTIPSEL11` writer - External Interrupt 11 Port Select"]
-pub type EXTIPSEL11_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL11>;
-impl<'a, REG> EXTIPSEL11_W<'a, REG>
+pub type Extipsel11W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL11>;
+impl<'a, REG> Extipsel11W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -394,8 +398,6 @@ where
         self.variant(EXTIPSEL11::Portf)
     }
 }
-#[doc = "Field `EXTIPSEL12` reader - External Interrupt 12 Port Select"]
-pub type EXTIPSEL12_R = crate::FieldReader<EXTIPSEL12>;
 #[doc = "External Interrupt 12 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -420,7 +422,10 @@ impl From<EXTIPSEL12> for u8 {
 impl crate::FieldSpec for EXTIPSEL12 {
     type Ux = u8;
 }
-impl EXTIPSEL12_R {
+impl crate::IsEnum for EXTIPSEL12 {}
+#[doc = "Field `EXTIPSEL12` reader - External Interrupt 12 Port Select"]
+pub type Extipsel12R = crate::FieldReader<EXTIPSEL12>;
+impl Extipsel12R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<EXTIPSEL12> {
@@ -460,8 +465,8 @@ impl EXTIPSEL12_R {
     }
 }
 #[doc = "Field `EXTIPSEL12` writer - External Interrupt 12 Port Select"]
-pub type EXTIPSEL12_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL12>;
-impl<'a, REG> EXTIPSEL12_W<'a, REG>
+pub type Extipsel12W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL12>;
+impl<'a, REG> Extipsel12W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -492,8 +497,6 @@ where
         self.variant(EXTIPSEL12::Portf)
     }
 }
-#[doc = "Field `EXTIPSEL13` reader - External Interrupt 13 Port Select"]
-pub type EXTIPSEL13_R = crate::FieldReader<EXTIPSEL13>;
 #[doc = "External Interrupt 13 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -518,7 +521,10 @@ impl From<EXTIPSEL13> for u8 {
 impl crate::FieldSpec for EXTIPSEL13 {
     type Ux = u8;
 }
-impl EXTIPSEL13_R {
+impl crate::IsEnum for EXTIPSEL13 {}
+#[doc = "Field `EXTIPSEL13` reader - External Interrupt 13 Port Select"]
+pub type Extipsel13R = crate::FieldReader<EXTIPSEL13>;
+impl Extipsel13R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<EXTIPSEL13> {
@@ -558,8 +564,8 @@ impl EXTIPSEL13_R {
     }
 }
 #[doc = "Field `EXTIPSEL13` writer - External Interrupt 13 Port Select"]
-pub type EXTIPSEL13_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL13>;
-impl<'a, REG> EXTIPSEL13_W<'a, REG>
+pub type Extipsel13W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL13>;
+impl<'a, REG> Extipsel13W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -590,8 +596,6 @@ where
         self.variant(EXTIPSEL13::Portf)
     }
 }
-#[doc = "Field `EXTIPSEL14` reader - External Interrupt 14 Port Select"]
-pub type EXTIPSEL14_R = crate::FieldReader<EXTIPSEL14>;
 #[doc = "External Interrupt 14 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -616,7 +620,10 @@ impl From<EXTIPSEL14> for u8 {
 impl crate::FieldSpec for EXTIPSEL14 {
     type Ux = u8;
 }
-impl EXTIPSEL14_R {
+impl crate::IsEnum for EXTIPSEL14 {}
+#[doc = "Field `EXTIPSEL14` reader - External Interrupt 14 Port Select"]
+pub type Extipsel14R = crate::FieldReader<EXTIPSEL14>;
+impl Extipsel14R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<EXTIPSEL14> {
@@ -656,8 +663,8 @@ impl EXTIPSEL14_R {
     }
 }
 #[doc = "Field `EXTIPSEL14` writer - External Interrupt 14 Port Select"]
-pub type EXTIPSEL14_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL14>;
-impl<'a, REG> EXTIPSEL14_W<'a, REG>
+pub type Extipsel14W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL14>;
+impl<'a, REG> Extipsel14W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -688,8 +695,6 @@ where
         self.variant(EXTIPSEL14::Portf)
     }
 }
-#[doc = "Field `EXTIPSEL15` reader - External Interrupt 15 Port Select"]
-pub type EXTIPSEL15_R = crate::FieldReader<EXTIPSEL15>;
 #[doc = "External Interrupt 15 Port Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -714,7 +719,10 @@ impl From<EXTIPSEL15> for u8 {
 impl crate::FieldSpec for EXTIPSEL15 {
     type Ux = u8;
 }
-impl EXTIPSEL15_R {
+impl crate::IsEnum for EXTIPSEL15 {}
+#[doc = "Field `EXTIPSEL15` reader - External Interrupt 15 Port Select"]
+pub type Extipsel15R = crate::FieldReader<EXTIPSEL15>;
+impl Extipsel15R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<EXTIPSEL15> {
@@ -754,8 +762,8 @@ impl EXTIPSEL15_R {
     }
 }
 #[doc = "Field `EXTIPSEL15` writer - External Interrupt 15 Port Select"]
-pub type EXTIPSEL15_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL15>;
-impl<'a, REG> EXTIPSEL15_W<'a, REG>
+pub type Extipsel15W<'a, REG> = crate::FieldWriter<'a, REG, 4, EXTIPSEL15>;
+impl<'a, REG> Extipsel15W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -789,103 +797,93 @@ where
 impl R {
     #[doc = "Bits 0:3 - External Interrupt 8 Port Select"]
     #[inline(always)]
-    pub fn extipsel8(&self) -> EXTIPSEL8_R {
-        EXTIPSEL8_R::new((self.bits & 0x0f) as u8)
+    pub fn extipsel8(&self) -> Extipsel8R {
+        Extipsel8R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - External Interrupt 9 Port Select"]
     #[inline(always)]
-    pub fn extipsel9(&self) -> EXTIPSEL9_R {
-        EXTIPSEL9_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn extipsel9(&self) -> Extipsel9R {
+        Extipsel9R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - External Interrupt 10 Port Select"]
     #[inline(always)]
-    pub fn extipsel10(&self) -> EXTIPSEL10_R {
-        EXTIPSEL10_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn extipsel10(&self) -> Extipsel10R {
+        Extipsel10R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - External Interrupt 11 Port Select"]
     #[inline(always)]
-    pub fn extipsel11(&self) -> EXTIPSEL11_R {
-        EXTIPSEL11_R::new(((self.bits >> 12) & 0x0f) as u8)
+    pub fn extipsel11(&self) -> Extipsel11R {
+        Extipsel11R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:19 - External Interrupt 12 Port Select"]
     #[inline(always)]
-    pub fn extipsel12(&self) -> EXTIPSEL12_R {
-        EXTIPSEL12_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn extipsel12(&self) -> Extipsel12R {
+        Extipsel12R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:23 - External Interrupt 13 Port Select"]
     #[inline(always)]
-    pub fn extipsel13(&self) -> EXTIPSEL13_R {
-        EXTIPSEL13_R::new(((self.bits >> 20) & 0x0f) as u8)
+    pub fn extipsel13(&self) -> Extipsel13R {
+        Extipsel13R::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - External Interrupt 14 Port Select"]
     #[inline(always)]
-    pub fn extipsel14(&self) -> EXTIPSEL14_R {
-        EXTIPSEL14_R::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn extipsel14(&self) -> Extipsel14R {
+        Extipsel14R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bits 28:31 - External Interrupt 15 Port Select"]
     #[inline(always)]
-    pub fn extipsel15(&self) -> EXTIPSEL15_R {
-        EXTIPSEL15_R::new(((self.bits >> 28) & 0x0f) as u8)
+    pub fn extipsel15(&self) -> Extipsel15R {
+        Extipsel15R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - External Interrupt 8 Port Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipsel8(&mut self) -> EXTIPSEL8_W<EXTIPSELHrs> {
-        EXTIPSEL8_W::new(self, 0)
+    pub fn extipsel8(&mut self) -> Extipsel8W<EXTIPSELHrs> {
+        Extipsel8W::new(self, 0)
     }
     #[doc = "Bits 4:7 - External Interrupt 9 Port Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipsel9(&mut self) -> EXTIPSEL9_W<EXTIPSELHrs> {
-        EXTIPSEL9_W::new(self, 4)
+    pub fn extipsel9(&mut self) -> Extipsel9W<EXTIPSELHrs> {
+        Extipsel9W::new(self, 4)
     }
     #[doc = "Bits 8:11 - External Interrupt 10 Port Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipsel10(&mut self) -> EXTIPSEL10_W<EXTIPSELHrs> {
-        EXTIPSEL10_W::new(self, 8)
+    pub fn extipsel10(&mut self) -> Extipsel10W<EXTIPSELHrs> {
+        Extipsel10W::new(self, 8)
     }
     #[doc = "Bits 12:15 - External Interrupt 11 Port Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipsel11(&mut self) -> EXTIPSEL11_W<EXTIPSELHrs> {
-        EXTIPSEL11_W::new(self, 12)
+    pub fn extipsel11(&mut self) -> Extipsel11W<EXTIPSELHrs> {
+        Extipsel11W::new(self, 12)
     }
     #[doc = "Bits 16:19 - External Interrupt 12 Port Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipsel12(&mut self) -> EXTIPSEL12_W<EXTIPSELHrs> {
-        EXTIPSEL12_W::new(self, 16)
+    pub fn extipsel12(&mut self) -> Extipsel12W<EXTIPSELHrs> {
+        Extipsel12W::new(self, 16)
     }
     #[doc = "Bits 20:23 - External Interrupt 13 Port Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipsel13(&mut self) -> EXTIPSEL13_W<EXTIPSELHrs> {
-        EXTIPSEL13_W::new(self, 20)
+    pub fn extipsel13(&mut self) -> Extipsel13W<EXTIPSELHrs> {
+        Extipsel13W::new(self, 20)
     }
     #[doc = "Bits 24:27 - External Interrupt 14 Port Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipsel14(&mut self) -> EXTIPSEL14_W<EXTIPSELHrs> {
-        EXTIPSEL14_W::new(self, 24)
+    pub fn extipsel14(&mut self) -> Extipsel14W<EXTIPSELHrs> {
+        Extipsel14W::new(self, 24)
     }
     #[doc = "Bits 28:31 - External Interrupt 15 Port Select"]
     #[inline(always)]
     #[must_use]
-    pub fn extipsel15(&mut self) -> EXTIPSEL15_W<EXTIPSELHrs> {
-        EXTIPSEL15_W::new(self, 28)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn extipsel15(&mut self) -> Extipsel15W<EXTIPSELHrs> {
+        Extipsel15W::new(self, 28)
     }
 }
 #[doc = "External Interrupt Port Select High Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`extipselh::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`extipselh::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -897,6 +895,7 @@ impl crate::RegisterSpec for EXTIPSELHrs {
 impl crate::Readable for EXTIPSELHrs {}
 #[doc = "`write(|w| ..)` method takes [`extipselh::W`](W) writer structure"]
 impl crate::Writable for EXTIPSELHrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

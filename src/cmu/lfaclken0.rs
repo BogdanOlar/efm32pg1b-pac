@@ -3,32 +3,22 @@ pub type R = crate::R<LFACLKEN0rs>;
 #[doc = "Register `LFACLKEN0` writer"]
 pub type W = crate::W<LFACLKEN0rs>;
 #[doc = "Field `LETIMER0` reader - Low Energy Timer 0 Clock Enable"]
-pub type LETIMER0_R = crate::BitReader;
+pub type Letimer0R = crate::BitReader;
 #[doc = "Field `LETIMER0` writer - Low Energy Timer 0 Clock Enable"]
-pub type LETIMER0_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Letimer0W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Low Energy Timer 0 Clock Enable"]
     #[inline(always)]
-    pub fn letimer0(&self) -> LETIMER0_R {
-        LETIMER0_R::new((self.bits & 1) != 0)
+    pub fn letimer0(&self) -> Letimer0R {
+        Letimer0R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Low Energy Timer 0 Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn letimer0(&mut self) -> LETIMER0_W<LFACLKEN0rs> {
-        LETIMER0_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn letimer0(&mut self) -> Letimer0W<LFACLKEN0rs> {
+        Letimer0W::new(self, 0)
     }
 }
 #[doc = "Low Frequency a Clock Enable Register 0 (Async Reg)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfaclken0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfaclken0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -40,6 +30,7 @@ impl crate::RegisterSpec for LFACLKEN0rs {
 impl crate::Readable for LFACLKEN0rs {}
 #[doc = "`write(|w| ..)` method takes [`lfaclken0::W`](W) writer structure"]
 impl crate::Writable for LFACLKEN0rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

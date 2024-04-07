@@ -1,12 +1,12 @@
 #[doc = "Register `DATABYTEREV` reader"]
 pub type R = crate::R<DATABYTEREVrs>;
 #[doc = "Field `DATABYTEREV` reader - Data Byte Reverse Value"]
-pub type DATABYTEREV_R = crate::FieldReader<u32>;
+pub type DatabyterevR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Data Byte Reverse Value"]
     #[inline(always)]
-    pub fn databyterev(&self) -> DATABYTEREV_R {
-        DATABYTEREV_R::new(self.bits)
+    pub fn databyterev(&self) -> DatabyterevR {
+        DatabyterevR::new(self.bits)
     }
 }
 #[doc = "CRC Data Byte Reverse Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`databyterev::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

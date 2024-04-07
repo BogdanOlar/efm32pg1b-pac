@@ -1,47 +1,37 @@
 #[doc = "Register `CMD` writer"]
 pub type W = crate::W<CMDrs>;
 #[doc = "Field `SINGLESTART` writer - Single Channel Conversion Start"]
-pub type SINGLESTART_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SinglestartW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SINGLESTOP` writer - Single Channel Conversion Stop"]
-pub type SINGLESTOP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SinglestopW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCANSTART` writer - Scan Sequence Start"]
-pub type SCANSTART_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ScanstartW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCANSTOP` writer - Scan Sequence Stop"]
-pub type SCANSTOP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ScanstopW<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Single Channel Conversion Start"]
     #[inline(always)]
     #[must_use]
-    pub fn singlestart(&mut self) -> SINGLESTART_W<CMDrs> {
-        SINGLESTART_W::new(self, 0)
+    pub fn singlestart(&mut self) -> SinglestartW<CMDrs> {
+        SinglestartW::new(self, 0)
     }
     #[doc = "Bit 1 - Single Channel Conversion Stop"]
     #[inline(always)]
     #[must_use]
-    pub fn singlestop(&mut self) -> SINGLESTOP_W<CMDrs> {
-        SINGLESTOP_W::new(self, 1)
+    pub fn singlestop(&mut self) -> SinglestopW<CMDrs> {
+        SinglestopW::new(self, 1)
     }
     #[doc = "Bit 2 - Scan Sequence Start"]
     #[inline(always)]
     #[must_use]
-    pub fn scanstart(&mut self) -> SCANSTART_W<CMDrs> {
-        SCANSTART_W::new(self, 2)
+    pub fn scanstart(&mut self) -> ScanstartW<CMDrs> {
+        ScanstartW::new(self, 2)
     }
     #[doc = "Bit 3 - Scan Sequence Stop"]
     #[inline(always)]
     #[must_use]
-    pub fn scanstop(&mut self) -> SCANSTOP_W<CMDrs> {
-        SCANSTOP_W::new(self, 3)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn scanstop(&mut self) -> ScanstopW<CMDrs> {
+        ScanstopW::new(self, 3)
     }
 }
 #[doc = "Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -51,6 +41,7 @@ impl crate::RegisterSpec for CMDrs {
 }
 #[doc = "`write(|w| ..)` method takes [`cmd::W`](W) writer structure"]
 impl crate::Writable for CMDrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

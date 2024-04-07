@@ -1,12 +1,12 @@
 #[doc = "Register `CNT` reader"]
 pub type R = crate::R<CNTrs>;
 #[doc = "Field `CNT` reader - Counter Value"]
-pub type CNT_R = crate::FieldReader<u16>;
+pub type CntR = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Counter Value"]
     #[inline(always)]
-    pub fn cnt(&self) -> CNT_R {
-        CNT_R::new((self.bits & 0xffff) as u16)
+    pub fn cnt(&self) -> CntR {
+        CntR::new((self.bits & 0xffff) as u16)
     }
 }
 #[doc = "Counter Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cnt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -1,7 +1,5 @@
 #[doc = "Register `HFCLKSTATUS` reader"]
 pub type R = crate::R<HFCLKSTATUSrs>;
-#[doc = "Field `SELECTED` reader - HFCLK Selected"]
-pub type SELECTED_R = crate::FieldReader<SELECTED>;
 #[doc = "HFCLK Selected\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -24,7 +22,10 @@ impl From<SELECTED> for u8 {
 impl crate::FieldSpec for SELECTED {
     type Ux = u8;
 }
-impl SELECTED_R {
+impl crate::IsEnum for SELECTED {}
+#[doc = "Field `SELECTED` reader - HFCLK Selected"]
+pub type SelectedR = crate::FieldReader<SELECTED>;
+impl SelectedR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<SELECTED> {
@@ -60,8 +61,8 @@ impl SELECTED_R {
 impl R {
     #[doc = "Bits 0:2 - HFCLK Selected"]
     #[inline(always)]
-    pub fn selected(&self) -> SELECTED_R {
-        SELECTED_R::new((self.bits & 7) as u8)
+    pub fn selected(&self) -> SelectedR {
+        SelectedR::new((self.bits & 7) as u8)
     }
 }
 #[doc = "HFCLK Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfclkstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

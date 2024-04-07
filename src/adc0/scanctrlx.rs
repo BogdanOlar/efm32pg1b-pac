@@ -2,8 +2,6 @@
 pub type R = crate::R<SCANCTRLXrs>;
 #[doc = "Register `SCANCTRLX` writer"]
 pub type W = crate::W<SCANCTRLXrs>;
-#[doc = "Field `VREFSEL` reader - Scan Channel Reference Selection"]
-pub type VREFSEL_R = crate::FieldReader<VREFSEL>;
 #[doc = "Scan Channel Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -32,7 +30,10 @@ impl From<VREFSEL> for u8 {
 impl crate::FieldSpec for VREFSEL {
     type Ux = u8;
 }
-impl VREFSEL_R {
+impl crate::IsEnum for VREFSEL {}
+#[doc = "Field `VREFSEL` reader - Scan Channel Reference Selection"]
+pub type VrefselR = crate::FieldReader<VREFSEL>;
+impl VrefselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<VREFSEL> {
@@ -84,8 +85,8 @@ impl VREFSEL_R {
     }
 }
 #[doc = "Field `VREFSEL` writer - Scan Channel Reference Selection"]
-pub type VREFSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, VREFSEL>;
-impl<'a, REG> VREFSEL_W<'a, REG>
+pub type VrefselW<'a, REG> = crate::FieldWriter<'a, REG, 3, VREFSEL>;
+impl<'a, REG> VrefselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -127,31 +128,29 @@ where
     }
 }
 #[doc = "Field `VREFATTFIX` reader - Enable Fixed Scaling on VREF"]
-pub type VREFATTFIX_R = crate::BitReader;
+pub type VrefattfixR = crate::BitReader;
 #[doc = "Field `VREFATTFIX` writer - Enable Fixed Scaling on VREF"]
-pub type VREFATTFIX_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type VrefattfixW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VREFATT` reader - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5"]
-pub type VREFATT_R = crate::FieldReader;
+pub type VrefattR = crate::FieldReader;
 #[doc = "Field `VREFATT` writer - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5"]
-pub type VREFATT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type VrefattW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `VINATT` reader - Code for VIN Attenuation Factor"]
-pub type VINATT_R = crate::FieldReader;
+pub type VinattR = crate::FieldReader;
 #[doc = "Field `VINATT` writer - Code for VIN Attenuation Factor"]
-pub type VINATT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type VinattW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DVL` reader - Scan DV Level Select"]
-pub type DVL_R = crate::FieldReader;
+pub type DvlR = crate::FieldReader;
 #[doc = "Field `DVL` writer - Scan DV Level Select"]
-pub type DVL_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type DvlW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `FIFOOFACT` reader - Scan FIFO Overflow Action"]
-pub type FIFOOFACT_R = crate::BitReader;
+pub type FifoofactR = crate::BitReader;
 #[doc = "Field `FIFOOFACT` writer - Scan FIFO Overflow Action"]
-pub type FIFOOFACT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FifoofactW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PRSMODE` reader - Scan PRS Trigger Mode"]
-pub type PRSMODE_R = crate::BitReader;
+pub type PrsmodeR = crate::BitReader;
 #[doc = "Field `PRSMODE` writer - Scan PRS Trigger Mode"]
-pub type PRSMODE_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PRSSEL` reader - Scan Sequence PRS Trigger Select"]
-pub type PRSSEL_R = crate::FieldReader<PRSSEL>;
+pub type PrsmodeW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Scan Sequence PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -190,7 +189,10 @@ impl From<PRSSEL> for u8 {
 impl crate::FieldSpec for PRSSEL {
     type Ux = u8;
 }
-impl PRSSEL_R {
+impl crate::IsEnum for PRSSEL {}
+#[doc = "Field `PRSSEL` reader - Scan Sequence PRS Trigger Select"]
+pub type PrsselR = crate::FieldReader<PRSSEL>;
+impl PrsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PRSSEL> {
@@ -272,8 +274,8 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - Scan Sequence PRS Trigger Select"]
-pub type PRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSEL>;
-impl<'a, REG> PRSSEL_W<'a, REG>
+pub type PrsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSEL>;
+impl<'a, REG> PrsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -340,135 +342,125 @@ where
     }
 }
 #[doc = "Field `CONVSTARTDELAY` reader - Delay Next Conversion Start If CONVSTARTDELAYEN is Set"]
-pub type CONVSTARTDELAY_R = crate::FieldReader;
+pub type ConvstartdelayR = crate::FieldReader;
 #[doc = "Field `CONVSTARTDELAY` writer - Delay Next Conversion Start If CONVSTARTDELAYEN is Set"]
-pub type CONVSTARTDELAY_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type ConvstartdelayW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `CONVSTARTDELAYEN` reader - Enable Delaying Next Conversion Start"]
-pub type CONVSTARTDELAYEN_R = crate::BitReader;
+pub type ConvstartdelayenR = crate::BitReader;
 #[doc = "Field `CONVSTARTDELAYEN` writer - Enable Delaying Next Conversion Start"]
-pub type CONVSTARTDELAYEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ConvstartdelayenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - Scan Channel Reference Selection"]
     #[inline(always)]
-    pub fn vrefsel(&self) -> VREFSEL_R {
-        VREFSEL_R::new((self.bits & 7) as u8)
+    pub fn vrefsel(&self) -> VrefselR {
+        VrefselR::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Enable Fixed Scaling on VREF"]
     #[inline(always)]
-    pub fn vrefattfix(&self) -> VREFATTFIX_R {
-        VREFATTFIX_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn vrefattfix(&self) -> VrefattfixR {
+        VrefattfixR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:7 - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5"]
     #[inline(always)]
-    pub fn vrefatt(&self) -> VREFATT_R {
-        VREFATT_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn vrefatt(&self) -> VrefattR {
+        VrefattR::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Code for VIN Attenuation Factor"]
     #[inline(always)]
-    pub fn vinatt(&self) -> VINATT_R {
-        VINATT_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn vinatt(&self) -> VinattR {
+        VinattR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:13 - Scan DV Level Select"]
     #[inline(always)]
-    pub fn dvl(&self) -> DVL_R {
-        DVL_R::new(((self.bits >> 12) & 3) as u8)
+    pub fn dvl(&self) -> DvlR {
+        DvlR::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 14 - Scan FIFO Overflow Action"]
     #[inline(always)]
-    pub fn fifoofact(&self) -> FIFOOFACT_R {
-        FIFOOFACT_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn fifoofact(&self) -> FifoofactR {
+        FifoofactR::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 16 - Scan PRS Trigger Mode"]
     #[inline(always)]
-    pub fn prsmode(&self) -> PRSMODE_R {
-        PRSMODE_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn prsmode(&self) -> PrsmodeR {
+        PrsmodeR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bits 17:20 - Scan Sequence PRS Trigger Select"]
     #[inline(always)]
-    pub fn prssel(&self) -> PRSSEL_R {
-        PRSSEL_R::new(((self.bits >> 17) & 0x0f) as u8)
+    pub fn prssel(&self) -> PrsselR {
+        PrsselR::new(((self.bits >> 17) & 0x0f) as u8)
     }
     #[doc = "Bits 24:26 - Delay Next Conversion Start If CONVSTARTDELAYEN is Set"]
     #[inline(always)]
-    pub fn convstartdelay(&self) -> CONVSTARTDELAY_R {
-        CONVSTARTDELAY_R::new(((self.bits >> 24) & 7) as u8)
+    pub fn convstartdelay(&self) -> ConvstartdelayR {
+        ConvstartdelayR::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bit 27 - Enable Delaying Next Conversion Start"]
     #[inline(always)]
-    pub fn convstartdelayen(&self) -> CONVSTARTDELAYEN_R {
-        CONVSTARTDELAYEN_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn convstartdelayen(&self) -> ConvstartdelayenR {
+        ConvstartdelayenR::new(((self.bits >> 27) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Scan Channel Reference Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn vrefsel(&mut self) -> VREFSEL_W<SCANCTRLXrs> {
-        VREFSEL_W::new(self, 0)
+    pub fn vrefsel(&mut self) -> VrefselW<SCANCTRLXrs> {
+        VrefselW::new(self, 0)
     }
     #[doc = "Bit 3 - Enable Fixed Scaling on VREF"]
     #[inline(always)]
     #[must_use]
-    pub fn vrefattfix(&mut self) -> VREFATTFIX_W<SCANCTRLXrs> {
-        VREFATTFIX_W::new(self, 3)
+    pub fn vrefattfix(&mut self) -> VrefattfixW<SCANCTRLXrs> {
+        VrefattfixW::new(self, 3)
     }
     #[doc = "Bits 4:7 - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5"]
     #[inline(always)]
     #[must_use]
-    pub fn vrefatt(&mut self) -> VREFATT_W<SCANCTRLXrs> {
-        VREFATT_W::new(self, 4)
+    pub fn vrefatt(&mut self) -> VrefattW<SCANCTRLXrs> {
+        VrefattW::new(self, 4)
     }
     #[doc = "Bits 8:11 - Code for VIN Attenuation Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn vinatt(&mut self) -> VINATT_W<SCANCTRLXrs> {
-        VINATT_W::new(self, 8)
+    pub fn vinatt(&mut self) -> VinattW<SCANCTRLXrs> {
+        VinattW::new(self, 8)
     }
     #[doc = "Bits 12:13 - Scan DV Level Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dvl(&mut self) -> DVL_W<SCANCTRLXrs> {
-        DVL_W::new(self, 12)
+    pub fn dvl(&mut self) -> DvlW<SCANCTRLXrs> {
+        DvlW::new(self, 12)
     }
     #[doc = "Bit 14 - Scan FIFO Overflow Action"]
     #[inline(always)]
     #[must_use]
-    pub fn fifoofact(&mut self) -> FIFOOFACT_W<SCANCTRLXrs> {
-        FIFOOFACT_W::new(self, 14)
+    pub fn fifoofact(&mut self) -> FifoofactW<SCANCTRLXrs> {
+        FifoofactW::new(self, 14)
     }
     #[doc = "Bit 16 - Scan PRS Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn prsmode(&mut self) -> PRSMODE_W<SCANCTRLXrs> {
-        PRSMODE_W::new(self, 16)
+    pub fn prsmode(&mut self) -> PrsmodeW<SCANCTRLXrs> {
+        PrsmodeW::new(self, 16)
     }
     #[doc = "Bits 17:20 - Scan Sequence PRS Trigger Select"]
     #[inline(always)]
     #[must_use]
-    pub fn prssel(&mut self) -> PRSSEL_W<SCANCTRLXrs> {
-        PRSSEL_W::new(self, 17)
+    pub fn prssel(&mut self) -> PrsselW<SCANCTRLXrs> {
+        PrsselW::new(self, 17)
     }
     #[doc = "Bits 24:26 - Delay Next Conversion Start If CONVSTARTDELAYEN is Set"]
     #[inline(always)]
     #[must_use]
-    pub fn convstartdelay(&mut self) -> CONVSTARTDELAY_W<SCANCTRLXrs> {
-        CONVSTARTDELAY_W::new(self, 24)
+    pub fn convstartdelay(&mut self) -> ConvstartdelayW<SCANCTRLXrs> {
+        ConvstartdelayW::new(self, 24)
     }
     #[doc = "Bit 27 - Enable Delaying Next Conversion Start"]
     #[inline(always)]
     #[must_use]
-    pub fn convstartdelayen(&mut self) -> CONVSTARTDELAYEN_W<SCANCTRLXrs> {
-        CONVSTARTDELAYEN_W::new(self, 27)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn convstartdelayen(&mut self) -> ConvstartdelayenW<SCANCTRLXrs> {
+        ConvstartdelayenW::new(self, 27)
     }
 }
 #[doc = "Scan Control Register Continued\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanctrlx::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanctrlx::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -480,6 +472,7 @@ impl crate::RegisterSpec for SCANCTRLXrs {
 impl crate::Readable for SCANCTRLXrs {}
 #[doc = "`write(|w| ..)` method takes [`scanctrlx::W`](W) writer structure"]
 impl crate::Writable for SCANCTRLXrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

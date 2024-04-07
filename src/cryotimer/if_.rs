@@ -1,12 +1,12 @@
 #[doc = "Register `IF` reader"]
 pub type R = crate::R<IFrs>;
 #[doc = "Field `PERIOD` reader - Wakeup Event/Interrupt"]
-pub type PERIOD_R = crate::BitReader;
+pub type PeriodR = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Wakeup Event/Interrupt"]
     #[inline(always)]
-    pub fn period(&self) -> PERIOD_R {
-        PERIOD_R::new((self.bits & 1) != 0)
+    pub fn period(&self) -> PeriodR {
+        PeriodR::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -2,8 +2,6 @@
 pub type R = crate::R<RAM0CTRLrs>;
 #[doc = "Register `RAM0CTRL` writer"]
 pub type W = crate::W<RAM0CTRLrs>;
-#[doc = "Field `RAMPOWERDOWN` reader - RAM0 Blockset Power-down"]
-pub type RAMPOWERDOWN_R = crate::FieldReader<RAMPOWERDOWN>;
 #[doc = "RAM0 Blockset Power-down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -28,7 +26,10 @@ impl From<RAMPOWERDOWN> for u8 {
 impl crate::FieldSpec for RAMPOWERDOWN {
     type Ux = u8;
 }
-impl RAMPOWERDOWN_R {
+impl crate::IsEnum for RAMPOWERDOWN {}
+#[doc = "Field `RAMPOWERDOWN` reader - RAM0 Blockset Power-down"]
+pub type RampowerdownR = crate::FieldReader<RAMPOWERDOWN>;
+impl RampowerdownR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<RAMPOWERDOWN> {
@@ -68,8 +69,8 @@ impl RAMPOWERDOWN_R {
     }
 }
 #[doc = "Field `RAMPOWERDOWN` writer - RAM0 Blockset Power-down"]
-pub type RAMPOWERDOWN_W<'a, REG> = crate::FieldWriter<'a, REG, 4, RAMPOWERDOWN>;
-impl<'a, REG> RAMPOWERDOWN_W<'a, REG>
+pub type RampowerdownW<'a, REG> = crate::FieldWriter<'a, REG, 4, RAMPOWERDOWN>;
+impl<'a, REG> RampowerdownW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -103,26 +104,16 @@ where
 impl R {
     #[doc = "Bits 0:3 - RAM0 Blockset Power-down"]
     #[inline(always)]
-    pub fn rampowerdown(&self) -> RAMPOWERDOWN_R {
-        RAMPOWERDOWN_R::new((self.bits & 0x0f) as u8)
+    pub fn rampowerdown(&self) -> RampowerdownR {
+        RampowerdownR::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - RAM0 Blockset Power-down"]
     #[inline(always)]
     #[must_use]
-    pub fn rampowerdown(&mut self) -> RAMPOWERDOWN_W<RAM0CTRLrs> {
-        RAMPOWERDOWN_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn rampowerdown(&mut self) -> RampowerdownW<RAM0CTRLrs> {
+        RampowerdownW::new(self, 0)
     }
 }
 #[doc = "Memory Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram0ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram0ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -134,6 +125,7 @@ impl crate::RegisterSpec for RAM0CTRLrs {
 impl crate::Readable for RAM0CTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`ram0ctrl::W`](W) writer structure"]
 impl crate::Writable for RAM0CTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -2,8 +2,6 @@
 pub type R = crate::R<INPUTrs>;
 #[doc = "Register `INPUT` writer"]
 pub type W = crate::W<INPUTrs>;
-#[doc = "Field `RXPRSSEL` reader - RX PRS Channel Select"]
-pub type RXPRSSEL_R = crate::FieldReader<RXPRSSEL>;
 #[doc = "RX PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -42,7 +40,10 @@ impl From<RXPRSSEL> for u8 {
 impl crate::FieldSpec for RXPRSSEL {
     type Ux = u8;
 }
-impl RXPRSSEL_R {
+impl crate::IsEnum for RXPRSSEL {}
+#[doc = "Field `RXPRSSEL` reader - RX PRS Channel Select"]
+pub type RxprsselR = crate::FieldReader<RXPRSSEL>;
+impl RxprsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<RXPRSSEL> {
@@ -124,8 +125,8 @@ impl RXPRSSEL_R {
     }
 }
 #[doc = "Field `RXPRSSEL` writer - RX PRS Channel Select"]
-pub type RXPRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, RXPRSSEL>;
-impl<'a, REG> RXPRSSEL_W<'a, REG>
+pub type RxprsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, RXPRSSEL>;
+impl<'a, REG> RxprsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -192,11 +193,9 @@ where
     }
 }
 #[doc = "Field `RXPRS` reader - PRS RX Enable"]
-pub type RXPRS_R = crate::BitReader;
+pub type RxprsR = crate::BitReader;
 #[doc = "Field `RXPRS` writer - PRS RX Enable"]
-pub type RXPRS_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CLKPRSSEL` reader - CLK PRS Channel Select"]
-pub type CLKPRSSEL_R = crate::FieldReader<CLKPRSSEL>;
+pub type RxprsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "CLK PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -235,7 +234,10 @@ impl From<CLKPRSSEL> for u8 {
 impl crate::FieldSpec for CLKPRSSEL {
     type Ux = u8;
 }
-impl CLKPRSSEL_R {
+impl crate::IsEnum for CLKPRSSEL {}
+#[doc = "Field `CLKPRSSEL` reader - CLK PRS Channel Select"]
+pub type ClkprsselR = crate::FieldReader<CLKPRSSEL>;
+impl ClkprsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<CLKPRSSEL> {
@@ -317,8 +319,8 @@ impl CLKPRSSEL_R {
     }
 }
 #[doc = "Field `CLKPRSSEL` writer - CLK PRS Channel Select"]
-pub type CLKPRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKPRSSEL>;
-impl<'a, REG> CLKPRSSEL_W<'a, REG>
+pub type ClkprsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKPRSSEL>;
+impl<'a, REG> ClkprsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -385,65 +387,55 @@ where
     }
 }
 #[doc = "Field `CLKPRS` reader - PRS CLK Enable"]
-pub type CLKPRS_R = crate::BitReader;
+pub type ClkprsR = crate::BitReader;
 #[doc = "Field `CLKPRS` writer - PRS CLK Enable"]
-pub type CLKPRS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ClkprsW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:3 - RX PRS Channel Select"]
     #[inline(always)]
-    pub fn rxprssel(&self) -> RXPRSSEL_R {
-        RXPRSSEL_R::new((self.bits & 0x0f) as u8)
+    pub fn rxprssel(&self) -> RxprsselR {
+        RxprsselR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 7 - PRS RX Enable"]
     #[inline(always)]
-    pub fn rxprs(&self) -> RXPRS_R {
-        RXPRS_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn rxprs(&self) -> RxprsR {
+        RxprsR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:11 - CLK PRS Channel Select"]
     #[inline(always)]
-    pub fn clkprssel(&self) -> CLKPRSSEL_R {
-        CLKPRSSEL_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn clkprssel(&self) -> ClkprsselR {
+        ClkprsselR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bit 15 - PRS CLK Enable"]
     #[inline(always)]
-    pub fn clkprs(&self) -> CLKPRS_R {
-        CLKPRS_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn clkprs(&self) -> ClkprsR {
+        ClkprsR::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - RX PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxprssel(&mut self) -> RXPRSSEL_W<INPUTrs> {
-        RXPRSSEL_W::new(self, 0)
+    pub fn rxprssel(&mut self) -> RxprsselW<INPUTrs> {
+        RxprsselW::new(self, 0)
     }
     #[doc = "Bit 7 - PRS RX Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxprs(&mut self) -> RXPRS_W<INPUTrs> {
-        RXPRS_W::new(self, 7)
+    pub fn rxprs(&mut self) -> RxprsW<INPUTrs> {
+        RxprsW::new(self, 7)
     }
     #[doc = "Bits 8:11 - CLK PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn clkprssel(&mut self) -> CLKPRSSEL_W<INPUTrs> {
-        CLKPRSSEL_W::new(self, 8)
+    pub fn clkprssel(&mut self) -> ClkprsselW<INPUTrs> {
+        ClkprsselW::new(self, 8)
     }
     #[doc = "Bit 15 - PRS CLK Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn clkprs(&mut self) -> CLKPRS_W<INPUTrs> {
-        CLKPRS_W::new(self, 15)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn clkprs(&mut self) -> ClkprsW<INPUTrs> {
+        ClkprsW::new(self, 15)
     }
 }
 #[doc = "USART Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`input::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`input::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -455,6 +447,7 @@ impl crate::RegisterSpec for INPUTrs {
 impl crate::Readable for INPUTrs {}
 #[doc = "`write(|w| ..)` method takes [`input::W`](W) writer structure"]
 impl crate::Writable for INPUTrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

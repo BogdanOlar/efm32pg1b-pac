@@ -3,11 +3,9 @@ pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRLrs>;
 #[doc = "Field `SEVONPRS` reader - Set Event on PRS"]
-pub type SEVONPRS_R = crate::BitReader;
+pub type SevonprsR = crate::BitReader;
 #[doc = "Field `SEVONPRS` writer - Set Event on PRS"]
-pub type SEVONPRS_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SEVONPRSSEL` reader - SEVONPRS PRS Channel Select"]
-pub type SEVONPRSSEL_R = crate::FieldReader<SEVONPRSSEL>;
+pub type SevonprsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "SEVONPRS PRS Channel Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -46,7 +44,10 @@ impl From<SEVONPRSSEL> for u8 {
 impl crate::FieldSpec for SEVONPRSSEL {
     type Ux = u8;
 }
-impl SEVONPRSSEL_R {
+impl crate::IsEnum for SEVONPRSSEL {}
+#[doc = "Field `SEVONPRSSEL` reader - SEVONPRS PRS Channel Select"]
+pub type SevonprsselR = crate::FieldReader<SEVONPRSSEL>;
+impl SevonprsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<SEVONPRSSEL> {
@@ -128,8 +129,8 @@ impl SEVONPRSSEL_R {
     }
 }
 #[doc = "Field `SEVONPRSSEL` writer - SEVONPRS PRS Channel Select"]
-pub type SEVONPRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SEVONPRSSEL>;
-impl<'a, REG> SEVONPRSSEL_W<'a, REG>
+pub type SevonprsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, SEVONPRSSEL>;
+impl<'a, REG> SevonprsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -198,37 +199,27 @@ where
 impl R {
     #[doc = "Bit 0 - Set Event on PRS"]
     #[inline(always)]
-    pub fn sevonprs(&self) -> SEVONPRS_R {
-        SEVONPRS_R::new((self.bits & 1) != 0)
+    pub fn sevonprs(&self) -> SevonprsR {
+        SevonprsR::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:4 - SEVONPRS PRS Channel Select"]
     #[inline(always)]
-    pub fn sevonprssel(&self) -> SEVONPRSSEL_R {
-        SEVONPRSSEL_R::new(((self.bits >> 1) & 0x0f) as u8)
+    pub fn sevonprssel(&self) -> SevonprsselR {
+        SevonprsselR::new(((self.bits >> 1) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Set Event on PRS"]
     #[inline(always)]
     #[must_use]
-    pub fn sevonprs(&mut self) -> SEVONPRS_W<CTRLrs> {
-        SEVONPRS_W::new(self, 0)
+    pub fn sevonprs(&mut self) -> SevonprsW<CTRLrs> {
+        SevonprsW::new(self, 0)
     }
     #[doc = "Bits 1:4 - SEVONPRS PRS Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sevonprssel(&mut self) -> SEVONPRSSEL_W<CTRLrs> {
-        SEVONPRSSEL_W::new(self, 1)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn sevonprssel(&mut self) -> SevonprsselW<CTRLrs> {
+        SevonprsselW::new(self, 1)
     }
 }
 #[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -240,6 +231,7 @@ impl crate::RegisterSpec for CTRLrs {
 impl crate::Readable for CTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

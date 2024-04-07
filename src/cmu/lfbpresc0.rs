@@ -2,8 +2,6 @@
 pub type R = crate::R<LFBPRESC0rs>;
 #[doc = "Register `LFBPRESC0` writer"]
 pub type W = crate::W<LFBPRESC0rs>;
-#[doc = "Field `LEUART0` reader - Low Energy UART 0 Prescaler"]
-pub type LEUART0_R = crate::FieldReader<LEUART0>;
 #[doc = "Low Energy UART 0 Prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -26,7 +24,10 @@ impl From<LEUART0> for u8 {
 impl crate::FieldSpec for LEUART0 {
     type Ux = u8;
 }
-impl LEUART0_R {
+impl crate::IsEnum for LEUART0 {}
+#[doc = "Field `LEUART0` reader - Low Energy UART 0 Prescaler"]
+pub type Leuart0R = crate::FieldReader<LEUART0>;
+impl Leuart0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> LEUART0 {
@@ -60,8 +61,8 @@ impl LEUART0_R {
     }
 }
 #[doc = "Field `LEUART0` writer - Low Energy UART 0 Prescaler"]
-pub type LEUART0_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LEUART0>;
-impl<'a, REG> LEUART0_W<'a, REG>
+pub type Leuart0W<'a, REG> = crate::FieldWriter<'a, REG, 2, LEUART0, crate::Safe>;
+impl<'a, REG> Leuart0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -90,26 +91,16 @@ where
 impl R {
     #[doc = "Bits 0:1 - Low Energy UART 0 Prescaler"]
     #[inline(always)]
-    pub fn leuart0(&self) -> LEUART0_R {
-        LEUART0_R::new((self.bits & 3) as u8)
+    pub fn leuart0(&self) -> Leuart0R {
+        Leuart0R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Low Energy UART 0 Prescaler"]
     #[inline(always)]
     #[must_use]
-    pub fn leuart0(&mut self) -> LEUART0_W<LFBPRESC0rs> {
-        LEUART0_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn leuart0(&mut self) -> Leuart0W<LFBPRESC0rs> {
+        Leuart0W::new(self, 0)
     }
 }
 #[doc = "Low Frequency B Prescaler Register 0 (Async Reg)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfbpresc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfbpresc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -121,6 +112,7 @@ impl crate::RegisterSpec for LFBPRESC0rs {
 impl crate::Readable for LFBPRESC0rs {}
 #[doc = "`write(|w| ..)` method takes [`lfbpresc0::W`](W) writer structure"]
 impl crate::Writable for LFBPRESC0rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

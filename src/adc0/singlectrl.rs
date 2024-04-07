@@ -3,19 +3,17 @@ pub type R = crate::R<SINGLECTRLrs>;
 #[doc = "Register `SINGLECTRL` writer"]
 pub type W = crate::W<SINGLECTRLrs>;
 #[doc = "Field `REP` reader - Single Channel Repetitive Mode"]
-pub type REP_R = crate::BitReader;
+pub type RepR = crate::BitReader;
 #[doc = "Field `REP` writer - Single Channel Repetitive Mode"]
-pub type REP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RepW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DIFF` reader - Single Channel Differential Mode"]
-pub type DIFF_R = crate::BitReader;
+pub type DiffR = crate::BitReader;
 #[doc = "Field `DIFF` writer - Single Channel Differential Mode"]
-pub type DIFF_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DiffW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ADJ` reader - Single Channel Result Adjustment"]
-pub type ADJ_R = crate::BitReader;
+pub type AdjR = crate::BitReader;
 #[doc = "Field `ADJ` writer - Single Channel Result Adjustment"]
-pub type ADJ_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RES` reader - Single Channel Resolution Select"]
-pub type RES_R = crate::FieldReader<RES>;
+pub type AdjW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Single Channel Resolution Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -38,7 +36,10 @@ impl From<RES> for u8 {
 impl crate::FieldSpec for RES {
     type Ux = u8;
 }
-impl RES_R {
+impl crate::IsEnum for RES {}
+#[doc = "Field `RES` reader - Single Channel Resolution Select"]
+pub type ResR = crate::FieldReader<RES>;
+impl ResR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> RES {
@@ -72,8 +73,8 @@ impl RES_R {
     }
 }
 #[doc = "Field `RES` writer - Single Channel Resolution Select"]
-pub type RES_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RES>;
-impl<'a, REG> RES_W<'a, REG>
+pub type ResW<'a, REG> = crate::FieldWriter<'a, REG, 2, RES, crate::Safe>;
+impl<'a, REG> ResW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -99,8 +100,6 @@ where
         self.variant(RES::Ovs)
     }
 }
-#[doc = "Field `REF` reader - Single Channel Reference Selection"]
-pub type REF_R = crate::FieldReader<REF>;
 #[doc = "Single Channel Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -131,7 +130,10 @@ impl From<REF> for u8 {
 impl crate::FieldSpec for REF {
     type Ux = u8;
 }
-impl REF_R {
+impl crate::IsEnum for REF {}
+#[doc = "Field `REF` reader - Single Channel Reference Selection"]
+pub type RefR = crate::FieldReader<REF>;
+impl RefR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> REF {
@@ -189,8 +191,8 @@ impl REF_R {
     }
 }
 #[doc = "Field `REF` writer - Single Channel Reference Selection"]
-pub type REF_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, REF>;
-impl<'a, REG> REF_W<'a, REG>
+pub type RefW<'a, REG> = crate::FieldWriter<'a, REG, 3, REF, crate::Safe>;
+impl<'a, REG> RefW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -237,15 +239,13 @@ where
     }
 }
 #[doc = "Field `POSSEL` reader - Single Channel Positive Input Selection"]
-pub type POSSEL_R = crate::FieldReader;
+pub type PosselR = crate::FieldReader;
 #[doc = "Field `POSSEL` writer - Single Channel Positive Input Selection"]
-pub type POSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+pub type PosselW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `NEGSEL` reader - Single Channel Negative Input Selection"]
-pub type NEGSEL_R = crate::FieldReader;
+pub type NegselR = crate::FieldReader;
 #[doc = "Field `NEGSEL` writer - Single Channel Negative Input Selection"]
-pub type NEGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `AT` reader - Single Channel Acquisition Time"]
-pub type AT_R = crate::FieldReader<AT>;
+pub type NegselW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Single Channel Acquisition Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -280,7 +280,10 @@ impl From<AT> for u8 {
 impl crate::FieldSpec for AT {
     type Ux = u8;
 }
-impl AT_R {
+impl crate::IsEnum for AT {}
+#[doc = "Field `AT` reader - Single Channel Acquisition Time"]
+pub type AtR = crate::FieldReader<AT>;
+impl AtR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<AT> {
@@ -350,8 +353,8 @@ impl AT_R {
     }
 }
 #[doc = "Field `AT` writer - Single Channel Acquisition Time"]
-pub type AT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, AT>;
-impl<'a, REG> AT_W<'a, REG>
+pub type AtW<'a, REG> = crate::FieldWriter<'a, REG, 4, AT>;
+impl<'a, REG> AtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -408,135 +411,125 @@ where
     }
 }
 #[doc = "Field `PRSEN` reader - Single Channel PRS Trigger Enable"]
-pub type PRSEN_R = crate::BitReader;
+pub type PrsenR = crate::BitReader;
 #[doc = "Field `PRSEN` writer - Single Channel PRS Trigger Enable"]
-pub type PRSEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type PrsenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CMPEN` reader - Compare Logic Enable for Single Channel"]
-pub type CMPEN_R = crate::BitReader;
+pub type CmpenR = crate::BitReader;
 #[doc = "Field `CMPEN` writer - Compare Logic Enable for Single Channel"]
-pub type CMPEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CmpenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Single Channel Repetitive Mode"]
     #[inline(always)]
-    pub fn rep(&self) -> REP_R {
-        REP_R::new((self.bits & 1) != 0)
+    pub fn rep(&self) -> RepR {
+        RepR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Single Channel Differential Mode"]
     #[inline(always)]
-    pub fn diff(&self) -> DIFF_R {
-        DIFF_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn diff(&self) -> DiffR {
+        DiffR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Single Channel Result Adjustment"]
     #[inline(always)]
-    pub fn adj(&self) -> ADJ_R {
-        ADJ_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn adj(&self) -> AdjR {
+        AdjR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 3:4 - Single Channel Resolution Select"]
     #[inline(always)]
-    pub fn res(&self) -> RES_R {
-        RES_R::new(((self.bits >> 3) & 3) as u8)
+    pub fn res(&self) -> ResR {
+        ResR::new(((self.bits >> 3) & 3) as u8)
     }
     #[doc = "Bits 5:7 - Single Channel Reference Selection"]
     #[inline(always)]
-    pub fn ref_(&self) -> REF_R {
-        REF_R::new(((self.bits >> 5) & 7) as u8)
+    pub fn ref_(&self) -> RefR {
+        RefR::new(((self.bits >> 5) & 7) as u8)
     }
     #[doc = "Bits 8:15 - Single Channel Positive Input Selection"]
     #[inline(always)]
-    pub fn possel(&self) -> POSSEL_R {
-        POSSEL_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn possel(&self) -> PosselR {
+        PosselR::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Single Channel Negative Input Selection"]
     #[inline(always)]
-    pub fn negsel(&self) -> NEGSEL_R {
-        NEGSEL_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn negsel(&self) -> NegselR {
+        NegselR::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:27 - Single Channel Acquisition Time"]
     #[inline(always)]
-    pub fn at(&self) -> AT_R {
-        AT_R::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn at(&self) -> AtR {
+        AtR::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bit 29 - Single Channel PRS Trigger Enable"]
     #[inline(always)]
-    pub fn prsen(&self) -> PRSEN_R {
-        PRSEN_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn prsen(&self) -> PrsenR {
+        PrsenR::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 31 - Compare Logic Enable for Single Channel"]
     #[inline(always)]
-    pub fn cmpen(&self) -> CMPEN_R {
-        CMPEN_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn cmpen(&self) -> CmpenR {
+        CmpenR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Single Channel Repetitive Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn rep(&mut self) -> REP_W<SINGLECTRLrs> {
-        REP_W::new(self, 0)
+    pub fn rep(&mut self) -> RepW<SINGLECTRLrs> {
+        RepW::new(self, 0)
     }
     #[doc = "Bit 1 - Single Channel Differential Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn diff(&mut self) -> DIFF_W<SINGLECTRLrs> {
-        DIFF_W::new(self, 1)
+    pub fn diff(&mut self) -> DiffW<SINGLECTRLrs> {
+        DiffW::new(self, 1)
     }
     #[doc = "Bit 2 - Single Channel Result Adjustment"]
     #[inline(always)]
     #[must_use]
-    pub fn adj(&mut self) -> ADJ_W<SINGLECTRLrs> {
-        ADJ_W::new(self, 2)
+    pub fn adj(&mut self) -> AdjW<SINGLECTRLrs> {
+        AdjW::new(self, 2)
     }
     #[doc = "Bits 3:4 - Single Channel Resolution Select"]
     #[inline(always)]
     #[must_use]
-    pub fn res(&mut self) -> RES_W<SINGLECTRLrs> {
-        RES_W::new(self, 3)
+    pub fn res(&mut self) -> ResW<SINGLECTRLrs> {
+        ResW::new(self, 3)
     }
     #[doc = "Bits 5:7 - Single Channel Reference Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ref_(&mut self) -> REF_W<SINGLECTRLrs> {
-        REF_W::new(self, 5)
+    pub fn ref_(&mut self) -> RefW<SINGLECTRLrs> {
+        RefW::new(self, 5)
     }
     #[doc = "Bits 8:15 - Single Channel Positive Input Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn possel(&mut self) -> POSSEL_W<SINGLECTRLrs> {
-        POSSEL_W::new(self, 8)
+    pub fn possel(&mut self) -> PosselW<SINGLECTRLrs> {
+        PosselW::new(self, 8)
     }
     #[doc = "Bits 16:23 - Single Channel Negative Input Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn negsel(&mut self) -> NEGSEL_W<SINGLECTRLrs> {
-        NEGSEL_W::new(self, 16)
+    pub fn negsel(&mut self) -> NegselW<SINGLECTRLrs> {
+        NegselW::new(self, 16)
     }
     #[doc = "Bits 24:27 - Single Channel Acquisition Time"]
     #[inline(always)]
     #[must_use]
-    pub fn at(&mut self) -> AT_W<SINGLECTRLrs> {
-        AT_W::new(self, 24)
+    pub fn at(&mut self) -> AtW<SINGLECTRLrs> {
+        AtW::new(self, 24)
     }
     #[doc = "Bit 29 - Single Channel PRS Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn prsen(&mut self) -> PRSEN_W<SINGLECTRLrs> {
-        PRSEN_W::new(self, 29)
+    pub fn prsen(&mut self) -> PrsenW<SINGLECTRLrs> {
+        PrsenW::new(self, 29)
     }
     #[doc = "Bit 31 - Compare Logic Enable for Single Channel"]
     #[inline(always)]
     #[must_use]
-    pub fn cmpen(&mut self) -> CMPEN_W<SINGLECTRLrs> {
-        CMPEN_W::new(self, 31)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn cmpen(&mut self) -> CmpenW<SINGLECTRLrs> {
+        CmpenW::new(self, 31)
     }
 }
 #[doc = "Single Channel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singlectrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`singlectrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -548,6 +541,7 @@ impl crate::RegisterSpec for SINGLECTRLrs {
 impl crate::Readable for SINGLECTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`singlectrl::W`](W) writer structure"]
 impl crate::Writable for SINGLECTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

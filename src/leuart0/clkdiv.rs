@@ -3,32 +3,22 @@ pub type R = crate::R<CLKDIVrs>;
 #[doc = "Register `CLKDIV` writer"]
 pub type W = crate::W<CLKDIVrs>;
 #[doc = "Field `DIV` reader - Fractional Clock Divider"]
-pub type DIV_R = crate::FieldReader<u16>;
+pub type DivR = crate::FieldReader<u16>;
 #[doc = "Field `DIV` writer - Fractional Clock Divider"]
-pub type DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
+pub type DivW<'a, REG> = crate::FieldWriter<'a, REG, 14, u16>;
 impl R {
     #[doc = "Bits 3:16 - Fractional Clock Divider"]
     #[inline(always)]
-    pub fn div(&self) -> DIV_R {
-        DIV_R::new(((self.bits >> 3) & 0x3fff) as u16)
+    pub fn div(&self) -> DivR {
+        DivR::new(((self.bits >> 3) & 0x3fff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 3:16 - Fractional Clock Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn div(&mut self) -> DIV_W<CLKDIVrs> {
-        DIV_W::new(self, 3)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn div(&mut self) -> DivW<CLKDIVrs> {
+        DivW::new(self, 3)
     }
 }
 #[doc = "Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkdiv::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkdiv::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -40,6 +30,7 @@ impl crate::RegisterSpec for CLKDIVrs {
 impl crate::Readable for CLKDIVrs {}
 #[doc = "`write(|w| ..)` method takes [`clkdiv::W`](W) writer structure"]
 impl crate::Writable for CLKDIVrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

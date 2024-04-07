@@ -3,47 +3,37 @@ pub type R = crate::R<PCNTCTRLrs>;
 #[doc = "Register `PCNTCTRL` writer"]
 pub type W = crate::W<PCNTCTRLrs>;
 #[doc = "Field `PCNT0CLKEN` reader - PCNT0 Clock Enable"]
-pub type PCNT0CLKEN_R = crate::BitReader;
+pub type Pcnt0clkenR = crate::BitReader;
 #[doc = "Field `PCNT0CLKEN` writer - PCNT0 Clock Enable"]
-pub type PCNT0CLKEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Pcnt0clkenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCNT0CLKSEL` reader - PCNT0 Clock Select"]
-pub type PCNT0CLKSEL_R = crate::BitReader;
+pub type Pcnt0clkselR = crate::BitReader;
 #[doc = "Field `PCNT0CLKSEL` writer - PCNT0 Clock Select"]
-pub type PCNT0CLKSEL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type Pcnt0clkselW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
     #[inline(always)]
-    pub fn pcnt0clken(&self) -> PCNT0CLKEN_R {
-        PCNT0CLKEN_R::new((self.bits & 1) != 0)
+    pub fn pcnt0clken(&self) -> Pcnt0clkenR {
+        Pcnt0clkenR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PCNT0 Clock Select"]
     #[inline(always)]
-    pub fn pcnt0clksel(&self) -> PCNT0CLKSEL_R {
-        PCNT0CLKSEL_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn pcnt0clksel(&self) -> Pcnt0clkselR {
+        Pcnt0clkselR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - PCNT0 Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pcnt0clken(&mut self) -> PCNT0CLKEN_W<PCNTCTRLrs> {
-        PCNT0CLKEN_W::new(self, 0)
+    pub fn pcnt0clken(&mut self) -> Pcnt0clkenW<PCNTCTRLrs> {
+        Pcnt0clkenW::new(self, 0)
     }
     #[doc = "Bit 1 - PCNT0 Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pcnt0clksel(&mut self) -> PCNT0CLKSEL_W<PCNTCTRLrs> {
-        PCNT0CLKSEL_W::new(self, 1)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn pcnt0clksel(&mut self) -> Pcnt0clkselW<PCNTCTRLrs> {
+        Pcnt0clkselW::new(self, 1)
     }
 }
 #[doc = "PCNT Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcntctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcntctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -55,6 +45,7 @@ impl crate::RegisterSpec for PCNTCTRLrs {
 impl crate::Readable for PCNTCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`pcntctrl::W`](W) writer structure"]
 impl crate::Writable for PCNTCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -2,8 +2,6 @@
 pub type R = crate::R<ROUTELOC0rs>;
 #[doc = "Register `ROUTELOC0` writer"]
 pub type W = crate::W<ROUTELOC0rs>;
-#[doc = "Field `RXLOC` reader - I/O Location"]
-pub type RXLOC_R = crate::FieldReader<RXLOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -82,7 +80,10 @@ impl From<RXLOC> for u8 {
 impl crate::FieldSpec for RXLOC {
     type Ux = u8;
 }
-impl RXLOC_R {
+impl crate::IsEnum for RXLOC {}
+#[doc = "Field `RXLOC` reader - I/O Location"]
+pub type RxlocR = crate::FieldReader<RXLOC>;
+impl RxlocR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<RXLOC> {
@@ -284,8 +285,8 @@ impl RXLOC_R {
     }
 }
 #[doc = "Field `RXLOC` writer - I/O Location"]
-pub type RXLOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, RXLOC>;
-impl<'a, REG> RXLOC_W<'a, REG>
+pub type RxlocW<'a, REG> = crate::FieldWriter<'a, REG, 6, RXLOC>;
+impl<'a, REG> RxlocW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -451,8 +452,6 @@ where
         self.variant(RXLOC::Loc31)
     }
 }
-#[doc = "Field `TXLOC` reader - I/O Location"]
-pub type TXLOC_R = crate::FieldReader<TXLOC>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -531,7 +530,10 @@ impl From<TXLOC> for u8 {
 impl crate::FieldSpec for TXLOC {
     type Ux = u8;
 }
-impl TXLOC_R {
+impl crate::IsEnum for TXLOC {}
+#[doc = "Field `TXLOC` reader - I/O Location"]
+pub type TxlocR = crate::FieldReader<TXLOC>;
+impl TxlocR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<TXLOC> {
@@ -733,8 +735,8 @@ impl TXLOC_R {
     }
 }
 #[doc = "Field `TXLOC` writer - I/O Location"]
-pub type TXLOC_W<'a, REG> = crate::FieldWriter<'a, REG, 6, TXLOC>;
-impl<'a, REG> TXLOC_W<'a, REG>
+pub type TxlocW<'a, REG> = crate::FieldWriter<'a, REG, 6, TXLOC>;
+impl<'a, REG> TxlocW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -903,37 +905,27 @@ where
 impl R {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn rxloc(&self) -> RXLOC_R {
-        RXLOC_R::new((self.bits & 0x3f) as u8)
+    pub fn rxloc(&self) -> RxlocR {
+        RxlocR::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn txloc(&self) -> TXLOC_R {
-        TXLOC_R::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn txloc(&self) -> TxlocR {
+        TxlocR::new(((self.bits >> 8) & 0x3f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn rxloc(&mut self) -> RXLOC_W<ROUTELOC0rs> {
-        RXLOC_W::new(self, 0)
+    pub fn rxloc(&mut self) -> RxlocW<ROUTELOC0rs> {
+        RxlocW::new(self, 0)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
     #[must_use]
-    pub fn txloc(&mut self) -> TXLOC_W<ROUTELOC0rs> {
-        TXLOC_W::new(self, 8)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn txloc(&mut self) -> TxlocW<ROUTELOC0rs> {
+        TxlocW::new(self, 8)
     }
 }
 #[doc = "I/O Routing Location Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routeloc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routeloc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -945,6 +937,7 @@ impl crate::RegisterSpec for ROUTELOC0rs {
 impl crate::Readable for ROUTELOC0rs {}
 #[doc = "`write(|w| ..)` method takes [`routeloc0::W`](W) writer structure"]
 impl crate::Writable for ROUTELOC0rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -2,8 +2,6 @@
 pub type R = crate::R<CALCTRLrs>;
 #[doc = "Register `CALCTRL` writer"]
 pub type W = crate::W<CALCTRLrs>;
-#[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
-pub type UPSEL_R = crate::FieldReader<UPSEL>;
 #[doc = "Calibration Up-counter Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -30,7 +28,10 @@ impl From<UPSEL> for u8 {
 impl crate::FieldSpec for UPSEL {
     type Ux = u8;
 }
-impl UPSEL_R {
+impl crate::IsEnum for UPSEL {}
+#[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
+pub type UpselR = crate::FieldReader<UPSEL>;
+impl UpselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<UPSEL> {
@@ -76,8 +77,8 @@ impl UPSEL_R {
     }
 }
 #[doc = "Field `UPSEL` writer - Calibration Up-counter Select"]
-pub type UPSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, UPSEL>;
-impl<'a, REG> UPSEL_W<'a, REG>
+pub type UpselW<'a, REG> = crate::FieldWriter<'a, REG, 3, UPSEL>;
+impl<'a, REG> UpselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -113,8 +114,6 @@ where
         self.variant(UPSEL::Prs)
     }
 }
-#[doc = "Field `DOWNSEL` reader - Calibration Down-counter Select"]
-pub type DOWNSEL_R = crate::FieldReader<DOWNSEL>;
 #[doc = "Calibration Down-counter Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -143,7 +142,10 @@ impl From<DOWNSEL> for u8 {
 impl crate::FieldSpec for DOWNSEL {
     type Ux = u8;
 }
-impl DOWNSEL_R {
+impl crate::IsEnum for DOWNSEL {}
+#[doc = "Field `DOWNSEL` reader - Calibration Down-counter Select"]
+pub type DownselR = crate::FieldReader<DOWNSEL>;
+impl DownselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<DOWNSEL> {
@@ -195,8 +197,8 @@ impl DOWNSEL_R {
     }
 }
 #[doc = "Field `DOWNSEL` writer - Calibration Down-counter Select"]
-pub type DOWNSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, DOWNSEL>;
-impl<'a, REG> DOWNSEL_W<'a, REG>
+pub type DownselW<'a, REG> = crate::FieldWriter<'a, REG, 3, DOWNSEL>;
+impl<'a, REG> DownselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -238,11 +240,9 @@ where
     }
 }
 #[doc = "Field `CONT` reader - Continuous Calibration"]
-pub type CONT_R = crate::BitReader;
+pub type ContR = crate::BitReader;
 #[doc = "Field `CONT` writer - Continuous Calibration"]
-pub type CONT_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PRSUPSEL` reader - PRS Select for PRS Input When Selected in UPSEL"]
-pub type PRSUPSEL_R = crate::FieldReader<PRSUPSEL>;
+pub type ContW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "PRS Select for PRS Input When Selected in UPSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -281,7 +281,10 @@ impl From<PRSUPSEL> for u8 {
 impl crate::FieldSpec for PRSUPSEL {
     type Ux = u8;
 }
-impl PRSUPSEL_R {
+impl crate::IsEnum for PRSUPSEL {}
+#[doc = "Field `PRSUPSEL` reader - PRS Select for PRS Input When Selected in UPSEL"]
+pub type PrsupselR = crate::FieldReader<PRSUPSEL>;
+impl PrsupselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PRSUPSEL> {
@@ -363,8 +366,8 @@ impl PRSUPSEL_R {
     }
 }
 #[doc = "Field `PRSUPSEL` writer - PRS Select for PRS Input When Selected in UPSEL"]
-pub type PRSUPSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSUPSEL>;
-impl<'a, REG> PRSUPSEL_W<'a, REG>
+pub type PrsupselW<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSUPSEL>;
+impl<'a, REG> PrsupselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -430,8 +433,6 @@ where
         self.variant(PRSUPSEL::Prsch11)
     }
 }
-#[doc = "Field `PRSDOWNSEL` reader - PRS Select for PRS Input When Selected in DOWNSEL"]
-pub type PRSDOWNSEL_R = crate::FieldReader<PRSDOWNSEL>;
 #[doc = "PRS Select for PRS Input When Selected in DOWNSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -470,7 +471,10 @@ impl From<PRSDOWNSEL> for u8 {
 impl crate::FieldSpec for PRSDOWNSEL {
     type Ux = u8;
 }
-impl PRSDOWNSEL_R {
+impl crate::IsEnum for PRSDOWNSEL {}
+#[doc = "Field `PRSDOWNSEL` reader - PRS Select for PRS Input When Selected in DOWNSEL"]
+pub type PrsdownselR = crate::FieldReader<PRSDOWNSEL>;
+impl PrsdownselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PRSDOWNSEL> {
@@ -552,8 +556,8 @@ impl PRSDOWNSEL_R {
     }
 }
 #[doc = "Field `PRSDOWNSEL` writer - PRS Select for PRS Input When Selected in DOWNSEL"]
-pub type PRSDOWNSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSDOWNSEL>;
-impl<'a, REG> PRSDOWNSEL_W<'a, REG>
+pub type PrsdownselW<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSDOWNSEL>;
+impl<'a, REG> PrsdownselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -622,70 +626,60 @@ where
 impl R {
     #[doc = "Bits 0:2 - Calibration Up-counter Select"]
     #[inline(always)]
-    pub fn upsel(&self) -> UPSEL_R {
-        UPSEL_R::new((self.bits & 7) as u8)
+    pub fn upsel(&self) -> UpselR {
+        UpselR::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:6 - Calibration Down-counter Select"]
     #[inline(always)]
-    pub fn downsel(&self) -> DOWNSEL_R {
-        DOWNSEL_R::new(((self.bits >> 4) & 7) as u8)
+    pub fn downsel(&self) -> DownselR {
+        DownselR::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 8 - Continuous Calibration"]
     #[inline(always)]
-    pub fn cont(&self) -> CONT_R {
-        CONT_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn cont(&self) -> ContR {
+        ContR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 16:19 - PRS Select for PRS Input When Selected in UPSEL"]
     #[inline(always)]
-    pub fn prsupsel(&self) -> PRSUPSEL_R {
-        PRSUPSEL_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn prsupsel(&self) -> PrsupselR {
+        PrsupselR::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - PRS Select for PRS Input When Selected in DOWNSEL"]
     #[inline(always)]
-    pub fn prsdownsel(&self) -> PRSDOWNSEL_R {
-        PRSDOWNSEL_R::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn prsdownsel(&self) -> PrsdownselR {
+        PrsdownselR::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Calibration Up-counter Select"]
     #[inline(always)]
     #[must_use]
-    pub fn upsel(&mut self) -> UPSEL_W<CALCTRLrs> {
-        UPSEL_W::new(self, 0)
+    pub fn upsel(&mut self) -> UpselW<CALCTRLrs> {
+        UpselW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Calibration Down-counter Select"]
     #[inline(always)]
     #[must_use]
-    pub fn downsel(&mut self) -> DOWNSEL_W<CALCTRLrs> {
-        DOWNSEL_W::new(self, 4)
+    pub fn downsel(&mut self) -> DownselW<CALCTRLrs> {
+        DownselW::new(self, 4)
     }
     #[doc = "Bit 8 - Continuous Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn cont(&mut self) -> CONT_W<CALCTRLrs> {
-        CONT_W::new(self, 8)
+    pub fn cont(&mut self) -> ContW<CALCTRLrs> {
+        ContW::new(self, 8)
     }
     #[doc = "Bits 16:19 - PRS Select for PRS Input When Selected in UPSEL"]
     #[inline(always)]
     #[must_use]
-    pub fn prsupsel(&mut self) -> PRSUPSEL_W<CALCTRLrs> {
-        PRSUPSEL_W::new(self, 16)
+    pub fn prsupsel(&mut self) -> PrsupselW<CALCTRLrs> {
+        PrsupselW::new(self, 16)
     }
     #[doc = "Bits 24:27 - PRS Select for PRS Input When Selected in DOWNSEL"]
     #[inline(always)]
     #[must_use]
-    pub fn prsdownsel(&mut self) -> PRSDOWNSEL_W<CALCTRLrs> {
-        PRSDOWNSEL_W::new(self, 24)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn prsdownsel(&mut self) -> PrsdownselW<CALCTRLrs> {
+        PrsdownselW::new(self, 24)
     }
 }
 #[doc = "Calibration Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`calctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`calctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -697,6 +691,7 @@ impl crate::RegisterSpec for CALCTRLrs {
 impl crate::Readable for CALCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`calctrl::W`](W) writer structure"]
 impl crate::Writable for CALCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

@@ -3,32 +3,22 @@ pub type R = crate::R<COMP1rs>;
 #[doc = "Register `COMP1` writer"]
 pub type W = crate::W<COMP1rs>;
 #[doc = "Field `COMP1` reader - Compare Value 1"]
-pub type COMP1_R = crate::FieldReader<u16>;
+pub type Comp1R = crate::FieldReader<u16>;
 #[doc = "Field `COMP1` writer - Compare Value 1"]
-pub type COMP1_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type Comp1W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Value 1"]
     #[inline(always)]
-    pub fn comp1(&self) -> COMP1_R {
-        COMP1_R::new((self.bits & 0xffff) as u16)
+    pub fn comp1(&self) -> Comp1R {
+        Comp1R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Compare Value 1"]
     #[inline(always)]
     #[must_use]
-    pub fn comp1(&mut self) -> COMP1_W<COMP1rs> {
-        COMP1_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn comp1(&mut self) -> Comp1W<COMP1rs> {
+        Comp1W::new(self, 0)
     }
 }
 #[doc = "Compare Value Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`comp1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`comp1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -40,6 +30,7 @@ impl crate::RegisterSpec for COMP1rs {
 impl crate::Readable for COMP1rs {}
 #[doc = "`write(|w| ..)` method takes [`comp1::W`](W) writer structure"]
 impl crate::Writable for COMP1rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

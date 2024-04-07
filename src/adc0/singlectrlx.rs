@@ -2,8 +2,6 @@
 pub type R = crate::R<SINGLECTRLXrs>;
 #[doc = "Register `SINGLECTRLX` writer"]
 pub type W = crate::W<SINGLECTRLXrs>;
-#[doc = "Field `VREFSEL` reader - Single Channel Reference Selection"]
-pub type VREFSEL_R = crate::FieldReader<VREFSEL>;
 #[doc = "Single Channel Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -34,7 +32,10 @@ impl From<VREFSEL> for u8 {
 impl crate::FieldSpec for VREFSEL {
     type Ux = u8;
 }
-impl VREFSEL_R {
+impl crate::IsEnum for VREFSEL {}
+#[doc = "Field `VREFSEL` reader - Single Channel Reference Selection"]
+pub type VrefselR = crate::FieldReader<VREFSEL>;
+impl VrefselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> VREFSEL {
@@ -92,8 +93,8 @@ impl VREFSEL_R {
     }
 }
 #[doc = "Field `VREFSEL` writer - Single Channel Reference Selection"]
-pub type VREFSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, VREFSEL>;
-impl<'a, REG> VREFSEL_W<'a, REG>
+pub type VrefselW<'a, REG> = crate::FieldWriter<'a, REG, 3, VREFSEL, crate::Safe>;
+impl<'a, REG> VrefselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -140,31 +141,29 @@ where
     }
 }
 #[doc = "Field `VREFATTFIX` reader - Enable Fixed Scaling on VREF"]
-pub type VREFATTFIX_R = crate::BitReader;
+pub type VrefattfixR = crate::BitReader;
 #[doc = "Field `VREFATTFIX` writer - Enable Fixed Scaling on VREF"]
-pub type VREFATTFIX_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type VrefattfixW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VREFATT` reader - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5"]
-pub type VREFATT_R = crate::FieldReader;
+pub type VrefattR = crate::FieldReader;
 #[doc = "Field `VREFATT` writer - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5"]
-pub type VREFATT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type VrefattW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `VINATT` reader - Code for VIN Attenuation Factor"]
-pub type VINATT_R = crate::FieldReader;
+pub type VinattR = crate::FieldReader;
 #[doc = "Field `VINATT` writer - Code for VIN Attenuation Factor"]
-pub type VINATT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type VinattW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DVL` reader - Single Channel DV Level Select"]
-pub type DVL_R = crate::FieldReader;
+pub type DvlR = crate::FieldReader;
 #[doc = "Field `DVL` writer - Single Channel DV Level Select"]
-pub type DVL_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type DvlW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `FIFOOFACT` reader - Single Channel FIFO Overflow Action"]
-pub type FIFOOFACT_R = crate::BitReader;
+pub type FifoofactR = crate::BitReader;
 #[doc = "Field `FIFOOFACT` writer - Single Channel FIFO Overflow Action"]
-pub type FIFOOFACT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FifoofactW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PRSMODE` reader - Single Channel PRS Trigger Mode"]
-pub type PRSMODE_R = crate::BitReader;
+pub type PrsmodeR = crate::BitReader;
 #[doc = "Field `PRSMODE` writer - Single Channel PRS Trigger Mode"]
-pub type PRSMODE_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PRSSEL` reader - Single Channel PRS Trigger Select"]
-pub type PRSSEL_R = crate::FieldReader<PRSSEL>;
+pub type PrsmodeW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Single Channel PRS Trigger Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -203,7 +202,10 @@ impl From<PRSSEL> for u8 {
 impl crate::FieldSpec for PRSSEL {
     type Ux = u8;
 }
-impl PRSSEL_R {
+impl crate::IsEnum for PRSSEL {}
+#[doc = "Field `PRSSEL` reader - Single Channel PRS Trigger Select"]
+pub type PrsselR = crate::FieldReader<PRSSEL>;
+impl PrsselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<PRSSEL> {
@@ -285,8 +287,8 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - Single Channel PRS Trigger Select"]
-pub type PRSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSEL>;
-impl<'a, REG> PRSSEL_W<'a, REG>
+pub type PrsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSEL>;
+impl<'a, REG> PrsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -353,135 +355,125 @@ where
     }
 }
 #[doc = "Field `CONVSTARTDELAY` reader - Delay Value for Next Conversion Start If CONVSTARTDELAYEN is Set"]
-pub type CONVSTARTDELAY_R = crate::FieldReader;
+pub type ConvstartdelayR = crate::FieldReader;
 #[doc = "Field `CONVSTARTDELAY` writer - Delay Value for Next Conversion Start If CONVSTARTDELAYEN is Set"]
-pub type CONVSTARTDELAY_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type ConvstartdelayW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `CONVSTARTDELAYEN` reader - Enable Delaying Next Conversion Start"]
-pub type CONVSTARTDELAYEN_R = crate::BitReader;
+pub type ConvstartdelayenR = crate::BitReader;
 #[doc = "Field `CONVSTARTDELAYEN` writer - Enable Delaying Next Conversion Start"]
-pub type CONVSTARTDELAYEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ConvstartdelayenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - Single Channel Reference Selection"]
     #[inline(always)]
-    pub fn vrefsel(&self) -> VREFSEL_R {
-        VREFSEL_R::new((self.bits & 7) as u8)
+    pub fn vrefsel(&self) -> VrefselR {
+        VrefselR::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Enable Fixed Scaling on VREF"]
     #[inline(always)]
-    pub fn vrefattfix(&self) -> VREFATTFIX_R {
-        VREFATTFIX_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn vrefattfix(&self) -> VrefattfixR {
+        VrefattfixR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:7 - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5"]
     #[inline(always)]
-    pub fn vrefatt(&self) -> VREFATT_R {
-        VREFATT_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn vrefatt(&self) -> VrefattR {
+        VrefattR::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Code for VIN Attenuation Factor"]
     #[inline(always)]
-    pub fn vinatt(&self) -> VINATT_R {
-        VINATT_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn vinatt(&self) -> VinattR {
+        VinattR::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:13 - Single Channel DV Level Select"]
     #[inline(always)]
-    pub fn dvl(&self) -> DVL_R {
-        DVL_R::new(((self.bits >> 12) & 3) as u8)
+    pub fn dvl(&self) -> DvlR {
+        DvlR::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 14 - Single Channel FIFO Overflow Action"]
     #[inline(always)]
-    pub fn fifoofact(&self) -> FIFOOFACT_R {
-        FIFOOFACT_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn fifoofact(&self) -> FifoofactR {
+        FifoofactR::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 16 - Single Channel PRS Trigger Mode"]
     #[inline(always)]
-    pub fn prsmode(&self) -> PRSMODE_R {
-        PRSMODE_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn prsmode(&self) -> PrsmodeR {
+        PrsmodeR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bits 17:20 - Single Channel PRS Trigger Select"]
     #[inline(always)]
-    pub fn prssel(&self) -> PRSSEL_R {
-        PRSSEL_R::new(((self.bits >> 17) & 0x0f) as u8)
+    pub fn prssel(&self) -> PrsselR {
+        PrsselR::new(((self.bits >> 17) & 0x0f) as u8)
     }
     #[doc = "Bits 24:26 - Delay Value for Next Conversion Start If CONVSTARTDELAYEN is Set"]
     #[inline(always)]
-    pub fn convstartdelay(&self) -> CONVSTARTDELAY_R {
-        CONVSTARTDELAY_R::new(((self.bits >> 24) & 7) as u8)
+    pub fn convstartdelay(&self) -> ConvstartdelayR {
+        ConvstartdelayR::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bit 27 - Enable Delaying Next Conversion Start"]
     #[inline(always)]
-    pub fn convstartdelayen(&self) -> CONVSTARTDELAYEN_R {
-        CONVSTARTDELAYEN_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn convstartdelayen(&self) -> ConvstartdelayenR {
+        ConvstartdelayenR::new(((self.bits >> 27) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Single Channel Reference Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn vrefsel(&mut self) -> VREFSEL_W<SINGLECTRLXrs> {
-        VREFSEL_W::new(self, 0)
+    pub fn vrefsel(&mut self) -> VrefselW<SINGLECTRLXrs> {
+        VrefselW::new(self, 0)
     }
     #[doc = "Bit 3 - Enable Fixed Scaling on VREF"]
     #[inline(always)]
     #[must_use]
-    pub fn vrefattfix(&mut self) -> VREFATTFIX_W<SINGLECTRLXrs> {
-        VREFATTFIX_W::new(self, 3)
+    pub fn vrefattfix(&mut self) -> VrefattfixW<SINGLECTRLXrs> {
+        VrefattfixW::new(self, 3)
     }
     #[doc = "Bits 4:7 - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5"]
     #[inline(always)]
     #[must_use]
-    pub fn vrefatt(&mut self) -> VREFATT_W<SINGLECTRLXrs> {
-        VREFATT_W::new(self, 4)
+    pub fn vrefatt(&mut self) -> VrefattW<SINGLECTRLXrs> {
+        VrefattW::new(self, 4)
     }
     #[doc = "Bits 8:11 - Code for VIN Attenuation Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn vinatt(&mut self) -> VINATT_W<SINGLECTRLXrs> {
-        VINATT_W::new(self, 8)
+    pub fn vinatt(&mut self) -> VinattW<SINGLECTRLXrs> {
+        VinattW::new(self, 8)
     }
     #[doc = "Bits 12:13 - Single Channel DV Level Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dvl(&mut self) -> DVL_W<SINGLECTRLXrs> {
-        DVL_W::new(self, 12)
+    pub fn dvl(&mut self) -> DvlW<SINGLECTRLXrs> {
+        DvlW::new(self, 12)
     }
     #[doc = "Bit 14 - Single Channel FIFO Overflow Action"]
     #[inline(always)]
     #[must_use]
-    pub fn fifoofact(&mut self) -> FIFOOFACT_W<SINGLECTRLXrs> {
-        FIFOOFACT_W::new(self, 14)
+    pub fn fifoofact(&mut self) -> FifoofactW<SINGLECTRLXrs> {
+        FifoofactW::new(self, 14)
     }
     #[doc = "Bit 16 - Single Channel PRS Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn prsmode(&mut self) -> PRSMODE_W<SINGLECTRLXrs> {
-        PRSMODE_W::new(self, 16)
+    pub fn prsmode(&mut self) -> PrsmodeW<SINGLECTRLXrs> {
+        PrsmodeW::new(self, 16)
     }
     #[doc = "Bits 17:20 - Single Channel PRS Trigger Select"]
     #[inline(always)]
     #[must_use]
-    pub fn prssel(&mut self) -> PRSSEL_W<SINGLECTRLXrs> {
-        PRSSEL_W::new(self, 17)
+    pub fn prssel(&mut self) -> PrsselW<SINGLECTRLXrs> {
+        PrsselW::new(self, 17)
     }
     #[doc = "Bits 24:26 - Delay Value for Next Conversion Start If CONVSTARTDELAYEN is Set"]
     #[inline(always)]
     #[must_use]
-    pub fn convstartdelay(&mut self) -> CONVSTARTDELAY_W<SINGLECTRLXrs> {
-        CONVSTARTDELAY_W::new(self, 24)
+    pub fn convstartdelay(&mut self) -> ConvstartdelayW<SINGLECTRLXrs> {
+        ConvstartdelayW::new(self, 24)
     }
     #[doc = "Bit 27 - Enable Delaying Next Conversion Start"]
     #[inline(always)]
     #[must_use]
-    pub fn convstartdelayen(&mut self) -> CONVSTARTDELAYEN_W<SINGLECTRLXrs> {
-        CONVSTARTDELAYEN_W::new(self, 27)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn convstartdelayen(&mut self) -> ConvstartdelayenW<SINGLECTRLXrs> {
+        ConvstartdelayenW::new(self, 27)
     }
 }
 #[doc = "Single Channel Control Register Continued\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singlectrlx::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`singlectrlx::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -493,6 +485,7 @@ impl crate::RegisterSpec for SINGLECTRLXrs {
 impl crate::Readable for SINGLECTRLXrs {}
 #[doc = "`write(|w| ..)` method takes [`singlectrlx::W`](W) writer structure"]
 impl crate::Writable for SINGLECTRLXrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

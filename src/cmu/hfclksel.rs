@@ -22,9 +22,10 @@ impl From<HF> for u8 {
 impl crate::FieldSpec for HF {
     type Ux = u8;
 }
+impl crate::IsEnum for HF {}
 #[doc = "Field `HF` writer - HFCLK Select"]
-pub type HF_W<'a, REG> = crate::FieldWriter<'a, REG, 3, HF>;
-impl<'a, REG> HF_W<'a, REG>
+pub type HfW<'a, REG> = crate::FieldWriter<'a, REG, 3, HF>;
+impl<'a, REG> HfW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -54,18 +55,8 @@ impl W {
     #[doc = "Bits 0:2 - HFCLK Select"]
     #[inline(always)]
     #[must_use]
-    pub fn hf(&mut self) -> HF_W<HFCLKSELrs> {
-        HF_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn hf(&mut self) -> HfW<HFCLKSELrs> {
+        HfW::new(self, 0)
     }
 }
 #[doc = "High Frequency Clock Select Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfclksel::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -75,6 +66,7 @@ impl crate::RegisterSpec for HFCLKSELrs {
 }
 #[doc = "`write(|w| ..)` method takes [`hfclksel::W`](W) writer structure"]
 impl crate::Writable for HFCLKSELrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

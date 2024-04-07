@@ -3,27 +3,25 @@ pub type R = crate::R<I2SCTRLrs>;
 #[doc = "Register `I2SCTRL` writer"]
 pub type W = crate::W<I2SCTRLrs>;
 #[doc = "Field `EN` reader - Enable I2S Mode"]
-pub type EN_R = crate::BitReader;
+pub type EnR = crate::BitReader;
 #[doc = "Field `EN` writer - Enable I2S Mode"]
-pub type EN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type EnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MONO` reader - Stero or Mono"]
-pub type MONO_R = crate::BitReader;
+pub type MonoR = crate::BitReader;
 #[doc = "Field `MONO` writer - Stero or Mono"]
-pub type MONO_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type MonoW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `JUSTIFY` reader - Justification of I2S Data"]
-pub type JUSTIFY_R = crate::BitReader;
+pub type JustifyR = crate::BitReader;
 #[doc = "Field `JUSTIFY` writer - Justification of I2S Data"]
-pub type JUSTIFY_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type JustifyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DMASPLIT` reader - Separate DMA Request for Left/Right Data"]
-pub type DMASPLIT_R = crate::BitReader;
+pub type DmasplitR = crate::BitReader;
 #[doc = "Field `DMASPLIT` writer - Separate DMA Request for Left/Right Data"]
-pub type DMASPLIT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DmasplitW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DELAY` reader - Delay on I2S Data"]
-pub type DELAY_R = crate::BitReader;
+pub type DelayR = crate::BitReader;
 #[doc = "Field `DELAY` writer - Delay on I2S Data"]
-pub type DELAY_W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `FORMAT` reader - I2S Word Format"]
-pub type FORMAT_R = crate::FieldReader<FORMAT>;
+pub type DelayW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "I2S Word Format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,7 +52,10 @@ impl From<FORMAT> for u8 {
 impl crate::FieldSpec for FORMAT {
     type Ux = u8;
 }
-impl FORMAT_R {
+impl crate::IsEnum for FORMAT {}
+#[doc = "Field `FORMAT` reader - I2S Word Format"]
+pub type FormatR = crate::FieldReader<FORMAT>;
+impl FormatR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> FORMAT {
@@ -112,8 +113,8 @@ impl FORMAT_R {
     }
 }
 #[doc = "Field `FORMAT` writer - I2S Word Format"]
-pub type FORMAT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, FORMAT>;
-impl<'a, REG> FORMAT_W<'a, REG>
+pub type FormatW<'a, REG> = crate::FieldWriter<'a, REG, 3, FORMAT, crate::Safe>;
+impl<'a, REG> FormatW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -162,81 +163,71 @@ where
 impl R {
     #[doc = "Bit 0 - Enable I2S Mode"]
     #[inline(always)]
-    pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 1) != 0)
+    pub fn en(&self) -> EnR {
+        EnR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Stero or Mono"]
     #[inline(always)]
-    pub fn mono(&self) -> MONO_R {
-        MONO_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn mono(&self) -> MonoR {
+        MonoR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Justification of I2S Data"]
     #[inline(always)]
-    pub fn justify(&self) -> JUSTIFY_R {
-        JUSTIFY_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn justify(&self) -> JustifyR {
+        JustifyR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Separate DMA Request for Left/Right Data"]
     #[inline(always)]
-    pub fn dmasplit(&self) -> DMASPLIT_R {
-        DMASPLIT_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn dmasplit(&self) -> DmasplitR {
+        DmasplitR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Delay on I2S Data"]
     #[inline(always)]
-    pub fn delay(&self) -> DELAY_R {
-        DELAY_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn delay(&self) -> DelayR {
+        DelayR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:10 - I2S Word Format"]
     #[inline(always)]
-    pub fn format(&self) -> FORMAT_R {
-        FORMAT_R::new(((self.bits >> 8) & 7) as u8)
+    pub fn format(&self) -> FormatR {
+        FormatR::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable I2S Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<I2SCTRLrs> {
-        EN_W::new(self, 0)
+    pub fn en(&mut self) -> EnW<I2SCTRLrs> {
+        EnW::new(self, 0)
     }
     #[doc = "Bit 1 - Stero or Mono"]
     #[inline(always)]
     #[must_use]
-    pub fn mono(&mut self) -> MONO_W<I2SCTRLrs> {
-        MONO_W::new(self, 1)
+    pub fn mono(&mut self) -> MonoW<I2SCTRLrs> {
+        MonoW::new(self, 1)
     }
     #[doc = "Bit 2 - Justification of I2S Data"]
     #[inline(always)]
     #[must_use]
-    pub fn justify(&mut self) -> JUSTIFY_W<I2SCTRLrs> {
-        JUSTIFY_W::new(self, 2)
+    pub fn justify(&mut self) -> JustifyW<I2SCTRLrs> {
+        JustifyW::new(self, 2)
     }
     #[doc = "Bit 3 - Separate DMA Request for Left/Right Data"]
     #[inline(always)]
     #[must_use]
-    pub fn dmasplit(&mut self) -> DMASPLIT_W<I2SCTRLrs> {
-        DMASPLIT_W::new(self, 3)
+    pub fn dmasplit(&mut self) -> DmasplitW<I2SCTRLrs> {
+        DmasplitW::new(self, 3)
     }
     #[doc = "Bit 4 - Delay on I2S Data"]
     #[inline(always)]
     #[must_use]
-    pub fn delay(&mut self) -> DELAY_W<I2SCTRLrs> {
-        DELAY_W::new(self, 4)
+    pub fn delay(&mut self) -> DelayW<I2SCTRLrs> {
+        DelayW::new(self, 4)
     }
     #[doc = "Bits 8:10 - I2S Word Format"]
     #[inline(always)]
     #[must_use]
-    pub fn format(&mut self) -> FORMAT_W<I2SCTRLrs> {
-        FORMAT_W::new(self, 8)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn format(&mut self) -> FormatW<I2SCTRLrs> {
+        FormatW::new(self, 8)
     }
 }
 #[doc = "I2S Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2sctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2sctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -248,6 +239,7 @@ impl crate::RegisterSpec for I2SCTRLrs {
 impl crate::Readable for I2SCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`i2sctrl::W`](W) writer structure"]
 impl crate::Writable for I2SCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

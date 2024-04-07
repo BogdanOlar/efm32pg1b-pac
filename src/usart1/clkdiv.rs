@@ -3,47 +3,37 @@ pub type R = crate::R<CLKDIVrs>;
 #[doc = "Register `CLKDIV` writer"]
 pub type W = crate::W<CLKDIVrs>;
 #[doc = "Field `DIV` reader - Fractional Clock Divider"]
-pub type DIV_R = crate::FieldReader<u32>;
+pub type DivR = crate::FieldReader<u32>;
 #[doc = "Field `DIV` writer - Fractional Clock Divider"]
-pub type DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
+pub type DivW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 #[doc = "Field `AUTOBAUDEN` reader - AUTOBAUD Detection Enable"]
-pub type AUTOBAUDEN_R = crate::BitReader;
+pub type AutobaudenR = crate::BitReader;
 #[doc = "Field `AUTOBAUDEN` writer - AUTOBAUD Detection Enable"]
-pub type AUTOBAUDEN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AutobaudenW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 3:22 - Fractional Clock Divider"]
     #[inline(always)]
-    pub fn div(&self) -> DIV_R {
-        DIV_R::new((self.bits >> 3) & 0x000f_ffff)
+    pub fn div(&self) -> DivR {
+        DivR::new((self.bits >> 3) & 0x000f_ffff)
     }
     #[doc = "Bit 31 - AUTOBAUD Detection Enable"]
     #[inline(always)]
-    pub fn autobauden(&self) -> AUTOBAUDEN_R {
-        AUTOBAUDEN_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn autobauden(&self) -> AutobaudenR {
+        AutobaudenR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 3:22 - Fractional Clock Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn div(&mut self) -> DIV_W<CLKDIVrs> {
-        DIV_W::new(self, 3)
+    pub fn div(&mut self) -> DivW<CLKDIVrs> {
+        DivW::new(self, 3)
     }
     #[doc = "Bit 31 - AUTOBAUD Detection Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn autobauden(&mut self) -> AUTOBAUDEN_W<CLKDIVrs> {
-        AUTOBAUDEN_W::new(self, 31)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn autobauden(&mut self) -> AutobaudenW<CLKDIVrs> {
+        AutobaudenW::new(self, 31)
     }
 }
 #[doc = "Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkdiv::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkdiv::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -55,6 +45,7 @@ impl crate::RegisterSpec for CLKDIVrs {
 impl crate::Readable for CLKDIVrs {}
 #[doc = "`write(|w| ..)` method takes [`clkdiv::W`](W) writer structure"]
 impl crate::Writable for CLKDIVrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

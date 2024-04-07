@@ -1,26 +1,26 @@
 #[doc = "Register `STATUS` reader"]
 pub type R = crate::R<STATUSrs>;
 #[doc = "Field `ACMPACT` reader - Analog Comparator Active"]
-pub type ACMPACT_R = crate::BitReader;
+pub type AcmpactR = crate::BitReader;
 #[doc = "Field `ACMPOUT` reader - Analog Comparator Output"]
-pub type ACMPOUT_R = crate::BitReader;
+pub type AcmpoutR = crate::BitReader;
 #[doc = "Field `APORTCONFLICT` reader - APORT Conflict Output"]
-pub type APORTCONFLICT_R = crate::BitReader;
+pub type AportconflictR = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Analog Comparator Active"]
     #[inline(always)]
-    pub fn acmpact(&self) -> ACMPACT_R {
-        ACMPACT_R::new((self.bits & 1) != 0)
+    pub fn acmpact(&self) -> AcmpactR {
+        AcmpactR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Analog Comparator Output"]
     #[inline(always)]
-    pub fn acmpout(&self) -> ACMPOUT_R {
-        ACMPOUT_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn acmpout(&self) -> AcmpoutR {
+        AcmpoutR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - APORT Conflict Output"]
     #[inline(always)]
-    pub fn aportconflict(&self) -> APORTCONFLICT_R {
-        APORTCONFLICT_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn aportconflict(&self) -> AportconflictR {
+        AportconflictR::new(((self.bits >> 2) & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

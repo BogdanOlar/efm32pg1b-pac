@@ -2,8 +2,6 @@
 pub type R = crate::R<HYSTERESIS1rs>;
 #[doc = "Register `HYSTERESIS1` writer"]
 pub type W = crate::W<HYSTERESIS1rs>;
-#[doc = "Field `HYST` reader - Hysteresis Select When ACMPOUT=1"]
-pub type HYST_R = crate::FieldReader<HYST>;
 #[doc = "Hysteresis Select When ACMPOUT=1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,7 +48,10 @@ impl From<HYST> for u8 {
 impl crate::FieldSpec for HYST {
     type Ux = u8;
 }
-impl HYST_R {
+impl crate::IsEnum for HYST {}
+#[doc = "Field `HYST` reader - Hysteresis Select When ACMPOUT=1"]
+pub type HystR = crate::FieldReader<HYST>;
+impl HystR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> HYST {
@@ -156,8 +157,8 @@ impl HYST_R {
     }
 }
 #[doc = "Field `HYST` writer - Hysteresis Select When ACMPOUT=1"]
-pub type HYST_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, HYST>;
-impl<'a, REG> HYST_W<'a, REG>
+pub type HystW<'a, REG> = crate::FieldWriter<'a, REG, 4, HYST, crate::Safe>;
+impl<'a, REG> HystW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -244,58 +245,48 @@ where
     }
 }
 #[doc = "Field `DIVVA` reader - Divider for VA Voltage When ACMPOUT=1"]
-pub type DIVVA_R = crate::FieldReader;
+pub type DivvaR = crate::FieldReader;
 #[doc = "Field `DIVVA` writer - Divider for VA Voltage When ACMPOUT=1"]
-pub type DIVVA_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type DivvaW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `DIVVB` reader - Divider for VB Voltage When ACMPOUT=1"]
-pub type DIVVB_R = crate::FieldReader;
+pub type DivvbR = crate::FieldReader;
 #[doc = "Field `DIVVB` writer - Divider for VB Voltage When ACMPOUT=1"]
-pub type DIVVB_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type DivvbW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=1"]
     #[inline(always)]
-    pub fn hyst(&self) -> HYST_R {
-        HYST_R::new((self.bits & 0x0f) as u8)
+    pub fn hyst(&self) -> HystR {
+        HystR::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 16:21 - Divider for VA Voltage When ACMPOUT=1"]
     #[inline(always)]
-    pub fn divva(&self) -> DIVVA_R {
-        DIVVA_R::new(((self.bits >> 16) & 0x3f) as u8)
+    pub fn divva(&self) -> DivvaR {
+        DivvaR::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - Divider for VB Voltage When ACMPOUT=1"]
     #[inline(always)]
-    pub fn divvb(&self) -> DIVVB_R {
-        DIVVB_R::new(((self.bits >> 24) & 0x3f) as u8)
+    pub fn divvb(&self) -> DivvbR {
+        DivvbR::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=1"]
     #[inline(always)]
     #[must_use]
-    pub fn hyst(&mut self) -> HYST_W<HYSTERESIS1rs> {
-        HYST_W::new(self, 0)
+    pub fn hyst(&mut self) -> HystW<HYSTERESIS1rs> {
+        HystW::new(self, 0)
     }
     #[doc = "Bits 16:21 - Divider for VA Voltage When ACMPOUT=1"]
     #[inline(always)]
     #[must_use]
-    pub fn divva(&mut self) -> DIVVA_W<HYSTERESIS1rs> {
-        DIVVA_W::new(self, 16)
+    pub fn divva(&mut self) -> DivvaW<HYSTERESIS1rs> {
+        DivvaW::new(self, 16)
     }
     #[doc = "Bits 24:29 - Divider for VB Voltage When ACMPOUT=1"]
     #[inline(always)]
     #[must_use]
-    pub fn divvb(&mut self) -> DIVVB_W<HYSTERESIS1rs> {
-        DIVVB_W::new(self, 24)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn divvb(&mut self) -> DivvbW<HYSTERESIS1rs> {
+        DivvbW::new(self, 24)
     }
 }
 #[doc = "Hysteresis 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hysteresis1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hysteresis1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -307,6 +298,7 @@ impl crate::RegisterSpec for HYSTERESIS1rs {
 impl crate::Readable for HYSTERESIS1rs {}
 #[doc = "`write(|w| ..)` method takes [`hysteresis1::W`](W) writer structure"]
 impl crate::Writable for HYSTERESIS1rs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

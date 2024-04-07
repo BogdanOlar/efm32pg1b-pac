@@ -1,12 +1,12 @@
 #[doc = "Register `STATUS` reader"]
 pub type R = crate::R<STATUSrs>;
 #[doc = "Field `APORTCONFLICT` reader - APORT Conflict Output"]
-pub type APORTCONFLICT_R = crate::BitReader;
+pub type AportconflictR = crate::BitReader;
 impl R {
     #[doc = "Bit 1 - APORT Conflict Output"]
     #[inline(always)]
-    pub fn aportconflict(&self) -> APORTCONFLICT_R {
-        APORTCONFLICT_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn aportconflict(&self) -> AportconflictR {
+        AportconflictR::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

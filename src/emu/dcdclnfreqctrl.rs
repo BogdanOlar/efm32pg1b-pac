@@ -3,47 +3,37 @@ pub type R = crate::R<DCDCLNFREQCTRLrs>;
 #[doc = "Register `DCDCLNFREQCTRL` writer"]
 pub type W = crate::W<DCDCLNFREQCTRLrs>;
 #[doc = "Field `RCOBAND` reader - LN Mode RCO Frequency Band Selection"]
-pub type RCOBAND_R = crate::FieldReader;
+pub type RcobandR = crate::FieldReader;
 #[doc = "Field `RCOBAND` writer - LN Mode RCO Frequency Band Selection"]
-pub type RCOBAND_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type RcobandW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `RCOTRIM` reader - Reserved for internal use. Do not change."]
-pub type RCOTRIM_R = crate::FieldReader;
+pub type RcotrimR = crate::FieldReader;
 #[doc = "Field `RCOTRIM` writer - Reserved for internal use. Do not change."]
-pub type RCOTRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
+pub type RcotrimW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:2 - LN Mode RCO Frequency Band Selection"]
     #[inline(always)]
-    pub fn rcoband(&self) -> RCOBAND_R {
-        RCOBAND_R::new((self.bits & 7) as u8)
+    pub fn rcoband(&self) -> RcobandR {
+        RcobandR::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 24:28 - Reserved for internal use. Do not change."]
     #[inline(always)]
-    pub fn rcotrim(&self) -> RCOTRIM_R {
-        RCOTRIM_R::new(((self.bits >> 24) & 0x1f) as u8)
+    pub fn rcotrim(&self) -> RcotrimR {
+        RcotrimR::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - LN Mode RCO Frequency Band Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn rcoband(&mut self) -> RCOBAND_W<DCDCLNFREQCTRLrs> {
-        RCOBAND_W::new(self, 0)
+    pub fn rcoband(&mut self) -> RcobandW<DCDCLNFREQCTRLrs> {
+        RcobandW::new(self, 0)
     }
     #[doc = "Bits 24:28 - Reserved for internal use. Do not change."]
     #[inline(always)]
     #[must_use]
-    pub fn rcotrim(&mut self) -> RCOTRIM_W<DCDCLNFREQCTRLrs> {
-        RCOTRIM_W::new(self, 24)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn rcotrim(&mut self) -> RcotrimW<DCDCLNFREQCTRLrs> {
+        RcotrimW::new(self, 24)
     }
 }
 #[doc = "DCDC Low Noise Controller Frequency Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdclnfreqctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdclnfreqctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -55,6 +45,7 @@ impl crate::RegisterSpec for DCDCLNFREQCTRLrs {
 impl crate::Readable for DCDCLNFREQCTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`dcdclnfreqctrl::W`](W) writer structure"]
 impl crate::Writable for DCDCLNFREQCTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }

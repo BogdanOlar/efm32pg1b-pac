@@ -3,11 +3,9 @@ pub type R = crate::R<CH2_CTRLrs>;
 #[doc = "Register `CH2_CTRL` writer"]
 pub type W = crate::W<CH2_CTRLrs>;
 #[doc = "Field `SIGSEL` reader - Signal Select"]
-pub type SIGSEL_R = crate::FieldReader;
+pub type SigselR = crate::FieldReader;
 #[doc = "Field `SIGSEL` writer - Signal Select"]
-pub type SIGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
-#[doc = "Field `SOURCESEL` reader - Source Select"]
-pub type SOURCESEL_R = crate::FieldReader<SOURCESEL>;
+pub type SigselW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,7 +56,10 @@ impl From<SOURCESEL> for u8 {
 impl crate::FieldSpec for SOURCESEL {
     type Ux = u8;
 }
-impl SOURCESEL_R {
+impl crate::IsEnum for SOURCESEL {}
+#[doc = "Field `SOURCESEL` reader - Source Select"]
+pub type SourceselR = crate::FieldReader<SOURCESEL>;
+impl SourceselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> Option<SOURCESEL> {
@@ -176,8 +177,8 @@ impl SOURCESEL_R {
     }
 }
 #[doc = "Field `SOURCESEL` writer - Source Select"]
-pub type SOURCESEL_W<'a, REG> = crate::FieldWriter<'a, REG, 7, SOURCESEL>;
-impl<'a, REG> SOURCESEL_W<'a, REG>
+pub type SourceselW<'a, REG> = crate::FieldWriter<'a, REG, 7, SOURCESEL>;
+impl<'a, REG> SourceselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -273,8 +274,6 @@ where
         self.variant(SOURCESEL::Cm4)
     }
 }
-#[doc = "Field `EDSEL` reader - Edge Detect Select"]
-pub type EDSEL_R = crate::FieldReader<EDSEL>;
 #[doc = "Edge Detect Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -297,7 +296,10 @@ impl From<EDSEL> for u8 {
 impl crate::FieldSpec for EDSEL {
     type Ux = u8;
 }
-impl EDSEL_R {
+impl crate::IsEnum for EDSEL {}
+#[doc = "Field `EDSEL` reader - Edge Detect Select"]
+pub type EdselR = crate::FieldReader<EDSEL>;
+impl EdselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub const fn variant(&self) -> EDSEL {
@@ -331,8 +333,8 @@ impl EDSEL_R {
     }
 }
 #[doc = "Field `EDSEL` writer - Edge Detect Select"]
-pub type EDSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EDSEL>;
-impl<'a, REG> EDSEL_W<'a, REG>
+pub type EdselW<'a, REG> = crate::FieldWriter<'a, REG, 2, EDSEL, crate::Safe>;
+impl<'a, REG> EdselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -359,125 +361,115 @@ where
     }
 }
 #[doc = "Field `STRETCH` reader - Stretch Channel Output"]
-pub type STRETCH_R = crate::BitReader;
+pub type StretchR = crate::BitReader;
 #[doc = "Field `STRETCH` writer - Stretch Channel Output"]
-pub type STRETCH_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StretchW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INV` reader - Invert Channel"]
-pub type INV_R = crate::BitReader;
+pub type InvR = crate::BitReader;
 #[doc = "Field `INV` writer - Invert Channel"]
-pub type INV_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type InvW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ORPREV` reader - Or Previous"]
-pub type ORPREV_R = crate::BitReader;
+pub type OrprevR = crate::BitReader;
 #[doc = "Field `ORPREV` writer - Or Previous"]
-pub type ORPREV_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type OrprevW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ANDNEXT` reader - And Next"]
-pub type ANDNEXT_R = crate::BitReader;
+pub type AndnextR = crate::BitReader;
 #[doc = "Field `ANDNEXT` writer - And Next"]
-pub type ANDNEXT_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AndnextW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ASYNCREFL` reader - Asynchronous Reflex"]
-pub type ASYNCREFL_R = crate::BitReader;
+pub type AsyncreflR = crate::BitReader;
 #[doc = "Field `ASYNCREFL` writer - Asynchronous Reflex"]
-pub type ASYNCREFL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AsyncreflW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
-    pub fn sigsel(&self) -> SIGSEL_R {
-        SIGSEL_R::new((self.bits & 7) as u8)
+    pub fn sigsel(&self) -> SigselR {
+        SigselR::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 8:14 - Source Select"]
     #[inline(always)]
-    pub fn sourcesel(&self) -> SOURCESEL_R {
-        SOURCESEL_R::new(((self.bits >> 8) & 0x7f) as u8)
+    pub fn sourcesel(&self) -> SourceselR {
+        SourceselR::new(((self.bits >> 8) & 0x7f) as u8)
     }
     #[doc = "Bits 20:21 - Edge Detect Select"]
     #[inline(always)]
-    pub fn edsel(&self) -> EDSEL_R {
-        EDSEL_R::new(((self.bits >> 20) & 3) as u8)
+    pub fn edsel(&self) -> EdselR {
+        EdselR::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bit 25 - Stretch Channel Output"]
     #[inline(always)]
-    pub fn stretch(&self) -> STRETCH_R {
-        STRETCH_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn stretch(&self) -> StretchR {
+        StretchR::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Invert Channel"]
     #[inline(always)]
-    pub fn inv(&self) -> INV_R {
-        INV_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn inv(&self) -> InvR {
+        InvR::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Or Previous"]
     #[inline(always)]
-    pub fn orprev(&self) -> ORPREV_R {
-        ORPREV_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn orprev(&self) -> OrprevR {
+        OrprevR::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - And Next"]
     #[inline(always)]
-    pub fn andnext(&self) -> ANDNEXT_R {
-        ANDNEXT_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn andnext(&self) -> AndnextR {
+        AndnextR::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 30 - Asynchronous Reflex"]
     #[inline(always)]
-    pub fn asyncrefl(&self) -> ASYNCREFL_R {
-        ASYNCREFL_R::new(((self.bits >> 30) & 1) != 0)
+    pub fn asyncrefl(&self) -> AsyncreflR {
+        AsyncreflR::new(((self.bits >> 30) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sigsel(&mut self) -> SIGSEL_W<CH2_CTRLrs> {
-        SIGSEL_W::new(self, 0)
+    pub fn sigsel(&mut self) -> SigselW<CH2_CTRLrs> {
+        SigselW::new(self, 0)
     }
     #[doc = "Bits 8:14 - Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sourcesel(&mut self) -> SOURCESEL_W<CH2_CTRLrs> {
-        SOURCESEL_W::new(self, 8)
+    pub fn sourcesel(&mut self) -> SourceselW<CH2_CTRLrs> {
+        SourceselW::new(self, 8)
     }
     #[doc = "Bits 20:21 - Edge Detect Select"]
     #[inline(always)]
     #[must_use]
-    pub fn edsel(&mut self) -> EDSEL_W<CH2_CTRLrs> {
-        EDSEL_W::new(self, 20)
+    pub fn edsel(&mut self) -> EdselW<CH2_CTRLrs> {
+        EdselW::new(self, 20)
     }
     #[doc = "Bit 25 - Stretch Channel Output"]
     #[inline(always)]
     #[must_use]
-    pub fn stretch(&mut self) -> STRETCH_W<CH2_CTRLrs> {
-        STRETCH_W::new(self, 25)
+    pub fn stretch(&mut self) -> StretchW<CH2_CTRLrs> {
+        StretchW::new(self, 25)
     }
     #[doc = "Bit 26 - Invert Channel"]
     #[inline(always)]
     #[must_use]
-    pub fn inv(&mut self) -> INV_W<CH2_CTRLrs> {
-        INV_W::new(self, 26)
+    pub fn inv(&mut self) -> InvW<CH2_CTRLrs> {
+        InvW::new(self, 26)
     }
     #[doc = "Bit 27 - Or Previous"]
     #[inline(always)]
     #[must_use]
-    pub fn orprev(&mut self) -> ORPREV_W<CH2_CTRLrs> {
-        ORPREV_W::new(self, 27)
+    pub fn orprev(&mut self) -> OrprevW<CH2_CTRLrs> {
+        OrprevW::new(self, 27)
     }
     #[doc = "Bit 28 - And Next"]
     #[inline(always)]
     #[must_use]
-    pub fn andnext(&mut self) -> ANDNEXT_W<CH2_CTRLrs> {
-        ANDNEXT_W::new(self, 28)
+    pub fn andnext(&mut self) -> AndnextW<CH2_CTRLrs> {
+        AndnextW::new(self, 28)
     }
     #[doc = "Bit 30 - Asynchronous Reflex"]
     #[inline(always)]
     #[must_use]
-    pub fn asyncrefl(&mut self) -> ASYNCREFL_W<CH2_CTRLrs> {
-        ASYNCREFL_W::new(self, 30)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn asyncrefl(&mut self) -> AsyncreflW<CH2_CTRLrs> {
+        AsyncreflW::new(self, 30)
     }
 }
 #[doc = "Channel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ch2_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ch2_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
@@ -489,6 +481,7 @@ impl crate::RegisterSpec for CH2_CTRLrs {
 impl crate::Readable for CH2_CTRLrs {}
 #[doc = "`write(|w| ..)` method takes [`ch2_ctrl::W`](W) writer structure"]
 impl crate::Writable for CH2_CTRLrs {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
