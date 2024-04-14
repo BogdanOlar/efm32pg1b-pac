@@ -7592,50 +7592,132 @@
 								<bitOffset>0</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
+								<enumeratedValues>
+									<enumeratedValue>
+										<name>DISABLED</name>
+										<description>Input disabled. Pullup if DOUT is set.</description>
+										<value>0x00000000</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>INPUT</name>
+										<description>Input enabled. Filter if DOUT is set</description>
+										<value>0x00000001</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>INPUTPULL</name>
+										<description>Input enabled. DOUT determines pull direction</description>
+										<value>0x00000002</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>INPUTPULLFILTER</name>
+										<description>Input enabled with filter. DOUT determines pull direction</description>
+										<value>0x00000003</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>PUSHPULL</name>
+										<description>Push-pull output</description>
+										<value>0x00000004</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>PUSHPULLALT</name>
+										<description>Push-pull using alternate control</description>
+										<value>0x00000005</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDOR</name>
+										<description>Wired-or output</description>
+										<value>0x00000006</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDORPULLDOWN</name>
+										<description>Wired-or output with pull-down</description>
+										<value>0x00000007</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDAND</name>
+										<description>Open-drain output</description>
+										<value>0x00000008</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDANDFILTER</name>
+										<description>Open-drain output with filter</description>
+										<value>0x00000009</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDANDPULLUP</name>
+										<description>Open-drain output with pullup</description>
+										<value>0x0000000A</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDANDPULLUPFILTER</name>
+										<description>Open-drain output with filter and pullup</description>
+										<value>0x0000000B</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDANDALT</name>
+										<description>Open-drain output using alternate control</description>
+										<value>0x0000000C</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDANDALTFILTER</name>
+										<description>Open-drain output using alternate control with filter</description>
+										<value>0x0000000D</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDANDALTPULLUP</name>
+										<description>Open-drain output using alternate control with pullup</description>
+										<value>0x0000000E</value>
+									</enumeratedValue>
+									<enumeratedValue>
+										<name>WIREDANDALTPULLUPFILTER</name>
+										<description>Open-drain output using alternate control with filter and pullup</description>
+										<value>0x0000000F</value>
+									</enumeratedValue>
+								  </enumeratedValues>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE1</name>
 								<description>Pin 1 Mode</description>
 								<bitOffset>4</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE2</name>
 								<description>Pin 2 Mode</description>
 								<bitOffset>8</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE3</name>
 								<description>Pin 3 Mode</description>
 								<bitOffset>12</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE4</name>
 								<description>Pin 4 Mode</description>
 								<bitOffset>16</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE5</name>
 								<description>Pin 5 Mode</description>
 								<bitOffset>20</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE6</name>
 								<description>Pin 6 Mode</description>
 								<bitOffset>24</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE7</name>
 								<description>Pin 7 Mode</description>
 								<bitOffset>28</bitOffset>
@@ -7653,56 +7735,56 @@
 						<resetValue>0x00000000</resetValue>
 						<resetMask>0xFFFFFFFF</resetMask>
 						<fields>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE8</name>
 								<description>Pin 8 Mode</description>
 								<bitOffset>0</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE9</name>
 								<description>Pin 9 Mode</description>
 								<bitOffset>4</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE10</name>
 								<description>Pin 10 Mode</description>
 								<bitOffset>8</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE11</name>
 								<description>Pin 11 Mode</description>
 								<bitOffset>12</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE12</name>
 								<description>Pin 12 Mode</description>
 								<bitOffset>16</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE13</name>
 								<description>Pin 13 Mode</description>
 								<bitOffset>20</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE14</name>
 								<description>Pin 14 Mode</description>
 								<bitOffset>24</bitOffset>
 								<bitWidth>4</bitWidth>
 								<access>read-write</access>
 							</field>
-							<field>
+							<field derivedFrom="GPIO.PORT_A.MODEL.MODE0">
 								<name>MODE15</name>
 								<description>Pin 15 Mode</description>
 								<bitOffset>28</bitOffset>

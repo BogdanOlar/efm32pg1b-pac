@@ -3,37 +3,53 @@ pub type R = crate::R<MODEHrs>;
 #[doc = "Register `MODEH` writer"]
 pub type W = crate::W<MODEHrs>;
 #[doc = "Field `MODE8` reader - Pin 8 Mode"]
-pub type Mode8R = crate::FieldReader;
-#[doc = "Field `MODE8` writer - Pin 8 Mode"]
-pub type Mode8W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub use super::model::Mode0R as Mode8R;
 #[doc = "Field `MODE9` reader - Pin 9 Mode"]
-pub type Mode9R = crate::FieldReader;
-#[doc = "Field `MODE9` writer - Pin 9 Mode"]
-pub type Mode9W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub use super::model::Mode0R as Mode9R;
 #[doc = "Field `MODE10` reader - Pin 10 Mode"]
-pub type Mode10R = crate::FieldReader;
-#[doc = "Field `MODE10` writer - Pin 10 Mode"]
-pub type Mode10W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub use super::model::Mode0R as Mode10R;
 #[doc = "Field `MODE11` reader - Pin 11 Mode"]
-pub type Mode11R = crate::FieldReader;
-#[doc = "Field `MODE11` writer - Pin 11 Mode"]
-pub type Mode11W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub use super::model::Mode0R as Mode11R;
 #[doc = "Field `MODE12` reader - Pin 12 Mode"]
-pub type Mode12R = crate::FieldReader;
-#[doc = "Field `MODE12` writer - Pin 12 Mode"]
-pub type Mode12W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub use super::model::Mode0R as Mode12R;
 #[doc = "Field `MODE13` reader - Pin 13 Mode"]
-pub type Mode13R = crate::FieldReader;
-#[doc = "Field `MODE13` writer - Pin 13 Mode"]
-pub type Mode13W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub use super::model::Mode0R as Mode13R;
 #[doc = "Field `MODE14` reader - Pin 14 Mode"]
-pub type Mode14R = crate::FieldReader;
-#[doc = "Field `MODE14` writer - Pin 14 Mode"]
-pub type Mode14W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub use super::model::Mode0R as Mode14R;
 #[doc = "Field `MODE15` reader - Pin 15 Mode"]
-pub type Mode15R = crate::FieldReader;
+pub use super::model::Mode0R as Mode15R;
+#[doc = "Field `MODE8` writer - Pin 8 Mode"]
+pub use super::model::Mode0W as Mode8W;
+#[doc = "Field `MODE9` writer - Pin 9 Mode"]
+pub use super::model::Mode0W as Mode9W;
+#[doc = "Field `MODE10` writer - Pin 10 Mode"]
+pub use super::model::Mode0W as Mode10W;
+#[doc = "Field `MODE11` writer - Pin 11 Mode"]
+pub use super::model::Mode0W as Mode11W;
+#[doc = "Field `MODE12` writer - Pin 12 Mode"]
+pub use super::model::Mode0W as Mode12W;
+#[doc = "Field `MODE13` writer - Pin 13 Mode"]
+pub use super::model::Mode0W as Mode13W;
+#[doc = "Field `MODE14` writer - Pin 14 Mode"]
+pub use super::model::Mode0W as Mode14W;
 #[doc = "Field `MODE15` writer - Pin 15 Mode"]
-pub type Mode15W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub use super::model::Mode0W as Mode15W;
+#[doc = "Pin 8 Mode"]
+pub use super::model::MODE0 as MODE8;
+#[doc = "Pin 9 Mode"]
+pub use super::model::MODE0 as MODE9;
+#[doc = "Pin 10 Mode"]
+pub use super::model::MODE0 as MODE10;
+#[doc = "Pin 11 Mode"]
+pub use super::model::MODE0 as MODE11;
+#[doc = "Pin 12 Mode"]
+pub use super::model::MODE0 as MODE12;
+#[doc = "Pin 13 Mode"]
+pub use super::model::MODE0 as MODE13;
+#[doc = "Pin 14 Mode"]
+pub use super::model::MODE0 as MODE14;
+#[doc = "Pin 15 Mode"]
+pub use super::model::MODE0 as MODE15;
 impl R {
     #[doc = "Bits 0:3 - Pin 8 Mode"]
     #[inline(always)]
