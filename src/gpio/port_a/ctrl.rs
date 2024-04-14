@@ -1,7 +1,7 @@
-#[doc = "Register `PA_CTRL` reader"]
-pub type R = crate::R<PA_CTRLrs>;
-#[doc = "Register `PA_CTRL` writer"]
-pub type W = crate::W<PA_CTRLrs>;
+#[doc = "Register `CTRL` reader"]
+pub type R = crate::R<CTRLrs>;
+#[doc = "Register `CTRL` writer"]
+pub type W = crate::W<CTRLrs>;
 #[doc = "Field `DRIVESTRENGTH` reader - Drive Strength for Port"]
 pub type DrivestrengthR = crate::BitReader;
 #[doc = "Field `DRIVESTRENGTH` writer - Drive Strength for Port"]
@@ -62,54 +62,54 @@ impl W {
     #[doc = "Bit 0 - Drive Strength for Port"]
     #[inline(always)]
     #[must_use]
-    pub fn drivestrength(&mut self) -> DrivestrengthW<PA_CTRLrs> {
+    pub fn drivestrength(&mut self) -> DrivestrengthW<CTRLrs> {
         DrivestrengthW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Slewrate Limit for Port"]
     #[inline(always)]
     #[must_use]
-    pub fn slewrate(&mut self) -> SlewrateW<PA_CTRLrs> {
+    pub fn slewrate(&mut self) -> SlewrateW<CTRLrs> {
         SlewrateW::new(self, 4)
     }
     #[doc = "Bit 12 - Data in Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn dindis(&mut self) -> DindisW<PA_CTRLrs> {
+    pub fn dindis(&mut self) -> DindisW<CTRLrs> {
         DindisW::new(self, 12)
     }
     #[doc = "Bit 16 - Alternate Drive Strength for Port"]
     #[inline(always)]
     #[must_use]
-    pub fn drivestrengthalt(&mut self) -> DrivestrengthaltW<PA_CTRLrs> {
+    pub fn drivestrengthalt(&mut self) -> DrivestrengthaltW<CTRLrs> {
         DrivestrengthaltW::new(self, 16)
     }
     #[doc = "Bits 20:22 - Alternate Slewrate Limit for Port"]
     #[inline(always)]
     #[must_use]
-    pub fn slewratealt(&mut self) -> SlewratealtW<PA_CTRLrs> {
+    pub fn slewratealt(&mut self) -> SlewratealtW<CTRLrs> {
         SlewratealtW::new(self, 20)
     }
     #[doc = "Bit 28 - Alternate Data in Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn dindisalt(&mut self) -> DindisaltW<PA_CTRLrs> {
+    pub fn dindisalt(&mut self) -> DindisaltW<CTRLrs> {
         DindisaltW::new(self, 28)
     }
 }
-#[doc = "Port Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pa_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pa_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PA_CTRLrs;
-impl crate::RegisterSpec for PA_CTRLrs {
+#[doc = "Port Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CTRLrs;
+impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`pa_ctrl::R`](R) reader structure"]
-impl crate::Readable for PA_CTRLrs {}
-#[doc = "`write(|w| ..)` method takes [`pa_ctrl::W`](W) writer structure"]
-impl crate::Writable for PA_CTRLrs {
+#[doc = "`read()` method returns [`ctrl::R`](R) reader structure"]
+impl crate::Readable for CTRLrs {}
+#[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
+impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets PA_CTRL to value 0x0050_0050"]
-impl crate::Resettable for PA_CTRLrs {
+#[doc = "`reset()` method sets CTRL to value 0x0050_0050"]
+impl crate::Resettable for CTRLrs {
     const RESET_VALUE: u32 = 0x0050_0050;
 }
