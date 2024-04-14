@@ -483,7 +483,7 @@ impl core::fmt::Debug for Prs {
 }
 #[doc = "PRS"]
 pub mod prs;
-#[doc = "LDMA"]
+#[doc = "Linked Direct Memory Access"]
 pub struct Ldma {
     _marker: PhantomData<*const ()>,
 }
@@ -527,7 +527,7 @@ impl core::fmt::Debug for Ldma {
         f.debug_struct("Ldma").finish()
     }
 }
-#[doc = "LDMA"]
+#[doc = "Linked Direct Memory Access"]
 pub mod ldma;
 #[doc = "FPUEH"]
 pub struct Fpueh {
@@ -575,7 +575,7 @@ impl core::fmt::Debug for Fpueh {
 }
 #[doc = "FPUEH"]
 pub mod fpueh;
-#[doc = "GPCRC"]
+#[doc = "General Purpose Cyclic Redundancy Check"]
 pub struct Gpcrc {
     _marker: PhantomData<*const ()>,
 }
@@ -619,7 +619,7 @@ impl core::fmt::Debug for Gpcrc {
         f.debug_struct("Gpcrc").finish()
     }
 }
-#[doc = "GPCRC"]
+#[doc = "General Purpose Cyclic Redundancy Check"]
 pub mod gpcrc;
 #[doc = "TIMER0"]
 pub struct Timer0 {
@@ -943,7 +943,7 @@ impl core::fmt::Debug for Cryotimer {
 }
 #[doc = "CRYOTIMER"]
 pub mod cryotimer;
-#[doc = "PCNT0"]
+#[doc = "Pulse Counter"]
 pub struct Pcnt0 {
     _marker: PhantomData<*const ()>,
 }
@@ -987,7 +987,7 @@ impl core::fmt::Debug for Pcnt0 {
         f.debug_struct("Pcnt0").finish()
     }
 }
-#[doc = "PCNT0"]
+#[doc = "Pulse Counter"]
 pub mod pcnt0;
 #[doc = "I2C0"]
 pub struct I2c0 {

@@ -7534,42 +7534,42 @@
 						<resetMask>0x10711071</resetMask>
 						<fields>
 							<field>
-								<name>DRIVESTRENGTH</name>
+								<name>DRIVE_STRENGTH</name>
 								<description>Drive Strength for Port</description>
 								<bitOffset>0</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>SLEWRATE</name>
+								<name>SLEW_RATE</name>
 								<description>Slewrate Limit for Port</description>
 								<bitOffset>4</bitOffset>
 								<bitWidth>3</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>DINDIS</name>
+								<name>DIN_DIS</name>
 								<description>Data in Disable</description>
 								<bitOffset>12</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>DRIVESTRENGTHALT</name>
+								<name>DRIVE_STRENGTH_ALT</name>
 								<description>Alternate Drive Strength for Port</description>
 								<bitOffset>16</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>SLEWRATEALT</name>
+								<name>SLEW_RATE_ALT</name>
 								<description>Alternate Slewrate Limit for Port</description>
 								<bitOffset>20</bitOffset>
 								<bitWidth>3</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>DINDISALT</name>
+								<name>DIN_DIS_ALT</name>
 								<description>Alternate Data in Disable</description>
 								<bitOffset>28</bitOffset>
 								<bitWidth>1</bitWidth>
@@ -8295,112 +8295,112 @@
 						<resetMask>0x0000FFFF</resetMask>
 						<fields>
 							<field>
-								<name>OVTDIS0</name>
+								<name>OVT_DIS0</name>
 								<description>Pin 0 Disable Over Voltage Capability</description>
 								<bitOffset>0</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS1</name>
+								<name>OVT_DIS1</name>
 								<description>Pin 1 Disable Over Voltage Capability</description>
 								<bitOffset>1</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS2</name>
+								<name>OVT_DIS2</name>
 								<description>Pin 2 Disable Over Voltage Capability</description>
 								<bitOffset>2</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS3</name>
+								<name>OVT_DIS3</name>
 								<description>Pin 3 Disable Over Voltage Capability</description>
 								<bitOffset>3</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS4</name>
+								<name>OVT_DIS4</name>
 								<description>Pin 4 Disable Over Voltage Capability</description>
 								<bitOffset>4</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS5</name>
+								<name>OVT_DIS5</name>
 								<description>Pin 5 Disable Over Voltage Capability</description>
 								<bitOffset>5</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS6</name>
+								<name>OVT_DIS6</name>
 								<description>Pin 6 Disable Over Voltage Capability</description>
 								<bitOffset>6</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS7</name>
+								<name>OVT_DIS7</name>
 								<description>Pin 7 Disable Over Voltage Capability</description>
 								<bitOffset>7</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS8</name>
+								<name>OVT_DIS8</name>
 								<description>Pin 8 Disable Over Voltage Capability</description>
 								<bitOffset>8</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS9</name>
+								<name>OVT_DIS9</name>
 								<description>Pin 9 Disable Over Voltage Capability</description>
 								<bitOffset>9</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS10</name>
+								<name>OVT_DIS10</name>
 								<description>Pin 10 Disable Over Voltage Capability</description>
 								<bitOffset>10</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS11</name>
+								<name>OVT_DIS11</name>
 								<description>Pin 11 Disable Over Voltage Capability</description>
 								<bitOffset>11</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS12</name>
+								<name>OVT_DIS12</name>
 								<description>Pin 12 Disable Over Voltage Capability</description>
 								<bitOffset>12</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS13</name>
+								<name>OVT_DIS13</name>
 								<description>Pin 13 Disable Over Voltage Capability</description>
 								<bitOffset>13</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS14</name>
+								<name>OVT_DIS14</name>
 								<description>Pin 14 Disable Over Voltage Capability</description>
 								<bitOffset>14</bitOffset>
 								<bitWidth>1</bitWidth>
 								<access>read-write</access>
 							</field>
 							<field>
-								<name>OVTDIS15</name>
+								<name>OVT_DIS15</name>
 								<description>Pin 15 Disable Over Voltage Capability</description>
 								<bitOffset>15</bitOffset>
 								<bitWidth>1</bitWidth>
@@ -13688,7 +13688,7 @@
 		<peripheral>
 			<name>LDMA</name>
 			<version>5.8.2</version>
-			<description>LDMA</description>
+			<description>Linked Direct Memory Access</description>
 			<baseAddress>0x400E2000</baseAddress>
 			<addressBlock>
 				<offset>0</offset>
@@ -18243,7 +18243,7 @@
 		<peripheral>
 			<name>GPCRC</name>
 			<version>5.8.2</version>
-			<description>GPCRC</description>
+			<description>General Purpose Cyclic Redundancy Check</description>
 			<baseAddress>0x4001C000</baseAddress>
 			<addressBlock>
 				<offset>0</offset>
@@ -36900,7 +36900,7 @@
 		<peripheral>
 			<name>PCNT0</name>
 			<version>5.8.2</version>
-			<description>PCNT0</description>
+			<description>Pulse Counter</description>
 			<baseAddress>0x4004E000</baseAddress>
 			<addressBlock>
 				<offset>0</offset>
