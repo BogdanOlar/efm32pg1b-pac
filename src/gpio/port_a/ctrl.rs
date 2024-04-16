@@ -2,37 +2,37 @@
 pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRLrs>;
-#[doc = "Field `DRIVE_STRENGTH` reader - Drive Strength for Port"]
+#[doc = "Field `DRIVE_STRENGTH` reader - Drive strength setting for port pins not using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
 pub type DriveStrengthR = crate::BitReader;
-#[doc = "Field `DRIVE_STRENGTH` writer - Drive Strength for Port"]
+#[doc = "Field `DRIVE_STRENGTH` writer - Drive strength setting for port pins not using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
 pub type DriveStrengthW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SLEW_RATE` reader - Slewrate Limit for Port"]
+#[doc = "Field `SLEW_RATE` reader - Slewrate limit for port pins not using alternate modes. Higher values represent faster slewrates"]
 pub type SlewRateR = crate::FieldReader;
-#[doc = "Field `SLEW_RATE` writer - Slewrate Limit for Port"]
+#[doc = "Field `SLEW_RATE` writer - Slewrate limit for port pins not using alternate modes. Higher values represent faster slewrates"]
 pub type SlewRateW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DIN_DIS` reader - Data in Disable"]
 pub type DinDisR = crate::BitReader;
 #[doc = "Field `DIN_DIS` writer - Data in Disable"]
 pub type DinDisW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DRIVE_STRENGTH_ALT` reader - Alternate Drive Strength for Port"]
+#[doc = "Field `DRIVE_STRENGTH_ALT` reader - Drive strength setting for port pins using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
 pub type DriveStrengthAltR = crate::BitReader;
-#[doc = "Field `DRIVE_STRENGTH_ALT` writer - Alternate Drive Strength for Port"]
+#[doc = "Field `DRIVE_STRENGTH_ALT` writer - Drive strength setting for port pins using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
 pub type DriveStrengthAltW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SLEW_RATE_ALT` reader - Alternate Slewrate Limit for Port"]
+#[doc = "Field `SLEW_RATE_ALT` reader - Slewrate limit for port pins using alternate modes. Higher values represent faster slewrates"]
 pub type SlewRateAltR = crate::FieldReader;
-#[doc = "Field `SLEW_RATE_ALT` writer - Alternate Slewrate Limit for Port"]
+#[doc = "Field `SLEW_RATE_ALT` writer - Slewrate limit for port pins using alternate modes. Higher values represent faster slewrates"]
 pub type SlewRateAltW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DIN_DIS_ALT` reader - Alternate Data in Disable"]
 pub type DinDisAltR = crate::BitReader;
 #[doc = "Field `DIN_DIS_ALT` writer - Alternate Data in Disable"]
 pub type DinDisAltW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - Drive Strength for Port"]
+    #[doc = "Bit 0 - Drive strength setting for port pins not using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
     #[inline(always)]
     pub fn drive_strength(&self) -> DriveStrengthR {
         DriveStrengthR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 4:6 - Slewrate Limit for Port"]
+    #[doc = "Bits 4:6 - Slewrate limit for port pins not using alternate modes. Higher values represent faster slewrates"]
     #[inline(always)]
     pub fn slew_rate(&self) -> SlewRateR {
         SlewRateR::new(((self.bits >> 4) & 7) as u8)
@@ -42,12 +42,12 @@ impl R {
     pub fn din_dis(&self) -> DinDisR {
         DinDisR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 16 - Alternate Drive Strength for Port"]
+    #[doc = "Bit 16 - Drive strength setting for port pins using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
     #[inline(always)]
     pub fn drive_strength_alt(&self) -> DriveStrengthAltR {
         DriveStrengthAltR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bits 20:22 - Alternate Slewrate Limit for Port"]
+    #[doc = "Bits 20:22 - Slewrate limit for port pins using alternate modes. Higher values represent faster slewrates"]
     #[inline(always)]
     pub fn slew_rate_alt(&self) -> SlewRateAltR {
         SlewRateAltR::new(((self.bits >> 20) & 7) as u8)
@@ -59,13 +59,13 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Drive Strength for Port"]
+    #[doc = "Bit 0 - Drive strength setting for port pins not using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
     #[inline(always)]
     #[must_use]
     pub fn drive_strength(&mut self) -> DriveStrengthW<CTRLrs> {
         DriveStrengthW::new(self, 0)
     }
-    #[doc = "Bits 4:6 - Slewrate Limit for Port"]
+    #[doc = "Bits 4:6 - Slewrate limit for port pins not using alternate modes. Higher values represent faster slewrates"]
     #[inline(always)]
     #[must_use]
     pub fn slew_rate(&mut self) -> SlewRateW<CTRLrs> {
@@ -77,13 +77,13 @@ impl W {
     pub fn din_dis(&mut self) -> DinDisW<CTRLrs> {
         DinDisW::new(self, 12)
     }
-    #[doc = "Bit 16 - Alternate Drive Strength for Port"]
+    #[doc = "Bit 16 - Drive strength setting for port pins using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
     #[inline(always)]
     #[must_use]
     pub fn drive_strength_alt(&mut self) -> DriveStrengthAltW<CTRLrs> {
         DriveStrengthAltW::new(self, 16)
     }
-    #[doc = "Bits 20:22 - Alternate Slewrate Limit for Port"]
+    #[doc = "Bits 20:22 - Slewrate limit for port pins using alternate modes. Higher values represent faster slewrates"]
     #[inline(always)]
     #[must_use]
     pub fn slew_rate_alt(&mut self) -> SlewRateAltW<CTRLrs> {

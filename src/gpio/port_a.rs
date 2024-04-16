@@ -7,7 +7,7 @@ pub struct PortA {
     modeh: Modeh,
     dout: Dout,
     _reserved4: [u8; 0x08],
-    douttgl: Douttgl,
+    dout_tgl: DoutTgl,
     din: Din,
     pinlockn: Pinlockn,
     _reserved7: [u8; 0x04],
@@ -34,17 +34,17 @@ impl PortA {
     pub const fn dout(&self) -> &Dout {
         &self.dout
     }
-    #[doc = "0x18 - Port Data Out Toggle Register"]
+    #[doc = "0x18 - Port Data Out Toggle Register. Write bits to 1 to toggle corresponding bits in GPIO_Px_DOUT. Bits written to 0 will have no effect."]
     #[inline(always)]
-    pub const fn douttgl(&self) -> &Douttgl {
-        &self.douttgl
+    pub const fn dout_tgl(&self) -> &DoutTgl {
+        &self.dout_tgl
     }
     #[doc = "0x1c - Port Data in Register"]
     #[inline(always)]
     pub const fn din(&self) -> &Din {
         &self.din
     }
-    #[doc = "0x20 - Port Unlocked Pins Register"]
+    #[doc = "0x20 - Port Unlocked Pins Register. Shows unlocked pins in the port. To lock pin n, clear bit n. The pin is then locked until reset."]
     #[inline(always)]
     pub const fn pinlockn(&self) -> &Pinlockn {
         &self.pinlockn
@@ -79,23 +79,23 @@ module"]
 pub type Dout = crate::Reg<dout::DOUTrs>;
 #[doc = "Port Data Out Register"]
 pub mod dout;
-#[doc = "DOUTTGL (w) register accessor: Port Data Out Toggle Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`douttgl::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@douttgl`]
+#[doc = "DOUT_TGL (w) register accessor: Port Data Out Toggle Register. Write bits to 1 to toggle corresponding bits in GPIO_Px_DOUT. Bits written to 0 will have no effect.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dout_tgl::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dout_tgl`]
 module"]
-#[doc(alias = "DOUTTGL")]
-pub type Douttgl = crate::Reg<douttgl::DOUTTGLrs>;
-#[doc = "Port Data Out Toggle Register"]
-pub mod douttgl;
+#[doc(alias = "DOUT_TGL")]
+pub type DoutTgl = crate::Reg<dout_tgl::DOUT_TGLrs>;
+#[doc = "Port Data Out Toggle Register. Write bits to 1 to toggle corresponding bits in GPIO_Px_DOUT. Bits written to 0 will have no effect."]
+pub mod dout_tgl;
 #[doc = "DIN (r) register accessor: Port Data in Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`din::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@din`]
 module"]
 #[doc(alias = "DIN")]
 pub type Din = crate::Reg<din::DINrs>;
 #[doc = "Port Data in Register"]
 pub mod din;
-#[doc = "PINLOCKN (rw) register accessor: Port Unlocked Pins Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pinlockn::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pinlockn::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pinlockn`]
+#[doc = "PINLOCKN (rw) register accessor: Port Unlocked Pins Register. Shows unlocked pins in the port. To lock pin n, clear bit n. The pin is then locked until reset.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pinlockn::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pinlockn::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pinlockn`]
 module"]
 #[doc(alias = "PINLOCKN")]
 pub type Pinlockn = crate::Reg<pinlockn::PINLOCKNrs>;
-#[doc = "Port Unlocked Pins Register"]
+#[doc = "Port Unlocked Pins Register. Shows unlocked pins in the port. To lock pin n, clear bit n. The pin is then locked until reset."]
 pub mod pinlockn;
 #[doc = "OVT_DIS (rw) register accessor: Over Voltage Disable for All Modes\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ovt_dis::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ovt_dis::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ovt_dis`]
 module"]
