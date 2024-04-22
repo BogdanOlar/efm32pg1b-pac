@@ -766,10 +766,10 @@ pub struct Usart1 {
 unsafe impl Send for Usart1 {}
 impl Usart1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const usart1::RegisterBlock = 0x4001_0400 as *const _;
+    pub const PTR: *const usart0::RegisterBlock = 0x4001_0400 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const usart1::RegisterBlock {
+    pub const fn ptr() -> *const usart0::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -792,7 +792,7 @@ impl Usart1 {
     }
 }
 impl Deref for Usart1 {
-    type Target = usart1::RegisterBlock;
+    type Target = usart0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -804,7 +804,7 @@ impl core::fmt::Debug for Usart1 {
     }
 }
 #[doc = "USART1"]
-pub mod usart1;
+pub use self::usart0 as usart1;
 #[doc = "LEUART0"]
 pub struct Leuart0 {
     _marker: PhantomData<*const ()>,
