@@ -24,6 +24,11 @@ pub type Ch9pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Ch10pulseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH11PULSE` writer - Channel 11 Pulse Generation"]
 pub type Ch11pulseW<'a, REG> = crate::BitWriter<'a, REG>;
+impl core::fmt::Debug for crate::generic::Reg<SWPULSErs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 0 - Channel 0 Pulse Generation"]
     #[inline(always)]
@@ -98,7 +103,7 @@ impl W {
         Ch11pulseW::new(self, 11)
     }
 }
-#[doc = "Software Pulse Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swpulse::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Software Pulse Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`swpulse::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SWPULSErs;
 impl crate::RegisterSpec for SWPULSErs {
     type Ux = u32;

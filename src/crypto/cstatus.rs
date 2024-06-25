@@ -1,6 +1,7 @@
 #[doc = "Register `CSTATUS` reader"]
 pub type R = crate::R<CSTATUSrs>;
 #[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum V0 {
@@ -91,6 +92,7 @@ impl V0R {
     }
 }
 #[doc = "Selected ALU Operand 1\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum V1 {
@@ -213,7 +215,18 @@ impl R {
         SeqipR::new(((self.bits >> 20) & 0x1f) as u8)
     }
 }
-#[doc = "Control Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CSTATUS")
+            .field("v0", &self.v0())
+            .field("v1", &self.v1())
+            .field("seqpart", &self.seqpart())
+            .field("seqskip", &self.seqskip())
+            .field("seqip", &self.seqip())
+            .finish()
+    }
+}
+#[doc = "Control Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSTATUSrs;
 impl crate::RegisterSpec for CSTATUSrs {
     type Ux = u32;

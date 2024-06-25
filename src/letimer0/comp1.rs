@@ -13,6 +13,13 @@ impl R {
         Comp1R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("COMP1")
+            .field("comp1", &self.comp1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Compare Value 1"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         Comp1W::new(self, 0)
     }
 }
-#[doc = "Compare Value Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`comp1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`comp1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Compare Value Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`comp1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`comp1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct COMP1rs;
 impl crate::RegisterSpec for COMP1rs {
     type Ux = u32;

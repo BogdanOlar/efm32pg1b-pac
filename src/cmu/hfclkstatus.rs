@@ -1,6 +1,7 @@
 #[doc = "Register `HFCLKSTATUS` reader"]
 pub type R = crate::R<HFCLKSTATUSrs>;
 #[doc = "HFCLK Selected\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELECTED {
@@ -65,7 +66,14 @@ impl R {
         SelectedR::new((self.bits & 7) as u8)
     }
 }
-#[doc = "HFCLK Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfclkstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFCLKSTATUS")
+            .field("selected", &self.selected())
+            .finish()
+    }
+}
+#[doc = "HFCLK Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`hfclkstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFCLKSTATUSrs;
 impl crate::RegisterSpec for HFCLKSTATUSrs {
     type Ux = u32;

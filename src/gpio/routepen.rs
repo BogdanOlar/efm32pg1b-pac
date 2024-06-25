@@ -49,6 +49,17 @@ impl R {
         SwvpenR::new(((self.bits >> 4) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ROUTEPEN")
+            .field("swclktckpen", &self.swclktckpen())
+            .field("swdiotmspen", &self.swdiotmspen())
+            .field("tdopen", &self.tdopen())
+            .field("tdipen", &self.tdipen())
+            .field("swvpen", &self.swvpen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Serial Wire Clock and JTAG Test Clock Pin Enable"]
     #[inline(always)]
@@ -81,7 +92,7 @@ impl W {
         SwvpenW::new(self, 4)
     }
 }
-#[doc = "I/O Routing Pin Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routepen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routepen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "I/O Routing Pin Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`routepen::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routepen::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ROUTEPENrs;
 impl crate::RegisterSpec for ROUTEPENrs {
     type Ux = u32;

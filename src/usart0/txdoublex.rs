@@ -112,6 +112,24 @@ impl R {
         Rxenat1R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TXDOUBLEX")
+            .field("txdata0", &self.txdata0())
+            .field("ubrxat0", &self.ubrxat0())
+            .field("txtriat0", &self.txtriat0())
+            .field("txbreak0", &self.txbreak0())
+            .field("txdisat0", &self.txdisat0())
+            .field("rxenat0", &self.rxenat0())
+            .field("txdata1", &self.txdata1())
+            .field("ubrxat1", &self.ubrxat1())
+            .field("txtriat1", &self.txtriat1())
+            .field("txbreak1", &self.txbreak1())
+            .field("txdisat1", &self.txdisat1())
+            .field("rxenat1", &self.rxenat1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - TX Data"]
     #[inline(always)]
@@ -186,7 +204,7 @@ impl W {
         Rxenat1W::new(self, 31)
     }
 }
-#[doc = "TX Buffer Double Data Extended Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdoublex::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdoublex::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "TX Buffer Double Data Extended Register\n\nYou can [`read`](crate::Reg::read) this register and get [`txdoublex::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`txdoublex::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TXDOUBLEXrs;
 impl crate::RegisterSpec for TXDOUBLEXrs {
     type Ux = u32;

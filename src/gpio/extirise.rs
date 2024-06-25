@@ -148,6 +148,28 @@ impl R {
         Extirise15R::new(((self.bits >> 15) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EXTIRISE")
+            .field("extirise0", &self.extirise0())
+            .field("extirise1", &self.extirise1())
+            .field("extirise2", &self.extirise2())
+            .field("extirise3", &self.extirise3())
+            .field("extirise4", &self.extirise4())
+            .field("extirise5", &self.extirise5())
+            .field("extirise6", &self.extirise6())
+            .field("extirise7", &self.extirise7())
+            .field("extirise8", &self.extirise8())
+            .field("extirise9", &self.extirise9())
+            .field("extirise10", &self.extirise10())
+            .field("extirise11", &self.extirise11())
+            .field("extirise12", &self.extirise12())
+            .field("extirise13", &self.extirise13())
+            .field("extirise14", &self.extirise14())
+            .field("extirise15", &self.extirise15())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Pin 0 Rising Edge Enable"]
     #[inline(always)]
@@ -246,7 +268,7 @@ impl W {
         Extirise15W::new(self, 15)
     }
 }
-#[doc = "External Interrupt Rising Edge Trigger Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`extirise::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`extirise::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "External Interrupt Rising Edge Trigger Register\n\nYou can [`read`](crate::Reg::read) this register and get [`extirise::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extirise::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EXTIRISErs;
 impl crate::RegisterSpec for EXTIRISErs {
     type Ux = u32;

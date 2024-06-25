@@ -3,6 +3,7 @@ pub type R = crate::R<TESTLOCKrs>;
 #[doc = "Register `TESTLOCK` writer"]
 pub type W = crate::W<TESTLOCKrs>;
 #[doc = "Configuration Lock Key\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum LOCKKEY {
@@ -69,6 +70,13 @@ impl R {
         LockkeyR::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TESTLOCK")
+            .field("lockkey", &self.lockkey())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Configuration Lock Key"]
     #[inline(always)]
@@ -77,7 +85,7 @@ impl W {
         LockkeyW::new(self, 0)
     }
 }
-#[doc = "Test Lock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`testlock::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`testlock::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Test Lock Register\n\nYou can [`read`](crate::Reg::read) this register and get [`testlock::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`testlock::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TESTLOCKrs;
 impl crate::RegisterSpec for TESTLOCKrs {
     type Ux = u32;

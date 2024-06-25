@@ -3,6 +3,7 @@ pub type R = crate::R<HYSTERESIS1rs>;
 #[doc = "Register `HYSTERESIS1` writer"]
 pub type W = crate::W<HYSTERESIS1rs>;
 #[doc = "Hysteresis Select When ACMPOUT=1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HYST {
@@ -269,6 +270,15 @@ impl R {
         DivvbR::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HYSTERESIS1")
+            .field("hyst", &self.hyst())
+            .field("divva", &self.divva())
+            .field("divvb", &self.divvb())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=1"]
     #[inline(always)]
@@ -289,7 +299,7 @@ impl W {
         DivvbW::new(self, 24)
     }
 }
-#[doc = "Hysteresis 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hysteresis1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hysteresis1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Hysteresis 1 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`hysteresis1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hysteresis1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HYSTERESIS1rs;
 impl crate::RegisterSpec for HYSTERESIS1rs {
     type Ux = u32;

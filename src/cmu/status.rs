@@ -121,7 +121,30 @@ impl R {
         HfxoregilowR::new(((self.bits >> 26) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("hfrcoens", &self.hfrcoens())
+            .field("hfrcordy", &self.hfrcordy())
+            .field("hfxoens", &self.hfxoens())
+            .field("hfxordy", &self.hfxordy())
+            .field("auxhfrcoens", &self.auxhfrcoens())
+            .field("auxhfrcordy", &self.auxhfrcordy())
+            .field("lfrcoens", &self.lfrcoens())
+            .field("lfrcordy", &self.lfrcordy())
+            .field("lfxoens", &self.lfxoens())
+            .field("lfxordy", &self.lfxordy())
+            .field("calrdy", &self.calrdy())
+            .field("hfxoreq", &self.hfxoreq())
+            .field("hfxopeakdetrdy", &self.hfxopeakdetrdy())
+            .field("hfxoshuntoptrdy", &self.hfxoshuntoptrdy())
+            .field("hfxoamphigh", &self.hfxoamphigh())
+            .field("hfxoamplow", &self.hfxoamplow())
+            .field("hfxoregilow", &self.hfxoregilow())
+            .finish()
+    }
+}
+#[doc = "Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSrs;
 impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;

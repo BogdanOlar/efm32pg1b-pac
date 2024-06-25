@@ -3,6 +3,7 @@ pub type R = crate::R<ADCCTRLrs>;
 #[doc = "Register `ADCCTRL` writer"]
 pub type W = crate::W<ADCCTRLrs>;
 #[doc = "ADC0 Clock Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADC0CLKSEL {
@@ -104,6 +105,14 @@ impl R {
         Adc0clkinvR::new(((self.bits >> 8) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADCCTRL")
+            .field("adc0clksel", &self.adc0clksel())
+            .field("adc0clkinv", &self.adc0clkinv())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 4:5 - ADC0 Clock Select"]
     #[inline(always)]
@@ -118,7 +127,7 @@ impl W {
         Adc0clkinvW::new(self, 8)
     }
 }
-#[doc = "ADC Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`adcctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`adcctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ADC Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`adcctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adcctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ADCCTRLrs;
 impl crate::RegisterSpec for ADCCTRLrs {
     type Ux = u32;

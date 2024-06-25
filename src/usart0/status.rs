@@ -114,7 +114,29 @@ impl R {
         TxbufcntR::new(((self.bits >> 16) & 3) as u8)
     }
 }
-#[doc = "USART Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("rxens", &self.rxens())
+            .field("txens", &self.txens())
+            .field("master", &self.master())
+            .field("rxblock", &self.rxblock())
+            .field("txtri", &self.txtri())
+            .field("txc", &self.txc())
+            .field("txbl", &self.txbl())
+            .field("rxdatav", &self.rxdatav())
+            .field("rxfull", &self.rxfull())
+            .field("txbdright", &self.txbdright())
+            .field("txbsright", &self.txbsright())
+            .field("rxdatavright", &self.rxdatavright())
+            .field("rxfullright", &self.rxfullright())
+            .field("txidle", &self.txidle())
+            .field("timerrestarted", &self.timerrestarted())
+            .field("txbufcnt", &self.txbufcnt())
+            .finish()
+    }
+}
+#[doc = "USART Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSrs;
 impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;

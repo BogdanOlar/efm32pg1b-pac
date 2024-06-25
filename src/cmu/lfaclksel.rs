@@ -3,6 +3,7 @@ pub type R = crate::R<LFACLKSELrs>;
 #[doc = "Register `LFACLKSEL` writer"]
 pub type W = crate::W<LFACLKSELrs>;
 #[doc = "Clock Select for LFA\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LFA {
@@ -95,6 +96,13 @@ impl R {
         LfaR::new((self.bits & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LFACLKSEL")
+            .field("lfa", &self.lfa())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - Clock Select for LFA"]
     #[inline(always)]
@@ -103,7 +111,7 @@ impl W {
         LfaW::new(self, 0)
     }
 }
-#[doc = "Low Frequency A Clock Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfaclksel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfaclksel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Low Frequency A Clock Select Register\n\nYou can [`read`](crate::Reg::read) this register and get [`lfaclksel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfaclksel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LFACLKSELrs;
 impl crate::RegisterSpec for LFACLKSELrs {
     type Ux = u32;

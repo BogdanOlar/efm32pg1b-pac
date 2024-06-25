@@ -13,6 +13,13 @@ impl R {
         Em4wuR::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EM4WUEN")
+            .field("em4wu", &self.em4wu())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - EM4 Wake-up Enable"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         Em4wuW::new(self, 0)
     }
 }
-#[doc = "Wake Up Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`em4wuen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`em4wuen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Wake Up Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`em4wuen::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`em4wuen::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EM4WUENrs;
 impl crate::RegisterSpec for EM4WUENrs {
     type Ux = u32;

@@ -1,6 +1,7 @@
 #[doc = "Register `HFCLKSEL` writer"]
 pub type W = crate::W<HFCLKSELrs>;
 #[doc = "HFCLK Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HF {
@@ -51,6 +52,11 @@ where
         self.variant(HF::Lfxo)
     }
 }
+impl core::fmt::Debug for crate::generic::Reg<HFCLKSELrs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - HFCLK Select"]
     #[inline(always)]
@@ -59,7 +65,7 @@ impl W {
         HfW::new(self, 0)
     }
 }
-#[doc = "High Frequency Clock Select Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfclksel::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "High Frequency Clock Select Command Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfclksel::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFCLKSELrs;
 impl crate::RegisterSpec for HFCLKSELrs {
     type Ux = u32;

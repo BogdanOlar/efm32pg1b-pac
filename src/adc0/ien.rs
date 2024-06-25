@@ -94,6 +94,22 @@ impl R {
         ProgerrR::new(((self.bits >> 25) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("single", &self.single())
+            .field("scan", &self.scan())
+            .field("singleof", &self.singleof())
+            .field("scanof", &self.scanof())
+            .field("singleuf", &self.singleuf())
+            .field("scanuf", &self.scanuf())
+            .field("singlecmp", &self.singlecmp())
+            .field("scancmp", &self.scancmp())
+            .field("vrefov", &self.vrefov())
+            .field("progerr", &self.progerr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - SINGLE Interrupt Enable"]
     #[inline(always)]
@@ -156,7 +172,7 @@ impl W {
         ProgerrW::new(self, 25)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IENrs;
 impl crate::RegisterSpec for IENrs {
     type Ux = u32;

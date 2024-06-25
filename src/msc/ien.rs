@@ -58,6 +58,18 @@ impl R {
         IcacherrR::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("erase", &self.erase())
+            .field("write", &self.write())
+            .field("chof", &self.chof())
+            .field("cmof", &self.cmof())
+            .field("pwrupf", &self.pwrupf())
+            .field("icacherr", &self.icacherr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - ERASE Interrupt Enable"]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         IcacherrW::new(self, 5)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IENrs;
 impl crate::RegisterSpec for IENrs {
     type Ux = u32;

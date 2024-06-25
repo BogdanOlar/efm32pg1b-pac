@@ -13,6 +13,13 @@ impl R {
         AnaswR::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWRCTRL")
+            .field("anasw", &self.anasw())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 5 - Analog Switch Selection"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         AnaswW::new(self, 5)
     }
 }
-#[doc = "Power Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Power Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pwrctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pwrctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PWRCTRLrs;
 impl crate::RegisterSpec for PWRCTRLrs {
     type Ux = u32;

@@ -40,6 +40,16 @@ impl R {
         RtsinvR::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRLX")
+            .field("dbghalt", &self.dbghalt())
+            .field("ctsinv", &self.ctsinv())
+            .field("ctsen", &self.ctsen())
+            .field("rtsinv", &self.rtsinv())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Debug Halt"]
     #[inline(always)]
@@ -66,7 +76,7 @@ impl W {
         RtsinvW::new(self, 3)
     }
 }
-#[doc = "Control Register Extended\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrlx::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrlx::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register Extended\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrlx::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrlx::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLXrs;
 impl crate::RegisterSpec for CTRLXrs {
     type Ux = u32;

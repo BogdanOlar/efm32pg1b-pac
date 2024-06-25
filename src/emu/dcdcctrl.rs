@@ -3,6 +3,7 @@ pub type R = crate::R<DCDCCTRLrs>;
 #[doc = "Register `DCDCCTRL` writer"]
 pub type W = crate::W<DCDCCTRLrs>;
 #[doc = "Regulator Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DCDCMODE {
@@ -113,6 +114,15 @@ impl R {
         Dcdcmodeem4R::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCCTRL")
+            .field("dcdcmode", &self.dcdcmode())
+            .field("dcdcmodeem23", &self.dcdcmodeem23())
+            .field("dcdcmodeem4", &self.dcdcmodeem4())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Regulator Mode"]
     #[inline(always)]
@@ -133,7 +143,7 @@ impl W {
         Dcdcmodeem4W::new(self, 5)
     }
 }
-#[doc = "DCDC Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdcctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdcctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DCDC Control\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdcctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdcctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCCTRLrs;
 impl crate::RegisterSpec for DCDCCTRLrs {
     type Ux = u32;

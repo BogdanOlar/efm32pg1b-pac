@@ -22,6 +22,14 @@ impl R {
         ZdetblankdlyR::new(((self.bits >> 8) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCZDETCTRL")
+            .field("zdetilimsel", &self.zdetilimsel())
+            .field("zdetblankdly", &self.zdetblankdly())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 4:6 - Reverse Current Limit Level Selection for Zero Detector"]
     #[inline(always)]
@@ -36,7 +44,7 @@ impl W {
         ZdetblankdlyW::new(self, 8)
     }
 }
-#[doc = "DCDC Power Train NFET Zero Current Detector Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdczdetctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdczdetctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DCDC Power Train NFET Zero Current Detector Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdczdetctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdczdetctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCZDETCTRLrs;
 impl crate::RegisterSpec for DCDCZDETCTRLrs {
     type Ux = u32;

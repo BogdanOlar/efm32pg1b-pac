@@ -9,7 +9,14 @@ impl R {
         PinsDinR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Port Data in Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`din::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIN")
+            .field("pins_din", &self.pins_din())
+            .finish()
+    }
+}
+#[doc = "Port Data in Register\n\nYou can [`read`](crate::Reg::read) this register and get [`din::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DINrs;
 impl crate::RegisterSpec for DINrs {
     type Ux = u32;

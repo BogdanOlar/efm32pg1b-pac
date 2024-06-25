@@ -76,6 +76,20 @@ impl R {
         Aport4ymasterdisR::new(((self.bits >> 9) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APORTMASTERDIS")
+            .field("aport1xmasterdis", &self.aport1xmasterdis())
+            .field("aport1ymasterdis", &self.aport1ymasterdis())
+            .field("aport2xmasterdis", &self.aport2xmasterdis())
+            .field("aport2ymasterdis", &self.aport2ymasterdis())
+            .field("aport3xmasterdis", &self.aport3xmasterdis())
+            .field("aport3ymasterdis", &self.aport3ymasterdis())
+            .field("aport4xmasterdis", &self.aport4xmasterdis())
+            .field("aport4ymasterdis", &self.aport4ymasterdis())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 2 - APORT1X Master Disable"]
     #[inline(always)]
@@ -126,7 +140,7 @@ impl W {
         Aport4ymasterdisW::new(self, 9)
     }
 }
-#[doc = "APORT Bus Master Disable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportmasterdis::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aportmasterdis::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "APORT Bus Master Disable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`aportmasterdis::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aportmasterdis::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct APORTMASTERDISrs;
 impl crate::RegisterSpec for APORTMASTERDISrs {
     type Ux = u32;

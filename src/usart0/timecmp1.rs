@@ -7,6 +7,7 @@ pub type TcmpvalR = crate::FieldReader;
 #[doc = "Field `TCMPVAL` writer - Timer Comparator 1"]
 pub type TcmpvalW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Timer Start Source\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TSTART {
@@ -106,6 +107,7 @@ where
     }
 }
 #[doc = "Source Used to Disable Comparator 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TSTOP {
@@ -217,6 +219,16 @@ impl R {
         RestartenR::new(((self.bits >> 24) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMECMP1")
+            .field("tcmpval", &self.tcmpval())
+            .field("tstart", &self.tstart())
+            .field("tstop", &self.tstop())
+            .field("restarten", &self.restarten())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Timer Comparator 1"]
     #[inline(always)]
@@ -243,7 +255,7 @@ impl W {
         RestartenW::new(self, 24)
     }
 }
-#[doc = "Used to Generate Interrupts and Various Delays\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timecmp1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timecmp1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Used to Generate Interrupts and Various Delays\n\nYou can [`read`](crate::Reg::read) this register and get [`timecmp1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`timecmp1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIMECMP1rs;
 impl crate::RegisterSpec for TIMECMP1rs {
     type Ux = u32;

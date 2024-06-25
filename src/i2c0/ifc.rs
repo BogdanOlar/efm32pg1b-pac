@@ -34,6 +34,11 @@ pub type SstopW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RxfullW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLERR` writer - Clear CLERR Interrupt Flag"]
 pub type ClerrW<'a, REG> = crate::BitWriter<'a, REG>;
+impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 0 - Clear START Interrupt Flag"]
     #[inline(always)]
@@ -138,7 +143,7 @@ impl W {
         ClerrW::new(self, 18)
     }
 }
-#[doc = "Interrupt Flag Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Flag Clear Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IFCrs;
 impl crate::RegisterSpec for IFCrs {
     type Ux = u32;

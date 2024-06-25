@@ -72,7 +72,23 @@ impl R {
         Aport4yconflictR::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "APORT Conflict Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportconflict::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APORTCONFLICT")
+            .field("aport0xconflict", &self.aport0xconflict())
+            .field("aport0yconflict", &self.aport0yconflict())
+            .field("aport1xconflict", &self.aport1xconflict())
+            .field("aport1yconflict", &self.aport1yconflict())
+            .field("aport2xconflict", &self.aport2xconflict())
+            .field("aport2yconflict", &self.aport2yconflict())
+            .field("aport3xconflict", &self.aport3xconflict())
+            .field("aport3yconflict", &self.aport3yconflict())
+            .field("aport4xconflict", &self.aport4xconflict())
+            .field("aport4yconflict", &self.aport4yconflict())
+            .finish()
+    }
+}
+#[doc = "APORT Conflict Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`aportconflict::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct APORTCONFLICTrs;
 impl crate::RegisterSpec for APORTCONFLICTrs {
     type Ux = u32;

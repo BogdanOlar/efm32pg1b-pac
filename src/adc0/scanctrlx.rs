@@ -3,6 +3,7 @@ pub type R = crate::R<SCANCTRLXrs>;
 #[doc = "Register `SCANCTRLX` writer"]
 pub type W = crate::W<SCANCTRLXrs>;
 #[doc = "Scan Channel Reference Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VREFSEL {
@@ -152,6 +153,7 @@ pub type PrsmodeR = crate::BitReader;
 #[doc = "Field `PRSMODE` writer - Scan PRS Trigger Mode"]
 pub type PrsmodeW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Scan Sequence PRS Trigger Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL {
@@ -401,6 +403,22 @@ impl R {
         ConvstartdelayenR::new(((self.bits >> 27) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANCTRLX")
+            .field("vrefsel", &self.vrefsel())
+            .field("vrefattfix", &self.vrefattfix())
+            .field("vrefatt", &self.vrefatt())
+            .field("vinatt", &self.vinatt())
+            .field("dvl", &self.dvl())
+            .field("fifoofact", &self.fifoofact())
+            .field("prsmode", &self.prsmode())
+            .field("prssel", &self.prssel())
+            .field("convstartdelay", &self.convstartdelay())
+            .field("convstartdelayen", &self.convstartdelayen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - Scan Channel Reference Selection"]
     #[inline(always)]
@@ -463,7 +481,7 @@ impl W {
         ConvstartdelayenW::new(self, 27)
     }
 }
-#[doc = "Scan Control Register Continued\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanctrlx::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanctrlx::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Scan Control Register Continued\n\nYou can [`read`](crate::Reg::read) this register and get [`scanctrlx::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scanctrlx::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANCTRLXrs;
 impl crate::RegisterSpec for SCANCTRLXrs {
     type Ux = u32;

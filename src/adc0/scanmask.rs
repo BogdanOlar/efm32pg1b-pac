@@ -13,6 +13,13 @@ impl R {
         ScaninputenR::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANMASK")
+            .field("scaninputen", &self.scaninputen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Scan Sequence Input Mask"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         ScaninputenW::new(self, 0)
     }
 }
-#[doc = "Scan Sequence Input Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanmask::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanmask::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Scan Sequence Input Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scanmask::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scanmask::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANMASKrs;
 impl crate::RegisterSpec for SCANMASKrs {
     type Ux = u32;

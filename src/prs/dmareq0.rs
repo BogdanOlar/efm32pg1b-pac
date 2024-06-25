@@ -3,6 +3,7 @@ pub type R = crate::R<DMAREQ0rs>;
 #[doc = "Register `DMAREQ0` writer"]
 pub type W = crate::W<DMAREQ0rs>;
 #[doc = "DMA Request 0 PRS Channel Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL {
@@ -199,6 +200,13 @@ impl R {
         PrsselR::new(((self.bits >> 6) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DMAREQ0")
+            .field("prssel", &self.prssel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 6:9 - DMA Request 0 PRS Channel Select"]
     #[inline(always)]
@@ -207,7 +215,7 @@ impl W {
         PrsselW::new(self, 6)
     }
 }
-#[doc = "DMA Request 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmareq0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmareq0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMA Request 0 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dmareq0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmareq0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DMAREQ0rs;
 impl crate::RegisterSpec for DMAREQ0rs {
     type Ux = u32;

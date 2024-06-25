@@ -3,6 +3,7 @@ pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRLrs>;
 #[doc = "Clock Output Select 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKOUTSEL0 {
@@ -206,6 +207,7 @@ where
     }
 }
 #[doc = "Clock Output Select 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKOUTSEL1 {
@@ -438,6 +440,16 @@ impl R {
         HfperclkenR::new(((self.bits >> 20) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("clkoutsel0", &self.clkoutsel0())
+            .field("clkoutsel1", &self.clkoutsel1())
+            .field("wshfle", &self.wshfle())
+            .field("hfperclken", &self.hfperclken())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Clock Output Select 0"]
     #[inline(always)]
@@ -464,7 +476,7 @@ impl W {
         HfperclkenW::new(self, 20)
     }
 }
-#[doc = "CMU Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CMU Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

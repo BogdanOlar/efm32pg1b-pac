@@ -112,6 +112,24 @@ impl R {
         Ch11penR::new(((self.bits >> 11) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ROUTEPEN")
+            .field("ch0pen", &self.ch0pen())
+            .field("ch1pen", &self.ch1pen())
+            .field("ch2pen", &self.ch2pen())
+            .field("ch3pen", &self.ch3pen())
+            .field("ch4pen", &self.ch4pen())
+            .field("ch5pen", &self.ch5pen())
+            .field("ch6pen", &self.ch6pen())
+            .field("ch7pen", &self.ch7pen())
+            .field("ch8pen", &self.ch8pen())
+            .field("ch9pen", &self.ch9pen())
+            .field("ch10pen", &self.ch10pen())
+            .field("ch11pen", &self.ch11pen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - CH0 Pin Enable"]
     #[inline(always)]
@@ -186,7 +204,7 @@ impl W {
         Ch11penW::new(self, 11)
     }
 }
-#[doc = "I/O Routing Pin Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routepen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routepen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "I/O Routing Pin Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`routepen::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routepen::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ROUTEPENrs;
 impl crate::RegisterSpec for ROUTEPENrs {
     type Ux = u32;

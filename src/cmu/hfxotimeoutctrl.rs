@@ -3,6 +3,7 @@ pub type R = crate::R<HFXOTIMEOUTCTRLrs>;
 #[doc = "Register `HFXOTIMEOUTCTRL` writer"]
 pub type W = crate::W<HFXOTIMEOUTCTRLrs>;
 #[doc = "Wait Duration in HFXO Startup Enable Wait State\n\nValue on reset: 7"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STARTUPTIMEOUT {
@@ -180,6 +181,7 @@ where
     }
 }
 #[doc = "Wait Duration in HFXO Startup Steady Wait State\n\nValue on reset: 6"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STEADYTIMEOUT {
@@ -361,6 +363,7 @@ pub type Reserved2R = crate::FieldReader;
 #[doc = "Field `RESERVED2` writer - Wait Duration in HFXO Warm Startup Steady Wait State"]
 pub type Reserved2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Wait Duration in HFXO Peak Detection Wait State\n\nValue on reset: 6"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PEAKDETTIMEOUT {
@@ -538,6 +541,7 @@ where
     }
 }
 #[doc = "Wait Duration in HFXO Shunt Current Optimization Wait State\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SHUNTOPTTIMEOUT {
@@ -741,6 +745,17 @@ impl R {
         ShuntopttimeoutR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFXOTIMEOUTCTRL")
+            .field("startuptimeout", &self.startuptimeout())
+            .field("steadytimeout", &self.steadytimeout())
+            .field("reserved2", &self.reserved2())
+            .field("peakdettimeout", &self.peakdettimeout())
+            .field("shuntopttimeout", &self.shuntopttimeout())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State"]
     #[inline(always)]
@@ -773,7 +788,7 @@ impl W {
         ShuntopttimeoutW::new(self, 16)
     }
 }
-#[doc = "HFXO Timeout Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfxotimeoutctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfxotimeoutctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HFXO Timeout Control\n\nYou can [`read`](crate::Reg::read) this register and get [`hfxotimeoutctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfxotimeoutctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFXOTIMEOUTCTRLrs;
 impl crate::RegisterSpec for HFXOTIMEOUTCTRLrs {
     type Ux = u32;

@@ -3,6 +3,7 @@ pub type R = crate::R<TIMINGrs>;
 #[doc = "Register `TIMING` writer"]
 pub type W = crate::W<TIMINGrs>;
 #[doc = "TX Frame Start Delay\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TXDELAY {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Chip Select Setup\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSSETUP {
@@ -279,6 +281,7 @@ where
     }
 }
 #[doc = "Inter-character Spacing\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICS {
@@ -417,6 +420,7 @@ where
     }
 }
 #[doc = "Chip Select Hold\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSHOLD {
@@ -576,6 +580,16 @@ impl R {
         CsholdR::new(((self.bits >> 28) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMING")
+            .field("txdelay", &self.txdelay())
+            .field("cssetup", &self.cssetup())
+            .field("ics", &self.ics())
+            .field("cshold", &self.cshold())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 16:18 - TX Frame Start Delay"]
     #[inline(always)]
@@ -602,7 +616,7 @@ impl W {
         CsholdW::new(self, 28)
     }
 }
-#[doc = "Timing Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timing::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`timing::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Timing Register\n\nYou can [`read`](crate::Reg::read) this register and get [`timing::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`timing::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIMINGrs;
 impl crate::RegisterSpec for TIMINGrs {
     type Ux = u32;

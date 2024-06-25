@@ -1,4 +1,5 @@
 #[repr(C)]
+#[derive(Debug)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
     ctrl: Ctrl,
@@ -68,61 +69,61 @@ impl RegisterBlock {
         &self.aportconflict
     }
 }
-#[doc = "CTRL (rw) register accessor: Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
+#[doc = "CTRL (rw) register accessor: Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
 module"]
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CTRLrs>;
 #[doc = "Control Register"]
 pub mod ctrl;
-#[doc = "CURPROG (rw) register accessor: Current Programming Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`curprog::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`curprog::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@curprog`]
+#[doc = "CURPROG (rw) register accessor: Current Programming Register\n\nYou can [`read`](crate::Reg::read) this register and get [`curprog::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`curprog::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@curprog`]
 module"]
 #[doc(alias = "CURPROG")]
 pub type Curprog = crate::Reg<curprog::CURPROGrs>;
 #[doc = "Current Programming Register"]
 pub mod curprog;
-#[doc = "DUTYCONFIG (rw) register accessor: Duty Cycle Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dutyconfig::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dutyconfig::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dutyconfig`]
+#[doc = "DUTYCONFIG (rw) register accessor: Duty Cycle Configuration Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dutyconfig::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dutyconfig::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dutyconfig`]
 module"]
 #[doc(alias = "DUTYCONFIG")]
 pub type Dutyconfig = crate::Reg<dutyconfig::DUTYCONFIGrs>;
 #[doc = "Duty Cycle Configuration Register"]
 pub mod dutyconfig;
-#[doc = "STATUS (r) register accessor: Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@status`]
+#[doc = "STATUS (r) register accessor: Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@status`]
 module"]
 #[doc(alias = "STATUS")]
 pub type Status = crate::Reg<status::STATUSrs>;
 #[doc = "Status Register"]
 pub mod status;
-#[doc = "IF (r) register accessor: Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@if_`]
+#[doc = "IF (r) register accessor: Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@if_`]
 module"]
 #[doc(alias = "IF")]
 pub type If = crate::Reg<if_::IFrs>;
 #[doc = "Interrupt Flag Register"]
 pub mod if_;
-#[doc = "IFS (w) register accessor: Interrupt Flag Set Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifs`]
+#[doc = "IFS (w) register accessor: Interrupt Flag Set Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifs`]
 module"]
 #[doc(alias = "IFS")]
 pub type Ifs = crate::Reg<ifs::IFSrs>;
 #[doc = "Interrupt Flag Set Register"]
 pub mod ifs;
-#[doc = "IFC (w) register accessor: Interrupt Flag Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifc`]
+#[doc = "IFC (w) register accessor: Interrupt Flag Clear Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifc`]
 module"]
 #[doc(alias = "IFC")]
 pub type Ifc = crate::Reg<ifc::IFCrs>;
 #[doc = "Interrupt Flag Clear Register"]
 pub mod ifc;
-#[doc = "IEN (rw) register accessor: Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ien`]
+#[doc = "IEN (rw) register accessor: Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ien`]
 module"]
 #[doc(alias = "IEN")]
 pub type Ien = crate::Reg<ien::IENrs>;
 #[doc = "Interrupt Enable Register"]
 pub mod ien;
-#[doc = "APORTREQ (r) register accessor: APORT Request Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportreq::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aportreq`]
+#[doc = "APORTREQ (r) register accessor: APORT Request Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`aportreq::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aportreq`]
 module"]
 #[doc(alias = "APORTREQ")]
 pub type Aportreq = crate::Reg<aportreq::APORTREQrs>;
 #[doc = "APORT Request Status Register"]
 pub mod aportreq;
-#[doc = "APORTCONFLICT (r) register accessor: APORT Request Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportconflict::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aportconflict`]
+#[doc = "APORTCONFLICT (r) register accessor: APORT Request Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`aportconflict::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aportconflict`]
 module"]
 #[doc(alias = "APORTCONFLICT")]
 pub type Aportconflict = crate::Reg<aportconflict::APORTCONFLICTrs>;

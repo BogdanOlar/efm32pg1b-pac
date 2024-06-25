@@ -22,6 +22,14 @@ impl R {
         LnvrefR::new(((self.bits >> 8) & 0x7f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCLNVCTRL")
+            .field("lnatt", &self.lnatt())
+            .field("lnvref", &self.lnvref())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 1 - Low Noise Mode Feedback Attenuation"]
     #[inline(always)]
@@ -36,7 +44,7 @@ impl W {
         LnvrefW::new(self, 8)
     }
 }
-#[doc = "DCDC Low Noise Voltage Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdclnvctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdclnvctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DCDC Low Noise Voltage Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdclnvctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdclnvctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCLNVCTRLrs;
 impl crate::RegisterSpec for DCDCLNVCTRLrs {
     type Ux = u32;

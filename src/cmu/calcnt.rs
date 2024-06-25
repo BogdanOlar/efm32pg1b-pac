@@ -13,6 +13,13 @@ impl R {
         CalcntR::new(self.bits & 0x000f_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CALCNT")
+            .field("calcnt", &self.calcnt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:19 - Calibration Counter"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         CalcntW::new(self, 0)
     }
 }
-#[doc = "Calibration Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`calcnt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`calcnt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Calibration Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`calcnt::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`calcnt::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CALCNTrs;
 impl crate::RegisterSpec for CALCNTrs {
     type Ux = u32;

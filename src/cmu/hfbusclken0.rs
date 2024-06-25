@@ -58,6 +58,18 @@ impl R {
         GpcrcR::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFBUSCLKEN0")
+            .field("le", &self.le())
+            .field("crypto", &self.crypto())
+            .field("gpio", &self.gpio())
+            .field("prs", &self.prs())
+            .field("ldma", &self.ldma())
+            .field("gpcrc", &self.gpcrc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Low Energy Peripheral Interface Clock Enable"]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         GpcrcW::new(self, 5)
     }
 }
-#[doc = "High Frequency Bus Clock Enable Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfbusclken0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfbusclken0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "High Frequency Bus Clock Enable Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`hfbusclken0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfbusclken0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFBUSCLKEN0rs;
 impl crate::RegisterSpec for HFBUSCLKEN0rs {
     type Ux = u32;

@@ -11,6 +11,7 @@ pub type DatabitsR = crate::BitReader;
 #[doc = "Field `DATABITS` writer - Data-Bit Mode"]
 pub type DatabitsW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PARITY {
@@ -124,6 +125,7 @@ pub type TxdmawuR = crate::BitReader;
 #[doc = "Field `TXDMAWU` writer - TX DMA Wakeup"]
 pub type TxdmawuW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "TX Delay Transmission\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TXDELAY {
@@ -281,6 +283,26 @@ impl R {
         TxdelayR::new(((self.bits >> 14) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("autotri", &self.autotri())
+            .field("databits", &self.databits())
+            .field("parity", &self.parity())
+            .field("stopbits", &self.stopbits())
+            .field("inv", &self.inv())
+            .field("errsdma", &self.errsdma())
+            .field("loopbk", &self.loopbk())
+            .field("sfubrx", &self.sfubrx())
+            .field("mpm", &self.mpm())
+            .field("mpab", &self.mpab())
+            .field("bit8dv", &self.bit8dv())
+            .field("rxdmawu", &self.rxdmawu())
+            .field("txdmawu", &self.txdmawu())
+            .field("txdelay", &self.txdelay())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Automatic Transmitter Tristate"]
     #[inline(always)]
@@ -367,7 +389,7 @@ impl W {
         TxdelayW::new(self, 14)
     }
 }
-#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

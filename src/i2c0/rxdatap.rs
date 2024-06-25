@@ -9,7 +9,14 @@ impl R {
         RxdatapR::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Receive Buffer Data Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdatap::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RXDATAP")
+            .field("rxdatap", &self.rxdatap())
+            .finish()
+    }
+}
+#[doc = "Receive Buffer Data Peek Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxdatap::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDATAPrs;
 impl crate::RegisterSpec for RXDATAPrs {
     type Ux = u32;

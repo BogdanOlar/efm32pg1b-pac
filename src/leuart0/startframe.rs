@@ -13,6 +13,13 @@ impl R {
         StartframeR::new((self.bits & 0x01ff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STARTFRAME")
+            .field("startframe", &self.startframe())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - Start Frame"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         StartframeW::new(self, 0)
     }
 }
-#[doc = "Start Frame Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`startframe::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`startframe::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Start Frame Register\n\nYou can [`read`](crate::Reg::read) this register and get [`startframe::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`startframe::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STARTFRAMErs;
 impl crate::RegisterSpec for STARTFRAMErs {
     type Ux = u32;

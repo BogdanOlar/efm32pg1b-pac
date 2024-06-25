@@ -13,6 +13,13 @@ impl R {
         RegR::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RET0_REG")
+            .field("reg", &self.reg())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - General Purpose Retention Register"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         RegW::new(self, 0)
     }
 }
-#[doc = "Retention Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ret0_reg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ret0_reg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Retention Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ret0_reg::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret0_reg::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RET0_REGrs;
 impl crate::RegisterSpec for RET0_REGrs {
     type Ux = u32;

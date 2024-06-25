@@ -13,6 +13,13 @@ impl R {
         RamR::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("POWERDOWN")
+            .field("ram", &self.ram())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Retention RAM Power-down"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         RamW::new(self, 0)
     }
 }
-#[doc = "Retention RAM Power-down Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`powerdown::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`powerdown::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Retention RAM Power-down Register\n\nYou can [`read`](crate::Reg::read) this register and get [`powerdown::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`powerdown::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct POWERDOWNrs;
 impl crate::RegisterSpec for POWERDOWNrs {
     type Ux = u32;

@@ -13,6 +13,13 @@ impl R {
         PeriodselR::new((self.bits & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PERIODSEL")
+            .field("periodsel", &self.periodsel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - Interrupts/Wakeup Events Period Setting"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         PeriodselW::new(self, 0)
     }
 }
-#[doc = "Interrupt Duration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`periodsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`periodsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Duration\n\nYou can [`read`](crate::Reg::read) this register and get [`periodsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`periodsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PERIODSELrs;
 impl crate::RegisterSpec for PERIODSELrs {
     type Ux = u32;

@@ -9,7 +9,12 @@ impl R {
         TopR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Top Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`top::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TOP").field("top", &self.top()).finish()
+    }
+}
+#[doc = "Top Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`top::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TOPrs;
 impl crate::RegisterSpec for TOPrs {
     type Ux = u32;

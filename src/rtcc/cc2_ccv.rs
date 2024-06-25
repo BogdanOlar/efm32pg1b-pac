@@ -13,6 +13,11 @@ impl R {
         CcvR::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CC2_CCV").field("ccv", &self.ccv()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Capture/Compare Value"]
     #[inline(always)]
@@ -21,7 +26,7 @@ impl W {
         CcvW::new(self, 0)
     }
 }
-#[doc = "Capture/Compare Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc2_ccv::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cc2_ccv::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Capture/Compare Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc2_ccv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc2_ccv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CC2_CCVrs;
 impl crate::RegisterSpec for CC2_CCVrs {
     type Ux = u32;

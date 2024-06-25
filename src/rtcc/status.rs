@@ -5,12 +5,7 @@ impl core::fmt::Debug for R {
         write!(f, "{}", self.bits())
     }
 }
-impl core::fmt::Debug for crate::generic::Reg<STATUSrs> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        core::fmt::Debug::fmt(&self.read(), f)
-    }
-}
-#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSrs;
 impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;

@@ -3,6 +3,7 @@ pub type R = crate::R<MASSLOCKrs>;
 #[doc = "Register `MASSLOCK` writer"]
 pub type W = crate::W<MASSLOCKrs>;
 #[doc = "Mass Erase Lock\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum LOCKKEY {
@@ -69,6 +70,13 @@ impl R {
         LockkeyR::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MASSLOCK")
+            .field("lockkey", &self.lockkey())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Mass Erase Lock"]
     #[inline(always)]
@@ -77,7 +85,7 @@ impl W {
         LockkeyW::new(self, 0)
     }
 }
-#[doc = "Mass Erase Lock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`masslock::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`masslock::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Mass Erase Lock Register\n\nYou can [`read`](crate::Reg::read) this register and get [`masslock::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`masslock::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MASSLOCKrs;
 impl crate::RegisterSpec for MASSLOCKrs {
     type Ux = u32;

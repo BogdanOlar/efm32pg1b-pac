@@ -3,6 +3,7 @@ pub type R = crate::R<SCANNEGSELrs>;
 #[doc = "Register `SCANNEGSEL` writer"]
 pub type W = crate::W<SCANNEGSELrs>;
 #[doc = "Negative Input Select Register for ADCn_INPUT0 in Differential Scan Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT0NEGSEL {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Negative Input Select Register for ADCn_INPUT2 in Differential Scan Mode\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT2NEGSEL {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "Negative Input Select Register for ADCn_INPUT4 in Differential Scan Mode\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT4NEGSEL {
@@ -261,6 +264,7 @@ where
     }
 }
 #[doc = "Negative Input Select Register for ADCn_INPUT1 in Differential Scan Mode\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT6NEGSEL {
@@ -347,6 +351,7 @@ where
     }
 }
 #[doc = "Negative Input Select Register for ADCn_INPUT9 in Differential Scan Mode\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT9NEGSEL {
@@ -433,6 +438,7 @@ where
     }
 }
 #[doc = "Negative Input Select Register for ADCn_INPUT11 in Differential Scan Mode\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT11NEGSEL {
@@ -519,6 +525,7 @@ where
     }
 }
 #[doc = "Negative Input Select Register for ADCn_INPUT13 in Differential Scan Mode\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT13NEGSEL {
@@ -605,6 +612,7 @@ where
     }
 }
 #[doc = "Negative Input Select Register for ADCn_INPUT15 in Differential Scan Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT15NEGSEL {
@@ -732,6 +740,20 @@ impl R {
         Input15negselR::new(((self.bits >> 14) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANNEGSEL")
+            .field("input0negsel", &self.input0negsel())
+            .field("input2negsel", &self.input2negsel())
+            .field("input4negsel", &self.input4negsel())
+            .field("input6negsel", &self.input6negsel())
+            .field("input9negsel", &self.input9negsel())
+            .field("input11negsel", &self.input11negsel())
+            .field("input13negsel", &self.input13negsel())
+            .field("input15negsel", &self.input15negsel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Negative Input Select Register for ADCn_INPUT0 in Differential Scan Mode"]
     #[inline(always)]
@@ -782,7 +804,7 @@ impl W {
         Input15negselW::new(self, 14)
     }
 }
-#[doc = "Negative Input Select Register for Scan\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scannegsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scannegsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Negative Input Select Register for Scan\n\nYou can [`read`](crate::Reg::read) this register and get [`scannegsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scannegsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANNEGSELrs;
 impl crate::RegisterSpec for SCANNEGSELrs {
     type Ux = u32;

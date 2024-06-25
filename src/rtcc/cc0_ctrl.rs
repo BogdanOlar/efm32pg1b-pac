@@ -3,6 +3,7 @@ pub type R = crate::R<CC0_CTRLrs>;
 #[doc = "Register `CC0_CTRL` writer"]
 pub type W = crate::W<CC0_CTRLrs>;
 #[doc = "CC Channel Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE {
@@ -76,6 +77,7 @@ where
     }
 }
 #[doc = "Compare Match Output Action\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CMOA {
@@ -162,6 +164,7 @@ where
     }
 }
 #[doc = "Input Capture Edge Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICEDGE {
@@ -248,6 +251,7 @@ where
     }
 }
 #[doc = "Compare/Capture Channel PRS Input Channel Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL {
@@ -486,6 +490,19 @@ impl R {
         DayccR::new(((self.bits >> 17) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CC0_CTRL")
+            .field("mode", &self.mode())
+            .field("cmoa", &self.cmoa())
+            .field("icedge", &self.icedge())
+            .field("prssel", &self.prssel())
+            .field("compbase", &self.compbase())
+            .field("compmask", &self.compmask())
+            .field("daycc", &self.daycc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - CC Channel Mode"]
     #[inline(always)]
@@ -530,7 +547,7 @@ impl W {
         DayccW::new(self, 17)
     }
 }
-#[doc = "CC Channel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc0_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cc0_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CC Channel Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc0_ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc0_ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CC0_CTRLrs;
 impl crate::RegisterSpec for CC0_CTRLrs {
     type Ux = u32;

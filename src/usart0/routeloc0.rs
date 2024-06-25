@@ -3,6 +3,7 @@ pub type R = crate::R<ROUTELOC0rs>;
 #[doc = "Register `ROUTELOC0` writer"]
 pub type W = crate::W<ROUTELOC0rs>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXLOC {
@@ -453,6 +454,7 @@ where
     }
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TXLOC {
@@ -903,6 +905,7 @@ where
     }
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSLOC {
@@ -1353,6 +1356,7 @@ where
     }
 }
 #[doc = "I/O Location\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKLOC {
@@ -1824,6 +1828,16 @@ impl R {
         ClklocR::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ROUTELOC0")
+            .field("rxloc", &self.rxloc())
+            .field("txloc", &self.txloc())
+            .field("csloc", &self.csloc())
+            .field("clkloc", &self.clkloc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
@@ -1850,7 +1864,7 @@ impl W {
         ClklocW::new(self, 24)
     }
 }
-#[doc = "I/O Routing Location Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`routeloc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`routeloc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "I/O Routing Location Register\n\nYou can [`read`](crate::Reg::read) this register and get [`routeloc0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routeloc0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ROUTELOC0rs;
 impl crate::RegisterSpec for ROUTELOC0rs {
     type Ux = u32;

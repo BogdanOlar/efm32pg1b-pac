@@ -35,6 +35,7 @@ pub type PerselR = crate::FieldReader;
 #[doc = "Field `PERSEL` writer - Watchdog Timeout Period Select"]
 pub type PerselW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Watchdog Clock Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKSEL {
@@ -190,6 +191,25 @@ impl R {
         WdogrstdisR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("en", &self.en())
+            .field("debugrun", &self.debugrun())
+            .field("em2run", &self.em2run())
+            .field("em3run", &self.em3run())
+            .field("lock", &self.lock())
+            .field("em4block", &self.em4block())
+            .field("swoscblock", &self.swoscblock())
+            .field("persel", &self.persel())
+            .field("clksel", &self.clksel())
+            .field("warnsel", &self.warnsel())
+            .field("winsel", &self.winsel())
+            .field("clrsrc", &self.clrsrc())
+            .field("wdogrstdis", &self.wdogrstdis())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Watchdog Timer Enable"]
     #[inline(always)]
@@ -270,7 +290,7 @@ impl W {
         WdogrstdisW::new(self, 31)
     }
 }
-#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

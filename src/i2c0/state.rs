@@ -11,6 +11,7 @@ pub type NackedR = crate::BitReader;
 #[doc = "Field `BUSHOLD` reader - Bus Held"]
 pub type BusholdR = crate::BitReader;
 #[doc = "Transmission State\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STATE {
@@ -124,7 +125,19 @@ impl R {
         StateR::new(((self.bits >> 5) & 7) as u8)
     }
 }
-#[doc = "State Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATE")
+            .field("busy", &self.busy())
+            .field("master", &self.master())
+            .field("transmitter", &self.transmitter())
+            .field("nacked", &self.nacked())
+            .field("bushold", &self.bushold())
+            .field("state", &self.state())
+            .finish()
+    }
+}
+#[doc = "State Register\n\nYou can [`read`](crate::Reg::read) this register and get [`state::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATErs;
 impl crate::RegisterSpec for STATErs {
     type Ux = u32;

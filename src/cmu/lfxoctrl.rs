@@ -7,6 +7,7 @@ pub type TuningR = crate::FieldReader;
 #[doc = "Field `TUNING` writer - LFXO Internal Capacitor Array Tuning Value"]
 pub type TuningW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "LFXO Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE {
@@ -100,6 +101,7 @@ pub type BufcurR = crate::BitReader;
 #[doc = "Field `BUFCUR` writer - LFXO Buffer Bias Current"]
 pub type BufcurW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "LFXO Timeout\n\nValue on reset: 7"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TIMEOUT {
@@ -279,6 +281,20 @@ impl R {
         TimeoutR::new(((self.bits >> 24) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LFXOCTRL")
+            .field("tuning", &self.tuning())
+            .field("mode", &self.mode())
+            .field("gain", &self.gain())
+            .field("highampl", &self.highampl())
+            .field("agc", &self.agc())
+            .field("cur", &self.cur())
+            .field("bufcur", &self.bufcur())
+            .field("timeout", &self.timeout())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:6 - LFXO Internal Capacitor Array Tuning Value"]
     #[inline(always)]
@@ -329,7 +345,7 @@ impl W {
         TimeoutW::new(self, 24)
     }
 }
-#[doc = "LFXO Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfxoctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfxoctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "LFXO Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`lfxoctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfxoctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LFXOCTRLrs;
 impl crate::RegisterSpec for LFXOCTRLrs {
     type Ux = u32;

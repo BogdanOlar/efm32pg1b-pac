@@ -27,6 +27,7 @@ pub type LnclimilimselR = crate::FieldReader;
 #[doc = "Field `LNCLIMILIMSEL` writer - Current Limit Level Selection for Current Limiter in LN Mode"]
 pub type LnclimilimselW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "LP Mode Comparator Bias Selection\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LPCMPBIAS {
@@ -149,6 +150,19 @@ impl R {
         LpcmpbiasR::new(((self.bits >> 28) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCMISCCTRL")
+            .field("lnforceccm", &self.lnforceccm())
+            .field("pfetcnt", &self.pfetcnt())
+            .field("nfetcnt", &self.nfetcnt())
+            .field("byplimsel", &self.byplimsel())
+            .field("lpclimilimsel", &self.lpclimilimsel())
+            .field("lnclimilimsel", &self.lnclimilimsel())
+            .field("lpcmpbias", &self.lpcmpbias())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Force DCDC Into CCM Mode in Low Noise Operation"]
     #[inline(always)]
@@ -193,7 +207,7 @@ impl W {
         LpcmpbiasW::new(self, 28)
     }
 }
-#[doc = "DCDC Miscellaneous Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdcmiscctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdcmiscctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DCDC Miscellaneous Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdcmiscctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdcmiscctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCMISCCTRLrs;
 impl crate::RegisterSpec for DCDCMISCCTRLrs {
     type Ux = u32;

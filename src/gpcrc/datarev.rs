@@ -9,7 +9,14 @@ impl R {
         DatarevR::new(self.bits)
     }
 }
-#[doc = "CRC Data Reverse Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`datarev::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DATAREV")
+            .field("datarev", &self.datarev())
+            .finish()
+    }
+}
+#[doc = "CRC Data Reverse Register\n\nYou can [`read`](crate::Reg::read) this register and get [`datarev::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DATAREVrs;
 impl crate::RegisterSpec for DATAREVrs {
     type Ux = u32;

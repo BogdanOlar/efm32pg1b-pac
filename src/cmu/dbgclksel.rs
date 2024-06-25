@@ -3,6 +3,7 @@ pub type R = crate::R<DBGCLKSELrs>;
 #[doc = "Register `DBGCLKSEL` writer"]
 pub type W = crate::W<DBGCLKSELrs>;
 #[doc = "Debug Trace Clock\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBG {
     #[doc = "0: AUXHFRCO is the debug trace clock"]
@@ -62,6 +63,13 @@ impl R {
         DbgR::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBGCLKSEL")
+            .field("dbg", &self.dbg())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Debug Trace Clock"]
     #[inline(always)]
@@ -70,7 +78,7 @@ impl W {
         DbgW::new(self, 0)
     }
 }
-#[doc = "Debug Trace Clock Select\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dbgclksel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dbgclksel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Debug Trace Clock Select\n\nYou can [`read`](crate::Reg::read) this register and get [`dbgclksel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dbgclksel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DBGCLKSELrs;
 impl crate::RegisterSpec for DBGCLKSELrs {
     type Ux = u32;

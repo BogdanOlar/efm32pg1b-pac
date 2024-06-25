@@ -13,6 +13,13 @@ impl R {
         RtccR::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LFECLKEN0")
+            .field("rtcc", &self.rtcc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Real-Time Counter and Calendar Clock Enable"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         RtccW::new(self, 0)
     }
 }
-#[doc = "Low Frequency E Clock Enable Register 0 (Async Reg)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfeclken0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfeclken0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Low Frequency E Clock Enable Register 0 (Async Reg)\n\nYou can [`read`](crate::Reg::read) this register and get [`lfeclken0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfeclken0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LFECLKEN0rs;
 impl crate::RegisterSpec for LFECLKEN0rs {
     type Ux = u32;

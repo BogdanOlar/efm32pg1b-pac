@@ -13,6 +13,13 @@ impl R {
         PinsOvtDisR::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OVT_DIS")
+            .field("pins_ovt_dis", &self.pins_ovt_dis())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Disable Over Voltage Capability for pins 0:15"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         PinsOvtDisW::new(self, 0)
     }
 }
-#[doc = "Over Voltage Disable for All Modes\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ovt_dis::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ovt_dis::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Over Voltage Disable for All Modes\n\nYou can [`read`](crate::Reg::read) this register and get [`ovt_dis::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ovt_dis::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OVT_DISrs;
 impl crate::RegisterSpec for OVT_DISrs {
     type Ux = u32;

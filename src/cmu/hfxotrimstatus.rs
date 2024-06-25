@@ -16,7 +16,15 @@ impl R {
         RegishR::new(((self.bits >> 7) & 0x0f) as u8)
     }
 }
-#[doc = "HFXO Trim Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfxotrimstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFXOTRIMSTATUS")
+            .field("ibtrimxocore", &self.ibtrimxocore())
+            .field("regish", &self.regish())
+            .finish()
+    }
+}
+#[doc = "HFXO Trim Status\n\nYou can [`read`](crate::Reg::read) this register and get [`hfxotrimstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFXOTRIMSTATUSrs;
 impl crate::RegisterSpec for HFXOTRIMSTATUSrs {
     type Ux = u32;

@@ -22,6 +22,14 @@ impl R {
         Txdata1R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TXDOUBLE")
+            .field("txdata0", &self.txdata0())
+            .field("txdata1", &self.txdata1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - TX Data"]
     #[inline(always)]
@@ -36,7 +44,7 @@ impl W {
         Txdata1W::new(self, 8)
     }
 }
-#[doc = "Transmit Buffer Double Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdouble::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdouble::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Buffer Double Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`txdouble::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`txdouble::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TXDOUBLErs;
 impl crate::RegisterSpec for TXDOUBLErs {
     type Ux = u32;

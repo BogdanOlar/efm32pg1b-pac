@@ -3,6 +3,7 @@ pub type R = crate::R<WACrs>;
 #[doc = "Register `WAC` writer"]
 pub type W = crate::W<WACrs>;
 #[doc = "Modular Operation Modulus\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODULUS {
@@ -236,6 +237,7 @@ pub type ModopR = crate::BitReader;
 #[doc = "Field `MODOP` writer - Modular Operation Field Type"]
 pub type ModopW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Multiply Width\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MULWIDTH {
@@ -309,6 +311,7 @@ where
     }
 }
 #[doc = "Result Width\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RESULTWIDTH {
@@ -403,6 +406,16 @@ impl R {
         ResultwidthR::new(((self.bits >> 10) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WAC")
+            .field("modulus", &self.modulus())
+            .field("modop", &self.modop())
+            .field("mulwidth", &self.mulwidth())
+            .field("resultwidth", &self.resultwidth())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Modular Operation Modulus"]
     #[inline(always)]
@@ -429,7 +442,7 @@ impl W {
         ResultwidthW::new(self, 10)
     }
 }
-#[doc = "Wide Arithmetic Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wac::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wac::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Wide Arithmetic Configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`wac::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wac::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WACrs;
 impl crate::RegisterSpec for WACrs {
     type Ux = u32;

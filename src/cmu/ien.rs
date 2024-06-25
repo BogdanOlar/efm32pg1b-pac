@@ -139,6 +139,27 @@ impl R {
         CmuerrR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("hfrcordy", &self.hfrcordy())
+            .field("hfxordy", &self.hfxordy())
+            .field("lfrcordy", &self.lfrcordy())
+            .field("lfxordy", &self.lfxordy())
+            .field("auxhfrcordy", &self.auxhfrcordy())
+            .field("calrdy", &self.calrdy())
+            .field("calof", &self.calof())
+            .field("hfxodiserr", &self.hfxodiserr())
+            .field("hfxoautosw", &self.hfxoautosw())
+            .field("hfxopeakdeterr", &self.hfxopeakdeterr())
+            .field("hfxopeakdetrdy", &self.hfxopeakdetrdy())
+            .field("hfxoshuntoptrdy", &self.hfxoshuntoptrdy())
+            .field("hfrcodis", &self.hfrcodis())
+            .field("lftimeouterr", &self.lftimeouterr())
+            .field("cmuerr", &self.cmuerr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - HFRCORDY Interrupt Enable"]
     #[inline(always)]
@@ -231,7 +252,7 @@ impl W {
         CmuerrW::new(self, 31)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IENrs;
 impl crate::RegisterSpec for IENrs {
     type Ux = u32;

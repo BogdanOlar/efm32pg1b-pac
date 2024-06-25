@@ -19,6 +19,7 @@ pub type RetainulfrcoR = crate::BitReader;
 #[doc = "Field `RETAINULFRCO` writer - ULFRCO Retain During EM4S"]
 pub type RetainulfrcoW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "EM4 IO Retention Disable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EM4IORETMODE {
@@ -120,6 +121,17 @@ impl R {
         Em4ioretmodeR::new(((self.bits >> 4) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EM4CTRL")
+            .field("em4state", &self.em4state())
+            .field("retainlfrco", &self.retainlfrco())
+            .field("retainlfxo", &self.retainlfxo())
+            .field("retainulfrco", &self.retainulfrco())
+            .field("em4ioretmode", &self.em4ioretmode())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Energy Mode 4 State"]
     #[inline(always)]
@@ -158,7 +170,7 @@ impl W {
         Em4entryW::new(self, 16)
     }
 }
-#[doc = "EM4 Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`em4ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`em4ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EM4 Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`em4ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`em4ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EM4CTRLrs;
 impl crate::RegisterSpec for EM4CTRLrs {
     type Ux = u32;

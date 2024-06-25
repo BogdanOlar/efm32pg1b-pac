@@ -9,7 +9,14 @@ impl R {
         ReqpendR::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "DMA Channel Requests Pending Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`reqpend::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("REQPEND")
+            .field("reqpend", &self.reqpend())
+            .finish()
+    }
+}
+#[doc = "DMA Channel Requests Pending Register\n\nYou can [`read`](crate::Reg::read) this register and get [`reqpend::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct REQPENDrs;
 impl crate::RegisterSpec for REQPENDrs {
     type Ux = u32;

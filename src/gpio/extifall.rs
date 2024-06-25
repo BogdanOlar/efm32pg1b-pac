@@ -148,6 +148,28 @@ impl R {
         Extifall15R::new(((self.bits >> 15) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EXTIFALL")
+            .field("extifall0", &self.extifall0())
+            .field("extifall1", &self.extifall1())
+            .field("extifall2", &self.extifall2())
+            .field("extifall3", &self.extifall3())
+            .field("extifall4", &self.extifall4())
+            .field("extifall5", &self.extifall5())
+            .field("extifall6", &self.extifall6())
+            .field("extifall7", &self.extifall7())
+            .field("extifall8", &self.extifall8())
+            .field("extifall9", &self.extifall9())
+            .field("extifall10", &self.extifall10())
+            .field("extifall11", &self.extifall11())
+            .field("extifall12", &self.extifall12())
+            .field("extifall13", &self.extifall13())
+            .field("extifall14", &self.extifall14())
+            .field("extifall15", &self.extifall15())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Pin 0 Falling Edge"]
     #[inline(always)]
@@ -246,7 +268,7 @@ impl W {
         Extifall15W::new(self, 15)
     }
 }
-#[doc = "External Interrupt Falling Edge Trigger Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`extifall::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`extifall::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "External Interrupt Falling Edge Trigger Register\n\nYou can [`read`](crate::Reg::read) this register and get [`extifall::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extifall::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EXTIFALLrs;
 impl crate::RegisterSpec for EXTIFALLrs {
     type Ux = u32;

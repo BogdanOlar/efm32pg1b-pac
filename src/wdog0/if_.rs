@@ -37,7 +37,18 @@ impl R {
         Pem1R::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "Watchdog Interrupt Flags\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IF")
+            .field("tout", &self.tout())
+            .field("warn", &self.warn())
+            .field("win", &self.win())
+            .field("pem0", &self.pem0())
+            .field("pem1", &self.pem1())
+            .finish()
+    }
+}
+#[doc = "Watchdog Interrupt Flags\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IFrs;
 impl crate::RegisterSpec for IFrs {
     type Ux = u32;

@@ -40,6 +40,16 @@ impl R {
         Instr3R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEQ0")
+            .field("instr0", &self.instr0())
+            .field("instr1", &self.instr1())
+            .field("instr2", &self.instr2())
+            .field("instr3", &self.instr3())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Sequence Instruction 0"]
     #[inline(always)]
@@ -66,7 +76,7 @@ impl W {
         Instr3W::new(self, 24)
     }
 }
-#[doc = "Sequence Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`seq0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`seq0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Sequence Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`seq0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seq0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SEQ0rs;
 impl crate::RegisterSpec for SEQ0rs {
     type Ux = u32;

@@ -3,6 +3,7 @@ pub type R = crate::R<CC3_CTRLrs>;
 #[doc = "Register `CC3_CTRL` writer"]
 pub type W = crate::W<CC3_CTRLrs>;
 #[doc = "CC Channel Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE {
@@ -97,6 +98,7 @@ pub type CoistR = crate::BitReader;
 #[doc = "Field `COIST` writer - Compare Output Initial State"]
 pub type CoistW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Compare Match Output Action\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CMOA {
@@ -183,6 +185,7 @@ where
     }
 }
 #[doc = "Counter Overflow Output Action\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum COFOA {
@@ -269,6 +272,7 @@ where
     }
 }
 #[doc = "Counter Underflow Output Action\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CUFOA {
@@ -355,6 +359,7 @@ where
     }
 }
 #[doc = "Compare/Capture Channel PRS Input Channel Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL {
@@ -545,6 +550,7 @@ where
     }
 }
 #[doc = "Input Capture Edge Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICEDGE {
@@ -631,6 +637,7 @@ where
     }
 }
 #[doc = "Input Capture Event Control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICEVCTRL {
@@ -790,6 +797,24 @@ impl R {
         FiltR::new(((self.bits >> 30) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CC3_CTRL")
+            .field("mode", &self.mode())
+            .field("outinv", &self.outinv())
+            .field("coist", &self.coist())
+            .field("cmoa", &self.cmoa())
+            .field("cofoa", &self.cofoa())
+            .field("cufoa", &self.cufoa())
+            .field("prssel", &self.prssel())
+            .field("icedge", &self.icedge())
+            .field("icevctrl", &self.icevctrl())
+            .field("prsconf", &self.prsconf())
+            .field("insel", &self.insel())
+            .field("filt", &self.filt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - CC Channel Mode"]
     #[inline(always)]
@@ -864,7 +889,7 @@ impl W {
         FiltW::new(self, 30)
     }
 }
-#[doc = "CC Channel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc3_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cc3_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CC Channel Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc3_ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc3_ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CC3_CTRLrs;
 impl crate::RegisterSpec for CC3_CTRLrs {
     type Ux = u32;

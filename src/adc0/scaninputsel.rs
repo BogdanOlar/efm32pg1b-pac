@@ -3,6 +3,7 @@ pub type R = crate::R<SCANINPUTSELrs>;
 #[doc = "Register `SCANINPUTSEL` writer"]
 pub type W = crate::W<SCANINPUTSELrs>;
 #[doc = "Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT0TO7SEL {
@@ -271,6 +272,7 @@ where
     }
 }
 #[doc = "Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT8TO15SEL {
@@ -539,6 +541,7 @@ where
     }
 }
 #[doc = "Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT16TO23SEL {
@@ -807,6 +810,7 @@ where
     }
 }
 #[doc = "Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT24TO31SEL {
@@ -1096,6 +1100,16 @@ impl R {
         Input24to31selR::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANINPUTSEL")
+            .field("input0to7sel", &self.input0to7sel())
+            .field("input8to15sel", &self.input8to15sel())
+            .field("input16to23sel", &self.input16to23sel())
+            .field("input24to31sel", &self.input24to31sel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
     #[inline(always)]
@@ -1122,7 +1136,7 @@ impl W {
         Input24to31selW::new(self, 24)
     }
 }
-#[doc = "Input Selection Register for Scan Mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scaninputsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scaninputsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Input Selection Register for Scan Mode\n\nYou can [`read`](crate::Reg::read) this register and get [`scaninputsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scaninputsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANINPUTSELrs;
 impl crate::RegisterSpec for SCANINPUTSELrs {
     type Ux = u32;

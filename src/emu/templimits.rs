@@ -31,6 +31,15 @@ impl R {
         Em4wuenR::new(((self.bits >> 16) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TEMPLIMITS")
+            .field("templow", &self.templow())
+            .field("temphigh", &self.temphigh())
+            .field("em4wuen", &self.em4wuen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Temperature Low Limit"]
     #[inline(always)]
@@ -51,7 +60,7 @@ impl W {
         Em4wuenW::new(self, 16)
     }
 }
-#[doc = "Temperature Limits for Interrupt Generation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`templimits::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`templimits::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Temperature Limits for Interrupt Generation\n\nYou can [`read`](crate::Reg::read) this register and get [`templimits::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`templimits::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TEMPLIMITSrs;
 impl crate::RegisterSpec for TEMPLIMITSrs {
     type Ux = u32;

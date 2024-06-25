@@ -27,6 +27,7 @@ pub type AportvmasterdisR = crate::BitReader;
 #[doc = "Field `APORTVMASTERDIS` writer - APORT Bus Master Disable for Bus Selected By VASEL"]
 pub type AportvmasterdisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Power Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PWRSEL {
@@ -117,6 +118,7 @@ pub type AccuracyR = crate::BitReader;
 #[doc = "Field `ACCURACY` writer - ACMP Accuracy Mode"]
 pub type AccuracyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Input Range\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUTRANGE {
@@ -272,6 +274,25 @@ impl R {
         FullbiasR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("en", &self.en())
+            .field("inactval", &self.inactval())
+            .field("gpioinv", &self.gpioinv())
+            .field("aportxmasterdis", &self.aportxmasterdis())
+            .field("aportymasterdis", &self.aportymasterdis())
+            .field("aportvmasterdis", &self.aportvmasterdis())
+            .field("pwrsel", &self.pwrsel())
+            .field("accuracy", &self.accuracy())
+            .field("inputrange", &self.inputrange())
+            .field("irise", &self.irise())
+            .field("ifall", &self.ifall())
+            .field("biasprog", &self.biasprog())
+            .field("fullbias", &self.fullbias())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Analog Comparator Enable"]
     #[inline(always)]
@@ -352,7 +373,7 @@ impl W {
         FullbiasW::new(self, 31)
     }
 }
-#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

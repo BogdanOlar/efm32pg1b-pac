@@ -72,7 +72,23 @@ impl R {
         Aport4yreqR::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "APORT Request Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportreq::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APORTREQ")
+            .field("aport0xreq", &self.aport0xreq())
+            .field("aport0yreq", &self.aport0yreq())
+            .field("aport1xreq", &self.aport1xreq())
+            .field("aport1yreq", &self.aport1yreq())
+            .field("aport2xreq", &self.aport2xreq())
+            .field("aport2yreq", &self.aport2yreq())
+            .field("aport3xreq", &self.aport3xreq())
+            .field("aport3yreq", &self.aport3yreq())
+            .field("aport4xreq", &self.aport4xreq())
+            .field("aport4yreq", &self.aport4yreq())
+            .finish()
+    }
+}
+#[doc = "APORT Request Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`aportreq::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct APORTREQrs;
 impl crate::RegisterSpec for APORTREQrs {
     type Ux = u32;

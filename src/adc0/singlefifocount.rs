@@ -9,7 +9,14 @@ impl R {
         SingledcR::new((self.bits & 7) as u8)
     }
 }
-#[doc = "Single FIFO Count Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`singlefifocount::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SINGLEFIFOCOUNT")
+            .field("singledc", &self.singledc())
+            .finish()
+    }
+}
+#[doc = "Single FIFO Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`singlefifocount::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SINGLEFIFOCOUNTrs;
 impl crate::RegisterSpec for SINGLEFIFOCOUNTrs {
     type Ux = u32;

@@ -13,6 +13,11 @@ impl R {
         Ddata0R::new(self.bits)
     }
 }
+impl core::fmt::Debug for crate::generic::Reg<DDATA0rs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Double Data 0 Access"]
     #[inline(always)]
@@ -21,7 +26,7 @@ impl W {
         Ddata0W::new(self, 0)
     }
 }
-#[doc = "DDATA0 Register Access\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ddata0::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ddata0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DDATA0 Register Access\n\nYou can [`read`](crate::Reg::read) this register and get [`ddata0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ddata0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>"]
 pub struct DDATA0rs;
 impl crate::RegisterSpec for DDATA0rs {
     type Ux = u32;

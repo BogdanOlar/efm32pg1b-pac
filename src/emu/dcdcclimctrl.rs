@@ -22,6 +22,14 @@ impl R {
         ByplimenR::new(((self.bits >> 13) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCCLIMCTRL")
+            .field("climblankdly", &self.climblankdly())
+            .field("byplimen", &self.byplimen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
     #[inline(always)]
@@ -36,7 +44,7 @@ impl W {
         ByplimenW::new(self, 13)
     }
 }
-#[doc = "DCDC Power Train PFET Current Limiter Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdcclimctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdcclimctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DCDC Power Train PFET Current Limiter Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdcclimctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdcclimctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCCLIMCTRLrs;
 impl crate::RegisterSpec for DCDCCLIMCTRLrs {
     type Ux = u32;

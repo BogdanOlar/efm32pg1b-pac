@@ -13,6 +13,13 @@ impl R {
         RegfreezeR::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FREEZE")
+            .field("regfreeze", &self.regfreeze())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Register Update Freeze"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         RegfreezeW::new(self, 0)
     }
 }
-#[doc = "Freeze Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`freeze::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`freeze::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Freeze Register\n\nYou can [`read`](crate::Reg::read) this register and get [`freeze::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`freeze::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FREEZErs;
 impl crate::RegisterSpec for FREEZErs {
     type Ux = u32;

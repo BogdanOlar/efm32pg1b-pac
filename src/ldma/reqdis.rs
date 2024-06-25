@@ -13,6 +13,13 @@ impl R {
         ReqdisR::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("REQDIS")
+            .field("reqdis", &self.reqdis())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - DMA Request Disables"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         ReqdisW::new(self, 0)
     }
 }
-#[doc = "DMA Channel Request Disable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`reqdis::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`reqdis::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMA Channel Request Disable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`reqdis::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reqdis::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct REQDISrs;
 impl crate::RegisterSpec for REQDISrs {
     type Ux = u32;

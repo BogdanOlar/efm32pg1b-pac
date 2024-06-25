@@ -23,6 +23,7 @@ pub type MpabR = crate::BitReader;
 #[doc = "Field `MPAB` writer - Multi-Processor Address-Bit"]
 pub type MpabW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Oversampling\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OVS {
@@ -338,6 +339,40 @@ impl R {
         SmsdelayR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("sync", &self.sync())
+            .field("loopbk", &self.loopbk())
+            .field("ccen", &self.ccen())
+            .field("mpm", &self.mpm())
+            .field("mpab", &self.mpab())
+            .field("ovs", &self.ovs())
+            .field("clkpol", &self.clkpol())
+            .field("clkpha", &self.clkpha())
+            .field("msbf", &self.msbf())
+            .field("csma", &self.csma())
+            .field("txbil", &self.txbil())
+            .field("rxinv", &self.rxinv())
+            .field("txinv", &self.txinv())
+            .field("csinv", &self.csinv())
+            .field("autocs", &self.autocs())
+            .field("autotri", &self.autotri())
+            .field("scmode", &self.scmode())
+            .field("scretrans", &self.scretrans())
+            .field("skipperrf", &self.skipperrf())
+            .field("bit8dv", &self.bit8dv())
+            .field("errsdma", &self.errsdma())
+            .field("errsrx", &self.errsrx())
+            .field("errstx", &self.errstx())
+            .field("sssearly", &self.sssearly())
+            .field("byteswap", &self.byteswap())
+            .field("autotx", &self.autotx())
+            .field("mvdis", &self.mvdis())
+            .field("smsdelay", &self.smsdelay())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - USART Synchronous Mode"]
     #[inline(always)]
@@ -508,7 +543,7 @@ impl W {
         SmsdelayW::new(self, 31)
     }
 }
-#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

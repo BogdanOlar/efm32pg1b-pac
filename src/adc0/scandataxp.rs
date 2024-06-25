@@ -16,7 +16,15 @@ impl R {
         ScaninputidpeekR::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
-#[doc = "Scan Sequence Result Data + Data Source Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scandataxp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANDATAXP")
+            .field("datap", &self.datap())
+            .field("scaninputidpeek", &self.scaninputidpeek())
+            .finish()
+    }
+}
+#[doc = "Scan Sequence Result Data + Data Source Peek Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scandataxp::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANDATAXPrs;
 impl crate::RegisterSpec for SCANDATAXPrs {
     type Ux = u32;

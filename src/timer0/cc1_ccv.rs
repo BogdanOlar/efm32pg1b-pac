@@ -13,6 +13,11 @@ impl R {
         CcvR::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for crate::generic::Reg<CC1_CCVrs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - CC Channel Value"]
     #[inline(always)]
@@ -21,7 +26,7 @@ impl W {
         CcvW::new(self, 0)
     }
 }
-#[doc = "CC Channel Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc1_ccv::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cc1_ccv::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CC Channel Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc1_ccv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc1_ccv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>"]
 pub struct CC1_CCVrs;
 impl crate::RegisterSpec for CC1_CCVrs {
     type Ux = u32;

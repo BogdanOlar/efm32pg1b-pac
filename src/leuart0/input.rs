@@ -3,6 +3,7 @@ pub type R = crate::R<INPUTrs>;
 #[doc = "Register `INPUT` writer"]
 pub type W = crate::W<INPUTrs>;
 #[doc = "RX PRS Channel Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXPRSSEL {
@@ -208,6 +209,14 @@ impl R {
         RxprsR::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INPUT")
+            .field("rxprssel", &self.rxprssel())
+            .field("rxprs", &self.rxprs())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - RX PRS Channel Select"]
     #[inline(always)]
@@ -222,7 +231,7 @@ impl W {
         RxprsW::new(self, 5)
     }
 }
-#[doc = "LEUART Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`input::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`input::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "LEUART Input Register\n\nYou can [`read`](crate::Reg::read) this register and get [`input::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`input::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INPUTrs;
 impl crate::RegisterSpec for INPUTrs {
     type Ux = u32;

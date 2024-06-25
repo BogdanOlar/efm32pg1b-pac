@@ -13,6 +13,11 @@ impl R {
         CntR::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CNT").field("cnt", &self.cnt()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Counter Value"]
     #[inline(always)]
@@ -21,7 +26,7 @@ impl W {
         CntW::new(self, 0)
     }
 }
-#[doc = "Counter Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cnt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cnt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Counter Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cnt::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cnt::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CNTrs;
 impl crate::RegisterSpec for CNTrs {
     type Ux = u32;

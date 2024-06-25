@@ -112,6 +112,24 @@ impl R {
         Ch11levelR::new(((self.bits >> 11) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SWLEVEL")
+            .field("ch0level", &self.ch0level())
+            .field("ch1level", &self.ch1level())
+            .field("ch2level", &self.ch2level())
+            .field("ch3level", &self.ch3level())
+            .field("ch4level", &self.ch4level())
+            .field("ch5level", &self.ch5level())
+            .field("ch6level", &self.ch6level())
+            .field("ch7level", &self.ch7level())
+            .field("ch8level", &self.ch8level())
+            .field("ch9level", &self.ch9level())
+            .field("ch10level", &self.ch10level())
+            .field("ch11level", &self.ch11level())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Channel 0 Software Level"]
     #[inline(always)]
@@ -186,7 +204,7 @@ impl W {
         Ch11levelW::new(self, 11)
     }
 }
-#[doc = "Software Level Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`swlevel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swlevel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Software Level Register\n\nYou can [`read`](crate::Reg::read) this register and get [`swlevel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`swlevel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SWLEVELrs;
 impl crate::RegisterSpec for SWLEVELrs {
     type Ux = u32;

@@ -135,7 +135,32 @@ impl R {
         ClerrR::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IF")
+            .field("start", &self.start())
+            .field("rstart", &self.rstart())
+            .field("addr", &self.addr())
+            .field("txc", &self.txc())
+            .field("txbl", &self.txbl())
+            .field("rxdatav", &self.rxdatav())
+            .field("ack", &self.ack())
+            .field("nack", &self.nack())
+            .field("mstop", &self.mstop())
+            .field("arblost", &self.arblost())
+            .field("buserr", &self.buserr())
+            .field("bushold", &self.bushold())
+            .field("txof", &self.txof())
+            .field("rxuf", &self.rxuf())
+            .field("bito", &self.bito())
+            .field("clto", &self.clto())
+            .field("sstop", &self.sstop())
+            .field("rxfull", &self.rxfull())
+            .field("clerr", &self.clerr())
+            .finish()
+    }
+}
+#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IFrs;
 impl crate::RegisterSpec for IFrs {
     type Ux = u32;

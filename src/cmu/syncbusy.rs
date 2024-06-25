@@ -86,7 +86,25 @@ impl R {
         LfxobsyR::new(((self.bits >> 29) & 1) != 0)
     }
 }
-#[doc = "Synchronization Busy Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`syncbusy::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYNCBUSY")
+            .field("lfaclken0", &self.lfaclken0())
+            .field("lfapresc0", &self.lfapresc0())
+            .field("lfbclken0", &self.lfbclken0())
+            .field("lfbpresc0", &self.lfbpresc0())
+            .field("lfeclken0", &self.lfeclken0())
+            .field("lfepresc0", &self.lfepresc0())
+            .field("hfrcobsy", &self.hfrcobsy())
+            .field("auxhfrcobsy", &self.auxhfrcobsy())
+            .field("lfrcobsy", &self.lfrcobsy())
+            .field("lfrcovrefbsy", &self.lfrcovrefbsy())
+            .field("hfxobsy", &self.hfxobsy())
+            .field("lfxobsy", &self.lfxobsy())
+            .finish()
+    }
+}
+#[doc = "Synchronization Busy Register\n\nYou can [`read`](crate::Reg::read) this register and get [`syncbusy::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYNCBUSYrs;
 impl crate::RegisterSpec for SYNCBUSYrs {
     type Ux = u32;

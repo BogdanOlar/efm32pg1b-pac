@@ -8,6 +8,11 @@ pub type Dtprs1fcW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type DtdbgfcW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TLOCKUPFC` writer - DTI Lockup Fault Clear"]
 pub type TlockupfcW<'a, REG> = crate::BitWriter<'a, REG>;
+impl core::fmt::Debug for crate::generic::Reg<DTFAULTCrs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 0 - DTI PRS0 Fault Clear"]
     #[inline(always)]
@@ -34,7 +39,7 @@ impl W {
         TlockupfcW::new(self, 3)
     }
 }
-#[doc = "DTI Fault Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtfaultc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DTI Fault Clear Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dtfaultc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTFAULTCrs;
 impl crate::RegisterSpec for DTFAULTCrs {
     type Ux = u32;

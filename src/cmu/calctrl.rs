@@ -3,6 +3,7 @@ pub type R = crate::R<CALCTRLrs>;
 #[doc = "Register `CALCTRL` writer"]
 pub type W = crate::W<CALCTRLrs>;
 #[doc = "Calibration Up-counter Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UPSEL {
@@ -115,6 +116,7 @@ where
     }
 }
 #[doc = "Calibration Down-counter Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DOWNSEL {
@@ -244,6 +246,7 @@ pub type ContR = crate::BitReader;
 #[doc = "Field `CONT` writer - Continuous Calibration"]
 pub type ContW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "PRS Select for PRS Input When Selected in UPSEL\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSUPSEL {
@@ -434,6 +437,7 @@ where
     }
 }
 #[doc = "PRS Select for PRS Input When Selected in DOWNSEL\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSDOWNSEL {
@@ -650,6 +654,17 @@ impl R {
         PrsdownselR::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CALCTRL")
+            .field("upsel", &self.upsel())
+            .field("downsel", &self.downsel())
+            .field("cont", &self.cont())
+            .field("prsupsel", &self.prsupsel())
+            .field("prsdownsel", &self.prsdownsel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - Calibration Up-counter Select"]
     #[inline(always)]
@@ -682,7 +697,7 @@ impl W {
         PrsdownselW::new(self, 24)
     }
 }
-#[doc = "Calibration Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`calctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`calctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Calibration Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`calctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`calctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CALCTRLrs;
 impl crate::RegisterSpec for CALCTRLrs {
     type Ux = u32;

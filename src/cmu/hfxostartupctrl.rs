@@ -40,6 +40,16 @@ impl R {
         Reserved1R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFXOSTARTUPCTRL")
+            .field("ibtrimxocore", &self.ibtrimxocore())
+            .field("ctune", &self.ctune())
+            .field("reserved0", &self.reserved0())
+            .field("reserved1", &self.reserved1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:6 - Sets the Startup Oscillator Core Bias Current"]
     #[inline(always)]
@@ -66,7 +76,7 @@ impl W {
         Reserved1W::new(self, 28)
     }
 }
-#[doc = "HFXO Startup Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfxostartupctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfxostartupctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HFXO Startup Control\n\nYou can [`read`](crate::Reg::read) this register and get [`hfxostartupctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfxostartupctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFXOSTARTUPCTRLrs;
 impl crate::RegisterSpec for HFXOSTARTUPCTRLrs {
     type Ux = u32;

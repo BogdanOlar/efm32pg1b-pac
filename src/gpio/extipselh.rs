@@ -3,6 +3,7 @@ pub type R = crate::R<EXTIPSELHrs>;
 #[doc = "Register `EXTIPSELH` writer"]
 pub type W = crate::W<EXTIPSELHrs>;
 #[doc = "External Interrupt 8 Port Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXTIPSEL8 {
@@ -102,6 +103,7 @@ where
     }
 }
 #[doc = "External Interrupt 9 Port Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXTIPSEL9 {
@@ -201,6 +203,7 @@ where
     }
 }
 #[doc = "External Interrupt 10 Port Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXTIPSEL10 {
@@ -300,6 +303,7 @@ where
     }
 }
 #[doc = "External Interrupt 11 Port Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXTIPSEL11 {
@@ -399,6 +403,7 @@ where
     }
 }
 #[doc = "External Interrupt 12 Port Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXTIPSEL12 {
@@ -498,6 +503,7 @@ where
     }
 }
 #[doc = "External Interrupt 13 Port Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXTIPSEL13 {
@@ -597,6 +603,7 @@ where
     }
 }
 #[doc = "External Interrupt 14 Port Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXTIPSEL14 {
@@ -696,6 +703,7 @@ where
     }
 }
 #[doc = "External Interrupt 15 Port Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXTIPSEL15 {
@@ -836,6 +844,20 @@ impl R {
         Extipsel15R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EXTIPSELH")
+            .field("extipsel8", &self.extipsel8())
+            .field("extipsel9", &self.extipsel9())
+            .field("extipsel10", &self.extipsel10())
+            .field("extipsel11", &self.extipsel11())
+            .field("extipsel12", &self.extipsel12())
+            .field("extipsel13", &self.extipsel13())
+            .field("extipsel14", &self.extipsel14())
+            .field("extipsel15", &self.extipsel15())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - External Interrupt 8 Port Select"]
     #[inline(always)]
@@ -886,7 +908,7 @@ impl W {
         Extipsel15W::new(self, 28)
     }
 }
-#[doc = "External Interrupt Port Select High Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`extipselh::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`extipselh::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "External Interrupt Port Select High Register\n\nYou can [`read`](crate::Reg::read) this register and get [`extipselh::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extipselh::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EXTIPSELHrs;
 impl crate::RegisterSpec for EXTIPSELHrs {
     type Ux = u32;

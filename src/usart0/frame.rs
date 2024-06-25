@@ -3,6 +3,7 @@ pub type R = crate::R<FRAMErs>;
 #[doc = "Register `FRAME` writer"]
 pub type W = crate::W<FRAMErs>;
 #[doc = "Data-Bit Mode\n\nValue on reset: 5"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DATABITS {
@@ -206,6 +207,7 @@ where
     }
 }
 #[doc = "Parity-Bit Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PARITY {
@@ -279,6 +281,7 @@ where
     }
 }
 #[doc = "Stop-Bit Mode\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STOPBITS {
@@ -381,6 +384,15 @@ impl R {
         StopbitsR::new(((self.bits >> 12) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FRAME")
+            .field("databits", &self.databits())
+            .field("parity", &self.parity())
+            .field("stopbits", &self.stopbits())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Data-Bit Mode"]
     #[inline(always)]
@@ -401,7 +413,7 @@ impl W {
         StopbitsW::new(self, 12)
     }
 }
-#[doc = "USART Frame Format Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frame::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frame::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "USART Frame Format Register\n\nYou can [`read`](crate::Reg::read) this register and get [`frame::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frame::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FRAMErs;
 impl crate::RegisterSpec for FRAMErs {
     type Ux = u32;

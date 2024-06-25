@@ -51,7 +51,20 @@ impl R {
         Em4ioretR::new(((self.bits >> 20) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("vmonrdy", &self.vmonrdy())
+            .field("vmonavdd", &self.vmonavdd())
+            .field("vmonaltavdd", &self.vmonaltavdd())
+            .field("vmondvdd", &self.vmondvdd())
+            .field("vmonio0", &self.vmonio0())
+            .field("vmonfvdd", &self.vmonfvdd())
+            .field("em4ioret", &self.em4ioret())
+            .finish()
+    }
+}
+#[doc = "Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSrs;
 impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;

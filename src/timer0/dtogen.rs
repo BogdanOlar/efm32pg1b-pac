@@ -58,6 +58,18 @@ impl R {
         Dtogcdti2enR::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DTOGEN")
+            .field("dtogcc0en", &self.dtogcc0en())
+            .field("dtogcc1en", &self.dtogcc1en())
+            .field("dtogcc2en", &self.dtogcc2en())
+            .field("dtogcdti0en", &self.dtogcdti0en())
+            .field("dtogcdti1en", &self.dtogcdti1en())
+            .field("dtogcdti2en", &self.dtogcdti2en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - DTI CC0 Output Generation Enable"]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         Dtogcdti2enW::new(self, 5)
     }
 }
-#[doc = "DTI Output Generation Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtogen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtogen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DTI Output Generation Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dtogen::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dtogen::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTOGENrs;
 impl crate::RegisterSpec for DTOGENrs {
     type Ux = u32;

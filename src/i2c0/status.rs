@@ -72,7 +72,23 @@ impl R {
         RxfullR::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("pstart", &self.pstart())
+            .field("pstop", &self.pstop())
+            .field("pack", &self.pack())
+            .field("pnack", &self.pnack())
+            .field("pcont", &self.pcont())
+            .field("pabort", &self.pabort())
+            .field("txc", &self.txc())
+            .field("txbl", &self.txbl())
+            .field("rxdatav", &self.rxdatav())
+            .field("rxfull", &self.rxfull())
+            .finish()
+    }
+}
+#[doc = "Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSrs;
 impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;

@@ -1,6 +1,7 @@
 #[doc = "Register `DSTATUS` reader"]
 pub type R = crate::R<DSTATUSrs>;
 #[doc = "Data 0 Zero\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DATA0ZERO {
@@ -93,7 +94,18 @@ impl R {
         CarryR::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "Data Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dstatus::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DSTATUS")
+            .field("data0zero", &self.data0zero())
+            .field("ddata0lsbs", &self.ddata0lsbs())
+            .field("ddata0msbs", &self.ddata0msbs())
+            .field("ddata1msb", &self.ddata1msb())
+            .field("carry", &self.carry())
+            .finish()
+    }
+}
+#[doc = "Data Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DSTATUSrs;
 impl crate::RegisterSpec for DSTATUSrs {
     type Ux = u32;

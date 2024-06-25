@@ -16,7 +16,12 @@ impl R {
         Rxdata1R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "RX FIFO Double Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdouble::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for crate::generic::Reg<RXDOUBLErs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
+#[doc = "RX FIFO Double Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxdouble::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>"]
 pub struct RXDOUBLErs;
 impl crate::RegisterSpec for RXDOUBLErs {
     type Ux = u32;

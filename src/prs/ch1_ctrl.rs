@@ -7,6 +7,7 @@ pub type SigselR = crate::FieldReader;
 #[doc = "Field `SIGSEL` writer - Signal Select"]
 pub type SigselW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Source Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SOURCESEL {
@@ -275,6 +276,7 @@ where
     }
 }
 #[doc = "Edge Detect Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EDSEL {
@@ -422,6 +424,20 @@ impl R {
         AsyncreflR::new(((self.bits >> 30) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CH1_CTRL")
+            .field("sigsel", &self.sigsel())
+            .field("sourcesel", &self.sourcesel())
+            .field("edsel", &self.edsel())
+            .field("stretch", &self.stretch())
+            .field("inv", &self.inv())
+            .field("orprev", &self.orprev())
+            .field("andnext", &self.andnext())
+            .field("asyncrefl", &self.asyncrefl())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - Signal Select"]
     #[inline(always)]
@@ -472,7 +488,7 @@ impl W {
         AsyncreflW::new(self, 30)
     }
 }
-#[doc = "Channel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ch1_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ch1_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ch1_ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch1_ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CH1_CTRLrs;
 impl crate::RegisterSpec for CH1_CTRLrs {
     type Ux = u32;

@@ -13,6 +13,13 @@ impl R {
         LoopcntR::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CH0_LOOP")
+            .field("loopcnt", &self.loopcnt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Linked Structure Sequence Loop Counter"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         LoopcntW::new(self, 0)
     }
 }
-#[doc = "Channel Loop Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ch0_loop::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ch0_loop::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Loop Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ch0_loop::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch0_loop::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CH0_LOOPrs;
 impl crate::RegisterSpec for CH0_LOOPrs {
     type Ux = u32;

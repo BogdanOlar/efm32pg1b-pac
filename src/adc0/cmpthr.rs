@@ -22,6 +22,14 @@ impl R {
         AdgtR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CMPTHR")
+            .field("adlt", &self.adlt())
+            .field("adgt", &self.adgt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Less Than Compare Threshold"]
     #[inline(always)]
@@ -36,7 +44,7 @@ impl W {
         AdgtW::new(self, 16)
     }
 }
-#[doc = "Compare Threshold Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmpthr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmpthr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Compare Threshold Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmpthr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmpthr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CMPTHRrs;
 impl crate::RegisterSpec for CMPTHRrs {
     type Ux = u32;

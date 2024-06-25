@@ -30,7 +30,17 @@ impl R {
         Pch1PrsctrlR::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "Synchronization Busy Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`syncbusy::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYNCBUSY")
+            .field("ctrl", &self.ctrl())
+            .field("cmd", &self.cmd())
+            .field("pch0_prsctrl", &self.pch0_prsctrl())
+            .field("pch1_prsctrl", &self.pch1_prsctrl())
+            .finish()
+    }
+}
+#[doc = "Synchronization Busy Register\n\nYou can [`read`](crate::Reg::read) this register and get [`syncbusy::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYNCBUSYrs;
 impl crate::RegisterSpec for SYNCBUSYrs {
     type Ux = u32;

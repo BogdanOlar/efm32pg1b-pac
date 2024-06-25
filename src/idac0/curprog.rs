@@ -3,6 +3,7 @@ pub type R = crate::R<CURPROGrs>;
 #[doc = "Register `CURPROG` writer"]
 pub type W = crate::W<CURPROGrs>;
 #[doc = "Current Range Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RANGESEL {
@@ -113,6 +114,15 @@ impl R {
         TuningR::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CURPROG")
+            .field("rangesel", &self.rangesel())
+            .field("stepsel", &self.stepsel())
+            .field("tuning", &self.tuning())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Current Range Select"]
     #[inline(always)]
@@ -133,7 +143,7 @@ impl W {
         TuningW::new(self, 16)
     }
 }
-#[doc = "Current Programming Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`curprog::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`curprog::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Current Programming Register\n\nYou can [`read`](crate::Reg::read) this register and get [`curprog::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`curprog::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CURPROGrs;
 impl crate::RegisterSpec for CURPROGrs {
     type Ux = u32;

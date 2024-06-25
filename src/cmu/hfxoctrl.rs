@@ -7,6 +7,7 @@ pub type ModeR = crate::BitReader;
 #[doc = "Field `MODE` writer - HFXO Mode"]
 pub type ModeW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "HFXO Automatic Peak Detection and Shunt Current Optimization Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PEAKDETSHUNTOPTMODE {
@@ -92,6 +93,7 @@ pub type Xto2gndR = crate::BitReader;
 #[doc = "Field `XTO2GND` writer - Clamp HFXTAL_P Pin to Ground When HFXO Oscillator is Off"]
 pub type Xto2gndW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "HFXO Low Frequency Timeout\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LFTIMEOUT {
@@ -279,6 +281,20 @@ impl R {
         Autostartselem0em1R::new(((self.bits >> 29) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFXOCTRL")
+            .field("mode", &self.mode())
+            .field("peakdetshuntoptmode", &self.peakdetshuntoptmode())
+            .field("lowpower", &self.lowpower())
+            .field("xti2gnd", &self.xti2gnd())
+            .field("xto2gnd", &self.xto2gnd())
+            .field("lftimeout", &self.lftimeout())
+            .field("autostartem0em1", &self.autostartem0em1())
+            .field("autostartselem0em1", &self.autostartselem0em1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - HFXO Mode"]
     #[inline(always)]
@@ -329,7 +345,7 @@ impl W {
         Autostartselem0em1W::new(self, 29)
     }
 }
-#[doc = "HFXO Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfxoctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfxoctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HFXO Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`hfxoctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfxoctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFXOCTRLrs;
 impl crate::RegisterSpec for HFXOCTRLrs {
     type Ux = u32;

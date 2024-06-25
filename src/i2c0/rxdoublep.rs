@@ -16,7 +16,15 @@ impl R {
         Rxdatap1R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "Receive Buffer Double Data Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdoublep::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RXDOUBLEP")
+            .field("rxdatap0", &self.rxdatap0())
+            .field("rxdatap1", &self.rxdatap1())
+            .finish()
+    }
+}
+#[doc = "Receive Buffer Double Data Peek Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxdoublep::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDOUBLEPrs;
 impl crate::RegisterSpec for RXDOUBLEPrs {
     type Ux = u32;

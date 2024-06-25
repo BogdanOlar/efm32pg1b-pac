@@ -13,6 +13,13 @@ impl R {
         AddrbR::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADDRB")
+            .field("addrb", &self.addrb())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Page Erase or Write Address Buffer"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         AddrbW::new(self, 0)
     }
 }
-#[doc = "Page Erase/Write Address Buffer\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`addrb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`addrb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Page Erase/Write Address Buffer\n\nYou can [`read`](crate::Reg::read) this register and get [`addrb::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`addrb::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ADDRBrs;
 impl crate::RegisterSpec for ADDRBrs {
     type Ux = u32;

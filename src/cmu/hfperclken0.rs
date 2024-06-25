@@ -94,6 +94,22 @@ impl R {
         Idac0R::new(((self.bits >> 9) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFPERCLKEN0")
+            .field("timer0", &self.timer0())
+            .field("timer1", &self.timer1())
+            .field("usart0", &self.usart0())
+            .field("usart1", &self.usart1())
+            .field("acmp0", &self.acmp0())
+            .field("acmp1", &self.acmp1())
+            .field("cryotimer", &self.cryotimer())
+            .field("i2c0", &self.i2c0())
+            .field("adc0", &self.adc0())
+            .field("idac0", &self.idac0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Timer 0 Clock Enable"]
     #[inline(always)]
@@ -156,7 +172,7 @@ impl W {
         Idac0W::new(self, 9)
     }
 }
-#[doc = "High Frequency Peripheral Clock Enable Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfperclken0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfperclken0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "High Frequency Peripheral Clock Enable Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`hfperclken0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfperclken0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFPERCLKEN0rs;
 impl crate::RegisterSpec for HFPERCLKEN0rs {
     type Ux = u32;

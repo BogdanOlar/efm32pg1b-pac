@@ -107,7 +107,28 @@ impl R {
         CmuerrR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IF")
+            .field("hfrcordy", &self.hfrcordy())
+            .field("hfxordy", &self.hfxordy())
+            .field("lfrcordy", &self.lfrcordy())
+            .field("lfxordy", &self.lfxordy())
+            .field("auxhfrcordy", &self.auxhfrcordy())
+            .field("calrdy", &self.calrdy())
+            .field("calof", &self.calof())
+            .field("hfxodiserr", &self.hfxodiserr())
+            .field("hfxoautosw", &self.hfxoautosw())
+            .field("hfxopeakdeterr", &self.hfxopeakdeterr())
+            .field("hfxopeakdetrdy", &self.hfxopeakdetrdy())
+            .field("hfxoshuntoptrdy", &self.hfxoshuntoptrdy())
+            .field("hfrcodis", &self.hfrcodis())
+            .field("lftimeouterr", &self.lftimeouterr())
+            .field("cmuerr", &self.cmuerr())
+            .finish()
+    }
+}
+#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IFrs;
 impl crate::RegisterSpec for IFrs {
     type Ux = u32;

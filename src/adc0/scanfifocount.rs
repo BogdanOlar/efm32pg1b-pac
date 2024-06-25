@@ -9,7 +9,14 @@ impl R {
         ScandcR::new((self.bits & 7) as u8)
     }
 }
-#[doc = "Scan FIFO Count Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanfifocount::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANFIFOCOUNT")
+            .field("scandc", &self.scandc())
+            .finish()
+    }
+}
+#[doc = "Scan FIFO Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scanfifocount::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANFIFOCOUNTrs;
 impl crate::RegisterSpec for SCANFIFOCOUNTrs {
     type Ux = u32;

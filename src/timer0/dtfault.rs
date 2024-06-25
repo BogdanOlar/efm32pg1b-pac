@@ -30,7 +30,17 @@ impl R {
         DtlockupfR::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "DTI Fault Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtfault::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DTFAULT")
+            .field("dtprs0f", &self.dtprs0f())
+            .field("dtprs1f", &self.dtprs1f())
+            .field("dtdbgf", &self.dtdbgf())
+            .field("dtlockupf", &self.dtlockupf())
+            .finish()
+    }
+}
+#[doc = "DTI Fault Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dtfault::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTFAULTrs;
 impl crate::RegisterSpec for DTFAULTrs {
     type Ux = u32;

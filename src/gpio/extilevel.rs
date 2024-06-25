@@ -58,6 +58,18 @@ impl R {
         Em4wu12R::new(((self.bits >> 28) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EXTILEVEL")
+            .field("em4wu0", &self.em4wu0())
+            .field("em4wu1", &self.em4wu1())
+            .field("em4wu4", &self.em4wu4())
+            .field("em4wu8", &self.em4wu8())
+            .field("em4wu9", &self.em4wu9())
+            .field("em4wu12", &self.em4wu12())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 16 - EM4 Wake Up Level for EM4WU0 Pin"]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         Em4wu12W::new(self, 28)
     }
 }
-#[doc = "External Interrupt Level Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`extilevel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`extilevel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "External Interrupt Level Register\n\nYou can [`read`](crate::Reg::read) this register and get [`extilevel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extilevel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EXTILEVELrs;
 impl crate::RegisterSpec for EXTILEVELrs {
     type Ux = u32;

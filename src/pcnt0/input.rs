@@ -3,6 +3,7 @@ pub type R = crate::R<INPUTrs>;
 #[doc = "Register `INPUT` writer"]
 pub type W = crate::W<INPUTrs>;
 #[doc = "S0IN PRS Channel Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum S0PRSSEL {
@@ -197,6 +198,7 @@ pub type S0prsenR = crate::BitReader;
 #[doc = "Field `S0PRSEN` writer - S0IN PRS Enable"]
 pub type S0prsenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "S1IN PRS Channel Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum S1PRSSEL {
@@ -412,6 +414,16 @@ impl R {
         S1prsenR::new(((self.bits >> 11) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INPUT")
+            .field("s0prssel", &self.s0prssel())
+            .field("s0prsen", &self.s0prsen())
+            .field("s1prssel", &self.s1prssel())
+            .field("s1prsen", &self.s1prsen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - S0IN PRS Channel Select"]
     #[inline(always)]
@@ -438,7 +450,7 @@ impl W {
         S1prsenW::new(self, 11)
     }
 }
-#[doc = "PCNT Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`input::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`input::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PCNT Input Register\n\nYou can [`read`](crate::Reg::read) this register and get [`input::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`input::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INPUTrs;
 impl crate::RegisterSpec for INPUTrs {
     type Ux = u32;

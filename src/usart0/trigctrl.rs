@@ -39,6 +39,7 @@ pub type Rxatx2enR = crate::BitReader;
 #[doc = "Field `RXATX2EN` writer - Enable Receive Trigger After TX End of Frame Plus TCMPVAL2 Baud-times"]
 pub type Rxatx2enW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Trigger PRS Channel Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TSEL {
@@ -280,6 +281,22 @@ impl R {
         TselR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TRIGCTRL")
+            .field("rxten", &self.rxten())
+            .field("txten", &self.txten())
+            .field("autotxten", &self.autotxten())
+            .field("txarx0en", &self.txarx0en())
+            .field("txarx1en", &self.txarx1en())
+            .field("txarx2en", &self.txarx2en())
+            .field("rxatx0en", &self.rxatx0en())
+            .field("rxatx1en", &self.rxatx1en())
+            .field("rxatx2en", &self.rxatx2en())
+            .field("tsel", &self.tsel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 4 - Receive Trigger Enable"]
     #[inline(always)]
@@ -342,7 +359,7 @@ impl W {
         TselW::new(self, 16)
     }
 }
-#[doc = "USART Trigger Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trigctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`trigctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "USART Trigger Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`trigctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`trigctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TRIGCTRLrs;
 impl crate::RegisterSpec for TRIGCTRLrs {
     type Ux = u32;

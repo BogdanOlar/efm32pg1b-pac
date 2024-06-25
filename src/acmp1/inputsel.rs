@@ -11,6 +11,7 @@ pub type NegselR = crate::FieldReader;
 #[doc = "Field `NEGSEL` writer - Negative Input Select"]
 pub type NegselW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "VA Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VASEL {
@@ -694,6 +695,7 @@ pub type CsresenR = crate::BitReader;
 #[doc = "Field `CSRESEN` writer - Capacitive Sense Mode Internal Resistor Enable"]
 pub type CsresenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Capacitive Sense Mode Internal Resistor Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSRESSEL {
@@ -868,6 +870,19 @@ impl R {
         CsresselR::new(((self.bits >> 28) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INPUTSEL")
+            .field("possel", &self.possel())
+            .field("negsel", &self.negsel())
+            .field("vasel", &self.vasel())
+            .field("vbsel", &self.vbsel())
+            .field("vlpsel", &self.vlpsel())
+            .field("csresen", &self.csresen())
+            .field("csressel", &self.csressel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Positive Input Select"]
     #[inline(always)]
@@ -912,7 +927,7 @@ impl W {
         CsresselW::new(self, 28)
     }
 }
-#[doc = "Input Selection Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inputsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inputsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Input Selection Register\n\nYou can [`read`](crate::Reg::read) this register and get [`inputsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inputsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INPUTSELrs;
 impl crate::RegisterSpec for INPUTSELrs {
     type Ux = u32;

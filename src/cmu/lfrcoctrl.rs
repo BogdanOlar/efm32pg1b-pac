@@ -19,6 +19,7 @@ pub type EndemR = crate::BitReader;
 #[doc = "Field `ENDEM` writer - Enable Dynamic Element Matching"]
 pub type EndemW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "LFRCO Timeout\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TIMEOUT {
@@ -127,6 +128,18 @@ impl R {
         GmccurtuneR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LFRCOCTRL")
+            .field("tuning", &self.tuning())
+            .field("envref", &self.envref())
+            .field("enchop", &self.enchop())
+            .field("endem", &self.endem())
+            .field("timeout", &self.timeout())
+            .field("gmccurtune", &self.gmccurtune())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - LFRCO Tuning Value"]
     #[inline(always)]
@@ -165,7 +178,7 @@ impl W {
         GmccurtuneW::new(self, 28)
     }
 }
-#[doc = "LFRCO Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfrcoctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfrcoctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "LFRCO Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`lfrcoctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfrcoctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LFRCOCTRLrs;
 impl crate::RegisterSpec for LFRCOCTRLrs {
     type Ux = u32;

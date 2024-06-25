@@ -40,6 +40,16 @@ impl R {
         RxenatR::new(((self.bits >> 15) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TXDATAX")
+            .field("txdata", &self.txdata())
+            .field("txbreak", &self.txbreak())
+            .field("txdisat", &self.txdisat())
+            .field("rxenat", &self.rxenat())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - TX Data"]
     #[inline(always)]
@@ -66,7 +76,7 @@ impl W {
         RxenatW::new(self, 15)
     }
 }
-#[doc = "Transmit Buffer Data Extended Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txdatax::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`txdatax::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Buffer Data Extended Register\n\nYou can [`read`](crate::Reg::read) this register and get [`txdatax::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`txdatax::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TXDATAXrs;
 impl crate::RegisterSpec for TXDATAXrs {
     type Ux = u32;

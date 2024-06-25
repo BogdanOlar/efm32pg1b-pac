@@ -58,6 +58,18 @@ impl R {
         StwsR::new(((self.bits >> 28) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STARTUP")
+            .field("stdly0", &self.stdly0())
+            .field("stdly1", &self.stdly1())
+            .field("astwait", &self.astwait())
+            .field("stwsen", &self.stwsen())
+            .field("stwsaen", &self.stwsaen())
+            .field("stws", &self.stws())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:9 - Startup Delay 0"]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         StwsW::new(self, 28)
     }
 }
-#[doc = "Startup Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`startup::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`startup::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Startup Control\n\nYou can [`read`](crate::Reg::read) this register and get [`startup::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`startup::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STARTUPrs;
 impl crate::RegisterSpec for STARTUPrs {
     type Ux = u32;

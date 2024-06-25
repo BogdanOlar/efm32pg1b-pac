@@ -16,6 +16,11 @@ pub type EraseabortW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Erasemain0W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CLEARWDATA` writer - Clear WDATA State"]
 pub type ClearwdataW<'a, REG> = crate::BitWriter<'a, REG>;
+impl core::fmt::Debug for crate::generic::Reg<WRITECMDrs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 0 - Load MSC_ADDRB Into ADDR"]
     #[inline(always)]
@@ -66,7 +71,7 @@ impl W {
         ClearwdataW::new(self, 12)
     }
 }
-#[doc = "Write Command Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`writecmd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Write Command Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`writecmd::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WRITECMDrs;
 impl crate::RegisterSpec for WRITECMDrs {
     type Ux = u32;

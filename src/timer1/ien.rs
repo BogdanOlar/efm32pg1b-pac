@@ -103,6 +103,23 @@ impl R {
         Icbof3R::new(((self.bits >> 11) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("of", &self.of())
+            .field("uf", &self.uf())
+            .field("dirchg", &self.dirchg())
+            .field("cc0", &self.cc0())
+            .field("cc1", &self.cc1())
+            .field("cc2", &self.cc2())
+            .field("cc3", &self.cc3())
+            .field("icbof0", &self.icbof0())
+            .field("icbof1", &self.icbof1())
+            .field("icbof2", &self.icbof2())
+            .field("icbof3", &self.icbof3())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - OF Interrupt Enable"]
     #[inline(always)]
@@ -171,7 +188,7 @@ impl W {
         Icbof3W::new(self, 11)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IENrs;
 impl crate::RegisterSpec for IENrs {
     type Ux = u32;

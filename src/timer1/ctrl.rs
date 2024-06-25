@@ -3,6 +3,7 @@ pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRLrs>;
 #[doc = "Timer Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE {
@@ -109,6 +110,7 @@ pub type DmaclractR = crate::BitReader;
 #[doc = "Field `DMACLRACT` writer - DMA Request Clear on Active"]
 pub type DmaclractW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Timer Rising Input Edge Action\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RISEA {
@@ -195,6 +197,7 @@ where
     }
 }
 #[doc = "Timer Falling Input Edge Action\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FALLA {
@@ -285,6 +288,7 @@ pub type X2cntR = crate::BitReader;
 #[doc = "Field `X2CNT` writer - 2x Count Mode"]
 pub type X2cntW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKSEL {
@@ -358,6 +362,7 @@ where
     }
 }
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRESC {
@@ -609,6 +614,25 @@ impl R {
         RsscoistR::new(((self.bits >> 29) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("mode", &self.mode())
+            .field("sync", &self.sync())
+            .field("osmen", &self.osmen())
+            .field("qdm", &self.qdm())
+            .field("debugrun", &self.debugrun())
+            .field("dmaclract", &self.dmaclract())
+            .field("risea", &self.risea())
+            .field("falla", &self.falla())
+            .field("x2cnt", &self.x2cnt())
+            .field("clksel", &self.clksel())
+            .field("presc", &self.presc())
+            .field("ati", &self.ati())
+            .field("rsscoist", &self.rsscoist())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Timer Mode"]
     #[inline(always)]
@@ -689,7 +713,7 @@ impl W {
         RsscoistW::new(self, 29)
     }
 }
-#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

@@ -65,7 +65,22 @@ impl R {
         Em4rstR::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Reset Cause Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rstcause::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RSTCAUSE")
+            .field("porst", &self.porst())
+            .field("avddbod", &self.avddbod())
+            .field("dvddbod", &self.dvddbod())
+            .field("decbod", &self.decbod())
+            .field("extrst", &self.extrst())
+            .field("lockuprst", &self.lockuprst())
+            .field("sysreqrst", &self.sysreqrst())
+            .field("wdogrst", &self.wdogrst())
+            .field("em4rst", &self.em4rst())
+            .finish()
+    }
+}
+#[doc = "Reset Cause Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rstcause::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RSTCAUSErs;
 impl crate::RegisterSpec for RSTCAUSErs {
     type Ux = u32;

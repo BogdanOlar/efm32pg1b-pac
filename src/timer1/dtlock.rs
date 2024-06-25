@@ -3,6 +3,7 @@ pub type R = crate::R<DTLOCKrs>;
 #[doc = "Register `DTLOCK` writer"]
 pub type W = crate::W<DTLOCKrs>;
 #[doc = "DTI Lock Key\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum LOCKKEY {
@@ -69,6 +70,13 @@ impl R {
         LockkeyR::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DTLOCK")
+            .field("lockkey", &self.lockkey())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - DTI Lock Key"]
     #[inline(always)]
@@ -77,7 +85,7 @@ impl W {
         LockkeyW::new(self, 0)
     }
 }
-#[doc = "DTI Configuration Lock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtlock::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtlock::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DTI Configuration Lock Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dtlock::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dtlock::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTLOCKrs;
 impl crate::RegisterSpec for DTLOCKrs {
     type Ux = u32;

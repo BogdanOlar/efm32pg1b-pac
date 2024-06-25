@@ -31,6 +31,15 @@ impl R {
         PulsefiltR::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PULSECTRL")
+            .field("pulsew", &self.pulsew())
+            .field("pulseen", &self.pulseen())
+            .field("pulsefilt", &self.pulsefilt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Pulse Width"]
     #[inline(always)]
@@ -51,7 +60,7 @@ impl W {
         PulsefiltW::new(self, 5)
     }
 }
-#[doc = "Pulse Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pulsectrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pulsectrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Pulse Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pulsectrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pulsectrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PULSECTRLrs;
 impl crate::RegisterSpec for PULSECTRLrs {
     type Ux = u32;

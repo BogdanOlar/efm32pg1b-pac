@@ -58,6 +58,18 @@ impl R {
         DinDisAltR::new(((self.bits >> 28) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("drive_strength", &self.drive_strength())
+            .field("slew_rate", &self.slew_rate())
+            .field("din_dis", &self.din_dis())
+            .field("drive_strength_alt", &self.drive_strength_alt())
+            .field("slew_rate_alt", &self.slew_rate_alt())
+            .field("din_dis_alt", &self.din_dis_alt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Drive strength setting for port pins not using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)"]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         DinDisAltW::new(self, 28)
     }
 }
-#[doc = "Port Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Port Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

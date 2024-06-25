@@ -3,6 +3,7 @@ pub type R = crate::R<CH0_CFGrs>;
 #[doc = "Register `CH0_CFG` writer"]
 pub type W = crate::W<CH0_CFGrs>;
 #[doc = "Arbitration Slot Number Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ARBSLOTS {
@@ -113,6 +114,15 @@ impl R {
         DstincsignR::new(((self.bits >> 21) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CH0_CFG")
+            .field("arbslots", &self.arbslots())
+            .field("srcincsign", &self.srcincsign())
+            .field("dstincsign", &self.dstincsign())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 16:17 - Arbitration Slot Number Select"]
     #[inline(always)]
@@ -133,7 +143,7 @@ impl W {
         DstincsignW::new(self, 21)
     }
 }
-#[doc = "Channel Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ch0_cfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ch0_cfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Configuration Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ch0_cfg::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch0_cfg::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CH0_CFGrs;
 impl crate::RegisterSpec for CH0_CFGrs {
     type Ux = u32;

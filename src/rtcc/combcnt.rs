@@ -16,7 +16,15 @@ impl R {
         CntlsbR::new((self.bits >> 15) & 0x0001_ffff)
     }
 }
-#[doc = "Combined Pre-Counter and Counter Value Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`combcnt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("COMBCNT")
+            .field("precnt", &self.precnt())
+            .field("cntlsb", &self.cntlsb())
+            .finish()
+    }
+}
+#[doc = "Combined Pre-Counter and Counter Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`combcnt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct COMBCNTrs;
 impl crate::RegisterSpec for COMBCNTrs {
     type Ux = u32;

@@ -9,7 +9,14 @@ impl R {
         CcvpR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "CC Channel Value Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cc3_ccvp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CC3_CCVP")
+            .field("ccvp", &self.ccvp())
+            .finish()
+    }
+}
+#[doc = "CC Channel Value Peek Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc3_ccvp::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CC3_CCVPrs;
 impl crate::RegisterSpec for CC3_CCVPrs {
     type Ux = u32;

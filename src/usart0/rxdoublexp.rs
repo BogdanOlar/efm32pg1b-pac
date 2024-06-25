@@ -44,7 +44,19 @@ impl R {
         Ferrp1R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "RX Buffer Double Data Extended Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdoublexp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RXDOUBLEXP")
+            .field("rxdatap0", &self.rxdatap0())
+            .field("perrp0", &self.perrp0())
+            .field("ferrp0", &self.ferrp0())
+            .field("rxdatap1", &self.rxdatap1())
+            .field("perrp1", &self.perrp1())
+            .field("ferrp1", &self.ferrp1())
+            .finish()
+    }
+}
+#[doc = "RX Buffer Double Data Extended Peek Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxdoublexp::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDOUBLEXPrs;
 impl crate::RegisterSpec for RXDOUBLEXPrs {
     type Ux = u32;

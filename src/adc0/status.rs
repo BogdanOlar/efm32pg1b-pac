@@ -9,6 +9,7 @@ pub type SinglerefwarmR = crate::BitReader;
 #[doc = "Field `SCANREFWARM` reader - Scan Reference Warmed Up"]
 pub type ScanrefwarmR = crate::BitReader;
 #[doc = "Programming Error Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PROGERR {
@@ -98,7 +99,21 @@ impl R {
         ScandvR::new(((self.bits >> 17) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("singleact", &self.singleact())
+            .field("scanact", &self.scanact())
+            .field("singlerefwarm", &self.singlerefwarm())
+            .field("scanrefwarm", &self.scanrefwarm())
+            .field("progerr", &self.progerr())
+            .field("warm", &self.warm())
+            .field("singledv", &self.singledv())
+            .field("scandv", &self.scandv())
+            .finish()
+    }
+}
+#[doc = "Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSrs;
 impl crate::RegisterSpec for STATUSrs {
     type Ux = u32;

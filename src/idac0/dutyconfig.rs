@@ -13,6 +13,13 @@ impl R {
         Em2dutycycledisR::new(((self.bits >> 1) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DUTYCONFIG")
+            .field("em2dutycycledis", &self.em2dutycycledis())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 1 - Duty Cycle Enable"]
     #[inline(always)]
@@ -21,7 +28,7 @@ impl W {
         Em2dutycycledisW::new(self, 1)
     }
 }
-#[doc = "Duty Cycle Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dutyconfig::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dutyconfig::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Duty Cycle Configuration Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dutyconfig::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dutyconfig::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DUTYCONFIGrs;
 impl crate::RegisterSpec for DUTYCONFIGrs {
     type Ux = u32;

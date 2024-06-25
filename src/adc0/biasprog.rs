@@ -3,6 +3,7 @@ pub type R = crate::R<BIASPROGrs>;
 #[doc = "Register `BIASPROG` writer"]
 pub type W = crate::W<BIASPROGrs>;
 #[doc = "Bias Programming Value of Analog ADC Block\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCBIASPROG {
@@ -139,6 +140,15 @@ impl R {
         GpbiasaccR::new(((self.bits >> 16) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BIASPROG")
+            .field("adcbiasprog", &self.adcbiasprog())
+            .field("vfaultclr", &self.vfaultclr())
+            .field("gpbiasacc", &self.gpbiasacc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Bias Programming Value of Analog ADC Block"]
     #[inline(always)]
@@ -159,7 +169,7 @@ impl W {
         GpbiasaccW::new(self, 16)
     }
 }
-#[doc = "Bias Programming Register for Various Analog Blocks Used in ADC Operation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`biasprog::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`biasprog::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Bias Programming Register for Various Analog Blocks Used in ADC Operation\n\nYou can [`read`](crate::Reg::read) this register and get [`biasprog::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`biasprog::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BIASPROGrs;
 impl crate::RegisterSpec for BIASPROGrs {
     type Ux = u32;

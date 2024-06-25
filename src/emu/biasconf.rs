@@ -58,6 +58,18 @@ impl R {
         Lpem23R::new(((self.bits >> 7) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BIASCONF")
+            .field("nadutyem01", &self.nadutyem01())
+            .field("lpem01", &self.lpem01())
+            .field("gmcem23", &self.gmcem23())
+            .field("uadutyem23", &self.uadutyem23())
+            .field("nadutyem23", &self.nadutyem23())
+            .field("lpem23", &self.lpem23())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 2 - NA DUTY in EM01"]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         Lpem23W::new(self, 7)
     }
 }
-#[doc = "Configurations Related to the Bias\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`biasconf::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`biasconf::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Configurations Related to the Bias\n\nYou can [`read`](crate::Reg::read) this register and get [`biasconf::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`biasconf::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BIASCONFrs;
 impl crate::RegisterSpec for BIASCONFrs {
     type Ux = u32;

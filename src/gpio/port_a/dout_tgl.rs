@@ -2,6 +2,11 @@
 pub type W = crate::W<DOUT_TGLrs>;
 #[doc = "Field `PINS_DOUT_TGL` writer - Data Out Toggle for pins 0:15"]
 pub type PinsDoutTglW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+impl core::fmt::Debug for crate::generic::Reg<DOUT_TGLrs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Data Out Toggle for pins 0:15"]
     #[inline(always)]
@@ -10,7 +15,7 @@ impl W {
         PinsDoutTglW::new(self, 0)
     }
 }
-#[doc = "Port Data Out Toggle Register. Write bits to 1 to toggle corresponding bits in GPIO_Px_DOUT. Bits written to 0 will have no effect.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dout_tgl::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Port Data Out Toggle Register. Write bits to 1 to toggle corresponding bits in GPIO_Px_DOUT. Bits written to 0 will have no effect.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dout_tgl::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DOUT_TGLrs;
 impl crate::RegisterSpec for DOUT_TGLrs {
     type Ux = u32;

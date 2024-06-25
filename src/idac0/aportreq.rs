@@ -16,7 +16,15 @@ impl R {
         Aport1yreqR::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "APORT Request Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aportreq::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APORTREQ")
+            .field("aport1xreq", &self.aport1xreq())
+            .field("aport1yreq", &self.aport1yreq())
+            .finish()
+    }
+}
+#[doc = "APORT Request Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`aportreq::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct APORTREQrs;
 impl crate::RegisterSpec for APORTREQrs {
     type Ux = u32;

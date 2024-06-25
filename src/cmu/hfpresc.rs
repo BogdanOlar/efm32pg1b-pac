@@ -3,6 +3,7 @@ pub type R = crate::R<HFPRESCrs>;
 #[doc = "Register `HFPRESC` writer"]
 pub type W = crate::W<HFPRESCrs>;
 #[doc = "HFCLK Prescaler\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRESC {
@@ -50,6 +51,7 @@ where
     }
 }
 #[doc = "HFCLKLE Prescaler\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HFCLKLEPRESC {
     #[doc = "0: HFCLKLE is HFBUSCLKLE divided by 2."]
@@ -114,6 +116,14 @@ impl R {
         HfclkleprescR::new(((self.bits >> 24) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFPRESC")
+            .field("presc", &self.presc())
+            .field("hfclklepresc", &self.hfclklepresc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 8:12 - HFCLK Prescaler"]
     #[inline(always)]
@@ -128,7 +138,7 @@ impl W {
         HfclkleprescW::new(self, 24)
     }
 }
-#[doc = "High Frequency Clock Prescaler Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfpresc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfpresc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "High Frequency Clock Prescaler Register\n\nYou can [`read`](crate::Reg::read) this register and get [`hfpresc::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfpresc::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFPRESCrs;
 impl crate::RegisterSpec for HFPRESCrs {
     type Ux = u32;

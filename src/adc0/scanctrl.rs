@@ -15,6 +15,7 @@ pub type AdjR = crate::BitReader;
 #[doc = "Field `ADJ` writer - Scan Sequence Result Adjustment"]
 pub type AdjW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Scan Sequence Resolution Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RES {
@@ -101,6 +102,7 @@ where
     }
 }
 #[doc = "Scan Sequence Reference Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REF {
@@ -239,6 +241,7 @@ where
     }
 }
 #[doc = "Scan Acquisition Time\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AT {
@@ -452,6 +455,20 @@ impl R {
         CmpenR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCANCTRL")
+            .field("rep", &self.rep())
+            .field("diff", &self.diff())
+            .field("adj", &self.adj())
+            .field("res", &self.res())
+            .field("ref_", &self.ref_())
+            .field("at", &self.at())
+            .field("prsen", &self.prsen())
+            .field("cmpen", &self.cmpen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Scan Sequence Repetitive Mode"]
     #[inline(always)]
@@ -502,7 +519,7 @@ impl W {
         CmpenW::new(self, 31)
     }
 }
-#[doc = "Scan Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scanctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`scanctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Scan Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scanctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scanctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCANCTRLrs;
 impl crate::RegisterSpec for SCANCTRLrs {
     type Ux = u32;

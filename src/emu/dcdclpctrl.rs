@@ -31,6 +31,15 @@ impl R {
         LpblankR::new(((self.bits >> 25) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCLPCTRL")
+            .field("lpcmphyssel", &self.lpcmphyssel())
+            .field("lpvrefdutyen", &self.lpvrefdutyen())
+            .field("lpblank", &self.lpblank())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 12:15 - LP Mode Hysteresis Selection"]
     #[inline(always)]
@@ -51,7 +60,7 @@ impl W {
         LpblankW::new(self, 25)
     }
 }
-#[doc = "DCDC Low Power Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdclpctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdclpctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DCDC Low Power Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdclpctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdclpctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCLPCTRLrs;
 impl crate::RegisterSpec for DCDCLPCTRLrs {
     type Ux = u32;

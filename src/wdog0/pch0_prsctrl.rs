@@ -3,6 +3,7 @@ pub type R = crate::R<PCH0_PRSCTRLrs>;
 #[doc = "Register `PCH0_PRSCTRL` writer"]
 pub type W = crate::W<PCH0_PRSCTRLrs>;
 #[doc = "PRS Channel PRS Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL {
@@ -208,6 +209,14 @@ impl R {
         PrsmissrstenR::new(((self.bits >> 8) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PCH0_PRSCTRL")
+            .field("prssel", &self.prssel())
+            .field("prsmissrsten", &self.prsmissrsten())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - PRS Channel PRS Select"]
     #[inline(always)]
@@ -222,7 +231,7 @@ impl W {
         PrsmissrstenW::new(self, 8)
     }
 }
-#[doc = "PRS Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pch0_prsctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pch0_prsctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PRS Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pch0_prsctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pch0_prsctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCH0_PRSCTRLrs;
 impl crate::RegisterSpec for PCH0_PRSCTRLrs {
     type Ux = u32;

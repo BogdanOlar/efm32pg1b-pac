@@ -23,7 +23,12 @@ impl R {
         FerrR::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "RX Buffer Data Extended Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdatax::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for crate::generic::Reg<RXDATAXrs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
+#[doc = "RX Buffer Data Extended Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxdatax::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>"]
 pub struct RXDATAXrs;
 impl crate::RegisterSpec for RXDATAXrs {
     type Ux = u32;

@@ -3,6 +3,7 @@ pub type R = crate::R<DTFCrs>;
 #[doc = "Register `DTFC` writer"]
 pub type W = crate::W<DTFCrs>;
 #[doc = "DTI PRS Fault Source 0 Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DTPRS0FSEL {
@@ -193,6 +194,7 @@ where
     }
 }
 #[doc = "DTI PRS Fault Source 1 Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DTPRS1FSEL {
@@ -383,6 +385,7 @@ where
     }
 }
 #[doc = "DTI Fault Action\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DTFA {
@@ -521,6 +524,19 @@ impl R {
         DtlockupfenR::new(((self.bits >> 27) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DTFC")
+            .field("dtprs0fsel", &self.dtprs0fsel())
+            .field("dtprs1fsel", &self.dtprs1fsel())
+            .field("dtfa", &self.dtfa())
+            .field("dtprs0fen", &self.dtprs0fen())
+            .field("dtprs1fen", &self.dtprs1fen())
+            .field("dtdbgfen", &self.dtdbgfen())
+            .field("dtlockupfen", &self.dtlockupfen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - DTI PRS Fault Source 0 Select"]
     #[inline(always)]
@@ -565,7 +581,7 @@ impl W {
         DtlockupfenW::new(self, 27)
     }
 }
-#[doc = "DTI Fault Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtfc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtfc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DTI Fault Configuration Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dtfc::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dtfc::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTFCrs;
 impl crate::RegisterSpec for DTFCrs {
     type Ux = u32;

@@ -23,7 +23,16 @@ impl R {
         FerrpR::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Receive Buffer Data Extended Peek Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdataxp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RXDATAXP")
+            .field("rxdatap", &self.rxdatap())
+            .field("perrp", &self.perrp())
+            .field("ferrp", &self.ferrp())
+            .finish()
+    }
+}
+#[doc = "Receive Buffer Data Extended Peek Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxdataxp::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDATAXPrs;
 impl crate::RegisterSpec for RXDATAXPrs {
     type Ux = u32;

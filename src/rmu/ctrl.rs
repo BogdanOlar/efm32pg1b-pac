@@ -3,6 +3,7 @@ pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRLrs>;
 #[doc = "WDOG Reset Mode\n\nValue on reset: 4"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WDOGRMODE {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Core LOCKUP Reset Mode\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LOCKUPRMODE {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "Core Sysreset Reset Mode\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SYSRMODE {
@@ -261,6 +264,7 @@ where
     }
 }
 #[doc = "PIN Reset Mode\n\nValue on reset: 4"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PINRMODE {
@@ -377,6 +381,17 @@ impl R {
         ResetstateR::new(((self.bits >> 24) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("wdogrmode", &self.wdogrmode())
+            .field("lockuprmode", &self.lockuprmode())
+            .field("sysrmode", &self.sysrmode())
+            .field("pinrmode", &self.pinrmode())
+            .field("resetstate", &self.resetstate())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - WDOG Reset Mode"]
     #[inline(always)]
@@ -409,7 +424,7 @@ impl W {
         ResetstateW::new(self, 24)
     }
 }
-#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

@@ -3,6 +3,7 @@ pub type R = crate::R<CTRLrs>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CTRLrs>;
 #[doc = "Warm-up Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WARMUPMODE {
@@ -109,6 +110,7 @@ pub type AdcclkmodeR = crate::BitReader;
 #[doc = "Field `ADCCLKMODE` writer - ADC Clock Mode"]
 pub type AdcclkmodeW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Prescalar Setting for ADC Sample and Conversion Clock\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRESC {
@@ -160,6 +162,7 @@ pub type TimebaseR = crate::FieldReader;
 #[doc = "Field `TIMEBASE` writer - 1us Time Base"]
 pub type TimebaseW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Oversample Rate Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OVSRSEL {
@@ -405,6 +408,22 @@ impl R {
         ChconmodeR::new(((self.bits >> 29) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("warmupmode", &self.warmupmode())
+            .field("singledmawu", &self.singledmawu())
+            .field("scandmawu", &self.scandmawu())
+            .field("tailgate", &self.tailgate())
+            .field("asyncclken", &self.asyncclken())
+            .field("adcclkmode", &self.adcclkmode())
+            .field("presc", &self.presc())
+            .field("timebase", &self.timebase())
+            .field("ovsrsel", &self.ovsrsel())
+            .field("chconmode", &self.chconmode())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Warm-up Mode"]
     #[inline(always)]
@@ -467,7 +486,7 @@ impl W {
         ChconmodeW::new(self, 29)
     }
 }
-#[doc = "Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTRLrs;
 impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;

@@ -103,6 +103,23 @@ impl R {
         SigfR::new(((self.bits >> 10) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("txc", &self.txc())
+            .field("txbl", &self.txbl())
+            .field("rxdatav", &self.rxdatav())
+            .field("rxof", &self.rxof())
+            .field("rxuf", &self.rxuf())
+            .field("txof", &self.txof())
+            .field("perr", &self.perr())
+            .field("ferr", &self.ferr())
+            .field("mpaf", &self.mpaf())
+            .field("startf", &self.startf())
+            .field("sigf", &self.sigf())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - TXC Interrupt Enable"]
     #[inline(always)]
@@ -171,7 +188,7 @@ impl W {
         SigfW::new(self, 10)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IENrs;
 impl crate::RegisterSpec for IENrs {
     type Ux = u32;

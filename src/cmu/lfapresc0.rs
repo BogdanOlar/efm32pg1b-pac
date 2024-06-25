@@ -3,6 +3,7 @@ pub type R = crate::R<LFAPRESC0rs>;
 #[doc = "Register `LFAPRESC0` writer"]
 pub type W = crate::W<LFAPRESC0rs>;
 #[doc = "Low Energy Timer 0 Prescaler\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LETIMER0 {
@@ -251,6 +252,13 @@ impl R {
         Letimer0R::new((self.bits & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LFAPRESC0")
+            .field("letimer0", &self.letimer0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Low Energy Timer 0 Prescaler"]
     #[inline(always)]
@@ -259,7 +267,7 @@ impl W {
         Letimer0W::new(self, 0)
     }
 }
-#[doc = "Low Frequency a Prescaler Register 0 (Async Reg)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfapresc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfapresc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Low Frequency a Prescaler Register 0 (Async Reg)\n\nYou can [`read`](crate::Reg::read) this register and get [`lfapresc0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfapresc0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LFAPRESC0rs;
 impl crate::RegisterSpec for LFAPRESC0rs {
     type Ux = u32;

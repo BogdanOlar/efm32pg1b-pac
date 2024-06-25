@@ -58,6 +58,18 @@ impl R {
         RegishupperR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HFXOSTEADYSTATECTRL")
+            .field("ibtrimxocore", &self.ibtrimxocore())
+            .field("regish", &self.regish())
+            .field("ctune", &self.ctune())
+            .field("regselilow", &self.regselilow())
+            .field("peakdeten", &self.peakdeten())
+            .field("regishupper", &self.regishupper())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:6 - Sets the Steady State Oscillator Core Bias Current."]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         RegishupperW::new(self, 28)
     }
 }
-#[doc = "HFXO Steady State Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hfxosteadystatectrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hfxosteadystatectrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HFXO Steady State Control\n\nYou can [`read`](crate::Reg::read) this register and get [`hfxosteadystatectrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hfxosteadystatectrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HFXOSTEADYSTATECTRLrs;
 impl crate::RegisterSpec for HFXOSTEADYSTATECTRLrs {
     type Ux = u32;

@@ -175,6 +175,31 @@ impl R {
         TemphighR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IEN")
+            .field("vmonavddfall", &self.vmonavddfall())
+            .field("vmonavddrise", &self.vmonavddrise())
+            .field("vmonaltavddfall", &self.vmonaltavddfall())
+            .field("vmonaltavddrise", &self.vmonaltavddrise())
+            .field("vmondvddfall", &self.vmondvddfall())
+            .field("vmondvddrise", &self.vmondvddrise())
+            .field("vmonio0fall", &self.vmonio0fall())
+            .field("vmonio0rise", &self.vmonio0rise())
+            .field("vmonfvddfall", &self.vmonfvddfall())
+            .field("vmonfvddrise", &self.vmonfvddrise())
+            .field("pfetovercurrentlimit", &self.pfetovercurrentlimit())
+            .field("nfetovercurrentlimit", &self.nfetovercurrentlimit())
+            .field("dcdclprunning", &self.dcdclprunning())
+            .field("dcdclnrunning", &self.dcdclnrunning())
+            .field("dcdcinbypass", &self.dcdcinbypass())
+            .field("em23wakeup", &self.em23wakeup())
+            .field("temp", &self.temp())
+            .field("templow", &self.templow())
+            .field("temphigh", &self.temphigh())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - VMONAVDDFALL Interrupt Enable"]
     #[inline(always)]
@@ -291,7 +316,7 @@ impl W {
         TemphighW::new(self, 31)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ien::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IENrs;
 impl crate::RegisterSpec for IENrs {
     type Ux = u32;

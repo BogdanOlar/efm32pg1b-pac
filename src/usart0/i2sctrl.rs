@@ -23,6 +23,7 @@ pub type DelayR = crate::BitReader;
 #[doc = "Field `DELAY` writer - Delay on I2S Data"]
 pub type DelayW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "I2S Word Format\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FORMAT {
@@ -192,6 +193,18 @@ impl R {
         FormatR::new(((self.bits >> 8) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2SCTRL")
+            .field("en", &self.en())
+            .field("mono", &self.mono())
+            .field("justify", &self.justify())
+            .field("dmasplit", &self.dmasplit())
+            .field("delay", &self.delay())
+            .field("format", &self.format())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable I2S Mode"]
     #[inline(always)]
@@ -230,7 +243,7 @@ impl W {
         FormatW::new(self, 8)
     }
 }
-#[doc = "I2S Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2sctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2sctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "I2S Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`i2sctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`i2sctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2SCTRLrs;
 impl crate::RegisterSpec for I2SCTRLrs {
     type Ux = u32;

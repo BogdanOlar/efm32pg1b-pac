@@ -72,7 +72,23 @@ impl R {
         ProgerrR::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IF")
+            .field("single", &self.single())
+            .field("scan", &self.scan())
+            .field("singleof", &self.singleof())
+            .field("scanof", &self.scanof())
+            .field("singleuf", &self.singleuf())
+            .field("scanuf", &self.scanuf())
+            .field("singlecmp", &self.singlecmp())
+            .field("scancmp", &self.scancmp())
+            .field("vrefov", &self.vrefov())
+            .field("progerr", &self.progerr())
+            .finish()
+    }
+}
+#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IFrs;
 impl crate::RegisterSpec for IFrs {
     type Ux = u32;

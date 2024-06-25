@@ -23,6 +23,7 @@ pub type UsehprotR = crate::BitReader;
 #[doc = "Field `USEHPROT` writer - AHB_HPROT Mode"]
 pub type UsehprotW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Read Mode\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE {
@@ -123,6 +124,19 @@ impl R {
         ScbtpR::new(((self.bits >> 28) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("READCTRL")
+            .field("ifcdis", &self.ifcdis())
+            .field("aidis", &self.aidis())
+            .field("iccdis", &self.iccdis())
+            .field("prefetch", &self.prefetch())
+            .field("usehprot", &self.usehprot())
+            .field("mode", &self.mode())
+            .field("scbtp", &self.scbtp())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 3 - Internal Flash Cache Disable"]
     #[inline(always)]
@@ -167,7 +181,7 @@ impl W {
         ScbtpW::new(self, 28)
     }
 }
-#[doc = "Read Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`readctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`readctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Read Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`readctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`readctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct READCTRLrs;
 impl crate::RegisterSpec for READCTRLrs {
     type Ux = u32;

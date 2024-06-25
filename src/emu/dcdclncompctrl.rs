@@ -58,6 +58,18 @@ impl R {
         Compenc3R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DCDCLNCOMPCTRL")
+            .field("compenr1", &self.compenr1())
+            .field("compenr2", &self.compenr2())
+            .field("compenr3", &self.compenr3())
+            .field("compenc1", &self.compenc1())
+            .field("compenc2", &self.compenc2())
+            .field("compenc3", &self.compenc3())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - Low Noise Mode Compensator R1 Trim Value"]
     #[inline(always)]
@@ -96,7 +108,7 @@ impl W {
         Compenc3W::new(self, 28)
     }
 }
-#[doc = "DCDC Low Noise Compensator Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dcdclncompctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dcdclncompctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DCDC Low Noise Compensator Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dcdclncompctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dcdclncompctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DCDCLNCOMPCTRLrs;
 impl crate::RegisterSpec for DCDCLNCOMPCTRLrs {
     type Ux = u32;

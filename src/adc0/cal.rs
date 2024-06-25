@@ -76,6 +76,20 @@ impl R {
         CalenR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CAL")
+            .field("singleoffset", &self.singleoffset())
+            .field("singleoffsetinv", &self.singleoffsetinv())
+            .field("singlegain", &self.singlegain())
+            .field("offsetinvmode", &self.offsetinvmode())
+            .field("scanoffset", &self.scanoffset())
+            .field("scanoffsetinv", &self.scanoffsetinv())
+            .field("scangain", &self.scangain())
+            .field("calen", &self.calen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Single Mode Offset Calibration Value for Differential or Positive Single-ended Mode"]
     #[inline(always)]
@@ -126,7 +140,7 @@ impl W {
         CalenW::new(self, 31)
     }
 }
-#[doc = "Calibration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cal::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cal::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Calibration Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cal::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cal::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CALrs;
 impl crate::RegisterSpec for CALrs {
     type Ux = u32;

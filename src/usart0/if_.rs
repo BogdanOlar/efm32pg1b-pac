@@ -121,7 +121,30 @@ impl R {
         Tcmp2R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`if_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IF")
+            .field("txc", &self.txc())
+            .field("txbl", &self.txbl())
+            .field("rxdatav", &self.rxdatav())
+            .field("rxfull", &self.rxfull())
+            .field("rxof", &self.rxof())
+            .field("rxuf", &self.rxuf())
+            .field("txof", &self.txof())
+            .field("txuf", &self.txuf())
+            .field("perr", &self.perr())
+            .field("ferr", &self.ferr())
+            .field("mpaf", &self.mpaf())
+            .field("ssm", &self.ssm())
+            .field("ccf", &self.ccf())
+            .field("txidle", &self.txidle())
+            .field("tcmp0", &self.tcmp0())
+            .field("tcmp1", &self.tcmp1())
+            .field("tcmp2", &self.tcmp2())
+            .finish()
+    }
+}
+#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IFrs;
 impl crate::RegisterSpec for IFrs {
     type Ux = u32;

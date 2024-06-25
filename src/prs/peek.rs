@@ -86,7 +86,25 @@ impl R {
         Ch11valR::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "PRS Channel Values\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`peek::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PEEK")
+            .field("ch0val", &self.ch0val())
+            .field("ch1val", &self.ch1val())
+            .field("ch2val", &self.ch2val())
+            .field("ch3val", &self.ch3val())
+            .field("ch4val", &self.ch4val())
+            .field("ch5val", &self.ch5val())
+            .field("ch6val", &self.ch6val())
+            .field("ch7val", &self.ch7val())
+            .field("ch8val", &self.ch8val())
+            .field("ch9val", &self.ch9val())
+            .field("ch10val", &self.ch10val())
+            .field("ch11val", &self.ch11val())
+            .finish()
+    }
+}
+#[doc = "PRS Channel Values\n\nYou can [`read`](crate::Reg::read) this register and get [`peek::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PEEKrs;
 impl crate::RegisterSpec for PEEKrs {
     type Ux = u32;

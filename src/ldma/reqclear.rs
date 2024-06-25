@@ -2,6 +2,11 @@
 pub type W = crate::W<REQCLEARrs>;
 #[doc = "Field `REQCLEAR` writer - DMA Request Clear"]
 pub type ReqclearW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+impl core::fmt::Debug for crate::generic::Reg<REQCLEARrs> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - DMA Request Clear"]
     #[inline(always)]
@@ -10,7 +15,7 @@ impl W {
         ReqclearW::new(self, 0)
     }
 }
-#[doc = "DMA Channel Request Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`reqclear::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMA Channel Request Clear Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reqclear::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct REQCLEARrs;
 impl crate::RegisterSpec for REQCLEARrs {
     type Ux = u32;

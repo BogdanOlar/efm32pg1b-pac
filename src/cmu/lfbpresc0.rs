@@ -3,6 +3,7 @@ pub type R = crate::R<LFBPRESC0rs>;
 #[doc = "Register `LFBPRESC0` writer"]
 pub type W = crate::W<LFBPRESC0rs>;
 #[doc = "Low Energy UART 0 Prescaler\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LEUART0 {
@@ -95,6 +96,13 @@ impl R {
         Leuart0R::new((self.bits & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LFBPRESC0")
+            .field("leuart0", &self.leuart0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Low Energy UART 0 Prescaler"]
     #[inline(always)]
@@ -103,7 +111,7 @@ impl W {
         Leuart0W::new(self, 0)
     }
 }
-#[doc = "Low Frequency B Prescaler Register 0 (Async Reg)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lfbpresc0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lfbpresc0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Low Frequency B Prescaler Register 0 (Async Reg)\n\nYou can [`read`](crate::Reg::read) this register and get [`lfbpresc0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lfbpresc0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LFBPRESC0rs;
 impl crate::RegisterSpec for LFBPRESC0rs {
     type Ux = u32;
