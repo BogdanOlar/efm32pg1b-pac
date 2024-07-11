@@ -675,10 +675,10 @@ pub struct Timer1 {
 unsafe impl Send for Timer1 {}
 impl Timer1 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const timer1::RegisterBlock = 0x4001_8400 as *const _;
+    pub const PTR: *const timer0::RegisterBlock = 0x4001_8400 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const timer1::RegisterBlock {
+    pub const fn ptr() -> *const timer0::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -701,7 +701,7 @@ impl Timer1 {
     }
 }
 impl Deref for Timer1 {
-    type Target = timer1::RegisterBlock;
+    type Target = timer0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -713,7 +713,7 @@ impl core::fmt::Debug for Timer1 {
     }
 }
 #[doc = "TIMER1"]
-pub mod timer1;
+pub use self::timer0 as timer1;
 #[doc = "USART0"]
 pub struct Usart0 {
     _marker: PhantomData<*const ()>,
