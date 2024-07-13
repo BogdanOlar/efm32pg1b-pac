@@ -18355,7 +18355,7 @@
                     </fields>
                 </register>
                 <register>
-                    <name>IF</name>
+                    <name>IFL</name>
                     <description>Interrupt Flag Register</description>
                     <addressOffset>0x00C</addressOffset>
                     <size>32</size>
