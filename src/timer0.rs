@@ -5,7 +5,7 @@ pub struct RegisterBlock {
     ctrl: Ctrl,
     cmd: Cmd,
     status: Status,
-    if_: If,
+    ifl: Ifl,
     ifs: Ifs,
     ifc: Ifc,
     ien: Ien,
@@ -61,8 +61,8 @@ impl RegisterBlock {
     }
     #[doc = "0x0c - Interrupt Flag Register"]
     #[inline(always)]
-    pub const fn if_(&self) -> &If {
-        &self.if_
+    pub const fn ifl(&self) -> &Ifl {
+        &self.ifl
     }
     #[doc = "0x10 - Interrupt Flag Set Register"]
     #[inline(always)]
@@ -248,12 +248,12 @@ module"]
 pub type Status = crate::Reg<status::STATUSrs>;
 #[doc = "Status Register"]
 pub mod status;
-#[doc = "IF (r) register accessor: Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@if_`]
+#[doc = "IFL (r) register accessor: Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ifl::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifl`]
 module"]
-#[doc(alias = "IF")]
-pub type If = crate::Reg<if_::IFrs>;
+#[doc(alias = "IFL")]
+pub type Ifl = crate::Reg<ifl::IFLrs>;
 #[doc = "Interrupt Flag Register"]
-pub mod if_;
+pub mod ifl;
 #[doc = "IFS (w) register accessor: Interrupt Flag Set Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifs`]
 module"]
 #[doc(alias = "IFS")]
@@ -338,12 +338,8 @@ module"]
 pub type Cc0Ccvb = crate::Reg<cc0_ccvb::CC0_CCVBrs>;
 #[doc = "CC Channel Buffer Register"]
 pub mod cc0_ccvb;
-#[doc = "CC1_CTRL (rw) register accessor: CC Channel Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc1_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc1_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cc1_ctrl`]
-module"]
-#[doc(alias = "CC1_CTRL")]
-pub type Cc1Ctrl = crate::Reg<cc1_ctrl::CC1_CTRLrs>;
-#[doc = "CC Channel Control Register"]
-pub mod cc1_ctrl;
+pub use cc0_ctrl as cc1_ctrl;
+pub use Cc0Ctrl as Cc1Ctrl;
 #[doc = "CC1_CCV (rw) register accessor: CC Channel Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc1_ccv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc1_ccv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>\n\nFor information about available fields see [`mod@cc1_ccv`]
 module"]
 #[doc(alias = "CC1_CCV")]
@@ -362,12 +358,8 @@ module"]
 pub type Cc1Ccvb = crate::Reg<cc1_ccvb::CC1_CCVBrs>;
 #[doc = "CC Channel Buffer Register"]
 pub mod cc1_ccvb;
-#[doc = "CC2_CTRL (rw) register accessor: CC Channel Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc2_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc2_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cc2_ctrl`]
-module"]
-#[doc(alias = "CC2_CTRL")]
-pub type Cc2Ctrl = crate::Reg<cc2_ctrl::CC2_CTRLrs>;
-#[doc = "CC Channel Control Register"]
-pub mod cc2_ctrl;
+pub use cc0_ctrl as cc2_ctrl;
+pub use Cc0Ctrl as Cc2Ctrl;
 #[doc = "CC2_CCV (rw) register accessor: CC Channel Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc2_ccv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc2_ccv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>\n\nFor information about available fields see [`mod@cc2_ccv`]
 module"]
 #[doc(alias = "CC2_CCV")]
@@ -386,12 +378,8 @@ module"]
 pub type Cc2Ccvb = crate::Reg<cc2_ccvb::CC2_CCVBrs>;
 #[doc = "CC Channel Buffer Register"]
 pub mod cc2_ccvb;
-#[doc = "CC3_CTRL (rw) register accessor: CC Channel Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc3_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc3_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cc3_ctrl`]
-module"]
-#[doc(alias = "CC3_CTRL")]
-pub type Cc3Ctrl = crate::Reg<cc3_ctrl::CC3_CTRLrs>;
-#[doc = "CC Channel Control Register"]
-pub mod cc3_ctrl;
+pub use cc0_ctrl as cc3_ctrl;
+pub use Cc0Ctrl as Cc3Ctrl;
 #[doc = "CC3_CCV (rw) register accessor: CC Channel Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cc3_ccv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc3_ccv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>\n\nFor information about available fields see [`mod@cc3_ccv`]
 module"]
 #[doc(alias = "CC3_CCV")]

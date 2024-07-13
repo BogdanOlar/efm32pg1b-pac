@@ -1,5 +1,5 @@
-#[doc = "Register `IF` reader"]
-pub type R = crate::R<IFrs>;
+#[doc = "Register `IFL` reader"]
+pub type R = crate::R<IFLrs>;
 #[doc = "Field `OF` reader - Overflow Interrupt Flag"]
 pub type OfR = crate::BitReader;
 #[doc = "Field `UF` reader - Underflow Interrupt Flag"]
@@ -81,7 +81,7 @@ impl R {
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("IF")
+        f.debug_struct("IFL")
             .field("of", &self.of())
             .field("uf", &self.uf())
             .field("dirchg", &self.dirchg())
@@ -96,14 +96,14 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IFrs;
-impl crate::RegisterSpec for IFrs {
+#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ifl::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct IFLrs;
+impl crate::RegisterSpec for IFLrs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`if_::R`](R) reader structure"]
-impl crate::Readable for IFrs {}
-#[doc = "`reset()` method sets IF to value 0"]
-impl crate::Resettable for IFrs {
+#[doc = "`read()` method returns [`ifl::R`](R) reader structure"]
+impl crate::Readable for IFLrs {}
+#[doc = "`reset()` method sets IFL to value 0"]
+impl crate::Resettable for IFLrs {
     const RESET_VALUE: u32 = 0;
 }
