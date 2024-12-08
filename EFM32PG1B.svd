@@ -3011,7 +3011,7 @@
                         </field>
                     </fields>
                 </register>
-                <register>
+                <register derivedFrom="CMU.HFRCOCTRL">
                     <name>AUXHFRCOCTRL</name>
                     <description>AUXHFRCO Control Register</description>
                     <addressOffset>0x018</addressOffset>
@@ -3019,82 +3019,6 @@
                     <access>read-write</access>
                     <resetValue>0xB1481F3C</resetValue>
                     <resetMask>0xFFFF3F7F</resetMask>
-                    <fields>
-                        <field>
-                            <name>TUNING</name>
-                            <description>AUXHFRCO Tuning Value</description>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>7</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>FINETUNING</name>
-                            <description>AUXHFRCO Fine Tuning Value</description>
-                            <bitOffset>8</bitOffset>
-                            <bitWidth>6</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>FREQRANGE</name>
-                            <description>AUXHFRCO Frequency Range</description>
-                            <bitOffset>16</bitOffset>
-                            <bitWidth>5</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>CMPBIAS</name>
-                            <description>AUXHFRCO Comparator Bias Current</description>
-                            <bitOffset>21</bitOffset>
-                            <bitWidth>3</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>LDOHP</name>
-                            <description>AUXHFRCO LDO High Power Mode</description>
-                            <bitOffset>24</bitOffset>
-                            <bitWidth>1</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>CLKDIV</name>
-                            <description>Locally Divide AUXHFRCO Clock Output</description>
-                            <bitOffset>25</bitOffset>
-                            <bitWidth>2</bitWidth>
-                            <access>read-write</access>
-                            <enumeratedValues>
-                                <enumeratedValue>
-                                    <name>DIV1</name>
-                                    <description>Divide by 1.</description>
-                                    <value>0x00000000</value>
-                                </enumeratedValue>
-                                <enumeratedValue>
-                                    <name>DIV2</name>
-                                    <description>Divide by 2.</description>
-                                    <value>0x00000001</value>
-                                </enumeratedValue>
-                                <enumeratedValue>
-                                    <name>DIV4</name>
-                                    <description>Divide by 4.</description>
-                                    <value>0x00000002</value>
-                                </enumeratedValue>
-                            </enumeratedValues>
-                        </field>
-                        <field>
-                            <name>FINETUNINGEN</name>
-                            <description>Enable Reference for Fine Tuning</description>
-                            <bitOffset>27</bitOffset>
-                            <bitWidth>1</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>VREFTC</name>
-                            <description>AUXHFRCO Temperature Coefficient Trim on Comparator
-                                Reference</description>
-                            <bitOffset>28</bitOffset>
-                            <bitWidth>4</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                    </fields>
                 </register>
                 <register>
                     <name>LFRCOCTRL</name>
@@ -39066,6 +38990,115 @@
                             <access>read-write</access>
                         </field>
                     </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>DI</name>
+            <version>5.8.2</version>
+            <description>Device Information</description>
+            <baseAddress>0x0FE081B0</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x00000184</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>HFRCOCAL0</name>
+                    <description>HFRCO Calibration Register (4 MHz)</description>
+                    <addressOffset>0x080</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>HFRCOCAL3</name>
+                    <description>HFRCO Calibration Register (7 MHz)</description>
+                    <addressOffset>0x08C</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>HFRCOCAL6</name>
+                    <description>HFRCO Calibration Register (13 MHz)</description>
+                    <addressOffset>0x098</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>HFRCOCAL7</name>
+                    <description>HFRCO Calibration Register (16 MHz)</description>
+                    <addressOffset>0x09C</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>HFRCOCAL8</name>
+                    <description>HFRCO Calibration Register (19 MHz)</description>
+                    <addressOffset>0x0A0</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>HFRCOCAL10</name>
+                    <description>HFRCO Calibration Register (26 MHz)</description>
+                    <addressOffset>0x0A8</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>HFRCOCAL11</name>
+                    <description>HFRCO Calibration Register (32 MHz)</description>
+                    <addressOffset>0x0AC</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>HFRCOCAL12</name>
+                    <description>HFRCO Calibration Register (38 MHz)</description>
+                    <addressOffset>0x0B0</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>AUXHFRCOCAL0</name>
+                    <description>AUXHFRCO Calibration Register (4 MHz)</description>
+                    <addressOffset>0x0E0</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>AUXHFRCOCAL3</name>
+                    <description>AUXHFRCO Calibration Register (7 MHz)</description>
+                    <addressOffset>0x0EC</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>AUXHFRCOCAL6</name>
+                    <description>AUXHFRCO Calibration Register (13 MHz)</description>
+                    <addressOffset>0x0F8</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>AUXHFRCOCAL7</name>
+                    <description>AUXHFRCO Calibration Register (16 MHz)</description>
+                    <addressOffset>0x0FC</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>AUXHFRCOCAL8</name>
+                    <description>AUXHFRCO Calibration Register (19 MHz)</description>
+                    <addressOffset>0x100</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>AUXHFRCOCAL10</name>
+                    <description>AUXHFRCO Calibration Register (26 MHz)</description>
+                    <addressOffset>0x108</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>AUXHFRCOCAL11</name>
+                    <description>AUXHFRCO Calibration Register (32 MHz)</description>
+                    <addressOffset>0x10C</addressOffset>
+                    <access>read-only</access>
+                </register>
+                <register derivedFrom="CMU.HFRCOCTRL">
+                    <name>AUXHFRCOCAL12</name>
+                    <description>AUXHFRCO Calibration Register (38 MHz)</description>
+                    <addressOffset>0x110</addressOffset>
+                    <access>read-only</access>
                 </register>
             </registers>
         </peripheral>
