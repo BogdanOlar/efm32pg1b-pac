@@ -1,35 +1,37 @@
-#[doc = "Register `DMAREQ0` reader"]
+///Register `DMAREQ0` reader
 pub type R = crate::R<DMAREQ0rs>;
-#[doc = "Register `DMAREQ0` writer"]
+///Register `DMAREQ0` writer
 pub type W = crate::W<DMAREQ0rs>;
-#[doc = "DMA Request 0 PRS Channel Select\n\nValue on reset: 0"]
+///DMA Request 0 PRS Channel Select
+///
+///Value on reset: 0
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL {
-    #[doc = "0: PRS Channel 0 selected"]
+    ///0: PRS Channel 0 selected
     Prsch0 = 0,
-    #[doc = "1: PRS Channel 1 selected"]
+    ///1: PRS Channel 1 selected
     Prsch1 = 1,
-    #[doc = "2: PRS Channel 2 selected"]
+    ///2: PRS Channel 2 selected
     Prsch2 = 2,
-    #[doc = "3: PRS Channel 3 selected"]
+    ///3: PRS Channel 3 selected
     Prsch3 = 3,
-    #[doc = "4: PRS Channel 4 selected"]
+    ///4: PRS Channel 4 selected
     Prsch4 = 4,
-    #[doc = "5: PRS Channel 5 selected"]
+    ///5: PRS Channel 5 selected
     Prsch5 = 5,
-    #[doc = "6: PRS Channel 6 selected"]
+    ///6: PRS Channel 6 selected
     Prsch6 = 6,
-    #[doc = "7: PRS Channel 7 selected"]
+    ///7: PRS Channel 7 selected
     Prsch7 = 7,
-    #[doc = "8: PRS Channel 8 selected"]
+    ///8: PRS Channel 8 selected
     Prsch8 = 8,
-    #[doc = "9: PRS Channel 9 selected"]
+    ///9: PRS Channel 9 selected
     Prsch9 = 9,
-    #[doc = "10: PRS Channel 10 selected"]
+    ///10: PRS Channel 10 selected
     Prsch10 = 10,
-    #[doc = "11: PRS Channel 11 selected"]
+    ///11: PRS Channel 11 selected
     Prsch11 = 11,
 }
 impl From<PRSSEL> for u8 {
@@ -42,10 +44,10 @@ impl crate::FieldSpec for PRSSEL {
     type Ux = u8;
 }
 impl crate::IsEnum for PRSSEL {}
-#[doc = "Field `PRSSEL` reader - DMA Request 0 PRS Channel Select"]
+///Field `PRSSEL` reader - DMA Request 0 PRS Channel Select
 pub type PrsselR = crate::FieldReader<PRSSEL>;
 impl PrsselR {
-    #[doc = "Get enumerated values variant"]
+    ///Get enumerated values variant
     #[inline(always)]
     pub const fn variant(&self) -> Option<PRSSEL> {
         match self.bits {
@@ -64,137 +66,137 @@ impl PrsselR {
             _ => None,
         }
     }
-    #[doc = "PRS Channel 0 selected"]
+    ///PRS Channel 0 selected
     #[inline(always)]
     pub fn is_prsch0(&self) -> bool {
         *self == PRSSEL::Prsch0
     }
-    #[doc = "PRS Channel 1 selected"]
+    ///PRS Channel 1 selected
     #[inline(always)]
     pub fn is_prsch1(&self) -> bool {
         *self == PRSSEL::Prsch1
     }
-    #[doc = "PRS Channel 2 selected"]
+    ///PRS Channel 2 selected
     #[inline(always)]
     pub fn is_prsch2(&self) -> bool {
         *self == PRSSEL::Prsch2
     }
-    #[doc = "PRS Channel 3 selected"]
+    ///PRS Channel 3 selected
     #[inline(always)]
     pub fn is_prsch3(&self) -> bool {
         *self == PRSSEL::Prsch3
     }
-    #[doc = "PRS Channel 4 selected"]
+    ///PRS Channel 4 selected
     #[inline(always)]
     pub fn is_prsch4(&self) -> bool {
         *self == PRSSEL::Prsch4
     }
-    #[doc = "PRS Channel 5 selected"]
+    ///PRS Channel 5 selected
     #[inline(always)]
     pub fn is_prsch5(&self) -> bool {
         *self == PRSSEL::Prsch5
     }
-    #[doc = "PRS Channel 6 selected"]
+    ///PRS Channel 6 selected
     #[inline(always)]
     pub fn is_prsch6(&self) -> bool {
         *self == PRSSEL::Prsch6
     }
-    #[doc = "PRS Channel 7 selected"]
+    ///PRS Channel 7 selected
     #[inline(always)]
     pub fn is_prsch7(&self) -> bool {
         *self == PRSSEL::Prsch7
     }
-    #[doc = "PRS Channel 8 selected"]
+    ///PRS Channel 8 selected
     #[inline(always)]
     pub fn is_prsch8(&self) -> bool {
         *self == PRSSEL::Prsch8
     }
-    #[doc = "PRS Channel 9 selected"]
+    ///PRS Channel 9 selected
     #[inline(always)]
     pub fn is_prsch9(&self) -> bool {
         *self == PRSSEL::Prsch9
     }
-    #[doc = "PRS Channel 10 selected"]
+    ///PRS Channel 10 selected
     #[inline(always)]
     pub fn is_prsch10(&self) -> bool {
         *self == PRSSEL::Prsch10
     }
-    #[doc = "PRS Channel 11 selected"]
+    ///PRS Channel 11 selected
     #[inline(always)]
     pub fn is_prsch11(&self) -> bool {
         *self == PRSSEL::Prsch11
     }
 }
-#[doc = "Field `PRSSEL` writer - DMA Request 0 PRS Channel Select"]
+///Field `PRSSEL` writer - DMA Request 0 PRS Channel Select
 pub type PrsselW<'a, REG> = crate::FieldWriter<'a, REG, 4, PRSSEL>;
 impl<'a, REG> PrsselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "PRS Channel 0 selected"]
+    ///PRS Channel 0 selected
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch0)
     }
-    #[doc = "PRS Channel 1 selected"]
+    ///PRS Channel 1 selected
     #[inline(always)]
     pub fn prsch1(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch1)
     }
-    #[doc = "PRS Channel 2 selected"]
+    ///PRS Channel 2 selected
     #[inline(always)]
     pub fn prsch2(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch2)
     }
-    #[doc = "PRS Channel 3 selected"]
+    ///PRS Channel 3 selected
     #[inline(always)]
     pub fn prsch3(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch3)
     }
-    #[doc = "PRS Channel 4 selected"]
+    ///PRS Channel 4 selected
     #[inline(always)]
     pub fn prsch4(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch4)
     }
-    #[doc = "PRS Channel 5 selected"]
+    ///PRS Channel 5 selected
     #[inline(always)]
     pub fn prsch5(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch5)
     }
-    #[doc = "PRS Channel 6 selected"]
+    ///PRS Channel 6 selected
     #[inline(always)]
     pub fn prsch6(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch6)
     }
-    #[doc = "PRS Channel 7 selected"]
+    ///PRS Channel 7 selected
     #[inline(always)]
     pub fn prsch7(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch7)
     }
-    #[doc = "PRS Channel 8 selected"]
+    ///PRS Channel 8 selected
     #[inline(always)]
     pub fn prsch8(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch8)
     }
-    #[doc = "PRS Channel 9 selected"]
+    ///PRS Channel 9 selected
     #[inline(always)]
     pub fn prsch9(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch9)
     }
-    #[doc = "PRS Channel 10 selected"]
+    ///PRS Channel 10 selected
     #[inline(always)]
     pub fn prsch10(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch10)
     }
-    #[doc = "PRS Channel 11 selected"]
+    ///PRS Channel 11 selected
     #[inline(always)]
     pub fn prsch11(self) -> &'a mut crate::W<REG> {
         self.variant(PRSSEL::Prsch11)
     }
 }
 impl R {
-    #[doc = "Bits 6:9 - DMA Request 0 PRS Channel Select"]
+    ///Bits 6:9 - DMA Request 0 PRS Channel Select
     #[inline(always)]
     pub fn prssel(&self) -> PrsselR {
         PrsselR::new(((self.bits >> 6) & 0x0f) as u8)
@@ -208,27 +210,29 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 6:9 - DMA Request 0 PRS Channel Select"]
+    ///Bits 6:9 - DMA Request 0 PRS Channel Select
     #[inline(always)]
     #[must_use]
     pub fn prssel(&mut self) -> PrsselW<DMAREQ0rs> {
         PrsselW::new(self, 6)
     }
 }
-#[doc = "DMA Request 0 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dmareq0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmareq0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+///DMA Request 0 Register
+///
+///You can [`read`](crate::Reg::read) this register and get [`dmareq0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmareq0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct DMAREQ0rs;
 impl crate::RegisterSpec for DMAREQ0rs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`dmareq0::R`](R) reader structure"]
+///`read()` method returns [`dmareq0::R`](R) reader structure
 impl crate::Readable for DMAREQ0rs {}
-#[doc = "`write(|w| ..)` method takes [`dmareq0::W`](W) writer structure"]
+///`write(|w| ..)` method takes [`dmareq0::W`](W) writer structure
 impl crate::Writable for DMAREQ0rs {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets DMAREQ0 to value 0"]
+///`reset()` method sets DMAREQ0 to value 0
 impl crate::Resettable for DMAREQ0rs {
     const RESET_VALUE: u32 = 0;
 }

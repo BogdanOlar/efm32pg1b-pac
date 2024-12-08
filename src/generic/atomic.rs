@@ -30,12 +30,12 @@ impl<REG: Readable + Writable> Reg<REG>
 where
     REG::Ux: AtomicOperations + Default + core::ops::Not<Output = REG::Ux>,
 {
-    #[doc = " Set high every bit in the register that was set in the write proxy. Leave other bits"]
-    #[doc = " untouched. The write is done in a single atomic instruction."]
-    #[doc = ""]
-    #[doc = " # Safety"]
-    #[doc = ""]
-    #[doc = " The resultant bit pattern may not be valid for the register."]
+    /// Set high every bit in the register that was set in the write proxy. Leave other bits
+    /// untouched. The write is done in a single atomic instruction.
+    ///
+    /// # Safety
+    ///
+    /// The resultant bit pattern may not be valid for the register.
     #[inline(always)]
     pub unsafe fn set_bits<F>(&self, f: F)
     where
@@ -48,12 +48,12 @@ where
         .bits;
         REG::Ux::atomic_or(self.register.as_ptr(), bits);
     }
-    #[doc = " Clear every bit in the register that was cleared in the write proxy. Leave other bits"]
-    #[doc = " untouched. The write is done in a single atomic instruction."]
-    #[doc = ""]
-    #[doc = " # Safety"]
-    #[doc = ""]
-    #[doc = " The resultant bit pattern may not be valid for the register."]
+    /// Clear every bit in the register that was cleared in the write proxy. Leave other bits
+    /// untouched. The write is done in a single atomic instruction.
+    ///
+    /// # Safety
+    ///
+    /// The resultant bit pattern may not be valid for the register.
     #[inline(always)]
     pub unsafe fn clear_bits<F>(&self, f: F)
     where
@@ -66,12 +66,12 @@ where
         .bits;
         REG::Ux::atomic_and(self.register.as_ptr(), bits);
     }
-    #[doc = " Toggle every bit in the register that was set in the write proxy. Leave other bits"]
-    #[doc = " untouched. The write is done in a single atomic instruction."]
-    #[doc = ""]
-    #[doc = " # Safety"]
-    #[doc = ""]
-    #[doc = " The resultant bit pattern may not be valid for the register."]
+    /// Toggle every bit in the register that was set in the write proxy. Leave other bits
+    /// untouched. The write is done in a single atomic instruction.
+    ///
+    /// # Safety
+    ///
+    /// The resultant bit pattern may not be valid for the register.
     #[inline(always)]
     pub unsafe fn toggle_bits<F>(&self, f: F)
     where

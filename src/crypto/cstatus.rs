@@ -1,25 +1,27 @@
-#[doc = "Register `CSTATUS` reader"]
+///Register `CSTATUS` reader
 pub type R = crate::R<CSTATUSrs>;
-#[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
+///Selected ALU Operand 0
+///
+///Value on reset: 1
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum V0 {
-    #[doc = "0: `0`"]
+    ///0: `0`
     Ddata0 = 0,
-    #[doc = "1: `1`"]
+    ///1: `1`
     Ddata1 = 1,
-    #[doc = "2: `10`"]
+    ///2: `10`
     Ddata2 = 2,
-    #[doc = "3: `11`"]
+    ///3: `11`
     Ddata3 = 3,
-    #[doc = "4: `100`"]
+    ///4: `100`
     Ddata4 = 4,
-    #[doc = "5: `101`"]
+    ///5: `101`
     Data0 = 5,
-    #[doc = "6: `110`"]
+    ///6: `110`
     Data1 = 6,
-    #[doc = "7: `111`"]
+    ///7: `111`
     Data2 = 7,
 }
 impl From<V0> for u8 {
@@ -32,10 +34,10 @@ impl crate::FieldSpec for V0 {
     type Ux = u8;
 }
 impl crate::IsEnum for V0 {}
-#[doc = "Field `V0` reader - Selected ALU Operand 0"]
+///Field `V0` reader - Selected ALU Operand 0
 pub type V0R = crate::FieldReader<V0>;
 impl V0R {
-    #[doc = "Get enumerated values variant"]
+    ///Get enumerated values variant
     #[inline(always)]
     pub const fn variant(&self) -> V0 {
         match self.bits {
@@ -50,67 +52,69 @@ impl V0R {
             _ => unreachable!(),
         }
     }
-    #[doc = "`0`"]
+    ///`0`
     #[inline(always)]
     pub fn is_ddata0(&self) -> bool {
         *self == V0::Ddata0
     }
-    #[doc = "`1`"]
+    ///`1`
     #[inline(always)]
     pub fn is_ddata1(&self) -> bool {
         *self == V0::Ddata1
     }
-    #[doc = "`10`"]
+    ///`10`
     #[inline(always)]
     pub fn is_ddata2(&self) -> bool {
         *self == V0::Ddata2
     }
-    #[doc = "`11`"]
+    ///`11`
     #[inline(always)]
     pub fn is_ddata3(&self) -> bool {
         *self == V0::Ddata3
     }
-    #[doc = "`100`"]
+    ///`100`
     #[inline(always)]
     pub fn is_ddata4(&self) -> bool {
         *self == V0::Ddata4
     }
-    #[doc = "`101`"]
+    ///`101`
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
         *self == V0::Data0
     }
-    #[doc = "`110`"]
+    ///`110`
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
         *self == V0::Data1
     }
-    #[doc = "`111`"]
+    ///`111`
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
         *self == V0::Data2
     }
 }
-#[doc = "Selected ALU Operand 1\n\nValue on reset: 2"]
+///Selected ALU Operand 1
+///
+///Value on reset: 2
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum V1 {
-    #[doc = "0: `0`"]
+    ///0: `0`
     Ddata0 = 0,
-    #[doc = "1: `1`"]
+    ///1: `1`
     Ddata1 = 1,
-    #[doc = "2: `10`"]
+    ///2: `10`
     Ddata2 = 2,
-    #[doc = "3: `11`"]
+    ///3: `11`
     Ddata3 = 3,
-    #[doc = "4: `100`"]
+    ///4: `100`
     Ddata4 = 4,
-    #[doc = "5: `101`"]
+    ///5: `101`
     Data0 = 5,
-    #[doc = "6: `110`"]
+    ///6: `110`
     Data1 = 6,
-    #[doc = "7: `111`"]
+    ///7: `111`
     Data2 = 7,
 }
 impl From<V1> for u8 {
@@ -123,10 +127,10 @@ impl crate::FieldSpec for V1 {
     type Ux = u8;
 }
 impl crate::IsEnum for V1 {}
-#[doc = "Field `V1` reader - Selected ALU Operand 1"]
+///Field `V1` reader - Selected ALU Operand 1
 pub type V1R = crate::FieldReader<V1>;
 impl V1R {
-    #[doc = "Get enumerated values variant"]
+    ///Get enumerated values variant
     #[inline(always)]
     pub const fn variant(&self) -> V1 {
         match self.bits {
@@ -141,75 +145,75 @@ impl V1R {
             _ => unreachable!(),
         }
     }
-    #[doc = "`0`"]
+    ///`0`
     #[inline(always)]
     pub fn is_ddata0(&self) -> bool {
         *self == V1::Ddata0
     }
-    #[doc = "`1`"]
+    ///`1`
     #[inline(always)]
     pub fn is_ddata1(&self) -> bool {
         *self == V1::Ddata1
     }
-    #[doc = "`10`"]
+    ///`10`
     #[inline(always)]
     pub fn is_ddata2(&self) -> bool {
         *self == V1::Ddata2
     }
-    #[doc = "`11`"]
+    ///`11`
     #[inline(always)]
     pub fn is_ddata3(&self) -> bool {
         *self == V1::Ddata3
     }
-    #[doc = "`100`"]
+    ///`100`
     #[inline(always)]
     pub fn is_ddata4(&self) -> bool {
         *self == V1::Ddata4
     }
-    #[doc = "`101`"]
+    ///`101`
     #[inline(always)]
     pub fn is_data0(&self) -> bool {
         *self == V1::Data0
     }
-    #[doc = "`110`"]
+    ///`110`
     #[inline(always)]
     pub fn is_data1(&self) -> bool {
         *self == V1::Data1
     }
-    #[doc = "`111`"]
+    ///`111`
     #[inline(always)]
     pub fn is_data2(&self) -> bool {
         *self == V1::Data2
     }
 }
-#[doc = "Field `SEQPART` reader - Sequence Part"]
+///Field `SEQPART` reader - Sequence Part
 pub type SeqpartR = crate::BitReader;
-#[doc = "Field `SEQSKIP` reader - Sequence Skip Next Instruction"]
+///Field `SEQSKIP` reader - Sequence Skip Next Instruction
 pub type SeqskipR = crate::BitReader;
-#[doc = "Field `SEQIP` reader - Sequence Next Instruction Pointer"]
+///Field `SEQIP` reader - Sequence Next Instruction Pointer
 pub type SeqipR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:2 - Selected ALU Operand 0"]
+    ///Bits 0:2 - Selected ALU Operand 0
     #[inline(always)]
     pub fn v0(&self) -> V0R {
         V0R::new((self.bits & 7) as u8)
     }
-    #[doc = "Bits 8:10 - Selected ALU Operand 1"]
+    ///Bits 8:10 - Selected ALU Operand 1
     #[inline(always)]
     pub fn v1(&self) -> V1R {
         V1R::new(((self.bits >> 8) & 7) as u8)
     }
-    #[doc = "Bit 16 - Sequence Part"]
+    ///Bit 16 - Sequence Part
     #[inline(always)]
     pub fn seqpart(&self) -> SeqpartR {
         SeqpartR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 17 - Sequence Skip Next Instruction"]
+    ///Bit 17 - Sequence Skip Next Instruction
     #[inline(always)]
     pub fn seqskip(&self) -> SeqskipR {
         SeqskipR::new(((self.bits >> 17) & 1) != 0)
     }
-    #[doc = "Bits 20:24 - Sequence Next Instruction Pointer"]
+    ///Bits 20:24 - Sequence Next Instruction Pointer
     #[inline(always)]
     pub fn seqip(&self) -> SeqipR {
         SeqipR::new(((self.bits >> 20) & 0x1f) as u8)
@@ -226,14 +230,16 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "Control Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+///Control Status Register
+///
+///You can [`read`](crate::Reg::read) this register and get [`cstatus::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct CSTATUSrs;
 impl crate::RegisterSpec for CSTATUSrs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`cstatus::R`](R) reader structure"]
+///`read()` method returns [`cstatus::R`](R) reader structure
 impl crate::Readable for CSTATUSrs {}
-#[doc = "`reset()` method sets CSTATUS to value 0x0201"]
+///`reset()` method sets CSTATUS to value 0x0201
 impl crate::Resettable for CSTATUSrs {
     const RESET_VALUE: u32 = 0x0201;
 }

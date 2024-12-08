@@ -1,157 +1,157 @@
-#[doc = "Register `IEN` reader"]
+///Register `IEN` reader
 pub type R = crate::R<IENrs>;
-#[doc = "Register `IEN` writer"]
+///Register `IEN` writer
 pub type W = crate::W<IENrs>;
-#[doc = "Field `TXC` reader - TXC Interrupt Enable"]
+///Field `TXC` reader - TXC Interrupt Enable
 pub type TxcR = crate::BitReader;
-#[doc = "Field `TXC` writer - TXC Interrupt Enable"]
+///Field `TXC` writer - TXC Interrupt Enable
 pub type TxcW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TXBL` reader - TXBL Interrupt Enable"]
+///Field `TXBL` reader - TXBL Interrupt Enable
 pub type TxblR = crate::BitReader;
-#[doc = "Field `TXBL` writer - TXBL Interrupt Enable"]
+///Field `TXBL` writer - TXBL Interrupt Enable
 pub type TxblW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RXDATAV` reader - RXDATAV Interrupt Enable"]
+///Field `RXDATAV` reader - RXDATAV Interrupt Enable
 pub type RxdatavR = crate::BitReader;
-#[doc = "Field `RXDATAV` writer - RXDATAV Interrupt Enable"]
+///Field `RXDATAV` writer - RXDATAV Interrupt Enable
 pub type RxdatavW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RXFULL` reader - RXFULL Interrupt Enable"]
+///Field `RXFULL` reader - RXFULL Interrupt Enable
 pub type RxfullR = crate::BitReader;
-#[doc = "Field `RXFULL` writer - RXFULL Interrupt Enable"]
+///Field `RXFULL` writer - RXFULL Interrupt Enable
 pub type RxfullW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RXOF` reader - RXOF Interrupt Enable"]
+///Field `RXOF` reader - RXOF Interrupt Enable
 pub type RxofR = crate::BitReader;
-#[doc = "Field `RXOF` writer - RXOF Interrupt Enable"]
+///Field `RXOF` writer - RXOF Interrupt Enable
 pub type RxofW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RXUF` reader - RXUF Interrupt Enable"]
+///Field `RXUF` reader - RXUF Interrupt Enable
 pub type RxufR = crate::BitReader;
-#[doc = "Field `RXUF` writer - RXUF Interrupt Enable"]
+///Field `RXUF` writer - RXUF Interrupt Enable
 pub type RxufW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TXOF` reader - TXOF Interrupt Enable"]
+///Field `TXOF` reader - TXOF Interrupt Enable
 pub type TxofR = crate::BitReader;
-#[doc = "Field `TXOF` writer - TXOF Interrupt Enable"]
+///Field `TXOF` writer - TXOF Interrupt Enable
 pub type TxofW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TXUF` reader - TXUF Interrupt Enable"]
+///Field `TXUF` reader - TXUF Interrupt Enable
 pub type TxufR = crate::BitReader;
-#[doc = "Field `TXUF` writer - TXUF Interrupt Enable"]
+///Field `TXUF` writer - TXUF Interrupt Enable
 pub type TxufW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PERR` reader - PERR Interrupt Enable"]
+///Field `PERR` reader - PERR Interrupt Enable
 pub type PerrR = crate::BitReader;
-#[doc = "Field `PERR` writer - PERR Interrupt Enable"]
+///Field `PERR` writer - PERR Interrupt Enable
 pub type PerrW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `FERR` reader - FERR Interrupt Enable"]
+///Field `FERR` reader - FERR Interrupt Enable
 pub type FerrR = crate::BitReader;
-#[doc = "Field `FERR` writer - FERR Interrupt Enable"]
+///Field `FERR` writer - FERR Interrupt Enable
 pub type FerrW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `MPAF` reader - MPAF Interrupt Enable"]
+///Field `MPAF` reader - MPAF Interrupt Enable
 pub type MpafR = crate::BitReader;
-#[doc = "Field `MPAF` writer - MPAF Interrupt Enable"]
+///Field `MPAF` writer - MPAF Interrupt Enable
 pub type MpafW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SSM` reader - SSM Interrupt Enable"]
+///Field `SSM` reader - SSM Interrupt Enable
 pub type SsmR = crate::BitReader;
-#[doc = "Field `SSM` writer - SSM Interrupt Enable"]
+///Field `SSM` writer - SSM Interrupt Enable
 pub type SsmW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CCF` reader - CCF Interrupt Enable"]
+///Field `CCF` reader - CCF Interrupt Enable
 pub type CcfR = crate::BitReader;
-#[doc = "Field `CCF` writer - CCF Interrupt Enable"]
+///Field `CCF` writer - CCF Interrupt Enable
 pub type CcfW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TXIDLE` reader - TXIDLE Interrupt Enable"]
+///Field `TXIDLE` reader - TXIDLE Interrupt Enable
 pub type TxidleR = crate::BitReader;
-#[doc = "Field `TXIDLE` writer - TXIDLE Interrupt Enable"]
+///Field `TXIDLE` writer - TXIDLE Interrupt Enable
 pub type TxidleW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TCMP0` reader - TCMP0 Interrupt Enable"]
+///Field `TCMP0` reader - TCMP0 Interrupt Enable
 pub type Tcmp0R = crate::BitReader;
-#[doc = "Field `TCMP0` writer - TCMP0 Interrupt Enable"]
+///Field `TCMP0` writer - TCMP0 Interrupt Enable
 pub type Tcmp0W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TCMP1` reader - TCMP1 Interrupt Enable"]
+///Field `TCMP1` reader - TCMP1 Interrupt Enable
 pub type Tcmp1R = crate::BitReader;
-#[doc = "Field `TCMP1` writer - TCMP1 Interrupt Enable"]
+///Field `TCMP1` writer - TCMP1 Interrupt Enable
 pub type Tcmp1W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `TCMP2` reader - TCMP2 Interrupt Enable"]
+///Field `TCMP2` reader - TCMP2 Interrupt Enable
 pub type Tcmp2R = crate::BitReader;
-#[doc = "Field `TCMP2` writer - TCMP2 Interrupt Enable"]
+///Field `TCMP2` writer - TCMP2 Interrupt Enable
 pub type Tcmp2W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - TXC Interrupt Enable"]
+    ///Bit 0 - TXC Interrupt Enable
     #[inline(always)]
     pub fn txc(&self) -> TxcR {
         TxcR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - TXBL Interrupt Enable"]
+    ///Bit 1 - TXBL Interrupt Enable
     #[inline(always)]
     pub fn txbl(&self) -> TxblR {
         TxblR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - RXDATAV Interrupt Enable"]
+    ///Bit 2 - RXDATAV Interrupt Enable
     #[inline(always)]
     pub fn rxdatav(&self) -> RxdatavR {
         RxdatavR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - RXFULL Interrupt Enable"]
+    ///Bit 3 - RXFULL Interrupt Enable
     #[inline(always)]
     pub fn rxfull(&self) -> RxfullR {
         RxfullR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - RXOF Interrupt Enable"]
+    ///Bit 4 - RXOF Interrupt Enable
     #[inline(always)]
     pub fn rxof(&self) -> RxofR {
         RxofR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - RXUF Interrupt Enable"]
+    ///Bit 5 - RXUF Interrupt Enable
     #[inline(always)]
     pub fn rxuf(&self) -> RxufR {
         RxufR::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - TXOF Interrupt Enable"]
+    ///Bit 6 - TXOF Interrupt Enable
     #[inline(always)]
     pub fn txof(&self) -> TxofR {
         TxofR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - TXUF Interrupt Enable"]
+    ///Bit 7 - TXUF Interrupt Enable
     #[inline(always)]
     pub fn txuf(&self) -> TxufR {
         TxufR::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - PERR Interrupt Enable"]
+    ///Bit 8 - PERR Interrupt Enable
     #[inline(always)]
     pub fn perr(&self) -> PerrR {
         PerrR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - FERR Interrupt Enable"]
+    ///Bit 9 - FERR Interrupt Enable
     #[inline(always)]
     pub fn ferr(&self) -> FerrR {
         FerrR::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - MPAF Interrupt Enable"]
+    ///Bit 10 - MPAF Interrupt Enable
     #[inline(always)]
     pub fn mpaf(&self) -> MpafR {
         MpafR::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - SSM Interrupt Enable"]
+    ///Bit 11 - SSM Interrupt Enable
     #[inline(always)]
     pub fn ssm(&self) -> SsmR {
         SsmR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - CCF Interrupt Enable"]
+    ///Bit 12 - CCF Interrupt Enable
     #[inline(always)]
     pub fn ccf(&self) -> CcfR {
         CcfR::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - TXIDLE Interrupt Enable"]
+    ///Bit 13 - TXIDLE Interrupt Enable
     #[inline(always)]
     pub fn txidle(&self) -> TxidleR {
         TxidleR::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - TCMP0 Interrupt Enable"]
+    ///Bit 14 - TCMP0 Interrupt Enable
     #[inline(always)]
     pub fn tcmp0(&self) -> Tcmp0R {
         Tcmp0R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 15 - TCMP1 Interrupt Enable"]
+    ///Bit 15 - TCMP1 Interrupt Enable
     #[inline(always)]
     pub fn tcmp1(&self) -> Tcmp1R {
         Tcmp1R::new(((self.bits >> 15) & 1) != 0)
     }
-    #[doc = "Bit 16 - TCMP2 Interrupt Enable"]
+    ///Bit 16 - TCMP2 Interrupt Enable
     #[inline(always)]
     pub fn tcmp2(&self) -> Tcmp2R {
         Tcmp2R::new(((self.bits >> 16) & 1) != 0)
@@ -181,123 +181,125 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - TXC Interrupt Enable"]
+    ///Bit 0 - TXC Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn txc(&mut self) -> TxcW<IENrs> {
         TxcW::new(self, 0)
     }
-    #[doc = "Bit 1 - TXBL Interrupt Enable"]
+    ///Bit 1 - TXBL Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn txbl(&mut self) -> TxblW<IENrs> {
         TxblW::new(self, 1)
     }
-    #[doc = "Bit 2 - RXDATAV Interrupt Enable"]
+    ///Bit 2 - RXDATAV Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn rxdatav(&mut self) -> RxdatavW<IENrs> {
         RxdatavW::new(self, 2)
     }
-    #[doc = "Bit 3 - RXFULL Interrupt Enable"]
+    ///Bit 3 - RXFULL Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn rxfull(&mut self) -> RxfullW<IENrs> {
         RxfullW::new(self, 3)
     }
-    #[doc = "Bit 4 - RXOF Interrupt Enable"]
+    ///Bit 4 - RXOF Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn rxof(&mut self) -> RxofW<IENrs> {
         RxofW::new(self, 4)
     }
-    #[doc = "Bit 5 - RXUF Interrupt Enable"]
+    ///Bit 5 - RXUF Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn rxuf(&mut self) -> RxufW<IENrs> {
         RxufW::new(self, 5)
     }
-    #[doc = "Bit 6 - TXOF Interrupt Enable"]
+    ///Bit 6 - TXOF Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn txof(&mut self) -> TxofW<IENrs> {
         TxofW::new(self, 6)
     }
-    #[doc = "Bit 7 - TXUF Interrupt Enable"]
+    ///Bit 7 - TXUF Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn txuf(&mut self) -> TxufW<IENrs> {
         TxufW::new(self, 7)
     }
-    #[doc = "Bit 8 - PERR Interrupt Enable"]
+    ///Bit 8 - PERR Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn perr(&mut self) -> PerrW<IENrs> {
         PerrW::new(self, 8)
     }
-    #[doc = "Bit 9 - FERR Interrupt Enable"]
+    ///Bit 9 - FERR Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn ferr(&mut self) -> FerrW<IENrs> {
         FerrW::new(self, 9)
     }
-    #[doc = "Bit 10 - MPAF Interrupt Enable"]
+    ///Bit 10 - MPAF Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn mpaf(&mut self) -> MpafW<IENrs> {
         MpafW::new(self, 10)
     }
-    #[doc = "Bit 11 - SSM Interrupt Enable"]
+    ///Bit 11 - SSM Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn ssm(&mut self) -> SsmW<IENrs> {
         SsmW::new(self, 11)
     }
-    #[doc = "Bit 12 - CCF Interrupt Enable"]
+    ///Bit 12 - CCF Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn ccf(&mut self) -> CcfW<IENrs> {
         CcfW::new(self, 12)
     }
-    #[doc = "Bit 13 - TXIDLE Interrupt Enable"]
+    ///Bit 13 - TXIDLE Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn txidle(&mut self) -> TxidleW<IENrs> {
         TxidleW::new(self, 13)
     }
-    #[doc = "Bit 14 - TCMP0 Interrupt Enable"]
+    ///Bit 14 - TCMP0 Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn tcmp0(&mut self) -> Tcmp0W<IENrs> {
         Tcmp0W::new(self, 14)
     }
-    #[doc = "Bit 15 - TCMP1 Interrupt Enable"]
+    ///Bit 15 - TCMP1 Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn tcmp1(&mut self) -> Tcmp1W<IENrs> {
         Tcmp1W::new(self, 15)
     }
-    #[doc = "Bit 16 - TCMP2 Interrupt Enable"]
+    ///Bit 16 - TCMP2 Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn tcmp2(&mut self) -> Tcmp2W<IENrs> {
         Tcmp2W::new(self, 16)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+///Interrupt Enable Register
+///
+///You can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct IENrs;
 impl crate::RegisterSpec for IENrs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`ien::R`](R) reader structure"]
+///`read()` method returns [`ien::R`](R) reader structure
 impl crate::Readable for IENrs {}
-#[doc = "`write(|w| ..)` method takes [`ien::W`](W) writer structure"]
+///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets IEN to value 0"]
+///`reset()` method sets IEN to value 0
 impl crate::Resettable for IENrs {
     const RESET_VALUE: u32 = 0;
 }

@@ -10,7 +10,7 @@ The code is generated automatically from a vendor-supplied SVD file, using [svd2
 svd2rust -i EFM32PG1B.svd -c svd2rust.toml
 rm -rf src
 form -i lib.rs -o src/ && rm lib.rs
-cargo fmt
+cargo +nightly fmt
 ```
 
 The purpose of this crate is to give embedded programs or libraries written Rust access to the complete functionality

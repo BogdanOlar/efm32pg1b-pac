@@ -1,16 +1,16 @@
-#[doc = "Register `IF` reader"]
+///Register `IF` reader
 pub type R = crate::R<IFrs>;
-#[doc = "Field `EXT` reader - External Pin Interrupt Flag"]
+///Field `EXT` reader - External Pin Interrupt Flag
 pub type ExtR = crate::FieldReader<u16>;
-#[doc = "Field `EM4WU` reader - EM4 Wake Up Pin Interrupt Flag"]
+///Field `EM4WU` reader - EM4 Wake Up Pin Interrupt Flag
 pub type Em4wuR = crate::FieldReader<u16>;
 impl R {
-    #[doc = "Bits 0:15 - External Pin Interrupt Flag"]
+    ///Bits 0:15 - External Pin Interrupt Flag
     #[inline(always)]
     pub fn ext(&self) -> ExtR {
         ExtR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:31 - EM4 Wake Up Pin Interrupt Flag"]
+    ///Bits 16:31 - EM4 Wake Up Pin Interrupt Flag
     #[inline(always)]
     pub fn em4wu(&self) -> Em4wuR {
         Em4wuR::new(((self.bits >> 16) & 0xffff) as u16)
@@ -24,14 +24,16 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "Interrupt Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`if_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+///Interrupt Flag Register
+///
+///You can [`read`](crate::Reg::read) this register and get [`if_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct IFrs;
 impl crate::RegisterSpec for IFrs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`if_::R`](R) reader structure"]
+///`read()` method returns [`if_::R`](R) reader structure
 impl crate::Readable for IFrs {}
-#[doc = "`reset()` method sets IF to value 0"]
+///`reset()` method sets IF to value 0
 impl crate::Resettable for IFrs {
     const RESET_VALUE: u32 = 0;
 }

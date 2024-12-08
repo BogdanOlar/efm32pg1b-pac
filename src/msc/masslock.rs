@@ -1,15 +1,17 @@
-#[doc = "Register `MASSLOCK` reader"]
+///Register `MASSLOCK` reader
 pub type R = crate::R<MASSLOCKrs>;
-#[doc = "Register `MASSLOCK` writer"]
+///Register `MASSLOCK` writer
 pub type W = crate::W<MASSLOCKrs>;
-#[doc = "Mass Erase Lock\n\nValue on reset: 1"]
+///Mass Erase Lock
+///
+///Value on reset: 1
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum LOCKKEY {
-    #[doc = "0: `0`"]
+    ///0: `0`
     Unlocked = 0,
-    #[doc = "1: `1`"]
+    ///1: `1`
     Locked = 1,
 }
 impl From<LOCKKEY> for u16 {
@@ -22,10 +24,10 @@ impl crate::FieldSpec for LOCKKEY {
     type Ux = u16;
 }
 impl crate::IsEnum for LOCKKEY {}
-#[doc = "Field `LOCKKEY` reader - Mass Erase Lock"]
+///Field `LOCKKEY` reader - Mass Erase Lock
 pub type LockkeyR = crate::FieldReader<LOCKKEY>;
 impl LockkeyR {
-    #[doc = "Get enumerated values variant"]
+    ///Get enumerated values variant
     #[inline(always)]
     pub const fn variant(&self) -> Option<LOCKKEY> {
         match self.bits {
@@ -34,37 +36,37 @@ impl LockkeyR {
             _ => None,
         }
     }
-    #[doc = "`0`"]
+    ///`0`
     #[inline(always)]
     pub fn is_unlocked(&self) -> bool {
         *self == LOCKKEY::Unlocked
     }
-    #[doc = "`1`"]
+    ///`1`
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
         *self == LOCKKEY::Locked
     }
 }
-#[doc = "Field `LOCKKEY` writer - Mass Erase Lock"]
+///Field `LOCKKEY` writer - Mass Erase Lock
 pub type LockkeyW<'a, REG> = crate::FieldWriter<'a, REG, 16, LOCKKEY>;
 impl<'a, REG> LockkeyW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
 {
-    #[doc = "`0`"]
+    ///`0`
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut crate::W<REG> {
         self.variant(LOCKKEY::Unlocked)
     }
-    #[doc = "`1`"]
+    ///`1`
     #[inline(always)]
     pub fn locked(self) -> &'a mut crate::W<REG> {
         self.variant(LOCKKEY::Locked)
     }
 }
 impl R {
-    #[doc = "Bits 0:15 - Mass Erase Lock"]
+    ///Bits 0:15 - Mass Erase Lock
     #[inline(always)]
     pub fn lockkey(&self) -> LockkeyR {
         LockkeyR::new((self.bits & 0xffff) as u16)
@@ -78,27 +80,29 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Mass Erase Lock"]
+    ///Bits 0:15 - Mass Erase Lock
     #[inline(always)]
     #[must_use]
     pub fn lockkey(&mut self) -> LockkeyW<MASSLOCKrs> {
         LockkeyW::new(self, 0)
     }
 }
-#[doc = "Mass Erase Lock Register\n\nYou can [`read`](crate::Reg::read) this register and get [`masslock::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`masslock::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+///Mass Erase Lock Register
+///
+///You can [`read`](crate::Reg::read) this register and get [`masslock::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`masslock::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct MASSLOCKrs;
 impl crate::RegisterSpec for MASSLOCKrs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`masslock::R`](R) reader structure"]
+///`read()` method returns [`masslock::R`](R) reader structure
 impl crate::Readable for MASSLOCKrs {}
-#[doc = "`write(|w| ..)` method takes [`masslock::W`](W) writer structure"]
+///`write(|w| ..)` method takes [`masslock::W`](W) writer structure
 impl crate::Writable for MASSLOCKrs {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets MASSLOCK to value 0x01"]
+///`reset()` method sets MASSLOCK to value 0x01
 impl crate::Resettable for MASSLOCKrs {
     const RESET_VALUE: u32 = 0x01;
 }

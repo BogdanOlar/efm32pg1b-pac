@@ -1,31 +1,31 @@
-#[doc = "Register `IEN` reader"]
+///Register `IEN` reader
 pub type R = crate::R<IENrs>;
-#[doc = "Register `IEN` writer"]
+///Register `IEN` writer
 pub type W = crate::W<IENrs>;
-#[doc = "Field `EDGE` reader - EDGE Interrupt Enable"]
+///Field `EDGE` reader - EDGE Interrupt Enable
 pub type EdgeR = crate::BitReader;
-#[doc = "Field `EDGE` writer - EDGE Interrupt Enable"]
+///Field `EDGE` writer - EDGE Interrupt Enable
 pub type EdgeW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `WARMUP` reader - WARMUP Interrupt Enable"]
+///Field `WARMUP` reader - WARMUP Interrupt Enable
 pub type WarmupR = crate::BitReader;
-#[doc = "Field `WARMUP` writer - WARMUP Interrupt Enable"]
+///Field `WARMUP` writer - WARMUP Interrupt Enable
 pub type WarmupW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `APORTCONFLICT` reader - APORTCONFLICT Interrupt Enable"]
+///Field `APORTCONFLICT` reader - APORTCONFLICT Interrupt Enable
 pub type AportconflictR = crate::BitReader;
-#[doc = "Field `APORTCONFLICT` writer - APORTCONFLICT Interrupt Enable"]
+///Field `APORTCONFLICT` writer - APORTCONFLICT Interrupt Enable
 pub type AportconflictW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bit 0 - EDGE Interrupt Enable"]
+    ///Bit 0 - EDGE Interrupt Enable
     #[inline(always)]
     pub fn edge(&self) -> EdgeR {
         EdgeR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - WARMUP Interrupt Enable"]
+    ///Bit 1 - WARMUP Interrupt Enable
     #[inline(always)]
     pub fn warmup(&self) -> WarmupR {
         WarmupR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - APORTCONFLICT Interrupt Enable"]
+    ///Bit 2 - APORTCONFLICT Interrupt Enable
     #[inline(always)]
     pub fn aportconflict(&self) -> AportconflictR {
         AportconflictR::new(((self.bits >> 2) & 1) != 0)
@@ -41,39 +41,41 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - EDGE Interrupt Enable"]
+    ///Bit 0 - EDGE Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn edge(&mut self) -> EdgeW<IENrs> {
         EdgeW::new(self, 0)
     }
-    #[doc = "Bit 1 - WARMUP Interrupt Enable"]
+    ///Bit 1 - WARMUP Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn warmup(&mut self) -> WarmupW<IENrs> {
         WarmupW::new(self, 1)
     }
-    #[doc = "Bit 2 - APORTCONFLICT Interrupt Enable"]
+    ///Bit 2 - APORTCONFLICT Interrupt Enable
     #[inline(always)]
     #[must_use]
     pub fn aportconflict(&mut self) -> AportconflictW<IENrs> {
         AportconflictW::new(self, 2)
     }
 }
-#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+///Interrupt Enable Register
+///
+///You can [`read`](crate::Reg::read) this register and get [`ien::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct IENrs;
 impl crate::RegisterSpec for IENrs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`ien::R`](R) reader structure"]
+///`read()` method returns [`ien::R`](R) reader structure
 impl crate::Readable for IENrs {}
-#[doc = "`write(|w| ..)` method takes [`ien::W`](W) writer structure"]
+///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets IEN to value 0"]
+///`reset()` method sets IEN to value 0
 impl crate::Resettable for IENrs {
     const RESET_VALUE: u32 = 0;
 }

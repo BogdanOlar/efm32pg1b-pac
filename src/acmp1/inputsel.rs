@@ -1,117 +1,119 @@
-#[doc = "Register `INPUTSEL` reader"]
+///Register `INPUTSEL` reader
 pub type R = crate::R<INPUTSELrs>;
-#[doc = "Register `INPUTSEL` writer"]
+///Register `INPUTSEL` writer
 pub type W = crate::W<INPUTSELrs>;
-#[doc = "Field `POSSEL` reader - Positive Input Select"]
+///Field `POSSEL` reader - Positive Input Select
 pub type PosselR = crate::FieldReader;
-#[doc = "Field `POSSEL` writer - Positive Input Select"]
+///Field `POSSEL` writer - Positive Input Select
 pub type PosselW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `NEGSEL` reader - Negative Input Select"]
+///Field `NEGSEL` reader - Negative Input Select
 pub type NegselR = crate::FieldReader;
-#[doc = "Field `NEGSEL` writer - Negative Input Select"]
+///Field `NEGSEL` writer - Negative Input Select
 pub type NegselW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "VA Selection\n\nValue on reset: 0"]
+///VA Selection
+///
+///Value on reset: 0
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VASEL {
-    #[doc = "0: ACMPVDD"]
+    ///0: ACMPVDD
     Vdd = 0,
-    #[doc = "1: APORT2Y Channel 0"]
+    ///1: APORT2Y Channel 0
     Aport2ych0 = 1,
-    #[doc = "3: APORT2Y Channel 2"]
+    ///3: APORT2Y Channel 2
     Aport2ych2 = 3,
-    #[doc = "5: APORT2Y Channel 4"]
+    ///5: APORT2Y Channel 4
     Aport2ych4 = 5,
-    #[doc = "7: APORT2Y Channel 6"]
+    ///7: APORT2Y Channel 6
     Aport2ych6 = 7,
-    #[doc = "9: APORT2Y Channel 8"]
+    ///9: APORT2Y Channel 8
     Aport2ych8 = 9,
-    #[doc = "11: APORT2Y Channel 10"]
+    ///11: APORT2Y Channel 10
     Aport2ych10 = 11,
-    #[doc = "13: APORT2Y Channel 12"]
+    ///13: APORT2Y Channel 12
     Aport2ych12 = 13,
-    #[doc = "15: APORT2Y Channel 14"]
+    ///15: APORT2Y Channel 14
     Aport2ych14 = 15,
-    #[doc = "17: APORT2Y Channel 16"]
+    ///17: APORT2Y Channel 16
     Aport2ych16 = 17,
-    #[doc = "19: APORT2Y Channel 18"]
+    ///19: APORT2Y Channel 18
     Aport2ych18 = 19,
-    #[doc = "21: APORT2Y Channel 20"]
+    ///21: APORT2Y Channel 20
     Aport2ych20 = 21,
-    #[doc = "23: APORT2Y Channel 22"]
+    ///23: APORT2Y Channel 22
     Aport2ych22 = 23,
-    #[doc = "25: APORT2Y Channel 24"]
+    ///25: APORT2Y Channel 24
     Aport2ych24 = 25,
-    #[doc = "27: APORT2Y Channel 26"]
+    ///27: APORT2Y Channel 26
     Aport2ych26 = 27,
-    #[doc = "29: APORT2Y Channel 28"]
+    ///29: APORT2Y Channel 28
     Aport2ych28 = 29,
-    #[doc = "31: APORT2Y Channel 30"]
+    ///31: APORT2Y Channel 30
     Aport2ych30 = 31,
-    #[doc = "32: APORT1X Channel 0"]
+    ///32: APORT1X Channel 0
     Aport1xch0 = 32,
-    #[doc = "33: APORT1Y Channel 1"]
+    ///33: APORT1Y Channel 1
     Aport1ych1 = 33,
-    #[doc = "34: APORT1X Channel 2"]
+    ///34: APORT1X Channel 2
     Aport1xch2 = 34,
-    #[doc = "35: APORT1Y Channel 3"]
+    ///35: APORT1Y Channel 3
     Aport1ych3 = 35,
-    #[doc = "36: APORT1X Channel 4"]
+    ///36: APORT1X Channel 4
     Aport1xch4 = 36,
-    #[doc = "37: APORT1Y Channel 5"]
+    ///37: APORT1Y Channel 5
     Aport1ych5 = 37,
-    #[doc = "38: APORT1X Channel 6"]
+    ///38: APORT1X Channel 6
     Aport1xch6 = 38,
-    #[doc = "39: APORT1Y Channel 7"]
+    ///39: APORT1Y Channel 7
     Aport1ych7 = 39,
-    #[doc = "40: APORT1X Channel 8"]
+    ///40: APORT1X Channel 8
     Aport1xch8 = 40,
-    #[doc = "41: APORT1Y Channel 9"]
+    ///41: APORT1Y Channel 9
     Aport1ych9 = 41,
-    #[doc = "42: APORT1X Channel 10"]
+    ///42: APORT1X Channel 10
     Aport1xch10 = 42,
-    #[doc = "43: APORT1Y Channel 11"]
+    ///43: APORT1Y Channel 11
     Aport1ych11 = 43,
-    #[doc = "44: APORT1X Channel 12"]
+    ///44: APORT1X Channel 12
     Aport1xch12 = 44,
-    #[doc = "45: APORT1Y Channel 13"]
+    ///45: APORT1Y Channel 13
     Aport1ych13 = 45,
-    #[doc = "46: APORT1X Channel 14"]
+    ///46: APORT1X Channel 14
     Aport1xch14 = 46,
-    #[doc = "47: APORT1Y Channel 15"]
+    ///47: APORT1Y Channel 15
     Aport1ych15 = 47,
-    #[doc = "48: APORT1X Channel 16"]
+    ///48: APORT1X Channel 16
     Aport1xch16 = 48,
-    #[doc = "49: APORT1Y Channel 17"]
+    ///49: APORT1Y Channel 17
     Aport1ych17 = 49,
-    #[doc = "50: APORT1X Channel 18"]
+    ///50: APORT1X Channel 18
     Aport1xch18 = 50,
-    #[doc = "51: APORT1Y Channel 19"]
+    ///51: APORT1Y Channel 19
     Aport1ych19 = 51,
-    #[doc = "52: APORT1X Channel 20"]
+    ///52: APORT1X Channel 20
     Aport1xch20 = 52,
-    #[doc = "53: APORT1Y Channel 21"]
+    ///53: APORT1Y Channel 21
     Aport1ych21 = 53,
-    #[doc = "54: APORT1X Channel 22"]
+    ///54: APORT1X Channel 22
     Aport1xch22 = 54,
-    #[doc = "55: APORT1Y Channel 23"]
+    ///55: APORT1Y Channel 23
     Aport1ych23 = 55,
-    #[doc = "56: APORT1X Channel 24"]
+    ///56: APORT1X Channel 24
     Aport1xch24 = 56,
-    #[doc = "57: APORT1Y Channel 25"]
+    ///57: APORT1Y Channel 25
     Aport1ych25 = 57,
-    #[doc = "58: APORT1X Channel 26"]
+    ///58: APORT1X Channel 26
     Aport1xch26 = 58,
-    #[doc = "59: APORT1Y Channel 27"]
+    ///59: APORT1Y Channel 27
     Aport1ych27 = 59,
-    #[doc = "60: APORT1X Channel 28"]
+    ///60: APORT1X Channel 28
     Aport1xch28 = 60,
-    #[doc = "61: APORT1Y Channel 29"]
+    ///61: APORT1Y Channel 29
     Aport1ych29 = 61,
-    #[doc = "62: APORT1X Channel 30"]
+    ///62: APORT1X Channel 30
     Aport1xch30 = 62,
-    #[doc = "63: APORT1Y Channel 31"]
+    ///63: APORT1Y Channel 31
     Aport1ych31 = 63,
 }
 impl From<VASEL> for u8 {
@@ -124,10 +126,10 @@ impl crate::FieldSpec for VASEL {
     type Ux = u8;
 }
 impl crate::IsEnum for VASEL {}
-#[doc = "Field `VASEL` reader - VA Selection"]
+///Field `VASEL` reader - VA Selection
 pub type VaselR = crate::FieldReader<VASEL>;
 impl VaselR {
-    #[doc = "Get enumerated values variant"]
+    ///Get enumerated values variant
     #[inline(always)]
     pub const fn variant(&self) -> Option<VASEL> {
         match self.bits {
@@ -183,537 +185,539 @@ impl VaselR {
             _ => None,
         }
     }
-    #[doc = "ACMPVDD"]
+    ///ACMPVDD
     #[inline(always)]
     pub fn is_vdd(&self) -> bool {
         *self == VASEL::Vdd
     }
-    #[doc = "APORT2Y Channel 0"]
+    ///APORT2Y Channel 0
     #[inline(always)]
     pub fn is_aport2ych0(&self) -> bool {
         *self == VASEL::Aport2ych0
     }
-    #[doc = "APORT2Y Channel 2"]
+    ///APORT2Y Channel 2
     #[inline(always)]
     pub fn is_aport2ych2(&self) -> bool {
         *self == VASEL::Aport2ych2
     }
-    #[doc = "APORT2Y Channel 4"]
+    ///APORT2Y Channel 4
     #[inline(always)]
     pub fn is_aport2ych4(&self) -> bool {
         *self == VASEL::Aport2ych4
     }
-    #[doc = "APORT2Y Channel 6"]
+    ///APORT2Y Channel 6
     #[inline(always)]
     pub fn is_aport2ych6(&self) -> bool {
         *self == VASEL::Aport2ych6
     }
-    #[doc = "APORT2Y Channel 8"]
+    ///APORT2Y Channel 8
     #[inline(always)]
     pub fn is_aport2ych8(&self) -> bool {
         *self == VASEL::Aport2ych8
     }
-    #[doc = "APORT2Y Channel 10"]
+    ///APORT2Y Channel 10
     #[inline(always)]
     pub fn is_aport2ych10(&self) -> bool {
         *self == VASEL::Aport2ych10
     }
-    #[doc = "APORT2Y Channel 12"]
+    ///APORT2Y Channel 12
     #[inline(always)]
     pub fn is_aport2ych12(&self) -> bool {
         *self == VASEL::Aport2ych12
     }
-    #[doc = "APORT2Y Channel 14"]
+    ///APORT2Y Channel 14
     #[inline(always)]
     pub fn is_aport2ych14(&self) -> bool {
         *self == VASEL::Aport2ych14
     }
-    #[doc = "APORT2Y Channel 16"]
+    ///APORT2Y Channel 16
     #[inline(always)]
     pub fn is_aport2ych16(&self) -> bool {
         *self == VASEL::Aport2ych16
     }
-    #[doc = "APORT2Y Channel 18"]
+    ///APORT2Y Channel 18
     #[inline(always)]
     pub fn is_aport2ych18(&self) -> bool {
         *self == VASEL::Aport2ych18
     }
-    #[doc = "APORT2Y Channel 20"]
+    ///APORT2Y Channel 20
     #[inline(always)]
     pub fn is_aport2ych20(&self) -> bool {
         *self == VASEL::Aport2ych20
     }
-    #[doc = "APORT2Y Channel 22"]
+    ///APORT2Y Channel 22
     #[inline(always)]
     pub fn is_aport2ych22(&self) -> bool {
         *self == VASEL::Aport2ych22
     }
-    #[doc = "APORT2Y Channel 24"]
+    ///APORT2Y Channel 24
     #[inline(always)]
     pub fn is_aport2ych24(&self) -> bool {
         *self == VASEL::Aport2ych24
     }
-    #[doc = "APORT2Y Channel 26"]
+    ///APORT2Y Channel 26
     #[inline(always)]
     pub fn is_aport2ych26(&self) -> bool {
         *self == VASEL::Aport2ych26
     }
-    #[doc = "APORT2Y Channel 28"]
+    ///APORT2Y Channel 28
     #[inline(always)]
     pub fn is_aport2ych28(&self) -> bool {
         *self == VASEL::Aport2ych28
     }
-    #[doc = "APORT2Y Channel 30"]
+    ///APORT2Y Channel 30
     #[inline(always)]
     pub fn is_aport2ych30(&self) -> bool {
         *self == VASEL::Aport2ych30
     }
-    #[doc = "APORT1X Channel 0"]
+    ///APORT1X Channel 0
     #[inline(always)]
     pub fn is_aport1xch0(&self) -> bool {
         *self == VASEL::Aport1xch0
     }
-    #[doc = "APORT1Y Channel 1"]
+    ///APORT1Y Channel 1
     #[inline(always)]
     pub fn is_aport1ych1(&self) -> bool {
         *self == VASEL::Aport1ych1
     }
-    #[doc = "APORT1X Channel 2"]
+    ///APORT1X Channel 2
     #[inline(always)]
     pub fn is_aport1xch2(&self) -> bool {
         *self == VASEL::Aport1xch2
     }
-    #[doc = "APORT1Y Channel 3"]
+    ///APORT1Y Channel 3
     #[inline(always)]
     pub fn is_aport1ych3(&self) -> bool {
         *self == VASEL::Aport1ych3
     }
-    #[doc = "APORT1X Channel 4"]
+    ///APORT1X Channel 4
     #[inline(always)]
     pub fn is_aport1xch4(&self) -> bool {
         *self == VASEL::Aport1xch4
     }
-    #[doc = "APORT1Y Channel 5"]
+    ///APORT1Y Channel 5
     #[inline(always)]
     pub fn is_aport1ych5(&self) -> bool {
         *self == VASEL::Aport1ych5
     }
-    #[doc = "APORT1X Channel 6"]
+    ///APORT1X Channel 6
     #[inline(always)]
     pub fn is_aport1xch6(&self) -> bool {
         *self == VASEL::Aport1xch6
     }
-    #[doc = "APORT1Y Channel 7"]
+    ///APORT1Y Channel 7
     #[inline(always)]
     pub fn is_aport1ych7(&self) -> bool {
         *self == VASEL::Aport1ych7
     }
-    #[doc = "APORT1X Channel 8"]
+    ///APORT1X Channel 8
     #[inline(always)]
     pub fn is_aport1xch8(&self) -> bool {
         *self == VASEL::Aport1xch8
     }
-    #[doc = "APORT1Y Channel 9"]
+    ///APORT1Y Channel 9
     #[inline(always)]
     pub fn is_aport1ych9(&self) -> bool {
         *self == VASEL::Aport1ych9
     }
-    #[doc = "APORT1X Channel 10"]
+    ///APORT1X Channel 10
     #[inline(always)]
     pub fn is_aport1xch10(&self) -> bool {
         *self == VASEL::Aport1xch10
     }
-    #[doc = "APORT1Y Channel 11"]
+    ///APORT1Y Channel 11
     #[inline(always)]
     pub fn is_aport1ych11(&self) -> bool {
         *self == VASEL::Aport1ych11
     }
-    #[doc = "APORT1X Channel 12"]
+    ///APORT1X Channel 12
     #[inline(always)]
     pub fn is_aport1xch12(&self) -> bool {
         *self == VASEL::Aport1xch12
     }
-    #[doc = "APORT1Y Channel 13"]
+    ///APORT1Y Channel 13
     #[inline(always)]
     pub fn is_aport1ych13(&self) -> bool {
         *self == VASEL::Aport1ych13
     }
-    #[doc = "APORT1X Channel 14"]
+    ///APORT1X Channel 14
     #[inline(always)]
     pub fn is_aport1xch14(&self) -> bool {
         *self == VASEL::Aport1xch14
     }
-    #[doc = "APORT1Y Channel 15"]
+    ///APORT1Y Channel 15
     #[inline(always)]
     pub fn is_aport1ych15(&self) -> bool {
         *self == VASEL::Aport1ych15
     }
-    #[doc = "APORT1X Channel 16"]
+    ///APORT1X Channel 16
     #[inline(always)]
     pub fn is_aport1xch16(&self) -> bool {
         *self == VASEL::Aport1xch16
     }
-    #[doc = "APORT1Y Channel 17"]
+    ///APORT1Y Channel 17
     #[inline(always)]
     pub fn is_aport1ych17(&self) -> bool {
         *self == VASEL::Aport1ych17
     }
-    #[doc = "APORT1X Channel 18"]
+    ///APORT1X Channel 18
     #[inline(always)]
     pub fn is_aport1xch18(&self) -> bool {
         *self == VASEL::Aport1xch18
     }
-    #[doc = "APORT1Y Channel 19"]
+    ///APORT1Y Channel 19
     #[inline(always)]
     pub fn is_aport1ych19(&self) -> bool {
         *self == VASEL::Aport1ych19
     }
-    #[doc = "APORT1X Channel 20"]
+    ///APORT1X Channel 20
     #[inline(always)]
     pub fn is_aport1xch20(&self) -> bool {
         *self == VASEL::Aport1xch20
     }
-    #[doc = "APORT1Y Channel 21"]
+    ///APORT1Y Channel 21
     #[inline(always)]
     pub fn is_aport1ych21(&self) -> bool {
         *self == VASEL::Aport1ych21
     }
-    #[doc = "APORT1X Channel 22"]
+    ///APORT1X Channel 22
     #[inline(always)]
     pub fn is_aport1xch22(&self) -> bool {
         *self == VASEL::Aport1xch22
     }
-    #[doc = "APORT1Y Channel 23"]
+    ///APORT1Y Channel 23
     #[inline(always)]
     pub fn is_aport1ych23(&self) -> bool {
         *self == VASEL::Aport1ych23
     }
-    #[doc = "APORT1X Channel 24"]
+    ///APORT1X Channel 24
     #[inline(always)]
     pub fn is_aport1xch24(&self) -> bool {
         *self == VASEL::Aport1xch24
     }
-    #[doc = "APORT1Y Channel 25"]
+    ///APORT1Y Channel 25
     #[inline(always)]
     pub fn is_aport1ych25(&self) -> bool {
         *self == VASEL::Aport1ych25
     }
-    #[doc = "APORT1X Channel 26"]
+    ///APORT1X Channel 26
     #[inline(always)]
     pub fn is_aport1xch26(&self) -> bool {
         *self == VASEL::Aport1xch26
     }
-    #[doc = "APORT1Y Channel 27"]
+    ///APORT1Y Channel 27
     #[inline(always)]
     pub fn is_aport1ych27(&self) -> bool {
         *self == VASEL::Aport1ych27
     }
-    #[doc = "APORT1X Channel 28"]
+    ///APORT1X Channel 28
     #[inline(always)]
     pub fn is_aport1xch28(&self) -> bool {
         *self == VASEL::Aport1xch28
     }
-    #[doc = "APORT1Y Channel 29"]
+    ///APORT1Y Channel 29
     #[inline(always)]
     pub fn is_aport1ych29(&self) -> bool {
         *self == VASEL::Aport1ych29
     }
-    #[doc = "APORT1X Channel 30"]
+    ///APORT1X Channel 30
     #[inline(always)]
     pub fn is_aport1xch30(&self) -> bool {
         *self == VASEL::Aport1xch30
     }
-    #[doc = "APORT1Y Channel 31"]
+    ///APORT1Y Channel 31
     #[inline(always)]
     pub fn is_aport1ych31(&self) -> bool {
         *self == VASEL::Aport1ych31
     }
 }
-#[doc = "Field `VASEL` writer - VA Selection"]
+///Field `VASEL` writer - VA Selection
 pub type VaselW<'a, REG> = crate::FieldWriter<'a, REG, 6, VASEL>;
 impl<'a, REG> VaselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "ACMPVDD"]
+    ///ACMPVDD
     #[inline(always)]
     pub fn vdd(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Vdd)
     }
-    #[doc = "APORT2Y Channel 0"]
+    ///APORT2Y Channel 0
     #[inline(always)]
     pub fn aport2ych0(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych0)
     }
-    #[doc = "APORT2Y Channel 2"]
+    ///APORT2Y Channel 2
     #[inline(always)]
     pub fn aport2ych2(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych2)
     }
-    #[doc = "APORT2Y Channel 4"]
+    ///APORT2Y Channel 4
     #[inline(always)]
     pub fn aport2ych4(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych4)
     }
-    #[doc = "APORT2Y Channel 6"]
+    ///APORT2Y Channel 6
     #[inline(always)]
     pub fn aport2ych6(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych6)
     }
-    #[doc = "APORT2Y Channel 8"]
+    ///APORT2Y Channel 8
     #[inline(always)]
     pub fn aport2ych8(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych8)
     }
-    #[doc = "APORT2Y Channel 10"]
+    ///APORT2Y Channel 10
     #[inline(always)]
     pub fn aport2ych10(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych10)
     }
-    #[doc = "APORT2Y Channel 12"]
+    ///APORT2Y Channel 12
     #[inline(always)]
     pub fn aport2ych12(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych12)
     }
-    #[doc = "APORT2Y Channel 14"]
+    ///APORT2Y Channel 14
     #[inline(always)]
     pub fn aport2ych14(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych14)
     }
-    #[doc = "APORT2Y Channel 16"]
+    ///APORT2Y Channel 16
     #[inline(always)]
     pub fn aport2ych16(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych16)
     }
-    #[doc = "APORT2Y Channel 18"]
+    ///APORT2Y Channel 18
     #[inline(always)]
     pub fn aport2ych18(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych18)
     }
-    #[doc = "APORT2Y Channel 20"]
+    ///APORT2Y Channel 20
     #[inline(always)]
     pub fn aport2ych20(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych20)
     }
-    #[doc = "APORT2Y Channel 22"]
+    ///APORT2Y Channel 22
     #[inline(always)]
     pub fn aport2ych22(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych22)
     }
-    #[doc = "APORT2Y Channel 24"]
+    ///APORT2Y Channel 24
     #[inline(always)]
     pub fn aport2ych24(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych24)
     }
-    #[doc = "APORT2Y Channel 26"]
+    ///APORT2Y Channel 26
     #[inline(always)]
     pub fn aport2ych26(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych26)
     }
-    #[doc = "APORT2Y Channel 28"]
+    ///APORT2Y Channel 28
     #[inline(always)]
     pub fn aport2ych28(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych28)
     }
-    #[doc = "APORT2Y Channel 30"]
+    ///APORT2Y Channel 30
     #[inline(always)]
     pub fn aport2ych30(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport2ych30)
     }
-    #[doc = "APORT1X Channel 0"]
+    ///APORT1X Channel 0
     #[inline(always)]
     pub fn aport1xch0(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch0)
     }
-    #[doc = "APORT1Y Channel 1"]
+    ///APORT1Y Channel 1
     #[inline(always)]
     pub fn aport1ych1(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych1)
     }
-    #[doc = "APORT1X Channel 2"]
+    ///APORT1X Channel 2
     #[inline(always)]
     pub fn aport1xch2(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch2)
     }
-    #[doc = "APORT1Y Channel 3"]
+    ///APORT1Y Channel 3
     #[inline(always)]
     pub fn aport1ych3(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych3)
     }
-    #[doc = "APORT1X Channel 4"]
+    ///APORT1X Channel 4
     #[inline(always)]
     pub fn aport1xch4(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch4)
     }
-    #[doc = "APORT1Y Channel 5"]
+    ///APORT1Y Channel 5
     #[inline(always)]
     pub fn aport1ych5(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych5)
     }
-    #[doc = "APORT1X Channel 6"]
+    ///APORT1X Channel 6
     #[inline(always)]
     pub fn aport1xch6(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch6)
     }
-    #[doc = "APORT1Y Channel 7"]
+    ///APORT1Y Channel 7
     #[inline(always)]
     pub fn aport1ych7(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych7)
     }
-    #[doc = "APORT1X Channel 8"]
+    ///APORT1X Channel 8
     #[inline(always)]
     pub fn aport1xch8(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch8)
     }
-    #[doc = "APORT1Y Channel 9"]
+    ///APORT1Y Channel 9
     #[inline(always)]
     pub fn aport1ych9(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych9)
     }
-    #[doc = "APORT1X Channel 10"]
+    ///APORT1X Channel 10
     #[inline(always)]
     pub fn aport1xch10(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch10)
     }
-    #[doc = "APORT1Y Channel 11"]
+    ///APORT1Y Channel 11
     #[inline(always)]
     pub fn aport1ych11(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych11)
     }
-    #[doc = "APORT1X Channel 12"]
+    ///APORT1X Channel 12
     #[inline(always)]
     pub fn aport1xch12(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch12)
     }
-    #[doc = "APORT1Y Channel 13"]
+    ///APORT1Y Channel 13
     #[inline(always)]
     pub fn aport1ych13(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych13)
     }
-    #[doc = "APORT1X Channel 14"]
+    ///APORT1X Channel 14
     #[inline(always)]
     pub fn aport1xch14(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch14)
     }
-    #[doc = "APORT1Y Channel 15"]
+    ///APORT1Y Channel 15
     #[inline(always)]
     pub fn aport1ych15(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych15)
     }
-    #[doc = "APORT1X Channel 16"]
+    ///APORT1X Channel 16
     #[inline(always)]
     pub fn aport1xch16(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch16)
     }
-    #[doc = "APORT1Y Channel 17"]
+    ///APORT1Y Channel 17
     #[inline(always)]
     pub fn aport1ych17(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych17)
     }
-    #[doc = "APORT1X Channel 18"]
+    ///APORT1X Channel 18
     #[inline(always)]
     pub fn aport1xch18(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch18)
     }
-    #[doc = "APORT1Y Channel 19"]
+    ///APORT1Y Channel 19
     #[inline(always)]
     pub fn aport1ych19(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych19)
     }
-    #[doc = "APORT1X Channel 20"]
+    ///APORT1X Channel 20
     #[inline(always)]
     pub fn aport1xch20(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch20)
     }
-    #[doc = "APORT1Y Channel 21"]
+    ///APORT1Y Channel 21
     #[inline(always)]
     pub fn aport1ych21(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych21)
     }
-    #[doc = "APORT1X Channel 22"]
+    ///APORT1X Channel 22
     #[inline(always)]
     pub fn aport1xch22(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch22)
     }
-    #[doc = "APORT1Y Channel 23"]
+    ///APORT1Y Channel 23
     #[inline(always)]
     pub fn aport1ych23(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych23)
     }
-    #[doc = "APORT1X Channel 24"]
+    ///APORT1X Channel 24
     #[inline(always)]
     pub fn aport1xch24(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch24)
     }
-    #[doc = "APORT1Y Channel 25"]
+    ///APORT1Y Channel 25
     #[inline(always)]
     pub fn aport1ych25(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych25)
     }
-    #[doc = "APORT1X Channel 26"]
+    ///APORT1X Channel 26
     #[inline(always)]
     pub fn aport1xch26(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch26)
     }
-    #[doc = "APORT1Y Channel 27"]
+    ///APORT1Y Channel 27
     #[inline(always)]
     pub fn aport1ych27(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych27)
     }
-    #[doc = "APORT1X Channel 28"]
+    ///APORT1X Channel 28
     #[inline(always)]
     pub fn aport1xch28(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch28)
     }
-    #[doc = "APORT1Y Channel 29"]
+    ///APORT1Y Channel 29
     #[inline(always)]
     pub fn aport1ych29(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych29)
     }
-    #[doc = "APORT1X Channel 30"]
+    ///APORT1X Channel 30
     #[inline(always)]
     pub fn aport1xch30(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1xch30)
     }
-    #[doc = "APORT1Y Channel 31"]
+    ///APORT1Y Channel 31
     #[inline(always)]
     pub fn aport1ych31(self) -> &'a mut crate::W<REG> {
         self.variant(VASEL::Aport1ych31)
     }
 }
-#[doc = "Field `VBSEL` reader - VB Selection"]
+///Field `VBSEL` reader - VB Selection
 pub type VbselR = crate::BitReader;
-#[doc = "Field `VBSEL` writer - VB Selection"]
+///Field `VBSEL` writer - VB Selection
 pub type VbselW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `VLPSEL` reader - Low-Power Sampled Voltage Selection"]
+///Field `VLPSEL` reader - Low-Power Sampled Voltage Selection
 pub type VlpselR = crate::BitReader;
-#[doc = "Field `VLPSEL` writer - Low-Power Sampled Voltage Selection"]
+///Field `VLPSEL` writer - Low-Power Sampled Voltage Selection
 pub type VlpselW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `CSRESEN` reader - Capacitive Sense Mode Internal Resistor Enable"]
+///Field `CSRESEN` reader - Capacitive Sense Mode Internal Resistor Enable
 pub type CsresenR = crate::BitReader;
-#[doc = "Field `CSRESEN` writer - Capacitive Sense Mode Internal Resistor Enable"]
+///Field `CSRESEN` writer - Capacitive Sense Mode Internal Resistor Enable
 pub type CsresenW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Capacitive Sense Mode Internal Resistor Select\n\nValue on reset: 0"]
+///Capacitive Sense Mode Internal Resistor Select
+///
+///Value on reset: 0
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSRESSEL {
-    #[doc = "0: Internal capacitive sense resistor value 0"]
+    ///0: Internal capacitive sense resistor value 0
     Res0 = 0,
-    #[doc = "1: Internal capacitive sense resistor value 1"]
+    ///1: Internal capacitive sense resistor value 1
     Res1 = 1,
-    #[doc = "2: Internal capacitive sense resistor value 2"]
+    ///2: Internal capacitive sense resistor value 2
     Res2 = 2,
-    #[doc = "3: Internal capacitive sense resistor value 3"]
+    ///3: Internal capacitive sense resistor value 3
     Res3 = 3,
-    #[doc = "4: Internal capacitive sense resistor value 4"]
+    ///4: Internal capacitive sense resistor value 4
     Res4 = 4,
-    #[doc = "5: Internal capacitive sense resistor value 5"]
+    ///5: Internal capacitive sense resistor value 5
     Res5 = 5,
-    #[doc = "6: Internal capacitive sense resistor value 6"]
+    ///6: Internal capacitive sense resistor value 6
     Res6 = 6,
-    #[doc = "7: Internal capacitive sense resistor value 7"]
+    ///7: Internal capacitive sense resistor value 7
     Res7 = 7,
 }
 impl From<CSRESSEL> for u8 {
@@ -726,10 +730,10 @@ impl crate::FieldSpec for CSRESSEL {
     type Ux = u8;
 }
 impl crate::IsEnum for CSRESSEL {}
-#[doc = "Field `CSRESSEL` reader - Capacitive Sense Mode Internal Resistor Select"]
+///Field `CSRESSEL` reader - Capacitive Sense Mode Internal Resistor Select
 pub type CsresselR = crate::FieldReader<CSRESSEL>;
 impl CsresselR {
-    #[doc = "Get enumerated values variant"]
+    ///Get enumerated values variant
     #[inline(always)]
     pub const fn variant(&self) -> CSRESSEL {
         match self.bits {
@@ -744,127 +748,127 @@ impl CsresselR {
             _ => unreachable!(),
         }
     }
-    #[doc = "Internal capacitive sense resistor value 0"]
+    ///Internal capacitive sense resistor value 0
     #[inline(always)]
     pub fn is_res0(&self) -> bool {
         *self == CSRESSEL::Res0
     }
-    #[doc = "Internal capacitive sense resistor value 1"]
+    ///Internal capacitive sense resistor value 1
     #[inline(always)]
     pub fn is_res1(&self) -> bool {
         *self == CSRESSEL::Res1
     }
-    #[doc = "Internal capacitive sense resistor value 2"]
+    ///Internal capacitive sense resistor value 2
     #[inline(always)]
     pub fn is_res2(&self) -> bool {
         *self == CSRESSEL::Res2
     }
-    #[doc = "Internal capacitive sense resistor value 3"]
+    ///Internal capacitive sense resistor value 3
     #[inline(always)]
     pub fn is_res3(&self) -> bool {
         *self == CSRESSEL::Res3
     }
-    #[doc = "Internal capacitive sense resistor value 4"]
+    ///Internal capacitive sense resistor value 4
     #[inline(always)]
     pub fn is_res4(&self) -> bool {
         *self == CSRESSEL::Res4
     }
-    #[doc = "Internal capacitive sense resistor value 5"]
+    ///Internal capacitive sense resistor value 5
     #[inline(always)]
     pub fn is_res5(&self) -> bool {
         *self == CSRESSEL::Res5
     }
-    #[doc = "Internal capacitive sense resistor value 6"]
+    ///Internal capacitive sense resistor value 6
     #[inline(always)]
     pub fn is_res6(&self) -> bool {
         *self == CSRESSEL::Res6
     }
-    #[doc = "Internal capacitive sense resistor value 7"]
+    ///Internal capacitive sense resistor value 7
     #[inline(always)]
     pub fn is_res7(&self) -> bool {
         *self == CSRESSEL::Res7
     }
 }
-#[doc = "Field `CSRESSEL` writer - Capacitive Sense Mode Internal Resistor Select"]
+///Field `CSRESSEL` writer - Capacitive Sense Mode Internal Resistor Select
 pub type CsresselW<'a, REG> = crate::FieldWriter<'a, REG, 3, CSRESSEL, crate::Safe>;
 impl<'a, REG> CsresselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "Internal capacitive sense resistor value 0"]
+    ///Internal capacitive sense resistor value 0
     #[inline(always)]
     pub fn res0(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL::Res0)
     }
-    #[doc = "Internal capacitive sense resistor value 1"]
+    ///Internal capacitive sense resistor value 1
     #[inline(always)]
     pub fn res1(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL::Res1)
     }
-    #[doc = "Internal capacitive sense resistor value 2"]
+    ///Internal capacitive sense resistor value 2
     #[inline(always)]
     pub fn res2(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL::Res2)
     }
-    #[doc = "Internal capacitive sense resistor value 3"]
+    ///Internal capacitive sense resistor value 3
     #[inline(always)]
     pub fn res3(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL::Res3)
     }
-    #[doc = "Internal capacitive sense resistor value 4"]
+    ///Internal capacitive sense resistor value 4
     #[inline(always)]
     pub fn res4(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL::Res4)
     }
-    #[doc = "Internal capacitive sense resistor value 5"]
+    ///Internal capacitive sense resistor value 5
     #[inline(always)]
     pub fn res5(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL::Res5)
     }
-    #[doc = "Internal capacitive sense resistor value 6"]
+    ///Internal capacitive sense resistor value 6
     #[inline(always)]
     pub fn res6(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL::Res6)
     }
-    #[doc = "Internal capacitive sense resistor value 7"]
+    ///Internal capacitive sense resistor value 7
     #[inline(always)]
     pub fn res7(self) -> &'a mut crate::W<REG> {
         self.variant(CSRESSEL::Res7)
     }
 }
 impl R {
-    #[doc = "Bits 0:7 - Positive Input Select"]
+    ///Bits 0:7 - Positive Input Select
     #[inline(always)]
     pub fn possel(&self) -> PosselR {
         PosselR::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - Negative Input Select"]
+    ///Bits 8:15 - Negative Input Select
     #[inline(always)]
     pub fn negsel(&self) -> NegselR {
         NegselR::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:21 - VA Selection"]
+    ///Bits 16:21 - VA Selection
     #[inline(always)]
     pub fn vasel(&self) -> VaselR {
         VaselR::new(((self.bits >> 16) & 0x3f) as u8)
     }
-    #[doc = "Bit 22 - VB Selection"]
+    ///Bit 22 - VB Selection
     #[inline(always)]
     pub fn vbsel(&self) -> VbselR {
         VbselR::new(((self.bits >> 22) & 1) != 0)
     }
-    #[doc = "Bit 24 - Low-Power Sampled Voltage Selection"]
+    ///Bit 24 - Low-Power Sampled Voltage Selection
     #[inline(always)]
     pub fn vlpsel(&self) -> VlpselR {
         VlpselR::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 26 - Capacitive Sense Mode Internal Resistor Enable"]
+    ///Bit 26 - Capacitive Sense Mode Internal Resistor Enable
     #[inline(always)]
     pub fn csresen(&self) -> CsresenR {
         CsresenR::new(((self.bits >> 26) & 1) != 0)
     }
-    #[doc = "Bits 28:30 - Capacitive Sense Mode Internal Resistor Select"]
+    ///Bits 28:30 - Capacitive Sense Mode Internal Resistor Select
     #[inline(always)]
     pub fn csressel(&self) -> CsresselR {
         CsresselR::new(((self.bits >> 28) & 7) as u8)
@@ -884,63 +888,65 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Positive Input Select"]
+    ///Bits 0:7 - Positive Input Select
     #[inline(always)]
     #[must_use]
     pub fn possel(&mut self) -> PosselW<INPUTSELrs> {
         PosselW::new(self, 0)
     }
-    #[doc = "Bits 8:15 - Negative Input Select"]
+    ///Bits 8:15 - Negative Input Select
     #[inline(always)]
     #[must_use]
     pub fn negsel(&mut self) -> NegselW<INPUTSELrs> {
         NegselW::new(self, 8)
     }
-    #[doc = "Bits 16:21 - VA Selection"]
+    ///Bits 16:21 - VA Selection
     #[inline(always)]
     #[must_use]
     pub fn vasel(&mut self) -> VaselW<INPUTSELrs> {
         VaselW::new(self, 16)
     }
-    #[doc = "Bit 22 - VB Selection"]
+    ///Bit 22 - VB Selection
     #[inline(always)]
     #[must_use]
     pub fn vbsel(&mut self) -> VbselW<INPUTSELrs> {
         VbselW::new(self, 22)
     }
-    #[doc = "Bit 24 - Low-Power Sampled Voltage Selection"]
+    ///Bit 24 - Low-Power Sampled Voltage Selection
     #[inline(always)]
     #[must_use]
     pub fn vlpsel(&mut self) -> VlpselW<INPUTSELrs> {
         VlpselW::new(self, 24)
     }
-    #[doc = "Bit 26 - Capacitive Sense Mode Internal Resistor Enable"]
+    ///Bit 26 - Capacitive Sense Mode Internal Resistor Enable
     #[inline(always)]
     #[must_use]
     pub fn csresen(&mut self) -> CsresenW<INPUTSELrs> {
         CsresenW::new(self, 26)
     }
-    #[doc = "Bits 28:30 - Capacitive Sense Mode Internal Resistor Select"]
+    ///Bits 28:30 - Capacitive Sense Mode Internal Resistor Select
     #[inline(always)]
     #[must_use]
     pub fn csressel(&mut self) -> CsresselW<INPUTSELrs> {
         CsresselW::new(self, 28)
     }
 }
-#[doc = "Input Selection Register\n\nYou can [`read`](crate::Reg::read) this register and get [`inputsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inputsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+///Input Selection Register
+///
+///You can [`read`](crate::Reg::read) this register and get [`inputsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inputsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 pub struct INPUTSELrs;
 impl crate::RegisterSpec for INPUTSELrs {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`inputsel::R`](R) reader structure"]
+///`read()` method returns [`inputsel::R`](R) reader structure
 impl crate::Readable for INPUTSELrs {}
-#[doc = "`write(|w| ..)` method takes [`inputsel::W`](W) writer structure"]
+///`write(|w| ..)` method takes [`inputsel::W`](W) writer structure
 impl crate::Writable for INPUTSELrs {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets INPUTSEL to value 0"]
+///`reset()` method sets INPUTSEL to value 0
 impl crate::Resettable for INPUTSELrs {
     const RESET_VALUE: u32 = 0;
 }
