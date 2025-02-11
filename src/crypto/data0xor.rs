@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<DATA0XORrs> {
 impl W {
     ///Bits 0:31 - XOR Data 0 Access
     #[inline(always)]
-    #[must_use]
     pub fn data0xor(&mut self) -> Data0xorW<DATA0XORrs> {
         Data0xorW::new(self, 0)
     }

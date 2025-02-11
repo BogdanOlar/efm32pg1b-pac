@@ -646,79 +646,66 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Timer Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<CTRLrs> {
         ModeW::new(self, 0)
     }
     ///Bit 3 - Timer Start/Stop/Reload Synchronization
     #[inline(always)]
-    #[must_use]
     pub fn sync(&mut self) -> SyncW<CTRLrs> {
         SyncW::new(self, 3)
     }
     ///Bit 4 - One-shot Mode Enable
     #[inline(always)]
-    #[must_use]
     pub fn osmen(&mut self) -> OsmenW<CTRLrs> {
         OsmenW::new(self, 4)
     }
     ///Bit 5 - Quadrature Decoder Mode Selection
     #[inline(always)]
-    #[must_use]
     pub fn qdm(&mut self) -> QdmW<CTRLrs> {
         QdmW::new(self, 5)
     }
     ///Bit 6 - Debug Mode Run Enable
     #[inline(always)]
-    #[must_use]
     pub fn debugrun(&mut self) -> DebugrunW<CTRLrs> {
         DebugrunW::new(self, 6)
     }
     ///Bit 7 - DMA Request Clear on Active
     #[inline(always)]
-    #[must_use]
     pub fn dmaclract(&mut self) -> DmaclractW<CTRLrs> {
         DmaclractW::new(self, 7)
     }
     ///Bits 8:9 - Timer Rising Input Edge Action
     #[inline(always)]
-    #[must_use]
     pub fn risea(&mut self) -> RiseaW<CTRLrs> {
         RiseaW::new(self, 8)
     }
     ///Bits 10:11 - Timer Falling Input Edge Action
     #[inline(always)]
-    #[must_use]
     pub fn falla(&mut self) -> FallaW<CTRLrs> {
         FallaW::new(self, 10)
     }
     ///Bit 13 - 2x Count Mode
     #[inline(always)]
-    #[must_use]
     pub fn x2cnt(&mut self) -> X2cntW<CTRLrs> {
         X2cntW::new(self, 13)
     }
     ///Bits 16:17 - Clock Source Select
     #[inline(always)]
-    #[must_use]
     pub fn clksel(&mut self) -> ClkselW<CTRLrs> {
         ClkselW::new(self, 16)
     }
     ///Bits 24:27 - Prescaler Setting
     #[inline(always)]
-    #[must_use]
     pub fn presc(&mut self) -> PrescW<CTRLrs> {
         PrescW::new(self, 24)
     }
     ///Bit 28 - Always Track Inputs
     #[inline(always)]
-    #[must_use]
     pub fn ati(&mut self) -> AtiW<CTRLrs> {
         AtiW::new(self, 28)
     }
     ///Bit 29 - Reload-Start Sets Compare Output Initial State
     #[inline(always)]
-    #[must_use]
     pub fn rsscoist(&mut self) -> RsscoistW<CTRLrs> {
         RsscoistW::new(self, 29)
     }

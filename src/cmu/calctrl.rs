@@ -676,31 +676,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Calibration Up-counter Select
     #[inline(always)]
-    #[must_use]
     pub fn upsel(&mut self) -> UpselW<CALCTRLrs> {
         UpselW::new(self, 0)
     }
     ///Bits 4:6 - Calibration Down-counter Select
     #[inline(always)]
-    #[must_use]
     pub fn downsel(&mut self) -> DownselW<CALCTRLrs> {
         DownselW::new(self, 4)
     }
     ///Bit 8 - Continuous Calibration
     #[inline(always)]
-    #[must_use]
     pub fn cont(&mut self) -> ContW<CALCTRLrs> {
         ContW::new(self, 8)
     }
     ///Bits 16:19 - PRS Select for PRS Input When Selected in UPSEL
     #[inline(always)]
-    #[must_use]
     pub fn prsupsel(&mut self) -> PrsupselW<CALCTRLrs> {
         PrsupselW::new(self, 16)
     }
     ///Bits 24:27 - PRS Select for PRS Input When Selected in DOWNSEL
     #[inline(always)]
-    #[must_use]
     pub fn prsdownsel(&mut self) -> PrsdownselW<CALCTRLrs> {
         PrsdownselW::new(self, 24)
     }

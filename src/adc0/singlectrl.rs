@@ -498,61 +498,51 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Single Channel Repetitive Mode
     #[inline(always)]
-    #[must_use]
     pub fn rep(&mut self) -> RepW<SINGLECTRLrs> {
         RepW::new(self, 0)
     }
     ///Bit 1 - Single Channel Differential Mode
     #[inline(always)]
-    #[must_use]
     pub fn diff(&mut self) -> DiffW<SINGLECTRLrs> {
         DiffW::new(self, 1)
     }
     ///Bit 2 - Single Channel Result Adjustment
     #[inline(always)]
-    #[must_use]
     pub fn adj(&mut self) -> AdjW<SINGLECTRLrs> {
         AdjW::new(self, 2)
     }
     ///Bits 3:4 - Single Channel Resolution Select
     #[inline(always)]
-    #[must_use]
     pub fn res(&mut self) -> ResW<SINGLECTRLrs> {
         ResW::new(self, 3)
     }
     ///Bits 5:7 - Single Channel Reference Selection
     #[inline(always)]
-    #[must_use]
     pub fn ref_(&mut self) -> RefW<SINGLECTRLrs> {
         RefW::new(self, 5)
     }
     ///Bits 8:15 - Single Channel Positive Input Selection
     #[inline(always)]
-    #[must_use]
     pub fn possel(&mut self) -> PosselW<SINGLECTRLrs> {
         PosselW::new(self, 8)
     }
     ///Bits 16:23 - Single Channel Negative Input Selection
     #[inline(always)]
-    #[must_use]
     pub fn negsel(&mut self) -> NegselW<SINGLECTRLrs> {
         NegselW::new(self, 16)
     }
     ///Bits 24:27 - Single Channel Acquisition Time
     #[inline(always)]
-    #[must_use]
     pub fn at(&mut self) -> AtW<SINGLECTRLrs> {
         AtW::new(self, 24)
     }
     ///Bit 29 - Single Channel PRS Trigger Enable
     #[inline(always)]
-    #[must_use]
     pub fn prsen(&mut self) -> PrsenW<SINGLECTRLrs> {
         PrsenW::new(self, 29)
     }
     ///Bit 31 - Compare Logic Enable for Single Channel
     #[inline(always)]
-    #[must_use]
     pub fn cmpen(&mut self) -> CmpenW<SINGLECTRLrs> {
         CmpenW::new(self, 31)
     }

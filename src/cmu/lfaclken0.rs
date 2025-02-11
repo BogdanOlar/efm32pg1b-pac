@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Low Energy Timer 0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn letimer0(&mut self) -> Letimer0W<LFACLKEN0rs> {
         Letimer0W::new(self, 0)
     }

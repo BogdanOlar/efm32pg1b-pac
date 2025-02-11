@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Input Data for 16-bit
     #[inline(always)]
-    #[must_use]
     pub fn inputdatahword(&mut self) -> InputdatahwordW<INPUTDATAHWORDrs> {
         InputdatahwordW::new(self, 0)
     }

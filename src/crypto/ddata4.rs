@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<DDATA4rs> {
 impl W {
     ///Bits 0:31 - Double Data 0 Access
     #[inline(always)]
-    #[must_use]
     pub fn ddata4(&mut self) -> Ddata4W<DDATA4rs> {
         Ddata4W::new(self, 0)
     }

@@ -183,103 +183,86 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - TXC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txc(&mut self) -> TxcW<IENrs> {
         TxcW::new(self, 0)
     }
     ///Bit 1 - TXBL Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txbl(&mut self) -> TxblW<IENrs> {
         TxblW::new(self, 1)
     }
     ///Bit 2 - RXDATAV Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxdatav(&mut self) -> RxdatavW<IENrs> {
         RxdatavW::new(self, 2)
     }
     ///Bit 3 - RXFULL Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxfull(&mut self) -> RxfullW<IENrs> {
         RxfullW::new(self, 3)
     }
     ///Bit 4 - RXOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxof(&mut self) -> RxofW<IENrs> {
         RxofW::new(self, 4)
     }
     ///Bit 5 - RXUF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxuf(&mut self) -> RxufW<IENrs> {
         RxufW::new(self, 5)
     }
     ///Bit 6 - TXOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txof(&mut self) -> TxofW<IENrs> {
         TxofW::new(self, 6)
     }
     ///Bit 7 - TXUF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txuf(&mut self) -> TxufW<IENrs> {
         TxufW::new(self, 7)
     }
     ///Bit 8 - PERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn perr(&mut self) -> PerrW<IENrs> {
         PerrW::new(self, 8)
     }
     ///Bit 9 - FERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn ferr(&mut self) -> FerrW<IENrs> {
         FerrW::new(self, 9)
     }
     ///Bit 10 - MPAF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn mpaf(&mut self) -> MpafW<IENrs> {
         MpafW::new(self, 10)
     }
     ///Bit 11 - SSM Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn ssm(&mut self) -> SsmW<IENrs> {
         SsmW::new(self, 11)
     }
     ///Bit 12 - CCF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn ccf(&mut self) -> CcfW<IENrs> {
         CcfW::new(self, 12)
     }
     ///Bit 13 - TXIDLE Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txidle(&mut self) -> TxidleW<IENrs> {
         TxidleW::new(self, 13)
     }
     ///Bit 14 - TCMP0 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn tcmp0(&mut self) -> Tcmp0W<IENrs> {
         Tcmp0W::new(self, 14)
     }
     ///Bit 15 - TCMP1 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn tcmp1(&mut self) -> Tcmp1W<IENrs> {
         Tcmp1W::new(self, 15)
     }
     ///Bit 16 - TCMP2 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn tcmp2(&mut self) -> Tcmp2W<IENrs> {
         Tcmp2W::new(self, 16)
     }

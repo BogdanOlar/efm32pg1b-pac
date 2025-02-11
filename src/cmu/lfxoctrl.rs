@@ -302,49 +302,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:6 - LFXO Internal Capacitor Array Tuning Value
     #[inline(always)]
-    #[must_use]
     pub fn tuning(&mut self) -> TuningW<LFXOCTRLrs> {
         TuningW::new(self, 0)
     }
     ///Bits 8:9 - LFXO Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<LFXOCTRLrs> {
         ModeW::new(self, 8)
     }
     ///Bits 11:12 - LFXO Startup Gain
     #[inline(always)]
-    #[must_use]
     pub fn gain(&mut self) -> GainW<LFXOCTRLrs> {
         GainW::new(self, 11)
     }
     ///Bit 14 - LFXO High XTAL Oscillation Amplitude Enable
     #[inline(always)]
-    #[must_use]
     pub fn highampl(&mut self) -> HighamplW<LFXOCTRLrs> {
         HighamplW::new(self, 14)
     }
     ///Bit 15 - LFXO AGC Enable
     #[inline(always)]
-    #[must_use]
     pub fn agc(&mut self) -> AgcW<LFXOCTRLrs> {
         AgcW::new(self, 15)
     }
     ///Bits 16:17 - LFXO Current Trim
     #[inline(always)]
-    #[must_use]
     pub fn cur(&mut self) -> CurW<LFXOCTRLrs> {
         CurW::new(self, 16)
     }
     ///Bit 20 - LFXO Buffer Bias Current
     #[inline(always)]
-    #[must_use]
     pub fn bufcur(&mut self) -> BufcurW<LFXOCTRLrs> {
         BufcurW::new(self, 20)
     }
     ///Bits 24:26 - LFXO Timeout
     #[inline(always)]
-    #[must_use]
     pub fn timeout(&mut self) -> TimeoutW<LFXOCTRLrs> {
         TimeoutW::new(self, 24)
     }

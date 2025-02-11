@@ -123,67 +123,56 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - OF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn of(&mut self) -> OfW<IENrs> {
         OfW::new(self, 0)
     }
     ///Bit 1 - CC0 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc0(&mut self) -> Cc0W<IENrs> {
         Cc0W::new(self, 1)
     }
     ///Bit 2 - CC1 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc1(&mut self) -> Cc1W<IENrs> {
         Cc1W::new(self, 2)
     }
     ///Bit 3 - CC2 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc2(&mut self) -> Cc2W<IENrs> {
         Cc2W::new(self, 3)
     }
     ///Bit 4 - OSCFAIL Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn oscfail(&mut self) -> OscfailW<IENrs> {
         OscfailW::new(self, 4)
     }
     ///Bit 5 - CNTTICK Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cnttick(&mut self) -> CnttickW<IENrs> {
         CnttickW::new(self, 5)
     }
     ///Bit 6 - MINTICK Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn mintick(&mut self) -> MintickW<IENrs> {
         MintickW::new(self, 6)
     }
     ///Bit 7 - HOURTICK Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hourtick(&mut self) -> HourtickW<IENrs> {
         HourtickW::new(self, 7)
     }
     ///Bit 8 - DAYTICK Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn daytick(&mut self) -> DaytickW<IENrs> {
         DaytickW::new(self, 8)
     }
     ///Bit 9 - DAYOWOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn dayowof(&mut self) -> DayowofW<IENrs> {
         DayowofW::new(self, 9)
     }
     ///Bit 10 - MONTHTICK Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn monthtick(&mut self) -> MonthtickW<IENrs> {
         MonthtickW::new(self, 10)
     }

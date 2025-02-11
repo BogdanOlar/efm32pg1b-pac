@@ -209,13 +209,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Signal Select
     #[inline(always)]
-    #[must_use]
     pub fn sigsel(&mut self) -> SigselW<CH7_REQSELrs> {
         SigselW::new(self, 0)
     }
     ///Bits 16:21 - Source Select
     #[inline(always)]
-    #[must_use]
     pub fn sourcesel(&mut self) -> SourceselW<CH7_REQSELrs> {
         SourceselW::new(self, 16)
     }

@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Low Power Initialization Wait Time
     #[inline(always)]
-    #[must_use]
     pub fn lpinitwait(&mut self) -> LpinitwaitW<DCDCTIMINGrs> {
         LpinitwaitW::new(self, 0)
     }
     ///Bit 11 - LN Mode Precharge Enable
     #[inline(always)]
-    #[must_use]
     pub fn compenprchgen(&mut self) -> CompenprchgenW<DCDCTIMINGrs> {
         CompenprchgenW::new(self, 11)
     }
     ///Bits 12:16 - Low Noise Controller Initialization Wait Time
     #[inline(always)]
-    #[must_use]
     pub fn lnwait(&mut self) -> LnwaitW<DCDCTIMINGrs> {
         LnwaitW::new(self, 12)
     }
     ///Bits 20:27 - Bypass Mode Transition From Low Power or Low Noise Modes Wait Wait
     #[inline(always)]
-    #[must_use]
     pub fn bypwait(&mut self) -> BypwaitW<DCDCTIMINGrs> {
         BypwaitW::new(self, 20)
     }
     ///Bits 29:30 - Select Bias Duty Cycle Clock
     #[inline(always)]
-    #[must_use]
     pub fn dutyscale(&mut self) -> DutyscaleW<DCDCTIMINGrs> {
         DutyscaleW::new(self, 29)
     }

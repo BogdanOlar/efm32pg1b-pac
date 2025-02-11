@@ -142,43 +142,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 3 - Internal Flash Cache Disable
     #[inline(always)]
-    #[must_use]
     pub fn ifcdis(&mut self) -> IfcdisW<READCTRLrs> {
         IfcdisW::new(self, 3)
     }
     ///Bit 4 - Automatic Invalidate Disable
     #[inline(always)]
-    #[must_use]
     pub fn aidis(&mut self) -> AidisW<READCTRLrs> {
         AidisW::new(self, 4)
     }
     ///Bit 5 - Interrupt Context Cache Disable
     #[inline(always)]
-    #[must_use]
     pub fn iccdis(&mut self) -> IccdisW<READCTRLrs> {
         IccdisW::new(self, 5)
     }
     ///Bit 8 - Prefetch Mode
     #[inline(always)]
-    #[must_use]
     pub fn prefetch(&mut self) -> PrefetchW<READCTRLrs> {
         PrefetchW::new(self, 8)
     }
     ///Bit 9 - AHB_HPROT Mode
     #[inline(always)]
-    #[must_use]
     pub fn usehprot(&mut self) -> UsehprotW<READCTRLrs> {
         UsehprotW::new(self, 9)
     }
     ///Bits 24:25 - Read Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<READCTRLrs> {
         ModeW::new(self, 24)
     }
     ///Bit 28 - Suppress Conditional Branch Target Perfetch
     #[inline(always)]
-    #[must_use]
     pub fn scbtp(&mut self) -> ScbtpW<READCTRLrs> {
         ScbtpW::new(self, 28)
     }

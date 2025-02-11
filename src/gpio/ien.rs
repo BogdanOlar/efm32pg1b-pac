@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - EXT Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn ext(&mut self) -> ExtW<IENrs> {
         ExtW::new(self, 0)
     }
     ///Bits 16:31 - EM4WU Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn em4wu(&mut self) -> Em4wuW<IENrs> {
         Em4wuW::new(self, 16)
     }

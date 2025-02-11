@@ -439,61 +439,51 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Single Channel Reference Selection
     #[inline(always)]
-    #[must_use]
     pub fn vrefsel(&mut self) -> VrefselW<SINGLECTRLXrs> {
         VrefselW::new(self, 0)
     }
     ///Bit 3 - Enable Fixed Scaling on VREF
     #[inline(always)]
-    #[must_use]
     pub fn vrefattfix(&mut self) -> VrefattfixW<SINGLECTRLXrs> {
         VrefattfixW::new(self, 3)
     }
     ///Bits 4:7 - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5
     #[inline(always)]
-    #[must_use]
     pub fn vrefatt(&mut self) -> VrefattW<SINGLECTRLXrs> {
         VrefattW::new(self, 4)
     }
     ///Bits 8:11 - Code for VIN Attenuation Factor
     #[inline(always)]
-    #[must_use]
     pub fn vinatt(&mut self) -> VinattW<SINGLECTRLXrs> {
         VinattW::new(self, 8)
     }
     ///Bits 12:13 - Single Channel DV Level Select
     #[inline(always)]
-    #[must_use]
     pub fn dvl(&mut self) -> DvlW<SINGLECTRLXrs> {
         DvlW::new(self, 12)
     }
     ///Bit 14 - Single Channel FIFO Overflow Action
     #[inline(always)]
-    #[must_use]
     pub fn fifoofact(&mut self) -> FifoofactW<SINGLECTRLXrs> {
         FifoofactW::new(self, 14)
     }
     ///Bit 16 - Single Channel PRS Trigger Mode
     #[inline(always)]
-    #[must_use]
     pub fn prsmode(&mut self) -> PrsmodeW<SINGLECTRLXrs> {
         PrsmodeW::new(self, 16)
     }
     ///Bits 17:20 - Single Channel PRS Trigger Select
     #[inline(always)]
-    #[must_use]
     pub fn prssel(&mut self) -> PrsselW<SINGLECTRLXrs> {
         PrsselW::new(self, 17)
     }
     ///Bits 24:26 - Delay Value for Next Conversion Start If CONVSTARTDELAYEN is Set
     #[inline(always)]
-    #[must_use]
     pub fn convstartdelay(&mut self) -> ConvstartdelayW<SINGLECTRLXrs> {
         ConvstartdelayW::new(self, 24)
     }
     ///Bit 27 - Enable Delaying Next Conversion Start
     #[inline(always)]
-    #[must_use]
     pub fn convstartdelayen(&mut self) -> ConvstartdelayenW<SINGLECTRLXrs> {
         ConvstartdelayenW::new(self, 27)
     }

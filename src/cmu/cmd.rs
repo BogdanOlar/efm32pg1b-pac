@@ -16,25 +16,21 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Calibration Start
     #[inline(always)]
-    #[must_use]
     pub fn calstart(&mut self) -> CalstartW<CMDrs> {
         CalstartW::new(self, 0)
     }
     ///Bit 1 - Calibration Stop
     #[inline(always)]
-    #[must_use]
     pub fn calstop(&mut self) -> CalstopW<CMDrs> {
         CalstopW::new(self, 1)
     }
     ///Bit 4 - HFXO Peak Detection Start
     #[inline(always)]
-    #[must_use]
     pub fn hfxopeakdetstart(&mut self) -> HfxopeakdetstartW<CMDrs> {
         HfxopeakdetstartW::new(self, 4)
     }
     ///Bit 5 - HFXO Shunt Current Optimization Start
     #[inline(always)]
-    #[must_use]
     pub fn hfxoshuntoptstart(&mut self) -> HfxoshuntoptstartW<CMDrs> {
         HfxoshuntoptstartW::new(self, 5)
     }

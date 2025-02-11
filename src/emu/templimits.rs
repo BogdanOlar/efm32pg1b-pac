@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Temperature Low Limit
     #[inline(always)]
-    #[must_use]
     pub fn templow(&mut self) -> TemplowW<TEMPLIMITSrs> {
         TemplowW::new(self, 0)
     }
     ///Bits 8:15 - Temperature High Limit
     #[inline(always)]
-    #[must_use]
     pub fn temphigh(&mut self) -> TemphighW<TEMPLIMITSrs> {
         TemphighW::new(self, 8)
     }
     ///Bit 16 - Enable EM4 Wakeup Due to Low/high Temperature
     #[inline(always)]
-    #[must_use]
     pub fn em4wuen(&mut self) -> Em4wuenW<TEMPLIMITSrs> {
         Em4wuenW::new(self, 16)
     }

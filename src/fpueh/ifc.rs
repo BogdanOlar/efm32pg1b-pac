@@ -20,37 +20,31 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear FPIOC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn fpioc(&mut self) -> FpiocW<IFCrs> {
         FpiocW::new(self, 0)
     }
     ///Bit 1 - Clear FPDZC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn fpdzc(&mut self) -> FpdzcW<IFCrs> {
         FpdzcW::new(self, 1)
     }
     ///Bit 2 - Clear FPUFC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn fpufc(&mut self) -> FpufcW<IFCrs> {
         FpufcW::new(self, 2)
     }
     ///Bit 3 - Clear FPOFC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn fpofc(&mut self) -> FpofcW<IFCrs> {
         FpofcW::new(self, 3)
     }
     ///Bit 4 - Clear FPIDC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn fpidc(&mut self) -> FpidcW<IFCrs> {
         FpidcW::new(self, 4)
     }
     ///Bit 5 - Clear FPIXC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn fpixc(&mut self) -> FpixcW<IFCrs> {
         FpixcW::new(self, 5)
     }

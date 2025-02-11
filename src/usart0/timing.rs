@@ -601,25 +601,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 16:18 - TX Frame Start Delay
     #[inline(always)]
-    #[must_use]
     pub fn txdelay(&mut self) -> TxdelayW<TIMINGrs> {
         TxdelayW::new(self, 16)
     }
     ///Bits 20:22 - Chip Select Setup
     #[inline(always)]
-    #[must_use]
     pub fn cssetup(&mut self) -> CssetupW<TIMINGrs> {
         CssetupW::new(self, 20)
     }
     ///Bits 24:26 - Inter-character Spacing
     #[inline(always)]
-    #[must_use]
     pub fn ics(&mut self) -> IcsW<TIMINGrs> {
         IcsW::new(self, 24)
     }
     ///Bits 28:30 - Chip Select Hold
     #[inline(always)]
-    #[must_use]
     pub fn cshold(&mut self) -> CsholdW<TIMINGrs> {
         CsholdW::new(self, 28)
     }

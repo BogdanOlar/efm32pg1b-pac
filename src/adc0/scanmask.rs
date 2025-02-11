@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Scan Sequence Input Mask
     #[inline(always)]
-    #[must_use]
     pub fn scaninputen(&mut self) -> ScaninputenW<SCANMASKrs> {
         ScaninputenW::new(self, 0)
     }

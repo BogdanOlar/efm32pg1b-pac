@@ -1849,25 +1849,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn rxloc(&mut self) -> RxlocW<ROUTELOC0rs> {
         RxlocW::new(self, 0)
     }
     ///Bits 8:13 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn txloc(&mut self) -> TxlocW<ROUTELOC0rs> {
         TxlocW::new(self, 8)
     }
     ///Bits 16:21 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn csloc(&mut self) -> CslocW<ROUTELOC0rs> {
         CslocW::new(self, 16)
     }
     ///Bits 24:29 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn clkloc(&mut self) -> ClklocW<ROUTELOC0rs> {
         ClklocW::new(self, 24)
     }

@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - RX Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxpen(&mut self) -> RxpenW<ROUTEPENrs> {
         RxpenW::new(self, 0)
     }
     ///Bit 1 - TX Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn txpen(&mut self) -> TxpenW<ROUTEPENrs> {
         TxpenW::new(self, 1)
     }

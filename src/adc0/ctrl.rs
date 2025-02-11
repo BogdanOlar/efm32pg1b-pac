@@ -433,61 +433,51 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Warm-up Mode
     #[inline(always)]
-    #[must_use]
     pub fn warmupmode(&mut self) -> WarmupmodeW<CTRLrs> {
         WarmupmodeW::new(self, 0)
     }
     ///Bit 2 - SINGLEFIFO DMA Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn singledmawu(&mut self) -> SingledmawuW<CTRLrs> {
         SingledmawuW::new(self, 2)
     }
     ///Bit 3 - SCANFIFO DMA Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn scandmawu(&mut self) -> ScandmawuW<CTRLrs> {
         ScandmawuW::new(self, 3)
     }
     ///Bit 4 - Conversion Tailgating
     #[inline(always)]
-    #[must_use]
     pub fn tailgate(&mut self) -> TailgateW<CTRLrs> {
         TailgateW::new(self, 4)
     }
     ///Bit 6 - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1
     #[inline(always)]
-    #[must_use]
     pub fn asyncclken(&mut self) -> AsyncclkenW<CTRLrs> {
         AsyncclkenW::new(self, 6)
     }
     ///Bit 7 - ADC Clock Mode
     #[inline(always)]
-    #[must_use]
     pub fn adcclkmode(&mut self) -> AdcclkmodeW<CTRLrs> {
         AdcclkmodeW::new(self, 7)
     }
     ///Bits 8:14 - Prescalar Setting for ADC Sample and Conversion Clock
     #[inline(always)]
-    #[must_use]
     pub fn presc(&mut self) -> PrescW<CTRLrs> {
         PrescW::new(self, 8)
     }
     ///Bits 16:22 - 1us Time Base
     #[inline(always)]
-    #[must_use]
     pub fn timebase(&mut self) -> TimebaseW<CTRLrs> {
         TimebaseW::new(self, 16)
     }
     ///Bits 24:27 - Oversample Rate Select
     #[inline(always)]
-    #[must_use]
     pub fn ovsrsel(&mut self) -> OvsrselW<CTRLrs> {
         OvsrselW::new(self, 24)
     }
     ///Bit 29 - Channel Connect
     #[inline(always)]
-    #[must_use]
     pub fn chconmode(&mut self) -> ChconmodeW<CTRLrs> {
         ChconmodeW::new(self, 29)
     }

@@ -154,19 +154,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Bias Programming Value of Analog ADC Block
     #[inline(always)]
-    #[must_use]
     pub fn adcbiasprog(&mut self) -> AdcbiasprogW<BIASPROGrs> {
         AdcbiasprogW::new(self, 0)
     }
     ///Bit 12 - Clear VREFOF Flag
     #[inline(always)]
-    #[must_use]
     pub fn vfaultclr(&mut self) -> VfaultclrW<BIASPROGrs> {
         VfaultclrW::new(self, 12)
     }
     ///Bit 16 - Accuracy Setting for the System Bias During ADC Operation
     #[inline(always)]
-    #[must_use]
     pub fn gpbiasacc(&mut self) -> GpbiasaccW<BIASPROGrs> {
         GpbiasaccW::new(self, 16)
     }

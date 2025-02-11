@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Low Power Feedback Attenuation
     #[inline(always)]
-    #[must_use]
     pub fn lpatt(&mut self) -> LpattW<DCDCLPVCTRLrs> {
         LpattW::new(self, 0)
     }
     ///Bits 1:8 - LP Mode Reference Selection for EM23 and EM4H
     #[inline(always)]
-    #[must_use]
     pub fn lpvref(&mut self) -> LpvrefW<DCDCLPVCTRLrs> {
         LpvrefW::new(self, 1)
     }

@@ -137,37 +137,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Energy Mode 4 State
     #[inline(always)]
-    #[must_use]
     pub fn em4state(&mut self) -> Em4stateW<EM4CTRLrs> {
         Em4stateW::new(self, 0)
     }
     ///Bit 1 - LFRCO Retain During EM4
     #[inline(always)]
-    #[must_use]
     pub fn retainlfrco(&mut self) -> RetainlfrcoW<EM4CTRLrs> {
         RetainlfrcoW::new(self, 1)
     }
     ///Bit 2 - LFXO Retain During EM4
     #[inline(always)]
-    #[must_use]
     pub fn retainlfxo(&mut self) -> RetainlfxoW<EM4CTRLrs> {
         RetainlfxoW::new(self, 2)
     }
     ///Bit 3 - ULFRCO Retain During EM4S
     #[inline(always)]
-    #[must_use]
     pub fn retainulfrco(&mut self) -> RetainulfrcoW<EM4CTRLrs> {
         RetainulfrcoW::new(self, 3)
     }
     ///Bits 4:5 - EM4 IO Retention Disable
     #[inline(always)]
-    #[must_use]
     pub fn em4ioretmode(&mut self) -> Em4ioretmodeW<EM4CTRLrs> {
         Em4ioretmodeW::new(self, 4)
     }
     ///Bits 16:17 - Energy Mode 4 Entry
     #[inline(always)]
-    #[must_use]
     pub fn em4entry(&mut self) -> Em4entryW<EM4CTRLrs> {
         Em4entryW::new(self, 16)
     }

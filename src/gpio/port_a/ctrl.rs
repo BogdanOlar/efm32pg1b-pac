@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Drive strength setting for port pins not using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)
     #[inline(always)]
-    #[must_use]
     pub fn drive_strength(&mut self) -> DriveStrengthW<CTRLrs> {
         DriveStrengthW::new(self, 0)
     }
     ///Bits 4:6 - Slewrate limit for port pins not using alternate modes. Higher values represent faster slewrates
     #[inline(always)]
-    #[must_use]
     pub fn slew_rate(&mut self) -> SlewRateW<CTRLrs> {
         SlewRateW::new(self, 4)
     }
     ///Bit 12 - Data in Disable
     #[inline(always)]
-    #[must_use]
     pub fn din_dis(&mut self) -> DinDisW<CTRLrs> {
         DinDisW::new(self, 12)
     }
     ///Bit 16 - Drive strength setting for port pins using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)
     #[inline(always)]
-    #[must_use]
     pub fn drive_strength_alt(&mut self) -> DriveStrengthAltW<CTRLrs> {
         DriveStrengthAltW::new(self, 16)
     }
     ///Bits 20:22 - Slewrate limit for port pins using alternate modes. Higher values represent faster slewrates
     #[inline(always)]
-    #[must_use]
     pub fn slew_rate_alt(&mut self) -> SlewRateAltW<CTRLrs> {
         SlewRateAltW::new(self, 20)
     }
     ///Bit 28 - Alternate Data in Disable
     #[inline(always)]
-    #[must_use]
     pub fn din_dis_alt(&mut self) -> DinDisAltW<CTRLrs> {
         DinDisAltW::new(self, 28)
     }

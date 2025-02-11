@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<DATA0rs> {
 impl W {
     ///Bits 0:31 - Data 0 Access
     #[inline(always)]
-    #[must_use]
     pub fn data0(&mut self) -> Data0W<DATA0rs> {
         Data0W::new(self, 0)
     }

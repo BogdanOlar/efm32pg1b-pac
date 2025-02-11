@@ -478,49 +478,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Scan Sequence Repetitive Mode
     #[inline(always)]
-    #[must_use]
     pub fn rep(&mut self) -> RepW<SCANCTRLrs> {
         RepW::new(self, 0)
     }
     ///Bit 1 - Scan Sequence Differential Mode
     #[inline(always)]
-    #[must_use]
     pub fn diff(&mut self) -> DiffW<SCANCTRLrs> {
         DiffW::new(self, 1)
     }
     ///Bit 2 - Scan Sequence Result Adjustment
     #[inline(always)]
-    #[must_use]
     pub fn adj(&mut self) -> AdjW<SCANCTRLrs> {
         AdjW::new(self, 2)
     }
     ///Bits 3:4 - Scan Sequence Resolution Select
     #[inline(always)]
-    #[must_use]
     pub fn res(&mut self) -> ResW<SCANCTRLrs> {
         ResW::new(self, 3)
     }
     ///Bits 5:7 - Scan Sequence Reference Selection
     #[inline(always)]
-    #[must_use]
     pub fn ref_(&mut self) -> RefW<SCANCTRLrs> {
         RefW::new(self, 5)
     }
     ///Bits 24:27 - Scan Acquisition Time
     #[inline(always)]
-    #[must_use]
     pub fn at(&mut self) -> AtW<SCANCTRLrs> {
         AtW::new(self, 24)
     }
     ///Bit 29 - Scan Sequence PRS Trigger Enable
     #[inline(always)]
-    #[must_use]
     pub fn prsen(&mut self) -> PrsenW<SCANCTRLrs> {
         PrsenW::new(self, 29)
     }
     ///Bit 31 - Compare Logic Enable for Scan
     #[inline(always)]
-    #[must_use]
     pub fn cmpen(&mut self) -> CmpenW<SCANCTRLrs> {
         CmpenW::new(self, 31)
     }

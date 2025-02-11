@@ -165,49 +165,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:6 - HFRCO Tuning Value
     #[inline(always)]
-    #[must_use]
     pub fn tuning(&mut self) -> TuningW<HFRCOCTRLrs> {
         TuningW::new(self, 0)
     }
     ///Bits 8:13 - HFRCO Fine Tuning Value
     #[inline(always)]
-    #[must_use]
     pub fn finetuning(&mut self) -> FinetuningW<HFRCOCTRLrs> {
         FinetuningW::new(self, 8)
     }
     ///Bits 16:20 - HFRCO Frequency Range
     #[inline(always)]
-    #[must_use]
     pub fn freqrange(&mut self) -> FreqrangeW<HFRCOCTRLrs> {
         FreqrangeW::new(self, 16)
     }
     ///Bits 21:23 - HFRCO Comparator Bias Current
     #[inline(always)]
-    #[must_use]
     pub fn cmpbias(&mut self) -> CmpbiasW<HFRCOCTRLrs> {
         CmpbiasW::new(self, 21)
     }
     ///Bit 24 - HFRCO LDO High Power Mode
     #[inline(always)]
-    #[must_use]
     pub fn ldohp(&mut self) -> LdohpW<HFRCOCTRLrs> {
         LdohpW::new(self, 24)
     }
     ///Bits 25:26 - Locally Divide HFRCO Clock Output
     #[inline(always)]
-    #[must_use]
     pub fn clkdiv(&mut self) -> ClkdivW<HFRCOCTRLrs> {
         ClkdivW::new(self, 25)
     }
     ///Bit 27 - Enable Reference for Fine Tuning
     #[inline(always)]
-    #[must_use]
     pub fn finetuningen(&mut self) -> FinetuningenW<HFRCOCTRLrs> {
         FinetuningenW::new(self, 27)
     }
     ///Bits 28:31 - HFRCO Temperature Coefficient Trim on Comparator Reference
     #[inline(always)]
-    #[must_use]
     pub fn vreftc(&mut self) -> VreftcW<HFRCOCTRLrs> {
         VreftcW::new(self, 28)
     }

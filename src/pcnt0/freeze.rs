@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Register Update Freeze
     #[inline(always)]
-    #[must_use]
     pub fn regfreeze(&mut self) -> RegfreezeW<FREEZErs> {
         RegfreezeW::new(self, 0)
     }

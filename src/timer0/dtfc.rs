@@ -546,43 +546,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - DTI PRS Fault Source 0 Select
     #[inline(always)]
-    #[must_use]
     pub fn dtprs0fsel(&mut self) -> Dtprs0fselW<DTFCrs> {
         Dtprs0fselW::new(self, 0)
     }
     ///Bits 8:11 - DTI PRS Fault Source 1 Select
     #[inline(always)]
-    #[must_use]
     pub fn dtprs1fsel(&mut self) -> Dtprs1fselW<DTFCrs> {
         Dtprs1fselW::new(self, 8)
     }
     ///Bits 16:17 - DTI Fault Action
     #[inline(always)]
-    #[must_use]
     pub fn dtfa(&mut self) -> DtfaW<DTFCrs> {
         DtfaW::new(self, 16)
     }
     ///Bit 24 - DTI PRS 0 Fault Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtprs0fen(&mut self) -> Dtprs0fenW<DTFCrs> {
         Dtprs0fenW::new(self, 24)
     }
     ///Bit 25 - DTI PRS 1 Fault Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtprs1fen(&mut self) -> Dtprs1fenW<DTFCrs> {
         Dtprs1fenW::new(self, 25)
     }
     ///Bit 26 - DTI Debugger Fault Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtdbgfen(&mut self) -> DtdbgfenW<DTFCrs> {
         DtdbgfenW::new(self, 26)
     }
     ///Bit 27 - DTI Lockup Fault Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtlockupfen(&mut self) -> DtlockupfenW<DTFCrs> {
         DtlockupfenW::new(self, 27)
     }

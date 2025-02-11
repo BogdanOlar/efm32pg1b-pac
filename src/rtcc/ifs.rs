@@ -30,67 +30,56 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set OF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn of(&mut self) -> OfW<IFSrs> {
         OfW::new(self, 0)
     }
     ///Bit 1 - Set CC0 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cc0(&mut self) -> Cc0W<IFSrs> {
         Cc0W::new(self, 1)
     }
     ///Bit 2 - Set CC1 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cc1(&mut self) -> Cc1W<IFSrs> {
         Cc1W::new(self, 2)
     }
     ///Bit 3 - Set CC2 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cc2(&mut self) -> Cc2W<IFSrs> {
         Cc2W::new(self, 3)
     }
     ///Bit 4 - Set OSCFAIL Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn oscfail(&mut self) -> OscfailW<IFSrs> {
         OscfailW::new(self, 4)
     }
     ///Bit 5 - Set CNTTICK Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cnttick(&mut self) -> CnttickW<IFSrs> {
         CnttickW::new(self, 5)
     }
     ///Bit 6 - Set MINTICK Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn mintick(&mut self) -> MintickW<IFSrs> {
         MintickW::new(self, 6)
     }
     ///Bit 7 - Set HOURTICK Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hourtick(&mut self) -> HourtickW<IFSrs> {
         HourtickW::new(self, 7)
     }
     ///Bit 8 - Set DAYTICK Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn daytick(&mut self) -> DaytickW<IFSrs> {
         DaytickW::new(self, 8)
     }
     ///Bit 9 - Set DAYOWOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn dayowof(&mut self) -> DayowofW<IFSrs> {
         DayowofW::new(self, 9)
     }
     ///Bit 10 - Set MONTHTICK Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn monthtick(&mut self) -> MonthtickW<IFSrs> {
         MonthtickW::new(self, 10)
     }

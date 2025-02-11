@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 1 - Set APORTCONFLICT Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn aportconflict(&mut self) -> AportconflictW<IFSrs> {
         AportconflictW::new(self, 1)
     }

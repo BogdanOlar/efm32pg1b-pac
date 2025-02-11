@@ -344,55 +344,46 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - RTCC Enable
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> EnableW<CTRLrs> {
         EnableW::new(self, 0)
     }
     ///Bit 2 - Debug Mode Run Enable
     #[inline(always)]
-    #[must_use]
     pub fn debugrun(&mut self) -> DebugrunW<CTRLrs> {
         DebugrunW::new(self, 2)
     }
     ///Bit 4 - Pre-counter CCV0 Top Value Enable
     #[inline(always)]
-    #[must_use]
     pub fn preccv0top(&mut self) -> Preccv0topW<CTRLrs> {
         Preccv0topW::new(self, 4)
     }
     ///Bit 5 - CCV1 Top Value Enable
     #[inline(always)]
-    #[must_use]
     pub fn ccv1top(&mut self) -> Ccv1topW<CTRLrs> {
         Ccv1topW::new(self, 5)
     }
     ///Bits 8:11 - Counter Prescaler Value
     #[inline(always)]
-    #[must_use]
     pub fn cntpresc(&mut self) -> CntprescW<CTRLrs> {
         CntprescW::new(self, 8)
     }
     ///Bit 12 - Counter Prescaler Mode
     #[inline(always)]
-    #[must_use]
     pub fn cnttick(&mut self) -> CnttickW<CTRLrs> {
         CnttickW::new(self, 12)
     }
     ///Bit 15 - Oscillator Failure Detection Enable
     #[inline(always)]
-    #[must_use]
     pub fn oscfdeten(&mut self) -> OscfdetenW<CTRLrs> {
         OscfdetenW::new(self, 15)
     }
     ///Bit 16 - Main Counter Mode
     #[inline(always)]
-    #[must_use]
     pub fn cntmode(&mut self) -> CntmodeW<CTRLrs> {
         CntmodeW::new(self, 16)
     }
     ///Bit 17 - Leap Year Correction Disabled
     #[inline(always)]
-    #[must_use]
     pub fn lyearcorrdis(&mut self) -> LyearcorrdisW<CTRLrs> {
         LyearcorrdisW::new(self, 17)
     }

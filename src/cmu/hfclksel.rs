@@ -62,7 +62,6 @@ impl core::fmt::Debug for crate::generic::Reg<HFCLKSELrs> {
 impl W {
     ///Bits 0:2 - HFCLK Select
     #[inline(always)]
-    #[must_use]
     pub fn hf(&mut self) -> HfW<HFCLKSELrs> {
         HfW::new(self, 0)
     }

@@ -751,61 +751,51 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Current DAC Enable
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 1 - Current Sink Enable
     #[inline(always)]
-    #[must_use]
     pub fn cursink(&mut self) -> CursinkW<CTRLrs> {
         CursinkW::new(self, 1)
     }
     ///Bit 2 - Minimum Output Transition Enable
     #[inline(always)]
-    #[must_use]
     pub fn minouttrans(&mut self) -> MinouttransW<CTRLrs> {
         MinouttransW::new(self, 2)
     }
     ///Bit 3 - APORT Output Enable
     #[inline(always)]
-    #[must_use]
     pub fn aportouten(&mut self) -> AportoutenW<CTRLrs> {
         AportoutenW::new(self, 3)
     }
     ///Bits 4:11 - APORT Output Select
     #[inline(always)]
-    #[must_use]
     pub fn aportoutsel(&mut self) -> AportoutselW<CTRLrs> {
         AportoutselW::new(self, 4)
     }
     ///Bit 12 - Power Select
     #[inline(always)]
-    #[must_use]
     pub fn pwrsel(&mut self) -> PwrselW<CTRLrs> {
         PwrselW::new(self, 12)
     }
     ///Bit 13 - EM2 Delay
     #[inline(always)]
-    #[must_use]
     pub fn em2delay(&mut self) -> Em2delayW<CTRLrs> {
         Em2delayW::new(self, 13)
     }
     ///Bit 14 - APORT Bus Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aportmasterdis(&mut self) -> AportmasterdisW<CTRLrs> {
         AportmasterdisW::new(self, 14)
     }
     ///Bit 16 - PRS Controlled APORT Output Enable
     #[inline(always)]
-    #[must_use]
     pub fn aportoutenprs(&mut self) -> AportoutenprsW<CTRLrs> {
         AportoutenprsW::new(self, 16)
     }
     ///Bits 20:23 - IDAC Output Enable PRS Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn prssel(&mut self) -> PrsselW<CTRLrs> {
         PrsselW::new(self, 20)
     }

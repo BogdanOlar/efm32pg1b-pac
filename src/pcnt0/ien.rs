@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - UF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn uf(&mut self) -> UfW<IENrs> {
         UfW::new(self, 0)
     }
     ///Bit 1 - OF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn of(&mut self) -> OfW<IENrs> {
         OfW::new(self, 1)
     }
     ///Bit 2 - DIRCNG Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn dircng(&mut self) -> DircngW<IENrs> {
         DircngW::new(self, 2)
     }
     ///Bit 3 - AUXOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn auxof(&mut self) -> AuxofW<IENrs> {
         AuxofW::new(self, 3)
     }
     ///Bit 4 - TCC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn tcc(&mut self) -> TccW<IENrs> {
         TccW::new(self, 4)
     }
     ///Bit 5 - OQSTERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn oqsterr(&mut self) -> OqsterrW<IENrs> {
         OqsterrW::new(self, 5)
     }

@@ -26,55 +26,46 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set TXC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn txc(&mut self) -> TxcW<IFSrs> {
         TxcW::new(self, 0)
     }
     ///Bit 3 - Set RXOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rxof(&mut self) -> RxofW<IFSrs> {
         RxofW::new(self, 3)
     }
     ///Bit 4 - Set RXUF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rxuf(&mut self) -> RxufW<IFSrs> {
         RxufW::new(self, 4)
     }
     ///Bit 5 - Set TXOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn txof(&mut self) -> TxofW<IFSrs> {
         TxofW::new(self, 5)
     }
     ///Bit 6 - Set PERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn perr(&mut self) -> PerrW<IFSrs> {
         PerrW::new(self, 6)
     }
     ///Bit 7 - Set FERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn ferr(&mut self) -> FerrW<IFSrs> {
         FerrW::new(self, 7)
     }
     ///Bit 8 - Set MPAF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn mpaf(&mut self) -> MpafW<IFSrs> {
         MpafW::new(self, 8)
     }
     ///Bit 9 - Set STARTF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn startf(&mut self) -> StartfW<IFSrs> {
         StartfW::new(self, 9)
     }
     ///Bit 10 - Set SIGF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn sigf(&mut self) -> SigfW<IFSrs> {
         SigfW::new(self, 10)
     }

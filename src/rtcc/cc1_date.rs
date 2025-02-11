@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Day of Month/week, Units
     #[inline(always)]
-    #[must_use]
     pub fn dayu(&mut self) -> DayuW<CC1_DATErs> {
         DayuW::new(self, 0)
     }
     ///Bits 4:5 - Day of Month/week, Tens
     #[inline(always)]
-    #[must_use]
     pub fn dayt(&mut self) -> DaytW<CC1_DATErs> {
         DaytW::new(self, 4)
     }
     ///Bits 8:11 - Month, Units
     #[inline(always)]
-    #[must_use]
     pub fn monthu(&mut self) -> MonthuW<CC1_DATErs> {
         MonthuW::new(self, 8)
     }
     ///Bit 12 - Month, Tens
     #[inline(always)]
-    #[must_use]
     pub fn montht(&mut self) -> MonthtW<CC1_DATErs> {
         MonthtW::new(self, 12)
     }

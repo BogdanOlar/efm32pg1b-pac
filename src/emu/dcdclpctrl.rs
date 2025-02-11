@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 12:15 - LP Mode Hysteresis Selection
     #[inline(always)]
-    #[must_use]
     pub fn lpcmphyssel(&mut self) -> LpcmphysselW<DCDCLPCTRLrs> {
         LpcmphysselW::new(self, 12)
     }
     ///Bit 24 - LP Mode Duty Cycling Enable
     #[inline(always)]
-    #[must_use]
     pub fn lpvrefdutyen(&mut self) -> LpvrefdutyenW<DCDCLPCTRLrs> {
         LpvrefdutyenW::new(self, 24)
     }
     ///Bits 25:26 - Reserved for internal use. Do not change.
     #[inline(always)]
-    #[must_use]
     pub fn lpblank(&mut self) -> LpblankW<DCDCLPCTRLrs> {
         LpblankW::new(self, 25)
     }

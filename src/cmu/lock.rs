@@ -82,7 +82,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Configuration Lock Key
     #[inline(always)]
-    #[must_use]
     pub fn lockkey(&mut self) -> LockkeyW<LOCKrs> {
         LockkeyW::new(self, 0)
     }

@@ -133,73 +133,61 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - TX Data
     #[inline(always)]
-    #[must_use]
     pub fn txdata0(&mut self) -> Txdata0W<TXDOUBLEXrs> {
         Txdata0W::new(self, 0)
     }
     ///Bit 11 - Unblock RX After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn ubrxat0(&mut self) -> Ubrxat0W<TXDOUBLEXrs> {
         Ubrxat0W::new(self, 11)
     }
     ///Bit 12 - Set TXTRI After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn txtriat0(&mut self) -> Txtriat0W<TXDOUBLEXrs> {
         Txtriat0W::new(self, 12)
     }
     ///Bit 13 - Transmit Data as Break
     #[inline(always)]
-    #[must_use]
     pub fn txbreak0(&mut self) -> Txbreak0W<TXDOUBLEXrs> {
         Txbreak0W::new(self, 13)
     }
     ///Bit 14 - Clear TXEN After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn txdisat0(&mut self) -> Txdisat0W<TXDOUBLEXrs> {
         Txdisat0W::new(self, 14)
     }
     ///Bit 15 - Enable RX After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn rxenat0(&mut self) -> Rxenat0W<TXDOUBLEXrs> {
         Rxenat0W::new(self, 15)
     }
     ///Bits 16:24 - TX Data
     #[inline(always)]
-    #[must_use]
     pub fn txdata1(&mut self) -> Txdata1W<TXDOUBLEXrs> {
         Txdata1W::new(self, 16)
     }
     ///Bit 27 - Unblock RX After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn ubrxat1(&mut self) -> Ubrxat1W<TXDOUBLEXrs> {
         Ubrxat1W::new(self, 27)
     }
     ///Bit 28 - Set TXTRI After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn txtriat1(&mut self) -> Txtriat1W<TXDOUBLEXrs> {
         Txtriat1W::new(self, 28)
     }
     ///Bit 29 - Transmit Data as Break
     #[inline(always)]
-    #[must_use]
     pub fn txbreak1(&mut self) -> Txbreak1W<TXDOUBLEXrs> {
         Txbreak1W::new(self, 29)
     }
     ///Bit 30 - Clear TXEN After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn txdisat1(&mut self) -> Txdisat1W<TXDOUBLEXrs> {
         Txdisat1W::new(self, 30)
     }
     ///Bit 31 - Enable RX After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn rxenat1(&mut self) -> Rxenat1W<TXDOUBLEXrs> {
         Rxenat1W::new(self, 31)
     }

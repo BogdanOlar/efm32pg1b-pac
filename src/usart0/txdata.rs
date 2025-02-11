@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - TX Data
     #[inline(always)]
-    #[must_use]
     pub fn txdata(&mut self) -> TxdataW<TXDATArs> {
         TxdataW::new(self, 0)
     }

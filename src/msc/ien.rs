@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - ERASE Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn erase(&mut self) -> EraseW<IENrs> {
         EraseW::new(self, 0)
     }
     ///Bit 1 - WRITE Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn write(&mut self) -> WriteW<IENrs> {
         WriteW::new(self, 1)
     }
     ///Bit 2 - CHOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn chof(&mut self) -> ChofW<IENrs> {
         ChofW::new(self, 2)
     }
     ///Bit 3 - CMOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cmof(&mut self) -> CmofW<IENrs> {
         CmofW::new(self, 3)
     }
     ///Bit 4 - PWRUPF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn pwrupf(&mut self) -> PwrupfW<IENrs> {
         PwrupfW::new(self, 4)
     }
     ///Bit 5 - ICACHERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn icacherr(&mut self) -> IcacherrW<IENrs> {
         IcacherrW::new(self, 5)
     }

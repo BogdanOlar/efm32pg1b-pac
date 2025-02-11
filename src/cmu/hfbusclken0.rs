@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Low Energy Peripheral Interface Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn le(&mut self) -> LeW<HFBUSCLKEN0rs> {
         LeW::new(self, 0)
     }
     ///Bit 1 - Advanced Encryption Standard Accelerator Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn crypto(&mut self) -> CryptoW<HFBUSCLKEN0rs> {
         CryptoW::new(self, 1)
     }
     ///Bit 2 - General purpose Input/Output Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn gpio(&mut self) -> GpioW<HFBUSCLKEN0rs> {
         GpioW::new(self, 2)
     }
     ///Bit 3 - Peripheral Reflex System Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn prs(&mut self) -> PrsW<HFBUSCLKEN0rs> {
         PrsW::new(self, 3)
     }
     ///Bit 4 - Linked Direct Memory Access Controller Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn ldma(&mut self) -> LdmaW<HFBUSCLKEN0rs> {
         LdmaW::new(self, 4)
     }
     ///Bit 5 - General Purpose CRC Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn gpcrc(&mut self) -> GpcrcW<HFBUSCLKEN0rs> {
         GpcrcW::new(self, 5)
     }

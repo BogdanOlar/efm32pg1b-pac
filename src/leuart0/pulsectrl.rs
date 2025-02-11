@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Pulse Width
     #[inline(always)]
-    #[must_use]
     pub fn pulsew(&mut self) -> PulsewW<PULSECTRLrs> {
         PulsewW::new(self, 0)
     }
     ///Bit 4 - Pulse Generator/Extender Enable
     #[inline(always)]
-    #[must_use]
     pub fn pulseen(&mut self) -> PulseenW<PULSECTRLrs> {
         PulseenW::new(self, 4)
     }
     ///Bit 5 - Pulse Filter
     #[inline(always)]
-    #[must_use]
     pub fn pulsefilt(&mut self) -> PulsefiltW<PULSECTRLrs> {
         PulsefiltW::new(self, 5)
     }

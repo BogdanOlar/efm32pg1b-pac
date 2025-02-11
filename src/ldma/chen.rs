@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Channel Enables
     #[inline(always)]
-    #[must_use]
     pub fn chen(&mut self) -> ChenW<CHENrs> {
         ChenW::new(self, 0)
     }

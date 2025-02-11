@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Clear RTCC_STATUS Register
     #[inline(always)]
-    #[must_use]
     pub fn clrstatus(&mut self) -> ClrstatusW<CMDrs> {
         ClrstatusW::new(self, 0)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - CC Channel Value Buffer
     #[inline(always)]
-    #[must_use]
     pub fn ccvb(&mut self) -> CcvbW<CC1_CCVBrs> {
         CcvbW::new(self, 0)
     }

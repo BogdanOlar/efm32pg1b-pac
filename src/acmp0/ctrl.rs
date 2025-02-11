@@ -300,79 +300,66 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Analog Comparator Enable
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 2 - Inactive Value
     #[inline(always)]
-    #[must_use]
     pub fn inactval(&mut self) -> InactvalW<CTRLrs> {
         InactvalW::new(self, 2)
     }
     ///Bit 3 - Comparator GPIO Output Invert
     #[inline(always)]
-    #[must_use]
     pub fn gpioinv(&mut self) -> GpioinvW<CTRLrs> {
         GpioinvW::new(self, 3)
     }
     ///Bit 8 - APORT Bus X Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aportxmasterdis(&mut self) -> AportxmasterdisW<CTRLrs> {
         AportxmasterdisW::new(self, 8)
     }
     ///Bit 9 - APORT Bus Y Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aportymasterdis(&mut self) -> AportymasterdisW<CTRLrs> {
         AportymasterdisW::new(self, 9)
     }
     ///Bit 10 - APORT Bus Master Disable for Bus Selected By VASEL
     #[inline(always)]
-    #[must_use]
     pub fn aportvmasterdis(&mut self) -> AportvmasterdisW<CTRLrs> {
         AportvmasterdisW::new(self, 10)
     }
     ///Bits 12:14 - Power Select
     #[inline(always)]
-    #[must_use]
     pub fn pwrsel(&mut self) -> PwrselW<CTRLrs> {
         PwrselW::new(self, 12)
     }
     ///Bit 15 - ACMP Accuracy Mode
     #[inline(always)]
-    #[must_use]
     pub fn accuracy(&mut self) -> AccuracyW<CTRLrs> {
         AccuracyW::new(self, 15)
     }
     ///Bits 18:19 - Input Range
     #[inline(always)]
-    #[must_use]
     pub fn inputrange(&mut self) -> InputrangeW<CTRLrs> {
         InputrangeW::new(self, 18)
     }
     ///Bit 20 - Rising Edge Interrupt Sense
     #[inline(always)]
-    #[must_use]
     pub fn irise(&mut self) -> IriseW<CTRLrs> {
         IriseW::new(self, 20)
     }
     ///Bit 21 - Falling Edge Interrupt Sense
     #[inline(always)]
-    #[must_use]
     pub fn ifall(&mut self) -> IfallW<CTRLrs> {
         IfallW::new(self, 21)
     }
     ///Bits 24:29 - Bias Configuration
     #[inline(always)]
-    #[must_use]
     pub fn biasprog(&mut self) -> BiasprogW<CTRLrs> {
         BiasprogW::new(self, 24)
     }
     ///Bit 31 - Full Bias Current
     #[inline(always)]
-    #[must_use]
     pub fn fullbias(&mut self) -> FullbiasW<CTRLrs> {
         FullbiasW::new(self, 31)
     }

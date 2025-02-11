@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<KEYrs> {
 impl W {
     ///Bits 0:31 - Key Access
     #[inline(always)]
-    #[must_use]
     pub fn key(&mut self) -> KeyW<KEYrs> {
         KeyW::new(self, 0)
     }

@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 1:7 - Slave Address
     #[inline(always)]
-    #[must_use]
     pub fn addr(&mut self) -> AddrW<SADDRrs> {
         AddrW::new(self, 1)
     }

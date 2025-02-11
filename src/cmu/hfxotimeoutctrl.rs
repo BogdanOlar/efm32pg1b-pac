@@ -767,31 +767,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State
     #[inline(always)]
-    #[must_use]
     pub fn startuptimeout(&mut self) -> StartuptimeoutW<HFXOTIMEOUTCTRLrs> {
         StartuptimeoutW::new(self, 0)
     }
     ///Bits 4:7 - Wait Duration in HFXO Startup Steady Wait State
     #[inline(always)]
-    #[must_use]
     pub fn steadytimeout(&mut self) -> SteadytimeoutW<HFXOTIMEOUTCTRLrs> {
         SteadytimeoutW::new(self, 4)
     }
     ///Bits 8:11 - Wait Duration in HFXO Warm Startup Steady Wait State
     #[inline(always)]
-    #[must_use]
     pub fn reserved2(&mut self) -> Reserved2W<HFXOTIMEOUTCTRLrs> {
         Reserved2W::new(self, 8)
     }
     ///Bits 12:15 - Wait Duration in HFXO Peak Detection Wait State
     #[inline(always)]
-    #[must_use]
     pub fn peakdettimeout(&mut self) -> PeakdettimeoutW<HFXOTIMEOUTCTRLrs> {
         PeakdettimeoutW::new(self, 12)
     }
     ///Bits 16:19 - Wait Duration in HFXO Shunt Current Optimization Wait State
     #[inline(always)]
-    #[must_use]
     pub fn shuntopttimeout(&mut self) -> ShuntopttimeoutW<HFXOTIMEOUTCTRLrs> {
         ShuntopttimeoutW::new(self, 16)
     }

@@ -28,7 +28,7 @@ impl_atomics!(u32, portable_atomic::AtomicU32);
 impl_atomics!(u64, portable_atomic::AtomicU64);
 impl<REG: Readable + Writable> Reg<REG>
 where
-    REG::Ux: AtomicOperations + Default + core::ops::Not<Output = REG::Ux>,
+    REG::Ux: AtomicOperations,
 {
     /// Set high every bit in the register that was set in the write proxy. Leave other bits
     /// untouched. The write is done in a single atomic instruction.

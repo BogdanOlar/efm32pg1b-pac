@@ -262,25 +262,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable CRYOTIMER
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 1 - Debug Mode Run Enable
     #[inline(always)]
-    #[must_use]
     pub fn debugrun(&mut self) -> DebugrunW<CTRLrs> {
         DebugrunW::new(self, 1)
     }
     ///Bits 2:3 - Select Low Frequency Oscillator
     #[inline(always)]
-    #[must_use]
     pub fn oscsel(&mut self) -> OscselW<CTRLrs> {
         OscselW::new(self, 2)
     }
     ///Bits 5:7 - Prescaler Setting
     #[inline(always)]
-    #[must_use]
     pub fn presc(&mut self) -> PrescW<CTRLrs> {
         PrescW::new(self, 5)
     }

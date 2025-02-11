@@ -212,7 +212,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 6:9 - DMA Request 1 PRS Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn prssel(&mut self) -> PrsselW<DMAREQ1rs> {
         PrsselW::new(self, 6)
     }

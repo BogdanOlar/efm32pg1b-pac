@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<VMONDVDDCTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 2 - Rise Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn risewu(&mut self) -> RisewuW<VMONDVDDCTRLrs> {
         RisewuW::new(self, 2)
     }
     ///Bit 3 - Fall Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn fallwu(&mut self) -> FallwuW<VMONDVDDCTRLrs> {
         FallwuW::new(self, 3)
     }
     ///Bits 8:11 - Threshold Fine Adjust
     #[inline(always)]
-    #[must_use]
     pub fn thresfine(&mut self) -> ThresfineW<VMONDVDDCTRLrs> {
         ThresfineW::new(self, 8)
     }
     ///Bits 12:15 - Threshold Coarse Adjust
     #[inline(always)]
-    #[must_use]
     pub fn threscoarse(&mut self) -> ThrescoarseW<VMONDVDDCTRLrs> {
         ThrescoarseW::new(self, 12)
     }

@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - SDA Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn sdapen(&mut self) -> SdapenW<ROUTEPENrs> {
         SdapenW::new(self, 0)
     }
     ///Bit 1 - SCL Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn sclpen(&mut self) -> SclpenW<ROUTEPENrs> {
         SclpenW::new(self, 1)
     }

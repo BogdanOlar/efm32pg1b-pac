@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - EDGE Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn edge(&mut self) -> EdgeW<IENrs> {
         EdgeW::new(self, 0)
     }
     ///Bit 1 - WARMUP Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn warmup(&mut self) -> WarmupW<IENrs> {
         WarmupW::new(self, 1)
     }
     ///Bit 2 - APORTCONFLICT Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn aportconflict(&mut self) -> AportconflictW<IENrs> {
         AportconflictW::new(self, 2)
     }

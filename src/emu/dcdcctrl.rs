@@ -128,19 +128,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Regulator Mode
     #[inline(always)]
-    #[must_use]
     pub fn dcdcmode(&mut self) -> DcdcmodeW<DCDCCTRLrs> {
         DcdcmodeW::new(self, 0)
     }
     ///Bit 4 - DCDC Mode EM23
     #[inline(always)]
-    #[must_use]
     pub fn dcdcmodeem23(&mut self) -> Dcdcmodeem23W<DCDCCTRLrs> {
         Dcdcmodeem23W::new(self, 4)
     }
     ///Bit 5 - DCDC Mode EM4H
     #[inline(always)]
-    #[must_use]
     pub fn dcdcmodeem4(&mut self) -> Dcdcmodeem4W<DCDCCTRLrs> {
         Dcdcmodeem4W::new(self, 5)
     }

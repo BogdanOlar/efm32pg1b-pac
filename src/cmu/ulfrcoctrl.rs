@@ -128,19 +128,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - ULFRCO TUNING Value
     #[inline(always)]
-    #[must_use]
     pub fn tuning(&mut self) -> TuningW<ULFRCOCTRLrs> {
         TuningW::new(self, 0)
     }
     ///Bits 10:11 - ULFRCO Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<ULFRCOCTRLrs> {
         ModeW::new(self, 10)
     }
     ///Bits 16:17 - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)
     #[inline(always)]
-    #[must_use]
     pub fn restrim(&mut self) -> RestrimW<ULFRCOCTRLrs> {
         RestrimW::new(self, 16)
     }

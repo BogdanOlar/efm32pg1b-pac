@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Repeat Counter 0
     #[inline(always)]
-    #[must_use]
     pub fn rep0(&mut self) -> Rep0W<REP0rs> {
         Rep0W::new(self, 0)
     }

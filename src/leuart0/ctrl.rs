@@ -310,85 +310,71 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Automatic Transmitter Tristate
     #[inline(always)]
-    #[must_use]
     pub fn autotri(&mut self) -> AutotriW<CTRLrs> {
         AutotriW::new(self, 0)
     }
     ///Bit 1 - Data-Bit Mode
     #[inline(always)]
-    #[must_use]
     pub fn databits(&mut self) -> DatabitsW<CTRLrs> {
         DatabitsW::new(self, 1)
     }
     ///Bits 2:3 - Parity-Bit Mode
     #[inline(always)]
-    #[must_use]
     pub fn parity(&mut self) -> ParityW<CTRLrs> {
         ParityW::new(self, 2)
     }
     ///Bit 4 - Stop-Bit Mode
     #[inline(always)]
-    #[must_use]
     pub fn stopbits(&mut self) -> StopbitsW<CTRLrs> {
         StopbitsW::new(self, 4)
     }
     ///Bit 5 - Invert Input and Output
     #[inline(always)]
-    #[must_use]
     pub fn inv(&mut self) -> InvW<CTRLrs> {
         InvW::new(self, 5)
     }
     ///Bit 6 - Clear RX DMA on Error
     #[inline(always)]
-    #[must_use]
     pub fn errsdma(&mut self) -> ErrsdmaW<CTRLrs> {
         ErrsdmaW::new(self, 6)
     }
     ///Bit 7 - Loopback Enable
     #[inline(always)]
-    #[must_use]
     pub fn loopbk(&mut self) -> LoopbkW<CTRLrs> {
         LoopbkW::new(self, 7)
     }
     ///Bit 8 - Start-Frame UnBlock RX
     #[inline(always)]
-    #[must_use]
     pub fn sfubrx(&mut self) -> SfubrxW<CTRLrs> {
         SfubrxW::new(self, 8)
     }
     ///Bit 9 - Multi-Processor Mode
     #[inline(always)]
-    #[must_use]
     pub fn mpm(&mut self) -> MpmW<CTRLrs> {
         MpmW::new(self, 9)
     }
     ///Bit 10 - Multi-Processor Address-Bit
     #[inline(always)]
-    #[must_use]
     pub fn mpab(&mut self) -> MpabW<CTRLrs> {
         MpabW::new(self, 10)
     }
     ///Bit 11 - Bit 8 Default Value
     #[inline(always)]
-    #[must_use]
     pub fn bit8dv(&mut self) -> Bit8dvW<CTRLrs> {
         Bit8dvW::new(self, 11)
     }
     ///Bit 12 - RX DMA Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn rxdmawu(&mut self) -> RxdmawuW<CTRLrs> {
         RxdmawuW::new(self, 12)
     }
     ///Bit 13 - TX DMA Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn txdmawu(&mut self) -> TxdmawuW<CTRLrs> {
         TxdmawuW::new(self, 13)
     }
     ///Bits 14:15 - TX Delay Transmission
     #[inline(always)]
-    #[must_use]
     pub fn txdelay(&mut self) -> TxdelayW<CTRLrs> {
         TxdelayW::new(self, 14)
     }

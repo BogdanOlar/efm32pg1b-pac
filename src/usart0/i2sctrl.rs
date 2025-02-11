@@ -210,37 +210,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable I2S Mode
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<I2SCTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 1 - Stero or Mono
     #[inline(always)]
-    #[must_use]
     pub fn mono(&mut self) -> MonoW<I2SCTRLrs> {
         MonoW::new(self, 1)
     }
     ///Bit 2 - Justification of I2S Data
     #[inline(always)]
-    #[must_use]
     pub fn justify(&mut self) -> JustifyW<I2SCTRLrs> {
         JustifyW::new(self, 2)
     }
     ///Bit 3 - Separate DMA Request for Left/Right Data
     #[inline(always)]
-    #[must_use]
     pub fn dmasplit(&mut self) -> DmasplitW<I2SCTRLrs> {
         DmasplitW::new(self, 3)
     }
     ///Bit 4 - Delay on I2S Data
     #[inline(always)]
-    #[must_use]
     pub fn delay(&mut self) -> DelayW<I2SCTRLrs> {
         DelayW::new(self, 4)
     }
     ///Bits 8:10 - I2S Word Format
     #[inline(always)]
-    #[must_use]
     pub fn format(&mut self) -> FormatW<I2SCTRLrs> {
         FormatW::new(self, 8)
     }

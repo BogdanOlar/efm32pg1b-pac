@@ -222,13 +222,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - PRS Channel PRS Select
     #[inline(always)]
-    #[must_use]
     pub fn prssel(&mut self) -> PrsselW<PCH1_PRSCTRLrs> {
         PrsselW::new(self, 0)
     }
     ///Bit 8 - PRS Missing Event Will Trigger a Watchdog Reset
     #[inline(always)]
-    #[must_use]
     pub fn prsmissrsten(&mut self) -> PrsmissrstenW<PCH1_PRSCTRLrs> {
         PrsmissrstenW::new(self, 8)
     }

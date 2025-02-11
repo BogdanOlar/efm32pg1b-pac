@@ -163,91 +163,76 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - HFRCORDY Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfrcordy(&mut self) -> HfrcordyW<IENrs> {
         HfrcordyW::new(self, 0)
     }
     ///Bit 1 - HFXORDY Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfxordy(&mut self) -> HfxordyW<IENrs> {
         HfxordyW::new(self, 1)
     }
     ///Bit 2 - LFRCORDY Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn lfrcordy(&mut self) -> LfrcordyW<IENrs> {
         LfrcordyW::new(self, 2)
     }
     ///Bit 3 - LFXORDY Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn lfxordy(&mut self) -> LfxordyW<IENrs> {
         LfxordyW::new(self, 3)
     }
     ///Bit 4 - AUXHFRCORDY Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn auxhfrcordy(&mut self) -> AuxhfrcordyW<IENrs> {
         AuxhfrcordyW::new(self, 4)
     }
     ///Bit 5 - CALRDY Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn calrdy(&mut self) -> CalrdyW<IENrs> {
         CalrdyW::new(self, 5)
     }
     ///Bit 6 - CALOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn calof(&mut self) -> CalofW<IENrs> {
         CalofW::new(self, 6)
     }
     ///Bit 8 - HFXODISERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfxodiserr(&mut self) -> HfxodiserrW<IENrs> {
         HfxodiserrW::new(self, 8)
     }
     ///Bit 9 - HFXOAUTOSW Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfxoautosw(&mut self) -> HfxoautoswW<IENrs> {
         HfxoautoswW::new(self, 9)
     }
     ///Bit 10 - HFXOPEAKDETERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfxopeakdeterr(&mut self) -> HfxopeakdeterrW<IENrs> {
         HfxopeakdeterrW::new(self, 10)
     }
     ///Bit 11 - HFXOPEAKDETRDY Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfxopeakdetrdy(&mut self) -> HfxopeakdetrdyW<IENrs> {
         HfxopeakdetrdyW::new(self, 11)
     }
     ///Bit 12 - HFXOSHUNTOPTRDY Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfxoshuntoptrdy(&mut self) -> HfxoshuntoptrdyW<IENrs> {
         HfxoshuntoptrdyW::new(self, 12)
     }
     ///Bit 13 - HFRCODIS Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfrcodis(&mut self) -> HfrcodisW<IENrs> {
         HfrcodisW::new(self, 13)
     }
     ///Bit 14 - LFTIMEOUTERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn lftimeouterr(&mut self) -> LftimeouterrW<IENrs> {
         LftimeouterrW::new(self, 14)
     }
     ///Bit 31 - CMUERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cmuerr(&mut self) -> CmuerrW<IENrs> {
         CmuerrW::new(self, 31)
     }

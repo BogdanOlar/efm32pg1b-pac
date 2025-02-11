@@ -514,43 +514,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - CC Channel Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<CC1_CTRLrs> {
         ModeW::new(self, 0)
     }
     ///Bits 2:3 - Compare Match Output Action
     #[inline(always)]
-    #[must_use]
     pub fn cmoa(&mut self) -> CmoaW<CC1_CTRLrs> {
         CmoaW::new(self, 2)
     }
     ///Bits 4:5 - Input Capture Edge Select
     #[inline(always)]
-    #[must_use]
     pub fn icedge(&mut self) -> IcedgeW<CC1_CTRLrs> {
         IcedgeW::new(self, 4)
     }
     ///Bits 6:9 - Compare/Capture Channel PRS Input Channel Selection
     #[inline(always)]
-    #[must_use]
     pub fn prssel(&mut self) -> PrsselW<CC1_CTRLrs> {
         PrsselW::new(self, 6)
     }
     ///Bit 11 - Capture Compare Channel Comparison Base
     #[inline(always)]
-    #[must_use]
     pub fn compbase(&mut self) -> CompbaseW<CC1_CTRLrs> {
         CompbaseW::new(self, 11)
     }
     ///Bits 12:16 - Capture Compare Channel Comparison Mask
     #[inline(always)]
-    #[must_use]
     pub fn compmask(&mut self) -> CompmaskW<CC1_CTRLrs> {
         CompmaskW::new(self, 12)
     }
     ///Bit 17 - Day Capture/Compare Selection
     #[inline(always)]
-    #[must_use]
     pub fn daycc(&mut self) -> DayccW<CC1_CTRLrs> {
         DayccW::new(self, 17)
     }

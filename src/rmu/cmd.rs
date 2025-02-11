@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Reset Cause Clear
     #[inline(always)]
-    #[must_use]
     pub fn rcclr(&mut self) -> RcclrW<CMDrs> {
         RcclrW::new(self, 0)
     }

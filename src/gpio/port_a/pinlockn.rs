@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Unlocked Pins for pins 0:15
     #[inline(always)]
-    #[must_use]
     pub fn pins_pinlockn(&mut self) -> PinsPinlocknW<PINLOCKNrs> {
         PinsPinlocknW::new(self, 0)
     }

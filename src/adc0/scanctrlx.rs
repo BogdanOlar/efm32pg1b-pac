@@ -426,61 +426,51 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Scan Channel Reference Selection
     #[inline(always)]
-    #[must_use]
     pub fn vrefsel(&mut self) -> VrefselW<SCANCTRLXrs> {
         VrefselW::new(self, 0)
     }
     ///Bit 3 - Enable Fixed Scaling on VREF
     #[inline(always)]
-    #[must_use]
     pub fn vrefattfix(&mut self) -> VrefattfixW<SCANCTRLXrs> {
         VrefattfixW::new(self, 3)
     }
     ///Bits 4:7 - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5
     #[inline(always)]
-    #[must_use]
     pub fn vrefatt(&mut self) -> VrefattW<SCANCTRLXrs> {
         VrefattW::new(self, 4)
     }
     ///Bits 8:11 - Code for VIN Attenuation Factor
     #[inline(always)]
-    #[must_use]
     pub fn vinatt(&mut self) -> VinattW<SCANCTRLXrs> {
         VinattW::new(self, 8)
     }
     ///Bits 12:13 - Scan DV Level Select
     #[inline(always)]
-    #[must_use]
     pub fn dvl(&mut self) -> DvlW<SCANCTRLXrs> {
         DvlW::new(self, 12)
     }
     ///Bit 14 - Scan FIFO Overflow Action
     #[inline(always)]
-    #[must_use]
     pub fn fifoofact(&mut self) -> FifoofactW<SCANCTRLXrs> {
         FifoofactW::new(self, 14)
     }
     ///Bit 16 - Scan PRS Trigger Mode
     #[inline(always)]
-    #[must_use]
     pub fn prsmode(&mut self) -> PrsmodeW<SCANCTRLXrs> {
         PrsmodeW::new(self, 16)
     }
     ///Bits 17:20 - Scan Sequence PRS Trigger Select
     #[inline(always)]
-    #[must_use]
     pub fn prssel(&mut self) -> PrsselW<SCANCTRLXrs> {
         PrsselW::new(self, 17)
     }
     ///Bits 24:26 - Delay Next Conversion Start If CONVSTARTDELAYEN is Set
     #[inline(always)]
-    #[must_use]
     pub fn convstartdelay(&mut self) -> ConvstartdelayW<SCANCTRLXrs> {
         ConvstartdelayW::new(self, 24)
     }
     ///Bit 27 - Enable Delaying Next Conversion Start
     #[inline(always)]
-    #[must_use]
     pub fn convstartdelayen(&mut self) -> ConvstartdelayenW<SCANCTRLXrs> {
         ConvstartdelayenW::new(self, 27)
     }

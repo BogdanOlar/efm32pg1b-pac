@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - General Purpose Retention Register
     #[inline(always)]
-    #[must_use]
     pub fn reg(&mut self) -> RegW<RET29_REGrs> {
         RegW::new(self, 0)
     }

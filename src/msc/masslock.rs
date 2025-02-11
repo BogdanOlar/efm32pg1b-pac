@@ -82,7 +82,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Mass Erase Lock
     #[inline(always)]
-    #[must_use]
     pub fn lockkey(&mut self) -> LockkeyW<MASSLOCKrs> {
         LockkeyW::new(self, 0)
     }

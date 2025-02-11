@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - INSTRDONE Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn instrdone(&mut self) -> InstrdoneW<IENrs> {
         InstrdoneW::new(self, 0)
     }
     ///Bit 1 - SEQDONE Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn seqdone(&mut self) -> SeqdoneW<IENrs> {
         SeqdoneW::new(self, 1)
     }

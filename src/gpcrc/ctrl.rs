@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - CRC Functionality Enable
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 4 - Polynomial Select
     #[inline(always)]
-    #[must_use]
     pub fn polysel(&mut self) -> PolyselW<CTRLrs> {
         PolyselW::new(self, 4)
     }
     ///Bit 8 - Byte Mode Enable
     #[inline(always)]
-    #[must_use]
     pub fn bytemode(&mut self) -> BytemodeW<CTRLrs> {
         BytemodeW::new(self, 8)
     }
     ///Bit 9 - Byte-level Bit Reverse Enable
     #[inline(always)]
-    #[must_use]
     pub fn bitreverse(&mut self) -> BitreverseW<CTRLrs> {
         BitreverseW::new(self, 9)
     }
     ///Bit 10 - Byte Reverse Mode
     #[inline(always)]
-    #[must_use]
     pub fn bytereverse(&mut self) -> BytereverseW<CTRLrs> {
         BytereverseW::new(self, 10)
     }
     ///Bit 13 - Auto Init Enable
     #[inline(always)]
-    #[must_use]
     pub fn autoinit(&mut self) -> AutoinitW<CTRLrs> {
         AutoinitW::new(self, 13)
     }

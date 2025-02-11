@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<VMONAVDDCTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 2 - Rise Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn risewu(&mut self) -> RisewuW<VMONAVDDCTRLrs> {
         RisewuW::new(self, 2)
     }
     ///Bit 3 - Fall Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn fallwu(&mut self) -> FallwuW<VMONAVDDCTRLrs> {
         FallwuW::new(self, 3)
     }
     ///Bits 8:11 - Falling Threshold Fine Adjust
     #[inline(always)]
-    #[must_use]
     pub fn fallthresfine(&mut self) -> FallthresfineW<VMONAVDDCTRLrs> {
         FallthresfineW::new(self, 8)
     }
     ///Bits 12:15 - Falling Threshold Coarse Adjust
     #[inline(always)]
-    #[must_use]
     pub fn fallthrescoarse(&mut self) -> FallthrescoarseW<VMONAVDDCTRLrs> {
         FallthrescoarseW::new(self, 12)
     }
     ///Bits 16:19 - Rising Threshold Fine Adjust
     #[inline(always)]
-    #[must_use]
     pub fn risethresfine(&mut self) -> RisethresfineW<VMONAVDDCTRLrs> {
         RisethresfineW::new(self, 16)
     }
     ///Bits 20:23 - Rising Threshold Coarse Adjust
     #[inline(always)]
-    #[must_use]
     pub fn risethrescoarse(&mut self) -> RisethrescoarseW<VMONAVDDCTRLrs> {
         RisethrescoarseW::new(self, 20)
     }

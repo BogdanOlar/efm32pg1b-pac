@@ -832,73 +832,61 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - CC Channel Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<CC0_CTRLrs> {
         ModeW::new(self, 0)
     }
     ///Bit 2 - Output Invert
     #[inline(always)]
-    #[must_use]
     pub fn outinv(&mut self) -> OutinvW<CC0_CTRLrs> {
         OutinvW::new(self, 2)
     }
     ///Bit 4 - Compare Output Initial State
     #[inline(always)]
-    #[must_use]
     pub fn coist(&mut self) -> CoistW<CC0_CTRLrs> {
         CoistW::new(self, 4)
     }
     ///Bits 8:9 - Compare Match Output Action
     #[inline(always)]
-    #[must_use]
     pub fn cmoa(&mut self) -> CmoaW<CC0_CTRLrs> {
         CmoaW::new(self, 8)
     }
     ///Bits 10:11 - Counter Overflow Output Action
     #[inline(always)]
-    #[must_use]
     pub fn cofoa(&mut self) -> CofoaW<CC0_CTRLrs> {
         CofoaW::new(self, 10)
     }
     ///Bits 12:13 - Counter Underflow Output Action
     #[inline(always)]
-    #[must_use]
     pub fn cufoa(&mut self) -> CufoaW<CC0_CTRLrs> {
         CufoaW::new(self, 12)
     }
     ///Bits 16:19 - Compare/Capture Channel PRS Input Channel Selection
     #[inline(always)]
-    #[must_use]
     pub fn prssel(&mut self) -> PrsselW<CC0_CTRLrs> {
         PrsselW::new(self, 16)
     }
     ///Bits 24:25 - Input Capture Edge Select
     #[inline(always)]
-    #[must_use]
     pub fn icedge(&mut self) -> IcedgeW<CC0_CTRLrs> {
         IcedgeW::new(self, 24)
     }
     ///Bits 26:27 - Input Capture Event Control
     #[inline(always)]
-    #[must_use]
     pub fn icevctrl(&mut self) -> IcevctrlW<CC0_CTRLrs> {
         IcevctrlW::new(self, 26)
     }
     ///Bit 28 - PRS Configuration
     #[inline(always)]
-    #[must_use]
     pub fn prsconf(&mut self) -> PrsconfW<CC0_CTRLrs> {
         PrsconfW::new(self, 28)
     }
     ///Bit 29 - Input Selection
     #[inline(always)]
-    #[must_use]
     pub fn insel(&mut self) -> InselW<CC0_CTRLrs> {
         InselW::new(self, 29)
     }
     ///Bit 30 - Digital Filter
     #[inline(always)]
-    #[must_use]
     pub fn filt(&mut self) -> FiltW<CC0_CTRLrs> {
         FiltW::new(self, 30)
     }

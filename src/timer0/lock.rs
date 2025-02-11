@@ -82,7 +82,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Timer Lock Key
     #[inline(always)]
-    #[must_use]
     pub fn timerlockkey(&mut self) -> TimerlockkeyW<LOCKrs> {
         TimerlockkeyW::new(self, 0)
     }

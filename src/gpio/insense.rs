@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Interrupt Sense Enable
     #[inline(always)]
-    #[must_use]
     pub fn int(&mut self) -> IntW<INSENSErs> {
         IntW::new(self, 0)
     }
     ///Bit 1 - EM4WU Interrupt Sense Enable
     #[inline(always)]
-    #[must_use]
     pub fn em4wu(&mut self) -> Em4wuW<INSENSErs> {
         Em4wuW::new(self, 1)
     }

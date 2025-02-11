@@ -32,73 +32,61 @@ impl core::fmt::Debug for crate::generic::Reg<SWPULSErs> {
 impl W {
     ///Bit 0 - Channel 0 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch0pulse(&mut self) -> Ch0pulseW<SWPULSErs> {
         Ch0pulseW::new(self, 0)
     }
     ///Bit 1 - Channel 1 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch1pulse(&mut self) -> Ch1pulseW<SWPULSErs> {
         Ch1pulseW::new(self, 1)
     }
     ///Bit 2 - Channel 2 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch2pulse(&mut self) -> Ch2pulseW<SWPULSErs> {
         Ch2pulseW::new(self, 2)
     }
     ///Bit 3 - Channel 3 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch3pulse(&mut self) -> Ch3pulseW<SWPULSErs> {
         Ch3pulseW::new(self, 3)
     }
     ///Bit 4 - Channel 4 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch4pulse(&mut self) -> Ch4pulseW<SWPULSErs> {
         Ch4pulseW::new(self, 4)
     }
     ///Bit 5 - Channel 5 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch5pulse(&mut self) -> Ch5pulseW<SWPULSErs> {
         Ch5pulseW::new(self, 5)
     }
     ///Bit 6 - Channel 6 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch6pulse(&mut self) -> Ch6pulseW<SWPULSErs> {
         Ch6pulseW::new(self, 6)
     }
     ///Bit 7 - Channel 7 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch7pulse(&mut self) -> Ch7pulseW<SWPULSErs> {
         Ch7pulseW::new(self, 7)
     }
     ///Bit 8 - Channel 8 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch8pulse(&mut self) -> Ch8pulseW<SWPULSErs> {
         Ch8pulseW::new(self, 8)
     }
     ///Bit 9 - Channel 9 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch9pulse(&mut self) -> Ch9pulseW<SWPULSErs> {
         Ch9pulseW::new(self, 9)
     }
     ///Bit 10 - Channel 10 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch10pulse(&mut self) -> Ch10pulseW<SWPULSErs> {
         Ch10pulseW::new(self, 10)
     }
     ///Bit 11 - Channel 11 Pulse Generation
     #[inline(always)]
-    #[must_use]
     pub fn ch11pulse(&mut self) -> Ch11pulseW<SWPULSErs> {
         Ch11pulseW::new(self, 11)
     }

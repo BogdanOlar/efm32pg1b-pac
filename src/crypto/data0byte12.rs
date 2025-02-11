@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Data 0 Byte 12 Access
     #[inline(always)]
-    #[must_use]
     pub fn data0byte12(&mut self) -> Data0byte12W<DATA0BYTE12rs> {
         Data0byte12W::new(self, 0)
     }

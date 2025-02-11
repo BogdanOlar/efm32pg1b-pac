@@ -12,13 +12,11 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bits 0:15 - Set EXT Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn ext(&mut self) -> ExtW<IFSrs> {
         ExtW::new(self, 0)
     }
     ///Bits 16:31 - Set EM4WU Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn em4wu(&mut self) -> Em4wuW<IFSrs> {
         Em4wuW::new(self, 16)
     }

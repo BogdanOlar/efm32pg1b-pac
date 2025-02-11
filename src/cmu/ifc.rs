@@ -38,91 +38,76 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear HFRCORDY Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hfrcordy(&mut self) -> HfrcordyW<IFCrs> {
         HfrcordyW::new(self, 0)
     }
     ///Bit 1 - Clear HFXORDY Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hfxordy(&mut self) -> HfxordyW<IFCrs> {
         HfxordyW::new(self, 1)
     }
     ///Bit 2 - Clear LFRCORDY Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn lfrcordy(&mut self) -> LfrcordyW<IFCrs> {
         LfrcordyW::new(self, 2)
     }
     ///Bit 3 - Clear LFXORDY Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn lfxordy(&mut self) -> LfxordyW<IFCrs> {
         LfxordyW::new(self, 3)
     }
     ///Bit 4 - Clear AUXHFRCORDY Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn auxhfrcordy(&mut self) -> AuxhfrcordyW<IFCrs> {
         AuxhfrcordyW::new(self, 4)
     }
     ///Bit 5 - Clear CALRDY Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn calrdy(&mut self) -> CalrdyW<IFCrs> {
         CalrdyW::new(self, 5)
     }
     ///Bit 6 - Clear CALOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn calof(&mut self) -> CalofW<IFCrs> {
         CalofW::new(self, 6)
     }
     ///Bit 8 - Clear HFXODISERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hfxodiserr(&mut self) -> HfxodiserrW<IFCrs> {
         HfxodiserrW::new(self, 8)
     }
     ///Bit 9 - Clear HFXOAUTOSW Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hfxoautosw(&mut self) -> HfxoautoswW<IFCrs> {
         HfxoautoswW::new(self, 9)
     }
     ///Bit 10 - Clear HFXOPEAKDETERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hfxopeakdeterr(&mut self) -> HfxopeakdeterrW<IFCrs> {
         HfxopeakdeterrW::new(self, 10)
     }
     ///Bit 11 - Clear HFXOPEAKDETRDY Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hfxopeakdetrdy(&mut self) -> HfxopeakdetrdyW<IFCrs> {
         HfxopeakdetrdyW::new(self, 11)
     }
     ///Bit 12 - Clear HFXOSHUNTOPTRDY Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hfxoshuntoptrdy(&mut self) -> HfxoshuntoptrdyW<IFCrs> {
         HfxoshuntoptrdyW::new(self, 12)
     }
     ///Bit 13 - Clear HFRCODIS Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn hfrcodis(&mut self) -> HfrcodisW<IFCrs> {
         HfrcodisW::new(self, 13)
     }
     ///Bit 14 - Clear LFTIMEOUTERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn lftimeouterr(&mut self) -> LftimeouterrW<IFCrs> {
         LftimeouterrW::new(self, 14)
     }
     ///Bit 31 - Clear CMUERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cmuerr(&mut self) -> CmuerrW<IFCrs> {
         CmuerrW::new(self, 31)
     }

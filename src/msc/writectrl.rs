@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable Write/Erase Controller
     #[inline(always)]
-    #[must_use]
     pub fn wren(&mut self) -> WrenW<WRITECTRLrs> {
         WrenW::new(self, 0)
     }
     ///Bit 1 - Abort Page Erase on Interrupt
     #[inline(always)]
-    #[must_use]
     pub fn irqeraseabort(&mut self) -> IrqeraseabortW<WRITECTRLrs> {
         IrqeraseabortW::new(self, 1)
     }

@@ -155,43 +155,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:13 - Buffer Length a in Bytes
     #[inline(always)]
-    #[must_use]
     pub fn lengtha(&mut self) -> LengthaW<SEQCTRLrs> {
         LengthaW::new(self, 0)
     }
     ///Bits 20:21 - Size of Data Blocks
     #[inline(always)]
-    #[must_use]
     pub fn blocksize(&mut self) -> BlocksizeW<SEQCTRLrs> {
         BlocksizeW::new(self, 20)
     }
     ///Bits 24:25 - DMA0 Skip
     #[inline(always)]
-    #[must_use]
     pub fn dma0skip(&mut self) -> Dma0skipW<SEQCTRLrs> {
         Dma0skipW::new(self, 24)
     }
     ///Bits 26:27 - DMA1 Skip
     #[inline(always)]
-    #[must_use]
     pub fn dma1skip(&mut self) -> Dma1skipW<SEQCTRLrs> {
         Dma1skipW::new(self, 26)
     }
     ///Bit 28 - DMA0 Preserve a
     #[inline(always)]
-    #[must_use]
     pub fn dma0presa(&mut self) -> Dma0presaW<SEQCTRLrs> {
         Dma0presaW::new(self, 28)
     }
     ///Bit 29 - DMA1 Preserve a
     #[inline(always)]
-    #[must_use]
     pub fn dma1presa(&mut self) -> Dma1presaW<SEQCTRLrs> {
         Dma1presaW::new(self, 29)
     }
     ///Bit 31 - Halt Sequence
     #[inline(always)]
-    #[must_use]
     pub fn halt(&mut self) -> HaltW<SEQCTRLrs> {
         HaltW::new(self, 31)
     }

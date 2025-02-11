@@ -20,37 +20,31 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set UF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn uf(&mut self) -> UfW<IFSrs> {
         UfW::new(self, 0)
     }
     ///Bit 1 - Set OF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn of(&mut self) -> OfW<IFSrs> {
         OfW::new(self, 1)
     }
     ///Bit 2 - Set DIRCNG Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn dircng(&mut self) -> DircngW<IFSrs> {
         DircngW::new(self, 2)
     }
     ///Bit 3 - Set AUXOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn auxof(&mut self) -> AuxofW<IFSrs> {
         AuxofW::new(self, 3)
     }
     ///Bit 4 - Set TCC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn tcc(&mut self) -> TccW<IFSrs> {
         TccW::new(self, 4)
     }
     ///Bit 5 - Set OQSTERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn oqsterr(&mut self) -> OqsterrW<IFSrs> {
         OqsterrW::new(self, 5)
     }

@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<KEYBUFrs> {
 impl W {
     ///Bits 0:31 - Key Buffer Access
     #[inline(always)]
-    #[must_use]
     pub fn keybuf(&mut self) -> KeybufW<KEYBUFrs> {
         KeybufW::new(self, 0)
     }

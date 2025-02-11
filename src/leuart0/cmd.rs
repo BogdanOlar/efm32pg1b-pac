@@ -24,49 +24,41 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Receiver Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxen(&mut self) -> RxenW<CMDrs> {
         RxenW::new(self, 0)
     }
     ///Bit 1 - Receiver Disable
     #[inline(always)]
-    #[must_use]
     pub fn rxdis(&mut self) -> RxdisW<CMDrs> {
         RxdisW::new(self, 1)
     }
     ///Bit 2 - Transmitter Enable
     #[inline(always)]
-    #[must_use]
     pub fn txen(&mut self) -> TxenW<CMDrs> {
         TxenW::new(self, 2)
     }
     ///Bit 3 - Transmitter Disable
     #[inline(always)]
-    #[must_use]
     pub fn txdis(&mut self) -> TxdisW<CMDrs> {
         TxdisW::new(self, 3)
     }
     ///Bit 4 - Receiver Block Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxblocken(&mut self) -> RxblockenW<CMDrs> {
         RxblockenW::new(self, 4)
     }
     ///Bit 5 - Receiver Block Disable
     #[inline(always)]
-    #[must_use]
     pub fn rxblockdis(&mut self) -> RxblockdisW<CMDrs> {
         RxblockdisW::new(self, 5)
     }
     ///Bit 6 - Clear TX
     #[inline(always)]
-    #[must_use]
     pub fn cleartx(&mut self) -> CleartxW<CMDrs> {
         CleartxW::new(self, 6)
     }
     ///Bit 7 - Clear RX
     #[inline(always)]
-    #[must_use]
     pub fn clearrx(&mut self) -> ClearrxW<CMDrs> {
         ClearrxW::new(self, 7)
     }

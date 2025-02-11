@@ -877,49 +877,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - External Interrupt 8 Port Select
     #[inline(always)]
-    #[must_use]
     pub fn extipsel8(&mut self) -> Extipsel8W<EXTIPSELHrs> {
         Extipsel8W::new(self, 0)
     }
     ///Bits 4:7 - External Interrupt 9 Port Select
     #[inline(always)]
-    #[must_use]
     pub fn extipsel9(&mut self) -> Extipsel9W<EXTIPSELHrs> {
         Extipsel9W::new(self, 4)
     }
     ///Bits 8:11 - External Interrupt 10 Port Select
     #[inline(always)]
-    #[must_use]
     pub fn extipsel10(&mut self) -> Extipsel10W<EXTIPSELHrs> {
         Extipsel10W::new(self, 8)
     }
     ///Bits 12:15 - External Interrupt 11 Port Select
     #[inline(always)]
-    #[must_use]
     pub fn extipsel11(&mut self) -> Extipsel11W<EXTIPSELHrs> {
         Extipsel11W::new(self, 12)
     }
     ///Bits 16:19 - External Interrupt 12 Port Select
     #[inline(always)]
-    #[must_use]
     pub fn extipsel12(&mut self) -> Extipsel12W<EXTIPSELHrs> {
         Extipsel12W::new(self, 16)
     }
     ///Bits 20:23 - External Interrupt 13 Port Select
     #[inline(always)]
-    #[must_use]
     pub fn extipsel13(&mut self) -> Extipsel13W<EXTIPSELHrs> {
         Extipsel13W::new(self, 20)
     }
     ///Bits 24:27 - External Interrupt 14 Port Select
     #[inline(always)]
-    #[must_use]
     pub fn extipsel14(&mut self) -> Extipsel14W<EXTIPSELHrs> {
         Extipsel14W::new(self, 24)
     }
     ///Bits 28:31 - External Interrupt 15 Port Select
     #[inline(always)]
-    #[must_use]
     pub fn extipsel15(&mut self) -> Extipsel15W<EXTIPSELHrs> {
         Extipsel15W::new(self, 28)
     }

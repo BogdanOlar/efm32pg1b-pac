@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN
     #[inline(always)]
-    #[must_use]
     pub fn filtlen(&mut self) -> FiltlenW<OVSCFGrs> {
         FiltlenW::new(self, 0)
     }
     ///Bit 12 - Flutter Remove
     #[inline(always)]
-    #[must_use]
     pub fn flutterrm(&mut self) -> FlutterrmW<OVSCFGrs> {
         FlutterrmW::new(self, 12)
     }

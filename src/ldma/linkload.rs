@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<LINKLOADrs> {
 impl W {
     ///Bits 0:7 - DMA Link Loads
     #[inline(always)]
-    #[must_use]
     pub fn linkload(&mut self) -> LinkloadW<LINKLOADrs> {
         LinkloadW::new(self, 0)
     }

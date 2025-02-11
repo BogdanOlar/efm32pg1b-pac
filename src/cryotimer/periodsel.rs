@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - Interrupts/Wakeup Events Period Setting
     #[inline(always)]
-    #[must_use]
     pub fn periodsel(&mut self) -> PeriodselW<PERIODSELrs> {
         PeriodselW::new(self, 0)
     }

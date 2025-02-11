@@ -403,31 +403,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - WDOG Reset Mode
     #[inline(always)]
-    #[must_use]
     pub fn wdogrmode(&mut self) -> WdogrmodeW<CTRLrs> {
         WdogrmodeW::new(self, 0)
     }
     ///Bits 4:6 - Core LOCKUP Reset Mode
     #[inline(always)]
-    #[must_use]
     pub fn lockuprmode(&mut self) -> LockuprmodeW<CTRLrs> {
         LockuprmodeW::new(self, 4)
     }
     ///Bits 8:10 - Core Sysreset Reset Mode
     #[inline(always)]
-    #[must_use]
     pub fn sysrmode(&mut self) -> SysrmodeW<CTRLrs> {
         SysrmodeW::new(self, 8)
     }
     ///Bits 12:14 - PIN Reset Mode
     #[inline(always)]
-    #[must_use]
     pub fn pinrmode(&mut self) -> PinrmodeW<CTRLrs> {
         PinrmodeW::new(self, 12)
     }
     ///Bits 24:25 - System Software Reset State
     #[inline(always)]
-    #[must_use]
     pub fn resetstate(&mut self) -> ResetstateW<CTRLrs> {
         ResetstateW::new(self, 24)
     }

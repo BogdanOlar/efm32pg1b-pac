@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Watchdog Timer Clear
     #[inline(always)]
-    #[must_use]
     pub fn clear(&mut self) -> ClearW<CMDrs> {
         ClearW::new(self, 0)
     }

@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 4:6 - Reverse Current Limit Level Selection for Zero Detector
     #[inline(always)]
-    #[must_use]
     pub fn zdetilimsel(&mut self) -> ZdetilimselW<DCDCZDETCTRLrs> {
         ZdetilimselW::new(self, 4)
     }
     ///Bits 8:9 - Reserved for internal use. Do not change.
     #[inline(always)]
-    #[must_use]
     pub fn zdetblankdly(&mut self) -> ZdetblankdlyW<DCDCZDETCTRLrs> {
         ZdetblankdlyW::new(self, 8)
     }

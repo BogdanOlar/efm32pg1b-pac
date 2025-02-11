@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - APORTCONFLICT Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn aportconflict(&mut self) -> AportconflictW<IENrs> {
         AportconflictW::new(self, 1)
     }

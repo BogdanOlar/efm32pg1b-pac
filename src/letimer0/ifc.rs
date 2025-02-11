@@ -18,31 +18,26 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear COMP0 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn comp0(&mut self) -> Comp0W<IFCrs> {
         Comp0W::new(self, 0)
     }
     ///Bit 1 - Clear COMP1 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn comp1(&mut self) -> Comp1W<IFCrs> {
         Comp1W::new(self, 1)
     }
     ///Bit 2 - Clear UF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn uf(&mut self) -> UfW<IFCrs> {
         UfW::new(self, 2)
     }
     ///Bit 3 - Clear REP0 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rep0(&mut self) -> Rep0W<IFCrs> {
         Rep0W::new(self, 3)
     }
     ///Bit 4 - Clear REP1 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rep1(&mut self) -> Rep1W<IFCrs> {
         Rep1W::new(self, 4)
     }

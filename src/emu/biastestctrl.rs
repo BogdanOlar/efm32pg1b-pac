@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 3 - Reset Bias Ripple Counter
     #[inline(always)]
-    #[must_use]
     pub fn bias_rip_reset(&mut self) -> BiasRipResetW<BIASTESTCTRLrs> {
         BiasRipResetW::new(self, 3)
     }

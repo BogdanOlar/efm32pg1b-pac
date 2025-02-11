@@ -337,31 +337,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable IrDA Module
     #[inline(always)]
-    #[must_use]
     pub fn iren(&mut self) -> IrenW<IRCTRLrs> {
         IrenW::new(self, 0)
     }
     ///Bits 1:2 - IrDA TX Pulse Width
     #[inline(always)]
-    #[must_use]
     pub fn irpw(&mut self) -> IrpwW<IRCTRLrs> {
         IrpwW::new(self, 1)
     }
     ///Bit 3 - IrDA RX Filter
     #[inline(always)]
-    #[must_use]
     pub fn irfilt(&mut self) -> IrfiltW<IRCTRLrs> {
         IrfiltW::new(self, 3)
     }
     ///Bit 7 - IrDA PRS Channel Enable
     #[inline(always)]
-    #[must_use]
     pub fn irprsen(&mut self) -> IrprsenW<IRCTRLrs> {
         IrprsenW::new(self, 7)
     }
     ///Bits 8:11 - IrDA PRS Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn irprssel(&mut self) -> IrprsselW<IRCTRLrs> {
         IrprsselW::new(self, 8)
     }

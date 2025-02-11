@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 1:7 - Slave Address Mask
     #[inline(always)]
-    #[must_use]
     pub fn mask(&mut self) -> MaskW<SADDRMASKrs> {
         MaskW::new(self, 1)
     }

@@ -431,25 +431,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - S0IN PRS Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn s0prssel(&mut self) -> S0prsselW<INPUTrs> {
         S0prsselW::new(self, 0)
     }
     ///Bit 5 - S0IN PRS Enable
     #[inline(always)]
-    #[must_use]
     pub fn s0prsen(&mut self) -> S0prsenW<INPUTrs> {
         S0prsenW::new(self, 5)
     }
     ///Bits 6:9 - S1IN PRS Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn s1prssel(&mut self) -> S1prsselW<INPUTrs> {
         S1prsselW::new(self, 6)
     }
     ///Bit 11 - S1IN PRS Enable
     #[inline(always)]
-    #[must_use]
     pub fn s1prsen(&mut self) -> S1prsenW<INPUTrs> {
         S1prsenW::new(self, 11)
     }

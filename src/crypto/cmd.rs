@@ -27,25 +27,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Execute Instruction
     #[inline(always)]
-    #[must_use]
     pub fn instr(&mut self) -> InstrW<CMDrs> {
         InstrW::new(self, 0)
     }
     ///Bit 9 - Encryption/Decryption SEQUENCE Start
     #[inline(always)]
-    #[must_use]
     pub fn seqstart(&mut self) -> SeqstartW<CMDrs> {
         SeqstartW::new(self, 9)
     }
     ///Bit 10 - Sequence Stop
     #[inline(always)]
-    #[must_use]
     pub fn seqstop(&mut self) -> SeqstopW<CMDrs> {
         SeqstopW::new(self, 10)
     }
     ///Bit 11 - Sequence Step
     #[inline(always)]
-    #[must_use]
     pub fn seqstep(&mut self) -> SeqstepW<CMDrs> {
         SeqstepW::new(self, 11)
     }

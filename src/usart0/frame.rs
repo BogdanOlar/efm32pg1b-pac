@@ -402,19 +402,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Data-Bit Mode
     #[inline(always)]
-    #[must_use]
     pub fn databits(&mut self) -> DatabitsW<FRAMErs> {
         DatabitsW::new(self, 0)
     }
     ///Bits 8:9 - Parity-Bit Mode
     #[inline(always)]
-    #[must_use]
     pub fn parity(&mut self) -> ParityW<FRAMErs> {
         ParityW::new(self, 8)
     }
     ///Bits 12:13 - Stop-Bit Mode
     #[inline(always)]
-    #[must_use]
     pub fn stopbits(&mut self) -> StopbitsW<FRAMErs> {
         StopbitsW::new(self, 12)
     }

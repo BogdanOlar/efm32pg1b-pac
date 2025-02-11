@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - EM4 Wake-up Enable
     #[inline(always)]
-    #[must_use]
     pub fn em4wu(&mut self) -> Em4wuW<EM4WUENrs> {
         Em4wuW::new(self, 0)
     }

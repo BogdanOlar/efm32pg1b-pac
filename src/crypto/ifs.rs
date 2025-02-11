@@ -12,13 +12,11 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set INSTRDONE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn instrdone(&mut self) -> InstrdoneW<IFSrs> {
         InstrdoneW::new(self, 0)
     }
     ///Bit 1 - Set SEQDONE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn seqdone(&mut self) -> SeqdoneW<IFSrs> {
         SeqdoneW::new(self, 1)
     }

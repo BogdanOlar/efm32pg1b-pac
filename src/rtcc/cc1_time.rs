@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Seconds, Units
     #[inline(always)]
-    #[must_use]
     pub fn secu(&mut self) -> SecuW<CC1_TIMErs> {
         SecuW::new(self, 0)
     }
     ///Bits 4:6 - Seconds, Tens
     #[inline(always)]
-    #[must_use]
     pub fn sect(&mut self) -> SectW<CC1_TIMErs> {
         SectW::new(self, 4)
     }
     ///Bits 8:11 - Minutes, Units
     #[inline(always)]
-    #[must_use]
     pub fn minu(&mut self) -> MinuW<CC1_TIMErs> {
         MinuW::new(self, 8)
     }
     ///Bits 12:14 - Minutes, Tens
     #[inline(always)]
-    #[must_use]
     pub fn mint(&mut self) -> MintW<CC1_TIMErs> {
         MintW::new(self, 12)
     }
     ///Bits 16:19 - Hours, Units
     #[inline(always)]
-    #[must_use]
     pub fn houru(&mut self) -> HouruW<CC1_TIMErs> {
         HouruW::new(self, 16)
     }
     ///Bits 20:21 - Hours, Tens
     #[inline(always)]
-    #[must_use]
     pub fn hourt(&mut self) -> HourtW<CC1_TIMErs> {
         HourtW::new(self, 20)
     }

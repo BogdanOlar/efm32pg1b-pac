@@ -348,49 +348,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Pin 0 Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode0(&mut self) -> Mode0W<MODELrs> {
         Mode0W::new(self, 0)
     }
     ///Bits 4:7 - Pin 1 Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode1(&mut self) -> Mode1W<MODELrs> {
         Mode1W::new(self, 4)
     }
     ///Bits 8:11 - Pin 2 Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode2(&mut self) -> Mode2W<MODELrs> {
         Mode2W::new(self, 8)
     }
     ///Bits 12:15 - Pin 3 Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode3(&mut self) -> Mode3W<MODELrs> {
         Mode3W::new(self, 12)
     }
     ///Bits 16:19 - Pin 4 Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode4(&mut self) -> Mode4W<MODELrs> {
         Mode4W::new(self, 16)
     }
     ///Bits 20:23 - Pin 5 Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode5(&mut self) -> Mode5W<MODELrs> {
         Mode5W::new(self, 20)
     }
     ///Bits 24:27 - Pin 6 Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode6(&mut self) -> Mode6W<MODELrs> {
         Mode6W::new(self, 24)
     }
     ///Bits 28:31 - Pin 7 Mode
     #[inline(always)]
-    #[must_use]
     pub fn mode7(&mut self) -> Mode7W<MODELrs> {
         Mode7W::new(self, 28)
     }

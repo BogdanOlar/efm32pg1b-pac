@@ -41,13 +41,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Link Next Structure
     #[inline(always)]
-    #[must_use]
     pub fn link(&mut self) -> LinkW<CH2_LINKrs> {
         LinkW::new(self, 1)
     }
     ///Bits 2:31 - Link Structure Address
     #[inline(always)]
-    #[must_use]
     pub fn linkaddr(&mut self) -> LinkaddrW<CH2_LINKrs> {
         LinkaddrW::new(self, 2)
     }

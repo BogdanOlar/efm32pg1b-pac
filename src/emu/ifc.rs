@@ -46,115 +46,96 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear VMONAVDDFALL Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmonavddfall(&mut self) -> VmonavddfallW<IFCrs> {
         VmonavddfallW::new(self, 0)
     }
     ///Bit 1 - Clear VMONAVDDRISE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmonavddrise(&mut self) -> VmonavddriseW<IFCrs> {
         VmonavddriseW::new(self, 1)
     }
     ///Bit 2 - Clear VMONALTAVDDFALL Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmonaltavddfall(&mut self) -> VmonaltavddfallW<IFCrs> {
         VmonaltavddfallW::new(self, 2)
     }
     ///Bit 3 - Clear VMONALTAVDDRISE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmonaltavddrise(&mut self) -> VmonaltavddriseW<IFCrs> {
         VmonaltavddriseW::new(self, 3)
     }
     ///Bit 4 - Clear VMONDVDDFALL Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmondvddfall(&mut self) -> VmondvddfallW<IFCrs> {
         VmondvddfallW::new(self, 4)
     }
     ///Bit 5 - Clear VMONDVDDRISE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmondvddrise(&mut self) -> VmondvddriseW<IFCrs> {
         VmondvddriseW::new(self, 5)
     }
     ///Bit 6 - Clear VMONIO0FALL Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmonio0fall(&mut self) -> Vmonio0fallW<IFCrs> {
         Vmonio0fallW::new(self, 6)
     }
     ///Bit 7 - Clear VMONIO0RISE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmonio0rise(&mut self) -> Vmonio0riseW<IFCrs> {
         Vmonio0riseW::new(self, 7)
     }
     ///Bit 14 - Clear VMONFVDDFALL Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmonfvddfall(&mut self) -> VmonfvddfallW<IFCrs> {
         VmonfvddfallW::new(self, 14)
     }
     ///Bit 15 - Clear VMONFVDDRISE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vmonfvddrise(&mut self) -> VmonfvddriseW<IFCrs> {
         VmonfvddriseW::new(self, 15)
     }
     ///Bit 16 - Clear PFETOVERCURRENTLIMIT Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn pfetovercurrentlimit(&mut self) -> PfetovercurrentlimitW<IFCrs> {
         PfetovercurrentlimitW::new(self, 16)
     }
     ///Bit 17 - Clear NFETOVERCURRENTLIMIT Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn nfetovercurrentlimit(&mut self) -> NfetovercurrentlimitW<IFCrs> {
         NfetovercurrentlimitW::new(self, 17)
     }
     ///Bit 18 - Clear DCDCLPRUNNING Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn dcdclprunning(&mut self) -> DcdclprunningW<IFCrs> {
         DcdclprunningW::new(self, 18)
     }
     ///Bit 19 - Clear DCDCLNRUNNING Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn dcdclnrunning(&mut self) -> DcdclnrunningW<IFCrs> {
         DcdclnrunningW::new(self, 19)
     }
     ///Bit 20 - Clear DCDCINBYPASS Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn dcdcinbypass(&mut self) -> DcdcinbypassW<IFCrs> {
         DcdcinbypassW::new(self, 20)
     }
     ///Bit 24 - Clear EM23WAKEUP Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn em23wakeup(&mut self) -> Em23wakeupW<IFCrs> {
         Em23wakeupW::new(self, 24)
     }
     ///Bit 29 - Clear TEMP Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn temp(&mut self) -> TempW<IFCrs> {
         TempW::new(self, 29)
     }
     ///Bit 30 - Clear TEMPLOW Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn templow(&mut self) -> TemplowW<IFCrs> {
         TemplowW::new(self, 30)
     }
     ///Bit 31 - Clear TEMPHIGH Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn temphigh(&mut self) -> TemphighW<IFCrs> {
         TemphighW::new(self, 31)
     }

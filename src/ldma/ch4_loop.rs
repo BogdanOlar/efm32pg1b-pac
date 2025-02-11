@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Linked Structure Sequence Loop Counter
     #[inline(always)]
-    #[must_use]
     pub fn loopcnt(&mut self) -> LoopcntW<CH4_LOOPrs> {
         LoopcntW::new(self, 0)
     }

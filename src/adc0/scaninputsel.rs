@@ -1121,25 +1121,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:4 - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK
     #[inline(always)]
-    #[must_use]
     pub fn input0to7sel(&mut self) -> Input0to7selW<SCANINPUTSELrs> {
         Input0to7selW::new(self, 0)
     }
     ///Bits 8:12 - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK
     #[inline(always)]
-    #[must_use]
     pub fn input8to15sel(&mut self) -> Input8to15selW<SCANINPUTSELrs> {
         Input8to15selW::new(self, 8)
     }
     ///Bits 16:20 - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK
     #[inline(always)]
-    #[must_use]
     pub fn input16to23sel(&mut self) -> Input16to23selW<SCANINPUTSELrs> {
         Input16to23selW::new(self, 16)
     }
     ///Bits 24:28 - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK
     #[inline(always)]
-    #[must_use]
     pub fn input24to31sel(&mut self) -> Input24to31selW<SCANINPUTSELrs> {
         Input24to31selW::new(self, 24)
     }

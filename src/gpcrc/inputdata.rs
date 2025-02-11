@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Input Data for 32-bit
     #[inline(always)]
-    #[must_use]
     pub fn inputdata(&mut self) -> InputdataW<INPUTDATArs> {
         InputdataW::new(self, 0)
     }

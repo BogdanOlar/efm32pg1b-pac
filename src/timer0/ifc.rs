@@ -30,67 +30,56 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear OF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn of(&mut self) -> OfW<IFCrs> {
         OfW::new(self, 0)
     }
     ///Bit 1 - Clear UF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn uf(&mut self) -> UfW<IFCrs> {
         UfW::new(self, 1)
     }
     ///Bit 2 - Clear DIRCHG Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn dirchg(&mut self) -> DirchgW<IFCrs> {
         DirchgW::new(self, 2)
     }
     ///Bit 4 - Clear CC0 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cc0(&mut self) -> Cc0W<IFCrs> {
         Cc0W::new(self, 4)
     }
     ///Bit 5 - Clear CC1 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cc1(&mut self) -> Cc1W<IFCrs> {
         Cc1W::new(self, 5)
     }
     ///Bit 6 - Clear CC2 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cc2(&mut self) -> Cc2W<IFCrs> {
         Cc2W::new(self, 6)
     }
     ///Bit 7 - Clear CC3 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cc3(&mut self) -> Cc3W<IFCrs> {
         Cc3W::new(self, 7)
     }
     ///Bit 8 - Clear ICBOF0 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn icbof0(&mut self) -> Icbof0W<IFCrs> {
         Icbof0W::new(self, 8)
     }
     ///Bit 9 - Clear ICBOF1 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn icbof1(&mut self) -> Icbof1W<IFCrs> {
         Icbof1W::new(self, 9)
     }
     ///Bit 10 - Clear ICBOF2 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn icbof2(&mut self) -> Icbof2W<IFCrs> {
         Icbof2W::new(self, 10)
     }
     ///Bit 11 - Clear ICBOF3 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn icbof3(&mut self) -> Icbof3W<IFCrs> {
         Icbof3W::new(self, 11)
     }

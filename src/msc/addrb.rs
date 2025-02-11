@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Page Erase or Write Address Buffer
     #[inline(always)]
-    #[must_use]
     pub fn addrb(&mut self) -> AddrbW<ADDRBrs> {
         AddrbW::new(self, 0)
     }

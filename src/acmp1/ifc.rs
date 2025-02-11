@@ -14,19 +14,16 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear EDGE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn edge(&mut self) -> EdgeW<IFCrs> {
         EdgeW::new(self, 0)
     }
     ///Bit 1 - Clear WARMUP Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn warmup(&mut self) -> WarmupW<IFCrs> {
         WarmupW::new(self, 1)
     }
     ///Bit 2 - Clear APORTCONFLICT Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn aportconflict(&mut self) -> AportconflictW<IFCrs> {
         AportconflictW::new(self, 2)
     }

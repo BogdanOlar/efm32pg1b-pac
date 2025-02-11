@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Data Out for pins 0:15
     #[inline(always)]
-    #[must_use]
     pub fn pins_dout(&mut self) -> PinsDoutW<DOUTrs> {
         PinsDoutW::new(self, 0)
     }

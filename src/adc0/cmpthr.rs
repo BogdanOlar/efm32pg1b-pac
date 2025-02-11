@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Less Than Compare Threshold
     #[inline(always)]
-    #[must_use]
     pub fn adlt(&mut self) -> AdltW<CMPTHRrs> {
         AdltW::new(self, 0)
     }
     ///Bits 16:31 - Greater Than Compare Threshold
     #[inline(always)]
-    #[must_use]
     pub fn adgt(&mut self) -> AdgtW<CMPTHRrs> {
         AdgtW::new(self, 16)
     }

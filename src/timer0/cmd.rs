@@ -12,13 +12,11 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Start Timer
     #[inline(always)]
-    #[must_use]
     pub fn start(&mut self) -> StartW<CMDrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - Stop Timer
     #[inline(always)]
-    #[must_use]
     pub fn stop(&mut self) -> StopW<CMDrs> {
         StopW::new(self, 1)
     }

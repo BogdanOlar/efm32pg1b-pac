@@ -128,19 +128,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 16:17 - Arbitration Slot Number Select
     #[inline(always)]
-    #[must_use]
     pub fn arbslots(&mut self) -> ArbslotsW<CH2_CFGrs> {
         ArbslotsW::new(self, 16)
     }
     ///Bit 20 - Source Address Increment Sign
     #[inline(always)]
-    #[must_use]
     pub fn srcincsign(&mut self) -> SrcincsignW<CH2_CFGrs> {
         SrcincsignW::new(self, 20)
     }
     ///Bit 21 - Destination Address Increment Sign
     #[inline(always)]
-    #[must_use]
     pub fn dstincsign(&mut self) -> DstincsignW<CH2_CFGrs> {
         DstincsignW::new(self, 21)
     }

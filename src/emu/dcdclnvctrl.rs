@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Low Noise Mode Feedback Attenuation
     #[inline(always)]
-    #[must_use]
     pub fn lnatt(&mut self) -> LnattW<DCDCLNVCTRLrs> {
         LnattW::new(self, 1)
     }
     ///Bits 8:14 - Low Noise Mode VREF Trim
     #[inline(always)]
-    #[must_use]
     pub fn lnvref(&mut self) -> LnvrefW<DCDCLNVCTRLrs> {
         LnvrefW::new(self, 8)
     }

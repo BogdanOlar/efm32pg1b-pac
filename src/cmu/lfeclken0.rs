@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Real-Time Counter and Calendar Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn rtcc(&mut self) -> RtccW<LFECLKEN0rs> {
         RtccW::new(self, 0)
     }

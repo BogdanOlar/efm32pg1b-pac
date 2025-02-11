@@ -18,31 +18,26 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Start LETIMER
     #[inline(always)]
-    #[must_use]
     pub fn start(&mut self) -> StartW<CMDrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - Stop LETIMER
     #[inline(always)]
-    #[must_use]
     pub fn stop(&mut self) -> StopW<CMDrs> {
         StopW::new(self, 1)
     }
     ///Bit 2 - Clear LETIMER
     #[inline(always)]
-    #[must_use]
     pub fn clear(&mut self) -> ClearW<CMDrs> {
         ClearW::new(self, 2)
     }
     ///Bit 3 - Clear Toggle Output 0
     #[inline(always)]
-    #[must_use]
     pub fn cto0(&mut self) -> Cto0W<CMDrs> {
         Cto0W::new(self, 3)
     }
     ///Bit 4 - Clear Toggle Output 1
     #[inline(always)]
-    #[must_use]
     pub fn cto1(&mut self) -> Cto1W<CMDrs> {
         Cto1W::new(self, 4)
     }

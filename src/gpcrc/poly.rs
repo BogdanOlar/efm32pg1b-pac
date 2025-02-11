@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - CRC Polynomial Value
     #[inline(always)]
-    #[must_use]
     pub fn poly(&mut self) -> PolyW<POLYrs> {
         PolyW::new(self, 0)
     }

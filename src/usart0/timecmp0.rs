@@ -236,25 +236,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Timer Comparator 0
     #[inline(always)]
-    #[must_use]
     pub fn tcmpval(&mut self) -> TcmpvalW<TIMECMP0rs> {
         TcmpvalW::new(self, 0)
     }
     ///Bits 16:18 - Timer Start Source
     #[inline(always)]
-    #[must_use]
     pub fn tstart(&mut self) -> TstartW<TIMECMP0rs> {
         TstartW::new(self, 16)
     }
     ///Bits 20:22 - Source Used to Disable Comparator 0
     #[inline(always)]
-    #[must_use]
     pub fn tstop(&mut self) -> TstopW<TIMECMP0rs> {
         TstopW::new(self, 20)
     }
     ///Bit 24 - Restart Timer on TCMP0
     #[inline(always)]
-    #[must_use]
     pub fn restarten(&mut self) -> RestartenW<TIMECMP0rs> {
         RestartenW::new(self, 24)
     }

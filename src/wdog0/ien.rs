@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - TOUT Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn tout(&mut self) -> ToutW<IENrs> {
         ToutW::new(self, 0)
     }
     ///Bit 1 - WARN Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn warn(&mut self) -> WarnW<IENrs> {
         WarnW::new(self, 1)
     }
     ///Bit 2 - WIN Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn win(&mut self) -> WinW<IENrs> {
         WinW::new(self, 2)
     }
     ///Bit 3 - PEM0 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn pem0(&mut self) -> Pem0W<IENrs> {
         Pem0W::new(self, 3)
     }
     ///Bit 4 - PEM1 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn pem1(&mut self) -> Pem1W<IENrs> {
         Pem1W::new(self, 4)
     }

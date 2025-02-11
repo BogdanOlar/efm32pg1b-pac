@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Compare Value 1
     #[inline(always)]
-    #[must_use]
     pub fn comp1(&mut self) -> Comp1W<COMP1rs> {
         Comp1W::new(self, 0)
     }

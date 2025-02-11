@@ -133,73 +133,61 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - CH0 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch0pen(&mut self) -> Ch0penW<ROUTEPENrs> {
         Ch0penW::new(self, 0)
     }
     ///Bit 1 - CH1 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch1pen(&mut self) -> Ch1penW<ROUTEPENrs> {
         Ch1penW::new(self, 1)
     }
     ///Bit 2 - CH2 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch2pen(&mut self) -> Ch2penW<ROUTEPENrs> {
         Ch2penW::new(self, 2)
     }
     ///Bit 3 - CH3 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch3pen(&mut self) -> Ch3penW<ROUTEPENrs> {
         Ch3penW::new(self, 3)
     }
     ///Bit 4 - CH4 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch4pen(&mut self) -> Ch4penW<ROUTEPENrs> {
         Ch4penW::new(self, 4)
     }
     ///Bit 5 - CH5 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch5pen(&mut self) -> Ch5penW<ROUTEPENrs> {
         Ch5penW::new(self, 5)
     }
     ///Bit 6 - CH6 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch6pen(&mut self) -> Ch6penW<ROUTEPENrs> {
         Ch6penW::new(self, 6)
     }
     ///Bit 7 - CH7 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch7pen(&mut self) -> Ch7penW<ROUTEPENrs> {
         Ch7penW::new(self, 7)
     }
     ///Bit 8 - CH8 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch8pen(&mut self) -> Ch8penW<ROUTEPENrs> {
         Ch8penW::new(self, 8)
     }
     ///Bit 9 - CH9 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch9pen(&mut self) -> Ch9penW<ROUTEPENrs> {
         Ch9penW::new(self, 9)
     }
     ///Bit 10 - CH10 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch10pen(&mut self) -> Ch10penW<ROUTEPENrs> {
         Ch10penW::new(self, 10)
     }
     ///Bit 11 - CH11 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ch11pen(&mut self) -> Ch11penW<ROUTEPENrs> {
         Ch11penW::new(self, 11)
     }

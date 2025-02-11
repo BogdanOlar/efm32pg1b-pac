@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<CC1_CCVrs> {
 impl W {
     ///Bits 0:15 - CC Channel Value
     #[inline(always)]
-    #[must_use]
     pub fn ccv(&mut self) -> CcvW<CC1_CCVrs> {
         CcvW::new(self, 0)
     }

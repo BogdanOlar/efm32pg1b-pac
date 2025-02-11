@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - LN Mode RCO Frequency Band Selection
     #[inline(always)]
-    #[must_use]
     pub fn rcoband(&mut self) -> RcobandW<DCDCLNFREQCTRLrs> {
         RcobandW::new(self, 0)
     }
     ///Bits 24:28 - Reserved for internal use. Do not change.
     #[inline(always)]
-    #[must_use]
     pub fn rcotrim(&mut self) -> RcotrimW<DCDCLNFREQCTRLrs> {
         RcotrimW::new(self, 24)
     }

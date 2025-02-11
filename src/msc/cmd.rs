@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Flash Power Up Command
     #[inline(always)]
-    #[must_use]
     pub fn pwrup(&mut self) -> PwrupW<CMDrs> {
         PwrupW::new(self, 0)
     }

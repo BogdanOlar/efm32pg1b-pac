@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - DTI CC0 Output Generation Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtogcc0en(&mut self) -> Dtogcc0enW<DTOGENrs> {
         Dtogcc0enW::new(self, 0)
     }
     ///Bit 1 - DTI CC1 Output Generation Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtogcc1en(&mut self) -> Dtogcc1enW<DTOGENrs> {
         Dtogcc1enW::new(self, 1)
     }
     ///Bit 2 - DTI CC2 Output Generation Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtogcc2en(&mut self) -> Dtogcc2enW<DTOGENrs> {
         Dtogcc2enW::new(self, 2)
     }
     ///Bit 3 - DTI CDTI0 Output Generation Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtogcdti0en(&mut self) -> Dtogcdti0enW<DTOGENrs> {
         Dtogcdti0enW::new(self, 3)
     }
     ///Bit 4 - DTI CDTI1 Output Generation Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtogcdti1en(&mut self) -> Dtogcdti1enW<DTOGENrs> {
         Dtogcdti1enW::new(self, 4)
     }
     ///Bit 5 - DTI CDTI2 Output Generation Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtogcdti2en(&mut self) -> Dtogcdti2enW<DTOGENrs> {
         Dtogcdti2enW::new(self, 5)
     }

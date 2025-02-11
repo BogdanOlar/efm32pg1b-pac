@@ -24,49 +24,41 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 8 - Clear SINGLEOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn singleof(&mut self) -> SingleofW<IFCrs> {
         SingleofW::new(self, 8)
     }
     ///Bit 9 - Clear SCANOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn scanof(&mut self) -> ScanofW<IFCrs> {
         ScanofW::new(self, 9)
     }
     ///Bit 10 - Clear SINGLEUF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn singleuf(&mut self) -> SingleufW<IFCrs> {
         SingleufW::new(self, 10)
     }
     ///Bit 11 - Clear SCANUF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn scanuf(&mut self) -> ScanufW<IFCrs> {
         ScanufW::new(self, 11)
     }
     ///Bit 16 - Clear SINGLECMP Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn singlecmp(&mut self) -> SinglecmpW<IFCrs> {
         SinglecmpW::new(self, 16)
     }
     ///Bit 17 - Clear SCANCMP Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn scancmp(&mut self) -> ScancmpW<IFCrs> {
         ScancmpW::new(self, 17)
     }
     ///Bit 24 - Clear VREFOV Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn vrefov(&mut self) -> VrefovW<IFCrs> {
         VrefovW::new(self, 24)
     }
     ///Bit 25 - Clear PROGERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn progerr(&mut self) -> ProgerrW<IFCrs> {
         ProgerrW::new(self, 25)
     }

@@ -222,13 +222,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - RX PRS Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn rxprssel(&mut self) -> RxprsselW<INPUTrs> {
         RxprsselW::new(self, 0)
     }
     ///Bit 5 - PRS RX Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxprs(&mut self) -> RxprsW<INPUTrs> {
         RxprsW::new(self, 5)
     }

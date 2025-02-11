@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<VMONIO0CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 2 - Rise Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn risewu(&mut self) -> RisewuW<VMONIO0CTRLrs> {
         RisewuW::new(self, 2)
     }
     ///Bit 3 - Fall Wakeup
     #[inline(always)]
-    #[must_use]
     pub fn fallwu(&mut self) -> FallwuW<VMONIO0CTRLrs> {
         FallwuW::new(self, 3)
     }
     ///Bit 4 - EM4 IO0 Retention Disable
     #[inline(always)]
-    #[must_use]
     pub fn retdis(&mut self) -> RetdisW<VMONIO0CTRLrs> {
         RetdisW::new(self, 4)
     }
     ///Bits 8:11 - Threshold Fine Adjust
     #[inline(always)]
-    #[must_use]
     pub fn thresfine(&mut self) -> ThresfineW<VMONIO0CTRLrs> {
         ThresfineW::new(self, 8)
     }
     ///Bits 12:15 - Threshold Coarse Adjust
     #[inline(always)]
-    #[must_use]
     pub fn threscoarse(&mut self) -> ThrescoarseW<VMONIO0CTRLrs> {
         ThrescoarseW::new(self, 12)
     }

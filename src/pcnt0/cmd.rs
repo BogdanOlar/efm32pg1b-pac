@@ -12,13 +12,11 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Load CNT Immediately
     #[inline(always)]
-    #[must_use]
     pub fn lcntim(&mut self) -> LcntimW<CMDrs> {
         LcntimW::new(self, 0)
     }
     ///Bit 1 - Load TOPB Immediately
     #[inline(always)]
-    #[must_use]
     pub fn ltopbim(&mut self) -> LtopbimW<CMDrs> {
         LtopbimW::new(self, 1)
     }

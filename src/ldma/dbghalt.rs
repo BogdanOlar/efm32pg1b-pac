@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - DMA Debug Halt
     #[inline(always)]
-    #[must_use]
     pub fn dbghalt(&mut self) -> DbghaltW<DBGHALTrs> {
         DbghaltW::new(self, 0)
     }

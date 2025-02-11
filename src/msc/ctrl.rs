@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Invalid Address Bus Fault Response Enable
     #[inline(always)]
-    #[must_use]
     pub fn addrfaulten(&mut self) -> AddrfaultenW<CTRLrs> {
         AddrfaultenW::new(self, 0)
     }
     ///Bit 1 - Clock-disabled Bus Fault Response Enable
     #[inline(always)]
-    #[must_use]
     pub fn clkdisfaulten(&mut self) -> ClkdisfaultenW<CTRLrs> {
         ClkdisfaultenW::new(self, 1)
     }
     ///Bit 2 - Power Up on Demand During Wake Up
     #[inline(always)]
-    #[must_use]
     pub fn pwrupondemand(&mut self) -> PwrupondemandW<CTRLrs> {
         PwrupondemandW::new(self, 2)
     }
     ///Bit 3 - IFC Read Clears IF
     #[inline(always)]
-    #[must_use]
     pub fn ifcreadclear(&mut self) -> IfcreadclearW<CTRLrs> {
         IfcreadclearW::new(self, 3)
     }

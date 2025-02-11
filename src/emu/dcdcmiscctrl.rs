@@ -168,43 +168,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Force DCDC Into CCM Mode in Low Noise Operation
     #[inline(always)]
-    #[must_use]
     pub fn lnforceccm(&mut self) -> LnforceccmW<DCDCMISCCTRLrs> {
         LnforceccmW::new(self, 0)
     }
     ///Bits 8:11 - PFET Switch Number Selection
     #[inline(always)]
-    #[must_use]
     pub fn pfetcnt(&mut self) -> PfetcntW<DCDCMISCCTRLrs> {
         PfetcntW::new(self, 8)
     }
     ///Bits 12:15 - NFET Switch Number Selection
     #[inline(always)]
-    #[must_use]
     pub fn nfetcnt(&mut self) -> NfetcntW<DCDCMISCCTRLrs> {
         NfetcntW::new(self, 12)
     }
     ///Bits 16:19 - Current Limit in Bypass Mode
     #[inline(always)]
-    #[must_use]
     pub fn byplimsel(&mut self) -> ByplimselW<DCDCMISCCTRLrs> {
         ByplimselW::new(self, 16)
     }
     ///Bits 20:22 - Current Limit Level Selection for Current Limiter in LP Mode
     #[inline(always)]
-    #[must_use]
     pub fn lpclimilimsel(&mut self) -> LpclimilimselW<DCDCMISCCTRLrs> {
         LpclimilimselW::new(self, 20)
     }
     ///Bits 24:26 - Current Limit Level Selection for Current Limiter in LN Mode
     #[inline(always)]
-    #[must_use]
     pub fn lnclimilimsel(&mut self) -> LnclimilimselW<DCDCMISCCTRLrs> {
         LnclimilimselW::new(self, 24)
     }
     ///Bits 28:29 - LP Mode Comparator Bias Selection
     #[inline(always)]
-    #[must_use]
     pub fn lpcmpbias(&mut self) -> LpcmpbiasW<DCDCMISCCTRLrs> {
         LpcmpbiasW::new(self, 28)
     }

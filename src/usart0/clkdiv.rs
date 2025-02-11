@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 3:22 - Fractional Clock Divider
     #[inline(always)]
-    #[must_use]
     pub fn div(&mut self) -> DivW<CLKDIVrs> {
         DivW::new(self, 3)
     }
     ///Bit 31 - AUTOBAUD Detection Enable
     #[inline(always)]
-    #[must_use]
     pub fn autobauden(&mut self) -> AutobaudenW<CLKDIVrs> {
         AutobaudenW::new(self, 31)
     }

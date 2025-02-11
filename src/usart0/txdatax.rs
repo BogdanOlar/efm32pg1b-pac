@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - TX Data
     #[inline(always)]
-    #[must_use]
     pub fn txdatax(&mut self) -> TxdataxW<TXDATAXrs> {
         TxdataxW::new(self, 0)
     }
     ///Bit 11 - Unblock RX After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn ubrxat(&mut self) -> UbrxatW<TXDATAXrs> {
         UbrxatW::new(self, 11)
     }
     ///Bit 12 - Set TXTRI After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn txtriat(&mut self) -> TxtriatW<TXDATAXrs> {
         TxtriatW::new(self, 12)
     }
     ///Bit 13 - Transmit Data as Break
     #[inline(always)]
-    #[must_use]
     pub fn txbreak(&mut self) -> TxbreakW<TXDATAXrs> {
         TxbreakW::new(self, 13)
     }
     ///Bit 14 - Clear TXEN After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn txdisat(&mut self) -> TxdisatW<TXDATAXrs> {
         TxdisatW::new(self, 14)
     }
     ///Bit 15 - Enable RX After Transmission
     #[inline(always)]
-    #[must_use]
     pub fn rxenat(&mut self) -> RxenatW<TXDATAXrs> {
         RxenatW::new(self, 15)
     }

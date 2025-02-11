@@ -282,49 +282,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - DTI Enable
     #[inline(always)]
-    #[must_use]
     pub fn dten(&mut self) -> DtenW<DTCTRLrs> {
         DtenW::new(self, 0)
     }
     ///Bit 1 - DTI Automatic Start-up Functionality
     #[inline(always)]
-    #[must_use]
     pub fn dtdas(&mut self) -> DtdasW<DTCTRLrs> {
         DtdasW::new(self, 1)
     }
     ///Bit 2 - DTI Inactive Polarity
     #[inline(always)]
-    #[must_use]
     pub fn dtipol(&mut self) -> DtipolW<DTCTRLrs> {
         DtipolW::new(self, 2)
     }
     ///Bit 3 - DTI Complementary Output Invert
     #[inline(always)]
-    #[must_use]
     pub fn dtcinv(&mut self) -> DtcinvW<DTCTRLrs> {
         DtcinvW::new(self, 3)
     }
     ///Bits 4:7 - DTI PRS Source Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn dtprssel(&mut self) -> DtprsselW<DTCTRLrs> {
         DtprsselW::new(self, 4)
     }
     ///Bit 9 - DTI Always Run
     #[inline(always)]
-    #[must_use]
     pub fn dtar(&mut self) -> DtarW<DTCTRLrs> {
         DtarW::new(self, 9)
     }
     ///Bit 10 - DTI Fault Action on Timer Stop
     #[inline(always)]
-    #[must_use]
     pub fn dtfats(&mut self) -> DtfatsW<DTCTRLrs> {
         DtfatsW::new(self, 10)
     }
     ///Bit 24 - DTI PRS Source Enable
     #[inline(always)]
-    #[must_use]
     pub fn dtprsen(&mut self) -> DtprsenW<DTCTRLrs> {
         DtprsenW::new(self, 24)
     }

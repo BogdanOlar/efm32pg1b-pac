@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - TX Data
     #[inline(always)]
-    #[must_use]
     pub fn txdata0(&mut self) -> Txdata0W<TXDOUBLErs> {
         Txdata0W::new(self, 0)
     }
     ///Bits 8:15 - TX Data
     #[inline(always)]
-    #[must_use]
     pub fn txdata1(&mut self) -> Txdata1W<TXDOUBLErs> {
         Txdata1W::new(self, 8)
     }

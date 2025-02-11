@@ -472,7 +472,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn outloc(&mut self) -> OutlocW<ROUTELOC0rs> {
         OutlocW::new(self, 0)
     }

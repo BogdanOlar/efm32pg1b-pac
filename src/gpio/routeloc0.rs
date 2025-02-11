@@ -108,7 +108,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn swvloc(&mut self) -> SwvlocW<ROUTELOC0rs> {
         SwvlocW::new(self, 0)
     }

@@ -113,61 +113,51 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - SINGLE Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn single(&mut self) -> SingleW<IENrs> {
         SingleW::new(self, 0)
     }
     ///Bit 1 - SCAN Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn scan(&mut self) -> ScanW<IENrs> {
         ScanW::new(self, 1)
     }
     ///Bit 8 - SINGLEOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn singleof(&mut self) -> SingleofW<IENrs> {
         SingleofW::new(self, 8)
     }
     ///Bit 9 - SCANOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn scanof(&mut self) -> ScanofW<IENrs> {
         ScanofW::new(self, 9)
     }
     ///Bit 10 - SINGLEUF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn singleuf(&mut self) -> SingleufW<IENrs> {
         SingleufW::new(self, 10)
     }
     ///Bit 11 - SCANUF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn scanuf(&mut self) -> ScanufW<IENrs> {
         ScanufW::new(self, 11)
     }
     ///Bit 16 - SINGLECMP Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn singlecmp(&mut self) -> SinglecmpW<IENrs> {
         SinglecmpW::new(self, 16)
     }
     ///Bit 17 - SCANCMP Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn scancmp(&mut self) -> ScancmpW<IENrs> {
         ScancmpW::new(self, 17)
     }
     ///Bit 24 - VREFOV Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn vrefov(&mut self) -> VrefovW<IENrs> {
         VrefovW::new(self, 24)
     }
     ///Bit 25 - PROGERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn progerr(&mut self) -> ProgerrW<IENrs> {
         ProgerrW::new(self, 25)
     }

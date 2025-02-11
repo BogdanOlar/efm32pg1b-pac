@@ -445,49 +445,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Signal Select
     #[inline(always)]
-    #[must_use]
     pub fn sigsel(&mut self) -> SigselW<CH0_CTRLrs> {
         SigselW::new(self, 0)
     }
     ///Bits 8:14 - Source Select
     #[inline(always)]
-    #[must_use]
     pub fn sourcesel(&mut self) -> SourceselW<CH0_CTRLrs> {
         SourceselW::new(self, 8)
     }
     ///Bits 20:21 - Edge Detect Select
     #[inline(always)]
-    #[must_use]
     pub fn edsel(&mut self) -> EdselW<CH0_CTRLrs> {
         EdselW::new(self, 20)
     }
     ///Bit 25 - Stretch Channel Output
     #[inline(always)]
-    #[must_use]
     pub fn stretch(&mut self) -> StretchW<CH0_CTRLrs> {
         StretchW::new(self, 25)
     }
     ///Bit 26 - Invert Channel
     #[inline(always)]
-    #[must_use]
     pub fn inv(&mut self) -> InvW<CH0_CTRLrs> {
         InvW::new(self, 26)
     }
     ///Bit 27 - Or Previous
     #[inline(always)]
-    #[must_use]
     pub fn orprev(&mut self) -> OrprevW<CH0_CTRLrs> {
         OrprevW::new(self, 27)
     }
     ///Bit 28 - And Next
     #[inline(always)]
-    #[must_use]
     pub fn andnext(&mut self) -> AndnextW<CH0_CTRLrs> {
         AndnextW::new(self, 28)
     }
     ///Bit 30 - Asynchronous Reflex
     #[inline(always)]
-    #[must_use]
     pub fn asyncrefl(&mut self) -> AsyncreflW<CH0_CTRLrs> {
         AsyncreflW::new(self, 30)
     }

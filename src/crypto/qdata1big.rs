@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<QDATA1BIGrs> {
 impl W {
     ///Bits 0:31 - Quad Data 1 Big Endian Access
     #[inline(always)]
-    #[must_use]
     pub fn qdata1big(&mut self) -> Qdata1bigW<QDATA1BIGrs> {
         Qdata1bigW::new(self, 0)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Synchronization Trigger
     #[inline(always)]
-    #[must_use]
     pub fn synctrig(&mut self) -> SynctrigW<SYNCrs> {
         SynctrigW::new(self, 0)
     }

@@ -38,91 +38,76 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set TXC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn txc(&mut self) -> TxcW<IFSrs> {
         TxcW::new(self, 0)
     }
     ///Bit 3 - Set RXFULL Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rxfull(&mut self) -> RxfullW<IFSrs> {
         RxfullW::new(self, 3)
     }
     ///Bit 4 - Set RXOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rxof(&mut self) -> RxofW<IFSrs> {
         RxofW::new(self, 4)
     }
     ///Bit 5 - Set RXUF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rxuf(&mut self) -> RxufW<IFSrs> {
         RxufW::new(self, 5)
     }
     ///Bit 6 - Set TXOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn txof(&mut self) -> TxofW<IFSrs> {
         TxofW::new(self, 6)
     }
     ///Bit 7 - Set TXUF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn txuf(&mut self) -> TxufW<IFSrs> {
         TxufW::new(self, 7)
     }
     ///Bit 8 - Set PERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn perr(&mut self) -> PerrW<IFSrs> {
         PerrW::new(self, 8)
     }
     ///Bit 9 - Set FERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn ferr(&mut self) -> FerrW<IFSrs> {
         FerrW::new(self, 9)
     }
     ///Bit 10 - Set MPAF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn mpaf(&mut self) -> MpafW<IFSrs> {
         MpafW::new(self, 10)
     }
     ///Bit 11 - Set SSM Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn ssm(&mut self) -> SsmW<IFSrs> {
         SsmW::new(self, 11)
     }
     ///Bit 12 - Set CCF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn ccf(&mut self) -> CcfW<IFSrs> {
         CcfW::new(self, 12)
     }
     ///Bit 13 - Set TXIDLE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn txidle(&mut self) -> TxidleW<IFSrs> {
         TxidleW::new(self, 13)
     }
     ///Bit 14 - Set TCMP0 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn tcmp0(&mut self) -> Tcmp0W<IFSrs> {
         Tcmp0W::new(self, 14)
     }
     ///Bit 15 - Set TCMP1 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn tcmp1(&mut self) -> Tcmp1W<IFSrs> {
         Tcmp1W::new(self, 15)
     }
     ///Bit 16 - Set TCMP2 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn tcmp2(&mut self) -> Tcmp2W<IFSrs> {
         Tcmp2W::new(self, 16)
     }

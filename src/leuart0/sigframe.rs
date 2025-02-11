@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - Signal Frame
     #[inline(always)]
-    #[must_use]
     pub fn sigframe(&mut self) -> SigframeW<SIGFRAMErs> {
         SigframeW::new(self, 0)
     }

@@ -915,115 +915,96 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Mode Select
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<CTRLrs> {
         ModeW::new(self, 0)
     }
     ///Bit 3 - Enable Digital Pulse Width Filter
     #[inline(always)]
-    #[must_use]
     pub fn filt(&mut self) -> FiltW<CTRLrs> {
         FiltW::new(self, 3)
     }
     ///Bit 4 - Enable PCNT Clock Domain Reset
     #[inline(always)]
-    #[must_use]
     pub fn rsten(&mut self) -> RstenW<CTRLrs> {
         RstenW::new(self, 4)
     }
     ///Bit 5 - Enable CNT Reset
     #[inline(always)]
-    #[must_use]
     pub fn cntrsten(&mut self) -> CntrstenW<CTRLrs> {
         CntrstenW::new(self, 5)
     }
     ///Bit 6 - Enable AUXCNT Reset
     #[inline(always)]
-    #[must_use]
     pub fn auxcntrsten(&mut self) -> AuxcntrstenW<CTRLrs> {
         AuxcntrstenW::new(self, 6)
     }
     ///Bit 7 - Debug Mode Halt Enable
     #[inline(always)]
-    #[must_use]
     pub fn debughalt(&mut self) -> DebughaltW<CTRLrs> {
         DebughaltW::new(self, 7)
     }
     ///Bit 8 - Enable Hysteresis
     #[inline(always)]
-    #[must_use]
     pub fn hyst(&mut self) -> HystW<CTRLrs> {
         HystW::new(self, 8)
     }
     ///Bit 9 - Count Direction Determined By S1
     #[inline(always)]
-    #[must_use]
     pub fn s1cdir(&mut self) -> S1cdirW<CTRLrs> {
         S1cdirW::new(self, 9)
     }
     ///Bits 10:11 - Controls When the Counter Counts
     #[inline(always)]
-    #[must_use]
     pub fn cntev(&mut self) -> CntevW<CTRLrs> {
         CntevW::new(self, 10)
     }
     ///Bits 12:13 - Controls When the Auxiliary Counter Counts
     #[inline(always)]
-    #[must_use]
     pub fn auxcntev(&mut self) -> AuxcntevW<CTRLrs> {
         AuxcntevW::new(self, 12)
     }
     ///Bit 14 - Non-Quadrature Mode Counter Direction Control
     #[inline(always)]
-    #[must_use]
     pub fn cntdir(&mut self) -> CntdirW<CTRLrs> {
         CntdirW::new(self, 14)
     }
     ///Bit 15 - Edge Select
     #[inline(always)]
-    #[must_use]
     pub fn edge(&mut self) -> EdgeW<CTRLrs> {
         EdgeW::new(self, 15)
     }
     ///Bits 16:17 - Sets the Mode for Triggered Compare and Clear
     #[inline(always)]
-    #[must_use]
     pub fn tccmode(&mut self) -> TccmodeW<CTRLrs> {
         TccmodeW::new(self, 16)
     }
     ///Bits 19:20 - Set the LFA Prescaler for Triggered Compare and Clear
     #[inline(always)]
-    #[must_use]
     pub fn tccpresc(&mut self) -> TccprescW<CTRLrs> {
         TccprescW::new(self, 19)
     }
     ///Bits 22:23 - Triggered Compare and Clear Compare Mode
     #[inline(always)]
-    #[must_use]
     pub fn tcccomp(&mut self) -> TcccompW<CTRLrs> {
         TcccompW::new(self, 22)
     }
     ///Bit 24 - PRS Gate Enable
     #[inline(always)]
-    #[must_use]
     pub fn prsgateen(&mut self) -> PrsgateenW<CTRLrs> {
         PrsgateenW::new(self, 24)
     }
     ///Bit 25 - TCC PRS Polarity Select
     #[inline(always)]
-    #[must_use]
     pub fn tccprspol(&mut self) -> TccprspolW<CTRLrs> {
         TccprspolW::new(self, 25)
     }
     ///Bits 26:29 - TCC PRS Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn tccprssel(&mut self) -> TccprsselW<CTRLrs> {
         TccprsselW::new(self, 26)
     }
     ///Bit 31 - TOPB High Frequency Value Select
     #[inline(always)]
-    #[must_use]
     pub fn topbhfsel(&mut self) -> TopbhfselW<CTRLrs> {
         TopbhfselW::new(self, 31)
     }

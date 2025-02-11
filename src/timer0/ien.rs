@@ -123,67 +123,56 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - OF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn of(&mut self) -> OfW<IENrs> {
         OfW::new(self, 0)
     }
     ///Bit 1 - UF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn uf(&mut self) -> UfW<IENrs> {
         UfW::new(self, 1)
     }
     ///Bit 2 - DIRCHG Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn dirchg(&mut self) -> DirchgW<IENrs> {
         DirchgW::new(self, 2)
     }
     ///Bit 4 - CC0 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc0(&mut self) -> Cc0W<IENrs> {
         Cc0W::new(self, 4)
     }
     ///Bit 5 - CC1 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc1(&mut self) -> Cc1W<IENrs> {
         Cc1W::new(self, 5)
     }
     ///Bit 6 - CC2 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc2(&mut self) -> Cc2W<IENrs> {
         Cc2W::new(self, 6)
     }
     ///Bit 7 - CC3 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc3(&mut self) -> Cc3W<IENrs> {
         Cc3W::new(self, 7)
     }
     ///Bit 8 - ICBOF0 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn icbof0(&mut self) -> Icbof0W<IENrs> {
         Icbof0W::new(self, 8)
     }
     ///Bit 9 - ICBOF1 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn icbof1(&mut self) -> Icbof1W<IENrs> {
         Icbof1W::new(self, 9)
     }
     ///Bit 10 - ICBOF2 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn icbof2(&mut self) -> Icbof2W<IENrs> {
         Icbof2W::new(self, 10)
     }
     ///Bit 11 - ICBOF3 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn icbof3(&mut self) -> Icbof3W<IENrs> {
         Icbof3W::new(self, 11)
     }

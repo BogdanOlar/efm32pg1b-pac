@@ -20,37 +20,31 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear ERASE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn erase(&mut self) -> EraseW<IFCrs> {
         EraseW::new(self, 0)
     }
     ///Bit 1 - Clear WRITE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn write(&mut self) -> WriteW<IFCrs> {
         WriteW::new(self, 1)
     }
     ///Bit 2 - Clear CHOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn chof(&mut self) -> ChofW<IFCrs> {
         ChofW::new(self, 2)
     }
     ///Bit 3 - Clear CMOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn cmof(&mut self) -> CmofW<IFCrs> {
         CmofW::new(self, 3)
     }
     ///Bit 4 - Clear PWRUPF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn pwrupf(&mut self) -> PwrupfW<IFCrs> {
         PwrupfW::new(self, 4)
     }
     ///Bit 5 - Clear ICACHERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn icacherr(&mut self) -> IcacherrW<IFCrs> {
         IcacherrW::new(self, 5)
     }

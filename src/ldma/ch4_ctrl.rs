@@ -647,67 +647,56 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 3 - Structure DMA Transfer Request
     #[inline(always)]
-    #[must_use]
     pub fn structreq(&mut self) -> StructreqW<CH4_CTRLrs> {
         StructreqW::new(self, 3)
     }
     ///Bits 4:14 - DMA Unit Data Transfer Count
     #[inline(always)]
-    #[must_use]
     pub fn xfercnt(&mut self) -> XfercntW<CH4_CTRLrs> {
         XfercntW::new(self, 4)
     }
     ///Bit 15 - Endian Byte Swap
     #[inline(always)]
-    #[must_use]
     pub fn byteswap(&mut self) -> ByteswapW<CH4_CTRLrs> {
         ByteswapW::new(self, 15)
     }
     ///Bits 16:19 - Block Transfer Size
     #[inline(always)]
-    #[must_use]
     pub fn blocksize(&mut self) -> BlocksizeW<CH4_CTRLrs> {
         BlocksizeW::new(self, 16)
     }
     ///Bit 20 - DMA Operation Done Interrupt Flag Set Enable
     #[inline(always)]
-    #[must_use]
     pub fn doneifsen(&mut self) -> DoneifsenW<CH4_CTRLrs> {
         DoneifsenW::new(self, 20)
     }
     ///Bit 21 - DMA Request Transfer Mode Select
     #[inline(always)]
-    #[must_use]
     pub fn reqmode(&mut self) -> ReqmodeW<CH4_CTRLrs> {
         ReqmodeW::new(self, 21)
     }
     ///Bit 22 - Decrement Loop Count
     #[inline(always)]
-    #[must_use]
     pub fn decloopcnt(&mut self) -> DecloopcntW<CH4_CTRLrs> {
         DecloopcntW::new(self, 22)
     }
     ///Bit 23 - Ignore Sreq
     #[inline(always)]
-    #[must_use]
     pub fn ignoresreq(&mut self) -> IgnoresreqW<CH4_CTRLrs> {
         IgnoresreqW::new(self, 23)
     }
     ///Bits 24:25 - Source Address Increment Size
     #[inline(always)]
-    #[must_use]
     pub fn srcinc(&mut self) -> SrcincW<CH4_CTRLrs> {
         SrcincW::new(self, 24)
     }
     ///Bits 26:27 - Unit Data Transfer Size
     #[inline(always)]
-    #[must_use]
     pub fn size(&mut self) -> SizeW<CH4_CTRLrs> {
         SizeW::new(self, 26)
     }
     ///Bits 28:29 - Destination Address Increment Size
     #[inline(always)]
-    #[must_use]
     pub fn dstinc(&mut self) -> DstincW<CH4_CTRLrs> {
         DstincW::new(self, 28)
     }

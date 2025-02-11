@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Duty Cycle Enable
     #[inline(always)]
-    #[must_use]
     pub fn em2dutycycledis(&mut self) -> Em2dutycycledisW<DUTYCONFIGrs> {
         Em2dutycycledisW::new(self, 1)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Low Energy UART 0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn leuart0(&mut self) -> Leuart0W<LFBCLKEN0rs> {
         Leuart0W::new(self, 0)
     }

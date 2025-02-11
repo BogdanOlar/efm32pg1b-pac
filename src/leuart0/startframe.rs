@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - Start Frame
     #[inline(always)]
-    #[must_use]
     pub fn startframe(&mut self) -> StartframeW<STARTFRAMErs> {
         StartframeW::new(self, 0)
     }

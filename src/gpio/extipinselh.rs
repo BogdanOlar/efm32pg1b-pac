@@ -773,49 +773,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - External Interrupt 8 Pin Select
     #[inline(always)]
-    #[must_use]
     pub fn extipinsel8(&mut self) -> Extipinsel8W<EXTIPINSELHrs> {
         Extipinsel8W::new(self, 0)
     }
     ///Bits 4:5 - External Interrupt 9 Pin Select
     #[inline(always)]
-    #[must_use]
     pub fn extipinsel9(&mut self) -> Extipinsel9W<EXTIPINSELHrs> {
         Extipinsel9W::new(self, 4)
     }
     ///Bits 8:9 - External Interrupt 10 Pin Select
     #[inline(always)]
-    #[must_use]
     pub fn extipinsel10(&mut self) -> Extipinsel10W<EXTIPINSELHrs> {
         Extipinsel10W::new(self, 8)
     }
     ///Bits 12:13 - External Interrupt 11 Pin Select
     #[inline(always)]
-    #[must_use]
     pub fn extipinsel11(&mut self) -> Extipinsel11W<EXTIPINSELHrs> {
         Extipinsel11W::new(self, 12)
     }
     ///Bits 16:17 - External Interrupt 12 Pin Select
     #[inline(always)]
-    #[must_use]
     pub fn extipinsel12(&mut self) -> Extipinsel12W<EXTIPINSELHrs> {
         Extipinsel12W::new(self, 16)
     }
     ///Bits 20:21 - External Interrupt 13 Pin Select
     #[inline(always)]
-    #[must_use]
     pub fn extipinsel13(&mut self) -> Extipinsel13W<EXTIPINSELHrs> {
         Extipinsel13W::new(self, 20)
     }
     ///Bits 24:25 - External Interrupt 14 Pin Select
     #[inline(always)]
-    #[must_use]
     pub fn extipinsel14(&mut self) -> Extipinsel14W<EXTIPINSELHrs> {
         Extipinsel14W::new(self, 24)
     }
     ///Bits 28:29 - External Interrupt 15 Pin Select
     #[inline(always)]
-    #[must_use]
     pub fn extipinsel15(&mut self) -> Extipinsel15W<EXTIPINSELHrs> {
         Extipinsel15W::new(self, 28)
     }

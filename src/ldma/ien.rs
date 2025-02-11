@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - DONE Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn done(&mut self) -> DoneW<IENrs> {
         DoneW::new(self, 0)
     }
     ///Bit 31 - ERROR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn error(&mut self) -> ErrorW<IENrs> {
         ErrorW::new(self, 31)
     }

@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - EM4 Unlatch
     #[inline(always)]
-    #[must_use]
     pub fn em4unlatch(&mut self) -> Em4unlatchW<CMDrs> {
         Em4unlatchW::new(self, 0)
     }

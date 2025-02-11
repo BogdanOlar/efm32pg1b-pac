@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Input Data for 8-bit
     #[inline(always)]
-    #[must_use]
     pub fn inputdatabyte(&mut self) -> InputdatabyteW<INPUTDATABYTErs> {
         InputdatabyteW::new(self, 0)
     }

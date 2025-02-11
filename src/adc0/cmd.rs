@@ -16,25 +16,21 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Single Channel Conversion Start
     #[inline(always)]
-    #[must_use]
     pub fn singlestart(&mut self) -> SinglestartW<CMDrs> {
         SinglestartW::new(self, 0)
     }
     ///Bit 1 - Single Channel Conversion Stop
     #[inline(always)]
-    #[must_use]
     pub fn singlestop(&mut self) -> SinglestopW<CMDrs> {
         SinglestopW::new(self, 1)
     }
     ///Bit 2 - Scan Sequence Start
     #[inline(always)]
-    #[must_use]
     pub fn scanstart(&mut self) -> ScanstartW<CMDrs> {
         ScanstartW::new(self, 2)
     }
     ///Bit 3 - Scan Sequence Stop
     #[inline(always)]
-    #[must_use]
     pub fn scanstop(&mut self) -> ScanstopW<CMDrs> {
         ScanstopW::new(self, 3)
     }

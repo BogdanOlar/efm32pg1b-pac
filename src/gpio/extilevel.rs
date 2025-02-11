@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 16 - EM4 Wake Up Level for EM4WU0 Pin
     #[inline(always)]
-    #[must_use]
     pub fn em4wu0(&mut self) -> Em4wu0W<EXTILEVELrs> {
         Em4wu0W::new(self, 16)
     }
     ///Bit 17 - EM4 Wake Up Level for EM4WU1 Pin
     #[inline(always)]
-    #[must_use]
     pub fn em4wu1(&mut self) -> Em4wu1W<EXTILEVELrs> {
         Em4wu1W::new(self, 17)
     }
     ///Bit 20 - EM4 Wake Up Level for EM4WU4 Pin
     #[inline(always)]
-    #[must_use]
     pub fn em4wu4(&mut self) -> Em4wu4W<EXTILEVELrs> {
         Em4wu4W::new(self, 20)
     }
     ///Bit 24 - EM4 Wake Up Level for EM4WU8 Pin
     #[inline(always)]
-    #[must_use]
     pub fn em4wu8(&mut self) -> Em4wu8W<EXTILEVELrs> {
         Em4wu8W::new(self, 24)
     }
     ///Bit 25 - EM4 Wake Up Level for EM4WU9 Pin
     #[inline(always)]
-    #[must_use]
     pub fn em4wu9(&mut self) -> Em4wu9W<EXTILEVELrs> {
         Em4wu9W::new(self, 25)
     }
     ///Bit 28 - EM4 Wake Up Level for EM4WU12 Pin
     #[inline(always)]
-    #[must_use]
     pub fn em4wu12(&mut self) -> Em4wu12W<EXTILEVELrs> {
         Em4wu12W::new(self, 28)
     }

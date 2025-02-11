@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - CLKOUT0 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn clkout0pen(&mut self) -> Clkout0penW<ROUTEPENrs> {
         Clkout0penW::new(self, 0)
     }
     ///Bit 1 - CLKOUT1 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn clkout1pen(&mut self) -> Clkout1penW<ROUTEPENrs> {
         Clkout1penW::new(self, 1)
     }

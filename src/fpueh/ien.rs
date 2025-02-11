@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - FPIOC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn fpioc(&mut self) -> FpiocW<IENrs> {
         FpiocW::new(self, 0)
     }
     ///Bit 1 - FPDZC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn fpdzc(&mut self) -> FpdzcW<IENrs> {
         FpdzcW::new(self, 1)
     }
     ///Bit 2 - FPUFC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn fpufc(&mut self) -> FpufcW<IENrs> {
         FpufcW::new(self, 2)
     }
     ///Bit 3 - FPOFC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn fpofc(&mut self) -> FpofcW<IENrs> {
         FpofcW::new(self, 3)
     }
     ///Bit 4 - FPIDC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn fpidc(&mut self) -> FpidcW<IENrs> {
         FpidcW::new(self, 4)
     }
     ///Bit 5 - FPIXC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn fpixc(&mut self) -> FpixcW<IENrs> {
         FpixcW::new(self, 5)
     }

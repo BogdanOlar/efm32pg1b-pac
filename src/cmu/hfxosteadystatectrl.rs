@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:6 - Sets the Steady State Oscillator Core Bias Current.
     #[inline(always)]
-    #[must_use]
     pub fn ibtrimxocore(&mut self) -> IbtrimxocoreW<HFXOSTEADYSTATECTRLrs> {
         IbtrimxocoreW::new(self, 0)
     }
     ///Bits 7:10 - Sets the Steady State Regulator Output Current Level (shunt Regulator)
     #[inline(always)]
-    #[must_use]
     pub fn regish(&mut self) -> RegishW<HFXOSTEADYSTATECTRLrs> {
         RegishW::new(self, 7)
     }
     ///Bits 11:19 - Sets Oscillator Tuning Capacitance
     #[inline(always)]
-    #[must_use]
     pub fn ctune(&mut self) -> CtuneW<HFXOSTEADYSTATECTRLrs> {
         CtuneW::new(self, 11)
     }
     ///Bits 24:25 - Controls Regulator Minimum Shunt Current Detection Relative to Nominal
     #[inline(always)]
-    #[must_use]
     pub fn regselilow(&mut self) -> RegselilowW<HFXOSTEADYSTATECTRLrs> {
         RegselilowW::new(self, 24)
     }
     ///Bit 26 - Enables Oscillator Peak Detectors
     #[inline(always)]
-    #[must_use]
     pub fn peakdeten(&mut self) -> PeakdetenW<HFXOSTEADYSTATECTRLrs> {
         PeakdetenW::new(self, 26)
     }
     ///Bits 28:31 - Set Regulator Output Current Level (shunt Regulator). Ish = 120uA + REGISHUPPER X 120uA
     #[inline(always)]
-    #[must_use]
     pub fn regishupper(&mut self) -> RegishupperW<HFXOSTEADYSTATECTRLrs> {
         RegishupperW::new(self, 28)
     }

@@ -118,13 +118,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 4:5 - ADC0 Clock Select
     #[inline(always)]
-    #[must_use]
     pub fn adc0clksel(&mut self) -> Adc0clkselW<ADCCTRLrs> {
         Adc0clkselW::new(self, 4)
     }
     ///Bit 8 - Invert Clock Selected By ADC0CLKSEL
     #[inline(always)]
-    #[must_use]
     pub fn adc0clkinv(&mut self) -> Adc0clkinvW<ADCCTRLrs> {
         Adc0clkinvW::new(self, 8)
     }

@@ -42,103 +42,86 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set START Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn start(&mut self) -> StartW<IFSrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - Set RSTART Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rstart(&mut self) -> RstartW<IFSrs> {
         RstartW::new(self, 1)
     }
     ///Bit 2 - Set ADDR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn addr(&mut self) -> AddrW<IFSrs> {
         AddrW::new(self, 2)
     }
     ///Bit 3 - Set TXC Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn txc(&mut self) -> TxcW<IFSrs> {
         TxcW::new(self, 3)
     }
     ///Bit 6 - Set ACK Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn ack(&mut self) -> AckW<IFSrs> {
         AckW::new(self, 6)
     }
     ///Bit 7 - Set NACK Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn nack(&mut self) -> NackW<IFSrs> {
         NackW::new(self, 7)
     }
     ///Bit 8 - Set MSTOP Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn mstop(&mut self) -> MstopW<IFSrs> {
         MstopW::new(self, 8)
     }
     ///Bit 9 - Set ARBLOST Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn arblost(&mut self) -> ArblostW<IFSrs> {
         ArblostW::new(self, 9)
     }
     ///Bit 10 - Set BUSERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn buserr(&mut self) -> BuserrW<IFSrs> {
         BuserrW::new(self, 10)
     }
     ///Bit 11 - Set BUSHOLD Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn bushold(&mut self) -> BusholdW<IFSrs> {
         BusholdW::new(self, 11)
     }
     ///Bit 12 - Set TXOF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn txof(&mut self) -> TxofW<IFSrs> {
         TxofW::new(self, 12)
     }
     ///Bit 13 - Set RXUF Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rxuf(&mut self) -> RxufW<IFSrs> {
         RxufW::new(self, 13)
     }
     ///Bit 14 - Set BITO Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn bito(&mut self) -> BitoW<IFSrs> {
         BitoW::new(self, 14)
     }
     ///Bit 15 - Set CLTO Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn clto(&mut self) -> CltoW<IFSrs> {
         CltoW::new(self, 15)
     }
     ///Bit 16 - Set SSTOP Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn sstop(&mut self) -> SstopW<IFSrs> {
         SstopW::new(self, 16)
     }
     ///Bit 17 - Set RXFULL Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn rxfull(&mut self) -> RxfullW<IFSrs> {
         RxfullW::new(self, 17)
     }
     ///Bit 18 - Set CLERR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn clerr(&mut self) -> ClerrW<IFSrs> {
         ClerrW::new(self, 18)
     }

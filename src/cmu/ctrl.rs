@@ -457,25 +457,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Clock Output Select 0
     #[inline(always)]
-    #[must_use]
     pub fn clkoutsel0(&mut self) -> Clkoutsel0W<CTRLrs> {
         Clkoutsel0W::new(self, 0)
     }
     ///Bits 5:8 - Clock Output Select 1
     #[inline(always)]
-    #[must_use]
     pub fn clkoutsel1(&mut self) -> Clkoutsel1W<CTRLrs> {
         Clkoutsel1W::new(self, 5)
     }
     ///Bit 16 - Wait State for High-Frequency LE Interface
     #[inline(always)]
-    #[must_use]
     pub fn wshfle(&mut self) -> WshfleW<CTRLrs> {
         WshfleW::new(self, 16)
     }
     ///Bit 20 - HFPERCLK Enable
     #[inline(always)]
-    #[must_use]
     pub fn hfperclken(&mut self) -> HfperclkenW<CTRLrs> {
         HfperclkenW::new(self, 20)
     }

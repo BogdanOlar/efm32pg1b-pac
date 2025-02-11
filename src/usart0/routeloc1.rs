@@ -931,13 +931,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn ctsloc(&mut self) -> CtslocW<ROUTELOC1rs> {
         CtslocW::new(self, 0)
     }
     ///Bits 8:13 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn rtsloc(&mut self) -> RtslocW<ROUTELOC1rs> {
         RtslocW::new(self, 8)
     }

@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - CC Channel 0 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc0pen(&mut self) -> Cc0penW<ROUTEPENrs> {
         Cc0penW::new(self, 0)
     }
     ///Bit 1 - CC Channel 1 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc1pen(&mut self) -> Cc1penW<ROUTEPENrs> {
         Cc1penW::new(self, 1)
     }
     ///Bit 2 - CC Channel 2 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc2pen(&mut self) -> Cc2penW<ROUTEPENrs> {
         Cc2penW::new(self, 2)
     }
     ///Bit 3 - CC Channel 3 Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn cc3pen(&mut self) -> Cc3penW<ROUTEPENrs> {
         Cc3penW::new(self, 3)
     }
     ///Bit 8 - CC Channel 0 Complementary Dead-Time Insertion Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn cdti0pen(&mut self) -> Cdti0penW<ROUTEPENrs> {
         Cdti0penW::new(self, 8)
     }
     ///Bit 9 - CC Channel 1 Complementary Dead-Time Insertion Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn cdti1pen(&mut self) -> Cdti1penW<ROUTEPENrs> {
         Cdti1penW::new(self, 9)
     }
     ///Bit 10 - CC Channel 2 Complementary Dead-Time Insertion Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn cdti2pen(&mut self) -> Cdti2penW<ROUTEPENrs> {
         Cdti2penW::new(self, 10)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:14 - Pre-Counter Value
     #[inline(always)]
-    #[must_use]
     pub fn precnt(&mut self) -> PrecntW<PRECNTrs> {
         PrecntW::new(self, 0)
     }

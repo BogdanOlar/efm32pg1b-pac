@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - RX Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxpen(&mut self) -> RxpenW<ROUTEPENrs> {
         RxpenW::new(self, 0)
     }
     ///Bit 1 - TX Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn txpen(&mut self) -> TxpenW<ROUTEPENrs> {
         TxpenW::new(self, 1)
     }
     ///Bit 2 - CS Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn cspen(&mut self) -> CspenW<ROUTEPENrs> {
         CspenW::new(self, 2)
     }
     ///Bit 3 - CLK Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn clkpen(&mut self) -> ClkpenW<ROUTEPENrs> {
         ClkpenW::new(self, 3)
     }
     ///Bit 4 - CTS Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn ctspen(&mut self) -> CtspenW<ROUTEPENrs> {
         CtspenW::new(self, 4)
     }
     ///Bit 5 - RTS Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn rtspen(&mut self) -> RtspenW<ROUTEPENrs> {
         RtspenW::new(self, 5)
     }

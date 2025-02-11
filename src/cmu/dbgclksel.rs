@@ -75,7 +75,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Debug Trace Clock
     #[inline(always)]
-    #[must_use]
     pub fn dbg(&mut self) -> DbgW<DBGCLKSELrs> {
         DbgW::new(self, 0)
     }

@@ -538,61 +538,51 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - AES Mode
     #[inline(always)]
-    #[must_use]
     pub fn aes(&mut self) -> AesW<CTRLrs> {
         AesW::new(self, 0)
     }
     ///Bit 1 - Key Buffer Disable
     #[inline(always)]
-    #[must_use]
     pub fn keybufdis(&mut self) -> KeybufdisW<CTRLrs> {
         KeybufdisW::new(self, 1)
     }
     ///Bit 2 - SHA Mode
     #[inline(always)]
-    #[must_use]
     pub fn sha(&mut self) -> ShaW<CTRLrs> {
         ShaW::new(self, 2)
     }
     ///Bit 10 - No Stalling of Bus When Busy
     #[inline(always)]
-    #[must_use]
     pub fn nobusystall(&mut self) -> NobusystallW<CTRLrs> {
         NobusystallW::new(self, 10)
     }
     ///Bits 14:15 - Increment Width
     #[inline(always)]
-    #[must_use]
     pub fn incwidth(&mut self) -> IncwidthW<CTRLrs> {
         IncwidthW::new(self, 14)
     }
     ///Bits 16:17 - DMA0 Read Mode
     #[inline(always)]
-    #[must_use]
     pub fn dma0mode(&mut self) -> Dma0modeW<CTRLrs> {
         Dma0modeW::new(self, 16)
     }
     ///Bits 20:21 - DMA0 Read Register Select
     #[inline(always)]
-    #[must_use]
     pub fn dma0rsel(&mut self) -> Dma0rselW<CTRLrs> {
         Dma0rselW::new(self, 20)
     }
     ///Bits 24:25 - DMA1 Read Mode
     #[inline(always)]
-    #[must_use]
     pub fn dma1mode(&mut self) -> Dma1modeW<CTRLrs> {
         Dma1modeW::new(self, 24)
     }
     ///Bits 28:29 - DATA0 DMA Unaligned Read Register Select
     #[inline(always)]
-    #[must_use]
     pub fn dma1rsel(&mut self) -> Dma1rselW<CTRLrs> {
         Dma1rselW::new(self, 28)
     }
     ///Bit 31 - Combined Data0 Write DMA Request
     #[inline(always)]
-    #[must_use]
     pub fn combdma0wereq(&mut self) -> Combdma0wereqW<CTRLrs> {
         Combdma0wereqW::new(self, 31)
     }

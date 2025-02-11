@@ -82,7 +82,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Power Configuration
     #[inline(always)]
-    #[must_use]
     pub fn pwrcfg(&mut self) -> PwrcfgW<PWRCFGrs> {
         PwrcfgW::new(self, 0)
     }

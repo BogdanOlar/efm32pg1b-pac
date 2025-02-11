@@ -378,169 +378,141 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - USART Synchronous Mode
     #[inline(always)]
-    #[must_use]
     pub fn sync(&mut self) -> SyncW<CTRLrs> {
         SyncW::new(self, 0)
     }
     ///Bit 1 - Loopback Enable
     #[inline(always)]
-    #[must_use]
     pub fn loopbk(&mut self) -> LoopbkW<CTRLrs> {
         LoopbkW::new(self, 1)
     }
     ///Bit 2 - Collision Check Enable
     #[inline(always)]
-    #[must_use]
     pub fn ccen(&mut self) -> CcenW<CTRLrs> {
         CcenW::new(self, 2)
     }
     ///Bit 3 - Multi-Processor Mode
     #[inline(always)]
-    #[must_use]
     pub fn mpm(&mut self) -> MpmW<CTRLrs> {
         MpmW::new(self, 3)
     }
     ///Bit 4 - Multi-Processor Address-Bit
     #[inline(always)]
-    #[must_use]
     pub fn mpab(&mut self) -> MpabW<CTRLrs> {
         MpabW::new(self, 4)
     }
     ///Bits 5:6 - Oversampling
     #[inline(always)]
-    #[must_use]
     pub fn ovs(&mut self) -> OvsW<CTRLrs> {
         OvsW::new(self, 5)
     }
     ///Bit 8 - Clock Polarity
     #[inline(always)]
-    #[must_use]
     pub fn clkpol(&mut self) -> ClkpolW<CTRLrs> {
         ClkpolW::new(self, 8)
     }
     ///Bit 9 - Clock Edge for Setup/Sample
     #[inline(always)]
-    #[must_use]
     pub fn clkpha(&mut self) -> ClkphaW<CTRLrs> {
         ClkphaW::new(self, 9)
     }
     ///Bit 10 - Most Significant Bit First
     #[inline(always)]
-    #[must_use]
     pub fn msbf(&mut self) -> MsbfW<CTRLrs> {
         MsbfW::new(self, 10)
     }
     ///Bit 11 - Action on Slave-Select in Master Mode
     #[inline(always)]
-    #[must_use]
     pub fn csma(&mut self) -> CsmaW<CTRLrs> {
         CsmaW::new(self, 11)
     }
     ///Bit 12 - TX Buffer Interrupt Level
     #[inline(always)]
-    #[must_use]
     pub fn txbil(&mut self) -> TxbilW<CTRLrs> {
         TxbilW::new(self, 12)
     }
     ///Bit 13 - Receiver Input Invert
     #[inline(always)]
-    #[must_use]
     pub fn rxinv(&mut self) -> RxinvW<CTRLrs> {
         RxinvW::new(self, 13)
     }
     ///Bit 14 - Transmitter Output Invert
     #[inline(always)]
-    #[must_use]
     pub fn txinv(&mut self) -> TxinvW<CTRLrs> {
         TxinvW::new(self, 14)
     }
     ///Bit 15 - Chip Select Invert
     #[inline(always)]
-    #[must_use]
     pub fn csinv(&mut self) -> CsinvW<CTRLrs> {
         CsinvW::new(self, 15)
     }
     ///Bit 16 - Automatic Chip Select
     #[inline(always)]
-    #[must_use]
     pub fn autocs(&mut self) -> AutocsW<CTRLrs> {
         AutocsW::new(self, 16)
     }
     ///Bit 17 - Automatic TX Tristate
     #[inline(always)]
-    #[must_use]
     pub fn autotri(&mut self) -> AutotriW<CTRLrs> {
         AutotriW::new(self, 17)
     }
     ///Bit 18 - SmartCard Mode
     #[inline(always)]
-    #[must_use]
     pub fn scmode(&mut self) -> ScmodeW<CTRLrs> {
         ScmodeW::new(self, 18)
     }
     ///Bit 19 - SmartCard Retransmit
     #[inline(always)]
-    #[must_use]
     pub fn scretrans(&mut self) -> ScretransW<CTRLrs> {
         ScretransW::new(self, 19)
     }
     ///Bit 20 - Skip Parity Error Frames
     #[inline(always)]
-    #[must_use]
     pub fn skipperrf(&mut self) -> SkipperrfW<CTRLrs> {
         SkipperrfW::new(self, 20)
     }
     ///Bit 21 - Bit 8 Default Value
     #[inline(always)]
-    #[must_use]
     pub fn bit8dv(&mut self) -> Bit8dvW<CTRLrs> {
         Bit8dvW::new(self, 21)
     }
     ///Bit 22 - Halt DMA on Error
     #[inline(always)]
-    #[must_use]
     pub fn errsdma(&mut self) -> ErrsdmaW<CTRLrs> {
         ErrsdmaW::new(self, 22)
     }
     ///Bit 23 - Disable RX on Error
     #[inline(always)]
-    #[must_use]
     pub fn errsrx(&mut self) -> ErrsrxW<CTRLrs> {
         ErrsrxW::new(self, 23)
     }
     ///Bit 24 - Disable TX on Error
     #[inline(always)]
-    #[must_use]
     pub fn errstx(&mut self) -> ErrstxW<CTRLrs> {
         ErrstxW::new(self, 24)
     }
     ///Bit 25 - Synchronous Slave Setup Early
     #[inline(always)]
-    #[must_use]
     pub fn sssearly(&mut self) -> SssearlyW<CTRLrs> {
         SssearlyW::new(self, 25)
     }
     ///Bit 28 - Byteswap in Double Accesses
     #[inline(always)]
-    #[must_use]
     pub fn byteswap(&mut self) -> ByteswapW<CTRLrs> {
         ByteswapW::new(self, 28)
     }
     ///Bit 29 - Always Transmit When RX Not Full
     #[inline(always)]
-    #[must_use]
     pub fn autotx(&mut self) -> AutotxW<CTRLrs> {
         AutotxW::new(self, 29)
     }
     ///Bit 30 - Majority Vote Disable
     #[inline(always)]
-    #[must_use]
     pub fn mvdis(&mut self) -> MvdisW<CTRLrs> {
         MvdisW::new(self, 30)
     }
     ///Bit 31 - Synchronous Master Sample Delay
     #[inline(always)]
-    #[must_use]
     pub fn smsdelay(&mut self) -> SmsdelayW<CTRLrs> {
         SmsdelayW::new(self, 31)
     }

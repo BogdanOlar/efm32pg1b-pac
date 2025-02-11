@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Sequence Instruction 16
     #[inline(always)]
-    #[must_use]
     pub fn instr16(&mut self) -> Instr16W<SEQ4rs> {
         Instr16W::new(self, 0)
     }
     ///Bits 8:15 - Sequence Instruction 17
     #[inline(always)]
-    #[must_use]
     pub fn instr17(&mut self) -> Instr17W<SEQ4rs> {
         Instr17W::new(self, 8)
     }
     ///Bits 16:23 - Sequence Instruction 18
     #[inline(always)]
-    #[must_use]
     pub fn instr18(&mut self) -> Instr18W<SEQ4rs> {
         Instr18W::new(self, 16)
     }
     ///Bits 24:31 - Sequence Instruction 19
     #[inline(always)]
-    #[must_use]
     pub fn instr19(&mut self) -> Instr19W<SEQ4rs> {
         Instr19W::new(self, 24)
     }

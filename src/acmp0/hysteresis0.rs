@@ -284,19 +284,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Hysteresis Select When ACMPOUT=0
     #[inline(always)]
-    #[must_use]
     pub fn hyst(&mut self) -> HystW<HYSTERESIS0rs> {
         HystW::new(self, 0)
     }
     ///Bits 16:21 - Divider for VA Voltage When ACMPOUT=0
     #[inline(always)]
-    #[must_use]
     pub fn divva(&mut self) -> DivvaW<HYSTERESIS0rs> {
         DivvaW::new(self, 16)
     }
     ///Bits 24:29 - Divider for VB Voltage When ACMPOUT=0
     #[inline(always)]
-    #[must_use]
     pub fn divvb(&mut self) -> DivvbW<HYSTERESIS0rs> {
         DivvbW::new(self, 24)
     }

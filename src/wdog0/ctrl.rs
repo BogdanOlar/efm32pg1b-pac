@@ -215,79 +215,66 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Watchdog Timer Enable
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 1 - Debug Mode Run Enable
     #[inline(always)]
-    #[must_use]
     pub fn debugrun(&mut self) -> DebugrunW<CTRLrs> {
         DebugrunW::new(self, 1)
     }
     ///Bit 2 - Energy Mode 2 Run Enable
     #[inline(always)]
-    #[must_use]
     pub fn em2run(&mut self) -> Em2runW<CTRLrs> {
         Em2runW::new(self, 2)
     }
     ///Bit 3 - Energy Mode 3 Run Enable
     #[inline(always)]
-    #[must_use]
     pub fn em3run(&mut self) -> Em3runW<CTRLrs> {
         Em3runW::new(self, 3)
     }
     ///Bit 4 - Configuration Lock
     #[inline(always)]
-    #[must_use]
     pub fn lock(&mut self) -> LockW<CTRLrs> {
         LockW::new(self, 4)
     }
     ///Bit 5 - Energy Mode 4 Block
     #[inline(always)]
-    #[must_use]
     pub fn em4block(&mut self) -> Em4blockW<CTRLrs> {
         Em4blockW::new(self, 5)
     }
     ///Bit 6 - Software Oscillator Disable Block
     #[inline(always)]
-    #[must_use]
     pub fn swoscblock(&mut self) -> SwoscblockW<CTRLrs> {
         SwoscblockW::new(self, 6)
     }
     ///Bits 8:11 - Watchdog Timeout Period Select
     #[inline(always)]
-    #[must_use]
     pub fn persel(&mut self) -> PerselW<CTRLrs> {
         PerselW::new(self, 8)
     }
     ///Bits 12:13 - Watchdog Clock Select
     #[inline(always)]
-    #[must_use]
     pub fn clksel(&mut self) -> ClkselW<CTRLrs> {
         ClkselW::new(self, 12)
     }
     ///Bits 16:17 - Watchdog Timeout Period Select
     #[inline(always)]
-    #[must_use]
     pub fn warnsel(&mut self) -> WarnselW<CTRLrs> {
         WarnselW::new(self, 16)
     }
     ///Bits 24:26 - Watchdog Illegal Window Select
     #[inline(always)]
-    #[must_use]
     pub fn winsel(&mut self) -> WinselW<CTRLrs> {
         WinselW::new(self, 24)
     }
     ///Bit 30 - Watchdog Clear Source
     #[inline(always)]
-    #[must_use]
     pub fn clrsrc(&mut self) -> ClrsrcW<CTRLrs> {
         ClrsrcW::new(self, 30)
     }
     ///Bit 31 - Watchdog Reset Disable
     #[inline(always)]
-    #[must_use]
     pub fn wdogrstdis(&mut self) -> WdogrstdisW<CTRLrs> {
         WdogrstdisW::new(self, 31)
     }

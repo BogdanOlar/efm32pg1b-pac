@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<SCANFIFOCLEARrs> {
 impl W {
     ///Bit 0 - Clear Scan FIFO Content
     #[inline(always)]
-    #[must_use]
     pub fn scanfifoclear(&mut self) -> ScanfifoclearW<SCANFIFOCLEARrs> {
         ScanfifoclearW::new(self, 0)
     }

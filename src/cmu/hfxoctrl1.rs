@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Sets the Peak Detector amplitude detection threshold levels
     #[inline(always)]
-    #[must_use]
     pub fn peakdetthr(&mut self) -> PeakdetthrW<HFXOCTRL1rs> {
         PeakdetthrW::new(self, 0)
     }
     ///Bits 4:6 - Reserved for internal use. Do not change.
     #[inline(always)]
-    #[must_use]
     pub fn reglvl(&mut self) -> ReglvlW<HFXOCTRL1rs> {
         ReglvlW::new(self, 4)
     }
     ///Bit 9 - Reserved for internal use. Do not change.
     #[inline(always)]
-    #[must_use]
     pub fn xtibiasen(&mut self) -> XtibiasenW<HFXOCTRL1rs> {
         XtibiasenW::new(self, 9)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - DMA Channel Linking or Done
     #[inline(always)]
-    #[must_use]
     pub fn chdone(&mut self) -> ChdoneW<CHDONErs> {
         ChdoneW::new(self, 0)
     }

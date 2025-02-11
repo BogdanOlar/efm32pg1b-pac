@@ -219,19 +219,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - DTI Prescaler Setting
     #[inline(always)]
-    #[must_use]
     pub fn dtpresc(&mut self) -> DtprescW<DTTIMErs> {
         DtprescW::new(self, 0)
     }
     ///Bits 8:13 - DTI Rise-time
     #[inline(always)]
-    #[must_use]
     pub fn dtriset(&mut self) -> DtrisetW<DTTIMErs> {
         DtrisetW::new(self, 8)
     }
     ///Bits 16:21 - DTI Fall-time
     #[inline(always)]
-    #[must_use]
     pub fn dtfallt(&mut self) -> DtfalltW<DTTIMErs> {
         DtfalltW::new(self, 16)
     }

@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<REQCLEARrs> {
 impl W {
     ///Bits 0:7 - DMA Request Clear
     #[inline(always)]
-    #[must_use]
     pub fn reqclear(&mut self) -> ReqclearW<REQCLEARrs> {
         ReqclearW::new(self, 0)
     }

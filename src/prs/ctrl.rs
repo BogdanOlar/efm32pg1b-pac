@@ -222,13 +222,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Set Event on PRS
     #[inline(always)]
-    #[must_use]
     pub fn sevonprs(&mut self) -> SevonprsW<CTRLrs> {
         SevonprsW::new(self, 0)
     }
     ///Bits 1:4 - SEVONPRS PRS Channel Select
     #[inline(always)]
-    #[must_use]
     pub fn sevonprssel(&mut self) -> SevonprsselW<CTRLrs> {
         SevonprsselW::new(self, 1)
     }

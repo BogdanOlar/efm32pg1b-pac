@@ -123,67 +123,56 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - TXC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txc(&mut self) -> TxcW<IENrs> {
         TxcW::new(self, 0)
     }
     ///Bit 1 - TXBL Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txbl(&mut self) -> TxblW<IENrs> {
         TxblW::new(self, 1)
     }
     ///Bit 2 - RXDATAV Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxdatav(&mut self) -> RxdatavW<IENrs> {
         RxdatavW::new(self, 2)
     }
     ///Bit 3 - RXOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxof(&mut self) -> RxofW<IENrs> {
         RxofW::new(self, 3)
     }
     ///Bit 4 - RXUF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxuf(&mut self) -> RxufW<IENrs> {
         RxufW::new(self, 4)
     }
     ///Bit 5 - TXOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txof(&mut self) -> TxofW<IENrs> {
         TxofW::new(self, 5)
     }
     ///Bit 6 - PERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn perr(&mut self) -> PerrW<IENrs> {
         PerrW::new(self, 6)
     }
     ///Bit 7 - FERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn ferr(&mut self) -> FerrW<IENrs> {
         FerrW::new(self, 7)
     }
     ///Bit 8 - MPAF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn mpaf(&mut self) -> MpafW<IENrs> {
         MpafW::new(self, 8)
     }
     ///Bit 9 - STARTF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn startf(&mut self) -> StartfW<IENrs> {
         StartfW::new(self, 9)
     }
     ///Bit 10 - SIGF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn sigf(&mut self) -> SigfW<IENrs> {
         SigfW::new(self, 10)
     }

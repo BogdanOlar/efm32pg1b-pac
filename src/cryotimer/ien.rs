@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - PERIOD Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn period(&mut self) -> PeriodW<IENrs> {
         PeriodW::new(self, 0)
     }

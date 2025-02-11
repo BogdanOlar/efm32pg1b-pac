@@ -14,19 +14,16 @@ impl core::fmt::Debug for crate::generic::Reg<CACHECMDrs> {
 impl W {
     ///Bit 0 - Invalidate Instruction Cache
     #[inline(always)]
-    #[must_use]
     pub fn invcache(&mut self) -> InvcacheW<CACHECMDrs> {
         InvcacheW::new(self, 0)
     }
     ///Bit 1 - Start Performance Counters
     #[inline(always)]
-    #[must_use]
     pub fn startpc(&mut self) -> StartpcW<CACHECMDrs> {
         StartpcW::new(self, 1)
     }
     ///Bit 2 - Stop Performance Counters
     #[inline(always)]
-    #[must_use]
     pub fn stoppc(&mut self) -> StoppcW<CACHECMDrs> {
         StoppcW::new(self, 2)
     }

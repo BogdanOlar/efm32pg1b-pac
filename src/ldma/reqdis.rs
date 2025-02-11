@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - DMA Request Disables
     #[inline(always)]
-    #[must_use]
     pub fn reqdis(&mut self) -> ReqdisW<REQDISrs> {
         ReqdisW::new(self, 0)
     }

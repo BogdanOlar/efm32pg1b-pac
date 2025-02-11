@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - ACMP Output Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn outpen(&mut self) -> OutpenW<ROUTEPENrs> {
         OutpenW::new(self, 0)
     }

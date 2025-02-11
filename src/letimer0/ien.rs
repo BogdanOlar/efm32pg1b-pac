@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - COMP0 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn comp0(&mut self) -> Comp0W<IENrs> {
         Comp0W::new(self, 0)
     }
     ///Bit 1 - COMP1 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn comp1(&mut self) -> Comp1W<IENrs> {
         Comp1W::new(self, 1)
     }
     ///Bit 2 - UF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn uf(&mut self) -> UfW<IENrs> {
         UfW::new(self, 2)
     }
     ///Bit 3 - REP0 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rep0(&mut self) -> Rep0W<IENrs> {
         Rep0W::new(self, 3)
     }
     ///Bit 4 - REP1 Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rep1(&mut self) -> Rep1W<IENrs> {
         Rep1W::new(self, 4)
     }

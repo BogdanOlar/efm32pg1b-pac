@@ -93,49 +93,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Single Mode Offset Calibration Value for Differential or Positive Single-ended Mode
     #[inline(always)]
-    #[must_use]
     pub fn singleoffset(&mut self) -> SingleoffsetW<CALrs> {
         SingleoffsetW::new(self, 0)
     }
     ///Bits 4:7 - Single Mode Offset Calibration Value for Negative Single-ended Mode
     #[inline(always)]
-    #[must_use]
     pub fn singleoffsetinv(&mut self) -> SingleoffsetinvW<CALrs> {
         SingleoffsetinvW::new(self, 4)
     }
     ///Bits 8:14 - Single Mode Gain Calibration Value
     #[inline(always)]
-    #[must_use]
     pub fn singlegain(&mut self) -> SinglegainW<CALrs> {
         SinglegainW::new(self, 8)
     }
     ///Bit 15 - Negative Single-ended Offset Calibration is Enabled
     #[inline(always)]
-    #[must_use]
     pub fn offsetinvmode(&mut self) -> OffsetinvmodeW<CALrs> {
         OffsetinvmodeW::new(self, 15)
     }
     ///Bits 16:19 - Scan Mode Offset Calibration Value for Differential or Positive Single-ended Mode
     #[inline(always)]
-    #[must_use]
     pub fn scanoffset(&mut self) -> ScanoffsetW<CALrs> {
         ScanoffsetW::new(self, 16)
     }
     ///Bits 20:23 - Scan Mode Offset Calibration Value for Negative Single-ended Mode
     #[inline(always)]
-    #[must_use]
     pub fn scanoffsetinv(&mut self) -> ScanoffsetinvW<CALrs> {
         ScanoffsetinvW::new(self, 20)
     }
     ///Bits 24:30 - Scan Mode Gain Calibration Value
     #[inline(always)]
-    #[must_use]
     pub fn scangain(&mut self) -> ScangainW<CALrs> {
         ScangainW::new(self, 24)
     }
     ///Bit 31 - Calibration Mode is Enabled
     #[inline(always)]
-    #[must_use]
     pub fn calen(&mut self) -> CalenW<CALrs> {
         CalenW::new(self, 31)
     }

@@ -173,97 +173,81 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Pin 0 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall0(&mut self) -> Extifall0W<EXTIFALLrs> {
         Extifall0W::new(self, 0)
     }
     ///Bit 1 - Pin 1 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall1(&mut self) -> Extifall1W<EXTIFALLrs> {
         Extifall1W::new(self, 1)
     }
     ///Bit 2 - Pin 2 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall2(&mut self) -> Extifall2W<EXTIFALLrs> {
         Extifall2W::new(self, 2)
     }
     ///Bit 3 - Pin 3 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall3(&mut self) -> Extifall3W<EXTIFALLrs> {
         Extifall3W::new(self, 3)
     }
     ///Bit 4 - Pin 4 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall4(&mut self) -> Extifall4W<EXTIFALLrs> {
         Extifall4W::new(self, 4)
     }
     ///Bit 5 - Pin 5 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall5(&mut self) -> Extifall5W<EXTIFALLrs> {
         Extifall5W::new(self, 5)
     }
     ///Bit 6 - Pin 6 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall6(&mut self) -> Extifall6W<EXTIFALLrs> {
         Extifall6W::new(self, 6)
     }
     ///Bit 7 - Pin 7 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall7(&mut self) -> Extifall7W<EXTIFALLrs> {
         Extifall7W::new(self, 7)
     }
     ///Bit 8 - Pin 8 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall8(&mut self) -> Extifall8W<EXTIFALLrs> {
         Extifall8W::new(self, 8)
     }
     ///Bit 9 - Pin 9 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall9(&mut self) -> Extifall9W<EXTIFALLrs> {
         Extifall9W::new(self, 9)
     }
     ///Bit 10 - Pin 10 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall10(&mut self) -> Extifall10W<EXTIFALLrs> {
         Extifall10W::new(self, 10)
     }
     ///Bit 11 - Pin 11 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall11(&mut self) -> Extifall11W<EXTIFALLrs> {
         Extifall11W::new(self, 11)
     }
     ///Bit 12 - Pin 12 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall12(&mut self) -> Extifall12W<EXTIFALLrs> {
         Extifall12W::new(self, 12)
     }
     ///Bit 13 - Pin 13 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall13(&mut self) -> Extifall13W<EXTIFALLrs> {
         Extifall13W::new(self, 13)
     }
     ///Bit 14 - Pin 14 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall14(&mut self) -> Extifall14W<EXTIFALLrs> {
         Extifall14W::new(self, 14)
     }
     ///Bit 15 - Pin 15 Falling Edge
     #[inline(always)]
-    #[must_use]
     pub fn extifall15(&mut self) -> Extifall15W<EXTIFALLrs> {
         Extifall15W::new(self, 15)
     }

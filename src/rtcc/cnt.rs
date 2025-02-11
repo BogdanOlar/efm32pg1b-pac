@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Counter Value
     #[inline(always)]
-    #[must_use]
     pub fn cnt(&mut self) -> CntW<CNTrs> {
         CntW::new(self, 0)
     }

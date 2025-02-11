@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - Clock Divider
     #[inline(always)]
-    #[must_use]
     pub fn div(&mut self) -> DivW<CLKDIVrs> {
         DivW::new(self, 0)
     }

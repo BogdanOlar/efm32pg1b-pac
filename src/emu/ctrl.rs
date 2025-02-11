@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Energy Mode 2 Block
     #[inline(always)]
-    #[must_use]
     pub fn em2block(&mut self) -> Em2blockW<CTRLrs> {
         Em2blockW::new(self, 1)
     }

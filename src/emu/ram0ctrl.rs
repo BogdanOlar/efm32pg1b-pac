@@ -121,7 +121,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - RAM0 Blockset Power-down
     #[inline(always)]
-    #[must_use]
     pub fn rampowerdown(&mut self) -> RampowerdownW<RAM0CTRLrs> {
         RampowerdownW::new(self, 0)
     }

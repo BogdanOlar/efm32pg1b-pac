@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Disable Over Voltage Capability for pins 0:15
     #[inline(always)]
-    #[must_use]
     pub fn pins_ovt_dis(&mut self) -> PinsOvtDisW<OVT_DISrs> {
         PinsOvtDisW::new(self, 0)
     }

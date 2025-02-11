@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Debug Halt
     #[inline(always)]
-    #[must_use]
     pub fn dbghalt(&mut self) -> DbghaltW<CTRLXrs> {
         DbghaltW::new(self, 0)
     }
     ///Bit 1 - CTS Pin Inversion
     #[inline(always)]
-    #[must_use]
     pub fn ctsinv(&mut self) -> CtsinvW<CTRLXrs> {
         CtsinvW::new(self, 1)
     }
     ///Bit 2 - CTS Function Enabled
     #[inline(always)]
-    #[must_use]
     pub fn ctsen(&mut self) -> CtsenW<CTRLXrs> {
         CtsenW::new(self, 2)
     }
     ///Bit 3 - RTS Pin Inversion
     #[inline(always)]
-    #[must_use]
     pub fn rtsinv(&mut self) -> RtsinvW<CTRLXrs> {
         RtsinvW::new(self, 3)
     }

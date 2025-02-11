@@ -890,43 +890,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Positive Input Select
     #[inline(always)]
-    #[must_use]
     pub fn possel(&mut self) -> PosselW<INPUTSELrs> {
         PosselW::new(self, 0)
     }
     ///Bits 8:15 - Negative Input Select
     #[inline(always)]
-    #[must_use]
     pub fn negsel(&mut self) -> NegselW<INPUTSELrs> {
         NegselW::new(self, 8)
     }
     ///Bits 16:21 - VA Selection
     #[inline(always)]
-    #[must_use]
     pub fn vasel(&mut self) -> VaselW<INPUTSELrs> {
         VaselW::new(self, 16)
     }
     ///Bit 22 - VB Selection
     #[inline(always)]
-    #[must_use]
     pub fn vbsel(&mut self) -> VbselW<INPUTSELrs> {
         VbselW::new(self, 22)
     }
     ///Bit 24 - Low-Power Sampled Voltage Selection
     #[inline(always)]
-    #[must_use]
     pub fn vlpsel(&mut self) -> VlpselW<INPUTSELrs> {
         VlpselW::new(self, 24)
     }
     ///Bit 26 - Capacitive Sense Mode Internal Resistor Enable
     #[inline(always)]
-    #[must_use]
     pub fn csresen(&mut self) -> CsresenW<INPUTSELrs> {
         CsresenW::new(self, 26)
     }
     ///Bits 28:30 - Capacitive Sense Mode Internal Resistor Select
     #[inline(always)]
-    #[must_use]
     pub fn csressel(&mut self) -> CsresselW<INPUTSELrs> {
         CsresselW::new(self, 28)
     }

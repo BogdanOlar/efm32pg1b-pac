@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - PCNT0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn pcnt0clken(&mut self) -> Pcnt0clkenW<PCNTCTRLrs> {
         Pcnt0clkenW::new(self, 0)
     }
     ///Bit 1 - PCNT0 Clock Select
     #[inline(always)]
-    #[must_use]
     pub fn pcnt0clksel(&mut self) -> Pcnt0clkselW<PCNTCTRLrs> {
         Pcnt0clkselW::new(self, 1)
     }

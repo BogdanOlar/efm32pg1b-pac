@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<DATA0XORBYTErs> {
 impl W {
     ///Bits 0:7 - Data 0 XOR Byte Access
     #[inline(always)]
-    #[must_use]
     pub fn data0xorbyte(&mut self) -> Data0xorbyteW<DATA0XORBYTErs> {
         Data0xorbyteW::new(self, 0)
     }

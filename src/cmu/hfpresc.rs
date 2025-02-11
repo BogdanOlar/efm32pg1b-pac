@@ -131,13 +131,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 8:12 - HFCLK Prescaler
     #[inline(always)]
-    #[must_use]
     pub fn presc(&mut self) -> PrescW<HFPRESCrs> {
         PrescW::new(self, 8)
     }
     ///Bit 24 - HFCLKLE Prescaler
     #[inline(always)]
-    #[must_use]
     pub fn hfclklepresc(&mut self) -> HfclkleprescW<HFPRESCrs> {
         HfclkleprescW::new(self, 24)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Write Data
     #[inline(always)]
-    #[must_use]
     pub fn wdata(&mut self) -> WdataW<WDATArs> {
         WdataW::new(self, 0)
     }

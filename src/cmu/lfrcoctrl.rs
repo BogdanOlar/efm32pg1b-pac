@@ -145,37 +145,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - LFRCO Tuning Value
     #[inline(always)]
-    #[must_use]
     pub fn tuning(&mut self) -> TuningW<LFRCOCTRLrs> {
         TuningW::new(self, 0)
     }
     ///Bit 16 - Enable Duty Cycling of Vref
     #[inline(always)]
-    #[must_use]
     pub fn envref(&mut self) -> EnvrefW<LFRCOCTRLrs> {
         EnvrefW::new(self, 16)
     }
     ///Bit 17 - Enable Comparator Chopping
     #[inline(always)]
-    #[must_use]
     pub fn enchop(&mut self) -> EnchopW<LFRCOCTRLrs> {
         EnchopW::new(self, 17)
     }
     ///Bit 18 - Enable Dynamic Element Matching
     #[inline(always)]
-    #[must_use]
     pub fn endem(&mut self) -> EndemW<LFRCOCTRLrs> {
         EndemW::new(self, 18)
     }
     ///Bits 24:25 - LFRCO Timeout
     #[inline(always)]
-    #[must_use]
     pub fn timeout(&mut self) -> TimeoutW<LFRCOCTRLrs> {
         TimeoutW::new(self, 24)
     }
     ///Bits 28:31 - Tuning of Gmc Current
     #[inline(always)]
-    #[must_use]
     pub fn gmccurtune(&mut self) -> GmccurtuneW<LFRCOCTRLrs> {
         GmccurtuneW::new(self, 28)
     }

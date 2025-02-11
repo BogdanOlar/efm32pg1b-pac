@@ -1390,19 +1390,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn cdti0loc(&mut self) -> Cdti0locW<ROUTELOC2rs> {
         Cdti0locW::new(self, 0)
     }
     ///Bits 8:13 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn cdti1loc(&mut self) -> Cdti1locW<ROUTELOC2rs> {
         Cdti1locW::new(self, 8)
     }
     ///Bits 16:21 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn cdti2loc(&mut self) -> Cdti2locW<ROUTELOC2rs> {
         Cdti2locW::new(self, 16)
     }

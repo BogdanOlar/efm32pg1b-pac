@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Capture/Compare Value
     #[inline(always)]
-    #[must_use]
     pub fn ccv(&mut self) -> CcvW<CC2_CCVrs> {
         CcvW::new(self, 0)
     }

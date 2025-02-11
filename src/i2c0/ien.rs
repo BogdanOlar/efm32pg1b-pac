@@ -203,115 +203,96 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - START Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn start(&mut self) -> StartW<IENrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - RSTART Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rstart(&mut self) -> RstartW<IENrs> {
         RstartW::new(self, 1)
     }
     ///Bit 2 - ADDR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn addr(&mut self) -> AddrW<IENrs> {
         AddrW::new(self, 2)
     }
     ///Bit 3 - TXC Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txc(&mut self) -> TxcW<IENrs> {
         TxcW::new(self, 3)
     }
     ///Bit 4 - TXBL Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txbl(&mut self) -> TxblW<IENrs> {
         TxblW::new(self, 4)
     }
     ///Bit 5 - RXDATAV Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxdatav(&mut self) -> RxdatavW<IENrs> {
         RxdatavW::new(self, 5)
     }
     ///Bit 6 - ACK Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn ack(&mut self) -> AckW<IENrs> {
         AckW::new(self, 6)
     }
     ///Bit 7 - NACK Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn nack(&mut self) -> NackW<IENrs> {
         NackW::new(self, 7)
     }
     ///Bit 8 - MSTOP Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn mstop(&mut self) -> MstopW<IENrs> {
         MstopW::new(self, 8)
     }
     ///Bit 9 - ARBLOST Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn arblost(&mut self) -> ArblostW<IENrs> {
         ArblostW::new(self, 9)
     }
     ///Bit 10 - BUSERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn buserr(&mut self) -> BuserrW<IENrs> {
         BuserrW::new(self, 10)
     }
     ///Bit 11 - BUSHOLD Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn bushold(&mut self) -> BusholdW<IENrs> {
         BusholdW::new(self, 11)
     }
     ///Bit 12 - TXOF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn txof(&mut self) -> TxofW<IENrs> {
         TxofW::new(self, 12)
     }
     ///Bit 13 - RXUF Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxuf(&mut self) -> RxufW<IENrs> {
         RxufW::new(self, 13)
     }
     ///Bit 14 - BITO Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn bito(&mut self) -> BitoW<IENrs> {
         BitoW::new(self, 14)
     }
     ///Bit 15 - CLTO Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn clto(&mut self) -> CltoW<IENrs> {
         CltoW::new(self, 15)
     }
     ///Bit 16 - SSTOP Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn sstop(&mut self) -> SstopW<IENrs> {
         SstopW::new(self, 16)
     }
     ///Bit 17 - RXFULL Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn rxfull(&mut self) -> RxfullW<IENrs> {
         RxfullW::new(self, 17)
     }
     ///Bit 18 - CLERR Interrupt Enable
     #[inline(always)]
-    #[must_use]
     pub fn clerr(&mut self) -> ClerrW<IENrs> {
         ClerrW::new(self, 18)
     }

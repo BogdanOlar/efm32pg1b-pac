@@ -69,7 +69,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 8:16 - HFCORECLK Prescaler
     #[inline(always)]
-    #[must_use]
     pub fn presc(&mut self) -> PrescW<HFCOREPRESCrs> {
         PrescW::new(self, 8)
     }

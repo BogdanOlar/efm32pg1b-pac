@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Destination Data Address
     #[inline(always)]
-    #[must_use]
     pub fn dstaddr(&mut self) -> DstaddrW<CH0_DSTrs> {
         DstaddrW::new(self, 0)
     }

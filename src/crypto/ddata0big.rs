@@ -21,7 +21,6 @@ impl core::fmt::Debug for crate::generic::Reg<DDATA0BIGrs> {
 impl W {
     ///Bits 0:31 - Double Data 0 Big Endian Access
     #[inline(always)]
-    #[must_use]
     pub fn ddata0big(&mut self) -> Ddata0bigW<DDATA0BIGrs> {
         Ddata0bigW::new(self, 0)
     }

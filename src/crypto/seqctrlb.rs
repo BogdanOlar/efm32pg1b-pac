@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:13 - Buffer Length B in Bytes
     #[inline(always)]
-    #[must_use]
     pub fn lengthb(&mut self) -> LengthbW<SEQCTRLBrs> {
         LengthbW::new(self, 0)
     }
     ///Bit 28 - DMA0 Preserve B
     #[inline(always)]
-    #[must_use]
     pub fn dma0presb(&mut self) -> Dma0presbW<SEQCTRLBrs> {
         Dma0presbW::new(self, 28)
     }
     ///Bit 29 - DMA1 Preserve B
     #[inline(always)]
-    #[must_use]
     pub fn dma1presb(&mut self) -> Dma1presbW<SEQCTRLBrs> {
         Dma1presbW::new(self, 29)
     }

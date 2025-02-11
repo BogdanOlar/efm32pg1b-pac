@@ -895,37 +895,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - PRS Start Select
     #[inline(always)]
-    #[must_use]
     pub fn prsstartsel(&mut self) -> PrsstartselW<PRSSELrs> {
         PrsstartselW::new(self, 0)
     }
     ///Bits 6:9 - PRS Stop Select
     #[inline(always)]
-    #[must_use]
     pub fn prsstopsel(&mut self) -> PrsstopselW<PRSSELrs> {
         PrsstopselW::new(self, 6)
     }
     ///Bits 12:15 - PRS Clear Select
     #[inline(always)]
-    #[must_use]
     pub fn prsclearsel(&mut self) -> PrsclearselW<PRSSELrs> {
         PrsclearselW::new(self, 12)
     }
     ///Bits 18:19 - PRS Start Mode
     #[inline(always)]
-    #[must_use]
     pub fn prsstartmode(&mut self) -> PrsstartmodeW<PRSSELrs> {
         PrsstartmodeW::new(self, 18)
     }
     ///Bits 22:23 - PRS Stop Mode
     #[inline(always)]
-    #[must_use]
     pub fn prsstopmode(&mut self) -> PrsstopmodeW<PRSSELrs> {
         PrsstopmodeW::new(self, 22)
     }
     ///Bits 26:27 - PRS Clear Mode
     #[inline(always)]
-    #[must_use]
     pub fn prsclearmode(&mut self) -> PrsclearmodeW<PRSSELrs> {
         PrsclearmodeW::new(self, 26)
     }

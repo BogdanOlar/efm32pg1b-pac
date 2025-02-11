@@ -348,49 +348,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Repeat Mode
     #[inline(always)]
-    #[must_use]
     pub fn repmode(&mut self) -> RepmodeW<CTRLrs> {
         RepmodeW::new(self, 0)
     }
     ///Bits 2:3 - Underflow Output Action 0
     #[inline(always)]
-    #[must_use]
     pub fn ufoa0(&mut self) -> Ufoa0W<CTRLrs> {
         Ufoa0W::new(self, 2)
     }
     ///Bits 4:5 - Underflow Output Action 1
     #[inline(always)]
-    #[must_use]
     pub fn ufoa1(&mut self) -> Ufoa1W<CTRLrs> {
         Ufoa1W::new(self, 4)
     }
     ///Bit 6 - Output 0 Polarity
     #[inline(always)]
-    #[must_use]
     pub fn opol0(&mut self) -> Opol0W<CTRLrs> {
         Opol0W::new(self, 6)
     }
     ///Bit 7 - Output 1 Polarity
     #[inline(always)]
-    #[must_use]
     pub fn opol1(&mut self) -> Opol1W<CTRLrs> {
         Opol1W::new(self, 7)
     }
     ///Bit 8 - Buffered Top
     #[inline(always)]
-    #[must_use]
     pub fn buftop(&mut self) -> BuftopW<CTRLrs> {
         BuftopW::new(self, 8)
     }
     ///Bit 9 - Compare Value 0 is Top Value
     #[inline(always)]
-    #[must_use]
     pub fn comp0top(&mut self) -> Comp0topW<CTRLrs> {
         Comp0topW::new(self, 9)
     }
     ///Bit 12 - Debug Mode Run Enable
     #[inline(always)]
-    #[must_use]
     pub fn debugrun(&mut self) -> DebugrunW<CTRLrs> {
         DebugrunW::new(self, 12)
     }

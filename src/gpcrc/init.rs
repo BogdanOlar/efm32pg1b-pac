@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - CRC Initialization Value
     #[inline(always)]
-    #[must_use]
     pub fn init(&mut self) -> InitW<INITrs> {
         InitW::new(self, 0)
     }

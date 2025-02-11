@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear PERIOD Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn period(&mut self) -> PeriodW<IFCrs> {
         PeriodW::new(self, 0)
     }

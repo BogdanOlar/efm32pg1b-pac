@@ -121,7 +121,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Clock Select for LFB
     #[inline(always)]
-    #[must_use]
     pub fn lfb(&mut self) -> LfbW<LFBCLKSELrs> {
         LfbW::new(self, 0)
     }

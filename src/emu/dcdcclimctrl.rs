@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 8:9 - Reserved for internal use. Do not change.
     #[inline(always)]
-    #[must_use]
     pub fn climblankdly(&mut self) -> ClimblankdlyW<DCDCCLIMCTRLrs> {
         ClimblankdlyW::new(self, 8)
     }
     ///Bit 13 - Bypass Current Limit Enable
     #[inline(always)]
-    #[must_use]
     pub fn byplimen(&mut self) -> ByplimenW<DCDCCLIMCTRLrs> {
         ByplimenW::new(self, 13)
     }

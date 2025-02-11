@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:9 - Startup Delay 0
     #[inline(always)]
-    #[must_use]
     pub fn stdly0(&mut self) -> Stdly0W<STARTUPrs> {
         Stdly0W::new(self, 0)
     }
     ///Bits 12:21 - Startup Delay 0
     #[inline(always)]
-    #[must_use]
     pub fn stdly1(&mut self) -> Stdly1W<STARTUPrs> {
         Stdly1W::new(self, 12)
     }
     ///Bit 24 - Active Startup Wait
     #[inline(always)]
-    #[must_use]
     pub fn astwait(&mut self) -> AstwaitW<STARTUPrs> {
         AstwaitW::new(self, 24)
     }
     ///Bit 25 - Startup Waitstates Enable
     #[inline(always)]
-    #[must_use]
     pub fn stwsen(&mut self) -> StwsenW<STARTUPrs> {
         StwsenW::new(self, 25)
     }
     ///Bit 26 - Startup Waitstates Always Enable
     #[inline(always)]
-    #[must_use]
     pub fn stwsaen(&mut self) -> StwsaenW<STARTUPrs> {
         StwsaenW::new(self, 26)
     }
     ///Bits 28:30 - Startup Waitstates
     #[inline(always)]
-    #[must_use]
     pub fn stws(&mut self) -> StwsW<STARTUPrs> {
         StwsW::new(self, 28)
     }

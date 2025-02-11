@@ -128,19 +128,16 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Current Range Select
     #[inline(always)]
-    #[must_use]
     pub fn rangesel(&mut self) -> RangeselW<CURPROGrs> {
         RangeselW::new(self, 0)
     }
     ///Bits 8:12 - Current Step Size Select
     #[inline(always)]
-    #[must_use]
     pub fn stepsel(&mut self) -> StepselW<CURPROGrs> {
         StepselW::new(self, 8)
     }
     ///Bits 16:23 - Tune the Current to Given Accuracy
     #[inline(always)]
-    #[must_use]
     pub fn tuning(&mut self) -> TuningW<CURPROGrs> {
         TuningW::new(self, 16)
     }

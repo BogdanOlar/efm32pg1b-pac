@@ -264,7 +264,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Low Energy Timer 0 Prescaler
     #[inline(always)]
-    #[must_use]
     pub fn letimer0(&mut self) -> Letimer0W<LFAPRESC0rs> {
         Letimer0W::new(self, 0)
     }

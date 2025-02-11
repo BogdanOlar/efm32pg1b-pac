@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Source Data Address
     #[inline(always)]
-    #[must_use]
     pub fn srcaddr(&mut self) -> SrcaddrW<CH0_SRCrs> {
         SrcaddrW::new(self, 0)
     }

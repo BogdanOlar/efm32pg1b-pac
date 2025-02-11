@@ -93,49 +93,41 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 2 - APORT1X Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aport1xmasterdis(&mut self) -> Aport1xmasterdisW<APORTMASTERDISrs> {
         Aport1xmasterdisW::new(self, 2)
     }
     ///Bit 3 - APORT1Y Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aport1ymasterdis(&mut self) -> Aport1ymasterdisW<APORTMASTERDISrs> {
         Aport1ymasterdisW::new(self, 3)
     }
     ///Bit 4 - APORT2X Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aport2xmasterdis(&mut self) -> Aport2xmasterdisW<APORTMASTERDISrs> {
         Aport2xmasterdisW::new(self, 4)
     }
     ///Bit 5 - APORT2Y Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aport2ymasterdis(&mut self) -> Aport2ymasterdisW<APORTMASTERDISrs> {
         Aport2ymasterdisW::new(self, 5)
     }
     ///Bit 6 - APORT3X Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aport3xmasterdis(&mut self) -> Aport3xmasterdisW<APORTMASTERDISrs> {
         Aport3xmasterdisW::new(self, 6)
     }
     ///Bit 7 - APORT3Y Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aport3ymasterdis(&mut self) -> Aport3ymasterdisW<APORTMASTERDISrs> {
         Aport3ymasterdisW::new(self, 7)
     }
     ///Bit 8 - APORT4X Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aport4xmasterdis(&mut self) -> Aport4xmasterdisW<APORTMASTERDISrs> {
         Aport4xmasterdisW::new(self, 8)
     }
     ///Bit 9 - APORT4Y Master Disable
     #[inline(always)]
-    #[must_use]
     pub fn aport4ymasterdis(&mut self) -> Aport4ymasterdisW<APORTMASTERDISrs> {
         Aport4ymasterdisW::new(self, 9)
     }

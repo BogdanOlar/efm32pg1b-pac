@@ -16,25 +16,21 @@ impl core::fmt::Debug for crate::generic::Reg<DTFAULTCrs> {
 impl W {
     ///Bit 0 - DTI PRS0 Fault Clear
     #[inline(always)]
-    #[must_use]
     pub fn dtprs0fc(&mut self) -> Dtprs0fcW<DTFAULTCrs> {
         Dtprs0fcW::new(self, 0)
     }
     ///Bit 1 - DTI PRS1 Fault Clear
     #[inline(always)]
-    #[must_use]
     pub fn dtprs1fc(&mut self) -> Dtprs1fcW<DTFAULTCrs> {
         Dtprs1fcW::new(self, 1)
     }
     ///Bit 2 - DTI Debugger Fault Clear
     #[inline(always)]
-    #[must_use]
     pub fn dtdbgfc(&mut self) -> DtdbgfcW<DTFAULTCrs> {
         DtdbgfcW::new(self, 2)
     }
     ///Bit 3 - DTI Lockup Fault Clear
     #[inline(always)]
-    #[must_use]
     pub fn tlockupfc(&mut self) -> TlockupfcW<DTFAULTCrs> {
         TlockupfcW::new(self, 3)
     }

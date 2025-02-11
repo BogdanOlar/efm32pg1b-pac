@@ -12,13 +12,11 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bits 0:7 - Set DONE Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn done(&mut self) -> DoneW<IFSrs> {
         DoneW::new(self, 0)
     }
     ///Bit 31 - Set ERROR Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn error(&mut self) -> ErrorW<IFSrs> {
         ErrorW::new(self, 31)
     }

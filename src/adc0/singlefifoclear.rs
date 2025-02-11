@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<SINGLEFIFOCLEARrs> {
 impl W {
     ///Bit 0 - Clear Single FIFO Content
     #[inline(always)]
-    #[must_use]
     pub fn singlefifoclear(&mut self) -> SinglefifoclearW<SINGLEFIFOCLEARrs> {
         SinglefifoclearW::new(self, 0)
     }

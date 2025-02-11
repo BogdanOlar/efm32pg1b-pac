@@ -770,25 +770,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn ch0loc(&mut self) -> Ch0locW<ROUTELOC0rs> {
         Ch0locW::new(self, 0)
     }
     ///Bits 8:13 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn ch1loc(&mut self) -> Ch1locW<ROUTELOC0rs> {
         Ch1locW::new(self, 8)
     }
     ///Bits 16:21 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn ch2loc(&mut self) -> Ch2locW<ROUTELOC0rs> {
         Ch2locW::new(self, 16)
     }
     ///Bits 24:29 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn ch3loc(&mut self) -> Ch3locW<ROUTELOC0rs> {
         Ch3locW::new(self, 24)
     }

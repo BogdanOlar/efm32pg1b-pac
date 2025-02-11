@@ -108,7 +108,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Clock Select for LFA
     #[inline(always)]
-    #[must_use]
     pub fn lfa(&mut self) -> LfaW<LFACLKSELrs> {
         LfaW::new(self, 0)
     }

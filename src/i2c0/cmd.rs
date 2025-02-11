@@ -24,49 +24,41 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Send Start Condition
     #[inline(always)]
-    #[must_use]
     pub fn start(&mut self) -> StartW<CMDrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - Send Stop Condition
     #[inline(always)]
-    #[must_use]
     pub fn stop(&mut self) -> StopW<CMDrs> {
         StopW::new(self, 1)
     }
     ///Bit 2 - Send ACK
     #[inline(always)]
-    #[must_use]
     pub fn ack(&mut self) -> AckW<CMDrs> {
         AckW::new(self, 2)
     }
     ///Bit 3 - Send NACK
     #[inline(always)]
-    #[must_use]
     pub fn nack(&mut self) -> NackW<CMDrs> {
         NackW::new(self, 3)
     }
     ///Bit 4 - Continue Transmission
     #[inline(always)]
-    #[must_use]
     pub fn cont(&mut self) -> ContW<CMDrs> {
         ContW::new(self, 4)
     }
     ///Bit 5 - Abort Transmission
     #[inline(always)]
-    #[must_use]
     pub fn abort(&mut self) -> AbortW<CMDrs> {
         AbortW::new(self, 5)
     }
     ///Bit 6 - Clear TX
     #[inline(always)]
-    #[must_use]
     pub fn cleartx(&mut self) -> CleartxW<CMDrs> {
         CleartxW::new(self, 6)
     }
     ///Bit 7 - Clear Pending Commands
     #[inline(always)]
-    #[must_use]
     pub fn clearpc(&mut self) -> ClearpcW<CMDrs> {
         ClearpcW::new(self, 7)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 5 - Analog Switch Selection
     #[inline(always)]
-    #[must_use]
     pub fn anasw(&mut self) -> AnaswW<PWRCTRLrs> {
         AnaswW::new(self, 5)
     }

@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:6 - Sets the Startup Oscillator Core Bias Current
     #[inline(always)]
-    #[must_use]
     pub fn ibtrimxocore(&mut self) -> IbtrimxocoreW<HFXOSTARTUPCTRLrs> {
         IbtrimxocoreW::new(self, 0)
     }
     ///Bits 11:19 - Sets Oscillator Tuning Capacitance
     #[inline(always)]
-    #[must_use]
     pub fn ctune(&mut self) -> CtuneW<HFXOSTARTUPCTRLrs> {
         CtuneW::new(self, 11)
     }
     ///Bits 21:27 - This Field is Reserved. It Should Be Set to 0x9
     #[inline(always)]
-    #[must_use]
     pub fn reserved0(&mut self) -> Reserved0W<HFXOSTARTUPCTRLrs> {
         Reserved0W::new(self, 21)
     }
     ///Bits 28:31 - Sets the Regulator Output Current Level (shunt Regulator)
     #[inline(always)]
-    #[must_use]
     pub fn reserved1(&mut self) -> Reserved1W<HFXOSTARTUPCTRLrs> {
         Reserved1W::new(self, 28)
     }

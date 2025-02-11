@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<SWREQrs> {
 impl W {
     ///Bits 0:7 - Software Transfer Requests
     #[inline(always)]
-    #[must_use]
     pub fn swreq(&mut self) -> SwreqW<SWREQrs> {
         SwreqW::new(self, 0)
     }

@@ -307,13 +307,11 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn clkout0loc(&mut self) -> Clkout0locW<ROUTELOC0rs> {
         Clkout0locW::new(self, 0)
     }
     ///Bits 8:13 - I/O Location
     #[inline(always)]
-    #[must_use]
     pub fn clkout1loc(&mut self) -> Clkout1locW<ROUTELOC0rs> {
         Clkout1locW::new(self, 8)
     }

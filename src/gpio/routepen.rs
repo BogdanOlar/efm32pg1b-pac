@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Serial Wire Clock and JTAG Test Clock Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn swclktckpen(&mut self) -> SwclktckpenW<ROUTEPENrs> {
         SwclktckpenW::new(self, 0)
     }
     ///Bit 1 - Serial Wire Data and JTAG Test Mode Select Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn swdiotmspen(&mut self) -> SwdiotmspenW<ROUTEPENrs> {
         SwdiotmspenW::new(self, 1)
     }
     ///Bit 2 - JTAG Test Debug Output Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn tdopen(&mut self) -> TdopenW<ROUTEPENrs> {
         TdopenW::new(self, 2)
     }
     ///Bit 3 - JTAG Test Debug Input Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn tdipen(&mut self) -> TdipenW<ROUTEPENrs> {
         TdipenW::new(self, 3)
     }
     ///Bit 4 - Serial Wire Viewer Output Pin Enable
     #[inline(always)]
-    #[must_use]
     pub fn swvpen(&mut self) -> SwvpenW<ROUTEPENrs> {
         SwvpenW::new(self, 4)
     }

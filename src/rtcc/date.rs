@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Day of Month, Units
     #[inline(always)]
-    #[must_use]
     pub fn dayomu(&mut self) -> DayomuW<DATErs> {
         DayomuW::new(self, 0)
     }
     ///Bits 4:5 - Day of Month, Tens
     #[inline(always)]
-    #[must_use]
     pub fn dayomt(&mut self) -> DayomtW<DATErs> {
         DayomtW::new(self, 4)
     }
     ///Bits 8:11 - Month, Units
     #[inline(always)]
-    #[must_use]
     pub fn monthu(&mut self) -> MonthuW<DATErs> {
         MonthuW::new(self, 8)
     }
     ///Bit 12 - Month, Tens
     #[inline(always)]
-    #[must_use]
     pub fn montht(&mut self) -> MonthtW<DATErs> {
         MonthtW::new(self, 12)
     }
     ///Bits 16:19 - Year, Units
     #[inline(always)]
-    #[must_use]
     pub fn yearu(&mut self) -> YearuW<DATErs> {
         YearuW::new(self, 16)
     }
     ///Bits 20:23 - Year, Tens
     #[inline(always)]
-    #[must_use]
     pub fn yeart(&mut self) -> YeartW<DATErs> {
         YeartW::new(self, 20)
     }
     ///Bits 24:26 - Day of Week
     #[inline(always)]
-    #[must_use]
     pub fn dayow(&mut self) -> DayowW<DATErs> {
         DayowW::new(self, 24)
     }

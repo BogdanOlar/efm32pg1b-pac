@@ -425,25 +425,21 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Modular Operation Modulus
     #[inline(always)]
-    #[must_use]
     pub fn modulus(&mut self) -> ModulusW<WACrs> {
         ModulusW::new(self, 0)
     }
     ///Bit 4 - Modular Operation Field Type
     #[inline(always)]
-    #[must_use]
     pub fn modop(&mut self) -> ModopW<WACrs> {
         ModopW::new(self, 4)
     }
     ///Bits 8:9 - Multiply Width
     #[inline(always)]
-    #[must_use]
     pub fn mulwidth(&mut self) -> MulwidthW<WACrs> {
         MulwidthW::new(self, 8)
     }
     ///Bits 10:11 - Result Width
     #[inline(always)]
-    #[must_use]
     pub fn resultwidth(&mut self) -> ResultwidthW<WACrs> {
         ResultwidthW::new(self, 10)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:19 - Calibration Counter
     #[inline(always)]
-    #[must_use]
     pub fn calcnt(&mut self) -> CalcntW<CALCNTrs> {
         CalcntW::new(self, 0)
     }

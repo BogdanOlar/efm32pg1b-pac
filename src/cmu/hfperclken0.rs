@@ -113,61 +113,51 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Timer 0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn timer0(&mut self) -> Timer0W<HFPERCLKEN0rs> {
         Timer0W::new(self, 0)
     }
     ///Bit 1 - Timer 1 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn timer1(&mut self) -> Timer1W<HFPERCLKEN0rs> {
         Timer1W::new(self, 1)
     }
     ///Bit 2 - Universal Synchronous/Asynchronous Receiver/Transmitter 0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn usart0(&mut self) -> Usart0W<HFPERCLKEN0rs> {
         Usart0W::new(self, 2)
     }
     ///Bit 3 - Universal Synchronous/Asynchronous Receiver/Transmitter 1 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn usart1(&mut self) -> Usart1W<HFPERCLKEN0rs> {
         Usart1W::new(self, 3)
     }
     ///Bit 4 - Analog Comparator 0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn acmp0(&mut self) -> Acmp0W<HFPERCLKEN0rs> {
         Acmp0W::new(self, 4)
     }
     ///Bit 5 - Analog Comparator 1 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn acmp1(&mut self) -> Acmp1W<HFPERCLKEN0rs> {
         Acmp1W::new(self, 5)
     }
     ///Bit 6 - CRYOTIMER Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn cryotimer(&mut self) -> CryotimerW<HFPERCLKEN0rs> {
         CryotimerW::new(self, 6)
     }
     ///Bit 7 - I2C 0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn i2c0(&mut self) -> I2c0W<HFPERCLKEN0rs> {
         I2c0W::new(self, 7)
     }
     ///Bit 8 - Analog to Digital Converter 0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn adc0(&mut self) -> Adc0W<HFPERCLKEN0rs> {
         Adc0W::new(self, 8)
     }
     ///Bit 9 - Current Digital to Analog Converter 0 Clock Enable
     #[inline(always)]
-    #[must_use]
     pub fn idac0(&mut self) -> Idac0W<HFPERCLKEN0rs> {
         Idac0W::new(self, 9)
     }

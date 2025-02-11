@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Counter Top Value
     #[inline(always)]
-    #[must_use]
     pub fn top(&mut self) -> TopW<TOPrs> {
         TopW::new(self, 0)
     }

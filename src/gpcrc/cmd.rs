@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Initialization Enable
     #[inline(always)]
-    #[must_use]
     pub fn init(&mut self) -> InitW<CMDrs> {
         InitW::new(self, 0)
     }

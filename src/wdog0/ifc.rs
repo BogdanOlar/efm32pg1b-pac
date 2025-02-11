@@ -18,31 +18,26 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear TOUT Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn tout(&mut self) -> ToutW<IFCrs> {
         ToutW::new(self, 0)
     }
     ///Bit 1 - Clear WARN Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn warn(&mut self) -> WarnW<IFCrs> {
         WarnW::new(self, 1)
     }
     ///Bit 2 - Clear WIN Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn win(&mut self) -> WinW<IFCrs> {
         WinW::new(self, 2)
     }
     ///Bit 3 - Clear PEM0 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn pem0(&mut self) -> Pem0W<IFCrs> {
         Pem0W::new(self, 3)
     }
     ///Bit 4 - Clear PEM1 Interrupt Flag
     #[inline(always)]
-    #[must_use]
     pub fn pem1(&mut self) -> Pem1W<IFCrs> {
         Pem1W::new(self, 4)
     }

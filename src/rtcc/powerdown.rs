@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Retention RAM Power-down
     #[inline(always)]
-    #[must_use]
     pub fn ram(&mut self) -> RamW<POWERDOWNrs> {
         RamW::new(self, 0)
     }

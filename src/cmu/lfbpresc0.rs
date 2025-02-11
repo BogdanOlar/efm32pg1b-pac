@@ -108,7 +108,6 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Low Energy UART 0 Prescaler
     #[inline(always)]
-    #[must_use]
     pub fn leuart0(&mut self) -> Leuart0W<LFBPRESC0rs> {
         Leuart0W::new(self, 0)
     }

@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<DOUT_TGLrs> {
 impl W {
     ///Bits 0:15 - Data Out Toggle for pins 0:15
     #[inline(always)]
-    #[must_use]
     pub fn pins_dout_tgl(&mut self) -> PinsDoutTglW<DOUT_TGLrs> {
         PinsDoutTglW::new(self, 0)
     }
