@@ -28,52 +28,52 @@ impl core::fmt::Debug for crate::generic::Reg<OSCENCMDrs> {
 impl W {
     ///Bit 0 - HFRCO Enable
     #[inline(always)]
-    pub fn hfrcoen(&mut self) -> HfrcoenW<OSCENCMDrs> {
+    pub fn hfrcoen(&mut self) -> HfrcoenW<'_, OSCENCMDrs> {
         HfrcoenW::new(self, 0)
     }
     ///Bit 1 - HFRCO Disable
     #[inline(always)]
-    pub fn hfrcodis(&mut self) -> HfrcodisW<OSCENCMDrs> {
+    pub fn hfrcodis(&mut self) -> HfrcodisW<'_, OSCENCMDrs> {
         HfrcodisW::new(self, 1)
     }
     ///Bit 2 - HFXO Enable
     #[inline(always)]
-    pub fn hfxoen(&mut self) -> HfxoenW<OSCENCMDrs> {
+    pub fn hfxoen(&mut self) -> HfxoenW<'_, OSCENCMDrs> {
         HfxoenW::new(self, 2)
     }
     ///Bit 3 - HFXO Disable
     #[inline(always)]
-    pub fn hfxodis(&mut self) -> HfxodisW<OSCENCMDrs> {
+    pub fn hfxodis(&mut self) -> HfxodisW<'_, OSCENCMDrs> {
         HfxodisW::new(self, 3)
     }
     ///Bit 4 - AUXHFRCO Enable
     #[inline(always)]
-    pub fn auxhfrcoen(&mut self) -> AuxhfrcoenW<OSCENCMDrs> {
+    pub fn auxhfrcoen(&mut self) -> AuxhfrcoenW<'_, OSCENCMDrs> {
         AuxhfrcoenW::new(self, 4)
     }
     ///Bit 5 - AUXHFRCO Disable
     #[inline(always)]
-    pub fn auxhfrcodis(&mut self) -> AuxhfrcodisW<OSCENCMDrs> {
+    pub fn auxhfrcodis(&mut self) -> AuxhfrcodisW<'_, OSCENCMDrs> {
         AuxhfrcodisW::new(self, 5)
     }
     ///Bit 6 - LFRCO Enable
     #[inline(always)]
-    pub fn lfrcoen(&mut self) -> LfrcoenW<OSCENCMDrs> {
+    pub fn lfrcoen(&mut self) -> LfrcoenW<'_, OSCENCMDrs> {
         LfrcoenW::new(self, 6)
     }
     ///Bit 7 - LFRCO Disable
     #[inline(always)]
-    pub fn lfrcodis(&mut self) -> LfrcodisW<OSCENCMDrs> {
+    pub fn lfrcodis(&mut self) -> LfrcodisW<'_, OSCENCMDrs> {
         LfrcodisW::new(self, 7)
     }
     ///Bit 8 - LFXO Enable
     #[inline(always)]
-    pub fn lfxoen(&mut self) -> LfxoenW<OSCENCMDrs> {
+    pub fn lfxoen(&mut self) -> LfxoenW<'_, OSCENCMDrs> {
         LfxoenW::new(self, 8)
     }
     ///Bit 9 - LFXO Disable
     #[inline(always)]
-    pub fn lfxodis(&mut self) -> LfxodisW<OSCENCMDrs> {
+    pub fn lfxodis(&mut self) -> LfxodisW<'_, OSCENCMDrs> {
         LfxodisW::new(self, 9)
     }
 }
@@ -87,10 +87,6 @@ impl crate::RegisterSpec for OSCENCMDrs {
 ///`write(|w| ..)` method takes [`oscencmd::W`](W) writer structure
 impl crate::Writable for OSCENCMDrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets OSCENCMD to value 0
-impl crate::Resettable for OSCENCMDrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for OSCENCMDrs {}

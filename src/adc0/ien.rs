@@ -113,52 +113,52 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - SINGLE Interrupt Enable
     #[inline(always)]
-    pub fn single(&mut self) -> SingleW<IENrs> {
+    pub fn single(&mut self) -> SingleW<'_, IENrs> {
         SingleW::new(self, 0)
     }
     ///Bit 1 - SCAN Interrupt Enable
     #[inline(always)]
-    pub fn scan(&mut self) -> ScanW<IENrs> {
+    pub fn scan(&mut self) -> ScanW<'_, IENrs> {
         ScanW::new(self, 1)
     }
     ///Bit 8 - SINGLEOF Interrupt Enable
     #[inline(always)]
-    pub fn singleof(&mut self) -> SingleofW<IENrs> {
+    pub fn singleof(&mut self) -> SingleofW<'_, IENrs> {
         SingleofW::new(self, 8)
     }
     ///Bit 9 - SCANOF Interrupt Enable
     #[inline(always)]
-    pub fn scanof(&mut self) -> ScanofW<IENrs> {
+    pub fn scanof(&mut self) -> ScanofW<'_, IENrs> {
         ScanofW::new(self, 9)
     }
     ///Bit 10 - SINGLEUF Interrupt Enable
     #[inline(always)]
-    pub fn singleuf(&mut self) -> SingleufW<IENrs> {
+    pub fn singleuf(&mut self) -> SingleufW<'_, IENrs> {
         SingleufW::new(self, 10)
     }
     ///Bit 11 - SCANUF Interrupt Enable
     #[inline(always)]
-    pub fn scanuf(&mut self) -> ScanufW<IENrs> {
+    pub fn scanuf(&mut self) -> ScanufW<'_, IENrs> {
         ScanufW::new(self, 11)
     }
     ///Bit 16 - SINGLECMP Interrupt Enable
     #[inline(always)]
-    pub fn singlecmp(&mut self) -> SinglecmpW<IENrs> {
+    pub fn singlecmp(&mut self) -> SinglecmpW<'_, IENrs> {
         SinglecmpW::new(self, 16)
     }
     ///Bit 17 - SCANCMP Interrupt Enable
     #[inline(always)]
-    pub fn scancmp(&mut self) -> ScancmpW<IENrs> {
+    pub fn scancmp(&mut self) -> ScancmpW<'_, IENrs> {
         ScancmpW::new(self, 17)
     }
     ///Bit 24 - VREFOV Interrupt Enable
     #[inline(always)]
-    pub fn vrefov(&mut self) -> VrefovW<IENrs> {
+    pub fn vrefov(&mut self) -> VrefovW<'_, IENrs> {
         VrefovW::new(self, 24)
     }
     ///Bit 25 - PROGERR Interrupt Enable
     #[inline(always)]
-    pub fn progerr(&mut self) -> ProgerrW<IENrs> {
+    pub fn progerr(&mut self) -> ProgerrW<'_, IENrs> {
         ProgerrW::new(self, 25)
     }
 }
@@ -174,10 +174,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

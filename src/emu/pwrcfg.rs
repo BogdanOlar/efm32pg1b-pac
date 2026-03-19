@@ -82,7 +82,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Power Configuration
     #[inline(always)]
-    pub fn pwrcfg(&mut self) -> PwrcfgW<PWRCFGrs> {
+    pub fn pwrcfg(&mut self) -> PwrcfgW<'_, PWRCFGrs> {
         PwrcfgW::new(self, 0)
     }
 }
@@ -98,10 +98,6 @@ impl crate::Readable for PWRCFGrs {}
 ///`write(|w| ..)` method takes [`pwrcfg::W`](W) writer structure
 impl crate::Writable for PWRCFGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PWRCFG to value 0
-impl crate::Resettable for PWRCFGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PWRCFGrs {}

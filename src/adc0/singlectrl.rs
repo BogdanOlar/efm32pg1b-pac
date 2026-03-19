@@ -498,52 +498,52 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Single Channel Repetitive Mode
     #[inline(always)]
-    pub fn rep(&mut self) -> RepW<SINGLECTRLrs> {
+    pub fn rep(&mut self) -> RepW<'_, SINGLECTRLrs> {
         RepW::new(self, 0)
     }
     ///Bit 1 - Single Channel Differential Mode
     #[inline(always)]
-    pub fn diff(&mut self) -> DiffW<SINGLECTRLrs> {
+    pub fn diff(&mut self) -> DiffW<'_, SINGLECTRLrs> {
         DiffW::new(self, 1)
     }
     ///Bit 2 - Single Channel Result Adjustment
     #[inline(always)]
-    pub fn adj(&mut self) -> AdjW<SINGLECTRLrs> {
+    pub fn adj(&mut self) -> AdjW<'_, SINGLECTRLrs> {
         AdjW::new(self, 2)
     }
     ///Bits 3:4 - Single Channel Resolution Select
     #[inline(always)]
-    pub fn res(&mut self) -> ResW<SINGLECTRLrs> {
+    pub fn res(&mut self) -> ResW<'_, SINGLECTRLrs> {
         ResW::new(self, 3)
     }
     ///Bits 5:7 - Single Channel Reference Selection
     #[inline(always)]
-    pub fn ref_(&mut self) -> RefW<SINGLECTRLrs> {
+    pub fn ref_(&mut self) -> RefW<'_, SINGLECTRLrs> {
         RefW::new(self, 5)
     }
     ///Bits 8:15 - Single Channel Positive Input Selection
     #[inline(always)]
-    pub fn possel(&mut self) -> PosselW<SINGLECTRLrs> {
+    pub fn possel(&mut self) -> PosselW<'_, SINGLECTRLrs> {
         PosselW::new(self, 8)
     }
     ///Bits 16:23 - Single Channel Negative Input Selection
     #[inline(always)]
-    pub fn negsel(&mut self) -> NegselW<SINGLECTRLrs> {
+    pub fn negsel(&mut self) -> NegselW<'_, SINGLECTRLrs> {
         NegselW::new(self, 16)
     }
     ///Bits 24:27 - Single Channel Acquisition Time
     #[inline(always)]
-    pub fn at(&mut self) -> AtW<SINGLECTRLrs> {
+    pub fn at(&mut self) -> AtW<'_, SINGLECTRLrs> {
         AtW::new(self, 24)
     }
     ///Bit 29 - Single Channel PRS Trigger Enable
     #[inline(always)]
-    pub fn prsen(&mut self) -> PrsenW<SINGLECTRLrs> {
+    pub fn prsen(&mut self) -> PrsenW<'_, SINGLECTRLrs> {
         PrsenW::new(self, 29)
     }
     ///Bit 31 - Compare Logic Enable for Single Channel
     #[inline(always)]
-    pub fn cmpen(&mut self) -> CmpenW<SINGLECTRLrs> {
+    pub fn cmpen(&mut self) -> CmpenW<'_, SINGLECTRLrs> {
         CmpenW::new(self, 31)
     }
 }
@@ -559,8 +559,6 @@ impl crate::Readable for SINGLECTRLrs {}
 ///`write(|w| ..)` method takes [`singlectrl::W`](W) writer structure
 impl crate::Writable for SINGLECTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SINGLECTRL to value 0x00ff_ff00
 impl crate::Resettable for SINGLECTRLrs {

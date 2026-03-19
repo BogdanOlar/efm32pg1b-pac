@@ -26,6 +26,4 @@ impl crate::RegisterSpec for DCDCSYNCrs {
 ///`read()` method returns [`dcdcsync::R`](R) reader structure
 impl crate::Readable for DCDCSYNCrs {}
 ///`reset()` method sets DCDCSYNC to value 0
-impl crate::Resettable for DCDCSYNCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DCDCSYNCrs {}

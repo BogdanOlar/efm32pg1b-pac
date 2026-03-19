@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:19 - Calibration Counter
     #[inline(always)]
-    pub fn calcnt(&mut self) -> CalcntW<CALCNTrs> {
+    pub fn calcnt(&mut self) -> CalcntW<'_, CALCNTrs> {
         CalcntW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for CALCNTrs {}
 ///`write(|w| ..)` method takes [`calcnt::W`](W) writer structure
 impl crate::Writable for CALCNTrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CALCNT to value 0
-impl crate::Resettable for CALCNTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CALCNTrs {}

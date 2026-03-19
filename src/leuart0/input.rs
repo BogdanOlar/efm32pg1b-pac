@@ -222,12 +222,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - RX PRS Channel Select
     #[inline(always)]
-    pub fn rxprssel(&mut self) -> RxprsselW<INPUTrs> {
+    pub fn rxprssel(&mut self) -> RxprsselW<'_, INPUTrs> {
         RxprsselW::new(self, 0)
     }
     ///Bit 5 - PRS RX Enable
     #[inline(always)]
-    pub fn rxprs(&mut self) -> RxprsW<INPUTrs> {
+    pub fn rxprs(&mut self) -> RxprsW<'_, INPUTrs> {
         RxprsW::new(self, 5)
     }
 }
@@ -243,10 +243,6 @@ impl crate::Readable for INPUTrs {}
 ///`write(|w| ..)` method takes [`input::W`](W) writer structure
 impl crate::Writable for INPUTrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets INPUT to value 0
-impl crate::Resettable for INPUTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INPUTrs {}

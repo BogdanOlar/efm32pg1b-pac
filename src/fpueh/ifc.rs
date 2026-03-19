@@ -20,32 +20,32 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear FPIOC Interrupt Flag
     #[inline(always)]
-    pub fn fpioc(&mut self) -> FpiocW<IFCrs> {
+    pub fn fpioc(&mut self) -> FpiocW<'_, IFCrs> {
         FpiocW::new(self, 0)
     }
     ///Bit 1 - Clear FPDZC Interrupt Flag
     #[inline(always)]
-    pub fn fpdzc(&mut self) -> FpdzcW<IFCrs> {
+    pub fn fpdzc(&mut self) -> FpdzcW<'_, IFCrs> {
         FpdzcW::new(self, 1)
     }
     ///Bit 2 - Clear FPUFC Interrupt Flag
     #[inline(always)]
-    pub fn fpufc(&mut self) -> FpufcW<IFCrs> {
+    pub fn fpufc(&mut self) -> FpufcW<'_, IFCrs> {
         FpufcW::new(self, 2)
     }
     ///Bit 3 - Clear FPOFC Interrupt Flag
     #[inline(always)]
-    pub fn fpofc(&mut self) -> FpofcW<IFCrs> {
+    pub fn fpofc(&mut self) -> FpofcW<'_, IFCrs> {
         FpofcW::new(self, 3)
     }
     ///Bit 4 - Clear FPIDC Interrupt Flag
     #[inline(always)]
-    pub fn fpidc(&mut self) -> FpidcW<IFCrs> {
+    pub fn fpidc(&mut self) -> FpidcW<'_, IFCrs> {
         FpidcW::new(self, 4)
     }
     ///Bit 5 - Clear FPIXC Interrupt Flag
     #[inline(always)]
-    pub fn fpixc(&mut self) -> FpixcW<IFCrs> {
+    pub fn fpixc(&mut self) -> FpixcW<'_, IFCrs> {
         FpixcW::new(self, 5)
     }
 }
@@ -59,10 +59,6 @@ impl crate::RegisterSpec for IFCrs {
 ///`write(|w| ..)` method takes [`ifc::W`](W) writer structure
 impl crate::Writable for IFCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFC to value 0
-impl crate::Resettable for IFCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFCrs {}

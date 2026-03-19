@@ -46,97 +46,97 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set VMONAVDDFALL Interrupt Flag
     #[inline(always)]
-    pub fn vmonavddfall(&mut self) -> VmonavddfallW<IFSrs> {
+    pub fn vmonavddfall(&mut self) -> VmonavddfallW<'_, IFSrs> {
         VmonavddfallW::new(self, 0)
     }
     ///Bit 1 - Set VMONAVDDRISE Interrupt Flag
     #[inline(always)]
-    pub fn vmonavddrise(&mut self) -> VmonavddriseW<IFSrs> {
+    pub fn vmonavddrise(&mut self) -> VmonavddriseW<'_, IFSrs> {
         VmonavddriseW::new(self, 1)
     }
     ///Bit 2 - Set VMONALTAVDDFALL Interrupt Flag
     #[inline(always)]
-    pub fn vmonaltavddfall(&mut self) -> VmonaltavddfallW<IFSrs> {
+    pub fn vmonaltavddfall(&mut self) -> VmonaltavddfallW<'_, IFSrs> {
         VmonaltavddfallW::new(self, 2)
     }
     ///Bit 3 - Set VMONALTAVDDRISE Interrupt Flag
     #[inline(always)]
-    pub fn vmonaltavddrise(&mut self) -> VmonaltavddriseW<IFSrs> {
+    pub fn vmonaltavddrise(&mut self) -> VmonaltavddriseW<'_, IFSrs> {
         VmonaltavddriseW::new(self, 3)
     }
     ///Bit 4 - Set VMONDVDDFALL Interrupt Flag
     #[inline(always)]
-    pub fn vmondvddfall(&mut self) -> VmondvddfallW<IFSrs> {
+    pub fn vmondvddfall(&mut self) -> VmondvddfallW<'_, IFSrs> {
         VmondvddfallW::new(self, 4)
     }
     ///Bit 5 - Set VMONDVDDRISE Interrupt Flag
     #[inline(always)]
-    pub fn vmondvddrise(&mut self) -> VmondvddriseW<IFSrs> {
+    pub fn vmondvddrise(&mut self) -> VmondvddriseW<'_, IFSrs> {
         VmondvddriseW::new(self, 5)
     }
     ///Bit 6 - Set VMONIO0FALL Interrupt Flag
     #[inline(always)]
-    pub fn vmonio0fall(&mut self) -> Vmonio0fallW<IFSrs> {
+    pub fn vmonio0fall(&mut self) -> Vmonio0fallW<'_, IFSrs> {
         Vmonio0fallW::new(self, 6)
     }
     ///Bit 7 - Set VMONIO0RISE Interrupt Flag
     #[inline(always)]
-    pub fn vmonio0rise(&mut self) -> Vmonio0riseW<IFSrs> {
+    pub fn vmonio0rise(&mut self) -> Vmonio0riseW<'_, IFSrs> {
         Vmonio0riseW::new(self, 7)
     }
     ///Bit 14 - Set VMONFVDDFALL Interrupt Flag
     #[inline(always)]
-    pub fn vmonfvddfall(&mut self) -> VmonfvddfallW<IFSrs> {
+    pub fn vmonfvddfall(&mut self) -> VmonfvddfallW<'_, IFSrs> {
         VmonfvddfallW::new(self, 14)
     }
     ///Bit 15 - Set VMONFVDDRISE Interrupt Flag
     #[inline(always)]
-    pub fn vmonfvddrise(&mut self) -> VmonfvddriseW<IFSrs> {
+    pub fn vmonfvddrise(&mut self) -> VmonfvddriseW<'_, IFSrs> {
         VmonfvddriseW::new(self, 15)
     }
     ///Bit 16 - Set PFETOVERCURRENTLIMIT Interrupt Flag
     #[inline(always)]
-    pub fn pfetovercurrentlimit(&mut self) -> PfetovercurrentlimitW<IFSrs> {
+    pub fn pfetovercurrentlimit(&mut self) -> PfetovercurrentlimitW<'_, IFSrs> {
         PfetovercurrentlimitW::new(self, 16)
     }
     ///Bit 17 - Set NFETOVERCURRENTLIMIT Interrupt Flag
     #[inline(always)]
-    pub fn nfetovercurrentlimit(&mut self) -> NfetovercurrentlimitW<IFSrs> {
+    pub fn nfetovercurrentlimit(&mut self) -> NfetovercurrentlimitW<'_, IFSrs> {
         NfetovercurrentlimitW::new(self, 17)
     }
     ///Bit 18 - Set DCDCLPRUNNING Interrupt Flag
     #[inline(always)]
-    pub fn dcdclprunning(&mut self) -> DcdclprunningW<IFSrs> {
+    pub fn dcdclprunning(&mut self) -> DcdclprunningW<'_, IFSrs> {
         DcdclprunningW::new(self, 18)
     }
     ///Bit 19 - Set DCDCLNRUNNING Interrupt Flag
     #[inline(always)]
-    pub fn dcdclnrunning(&mut self) -> DcdclnrunningW<IFSrs> {
+    pub fn dcdclnrunning(&mut self) -> DcdclnrunningW<'_, IFSrs> {
         DcdclnrunningW::new(self, 19)
     }
     ///Bit 20 - Set DCDCINBYPASS Interrupt Flag
     #[inline(always)]
-    pub fn dcdcinbypass(&mut self) -> DcdcinbypassW<IFSrs> {
+    pub fn dcdcinbypass(&mut self) -> DcdcinbypassW<'_, IFSrs> {
         DcdcinbypassW::new(self, 20)
     }
     ///Bit 24 - Set EM23WAKEUP Interrupt Flag
     #[inline(always)]
-    pub fn em23wakeup(&mut self) -> Em23wakeupW<IFSrs> {
+    pub fn em23wakeup(&mut self) -> Em23wakeupW<'_, IFSrs> {
         Em23wakeupW::new(self, 24)
     }
     ///Bit 29 - Set TEMP Interrupt Flag
     #[inline(always)]
-    pub fn temp(&mut self) -> TempW<IFSrs> {
+    pub fn temp(&mut self) -> TempW<'_, IFSrs> {
         TempW::new(self, 29)
     }
     ///Bit 30 - Set TEMPLOW Interrupt Flag
     #[inline(always)]
-    pub fn templow(&mut self) -> TemplowW<IFSrs> {
+    pub fn templow(&mut self) -> TemplowW<'_, IFSrs> {
         TemplowW::new(self, 30)
     }
     ///Bit 31 - Set TEMPHIGH Interrupt Flag
     #[inline(always)]
-    pub fn temphigh(&mut self) -> TemphighW<IFSrs> {
+    pub fn temphigh(&mut self) -> TemphighW<'_, IFSrs> {
         TemphighW::new(self, 31)
     }
 }
@@ -150,10 +150,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

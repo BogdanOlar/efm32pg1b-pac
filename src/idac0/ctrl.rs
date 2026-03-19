@@ -751,52 +751,52 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Current DAC Enable
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<CTRLrs> {
+    pub fn en(&mut self) -> EnW<'_, CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 1 - Current Sink Enable
     #[inline(always)]
-    pub fn cursink(&mut self) -> CursinkW<CTRLrs> {
+    pub fn cursink(&mut self) -> CursinkW<'_, CTRLrs> {
         CursinkW::new(self, 1)
     }
     ///Bit 2 - Minimum Output Transition Enable
     #[inline(always)]
-    pub fn minouttrans(&mut self) -> MinouttransW<CTRLrs> {
+    pub fn minouttrans(&mut self) -> MinouttransW<'_, CTRLrs> {
         MinouttransW::new(self, 2)
     }
     ///Bit 3 - APORT Output Enable
     #[inline(always)]
-    pub fn aportouten(&mut self) -> AportoutenW<CTRLrs> {
+    pub fn aportouten(&mut self) -> AportoutenW<'_, CTRLrs> {
         AportoutenW::new(self, 3)
     }
     ///Bits 4:11 - APORT Output Select
     #[inline(always)]
-    pub fn aportoutsel(&mut self) -> AportoutselW<CTRLrs> {
+    pub fn aportoutsel(&mut self) -> AportoutselW<'_, CTRLrs> {
         AportoutselW::new(self, 4)
     }
     ///Bit 12 - Power Select
     #[inline(always)]
-    pub fn pwrsel(&mut self) -> PwrselW<CTRLrs> {
+    pub fn pwrsel(&mut self) -> PwrselW<'_, CTRLrs> {
         PwrselW::new(self, 12)
     }
     ///Bit 13 - EM2 Delay
     #[inline(always)]
-    pub fn em2delay(&mut self) -> Em2delayW<CTRLrs> {
+    pub fn em2delay(&mut self) -> Em2delayW<'_, CTRLrs> {
         Em2delayW::new(self, 13)
     }
     ///Bit 14 - APORT Bus Master Disable
     #[inline(always)]
-    pub fn aportmasterdis(&mut self) -> AportmasterdisW<CTRLrs> {
+    pub fn aportmasterdis(&mut self) -> AportmasterdisW<'_, CTRLrs> {
         AportmasterdisW::new(self, 14)
     }
     ///Bit 16 - PRS Controlled APORT Output Enable
     #[inline(always)]
-    pub fn aportoutenprs(&mut self) -> AportoutenprsW<CTRLrs> {
+    pub fn aportoutenprs(&mut self) -> AportoutenprsW<'_, CTRLrs> {
         AportoutenprsW::new(self, 16)
     }
     ///Bits 20:23 - IDAC Output Enable PRS Channel Select
     #[inline(always)]
-    pub fn prssel(&mut self) -> PrsselW<CTRLrs> {
+    pub fn prssel(&mut self) -> PrsselW<'_, CTRLrs> {
         PrsselW::new(self, 20)
     }
 }
@@ -812,10 +812,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

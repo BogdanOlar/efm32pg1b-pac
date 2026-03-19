@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 2 - NA DUTY in EM01
     #[inline(always)]
-    pub fn nadutyem01(&mut self) -> Nadutyem01W<BIASCONFrs> {
+    pub fn nadutyem01(&mut self) -> Nadutyem01W<'_, BIASCONFrs> {
         Nadutyem01W::new(self, 2)
     }
     ///Bit 3 - LP in EM01
     #[inline(always)]
-    pub fn lpem01(&mut self) -> Lpem01W<BIASCONFrs> {
+    pub fn lpem01(&mut self) -> Lpem01W<'_, BIASCONFrs> {
         Lpem01W::new(self, 3)
     }
     ///Bit 4 - GMC in EM234
     #[inline(always)]
-    pub fn gmcem23(&mut self) -> Gmcem23W<BIASCONFrs> {
+    pub fn gmcem23(&mut self) -> Gmcem23W<'_, BIASCONFrs> {
         Gmcem23W::new(self, 4)
     }
     ///Bit 5 - UADUTY in EM234
     #[inline(always)]
-    pub fn uadutyem23(&mut self) -> Uadutyem23W<BIASCONFrs> {
+    pub fn uadutyem23(&mut self) -> Uadutyem23W<'_, BIASCONFrs> {
         Uadutyem23W::new(self, 5)
     }
     ///Bit 6 - NA DUTY in EM234
     #[inline(always)]
-    pub fn nadutyem23(&mut self) -> Nadutyem23W<BIASCONFrs> {
+    pub fn nadutyem23(&mut self) -> Nadutyem23W<'_, BIASCONFrs> {
         Nadutyem23W::new(self, 6)
     }
     ///Bit 7 - LP in EM234
     #[inline(always)]
-    pub fn lpem23(&mut self) -> Lpem23W<BIASCONFrs> {
+    pub fn lpem23(&mut self) -> Lpem23W<'_, BIASCONFrs> {
         Lpem23W::new(self, 7)
     }
 }
@@ -114,8 +114,6 @@ impl crate::Readable for BIASCONFrs {}
 ///`write(|w| ..)` method takes [`biasconf::W`](W) writer structure
 impl crate::Writable for BIASCONFrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets BIASCONF to value 0xf8
 impl crate::Resettable for BIASCONFrs {

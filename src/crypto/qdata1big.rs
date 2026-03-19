@@ -21,7 +21,7 @@ impl core::fmt::Debug for crate::generic::Reg<QDATA1BIGrs> {
 impl W {
     ///Bits 0:31 - Quad Data 1 Big Endian Access
     #[inline(always)]
-    pub fn qdata1big(&mut self) -> Qdata1bigW<QDATA1BIGrs> {
+    pub fn qdata1big(&mut self) -> Qdata1bigW<'_, QDATA1BIGrs> {
         Qdata1bigW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for QDATA1BIGrs {}
 ///`write(|w| ..)` method takes [`qdata1big::W`](W) writer structure
 impl crate::Writable for QDATA1BIGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets QDATA1BIG to value 0
-impl crate::Resettable for QDATA1BIGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for QDATA1BIGrs {}

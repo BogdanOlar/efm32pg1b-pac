@@ -601,22 +601,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 16:18 - TX Frame Start Delay
     #[inline(always)]
-    pub fn txdelay(&mut self) -> TxdelayW<TIMINGrs> {
+    pub fn txdelay(&mut self) -> TxdelayW<'_, TIMINGrs> {
         TxdelayW::new(self, 16)
     }
     ///Bits 20:22 - Chip Select Setup
     #[inline(always)]
-    pub fn cssetup(&mut self) -> CssetupW<TIMINGrs> {
+    pub fn cssetup(&mut self) -> CssetupW<'_, TIMINGrs> {
         CssetupW::new(self, 20)
     }
     ///Bits 24:26 - Inter-character Spacing
     #[inline(always)]
-    pub fn ics(&mut self) -> IcsW<TIMINGrs> {
+    pub fn ics(&mut self) -> IcsW<'_, TIMINGrs> {
         IcsW::new(self, 24)
     }
     ///Bits 28:30 - Chip Select Hold
     #[inline(always)]
-    pub fn cshold(&mut self) -> CsholdW<TIMINGrs> {
+    pub fn cshold(&mut self) -> CsholdW<'_, TIMINGrs> {
         CsholdW::new(self, 28)
     }
 }
@@ -632,10 +632,6 @@ impl crate::Readable for TIMINGrs {}
 ///`write(|w| ..)` method takes [`timing::W`](W) writer structure
 impl crate::Writable for TIMINGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TIMING to value 0
-impl crate::Resettable for TIMINGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TIMINGrs {}

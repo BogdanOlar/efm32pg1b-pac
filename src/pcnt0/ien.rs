@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - UF Interrupt Enable
     #[inline(always)]
-    pub fn uf(&mut self) -> UfW<IENrs> {
+    pub fn uf(&mut self) -> UfW<'_, IENrs> {
         UfW::new(self, 0)
     }
     ///Bit 1 - OF Interrupt Enable
     #[inline(always)]
-    pub fn of(&mut self) -> OfW<IENrs> {
+    pub fn of(&mut self) -> OfW<'_, IENrs> {
         OfW::new(self, 1)
     }
     ///Bit 2 - DIRCNG Interrupt Enable
     #[inline(always)]
-    pub fn dircng(&mut self) -> DircngW<IENrs> {
+    pub fn dircng(&mut self) -> DircngW<'_, IENrs> {
         DircngW::new(self, 2)
     }
     ///Bit 3 - AUXOF Interrupt Enable
     #[inline(always)]
-    pub fn auxof(&mut self) -> AuxofW<IENrs> {
+    pub fn auxof(&mut self) -> AuxofW<'_, IENrs> {
         AuxofW::new(self, 3)
     }
     ///Bit 4 - TCC Interrupt Enable
     #[inline(always)]
-    pub fn tcc(&mut self) -> TccW<IENrs> {
+    pub fn tcc(&mut self) -> TccW<'_, IENrs> {
         TccW::new(self, 4)
     }
     ///Bit 5 - OQSTERR Interrupt Enable
     #[inline(always)]
-    pub fn oqsterr(&mut self) -> OqsterrW<IENrs> {
+    pub fn oqsterr(&mut self) -> OqsterrW<'_, IENrs> {
         OqsterrW::new(self, 5)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

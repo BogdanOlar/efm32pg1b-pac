@@ -915,97 +915,97 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Mode Select
     #[inline(always)]
-    pub fn mode(&mut self) -> ModeW<CTRLrs> {
+    pub fn mode(&mut self) -> ModeW<'_, CTRLrs> {
         ModeW::new(self, 0)
     }
     ///Bit 3 - Enable Digital Pulse Width Filter
     #[inline(always)]
-    pub fn filt(&mut self) -> FiltW<CTRLrs> {
+    pub fn filt(&mut self) -> FiltW<'_, CTRLrs> {
         FiltW::new(self, 3)
     }
     ///Bit 4 - Enable PCNT Clock Domain Reset
     #[inline(always)]
-    pub fn rsten(&mut self) -> RstenW<CTRLrs> {
+    pub fn rsten(&mut self) -> RstenW<'_, CTRLrs> {
         RstenW::new(self, 4)
     }
     ///Bit 5 - Enable CNT Reset
     #[inline(always)]
-    pub fn cntrsten(&mut self) -> CntrstenW<CTRLrs> {
+    pub fn cntrsten(&mut self) -> CntrstenW<'_, CTRLrs> {
         CntrstenW::new(self, 5)
     }
     ///Bit 6 - Enable AUXCNT Reset
     #[inline(always)]
-    pub fn auxcntrsten(&mut self) -> AuxcntrstenW<CTRLrs> {
+    pub fn auxcntrsten(&mut self) -> AuxcntrstenW<'_, CTRLrs> {
         AuxcntrstenW::new(self, 6)
     }
     ///Bit 7 - Debug Mode Halt Enable
     #[inline(always)]
-    pub fn debughalt(&mut self) -> DebughaltW<CTRLrs> {
+    pub fn debughalt(&mut self) -> DebughaltW<'_, CTRLrs> {
         DebughaltW::new(self, 7)
     }
     ///Bit 8 - Enable Hysteresis
     #[inline(always)]
-    pub fn hyst(&mut self) -> HystW<CTRLrs> {
+    pub fn hyst(&mut self) -> HystW<'_, CTRLrs> {
         HystW::new(self, 8)
     }
     ///Bit 9 - Count Direction Determined By S1
     #[inline(always)]
-    pub fn s1cdir(&mut self) -> S1cdirW<CTRLrs> {
+    pub fn s1cdir(&mut self) -> S1cdirW<'_, CTRLrs> {
         S1cdirW::new(self, 9)
     }
     ///Bits 10:11 - Controls When the Counter Counts
     #[inline(always)]
-    pub fn cntev(&mut self) -> CntevW<CTRLrs> {
+    pub fn cntev(&mut self) -> CntevW<'_, CTRLrs> {
         CntevW::new(self, 10)
     }
     ///Bits 12:13 - Controls When the Auxiliary Counter Counts
     #[inline(always)]
-    pub fn auxcntev(&mut self) -> AuxcntevW<CTRLrs> {
+    pub fn auxcntev(&mut self) -> AuxcntevW<'_, CTRLrs> {
         AuxcntevW::new(self, 12)
     }
     ///Bit 14 - Non-Quadrature Mode Counter Direction Control
     #[inline(always)]
-    pub fn cntdir(&mut self) -> CntdirW<CTRLrs> {
+    pub fn cntdir(&mut self) -> CntdirW<'_, CTRLrs> {
         CntdirW::new(self, 14)
     }
     ///Bit 15 - Edge Select
     #[inline(always)]
-    pub fn edge(&mut self) -> EdgeW<CTRLrs> {
+    pub fn edge(&mut self) -> EdgeW<'_, CTRLrs> {
         EdgeW::new(self, 15)
     }
     ///Bits 16:17 - Sets the Mode for Triggered Compare and Clear
     #[inline(always)]
-    pub fn tccmode(&mut self) -> TccmodeW<CTRLrs> {
+    pub fn tccmode(&mut self) -> TccmodeW<'_, CTRLrs> {
         TccmodeW::new(self, 16)
     }
     ///Bits 19:20 - Set the LFA Prescaler for Triggered Compare and Clear
     #[inline(always)]
-    pub fn tccpresc(&mut self) -> TccprescW<CTRLrs> {
+    pub fn tccpresc(&mut self) -> TccprescW<'_, CTRLrs> {
         TccprescW::new(self, 19)
     }
     ///Bits 22:23 - Triggered Compare and Clear Compare Mode
     #[inline(always)]
-    pub fn tcccomp(&mut self) -> TcccompW<CTRLrs> {
+    pub fn tcccomp(&mut self) -> TcccompW<'_, CTRLrs> {
         TcccompW::new(self, 22)
     }
     ///Bit 24 - PRS Gate Enable
     #[inline(always)]
-    pub fn prsgateen(&mut self) -> PrsgateenW<CTRLrs> {
+    pub fn prsgateen(&mut self) -> PrsgateenW<'_, CTRLrs> {
         PrsgateenW::new(self, 24)
     }
     ///Bit 25 - TCC PRS Polarity Select
     #[inline(always)]
-    pub fn tccprspol(&mut self) -> TccprspolW<CTRLrs> {
+    pub fn tccprspol(&mut self) -> TccprspolW<'_, CTRLrs> {
         TccprspolW::new(self, 25)
     }
     ///Bits 26:29 - TCC PRS Channel Select
     #[inline(always)]
-    pub fn tccprssel(&mut self) -> TccprsselW<CTRLrs> {
+    pub fn tccprssel(&mut self) -> TccprsselW<'_, CTRLrs> {
         TccprsselW::new(self, 26)
     }
     ///Bit 31 - TOPB High Frequency Value Select
     #[inline(always)]
-    pub fn topbhfsel(&mut self) -> TopbhfselW<CTRLrs> {
+    pub fn topbhfsel(&mut self) -> TopbhfselW<'_, CTRLrs> {
         TopbhfselW::new(self, 31)
     }
 }
@@ -1021,10 +1021,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

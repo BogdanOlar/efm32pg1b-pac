@@ -16,22 +16,22 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Single Channel Conversion Start
     #[inline(always)]
-    pub fn singlestart(&mut self) -> SinglestartW<CMDrs> {
+    pub fn singlestart(&mut self) -> SinglestartW<'_, CMDrs> {
         SinglestartW::new(self, 0)
     }
     ///Bit 1 - Single Channel Conversion Stop
     #[inline(always)]
-    pub fn singlestop(&mut self) -> SinglestopW<CMDrs> {
+    pub fn singlestop(&mut self) -> SinglestopW<'_, CMDrs> {
         SinglestopW::new(self, 1)
     }
     ///Bit 2 - Scan Sequence Start
     #[inline(always)]
-    pub fn scanstart(&mut self) -> ScanstartW<CMDrs> {
+    pub fn scanstart(&mut self) -> ScanstartW<'_, CMDrs> {
         ScanstartW::new(self, 2)
     }
     ///Bit 3 - Scan Sequence Stop
     #[inline(always)]
-    pub fn scanstop(&mut self) -> ScanstopW<CMDrs> {
+    pub fn scanstop(&mut self) -> ScanstopW<'_, CMDrs> {
         ScanstopW::new(self, 3)
     }
 }
@@ -45,10 +45,6 @@ impl crate::RegisterSpec for CMDrs {
 ///`write(|w| ..)` method takes [`cmd::W`](W) writer structure
 impl crate::Writable for CMDrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CMD to value 0
-impl crate::Resettable for CMDrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CMDrs {}

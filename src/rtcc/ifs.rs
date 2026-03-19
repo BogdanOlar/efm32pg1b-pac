@@ -30,57 +30,57 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set OF Interrupt Flag
     #[inline(always)]
-    pub fn of(&mut self) -> OfW<IFSrs> {
+    pub fn of(&mut self) -> OfW<'_, IFSrs> {
         OfW::new(self, 0)
     }
     ///Bit 1 - Set CC0 Interrupt Flag
     #[inline(always)]
-    pub fn cc0(&mut self) -> Cc0W<IFSrs> {
+    pub fn cc0(&mut self) -> Cc0W<'_, IFSrs> {
         Cc0W::new(self, 1)
     }
     ///Bit 2 - Set CC1 Interrupt Flag
     #[inline(always)]
-    pub fn cc1(&mut self) -> Cc1W<IFSrs> {
+    pub fn cc1(&mut self) -> Cc1W<'_, IFSrs> {
         Cc1W::new(self, 2)
     }
     ///Bit 3 - Set CC2 Interrupt Flag
     #[inline(always)]
-    pub fn cc2(&mut self) -> Cc2W<IFSrs> {
+    pub fn cc2(&mut self) -> Cc2W<'_, IFSrs> {
         Cc2W::new(self, 3)
     }
     ///Bit 4 - Set OSCFAIL Interrupt Flag
     #[inline(always)]
-    pub fn oscfail(&mut self) -> OscfailW<IFSrs> {
+    pub fn oscfail(&mut self) -> OscfailW<'_, IFSrs> {
         OscfailW::new(self, 4)
     }
     ///Bit 5 - Set CNTTICK Interrupt Flag
     #[inline(always)]
-    pub fn cnttick(&mut self) -> CnttickW<IFSrs> {
+    pub fn cnttick(&mut self) -> CnttickW<'_, IFSrs> {
         CnttickW::new(self, 5)
     }
     ///Bit 6 - Set MINTICK Interrupt Flag
     #[inline(always)]
-    pub fn mintick(&mut self) -> MintickW<IFSrs> {
+    pub fn mintick(&mut self) -> MintickW<'_, IFSrs> {
         MintickW::new(self, 6)
     }
     ///Bit 7 - Set HOURTICK Interrupt Flag
     #[inline(always)]
-    pub fn hourtick(&mut self) -> HourtickW<IFSrs> {
+    pub fn hourtick(&mut self) -> HourtickW<'_, IFSrs> {
         HourtickW::new(self, 7)
     }
     ///Bit 8 - Set DAYTICK Interrupt Flag
     #[inline(always)]
-    pub fn daytick(&mut self) -> DaytickW<IFSrs> {
+    pub fn daytick(&mut self) -> DaytickW<'_, IFSrs> {
         DaytickW::new(self, 8)
     }
     ///Bit 9 - Set DAYOWOF Interrupt Flag
     #[inline(always)]
-    pub fn dayowof(&mut self) -> DayowofW<IFSrs> {
+    pub fn dayowof(&mut self) -> DayowofW<'_, IFSrs> {
         DayowofW::new(self, 9)
     }
     ///Bit 10 - Set MONTHTICK Interrupt Flag
     #[inline(always)]
-    pub fn monthtick(&mut self) -> MonthtickW<IFSrs> {
+    pub fn monthtick(&mut self) -> MonthtickW<'_, IFSrs> {
         MonthtickW::new(self, 10)
     }
 }
@@ -94,10 +94,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

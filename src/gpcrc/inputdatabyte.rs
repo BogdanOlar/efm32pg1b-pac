@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Input Data for 8-bit
     #[inline(always)]
-    pub fn inputdatabyte(&mut self) -> InputdatabyteW<INPUTDATABYTErs> {
+    pub fn inputdatabyte(&mut self) -> InputdatabyteW<'_, INPUTDATABYTErs> {
         InputdatabyteW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for INPUTDATABYTErs {}
 ///`write(|w| ..)` method takes [`inputdatabyte::W`](W) writer structure
 impl crate::Writable for INPUTDATABYTErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets INPUTDATABYTE to value 0
-impl crate::Resettable for INPUTDATABYTErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INPUTDATABYTErs {}

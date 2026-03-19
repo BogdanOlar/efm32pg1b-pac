@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<VMONALTAVDDCTRLrs> {
+    pub fn en(&mut self) -> EnW<'_, VMONALTAVDDCTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 2 - Rise Wakeup
     #[inline(always)]
-    pub fn risewu(&mut self) -> RisewuW<VMONALTAVDDCTRLrs> {
+    pub fn risewu(&mut self) -> RisewuW<'_, VMONALTAVDDCTRLrs> {
         RisewuW::new(self, 2)
     }
     ///Bit 3 - Fall Wakeup
     #[inline(always)]
-    pub fn fallwu(&mut self) -> FallwuW<VMONALTAVDDCTRLrs> {
+    pub fn fallwu(&mut self) -> FallwuW<'_, VMONALTAVDDCTRLrs> {
         FallwuW::new(self, 3)
     }
     ///Bits 8:11 - Threshold Fine Adjust
     #[inline(always)]
-    pub fn thresfine(&mut self) -> ThresfineW<VMONALTAVDDCTRLrs> {
+    pub fn thresfine(&mut self) -> ThresfineW<'_, VMONALTAVDDCTRLrs> {
         ThresfineW::new(self, 8)
     }
     ///Bits 12:15 - Threshold Coarse Adjust
     #[inline(always)]
-    pub fn threscoarse(&mut self) -> ThrescoarseW<VMONALTAVDDCTRLrs> {
+    pub fn threscoarse(&mut self) -> ThrescoarseW<'_, VMONALTAVDDCTRLrs> {
         ThrescoarseW::new(self, 12)
     }
 }
@@ -99,10 +99,6 @@ impl crate::Readable for VMONALTAVDDCTRLrs {}
 ///`write(|w| ..)` method takes [`vmonaltavddctrl::W`](W) writer structure
 impl crate::Writable for VMONALTAVDDCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets VMONALTAVDDCTRL to value 0
-impl crate::Resettable for VMONALTAVDDCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for VMONALTAVDDCTRLrs {}

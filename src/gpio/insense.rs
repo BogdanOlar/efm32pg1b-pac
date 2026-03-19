@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Interrupt Sense Enable
     #[inline(always)]
-    pub fn int(&mut self) -> IntW<INSENSErs> {
+    pub fn int(&mut self) -> IntW<'_, INSENSErs> {
         IntW::new(self, 0)
     }
     ///Bit 1 - EM4WU Interrupt Sense Enable
     #[inline(always)]
-    pub fn em4wu(&mut self) -> Em4wuW<INSENSErs> {
+    pub fn em4wu(&mut self) -> Em4wuW<'_, INSENSErs> {
         Em4wuW::new(self, 1)
     }
 }
@@ -54,8 +54,6 @@ impl crate::Readable for INSENSErs {}
 ///`write(|w| ..)` method takes [`insense::W`](W) writer structure
 impl crate::Writable for INSENSErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets INSENSE to value 0x03
 impl crate::Resettable for INSENSErs {

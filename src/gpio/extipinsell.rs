@@ -773,42 +773,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - External Interrupt 0 Pin Select
     #[inline(always)]
-    pub fn extipinsel0(&mut self) -> Extipinsel0W<EXTIPINSELLrs> {
+    pub fn extipinsel0(&mut self) -> Extipinsel0W<'_, EXTIPINSELLrs> {
         Extipinsel0W::new(self, 0)
     }
     ///Bits 4:5 - External Interrupt 1 Pin Select
     #[inline(always)]
-    pub fn extipinsel1(&mut self) -> Extipinsel1W<EXTIPINSELLrs> {
+    pub fn extipinsel1(&mut self) -> Extipinsel1W<'_, EXTIPINSELLrs> {
         Extipinsel1W::new(self, 4)
     }
     ///Bits 8:9 - External Interrupt 2 Pin Select
     #[inline(always)]
-    pub fn extipinsel2(&mut self) -> Extipinsel2W<EXTIPINSELLrs> {
+    pub fn extipinsel2(&mut self) -> Extipinsel2W<'_, EXTIPINSELLrs> {
         Extipinsel2W::new(self, 8)
     }
     ///Bits 12:13 - External Interrupt 3 Pin Select
     #[inline(always)]
-    pub fn extipinsel3(&mut self) -> Extipinsel3W<EXTIPINSELLrs> {
+    pub fn extipinsel3(&mut self) -> Extipinsel3W<'_, EXTIPINSELLrs> {
         Extipinsel3W::new(self, 12)
     }
     ///Bits 16:17 - External Interrupt 4 Pin Select
     #[inline(always)]
-    pub fn extipinsel4(&mut self) -> Extipinsel4W<EXTIPINSELLrs> {
+    pub fn extipinsel4(&mut self) -> Extipinsel4W<'_, EXTIPINSELLrs> {
         Extipinsel4W::new(self, 16)
     }
     ///Bits 20:21 - External Interrupt 5 Pin Select
     #[inline(always)]
-    pub fn extipinsel5(&mut self) -> Extipinsel5W<EXTIPINSELLrs> {
+    pub fn extipinsel5(&mut self) -> Extipinsel5W<'_, EXTIPINSELLrs> {
         Extipinsel5W::new(self, 20)
     }
     ///Bits 24:25 - External Interrupt 6 Pin Select
     #[inline(always)]
-    pub fn extipinsel6(&mut self) -> Extipinsel6W<EXTIPINSELLrs> {
+    pub fn extipinsel6(&mut self) -> Extipinsel6W<'_, EXTIPINSELLrs> {
         Extipinsel6W::new(self, 24)
     }
     ///Bits 28:29 - External Interrupt 7 Pin Select
     #[inline(always)]
-    pub fn extipinsel7(&mut self) -> Extipinsel7W<EXTIPINSELLrs> {
+    pub fn extipinsel7(&mut self) -> Extipinsel7W<'_, EXTIPINSELLrs> {
         Extipinsel7W::new(self, 28)
     }
 }
@@ -824,8 +824,6 @@ impl crate::Readable for EXTIPINSELLrs {}
 ///`write(|w| ..)` method takes [`extipinsell::W`](W) writer structure
 impl crate::Writable for EXTIPINSELLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets EXTIPINSELL to value 0x3210_3210
 impl crate::Resettable for EXTIPINSELLrs {

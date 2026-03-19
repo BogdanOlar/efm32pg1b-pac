@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Debug Halt
     #[inline(always)]
-    pub fn dbghalt(&mut self) -> DbghaltW<CTRLXrs> {
+    pub fn dbghalt(&mut self) -> DbghaltW<'_, CTRLXrs> {
         DbghaltW::new(self, 0)
     }
     ///Bit 1 - CTS Pin Inversion
     #[inline(always)]
-    pub fn ctsinv(&mut self) -> CtsinvW<CTRLXrs> {
+    pub fn ctsinv(&mut self) -> CtsinvW<'_, CTRLXrs> {
         CtsinvW::new(self, 1)
     }
     ///Bit 2 - CTS Function Enabled
     #[inline(always)]
-    pub fn ctsen(&mut self) -> CtsenW<CTRLXrs> {
+    pub fn ctsen(&mut self) -> CtsenW<'_, CTRLXrs> {
         CtsenW::new(self, 2)
     }
     ///Bit 3 - RTS Pin Inversion
     #[inline(always)]
-    pub fn rtsinv(&mut self) -> RtsinvW<CTRLXrs> {
+    pub fn rtsinv(&mut self) -> RtsinvW<'_, CTRLXrs> {
         RtsinvW::new(self, 3)
     }
 }
@@ -84,10 +84,6 @@ impl crate::Readable for CTRLXrs {}
 ///`write(|w| ..)` method takes [`ctrlx::W`](W) writer structure
 impl crate::Writable for CTRLXrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRLX to value 0
-impl crate::Resettable for CTRLXrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLXrs {}

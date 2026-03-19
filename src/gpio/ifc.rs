@@ -12,12 +12,12 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bits 0:15 - Clear EXT Interrupt Flag
     #[inline(always)]
-    pub fn ext(&mut self) -> ExtW<IFCrs> {
+    pub fn ext(&mut self) -> ExtW<'_, IFCrs> {
         ExtW::new(self, 0)
     }
     ///Bits 16:31 - Clear EM4WU Interrupt Flag
     #[inline(always)]
-    pub fn em4wu(&mut self) -> Em4wuW<IFCrs> {
+    pub fn em4wu(&mut self) -> Em4wuW<'_, IFCrs> {
         Em4wuW::new(self, 16)
     }
 }
@@ -31,10 +31,6 @@ impl crate::RegisterSpec for IFCrs {
 ///`write(|w| ..)` method takes [`ifc::W`](W) writer structure
 impl crate::Writable for IFCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFC to value 0
-impl crate::Resettable for IFCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFCrs {}

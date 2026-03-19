@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - General Purpose Retention Register
     #[inline(always)]
-    pub fn reg(&mut self) -> RegW<RET12_REGrs> {
+    pub fn reg(&mut self) -> RegW<'_, RET12_REGrs> {
         RegW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for RET12_REGrs {}
 ///`write(|w| ..)` method takes [`ret12_reg::W`](W) writer structure
 impl crate::Writable for RET12_REGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets RET12_REG to value 0
-impl crate::Resettable for RET12_REGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RET12_REGrs {}

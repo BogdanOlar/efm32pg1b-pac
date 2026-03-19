@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Retention RAM Power-down
     #[inline(always)]
-    pub fn ram(&mut self) -> RamW<POWERDOWNrs> {
+    pub fn ram(&mut self) -> RamW<'_, POWERDOWNrs> {
         RamW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for POWERDOWNrs {}
 ///`write(|w| ..)` method takes [`powerdown::W`](W) writer structure
 impl crate::Writable for POWERDOWNrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets POWERDOWN to value 0
-impl crate::Resettable for POWERDOWNrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for POWERDOWNrs {}

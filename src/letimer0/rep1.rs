@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Repeat Counter 1
     #[inline(always)]
-    pub fn rep1(&mut self) -> Rep1W<REP1rs> {
+    pub fn rep1(&mut self) -> Rep1W<'_, REP1rs> {
         Rep1W::new(self, 0)
     }
 }
@@ -37,10 +37,6 @@ impl crate::Readable for REP1rs {}
 ///`write(|w| ..)` method takes [`rep1::W`](W) writer structure
 impl crate::Writable for REP1rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets REP1 to value 0
-impl crate::Resettable for REP1rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for REP1rs {}

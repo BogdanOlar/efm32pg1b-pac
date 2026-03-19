@@ -118,12 +118,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 4:5 - ADC0 Clock Select
     #[inline(always)]
-    pub fn adc0clksel(&mut self) -> Adc0clkselW<ADCCTRLrs> {
+    pub fn adc0clksel(&mut self) -> Adc0clkselW<'_, ADCCTRLrs> {
         Adc0clkselW::new(self, 4)
     }
     ///Bit 8 - Invert Clock Selected By ADC0CLKSEL
     #[inline(always)]
-    pub fn adc0clkinv(&mut self) -> Adc0clkinvW<ADCCTRLrs> {
+    pub fn adc0clkinv(&mut self) -> Adc0clkinvW<'_, ADCCTRLrs> {
         Adc0clkinvW::new(self, 8)
     }
 }
@@ -139,10 +139,6 @@ impl crate::Readable for ADCCTRLrs {}
 ///`write(|w| ..)` method takes [`adcctrl::W`](W) writer structure
 impl crate::Writable for ADCCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ADCCTRL to value 0
-impl crate::Resettable for ADCCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ADCCTRLrs {}

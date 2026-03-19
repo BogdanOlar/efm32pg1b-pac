@@ -123,57 +123,57 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - TXC Interrupt Enable
     #[inline(always)]
-    pub fn txc(&mut self) -> TxcW<IENrs> {
+    pub fn txc(&mut self) -> TxcW<'_, IENrs> {
         TxcW::new(self, 0)
     }
     ///Bit 1 - TXBL Interrupt Enable
     #[inline(always)]
-    pub fn txbl(&mut self) -> TxblW<IENrs> {
+    pub fn txbl(&mut self) -> TxblW<'_, IENrs> {
         TxblW::new(self, 1)
     }
     ///Bit 2 - RXDATAV Interrupt Enable
     #[inline(always)]
-    pub fn rxdatav(&mut self) -> RxdatavW<IENrs> {
+    pub fn rxdatav(&mut self) -> RxdatavW<'_, IENrs> {
         RxdatavW::new(self, 2)
     }
     ///Bit 3 - RXOF Interrupt Enable
     #[inline(always)]
-    pub fn rxof(&mut self) -> RxofW<IENrs> {
+    pub fn rxof(&mut self) -> RxofW<'_, IENrs> {
         RxofW::new(self, 3)
     }
     ///Bit 4 - RXUF Interrupt Enable
     #[inline(always)]
-    pub fn rxuf(&mut self) -> RxufW<IENrs> {
+    pub fn rxuf(&mut self) -> RxufW<'_, IENrs> {
         RxufW::new(self, 4)
     }
     ///Bit 5 - TXOF Interrupt Enable
     #[inline(always)]
-    pub fn txof(&mut self) -> TxofW<IENrs> {
+    pub fn txof(&mut self) -> TxofW<'_, IENrs> {
         TxofW::new(self, 5)
     }
     ///Bit 6 - PERR Interrupt Enable
     #[inline(always)]
-    pub fn perr(&mut self) -> PerrW<IENrs> {
+    pub fn perr(&mut self) -> PerrW<'_, IENrs> {
         PerrW::new(self, 6)
     }
     ///Bit 7 - FERR Interrupt Enable
     #[inline(always)]
-    pub fn ferr(&mut self) -> FerrW<IENrs> {
+    pub fn ferr(&mut self) -> FerrW<'_, IENrs> {
         FerrW::new(self, 7)
     }
     ///Bit 8 - MPAF Interrupt Enable
     #[inline(always)]
-    pub fn mpaf(&mut self) -> MpafW<IENrs> {
+    pub fn mpaf(&mut self) -> MpafW<'_, IENrs> {
         MpafW::new(self, 8)
     }
     ///Bit 9 - STARTF Interrupt Enable
     #[inline(always)]
-    pub fn startf(&mut self) -> StartfW<IENrs> {
+    pub fn startf(&mut self) -> StartfW<'_, IENrs> {
         StartfW::new(self, 9)
     }
     ///Bit 10 - SIGF Interrupt Enable
     #[inline(always)]
-    pub fn sigf(&mut self) -> SigfW<IENrs> {
+    pub fn sigf(&mut self) -> SigfW<'_, IENrs> {
         SigfW::new(self, 10)
     }
 }
@@ -189,10 +189,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

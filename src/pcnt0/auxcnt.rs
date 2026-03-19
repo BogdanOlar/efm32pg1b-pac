@@ -26,6 +26,4 @@ impl crate::RegisterSpec for AUXCNTrs {
 ///`read()` method returns [`auxcnt::R`](R) reader structure
 impl crate::Readable for AUXCNTrs {}
 ///`reset()` method sets AUXCNT to value 0
-impl crate::Resettable for AUXCNTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for AUXCNTrs {}

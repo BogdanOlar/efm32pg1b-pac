@@ -10,7 +10,7 @@ impl core::fmt::Debug for crate::generic::Reg<SCANFIFOCLEARrs> {
 impl W {
     ///Bit 0 - Clear Scan FIFO Content
     #[inline(always)]
-    pub fn scanfifoclear(&mut self) -> ScanfifoclearW<SCANFIFOCLEARrs> {
+    pub fn scanfifoclear(&mut self) -> ScanfifoclearW<'_, SCANFIFOCLEARrs> {
         ScanfifoclearW::new(self, 0)
     }
 }
@@ -24,10 +24,6 @@ impl crate::RegisterSpec for SCANFIFOCLEARrs {
 ///`write(|w| ..)` method takes [`scanfifoclear::W`](W) writer structure
 impl crate::Writable for SCANFIFOCLEARrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SCANFIFOCLEAR to value 0
-impl crate::Resettable for SCANFIFOCLEARrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCANFIFOCLEARrs {}

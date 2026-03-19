@@ -123,57 +123,57 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - OF Interrupt Enable
     #[inline(always)]
-    pub fn of(&mut self) -> OfW<IENrs> {
+    pub fn of(&mut self) -> OfW<'_, IENrs> {
         OfW::new(self, 0)
     }
     ///Bit 1 - UF Interrupt Enable
     #[inline(always)]
-    pub fn uf(&mut self) -> UfW<IENrs> {
+    pub fn uf(&mut self) -> UfW<'_, IENrs> {
         UfW::new(self, 1)
     }
     ///Bit 2 - DIRCHG Interrupt Enable
     #[inline(always)]
-    pub fn dirchg(&mut self) -> DirchgW<IENrs> {
+    pub fn dirchg(&mut self) -> DirchgW<'_, IENrs> {
         DirchgW::new(self, 2)
     }
     ///Bit 4 - CC0 Interrupt Enable
     #[inline(always)]
-    pub fn cc0(&mut self) -> Cc0W<IENrs> {
+    pub fn cc0(&mut self) -> Cc0W<'_, IENrs> {
         Cc0W::new(self, 4)
     }
     ///Bit 5 - CC1 Interrupt Enable
     #[inline(always)]
-    pub fn cc1(&mut self) -> Cc1W<IENrs> {
+    pub fn cc1(&mut self) -> Cc1W<'_, IENrs> {
         Cc1W::new(self, 5)
     }
     ///Bit 6 - CC2 Interrupt Enable
     #[inline(always)]
-    pub fn cc2(&mut self) -> Cc2W<IENrs> {
+    pub fn cc2(&mut self) -> Cc2W<'_, IENrs> {
         Cc2W::new(self, 6)
     }
     ///Bit 7 - CC3 Interrupt Enable
     #[inline(always)]
-    pub fn cc3(&mut self) -> Cc3W<IENrs> {
+    pub fn cc3(&mut self) -> Cc3W<'_, IENrs> {
         Cc3W::new(self, 7)
     }
     ///Bit 8 - ICBOF0 Interrupt Enable
     #[inline(always)]
-    pub fn icbof0(&mut self) -> Icbof0W<IENrs> {
+    pub fn icbof0(&mut self) -> Icbof0W<'_, IENrs> {
         Icbof0W::new(self, 8)
     }
     ///Bit 9 - ICBOF1 Interrupt Enable
     #[inline(always)]
-    pub fn icbof1(&mut self) -> Icbof1W<IENrs> {
+    pub fn icbof1(&mut self) -> Icbof1W<'_, IENrs> {
         Icbof1W::new(self, 9)
     }
     ///Bit 10 - ICBOF2 Interrupt Enable
     #[inline(always)]
-    pub fn icbof2(&mut self) -> Icbof2W<IENrs> {
+    pub fn icbof2(&mut self) -> Icbof2W<'_, IENrs> {
         Icbof2W::new(self, 10)
     }
     ///Bit 11 - ICBOF3 Interrupt Enable
     #[inline(always)]
-    pub fn icbof3(&mut self) -> Icbof3W<IENrs> {
+    pub fn icbof3(&mut self) -> Icbof3W<'_, IENrs> {
         Icbof3W::new(self, 11)
     }
 }
@@ -189,10 +189,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

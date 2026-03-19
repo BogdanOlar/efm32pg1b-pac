@@ -108,7 +108,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Low Energy UART 0 Prescaler
     #[inline(always)]
-    pub fn leuart0(&mut self) -> Leuart0W<LFBPRESC0rs> {
+    pub fn leuart0(&mut self) -> Leuart0W<'_, LFBPRESC0rs> {
         Leuart0W::new(self, 0)
     }
 }
@@ -124,10 +124,6 @@ impl crate::Readable for LFBPRESC0rs {}
 ///`write(|w| ..)` method takes [`lfbpresc0::W`](W) writer structure
 impl crate::Writable for LFBPRESC0rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets LFBPRESC0 to value 0
-impl crate::Resettable for LFBPRESC0rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LFBPRESC0rs {}

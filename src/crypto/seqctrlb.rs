@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:13 - Buffer Length B in Bytes
     #[inline(always)]
-    pub fn lengthb(&mut self) -> LengthbW<SEQCTRLBrs> {
+    pub fn lengthb(&mut self) -> LengthbW<'_, SEQCTRLBrs> {
         LengthbW::new(self, 0)
     }
     ///Bit 28 - DMA0 Preserve B
     #[inline(always)]
-    pub fn dma0presb(&mut self) -> Dma0presbW<SEQCTRLBrs> {
+    pub fn dma0presb(&mut self) -> Dma0presbW<'_, SEQCTRLBrs> {
         Dma0presbW::new(self, 28)
     }
     ///Bit 29 - DMA1 Preserve B
     #[inline(always)]
-    pub fn dma1presb(&mut self) -> Dma1presbW<SEQCTRLBrs> {
+    pub fn dma1presb(&mut self) -> Dma1presbW<'_, SEQCTRLBrs> {
         Dma1presbW::new(self, 29)
     }
 }
@@ -69,10 +69,6 @@ impl crate::Readable for SEQCTRLBrs {}
 ///`write(|w| ..)` method takes [`seqctrlb::W`](W) writer structure
 impl crate::Writable for SEQCTRLBrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SEQCTRLB to value 0
-impl crate::Resettable for SEQCTRLBrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SEQCTRLBrs {}

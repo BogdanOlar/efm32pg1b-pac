@@ -75,7 +75,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Debug Trace Clock
     #[inline(always)]
-    pub fn dbg(&mut self) -> DbgW<DBGCLKSELrs> {
+    pub fn dbg(&mut self) -> DbgW<'_, DBGCLKSELrs> {
         DbgW::new(self, 0)
     }
 }
@@ -91,10 +91,6 @@ impl crate::Readable for DBGCLKSELrs {}
 ///`write(|w| ..)` method takes [`dbgclksel::W`](W) writer structure
 impl crate::Writable for DBGCLKSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DBGCLKSEL to value 0
-impl crate::Resettable for DBGCLKSELrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DBGCLKSELrs {}

@@ -26,6 +26,4 @@ impl crate::RegisterSpec for SCANDATAPrs {
 ///`read()` method returns [`scandatap::R`](R) reader structure
 impl crate::Readable for SCANDATAPrs {}
 ///`reset()` method sets SCANDATAP to value 0
-impl crate::Resettable for SCANDATAPrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCANDATAPrs {}

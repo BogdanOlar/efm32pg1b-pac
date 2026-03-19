@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:9 - Startup Delay 0
     #[inline(always)]
-    pub fn stdly0(&mut self) -> Stdly0W<STARTUPrs> {
+    pub fn stdly0(&mut self) -> Stdly0W<'_, STARTUPrs> {
         Stdly0W::new(self, 0)
     }
     ///Bits 12:21 - Startup Delay 0
     #[inline(always)]
-    pub fn stdly1(&mut self) -> Stdly1W<STARTUPrs> {
+    pub fn stdly1(&mut self) -> Stdly1W<'_, STARTUPrs> {
         Stdly1W::new(self, 12)
     }
     ///Bit 24 - Active Startup Wait
     #[inline(always)]
-    pub fn astwait(&mut self) -> AstwaitW<STARTUPrs> {
+    pub fn astwait(&mut self) -> AstwaitW<'_, STARTUPrs> {
         AstwaitW::new(self, 24)
     }
     ///Bit 25 - Startup Waitstates Enable
     #[inline(always)]
-    pub fn stwsen(&mut self) -> StwsenW<STARTUPrs> {
+    pub fn stwsen(&mut self) -> StwsenW<'_, STARTUPrs> {
         StwsenW::new(self, 25)
     }
     ///Bit 26 - Startup Waitstates Always Enable
     #[inline(always)]
-    pub fn stwsaen(&mut self) -> StwsaenW<STARTUPrs> {
+    pub fn stwsaen(&mut self) -> StwsaenW<'_, STARTUPrs> {
         StwsaenW::new(self, 26)
     }
     ///Bits 28:30 - Startup Waitstates
     #[inline(always)]
-    pub fn stws(&mut self) -> StwsW<STARTUPrs> {
+    pub fn stws(&mut self) -> StwsW<'_, STARTUPrs> {
         StwsW::new(self, 28)
     }
 }
@@ -114,8 +114,6 @@ impl crate::Readable for STARTUPrs {}
 ///`write(|w| ..)` method takes [`startup::W`](W) writer structure
 impl crate::Writable for STARTUPrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets STARTUP to value 0x1300_104d
 impl crate::Resettable for STARTUPrs {

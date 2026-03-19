@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - DONE Interrupt Enable
     #[inline(always)]
-    pub fn done(&mut self) -> DoneW<IENrs> {
+    pub fn done(&mut self) -> DoneW<'_, IENrs> {
         DoneW::new(self, 0)
     }
     ///Bit 31 - ERROR Interrupt Enable
     #[inline(always)]
-    pub fn error(&mut self) -> ErrorW<IENrs> {
+    pub fn error(&mut self) -> ErrorW<'_, IENrs> {
         ErrorW::new(self, 31)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

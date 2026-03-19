@@ -26,6 +26,4 @@ impl crate::RegisterSpec for SCANFIFOCOUNTrs {
 ///`read()` method returns [`scanfifocount::R`](R) reader structure
 impl crate::Readable for SCANFIFOCOUNTrs {}
 ///`reset()` method sets SCANFIFOCOUNT to value 0
-impl crate::Resettable for SCANFIFOCOUNTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCANFIFOCOUNTrs {}

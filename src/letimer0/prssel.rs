@@ -895,32 +895,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - PRS Start Select
     #[inline(always)]
-    pub fn prsstartsel(&mut self) -> PrsstartselW<PRSSELrs> {
+    pub fn prsstartsel(&mut self) -> PrsstartselW<'_, PRSSELrs> {
         PrsstartselW::new(self, 0)
     }
     ///Bits 6:9 - PRS Stop Select
     #[inline(always)]
-    pub fn prsstopsel(&mut self) -> PrsstopselW<PRSSELrs> {
+    pub fn prsstopsel(&mut self) -> PrsstopselW<'_, PRSSELrs> {
         PrsstopselW::new(self, 6)
     }
     ///Bits 12:15 - PRS Clear Select
     #[inline(always)]
-    pub fn prsclearsel(&mut self) -> PrsclearselW<PRSSELrs> {
+    pub fn prsclearsel(&mut self) -> PrsclearselW<'_, PRSSELrs> {
         PrsclearselW::new(self, 12)
     }
     ///Bits 18:19 - PRS Start Mode
     #[inline(always)]
-    pub fn prsstartmode(&mut self) -> PrsstartmodeW<PRSSELrs> {
+    pub fn prsstartmode(&mut self) -> PrsstartmodeW<'_, PRSSELrs> {
         PrsstartmodeW::new(self, 18)
     }
     ///Bits 22:23 - PRS Stop Mode
     #[inline(always)]
-    pub fn prsstopmode(&mut self) -> PrsstopmodeW<PRSSELrs> {
+    pub fn prsstopmode(&mut self) -> PrsstopmodeW<'_, PRSSELrs> {
         PrsstopmodeW::new(self, 22)
     }
     ///Bits 26:27 - PRS Clear Mode
     #[inline(always)]
-    pub fn prsclearmode(&mut self) -> PrsclearmodeW<PRSSELrs> {
+    pub fn prsclearmode(&mut self) -> PrsclearmodeW<'_, PRSSELrs> {
         PrsclearmodeW::new(self, 26)
     }
 }
@@ -936,10 +936,6 @@ impl crate::Readable for PRSSELrs {}
 ///`write(|w| ..)` method takes [`prssel::W`](W) writer structure
 impl crate::Writable for PRSSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PRSSEL to value 0
-impl crate::Resettable for PRSSELrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRSSELrs {}

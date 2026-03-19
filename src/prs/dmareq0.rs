@@ -212,7 +212,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 6:9 - DMA Request 0 PRS Channel Select
     #[inline(always)]
-    pub fn prssel(&mut self) -> PrsselW<DMAREQ0rs> {
+    pub fn prssel(&mut self) -> PrsselW<'_, DMAREQ0rs> {
         PrsselW::new(self, 6)
     }
 }
@@ -228,10 +228,6 @@ impl crate::Readable for DMAREQ0rs {}
 ///`write(|w| ..)` method takes [`dmareq0::W`](W) writer structure
 impl crate::Writable for DMAREQ0rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DMAREQ0 to value 0
-impl crate::Resettable for DMAREQ0rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DMAREQ0rs {}

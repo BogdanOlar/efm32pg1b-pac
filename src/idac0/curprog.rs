@@ -128,17 +128,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Current Range Select
     #[inline(always)]
-    pub fn rangesel(&mut self) -> RangeselW<CURPROGrs> {
+    pub fn rangesel(&mut self) -> RangeselW<'_, CURPROGrs> {
         RangeselW::new(self, 0)
     }
     ///Bits 8:12 - Current Step Size Select
     #[inline(always)]
-    pub fn stepsel(&mut self) -> StepselW<CURPROGrs> {
+    pub fn stepsel(&mut self) -> StepselW<'_, CURPROGrs> {
         StepselW::new(self, 8)
     }
     ///Bits 16:23 - Tune the Current to Given Accuracy
     #[inline(always)]
-    pub fn tuning(&mut self) -> TuningW<CURPROGrs> {
+    pub fn tuning(&mut self) -> TuningW<'_, CURPROGrs> {
         TuningW::new(self, 16)
     }
 }
@@ -154,8 +154,6 @@ impl crate::Readable for CURPROGrs {}
 ///`write(|w| ..)` method takes [`curprog::W`](W) writer structure
 impl crate::Writable for CURPROGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CURPROG to value 0x009b_0000
 impl crate::Resettable for CURPROGrs {

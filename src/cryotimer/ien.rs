@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - PERIOD Interrupt Enable
     #[inline(always)]
-    pub fn period(&mut self) -> PeriodW<IENrs> {
+    pub fn period(&mut self) -> PeriodW<'_, IENrs> {
         PeriodW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

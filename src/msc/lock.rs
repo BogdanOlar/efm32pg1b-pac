@@ -82,7 +82,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Configuration Lock
     #[inline(always)]
-    pub fn lockkey(&mut self) -> LockkeyW<LOCKrs> {
+    pub fn lockkey(&mut self) -> LockkeyW<'_, LOCKrs> {
         LockkeyW::new(self, 0)
     }
 }
@@ -98,10 +98,6 @@ impl crate::Readable for LOCKrs {}
 ///`write(|w| ..)` method takes [`lock::W`](W) writer structure
 impl crate::Writable for LOCKrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets LOCK to value 0
-impl crate::Resettable for LOCKrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LOCKrs {}

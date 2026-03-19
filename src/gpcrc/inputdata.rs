@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Input Data for 32-bit
     #[inline(always)]
-    pub fn inputdata(&mut self) -> InputdataW<INPUTDATArs> {
+    pub fn inputdata(&mut self) -> InputdataW<'_, INPUTDATArs> {
         InputdataW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for INPUTDATArs {}
 ///`write(|w| ..)` method takes [`inputdata::W`](W) writer structure
 impl crate::Writable for INPUTDATArs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets INPUTDATA to value 0
-impl crate::Resettable for INPUTDATArs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INPUTDATArs {}

@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 8:9 - Reserved for internal use. Do not change.
     #[inline(always)]
-    pub fn climblankdly(&mut self) -> ClimblankdlyW<DCDCCLIMCTRLrs> {
+    pub fn climblankdly(&mut self) -> ClimblankdlyW<'_, DCDCCLIMCTRLrs> {
         ClimblankdlyW::new(self, 8)
     }
     ///Bit 13 - Bypass Current Limit Enable
     #[inline(always)]
-    pub fn byplimen(&mut self) -> ByplimenW<DCDCCLIMCTRLrs> {
+    pub fn byplimen(&mut self) -> ByplimenW<'_, DCDCCLIMCTRLrs> {
         ByplimenW::new(self, 13)
     }
 }
@@ -54,8 +54,6 @@ impl crate::Readable for DCDCCLIMCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdcclimctrl::W`](W) writer structure
 impl crate::Writable for DCDCCLIMCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCCLIMCTRL to value 0x2100
 impl crate::Resettable for DCDCCLIMCTRLrs {

@@ -106,6 +106,4 @@ impl crate::RegisterSpec for IFLrs {
 ///`read()` method returns [`ifl::R`](R) reader structure
 impl crate::Readable for IFLrs {}
 ///`reset()` method sets IFL to value 0
-impl crate::Resettable for IFLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFLrs {}

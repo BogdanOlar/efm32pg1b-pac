@@ -26,6 +26,4 @@ impl crate::RegisterSpec for SINGLEFIFOCOUNTrs {
 ///`read()` method returns [`singlefifocount::R`](R) reader structure
 impl crate::Readable for SINGLEFIFOCOUNTrs {}
 ///`reset()` method sets SINGLEFIFOCOUNT to value 0
-impl crate::Resettable for SINGLEFIFOCOUNTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SINGLEFIFOCOUNTrs {}

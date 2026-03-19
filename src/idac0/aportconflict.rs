@@ -34,6 +34,4 @@ impl crate::RegisterSpec for APORTCONFLICTrs {
 ///`read()` method returns [`aportconflict::R`](R) reader structure
 impl crate::Readable for APORTCONFLICTrs {}
 ///`reset()` method sets APORTCONFLICT to value 0
-impl crate::Resettable for APORTCONFLICTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for APORTCONFLICTrs {}

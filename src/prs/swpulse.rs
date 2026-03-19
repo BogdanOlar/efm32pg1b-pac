@@ -32,62 +32,62 @@ impl core::fmt::Debug for crate::generic::Reg<SWPULSErs> {
 impl W {
     ///Bit 0 - Channel 0 Pulse Generation
     #[inline(always)]
-    pub fn ch0pulse(&mut self) -> Ch0pulseW<SWPULSErs> {
+    pub fn ch0pulse(&mut self) -> Ch0pulseW<'_, SWPULSErs> {
         Ch0pulseW::new(self, 0)
     }
     ///Bit 1 - Channel 1 Pulse Generation
     #[inline(always)]
-    pub fn ch1pulse(&mut self) -> Ch1pulseW<SWPULSErs> {
+    pub fn ch1pulse(&mut self) -> Ch1pulseW<'_, SWPULSErs> {
         Ch1pulseW::new(self, 1)
     }
     ///Bit 2 - Channel 2 Pulse Generation
     #[inline(always)]
-    pub fn ch2pulse(&mut self) -> Ch2pulseW<SWPULSErs> {
+    pub fn ch2pulse(&mut self) -> Ch2pulseW<'_, SWPULSErs> {
         Ch2pulseW::new(self, 2)
     }
     ///Bit 3 - Channel 3 Pulse Generation
     #[inline(always)]
-    pub fn ch3pulse(&mut self) -> Ch3pulseW<SWPULSErs> {
+    pub fn ch3pulse(&mut self) -> Ch3pulseW<'_, SWPULSErs> {
         Ch3pulseW::new(self, 3)
     }
     ///Bit 4 - Channel 4 Pulse Generation
     #[inline(always)]
-    pub fn ch4pulse(&mut self) -> Ch4pulseW<SWPULSErs> {
+    pub fn ch4pulse(&mut self) -> Ch4pulseW<'_, SWPULSErs> {
         Ch4pulseW::new(self, 4)
     }
     ///Bit 5 - Channel 5 Pulse Generation
     #[inline(always)]
-    pub fn ch5pulse(&mut self) -> Ch5pulseW<SWPULSErs> {
+    pub fn ch5pulse(&mut self) -> Ch5pulseW<'_, SWPULSErs> {
         Ch5pulseW::new(self, 5)
     }
     ///Bit 6 - Channel 6 Pulse Generation
     #[inline(always)]
-    pub fn ch6pulse(&mut self) -> Ch6pulseW<SWPULSErs> {
+    pub fn ch6pulse(&mut self) -> Ch6pulseW<'_, SWPULSErs> {
         Ch6pulseW::new(self, 6)
     }
     ///Bit 7 - Channel 7 Pulse Generation
     #[inline(always)]
-    pub fn ch7pulse(&mut self) -> Ch7pulseW<SWPULSErs> {
+    pub fn ch7pulse(&mut self) -> Ch7pulseW<'_, SWPULSErs> {
         Ch7pulseW::new(self, 7)
     }
     ///Bit 8 - Channel 8 Pulse Generation
     #[inline(always)]
-    pub fn ch8pulse(&mut self) -> Ch8pulseW<SWPULSErs> {
+    pub fn ch8pulse(&mut self) -> Ch8pulseW<'_, SWPULSErs> {
         Ch8pulseW::new(self, 8)
     }
     ///Bit 9 - Channel 9 Pulse Generation
     #[inline(always)]
-    pub fn ch9pulse(&mut self) -> Ch9pulseW<SWPULSErs> {
+    pub fn ch9pulse(&mut self) -> Ch9pulseW<'_, SWPULSErs> {
         Ch9pulseW::new(self, 9)
     }
     ///Bit 10 - Channel 10 Pulse Generation
     #[inline(always)]
-    pub fn ch10pulse(&mut self) -> Ch10pulseW<SWPULSErs> {
+    pub fn ch10pulse(&mut self) -> Ch10pulseW<'_, SWPULSErs> {
         Ch10pulseW::new(self, 10)
     }
     ///Bit 11 - Channel 11 Pulse Generation
     #[inline(always)]
-    pub fn ch11pulse(&mut self) -> Ch11pulseW<SWPULSErs> {
+    pub fn ch11pulse(&mut self) -> Ch11pulseW<'_, SWPULSErs> {
         Ch11pulseW::new(self, 11)
     }
 }
@@ -101,10 +101,6 @@ impl crate::RegisterSpec for SWPULSErs {
 ///`write(|w| ..)` method takes [`swpulse::W`](W) writer structure
 impl crate::Writable for SWPULSErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SWPULSE to value 0
-impl crate::Resettable for SWPULSErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SWPULSErs {}

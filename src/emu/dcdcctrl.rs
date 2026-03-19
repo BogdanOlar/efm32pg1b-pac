@@ -128,17 +128,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Regulator Mode
     #[inline(always)]
-    pub fn dcdcmode(&mut self) -> DcdcmodeW<DCDCCTRLrs> {
+    pub fn dcdcmode(&mut self) -> DcdcmodeW<'_, DCDCCTRLrs> {
         DcdcmodeW::new(self, 0)
     }
     ///Bit 4 - DCDC Mode EM23
     #[inline(always)]
-    pub fn dcdcmodeem23(&mut self) -> Dcdcmodeem23W<DCDCCTRLrs> {
+    pub fn dcdcmodeem23(&mut self) -> Dcdcmodeem23W<'_, DCDCCTRLrs> {
         Dcdcmodeem23W::new(self, 4)
     }
     ///Bit 5 - DCDC Mode EM4H
     #[inline(always)]
-    pub fn dcdcmodeem4(&mut self) -> Dcdcmodeem4W<DCDCCTRLrs> {
+    pub fn dcdcmodeem4(&mut self) -> Dcdcmodeem4W<'_, DCDCCTRLrs> {
         Dcdcmodeem4W::new(self, 5)
     }
 }
@@ -154,8 +154,6 @@ impl crate::Readable for DCDCCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdcctrl::W`](W) writer structure
 impl crate::Writable for DCDCCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCCTRL to value 0x30
 impl crate::Resettable for DCDCCTRLrs {

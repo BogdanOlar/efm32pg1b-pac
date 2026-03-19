@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - CRC Polynomial Value
     #[inline(always)]
-    pub fn poly(&mut self) -> PolyW<POLYrs> {
+    pub fn poly(&mut self) -> PolyW<'_, POLYrs> {
         PolyW::new(self, 0)
     }
 }
@@ -37,10 +37,6 @@ impl crate::Readable for POLYrs {}
 ///`write(|w| ..)` method takes [`poly::W`](W) writer structure
 impl crate::Writable for POLYrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets POLY to value 0
-impl crate::Resettable for POLYrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for POLYrs {}

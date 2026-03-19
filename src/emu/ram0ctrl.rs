@@ -121,7 +121,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - RAM0 Blockset Power-down
     #[inline(always)]
-    pub fn rampowerdown(&mut self) -> RampowerdownW<RAM0CTRLrs> {
+    pub fn rampowerdown(&mut self) -> RampowerdownW<'_, RAM0CTRLrs> {
         RampowerdownW::new(self, 0)
     }
 }
@@ -137,10 +137,6 @@ impl crate::Readable for RAM0CTRLrs {}
 ///`write(|w| ..)` method takes [`ram0ctrl::W`](W) writer structure
 impl crate::Writable for RAM0CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets RAM0CTRL to value 0
-impl crate::Resettable for RAM0CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RAM0CTRLrs {}

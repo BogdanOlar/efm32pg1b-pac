@@ -145,32 +145,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - LFRCO Tuning Value
     #[inline(always)]
-    pub fn tuning(&mut self) -> TuningW<LFRCOCTRLrs> {
+    pub fn tuning(&mut self) -> TuningW<'_, LFRCOCTRLrs> {
         TuningW::new(self, 0)
     }
     ///Bit 16 - Enable Duty Cycling of Vref
     #[inline(always)]
-    pub fn envref(&mut self) -> EnvrefW<LFRCOCTRLrs> {
+    pub fn envref(&mut self) -> EnvrefW<'_, LFRCOCTRLrs> {
         EnvrefW::new(self, 16)
     }
     ///Bit 17 - Enable Comparator Chopping
     #[inline(always)]
-    pub fn enchop(&mut self) -> EnchopW<LFRCOCTRLrs> {
+    pub fn enchop(&mut self) -> EnchopW<'_, LFRCOCTRLrs> {
         EnchopW::new(self, 17)
     }
     ///Bit 18 - Enable Dynamic Element Matching
     #[inline(always)]
-    pub fn endem(&mut self) -> EndemW<LFRCOCTRLrs> {
+    pub fn endem(&mut self) -> EndemW<'_, LFRCOCTRLrs> {
         EndemW::new(self, 18)
     }
     ///Bits 24:25 - LFRCO Timeout
     #[inline(always)]
-    pub fn timeout(&mut self) -> TimeoutW<LFRCOCTRLrs> {
+    pub fn timeout(&mut self) -> TimeoutW<'_, LFRCOCTRLrs> {
         TimeoutW::new(self, 24)
     }
     ///Bits 28:31 - Tuning of Gmc Current
     #[inline(always)]
-    pub fn gmccurtune(&mut self) -> GmccurtuneW<LFRCOCTRLrs> {
+    pub fn gmccurtune(&mut self) -> GmccurtuneW<'_, LFRCOCTRLrs> {
         GmccurtuneW::new(self, 28)
     }
 }
@@ -186,8 +186,6 @@ impl crate::Readable for LFRCOCTRLrs {}
 ///`write(|w| ..)` method takes [`lfrcoctrl::W`](W) writer structure
 impl crate::Writable for LFRCOCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets LFRCOCTRL to value 0x8106_0100
 impl crate::Resettable for LFRCOCTRLrs {

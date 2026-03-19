@@ -108,7 +108,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Clock Select for LFE
     #[inline(always)]
-    pub fn lfe(&mut self) -> LfeW<LFECLKSELrs> {
+    pub fn lfe(&mut self) -> LfeW<'_, LFECLKSELrs> {
         LfeW::new(self, 0)
     }
 }
@@ -124,10 +124,6 @@ impl crate::Readable for LFECLKSELrs {}
 ///`write(|w| ..)` method takes [`lfeclksel::W`](W) writer structure
 impl crate::Writable for LFECLKSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets LFECLKSEL to value 0
-impl crate::Resettable for LFECLKSELrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LFECLKSELrs {}

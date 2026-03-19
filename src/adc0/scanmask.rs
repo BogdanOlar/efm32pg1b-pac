@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Scan Sequence Input Mask
     #[inline(always)]
-    pub fn scaninputen(&mut self) -> ScaninputenW<SCANMASKrs> {
+    pub fn scaninputen(&mut self) -> ScaninputenW<'_, SCANMASKrs> {
         ScaninputenW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for SCANMASKrs {}
 ///`write(|w| ..)` method takes [`scanmask::W`](W) writer structure
 impl crate::Writable for SCANMASKrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SCANMASK to value 0
-impl crate::Resettable for SCANMASKrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCANMASKrs {}

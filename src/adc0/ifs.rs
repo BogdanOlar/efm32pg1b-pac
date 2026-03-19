@@ -24,42 +24,42 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 8 - Set SINGLEOF Interrupt Flag
     #[inline(always)]
-    pub fn singleof(&mut self) -> SingleofW<IFSrs> {
+    pub fn singleof(&mut self) -> SingleofW<'_, IFSrs> {
         SingleofW::new(self, 8)
     }
     ///Bit 9 - Set SCANOF Interrupt Flag
     #[inline(always)]
-    pub fn scanof(&mut self) -> ScanofW<IFSrs> {
+    pub fn scanof(&mut self) -> ScanofW<'_, IFSrs> {
         ScanofW::new(self, 9)
     }
     ///Bit 10 - Set SINGLEUF Interrupt Flag
     #[inline(always)]
-    pub fn singleuf(&mut self) -> SingleufW<IFSrs> {
+    pub fn singleuf(&mut self) -> SingleufW<'_, IFSrs> {
         SingleufW::new(self, 10)
     }
     ///Bit 11 - Set SCANUF Interrupt Flag
     #[inline(always)]
-    pub fn scanuf(&mut self) -> ScanufW<IFSrs> {
+    pub fn scanuf(&mut self) -> ScanufW<'_, IFSrs> {
         ScanufW::new(self, 11)
     }
     ///Bit 16 - Set SINGLECMP Interrupt Flag
     #[inline(always)]
-    pub fn singlecmp(&mut self) -> SinglecmpW<IFSrs> {
+    pub fn singlecmp(&mut self) -> SinglecmpW<'_, IFSrs> {
         SinglecmpW::new(self, 16)
     }
     ///Bit 17 - Set SCANCMP Interrupt Flag
     #[inline(always)]
-    pub fn scancmp(&mut self) -> ScancmpW<IFSrs> {
+    pub fn scancmp(&mut self) -> ScancmpW<'_, IFSrs> {
         ScancmpW::new(self, 17)
     }
     ///Bit 24 - Set VREFOV Interrupt Flag
     #[inline(always)]
-    pub fn vrefov(&mut self) -> VrefovW<IFSrs> {
+    pub fn vrefov(&mut self) -> VrefovW<'_, IFSrs> {
         VrefovW::new(self, 24)
     }
     ///Bit 25 - Set PROGERR Interrupt Flag
     #[inline(always)]
-    pub fn progerr(&mut self) -> ProgerrW<IFSrs> {
+    pub fn progerr(&mut self) -> ProgerrW<'_, IFSrs> {
         ProgerrW::new(self, 25)
     }
 }
@@ -73,10 +73,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

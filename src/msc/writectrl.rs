@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable Write/Erase Controller
     #[inline(always)]
-    pub fn wren(&mut self) -> WrenW<WRITECTRLrs> {
+    pub fn wren(&mut self) -> WrenW<'_, WRITECTRLrs> {
         WrenW::new(self, 0)
     }
     ///Bit 1 - Abort Page Erase on Interrupt
     #[inline(always)]
-    pub fn irqeraseabort(&mut self) -> IrqeraseabortW<WRITECTRLrs> {
+    pub fn irqeraseabort(&mut self) -> IrqeraseabortW<'_, WRITECTRLrs> {
         IrqeraseabortW::new(self, 1)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for WRITECTRLrs {}
 ///`write(|w| ..)` method takes [`writectrl::W`](W) writer structure
 impl crate::Writable for WRITECTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets WRITECTRL to value 0
-impl crate::Resettable for WRITECTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for WRITECTRLrs {}

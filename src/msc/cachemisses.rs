@@ -26,6 +26,4 @@ impl crate::RegisterSpec for CACHEMISSESrs {
 ///`read()` method returns [`cachemisses::R`](R) reader structure
 impl crate::Readable for CACHEMISSESrs {}
 ///`reset()` method sets CACHEMISSES to value 0
-impl crate::Resettable for CACHEMISSESrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CACHEMISSESrs {}

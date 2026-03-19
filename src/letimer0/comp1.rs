@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Compare Value 1
     #[inline(always)]
-    pub fn comp1(&mut self) -> Comp1W<COMP1rs> {
+    pub fn comp1(&mut self) -> Comp1W<'_, COMP1rs> {
         Comp1W::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for COMP1rs {}
 ///`write(|w| ..)` method takes [`comp1::W`](W) writer structure
 impl crate::Writable for COMP1rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets COMP1 to value 0
-impl crate::Resettable for COMP1rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for COMP1rs {}

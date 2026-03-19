@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Sets the Peak Detector amplitude detection threshold levels
     #[inline(always)]
-    pub fn peakdetthr(&mut self) -> PeakdetthrW<HFXOCTRL1rs> {
+    pub fn peakdetthr(&mut self) -> PeakdetthrW<'_, HFXOCTRL1rs> {
         PeakdetthrW::new(self, 0)
     }
     ///Bits 4:6 - Reserved for internal use. Do not change.
     #[inline(always)]
-    pub fn reglvl(&mut self) -> ReglvlW<HFXOCTRL1rs> {
+    pub fn reglvl(&mut self) -> ReglvlW<'_, HFXOCTRL1rs> {
         ReglvlW::new(self, 4)
     }
     ///Bit 9 - Reserved for internal use. Do not change.
     #[inline(always)]
-    pub fn xtibiasen(&mut self) -> XtibiasenW<HFXOCTRL1rs> {
+    pub fn xtibiasen(&mut self) -> XtibiasenW<'_, HFXOCTRL1rs> {
         XtibiasenW::new(self, 9)
     }
 }
@@ -69,8 +69,6 @@ impl crate::Readable for HFXOCTRL1rs {}
 ///`write(|w| ..)` method takes [`hfxoctrl1::W`](W) writer structure
 impl crate::Writable for HFXOCTRL1rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HFXOCTRL1 to value 0x0240
 impl crate::Resettable for HFXOCTRL1rs {

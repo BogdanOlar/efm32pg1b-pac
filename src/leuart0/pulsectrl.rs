@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Pulse Width
     #[inline(always)]
-    pub fn pulsew(&mut self) -> PulsewW<PULSECTRLrs> {
+    pub fn pulsew(&mut self) -> PulsewW<'_, PULSECTRLrs> {
         PulsewW::new(self, 0)
     }
     ///Bit 4 - Pulse Generator/Extender Enable
     #[inline(always)]
-    pub fn pulseen(&mut self) -> PulseenW<PULSECTRLrs> {
+    pub fn pulseen(&mut self) -> PulseenW<'_, PULSECTRLrs> {
         PulseenW::new(self, 4)
     }
     ///Bit 5 - Pulse Filter
     #[inline(always)]
-    pub fn pulsefilt(&mut self) -> PulsefiltW<PULSECTRLrs> {
+    pub fn pulsefilt(&mut self) -> PulsefiltW<'_, PULSECTRLrs> {
         PulsefiltW::new(self, 5)
     }
 }
@@ -69,10 +69,6 @@ impl crate::Readable for PULSECTRLrs {}
 ///`write(|w| ..)` method takes [`pulsectrl::W`](W) writer structure
 impl crate::Writable for PULSECTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PULSECTRL to value 0
-impl crate::Resettable for PULSECTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PULSECTRLrs {}

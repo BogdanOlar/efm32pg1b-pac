@@ -24,6 +24,4 @@ impl crate::RegisterSpec for TEMPrs {
 ///`read()` method returns [`temp::R`](R) reader structure
 impl crate::Readable for TEMPrs {}
 ///`reset()` method sets TEMP to value 0
-impl crate::Resettable for TEMPrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TEMPrs {}

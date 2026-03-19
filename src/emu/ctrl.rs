@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Energy Mode 2 Block
     #[inline(always)]
-    pub fn em2block(&mut self) -> Em2blockW<CTRLrs> {
+    pub fn em2block(&mut self) -> Em2blockW<'_, CTRLrs> {
         Em2blockW::new(self, 1)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

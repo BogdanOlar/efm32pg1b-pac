@@ -26,47 +26,47 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear TXC Interrupt Flag
     #[inline(always)]
-    pub fn txc(&mut self) -> TxcW<IFCrs> {
+    pub fn txc(&mut self) -> TxcW<'_, IFCrs> {
         TxcW::new(self, 0)
     }
     ///Bit 3 - Clear RXOF Interrupt Flag
     #[inline(always)]
-    pub fn rxof(&mut self) -> RxofW<IFCrs> {
+    pub fn rxof(&mut self) -> RxofW<'_, IFCrs> {
         RxofW::new(self, 3)
     }
     ///Bit 4 - Clear RXUF Interrupt Flag
     #[inline(always)]
-    pub fn rxuf(&mut self) -> RxufW<IFCrs> {
+    pub fn rxuf(&mut self) -> RxufW<'_, IFCrs> {
         RxufW::new(self, 4)
     }
     ///Bit 5 - Clear TXOF Interrupt Flag
     #[inline(always)]
-    pub fn txof(&mut self) -> TxofW<IFCrs> {
+    pub fn txof(&mut self) -> TxofW<'_, IFCrs> {
         TxofW::new(self, 5)
     }
     ///Bit 6 - Clear PERR Interrupt Flag
     #[inline(always)]
-    pub fn perr(&mut self) -> PerrW<IFCrs> {
+    pub fn perr(&mut self) -> PerrW<'_, IFCrs> {
         PerrW::new(self, 6)
     }
     ///Bit 7 - Clear FERR Interrupt Flag
     #[inline(always)]
-    pub fn ferr(&mut self) -> FerrW<IFCrs> {
+    pub fn ferr(&mut self) -> FerrW<'_, IFCrs> {
         FerrW::new(self, 7)
     }
     ///Bit 8 - Clear MPAF Interrupt Flag
     #[inline(always)]
-    pub fn mpaf(&mut self) -> MpafW<IFCrs> {
+    pub fn mpaf(&mut self) -> MpafW<'_, IFCrs> {
         MpafW::new(self, 8)
     }
     ///Bit 9 - Clear STARTF Interrupt Flag
     #[inline(always)]
-    pub fn startf(&mut self) -> StartfW<IFCrs> {
+    pub fn startf(&mut self) -> StartfW<'_, IFCrs> {
         StartfW::new(self, 9)
     }
     ///Bit 10 - Clear SIGF Interrupt Flag
     #[inline(always)]
-    pub fn sigf(&mut self) -> SigfW<IFCrs> {
+    pub fn sigf(&mut self) -> SigfW<'_, IFCrs> {
         SigfW::new(self, 10)
     }
 }
@@ -80,10 +80,6 @@ impl crate::RegisterSpec for IFCrs {
 ///`write(|w| ..)` method takes [`ifc::W`](W) writer structure
 impl crate::Writable for IFCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFC to value 0
-impl crate::Resettable for IFCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFCrs {}

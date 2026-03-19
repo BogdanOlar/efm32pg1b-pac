@@ -433,52 +433,52 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Warm-up Mode
     #[inline(always)]
-    pub fn warmupmode(&mut self) -> WarmupmodeW<CTRLrs> {
+    pub fn warmupmode(&mut self) -> WarmupmodeW<'_, CTRLrs> {
         WarmupmodeW::new(self, 0)
     }
     ///Bit 2 - SINGLEFIFO DMA Wakeup
     #[inline(always)]
-    pub fn singledmawu(&mut self) -> SingledmawuW<CTRLrs> {
+    pub fn singledmawu(&mut self) -> SingledmawuW<'_, CTRLrs> {
         SingledmawuW::new(self, 2)
     }
     ///Bit 3 - SCANFIFO DMA Wakeup
     #[inline(always)]
-    pub fn scandmawu(&mut self) -> ScandmawuW<CTRLrs> {
+    pub fn scandmawu(&mut self) -> ScandmawuW<'_, CTRLrs> {
         ScandmawuW::new(self, 3)
     }
     ///Bit 4 - Conversion Tailgating
     #[inline(always)]
-    pub fn tailgate(&mut self) -> TailgateW<CTRLrs> {
+    pub fn tailgate(&mut self) -> TailgateW<'_, CTRLrs> {
         TailgateW::new(self, 4)
     }
     ///Bit 6 - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1
     #[inline(always)]
-    pub fn asyncclken(&mut self) -> AsyncclkenW<CTRLrs> {
+    pub fn asyncclken(&mut self) -> AsyncclkenW<'_, CTRLrs> {
         AsyncclkenW::new(self, 6)
     }
     ///Bit 7 - ADC Clock Mode
     #[inline(always)]
-    pub fn adcclkmode(&mut self) -> AdcclkmodeW<CTRLrs> {
+    pub fn adcclkmode(&mut self) -> AdcclkmodeW<'_, CTRLrs> {
         AdcclkmodeW::new(self, 7)
     }
     ///Bits 8:14 - Prescalar Setting for ADC Sample and Conversion Clock
     #[inline(always)]
-    pub fn presc(&mut self) -> PrescW<CTRLrs> {
+    pub fn presc(&mut self) -> PrescW<'_, CTRLrs> {
         PrescW::new(self, 8)
     }
     ///Bits 16:22 - 1us Time Base
     #[inline(always)]
-    pub fn timebase(&mut self) -> TimebaseW<CTRLrs> {
+    pub fn timebase(&mut self) -> TimebaseW<'_, CTRLrs> {
         TimebaseW::new(self, 16)
     }
     ///Bits 24:27 - Oversample Rate Select
     #[inline(always)]
-    pub fn ovsrsel(&mut self) -> OvsrselW<CTRLrs> {
+    pub fn ovsrsel(&mut self) -> OvsrselW<'_, CTRLrs> {
         OvsrselW::new(self, 24)
     }
     ///Bit 29 - Channel Connect
     #[inline(always)]
-    pub fn chconmode(&mut self) -> ChconmodeW<CTRLrs> {
+    pub fn chconmode(&mut self) -> ChconmodeW<'_, CTRLrs> {
         ChconmodeW::new(self, 29)
     }
 }
@@ -494,8 +494,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0x001f_0000
 impl crate::Resettable for CTRLrs {

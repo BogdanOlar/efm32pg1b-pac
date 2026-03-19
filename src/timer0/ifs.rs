@@ -30,57 +30,57 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set OF Interrupt Flag
     #[inline(always)]
-    pub fn of(&mut self) -> OfW<IFSrs> {
+    pub fn of(&mut self) -> OfW<'_, IFSrs> {
         OfW::new(self, 0)
     }
     ///Bit 1 - Set UF Interrupt Flag
     #[inline(always)]
-    pub fn uf(&mut self) -> UfW<IFSrs> {
+    pub fn uf(&mut self) -> UfW<'_, IFSrs> {
         UfW::new(self, 1)
     }
     ///Bit 2 - Set DIRCHG Interrupt Flag
     #[inline(always)]
-    pub fn dirchg(&mut self) -> DirchgW<IFSrs> {
+    pub fn dirchg(&mut self) -> DirchgW<'_, IFSrs> {
         DirchgW::new(self, 2)
     }
     ///Bit 4 - Set CC0 Interrupt Flag
     #[inline(always)]
-    pub fn cc0(&mut self) -> Cc0W<IFSrs> {
+    pub fn cc0(&mut self) -> Cc0W<'_, IFSrs> {
         Cc0W::new(self, 4)
     }
     ///Bit 5 - Set CC1 Interrupt Flag
     #[inline(always)]
-    pub fn cc1(&mut self) -> Cc1W<IFSrs> {
+    pub fn cc1(&mut self) -> Cc1W<'_, IFSrs> {
         Cc1W::new(self, 5)
     }
     ///Bit 6 - Set CC2 Interrupt Flag
     #[inline(always)]
-    pub fn cc2(&mut self) -> Cc2W<IFSrs> {
+    pub fn cc2(&mut self) -> Cc2W<'_, IFSrs> {
         Cc2W::new(self, 6)
     }
     ///Bit 7 - Set CC3 Interrupt Flag
     #[inline(always)]
-    pub fn cc3(&mut self) -> Cc3W<IFSrs> {
+    pub fn cc3(&mut self) -> Cc3W<'_, IFSrs> {
         Cc3W::new(self, 7)
     }
     ///Bit 8 - Set ICBOF0 Interrupt Flag
     #[inline(always)]
-    pub fn icbof0(&mut self) -> Icbof0W<IFSrs> {
+    pub fn icbof0(&mut self) -> Icbof0W<'_, IFSrs> {
         Icbof0W::new(self, 8)
     }
     ///Bit 9 - Set ICBOF1 Interrupt Flag
     #[inline(always)]
-    pub fn icbof1(&mut self) -> Icbof1W<IFSrs> {
+    pub fn icbof1(&mut self) -> Icbof1W<'_, IFSrs> {
         Icbof1W::new(self, 9)
     }
     ///Bit 10 - Set ICBOF2 Interrupt Flag
     #[inline(always)]
-    pub fn icbof2(&mut self) -> Icbof2W<IFSrs> {
+    pub fn icbof2(&mut self) -> Icbof2W<'_, IFSrs> {
         Icbof2W::new(self, 10)
     }
     ///Bit 11 - Set ICBOF3 Interrupt Flag
     #[inline(always)]
-    pub fn icbof3(&mut self) -> Icbof3W<IFSrs> {
+    pub fn icbof3(&mut self) -> Icbof3W<'_, IFSrs> {
         Icbof3W::new(self, 11)
     }
 }
@@ -94,10 +94,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

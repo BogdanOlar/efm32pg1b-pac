@@ -284,17 +284,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Hysteresis Select When ACMPOUT=0
     #[inline(always)]
-    pub fn hyst(&mut self) -> HystW<HYSTERESIS0rs> {
+    pub fn hyst(&mut self) -> HystW<'_, HYSTERESIS0rs> {
         HystW::new(self, 0)
     }
     ///Bits 16:21 - Divider for VA Voltage When ACMPOUT=0
     #[inline(always)]
-    pub fn divva(&mut self) -> DivvaW<HYSTERESIS0rs> {
+    pub fn divva(&mut self) -> DivvaW<'_, HYSTERESIS0rs> {
         DivvaW::new(self, 16)
     }
     ///Bits 24:29 - Divider for VB Voltage When ACMPOUT=0
     #[inline(always)]
-    pub fn divvb(&mut self) -> DivvbW<HYSTERESIS0rs> {
+    pub fn divvb(&mut self) -> DivvbW<'_, HYSTERESIS0rs> {
         DivvbW::new(self, 24)
     }
 }
@@ -310,10 +310,6 @@ impl crate::Readable for HYSTERESIS0rs {}
 ///`write(|w| ..)` method takes [`hysteresis0::W`](W) writer structure
 impl crate::Writable for HYSTERESIS0rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HYSTERESIS0 to value 0
-impl crate::Resettable for HYSTERESIS0rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HYSTERESIS0rs {}

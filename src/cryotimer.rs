@@ -57,8 +57,7 @@ impl RegisterBlock {
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ctrl`]
-///module
+///For information about available fields see [`mod@ctrl`] module
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CTRLrs>;
 ///Control Register
@@ -67,8 +66,7 @@ pub mod ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`periodsel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`periodsel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@periodsel`]
-///module
+///For information about available fields see [`mod@periodsel`] module
 #[doc(alias = "PERIODSEL")]
 pub type Periodsel = crate::Reg<periodsel::PERIODSELrs>;
 ///Interrupt Duration
@@ -77,8 +75,7 @@ pub mod periodsel;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cnt::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cnt`]
-///module
+///For information about available fields see [`mod@cnt`] module
 #[doc(alias = "CNT")]
 pub type Cnt = crate::Reg<cnt::CNTrs>;
 ///Counter Value
@@ -87,8 +84,7 @@ pub mod cnt;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`em4wuen::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`em4wuen::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@em4wuen`]
-///module
+///For information about available fields see [`mod@em4wuen`] module
 #[doc(alias = "EM4WUEN")]
 pub type Em4wuen = crate::Reg<em4wuen::EM4WUENrs>;
 ///Wake Up Enable
@@ -97,8 +93,7 @@ pub mod em4wuen;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`if_::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@if_`]
-///module
+///For information about available fields see [`mod@if_`] module
 #[doc(alias = "IF")]
 pub type If = crate::Reg<if_::IFrs>;
 ///Interrupt Flag Register
@@ -107,8 +102,7 @@ pub mod if_;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifs`]
-///module
+///For information about available fields see [`mod@ifs`] module
 #[doc(alias = "IFS")]
 pub type Ifs = crate::Reg<ifs::IFSrs>;
 ///Interrupt Flag Set Register
@@ -117,8 +111,7 @@ pub mod ifs;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifc`]
-///module
+///For information about available fields see [`mod@ifc`] module
 #[doc(alias = "IFC")]
 pub type Ifc = crate::Reg<ifc::IFCrs>;
 ///Interrupt Flag Clear Register
@@ -127,8 +120,7 @@ pub mod ifc;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ien::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ien`]
-///module
+///For information about available fields see [`mod@ien`] module
 #[doc(alias = "IEN")]
 pub type Ien = crate::Reg<ien::IENrs>;
 ///Interrupt Enable Register

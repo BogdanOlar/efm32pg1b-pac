@@ -24,42 +24,42 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Send Start Condition
     #[inline(always)]
-    pub fn start(&mut self) -> StartW<CMDrs> {
+    pub fn start(&mut self) -> StartW<'_, CMDrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - Send Stop Condition
     #[inline(always)]
-    pub fn stop(&mut self) -> StopW<CMDrs> {
+    pub fn stop(&mut self) -> StopW<'_, CMDrs> {
         StopW::new(self, 1)
     }
     ///Bit 2 - Send ACK
     #[inline(always)]
-    pub fn ack(&mut self) -> AckW<CMDrs> {
+    pub fn ack(&mut self) -> AckW<'_, CMDrs> {
         AckW::new(self, 2)
     }
     ///Bit 3 - Send NACK
     #[inline(always)]
-    pub fn nack(&mut self) -> NackW<CMDrs> {
+    pub fn nack(&mut self) -> NackW<'_, CMDrs> {
         NackW::new(self, 3)
     }
     ///Bit 4 - Continue Transmission
     #[inline(always)]
-    pub fn cont(&mut self) -> ContW<CMDrs> {
+    pub fn cont(&mut self) -> ContW<'_, CMDrs> {
         ContW::new(self, 4)
     }
     ///Bit 5 - Abort Transmission
     #[inline(always)]
-    pub fn abort(&mut self) -> AbortW<CMDrs> {
+    pub fn abort(&mut self) -> AbortW<'_, CMDrs> {
         AbortW::new(self, 5)
     }
     ///Bit 6 - Clear TX
     #[inline(always)]
-    pub fn cleartx(&mut self) -> CleartxW<CMDrs> {
+    pub fn cleartx(&mut self) -> CleartxW<'_, CMDrs> {
         CleartxW::new(self, 6)
     }
     ///Bit 7 - Clear Pending Commands
     #[inline(always)]
-    pub fn clearpc(&mut self) -> ClearpcW<CMDrs> {
+    pub fn clearpc(&mut self) -> ClearpcW<'_, CMDrs> {
         ClearpcW::new(self, 7)
     }
 }
@@ -73,10 +73,6 @@ impl crate::RegisterSpec for CMDrs {
 ///`write(|w| ..)` method takes [`cmd::W`](W) writer structure
 impl crate::Writable for CMDrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CMD to value 0
-impl crate::Resettable for CMDrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CMDrs {}

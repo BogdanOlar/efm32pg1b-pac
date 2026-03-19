@@ -61,6 +61,4 @@ impl crate::RegisterSpec for RXDOUBLEXrs {
 ///`read()` method returns [`rxdoublex::R`](R) reader structure
 impl crate::Readable for RXDOUBLEXrs {}
 ///`reset()` method sets RXDOUBLEX to value 0
-impl crate::Resettable for RXDOUBLEXrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXDOUBLEXrs {}

@@ -142,37 +142,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 3 - Internal Flash Cache Disable
     #[inline(always)]
-    pub fn ifcdis(&mut self) -> IfcdisW<READCTRLrs> {
+    pub fn ifcdis(&mut self) -> IfcdisW<'_, READCTRLrs> {
         IfcdisW::new(self, 3)
     }
     ///Bit 4 - Automatic Invalidate Disable
     #[inline(always)]
-    pub fn aidis(&mut self) -> AidisW<READCTRLrs> {
+    pub fn aidis(&mut self) -> AidisW<'_, READCTRLrs> {
         AidisW::new(self, 4)
     }
     ///Bit 5 - Interrupt Context Cache Disable
     #[inline(always)]
-    pub fn iccdis(&mut self) -> IccdisW<READCTRLrs> {
+    pub fn iccdis(&mut self) -> IccdisW<'_, READCTRLrs> {
         IccdisW::new(self, 5)
     }
     ///Bit 8 - Prefetch Mode
     #[inline(always)]
-    pub fn prefetch(&mut self) -> PrefetchW<READCTRLrs> {
+    pub fn prefetch(&mut self) -> PrefetchW<'_, READCTRLrs> {
         PrefetchW::new(self, 8)
     }
     ///Bit 9 - AHB_HPROT Mode
     #[inline(always)]
-    pub fn usehprot(&mut self) -> UsehprotW<READCTRLrs> {
+    pub fn usehprot(&mut self) -> UsehprotW<'_, READCTRLrs> {
         UsehprotW::new(self, 9)
     }
     ///Bits 24:25 - Read Mode
     #[inline(always)]
-    pub fn mode(&mut self) -> ModeW<READCTRLrs> {
+    pub fn mode(&mut self) -> ModeW<'_, READCTRLrs> {
         ModeW::new(self, 24)
     }
     ///Bit 28 - Suppress Conditional Branch Target Perfetch
     #[inline(always)]
-    pub fn scbtp(&mut self) -> ScbtpW<READCTRLrs> {
+    pub fn scbtp(&mut self) -> ScbtpW<'_, READCTRLrs> {
         ScbtpW::new(self, 28)
     }
 }
@@ -188,8 +188,6 @@ impl crate::Readable for READCTRLrs {}
 ///`write(|w| ..)` method takes [`readctrl::W`](W) writer structure
 impl crate::Writable for READCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets READCTRL to value 0x0100_0100
 impl crate::Resettable for READCTRLrs {

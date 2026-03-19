@@ -40,6 +40,4 @@ impl crate::RegisterSpec for RXDATAXrs {
 ///`read()` method returns [`rxdatax::R`](R) reader structure
 impl crate::Readable for RXDATAXrs {}
 ///`reset()` method sets RXDATAX to value 0
-impl crate::Resettable for RXDATAXrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXDATAXrs {}

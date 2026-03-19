@@ -128,17 +128,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 16:17 - Arbitration Slot Number Select
     #[inline(always)]
-    pub fn arbslots(&mut self) -> ArbslotsW<CH5_CFGrs> {
+    pub fn arbslots(&mut self) -> ArbslotsW<'_, CH5_CFGrs> {
         ArbslotsW::new(self, 16)
     }
     ///Bit 20 - Source Address Increment Sign
     #[inline(always)]
-    pub fn srcincsign(&mut self) -> SrcincsignW<CH5_CFGrs> {
+    pub fn srcincsign(&mut self) -> SrcincsignW<'_, CH5_CFGrs> {
         SrcincsignW::new(self, 20)
     }
     ///Bit 21 - Destination Address Increment Sign
     #[inline(always)]
-    pub fn dstincsign(&mut self) -> DstincsignW<CH5_CFGrs> {
+    pub fn dstincsign(&mut self) -> DstincsignW<'_, CH5_CFGrs> {
         DstincsignW::new(self, 21)
     }
 }
@@ -154,10 +154,6 @@ impl crate::Readable for CH5_CFGrs {}
 ///`write(|w| ..)` method takes [`ch5_cfg::W`](W) writer structure
 impl crate::Writable for CH5_CFGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CH5_CFG to value 0
-impl crate::Resettable for CH5_CFGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH5_CFGrs {}

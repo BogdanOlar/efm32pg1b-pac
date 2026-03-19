@@ -62,7 +62,7 @@ impl core::fmt::Debug for crate::generic::Reg<HFCLKSELrs> {
 impl W {
     ///Bits 0:2 - HFCLK Select
     #[inline(always)]
-    pub fn hf(&mut self) -> HfW<HFCLKSELrs> {
+    pub fn hf(&mut self) -> HfW<'_, HFCLKSELrs> {
         HfW::new(self, 0)
     }
 }
@@ -76,10 +76,6 @@ impl crate::RegisterSpec for HFCLKSELrs {
 ///`write(|w| ..)` method takes [`hfclksel::W`](W) writer structure
 impl crate::Writable for HFCLKSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HFCLKSEL to value 0
-impl crate::Resettable for HFCLKSELrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HFCLKSELrs {}

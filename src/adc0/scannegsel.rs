@@ -773,42 +773,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Negative Input Select Register for ADCn_INPUT0 in Differential Scan Mode
     #[inline(always)]
-    pub fn input0negsel(&mut self) -> Input0negselW<SCANNEGSELrs> {
+    pub fn input0negsel(&mut self) -> Input0negselW<'_, SCANNEGSELrs> {
         Input0negselW::new(self, 0)
     }
     ///Bits 2:3 - Negative Input Select Register for ADCn_INPUT2 in Differential Scan Mode
     #[inline(always)]
-    pub fn input2negsel(&mut self) -> Input2negselW<SCANNEGSELrs> {
+    pub fn input2negsel(&mut self) -> Input2negselW<'_, SCANNEGSELrs> {
         Input2negselW::new(self, 2)
     }
     ///Bits 4:5 - Negative Input Select Register for ADCn_INPUT4 in Differential Scan Mode
     #[inline(always)]
-    pub fn input4negsel(&mut self) -> Input4negselW<SCANNEGSELrs> {
+    pub fn input4negsel(&mut self) -> Input4negselW<'_, SCANNEGSELrs> {
         Input4negselW::new(self, 4)
     }
     ///Bits 6:7 - Negative Input Select Register for ADCn_INPUT1 in Differential Scan Mode
     #[inline(always)]
-    pub fn input6negsel(&mut self) -> Input6negselW<SCANNEGSELrs> {
+    pub fn input6negsel(&mut self) -> Input6negselW<'_, SCANNEGSELrs> {
         Input6negselW::new(self, 6)
     }
     ///Bits 8:9 - Negative Input Select Register for ADCn_INPUT9 in Differential Scan Mode
     #[inline(always)]
-    pub fn input9negsel(&mut self) -> Input9negselW<SCANNEGSELrs> {
+    pub fn input9negsel(&mut self) -> Input9negselW<'_, SCANNEGSELrs> {
         Input9negselW::new(self, 8)
     }
     ///Bits 10:11 - Negative Input Select Register for ADCn_INPUT11 in Differential Scan Mode
     #[inline(always)]
-    pub fn input11negsel(&mut self) -> Input11negselW<SCANNEGSELrs> {
+    pub fn input11negsel(&mut self) -> Input11negselW<'_, SCANNEGSELrs> {
         Input11negselW::new(self, 10)
     }
     ///Bits 12:13 - Negative Input Select Register for ADCn_INPUT13 in Differential Scan Mode
     #[inline(always)]
-    pub fn input13negsel(&mut self) -> Input13negselW<SCANNEGSELrs> {
+    pub fn input13negsel(&mut self) -> Input13negselW<'_, SCANNEGSELrs> {
         Input13negselW::new(self, 12)
     }
     ///Bits 14:15 - Negative Input Select Register for ADCn_INPUT15 in Differential Scan Mode
     #[inline(always)]
-    pub fn input15negsel(&mut self) -> Input15negselW<SCANNEGSELrs> {
+    pub fn input15negsel(&mut self) -> Input15negselW<'_, SCANNEGSELrs> {
         Input15negselW::new(self, 14)
     }
 }
@@ -824,8 +824,6 @@ impl crate::Readable for SCANNEGSELrs {}
 ///`write(|w| ..)` method takes [`scannegsel::W`](W) writer structure
 impl crate::Writable for SCANNEGSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SCANNEGSEL to value 0x39e4
 impl crate::Resettable for SCANNEGSELrs {

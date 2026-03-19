@@ -1849,22 +1849,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    pub fn rxloc(&mut self) -> RxlocW<ROUTELOC0rs> {
+    pub fn rxloc(&mut self) -> RxlocW<'_, ROUTELOC0rs> {
         RxlocW::new(self, 0)
     }
     ///Bits 8:13 - I/O Location
     #[inline(always)]
-    pub fn txloc(&mut self) -> TxlocW<ROUTELOC0rs> {
+    pub fn txloc(&mut self) -> TxlocW<'_, ROUTELOC0rs> {
         TxlocW::new(self, 8)
     }
     ///Bits 16:21 - I/O Location
     #[inline(always)]
-    pub fn csloc(&mut self) -> CslocW<ROUTELOC0rs> {
+    pub fn csloc(&mut self) -> CslocW<'_, ROUTELOC0rs> {
         CslocW::new(self, 16)
     }
     ///Bits 24:29 - I/O Location
     #[inline(always)]
-    pub fn clkloc(&mut self) -> ClklocW<ROUTELOC0rs> {
+    pub fn clkloc(&mut self) -> ClklocW<'_, ROUTELOC0rs> {
         ClklocW::new(self, 24)
     }
 }
@@ -1880,10 +1880,6 @@ impl crate::Readable for ROUTELOC0rs {}
 ///`write(|w| ..)` method takes [`routeloc0::W`](W) writer structure
 impl crate::Writable for ROUTELOC0rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ROUTELOC0 to value 0
-impl crate::Resettable for ROUTELOC0rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ROUTELOC0rs {}

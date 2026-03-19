@@ -163,77 +163,77 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - HFRCORDY Interrupt Enable
     #[inline(always)]
-    pub fn hfrcordy(&mut self) -> HfrcordyW<IENrs> {
+    pub fn hfrcordy(&mut self) -> HfrcordyW<'_, IENrs> {
         HfrcordyW::new(self, 0)
     }
     ///Bit 1 - HFXORDY Interrupt Enable
     #[inline(always)]
-    pub fn hfxordy(&mut self) -> HfxordyW<IENrs> {
+    pub fn hfxordy(&mut self) -> HfxordyW<'_, IENrs> {
         HfxordyW::new(self, 1)
     }
     ///Bit 2 - LFRCORDY Interrupt Enable
     #[inline(always)]
-    pub fn lfrcordy(&mut self) -> LfrcordyW<IENrs> {
+    pub fn lfrcordy(&mut self) -> LfrcordyW<'_, IENrs> {
         LfrcordyW::new(self, 2)
     }
     ///Bit 3 - LFXORDY Interrupt Enable
     #[inline(always)]
-    pub fn lfxordy(&mut self) -> LfxordyW<IENrs> {
+    pub fn lfxordy(&mut self) -> LfxordyW<'_, IENrs> {
         LfxordyW::new(self, 3)
     }
     ///Bit 4 - AUXHFRCORDY Interrupt Enable
     #[inline(always)]
-    pub fn auxhfrcordy(&mut self) -> AuxhfrcordyW<IENrs> {
+    pub fn auxhfrcordy(&mut self) -> AuxhfrcordyW<'_, IENrs> {
         AuxhfrcordyW::new(self, 4)
     }
     ///Bit 5 - CALRDY Interrupt Enable
     #[inline(always)]
-    pub fn calrdy(&mut self) -> CalrdyW<IENrs> {
+    pub fn calrdy(&mut self) -> CalrdyW<'_, IENrs> {
         CalrdyW::new(self, 5)
     }
     ///Bit 6 - CALOF Interrupt Enable
     #[inline(always)]
-    pub fn calof(&mut self) -> CalofW<IENrs> {
+    pub fn calof(&mut self) -> CalofW<'_, IENrs> {
         CalofW::new(self, 6)
     }
     ///Bit 8 - HFXODISERR Interrupt Enable
     #[inline(always)]
-    pub fn hfxodiserr(&mut self) -> HfxodiserrW<IENrs> {
+    pub fn hfxodiserr(&mut self) -> HfxodiserrW<'_, IENrs> {
         HfxodiserrW::new(self, 8)
     }
     ///Bit 9 - HFXOAUTOSW Interrupt Enable
     #[inline(always)]
-    pub fn hfxoautosw(&mut self) -> HfxoautoswW<IENrs> {
+    pub fn hfxoautosw(&mut self) -> HfxoautoswW<'_, IENrs> {
         HfxoautoswW::new(self, 9)
     }
     ///Bit 10 - HFXOPEAKDETERR Interrupt Enable
     #[inline(always)]
-    pub fn hfxopeakdeterr(&mut self) -> HfxopeakdeterrW<IENrs> {
+    pub fn hfxopeakdeterr(&mut self) -> HfxopeakdeterrW<'_, IENrs> {
         HfxopeakdeterrW::new(self, 10)
     }
     ///Bit 11 - HFXOPEAKDETRDY Interrupt Enable
     #[inline(always)]
-    pub fn hfxopeakdetrdy(&mut self) -> HfxopeakdetrdyW<IENrs> {
+    pub fn hfxopeakdetrdy(&mut self) -> HfxopeakdetrdyW<'_, IENrs> {
         HfxopeakdetrdyW::new(self, 11)
     }
     ///Bit 12 - HFXOSHUNTOPTRDY Interrupt Enable
     #[inline(always)]
-    pub fn hfxoshuntoptrdy(&mut self) -> HfxoshuntoptrdyW<IENrs> {
+    pub fn hfxoshuntoptrdy(&mut self) -> HfxoshuntoptrdyW<'_, IENrs> {
         HfxoshuntoptrdyW::new(self, 12)
     }
     ///Bit 13 - HFRCODIS Interrupt Enable
     #[inline(always)]
-    pub fn hfrcodis(&mut self) -> HfrcodisW<IENrs> {
+    pub fn hfrcodis(&mut self) -> HfrcodisW<'_, IENrs> {
         HfrcodisW::new(self, 13)
     }
     ///Bit 14 - LFTIMEOUTERR Interrupt Enable
     #[inline(always)]
-    pub fn lftimeouterr(&mut self) -> LftimeouterrW<IENrs> {
+    pub fn lftimeouterr(&mut self) -> LftimeouterrW<'_, IENrs> {
         LftimeouterrW::new(self, 14)
     }
     ///Bit 31 - CMUERR Interrupt Enable
     #[inline(always)]
-    pub fn cmuerr(&mut self) -> CmuerrW<IENrs> {
+    pub fn cmuerr(&mut self) -> CmuerrW<'_, IENrs> {
         CmuerrW::new(self, 31)
     }
 }
@@ -249,10 +249,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

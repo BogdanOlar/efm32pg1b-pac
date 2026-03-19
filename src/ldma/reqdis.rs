@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - DMA Request Disables
     #[inline(always)]
-    pub fn reqdis(&mut self) -> ReqdisW<REQDISrs> {
+    pub fn reqdis(&mut self) -> ReqdisW<'_, REQDISrs> {
         ReqdisW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for REQDISrs {}
 ///`write(|w| ..)` method takes [`reqdis::W`](W) writer structure
 impl crate::Writable for REQDISrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets REQDIS to value 0
-impl crate::Resettable for REQDISrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for REQDISrs {}

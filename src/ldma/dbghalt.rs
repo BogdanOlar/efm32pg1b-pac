@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - DMA Debug Halt
     #[inline(always)]
-    pub fn dbghalt(&mut self) -> DbghaltW<DBGHALTrs> {
+    pub fn dbghalt(&mut self) -> DbghaltW<'_, DBGHALTrs> {
         DbghaltW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for DBGHALTrs {}
 ///`write(|w| ..)` method takes [`dbghalt::W`](W) writer structure
 impl crate::Writable for DBGHALTrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DBGHALT to value 0
-impl crate::Resettable for DBGHALTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DBGHALTrs {}

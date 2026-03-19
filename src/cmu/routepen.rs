@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - CLKOUT0 Pin Enable
     #[inline(always)]
-    pub fn clkout0pen(&mut self) -> Clkout0penW<ROUTEPENrs> {
+    pub fn clkout0pen(&mut self) -> Clkout0penW<'_, ROUTEPENrs> {
         Clkout0penW::new(self, 0)
     }
     ///Bit 1 - CLKOUT1 Pin Enable
     #[inline(always)]
-    pub fn clkout1pen(&mut self) -> Clkout1penW<ROUTEPENrs> {
+    pub fn clkout1pen(&mut self) -> Clkout1penW<'_, ROUTEPENrs> {
         Clkout1penW::new(self, 1)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for ROUTEPENrs {}
 ///`write(|w| ..)` method takes [`routepen::W`](W) writer structure
 impl crate::Writable for ROUTEPENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ROUTEPEN to value 0
-impl crate::Resettable for ROUTEPENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ROUTEPENrs {}

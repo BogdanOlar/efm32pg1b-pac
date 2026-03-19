@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<VMONIO0CTRLrs> {
+    pub fn en(&mut self) -> EnW<'_, VMONIO0CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 2 - Rise Wakeup
     #[inline(always)]
-    pub fn risewu(&mut self) -> RisewuW<VMONIO0CTRLrs> {
+    pub fn risewu(&mut self) -> RisewuW<'_, VMONIO0CTRLrs> {
         RisewuW::new(self, 2)
     }
     ///Bit 3 - Fall Wakeup
     #[inline(always)]
-    pub fn fallwu(&mut self) -> FallwuW<VMONIO0CTRLrs> {
+    pub fn fallwu(&mut self) -> FallwuW<'_, VMONIO0CTRLrs> {
         FallwuW::new(self, 3)
     }
     ///Bit 4 - EM4 IO0 Retention Disable
     #[inline(always)]
-    pub fn retdis(&mut self) -> RetdisW<VMONIO0CTRLrs> {
+    pub fn retdis(&mut self) -> RetdisW<'_, VMONIO0CTRLrs> {
         RetdisW::new(self, 4)
     }
     ///Bits 8:11 - Threshold Fine Adjust
     #[inline(always)]
-    pub fn thresfine(&mut self) -> ThresfineW<VMONIO0CTRLrs> {
+    pub fn thresfine(&mut self) -> ThresfineW<'_, VMONIO0CTRLrs> {
         ThresfineW::new(self, 8)
     }
     ///Bits 12:15 - Threshold Coarse Adjust
     #[inline(always)]
-    pub fn threscoarse(&mut self) -> ThrescoarseW<VMONIO0CTRLrs> {
+    pub fn threscoarse(&mut self) -> ThrescoarseW<'_, VMONIO0CTRLrs> {
         ThrescoarseW::new(self, 12)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for VMONIO0CTRLrs {}
 ///`write(|w| ..)` method takes [`vmonio0ctrl::W`](W) writer structure
 impl crate::Writable for VMONIO0CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets VMONIO0CTRL to value 0
-impl crate::Resettable for VMONIO0CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for VMONIO0CTRLrs {}

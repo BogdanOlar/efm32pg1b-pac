@@ -378,142 +378,142 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - USART Synchronous Mode
     #[inline(always)]
-    pub fn sync(&mut self) -> SyncW<CTRLrs> {
+    pub fn sync(&mut self) -> SyncW<'_, CTRLrs> {
         SyncW::new(self, 0)
     }
     ///Bit 1 - Loopback Enable
     #[inline(always)]
-    pub fn loopbk(&mut self) -> LoopbkW<CTRLrs> {
+    pub fn loopbk(&mut self) -> LoopbkW<'_, CTRLrs> {
         LoopbkW::new(self, 1)
     }
     ///Bit 2 - Collision Check Enable
     #[inline(always)]
-    pub fn ccen(&mut self) -> CcenW<CTRLrs> {
+    pub fn ccen(&mut self) -> CcenW<'_, CTRLrs> {
         CcenW::new(self, 2)
     }
     ///Bit 3 - Multi-Processor Mode
     #[inline(always)]
-    pub fn mpm(&mut self) -> MpmW<CTRLrs> {
+    pub fn mpm(&mut self) -> MpmW<'_, CTRLrs> {
         MpmW::new(self, 3)
     }
     ///Bit 4 - Multi-Processor Address-Bit
     #[inline(always)]
-    pub fn mpab(&mut self) -> MpabW<CTRLrs> {
+    pub fn mpab(&mut self) -> MpabW<'_, CTRLrs> {
         MpabW::new(self, 4)
     }
     ///Bits 5:6 - Oversampling
     #[inline(always)]
-    pub fn ovs(&mut self) -> OvsW<CTRLrs> {
+    pub fn ovs(&mut self) -> OvsW<'_, CTRLrs> {
         OvsW::new(self, 5)
     }
     ///Bit 8 - Clock Polarity
     #[inline(always)]
-    pub fn clkpol(&mut self) -> ClkpolW<CTRLrs> {
+    pub fn clkpol(&mut self) -> ClkpolW<'_, CTRLrs> {
         ClkpolW::new(self, 8)
     }
     ///Bit 9 - Clock Edge for Setup/Sample
     #[inline(always)]
-    pub fn clkpha(&mut self) -> ClkphaW<CTRLrs> {
+    pub fn clkpha(&mut self) -> ClkphaW<'_, CTRLrs> {
         ClkphaW::new(self, 9)
     }
     ///Bit 10 - Most Significant Bit First
     #[inline(always)]
-    pub fn msbf(&mut self) -> MsbfW<CTRLrs> {
+    pub fn msbf(&mut self) -> MsbfW<'_, CTRLrs> {
         MsbfW::new(self, 10)
     }
     ///Bit 11 - Action on Slave-Select in Master Mode
     #[inline(always)]
-    pub fn csma(&mut self) -> CsmaW<CTRLrs> {
+    pub fn csma(&mut self) -> CsmaW<'_, CTRLrs> {
         CsmaW::new(self, 11)
     }
     ///Bit 12 - TX Buffer Interrupt Level
     #[inline(always)]
-    pub fn txbil(&mut self) -> TxbilW<CTRLrs> {
+    pub fn txbil(&mut self) -> TxbilW<'_, CTRLrs> {
         TxbilW::new(self, 12)
     }
     ///Bit 13 - Receiver Input Invert
     #[inline(always)]
-    pub fn rxinv(&mut self) -> RxinvW<CTRLrs> {
+    pub fn rxinv(&mut self) -> RxinvW<'_, CTRLrs> {
         RxinvW::new(self, 13)
     }
     ///Bit 14 - Transmitter Output Invert
     #[inline(always)]
-    pub fn txinv(&mut self) -> TxinvW<CTRLrs> {
+    pub fn txinv(&mut self) -> TxinvW<'_, CTRLrs> {
         TxinvW::new(self, 14)
     }
     ///Bit 15 - Chip Select Invert
     #[inline(always)]
-    pub fn csinv(&mut self) -> CsinvW<CTRLrs> {
+    pub fn csinv(&mut self) -> CsinvW<'_, CTRLrs> {
         CsinvW::new(self, 15)
     }
     ///Bit 16 - Automatic Chip Select
     #[inline(always)]
-    pub fn autocs(&mut self) -> AutocsW<CTRLrs> {
+    pub fn autocs(&mut self) -> AutocsW<'_, CTRLrs> {
         AutocsW::new(self, 16)
     }
     ///Bit 17 - Automatic TX Tristate
     #[inline(always)]
-    pub fn autotri(&mut self) -> AutotriW<CTRLrs> {
+    pub fn autotri(&mut self) -> AutotriW<'_, CTRLrs> {
         AutotriW::new(self, 17)
     }
     ///Bit 18 - SmartCard Mode
     #[inline(always)]
-    pub fn scmode(&mut self) -> ScmodeW<CTRLrs> {
+    pub fn scmode(&mut self) -> ScmodeW<'_, CTRLrs> {
         ScmodeW::new(self, 18)
     }
     ///Bit 19 - SmartCard Retransmit
     #[inline(always)]
-    pub fn scretrans(&mut self) -> ScretransW<CTRLrs> {
+    pub fn scretrans(&mut self) -> ScretransW<'_, CTRLrs> {
         ScretransW::new(self, 19)
     }
     ///Bit 20 - Skip Parity Error Frames
     #[inline(always)]
-    pub fn skipperrf(&mut self) -> SkipperrfW<CTRLrs> {
+    pub fn skipperrf(&mut self) -> SkipperrfW<'_, CTRLrs> {
         SkipperrfW::new(self, 20)
     }
     ///Bit 21 - Bit 8 Default Value
     #[inline(always)]
-    pub fn bit8dv(&mut self) -> Bit8dvW<CTRLrs> {
+    pub fn bit8dv(&mut self) -> Bit8dvW<'_, CTRLrs> {
         Bit8dvW::new(self, 21)
     }
     ///Bit 22 - Halt DMA on Error
     #[inline(always)]
-    pub fn errsdma(&mut self) -> ErrsdmaW<CTRLrs> {
+    pub fn errsdma(&mut self) -> ErrsdmaW<'_, CTRLrs> {
         ErrsdmaW::new(self, 22)
     }
     ///Bit 23 - Disable RX on Error
     #[inline(always)]
-    pub fn errsrx(&mut self) -> ErrsrxW<CTRLrs> {
+    pub fn errsrx(&mut self) -> ErrsrxW<'_, CTRLrs> {
         ErrsrxW::new(self, 23)
     }
     ///Bit 24 - Disable TX on Error
     #[inline(always)]
-    pub fn errstx(&mut self) -> ErrstxW<CTRLrs> {
+    pub fn errstx(&mut self) -> ErrstxW<'_, CTRLrs> {
         ErrstxW::new(self, 24)
     }
     ///Bit 25 - Synchronous Slave Setup Early
     #[inline(always)]
-    pub fn sssearly(&mut self) -> SssearlyW<CTRLrs> {
+    pub fn sssearly(&mut self) -> SssearlyW<'_, CTRLrs> {
         SssearlyW::new(self, 25)
     }
     ///Bit 28 - Byteswap in Double Accesses
     #[inline(always)]
-    pub fn byteswap(&mut self) -> ByteswapW<CTRLrs> {
+    pub fn byteswap(&mut self) -> ByteswapW<'_, CTRLrs> {
         ByteswapW::new(self, 28)
     }
     ///Bit 29 - Always Transmit When RX Not Full
     #[inline(always)]
-    pub fn autotx(&mut self) -> AutotxW<CTRLrs> {
+    pub fn autotx(&mut self) -> AutotxW<'_, CTRLrs> {
         AutotxW::new(self, 29)
     }
     ///Bit 30 - Majority Vote Disable
     #[inline(always)]
-    pub fn mvdis(&mut self) -> MvdisW<CTRLrs> {
+    pub fn mvdis(&mut self) -> MvdisW<'_, CTRLrs> {
         MvdisW::new(self, 30)
     }
     ///Bit 31 - Synchronous Master Sample Delay
     #[inline(always)]
-    pub fn smsdelay(&mut self) -> SmsdelayW<CTRLrs> {
+    pub fn smsdelay(&mut self) -> SmsdelayW<'_, CTRLrs> {
         SmsdelayW::new(self, 31)
     }
 }
@@ -529,10 +529,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

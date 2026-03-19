@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Duty Cycle Enable
     #[inline(always)]
-    pub fn em2dutycycledis(&mut self) -> Em2dutycycledisW<DUTYCONFIGrs> {
+    pub fn em2dutycycledis(&mut self) -> Em2dutycycledisW<'_, DUTYCONFIGrs> {
         Em2dutycycledisW::new(self, 1)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for DUTYCONFIGrs {}
 ///`write(|w| ..)` method takes [`dutyconfig::W`](W) writer structure
 impl crate::Writable for DUTYCONFIGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DUTYCONFIG to value 0
-impl crate::Resettable for DUTYCONFIGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DUTYCONFIGrs {}

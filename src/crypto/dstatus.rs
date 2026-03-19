@@ -117,6 +117,4 @@ impl crate::RegisterSpec for DSTATUSrs {
 ///`read()` method returns [`dstatus::R`](R) reader structure
 impl crate::Readable for DSTATUSrs {}
 ///`reset()` method sets DSTATUS to value 0
-impl crate::Resettable for DSTATUSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DSTATUSrs {}

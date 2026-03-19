@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Low Power Feedback Attenuation
     #[inline(always)]
-    pub fn lpatt(&mut self) -> LpattW<DCDCLPVCTRLrs> {
+    pub fn lpatt(&mut self) -> LpattW<'_, DCDCLPVCTRLrs> {
         LpattW::new(self, 0)
     }
     ///Bits 1:8 - LP Mode Reference Selection for EM23 and EM4H
     #[inline(always)]
-    pub fn lpvref(&mut self) -> LpvrefW<DCDCLPVCTRLrs> {
+    pub fn lpvref(&mut self) -> LpvrefW<'_, DCDCLPVCTRLrs> {
         LpvrefW::new(self, 1)
     }
 }
@@ -54,8 +54,6 @@ impl crate::Readable for DCDCLPVCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdclpvctrl::W`](W) writer structure
 impl crate::Writable for DCDCLPVCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCLPVCTRL to value 0x0168
 impl crate::Resettable for DCDCLPVCTRLrs {

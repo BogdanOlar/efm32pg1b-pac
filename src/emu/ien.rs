@@ -203,97 +203,97 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - VMONAVDDFALL Interrupt Enable
     #[inline(always)]
-    pub fn vmonavddfall(&mut self) -> VmonavddfallW<IENrs> {
+    pub fn vmonavddfall(&mut self) -> VmonavddfallW<'_, IENrs> {
         VmonavddfallW::new(self, 0)
     }
     ///Bit 1 - VMONAVDDRISE Interrupt Enable
     #[inline(always)]
-    pub fn vmonavddrise(&mut self) -> VmonavddriseW<IENrs> {
+    pub fn vmonavddrise(&mut self) -> VmonavddriseW<'_, IENrs> {
         VmonavddriseW::new(self, 1)
     }
     ///Bit 2 - VMONALTAVDDFALL Interrupt Enable
     #[inline(always)]
-    pub fn vmonaltavddfall(&mut self) -> VmonaltavddfallW<IENrs> {
+    pub fn vmonaltavddfall(&mut self) -> VmonaltavddfallW<'_, IENrs> {
         VmonaltavddfallW::new(self, 2)
     }
     ///Bit 3 - VMONALTAVDDRISE Interrupt Enable
     #[inline(always)]
-    pub fn vmonaltavddrise(&mut self) -> VmonaltavddriseW<IENrs> {
+    pub fn vmonaltavddrise(&mut self) -> VmonaltavddriseW<'_, IENrs> {
         VmonaltavddriseW::new(self, 3)
     }
     ///Bit 4 - VMONDVDDFALL Interrupt Enable
     #[inline(always)]
-    pub fn vmondvddfall(&mut self) -> VmondvddfallW<IENrs> {
+    pub fn vmondvddfall(&mut self) -> VmondvddfallW<'_, IENrs> {
         VmondvddfallW::new(self, 4)
     }
     ///Bit 5 - VMONDVDDRISE Interrupt Enable
     #[inline(always)]
-    pub fn vmondvddrise(&mut self) -> VmondvddriseW<IENrs> {
+    pub fn vmondvddrise(&mut self) -> VmondvddriseW<'_, IENrs> {
         VmondvddriseW::new(self, 5)
     }
     ///Bit 6 - VMONIO0FALL Interrupt Enable
     #[inline(always)]
-    pub fn vmonio0fall(&mut self) -> Vmonio0fallW<IENrs> {
+    pub fn vmonio0fall(&mut self) -> Vmonio0fallW<'_, IENrs> {
         Vmonio0fallW::new(self, 6)
     }
     ///Bit 7 - VMONIO0RISE Interrupt Enable
     #[inline(always)]
-    pub fn vmonio0rise(&mut self) -> Vmonio0riseW<IENrs> {
+    pub fn vmonio0rise(&mut self) -> Vmonio0riseW<'_, IENrs> {
         Vmonio0riseW::new(self, 7)
     }
     ///Bit 14 - VMONFVDDFALL Interrupt Enable
     #[inline(always)]
-    pub fn vmonfvddfall(&mut self) -> VmonfvddfallW<IENrs> {
+    pub fn vmonfvddfall(&mut self) -> VmonfvddfallW<'_, IENrs> {
         VmonfvddfallW::new(self, 14)
     }
     ///Bit 15 - VMONFVDDRISE Interrupt Enable
     #[inline(always)]
-    pub fn vmonfvddrise(&mut self) -> VmonfvddriseW<IENrs> {
+    pub fn vmonfvddrise(&mut self) -> VmonfvddriseW<'_, IENrs> {
         VmonfvddriseW::new(self, 15)
     }
     ///Bit 16 - PFETOVERCURRENTLIMIT Interrupt Enable
     #[inline(always)]
-    pub fn pfetovercurrentlimit(&mut self) -> PfetovercurrentlimitW<IENrs> {
+    pub fn pfetovercurrentlimit(&mut self) -> PfetovercurrentlimitW<'_, IENrs> {
         PfetovercurrentlimitW::new(self, 16)
     }
     ///Bit 17 - NFETOVERCURRENTLIMIT Interrupt Enable
     #[inline(always)]
-    pub fn nfetovercurrentlimit(&mut self) -> NfetovercurrentlimitW<IENrs> {
+    pub fn nfetovercurrentlimit(&mut self) -> NfetovercurrentlimitW<'_, IENrs> {
         NfetovercurrentlimitW::new(self, 17)
     }
     ///Bit 18 - DCDCLPRUNNING Interrupt Enable
     #[inline(always)]
-    pub fn dcdclprunning(&mut self) -> DcdclprunningW<IENrs> {
+    pub fn dcdclprunning(&mut self) -> DcdclprunningW<'_, IENrs> {
         DcdclprunningW::new(self, 18)
     }
     ///Bit 19 - DCDCLNRUNNING Interrupt Enable
     #[inline(always)]
-    pub fn dcdclnrunning(&mut self) -> DcdclnrunningW<IENrs> {
+    pub fn dcdclnrunning(&mut self) -> DcdclnrunningW<'_, IENrs> {
         DcdclnrunningW::new(self, 19)
     }
     ///Bit 20 - DCDCINBYPASS Interrupt Enable
     #[inline(always)]
-    pub fn dcdcinbypass(&mut self) -> DcdcinbypassW<IENrs> {
+    pub fn dcdcinbypass(&mut self) -> DcdcinbypassW<'_, IENrs> {
         DcdcinbypassW::new(self, 20)
     }
     ///Bit 24 - EM23WAKEUP Interrupt Enable
     #[inline(always)]
-    pub fn em23wakeup(&mut self) -> Em23wakeupW<IENrs> {
+    pub fn em23wakeup(&mut self) -> Em23wakeupW<'_, IENrs> {
         Em23wakeupW::new(self, 24)
     }
     ///Bit 29 - TEMP Interrupt Enable
     #[inline(always)]
-    pub fn temp(&mut self) -> TempW<IENrs> {
+    pub fn temp(&mut self) -> TempW<'_, IENrs> {
         TempW::new(self, 29)
     }
     ///Bit 30 - TEMPLOW Interrupt Enable
     #[inline(always)]
-    pub fn templow(&mut self) -> TemplowW<IENrs> {
+    pub fn templow(&mut self) -> TemplowW<'_, IENrs> {
         TemplowW::new(self, 30)
     }
     ///Bit 31 - TEMPHIGH Interrupt Enable
     #[inline(always)]
-    pub fn temphigh(&mut self) -> TemphighW<IENrs> {
+    pub fn temphigh(&mut self) -> TemphighW<'_, IENrs> {
         TemphighW::new(self, 31)
     }
 }
@@ -309,10 +309,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

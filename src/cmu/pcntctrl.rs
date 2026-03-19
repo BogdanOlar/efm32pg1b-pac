@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - PCNT0 Clock Enable
     #[inline(always)]
-    pub fn pcnt0clken(&mut self) -> Pcnt0clkenW<PCNTCTRLrs> {
+    pub fn pcnt0clken(&mut self) -> Pcnt0clkenW<'_, PCNTCTRLrs> {
         Pcnt0clkenW::new(self, 0)
     }
     ///Bit 1 - PCNT0 Clock Select
     #[inline(always)]
-    pub fn pcnt0clksel(&mut self) -> Pcnt0clkselW<PCNTCTRLrs> {
+    pub fn pcnt0clksel(&mut self) -> Pcnt0clkselW<'_, PCNTCTRLrs> {
         Pcnt0clkselW::new(self, 1)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for PCNTCTRLrs {}
 ///`write(|w| ..)` method takes [`pcntctrl::W`](W) writer structure
 impl crate::Writable for PCNTCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PCNTCTRL to value 0
-impl crate::Resettable for PCNTCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PCNTCTRLrs {}

@@ -155,37 +155,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:13 - Buffer Length a in Bytes
     #[inline(always)]
-    pub fn lengtha(&mut self) -> LengthaW<SEQCTRLrs> {
+    pub fn lengtha(&mut self) -> LengthaW<'_, SEQCTRLrs> {
         LengthaW::new(self, 0)
     }
     ///Bits 20:21 - Size of Data Blocks
     #[inline(always)]
-    pub fn blocksize(&mut self) -> BlocksizeW<SEQCTRLrs> {
+    pub fn blocksize(&mut self) -> BlocksizeW<'_, SEQCTRLrs> {
         BlocksizeW::new(self, 20)
     }
     ///Bits 24:25 - DMA0 Skip
     #[inline(always)]
-    pub fn dma0skip(&mut self) -> Dma0skipW<SEQCTRLrs> {
+    pub fn dma0skip(&mut self) -> Dma0skipW<'_, SEQCTRLrs> {
         Dma0skipW::new(self, 24)
     }
     ///Bits 26:27 - DMA1 Skip
     #[inline(always)]
-    pub fn dma1skip(&mut self) -> Dma1skipW<SEQCTRLrs> {
+    pub fn dma1skip(&mut self) -> Dma1skipW<'_, SEQCTRLrs> {
         Dma1skipW::new(self, 26)
     }
     ///Bit 28 - DMA0 Preserve a
     #[inline(always)]
-    pub fn dma0presa(&mut self) -> Dma0presaW<SEQCTRLrs> {
+    pub fn dma0presa(&mut self) -> Dma0presaW<'_, SEQCTRLrs> {
         Dma0presaW::new(self, 28)
     }
     ///Bit 29 - DMA1 Preserve a
     #[inline(always)]
-    pub fn dma1presa(&mut self) -> Dma1presaW<SEQCTRLrs> {
+    pub fn dma1presa(&mut self) -> Dma1presaW<'_, SEQCTRLrs> {
         Dma1presaW::new(self, 29)
     }
     ///Bit 31 - Halt Sequence
     #[inline(always)]
-    pub fn halt(&mut self) -> HaltW<SEQCTRLrs> {
+    pub fn halt(&mut self) -> HaltW<'_, SEQCTRLrs> {
         HaltW::new(self, 31)
     }
 }
@@ -201,10 +201,6 @@ impl crate::Readable for SEQCTRLrs {}
 ///`write(|w| ..)` method takes [`seqctrl::W`](W) writer structure
 impl crate::Writable for SEQCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SEQCTRL to value 0
-impl crate::Resettable for SEQCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SEQCTRLrs {}

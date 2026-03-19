@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Seconds, Units
     #[inline(always)]
-    pub fn secu(&mut self) -> SecuW<TIMErs> {
+    pub fn secu(&mut self) -> SecuW<'_, TIMErs> {
         SecuW::new(self, 0)
     }
     ///Bits 4:6 - Seconds, Tens
     #[inline(always)]
-    pub fn sect(&mut self) -> SectW<TIMErs> {
+    pub fn sect(&mut self) -> SectW<'_, TIMErs> {
         SectW::new(self, 4)
     }
     ///Bits 8:11 - Minutes, Units
     #[inline(always)]
-    pub fn minu(&mut self) -> MinuW<TIMErs> {
+    pub fn minu(&mut self) -> MinuW<'_, TIMErs> {
         MinuW::new(self, 8)
     }
     ///Bits 12:14 - Minutes, Tens
     #[inline(always)]
-    pub fn mint(&mut self) -> MintW<TIMErs> {
+    pub fn mint(&mut self) -> MintW<'_, TIMErs> {
         MintW::new(self, 12)
     }
     ///Bits 16:19 - Hours, Units
     #[inline(always)]
-    pub fn houru(&mut self) -> HouruW<TIMErs> {
+    pub fn houru(&mut self) -> HouruW<'_, TIMErs> {
         HouruW::new(self, 16)
     }
     ///Bits 20:21 - Hours, Tens
     #[inline(always)]
-    pub fn hourt(&mut self) -> HourtW<TIMErs> {
+    pub fn hourt(&mut self) -> HourtW<'_, TIMErs> {
         HourtW::new(self, 20)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for TIMErs {}
 ///`write(|w| ..)` method takes [`time::W`](W) writer structure
 impl crate::Writable for TIMErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TIME to value 0
-impl crate::Resettable for TIMErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TIMErs {}

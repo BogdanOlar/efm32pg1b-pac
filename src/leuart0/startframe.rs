@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - Start Frame
     #[inline(always)]
-    pub fn startframe(&mut self) -> StartframeW<STARTFRAMErs> {
+    pub fn startframe(&mut self) -> StartframeW<'_, STARTFRAMErs> {
         StartframeW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for STARTFRAMErs {}
 ///`write(|w| ..)` method takes [`startframe::W`](W) writer structure
 impl crate::Writable for STARTFRAMErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets STARTFRAME to value 0
-impl crate::Resettable for STARTFRAMErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for STARTFRAMErs {}

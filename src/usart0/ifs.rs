@@ -38,77 +38,77 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set TXC Interrupt Flag
     #[inline(always)]
-    pub fn txc(&mut self) -> TxcW<IFSrs> {
+    pub fn txc(&mut self) -> TxcW<'_, IFSrs> {
         TxcW::new(self, 0)
     }
     ///Bit 3 - Set RXFULL Interrupt Flag
     #[inline(always)]
-    pub fn rxfull(&mut self) -> RxfullW<IFSrs> {
+    pub fn rxfull(&mut self) -> RxfullW<'_, IFSrs> {
         RxfullW::new(self, 3)
     }
     ///Bit 4 - Set RXOF Interrupt Flag
     #[inline(always)]
-    pub fn rxof(&mut self) -> RxofW<IFSrs> {
+    pub fn rxof(&mut self) -> RxofW<'_, IFSrs> {
         RxofW::new(self, 4)
     }
     ///Bit 5 - Set RXUF Interrupt Flag
     #[inline(always)]
-    pub fn rxuf(&mut self) -> RxufW<IFSrs> {
+    pub fn rxuf(&mut self) -> RxufW<'_, IFSrs> {
         RxufW::new(self, 5)
     }
     ///Bit 6 - Set TXOF Interrupt Flag
     #[inline(always)]
-    pub fn txof(&mut self) -> TxofW<IFSrs> {
+    pub fn txof(&mut self) -> TxofW<'_, IFSrs> {
         TxofW::new(self, 6)
     }
     ///Bit 7 - Set TXUF Interrupt Flag
     #[inline(always)]
-    pub fn txuf(&mut self) -> TxufW<IFSrs> {
+    pub fn txuf(&mut self) -> TxufW<'_, IFSrs> {
         TxufW::new(self, 7)
     }
     ///Bit 8 - Set PERR Interrupt Flag
     #[inline(always)]
-    pub fn perr(&mut self) -> PerrW<IFSrs> {
+    pub fn perr(&mut self) -> PerrW<'_, IFSrs> {
         PerrW::new(self, 8)
     }
     ///Bit 9 - Set FERR Interrupt Flag
     #[inline(always)]
-    pub fn ferr(&mut self) -> FerrW<IFSrs> {
+    pub fn ferr(&mut self) -> FerrW<'_, IFSrs> {
         FerrW::new(self, 9)
     }
     ///Bit 10 - Set MPAF Interrupt Flag
     #[inline(always)]
-    pub fn mpaf(&mut self) -> MpafW<IFSrs> {
+    pub fn mpaf(&mut self) -> MpafW<'_, IFSrs> {
         MpafW::new(self, 10)
     }
     ///Bit 11 - Set SSM Interrupt Flag
     #[inline(always)]
-    pub fn ssm(&mut self) -> SsmW<IFSrs> {
+    pub fn ssm(&mut self) -> SsmW<'_, IFSrs> {
         SsmW::new(self, 11)
     }
     ///Bit 12 - Set CCF Interrupt Flag
     #[inline(always)]
-    pub fn ccf(&mut self) -> CcfW<IFSrs> {
+    pub fn ccf(&mut self) -> CcfW<'_, IFSrs> {
         CcfW::new(self, 12)
     }
     ///Bit 13 - Set TXIDLE Interrupt Flag
     #[inline(always)]
-    pub fn txidle(&mut self) -> TxidleW<IFSrs> {
+    pub fn txidle(&mut self) -> TxidleW<'_, IFSrs> {
         TxidleW::new(self, 13)
     }
     ///Bit 14 - Set TCMP0 Interrupt Flag
     #[inline(always)]
-    pub fn tcmp0(&mut self) -> Tcmp0W<IFSrs> {
+    pub fn tcmp0(&mut self) -> Tcmp0W<'_, IFSrs> {
         Tcmp0W::new(self, 14)
     }
     ///Bit 15 - Set TCMP1 Interrupt Flag
     #[inline(always)]
-    pub fn tcmp1(&mut self) -> Tcmp1W<IFSrs> {
+    pub fn tcmp1(&mut self) -> Tcmp1W<'_, IFSrs> {
         Tcmp1W::new(self, 15)
     }
     ///Bit 16 - Set TCMP2 Interrupt Flag
     #[inline(always)]
-    pub fn tcmp2(&mut self) -> Tcmp2W<IFSrs> {
+    pub fn tcmp2(&mut self) -> Tcmp2W<'_, IFSrs> {
         Tcmp2W::new(self, 16)
     }
 }
@@ -122,10 +122,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

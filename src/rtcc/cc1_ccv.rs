@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Capture/Compare Value
     #[inline(always)]
-    pub fn ccv(&mut self) -> CcvW<CC1_CCVrs> {
+    pub fn ccv(&mut self) -> CcvW<'_, CC1_CCVrs> {
         CcvW::new(self, 0)
     }
 }
@@ -37,10 +37,6 @@ impl crate::Readable for CC1_CCVrs {}
 ///`write(|w| ..)` method takes [`cc1_ccv::W`](W) writer structure
 impl crate::Writable for CC1_CCVrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CC1_CCV to value 0
-impl crate::Resettable for CC1_CCVrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CC1_CCVrs {}

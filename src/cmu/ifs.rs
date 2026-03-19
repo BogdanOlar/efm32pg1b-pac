@@ -38,77 +38,77 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set HFRCORDY Interrupt Flag
     #[inline(always)]
-    pub fn hfrcordy(&mut self) -> HfrcordyW<IFSrs> {
+    pub fn hfrcordy(&mut self) -> HfrcordyW<'_, IFSrs> {
         HfrcordyW::new(self, 0)
     }
     ///Bit 1 - Set HFXORDY Interrupt Flag
     #[inline(always)]
-    pub fn hfxordy(&mut self) -> HfxordyW<IFSrs> {
+    pub fn hfxordy(&mut self) -> HfxordyW<'_, IFSrs> {
         HfxordyW::new(self, 1)
     }
     ///Bit 2 - Set LFRCORDY Interrupt Flag
     #[inline(always)]
-    pub fn lfrcordy(&mut self) -> LfrcordyW<IFSrs> {
+    pub fn lfrcordy(&mut self) -> LfrcordyW<'_, IFSrs> {
         LfrcordyW::new(self, 2)
     }
     ///Bit 3 - Set LFXORDY Interrupt Flag
     #[inline(always)]
-    pub fn lfxordy(&mut self) -> LfxordyW<IFSrs> {
+    pub fn lfxordy(&mut self) -> LfxordyW<'_, IFSrs> {
         LfxordyW::new(self, 3)
     }
     ///Bit 4 - Set AUXHFRCORDY Interrupt Flag
     #[inline(always)]
-    pub fn auxhfrcordy(&mut self) -> AuxhfrcordyW<IFSrs> {
+    pub fn auxhfrcordy(&mut self) -> AuxhfrcordyW<'_, IFSrs> {
         AuxhfrcordyW::new(self, 4)
     }
     ///Bit 5 - Set CALRDY Interrupt Flag
     #[inline(always)]
-    pub fn calrdy(&mut self) -> CalrdyW<IFSrs> {
+    pub fn calrdy(&mut self) -> CalrdyW<'_, IFSrs> {
         CalrdyW::new(self, 5)
     }
     ///Bit 6 - Set CALOF Interrupt Flag
     #[inline(always)]
-    pub fn calof(&mut self) -> CalofW<IFSrs> {
+    pub fn calof(&mut self) -> CalofW<'_, IFSrs> {
         CalofW::new(self, 6)
     }
     ///Bit 8 - Set HFXODISERR Interrupt Flag
     #[inline(always)]
-    pub fn hfxodiserr(&mut self) -> HfxodiserrW<IFSrs> {
+    pub fn hfxodiserr(&mut self) -> HfxodiserrW<'_, IFSrs> {
         HfxodiserrW::new(self, 8)
     }
     ///Bit 9 - Set HFXOAUTOSW Interrupt Flag
     #[inline(always)]
-    pub fn hfxoautosw(&mut self) -> HfxoautoswW<IFSrs> {
+    pub fn hfxoautosw(&mut self) -> HfxoautoswW<'_, IFSrs> {
         HfxoautoswW::new(self, 9)
     }
     ///Bit 10 - Set HFXOPEAKDETERR Interrupt Flag
     #[inline(always)]
-    pub fn hfxopeakdeterr(&mut self) -> HfxopeakdeterrW<IFSrs> {
+    pub fn hfxopeakdeterr(&mut self) -> HfxopeakdeterrW<'_, IFSrs> {
         HfxopeakdeterrW::new(self, 10)
     }
     ///Bit 11 - Set HFXOPEAKDETRDY Interrupt Flag
     #[inline(always)]
-    pub fn hfxopeakdetrdy(&mut self) -> HfxopeakdetrdyW<IFSrs> {
+    pub fn hfxopeakdetrdy(&mut self) -> HfxopeakdetrdyW<'_, IFSrs> {
         HfxopeakdetrdyW::new(self, 11)
     }
     ///Bit 12 - Set HFXOSHUNTOPTRDY Interrupt Flag
     #[inline(always)]
-    pub fn hfxoshuntoptrdy(&mut self) -> HfxoshuntoptrdyW<IFSrs> {
+    pub fn hfxoshuntoptrdy(&mut self) -> HfxoshuntoptrdyW<'_, IFSrs> {
         HfxoshuntoptrdyW::new(self, 12)
     }
     ///Bit 13 - Set HFRCODIS Interrupt Flag
     #[inline(always)]
-    pub fn hfrcodis(&mut self) -> HfrcodisW<IFSrs> {
+    pub fn hfrcodis(&mut self) -> HfrcodisW<'_, IFSrs> {
         HfrcodisW::new(self, 13)
     }
     ///Bit 14 - Set LFTIMEOUTERR Interrupt Flag
     #[inline(always)]
-    pub fn lftimeouterr(&mut self) -> LftimeouterrW<IFSrs> {
+    pub fn lftimeouterr(&mut self) -> LftimeouterrW<'_, IFSrs> {
         LftimeouterrW::new(self, 14)
     }
     ///Bit 31 - Set CMUERR Interrupt Flag
     #[inline(always)]
-    pub fn cmuerr(&mut self) -> CmuerrW<IFSrs> {
+    pub fn cmuerr(&mut self) -> CmuerrW<'_, IFSrs> {
         CmuerrW::new(self, 31)
     }
 }
@@ -122,10 +122,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

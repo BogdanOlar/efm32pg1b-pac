@@ -21,7 +21,7 @@ impl core::fmt::Debug for crate::generic::Reg<CC2_CCVrs> {
 impl W {
     ///Bits 0:15 - CC Channel Value
     #[inline(always)]
-    pub fn ccv(&mut self) -> CcvW<CC2_CCVrs> {
+    pub fn ccv(&mut self) -> CcvW<'_, CC2_CCVrs> {
         CcvW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for CC2_CCVrs {}
 ///`write(|w| ..)` method takes [`cc2_ccv::W`](W) writer structure
 impl crate::Writable for CC2_CCVrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CC2_CCV to value 0
-impl crate::Resettable for CC2_CCVrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CC2_CCVrs {}

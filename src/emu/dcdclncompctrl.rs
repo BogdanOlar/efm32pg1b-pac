@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Low Noise Mode Compensator R1 Trim Value
     #[inline(always)]
-    pub fn compenr1(&mut self) -> Compenr1W<DCDCLNCOMPCTRLrs> {
+    pub fn compenr1(&mut self) -> Compenr1W<'_, DCDCLNCOMPCTRLrs> {
         Compenr1W::new(self, 0)
     }
     ///Bits 4:8 - Low Noise Mode Compensator R2 Trim Value
     #[inline(always)]
-    pub fn compenr2(&mut self) -> Compenr2W<DCDCLNCOMPCTRLrs> {
+    pub fn compenr2(&mut self) -> Compenr2W<'_, DCDCLNCOMPCTRLrs> {
         Compenr2W::new(self, 4)
     }
     ///Bits 12:15 - Low Noise Mode Compensator R3 Trim Value
     #[inline(always)]
-    pub fn compenr3(&mut self) -> Compenr3W<DCDCLNCOMPCTRLrs> {
+    pub fn compenr3(&mut self) -> Compenr3W<'_, DCDCLNCOMPCTRLrs> {
         Compenr3W::new(self, 12)
     }
     ///Bits 20:21 - Low Noise Mode Compensator C1 Trim Value
     #[inline(always)]
-    pub fn compenc1(&mut self) -> Compenc1W<DCDCLNCOMPCTRLrs> {
+    pub fn compenc1(&mut self) -> Compenc1W<'_, DCDCLNCOMPCTRLrs> {
         Compenc1W::new(self, 20)
     }
     ///Bits 24:26 - Low Noise Mode Compensator C2 Trim Value
     #[inline(always)]
-    pub fn compenc2(&mut self) -> Compenc2W<DCDCLNCOMPCTRLrs> {
+    pub fn compenc2(&mut self) -> Compenc2W<'_, DCDCLNCOMPCTRLrs> {
         Compenc2W::new(self, 24)
     }
     ///Bits 28:31 - Low Noise Mode Compensator C3 Trim Value
     #[inline(always)]
-    pub fn compenc3(&mut self) -> Compenc3W<DCDCLNCOMPCTRLrs> {
+    pub fn compenc3(&mut self) -> Compenc3W<'_, DCDCLNCOMPCTRLrs> {
         Compenc3W::new(self, 28)
     }
 }
@@ -114,8 +114,6 @@ impl crate::Readable for DCDCLNCOMPCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdclncompctrl::W`](W) writer structure
 impl crate::Writable for DCDCLNCOMPCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCLNCOMPCTRL to value 0x5720_4077
 impl crate::Resettable for DCDCLNCOMPCTRLrs {

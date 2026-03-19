@@ -89,8 +89,7 @@ impl RegisterBlock {
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ctrl`]
-///module
+///For information about available fields see [`mod@ctrl`] module
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CTRLrs>;
 ///Control Register
@@ -99,8 +98,7 @@ pub mod ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`inputsel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inputsel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@inputsel`]
-///module
+///For information about available fields see [`mod@inputsel`] module
 #[doc(alias = "INPUTSEL")]
 pub type Inputsel = crate::Reg<inputsel::INPUTSELrs>;
 ///Input Selection Register
@@ -109,8 +107,7 @@ pub mod inputsel;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@status`]
-///module
+///For information about available fields see [`mod@status`] module
 #[doc(alias = "STATUS")]
 pub type Status = crate::Reg<status::STATUSrs>;
 ///Status Register
@@ -119,8 +116,7 @@ pub mod status;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`if_::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@if_`]
-///module
+///For information about available fields see [`mod@if_`] module
 #[doc(alias = "IF")]
 pub type If = crate::Reg<if_::IFrs>;
 ///Interrupt Flag Register
@@ -129,8 +125,7 @@ pub mod if_;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifs`]
-///module
+///For information about available fields see [`mod@ifs`] module
 #[doc(alias = "IFS")]
 pub type Ifs = crate::Reg<ifs::IFSrs>;
 ///Interrupt Flag Set Register
@@ -139,8 +134,7 @@ pub mod ifs;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifc`]
-///module
+///For information about available fields see [`mod@ifc`] module
 #[doc(alias = "IFC")]
 pub type Ifc = crate::Reg<ifc::IFCrs>;
 ///Interrupt Flag Clear Register
@@ -149,8 +143,7 @@ pub mod ifc;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ien::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ien`]
-///module
+///For information about available fields see [`mod@ien`] module
 #[doc(alias = "IEN")]
 pub type Ien = crate::Reg<ien::IENrs>;
 ///Interrupt Enable Register
@@ -159,8 +152,7 @@ pub mod ien;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`aportreq::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@aportreq`]
-///module
+///For information about available fields see [`mod@aportreq`] module
 #[doc(alias = "APORTREQ")]
 pub type Aportreq = crate::Reg<aportreq::APORTREQrs>;
 ///APORT Request Status Register
@@ -169,8 +161,7 @@ pub mod aportreq;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`aportconflict::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@aportconflict`]
-///module
+///For information about available fields see [`mod@aportconflict`] module
 #[doc(alias = "APORTCONFLICT")]
 pub type Aportconflict = crate::Reg<aportconflict::APORTCONFLICTrs>;
 ///APORT Conflict Status Register
@@ -179,8 +170,7 @@ pub mod aportconflict;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`hysteresis0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hysteresis0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@hysteresis0`]
-///module
+///For information about available fields see [`mod@hysteresis0`] module
 #[doc(alias = "HYSTERESIS0")]
 pub type Hysteresis0 = crate::Reg<hysteresis0::HYSTERESIS0rs>;
 ///Hysteresis 0 Register
@@ -189,8 +179,7 @@ pub mod hysteresis0;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`hysteresis1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hysteresis1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@hysteresis1`]
-///module
+///For information about available fields see [`mod@hysteresis1`] module
 #[doc(alias = "HYSTERESIS1")]
 pub type Hysteresis1 = crate::Reg<hysteresis1::HYSTERESIS1rs>;
 ///Hysteresis 1 Register
@@ -199,8 +188,7 @@ pub mod hysteresis1;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`routepen::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routepen::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@routepen`]
-///module
+///For information about available fields see [`mod@routepen`] module
 #[doc(alias = "ROUTEPEN")]
 pub type Routepen = crate::Reg<routepen::ROUTEPENrs>;
 ///I/O Routing Pine Enable Register
@@ -209,8 +197,7 @@ pub mod routepen;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`routeloc0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routeloc0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@routeloc0`]
-///module
+///For information about available fields see [`mod@routeloc0`] module
 #[doc(alias = "ROUTELOC0")]
 pub type Routeloc0 = crate::Reg<routeloc0::ROUTELOC0rs>;
 ///I/O Routing Location Register

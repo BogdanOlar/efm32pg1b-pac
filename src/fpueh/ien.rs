@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - FPIOC Interrupt Enable
     #[inline(always)]
-    pub fn fpioc(&mut self) -> FpiocW<IENrs> {
+    pub fn fpioc(&mut self) -> FpiocW<'_, IENrs> {
         FpiocW::new(self, 0)
     }
     ///Bit 1 - FPDZC Interrupt Enable
     #[inline(always)]
-    pub fn fpdzc(&mut self) -> FpdzcW<IENrs> {
+    pub fn fpdzc(&mut self) -> FpdzcW<'_, IENrs> {
         FpdzcW::new(self, 1)
     }
     ///Bit 2 - FPUFC Interrupt Enable
     #[inline(always)]
-    pub fn fpufc(&mut self) -> FpufcW<IENrs> {
+    pub fn fpufc(&mut self) -> FpufcW<'_, IENrs> {
         FpufcW::new(self, 2)
     }
     ///Bit 3 - FPOFC Interrupt Enable
     #[inline(always)]
-    pub fn fpofc(&mut self) -> FpofcW<IENrs> {
+    pub fn fpofc(&mut self) -> FpofcW<'_, IENrs> {
         FpofcW::new(self, 3)
     }
     ///Bit 4 - FPIDC Interrupt Enable
     #[inline(always)]
-    pub fn fpidc(&mut self) -> FpidcW<IENrs> {
+    pub fn fpidc(&mut self) -> FpidcW<'_, IENrs> {
         FpidcW::new(self, 4)
     }
     ///Bit 5 - FPIXC Interrupt Enable
     #[inline(always)]
-    pub fn fpixc(&mut self) -> FpixcW<IENrs> {
+    pub fn fpixc(&mut self) -> FpixcW<'_, IENrs> {
         FpixcW::new(self, 5)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

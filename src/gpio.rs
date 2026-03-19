@@ -150,27 +150,26 @@ pub use self::port_a::PortA;
 ///Cluster
 ///Port A Registers
 pub mod port_a;
-pub use self::port_a as port_b;
-pub use self::port_a as port_c;
-pub use self::port_a as port_d;
-pub use self::port_a as port_e;
-pub use self::port_a as port_f;
+pub use port_a as port_b;
+pub use port_a as port_c;
+pub use port_a as port_d;
+pub use port_a as port_e;
+pub use port_a as port_f;
 ///Port B Registers
-pub use self::PortA as PortB;
+pub use PortA as PortB;
 ///Port C Registers
-pub use self::PortA as PortC;
+pub use PortA as PortC;
 ///Port D Registers
-pub use self::PortA as PortD;
+pub use PortA as PortD;
 ///Port E Registers
-pub use self::PortA as PortE;
+pub use PortA as PortE;
 ///Port F Registers
-pub use self::PortA as PortF;
+pub use PortA as PortF;
 ///EXTIPSELL (rw) register accessor: External Interrupt Port Select Low Register
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`extipsell::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extipsell::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@extipsell`]
-///module
+///For information about available fields see [`mod@extipsell`] module
 #[doc(alias = "EXTIPSELL")]
 pub type Extipsell = crate::Reg<extipsell::EXTIPSELLrs>;
 ///External Interrupt Port Select Low Register
@@ -179,8 +178,7 @@ pub mod extipsell;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`extipselh::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extipselh::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@extipselh`]
-///module
+///For information about available fields see [`mod@extipselh`] module
 #[doc(alias = "EXTIPSELH")]
 pub type Extipselh = crate::Reg<extipselh::EXTIPSELHrs>;
 ///External Interrupt Port Select High Register
@@ -189,8 +187,7 @@ pub mod extipselh;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`extipinsell::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extipinsell::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@extipinsell`]
-///module
+///For information about available fields see [`mod@extipinsell`] module
 #[doc(alias = "EXTIPINSELL")]
 pub type Extipinsell = crate::Reg<extipinsell::EXTIPINSELLrs>;
 ///External Interrupt Pin Select Low Register
@@ -199,8 +196,7 @@ pub mod extipinsell;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`extipinselh::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extipinselh::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@extipinselh`]
-///module
+///For information about available fields see [`mod@extipinselh`] module
 #[doc(alias = "EXTIPINSELH")]
 pub type Extipinselh = crate::Reg<extipinselh::EXTIPINSELHrs>;
 ///External Interrupt Pin Select High Register
@@ -209,8 +205,7 @@ pub mod extipinselh;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`extirise::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extirise::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@extirise`]
-///module
+///For information about available fields see [`mod@extirise`] module
 #[doc(alias = "EXTIRISE")]
 pub type Extirise = crate::Reg<extirise::EXTIRISErs>;
 ///External Interrupt Rising Edge Trigger Register
@@ -219,8 +214,7 @@ pub mod extirise;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`extifall::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extifall::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@extifall`]
-///module
+///For information about available fields see [`mod@extifall`] module
 #[doc(alias = "EXTIFALL")]
 pub type Extifall = crate::Reg<extifall::EXTIFALLrs>;
 ///External Interrupt Falling Edge Trigger Register
@@ -229,8 +223,7 @@ pub mod extifall;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`extilevel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`extilevel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@extilevel`]
-///module
+///For information about available fields see [`mod@extilevel`] module
 #[doc(alias = "EXTILEVEL")]
 pub type Extilevel = crate::Reg<extilevel::EXTILEVELrs>;
 ///External Interrupt Level Register
@@ -239,8 +232,7 @@ pub mod extilevel;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`if_::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@if_`]
-///module
+///For information about available fields see [`mod@if_`] module
 #[doc(alias = "IF")]
 pub type If = crate::Reg<if_::IFrs>;
 ///Interrupt Flag Register
@@ -249,8 +241,7 @@ pub mod if_;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifs`]
-///module
+///For information about available fields see [`mod@ifs`] module
 #[doc(alias = "IFS")]
 pub type Ifs = crate::Reg<ifs::IFSrs>;
 ///Interrupt Flag Set Register
@@ -259,8 +250,7 @@ pub mod ifs;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifc`]
-///module
+///For information about available fields see [`mod@ifc`] module
 #[doc(alias = "IFC")]
 pub type Ifc = crate::Reg<ifc::IFCrs>;
 ///Interrupt Flag Clear Register
@@ -269,8 +259,7 @@ pub mod ifc;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ien::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ien`]
-///module
+///For information about available fields see [`mod@ien`] module
 #[doc(alias = "IEN")]
 pub type Ien = crate::Reg<ien::IENrs>;
 ///Interrupt Enable Register
@@ -279,8 +268,7 @@ pub mod ien;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`em4wuen::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`em4wuen::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@em4wuen`]
-///module
+///For information about available fields see [`mod@em4wuen`] module
 #[doc(alias = "EM4WUEN")]
 pub type Em4wuen = crate::Reg<em4wuen::EM4WUENrs>;
 ///EM4 Wake Up Enable Register
@@ -289,8 +277,7 @@ pub mod em4wuen;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`routepen::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routepen::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@routepen`]
-///module
+///For information about available fields see [`mod@routepen`] module
 #[doc(alias = "ROUTEPEN")]
 pub type Routepen = crate::Reg<routepen::ROUTEPENrs>;
 ///I/O Routing Pin Enable Register
@@ -299,8 +286,7 @@ pub mod routepen;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`routeloc0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routeloc0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@routeloc0`]
-///module
+///For information about available fields see [`mod@routeloc0`] module
 #[doc(alias = "ROUTELOC0")]
 pub type Routeloc0 = crate::Reg<routeloc0::ROUTELOC0rs>;
 ///I/O Routing Location Register
@@ -309,8 +295,7 @@ pub mod routeloc0;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`insense::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`insense::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@insense`]
-///module
+///For information about available fields see [`mod@insense`] module
 #[doc(alias = "INSENSE")]
 pub type Insense = crate::Reg<insense::INSENSErs>;
 ///Input Sense Register
@@ -319,8 +304,7 @@ pub mod insense;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`lock::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lock::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@lock`]
-///module
+///For information about available fields see [`mod@lock`] module
 #[doc(alias = "LOCK")]
 pub type Lock = crate::Reg<lock::LOCKrs>;
 ///Configuration Lock Register

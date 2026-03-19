@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Data 0 Byte 14 Access
     #[inline(always)]
-    pub fn data0byte14(&mut self) -> Data0byte14W<DATA0BYTE14rs> {
+    pub fn data0byte14(&mut self) -> Data0byte14W<'_, DATA0BYTE14rs> {
         Data0byte14W::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for DATA0BYTE14rs {}
 ///`write(|w| ..)` method takes [`data0byte14::W`](W) writer structure
 impl crate::Writable for DATA0BYTE14rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DATA0BYTE14 to value 0
-impl crate::Resettable for DATA0BYTE14rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DATA0BYTE14rs {}

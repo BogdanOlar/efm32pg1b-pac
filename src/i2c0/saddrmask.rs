@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 1:7 - Slave Address Mask
     #[inline(always)]
-    pub fn mask(&mut self) -> MaskW<SADDRMASKrs> {
+    pub fn mask(&mut self) -> MaskW<'_, SADDRMASKrs> {
         MaskW::new(self, 1)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for SADDRMASKrs {}
 ///`write(|w| ..)` method takes [`saddrmask::W`](W) writer structure
 impl crate::Writable for SADDRMASKrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SADDRMASK to value 0
-impl crate::Resettable for SADDRMASKrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SADDRMASKrs {}

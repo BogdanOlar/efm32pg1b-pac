@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - TOUT Interrupt Enable
     #[inline(always)]
-    pub fn tout(&mut self) -> ToutW<IENrs> {
+    pub fn tout(&mut self) -> ToutW<'_, IENrs> {
         ToutW::new(self, 0)
     }
     ///Bit 1 - WARN Interrupt Enable
     #[inline(always)]
-    pub fn warn(&mut self) -> WarnW<IENrs> {
+    pub fn warn(&mut self) -> WarnW<'_, IENrs> {
         WarnW::new(self, 1)
     }
     ///Bit 2 - WIN Interrupt Enable
     #[inline(always)]
-    pub fn win(&mut self) -> WinW<IENrs> {
+    pub fn win(&mut self) -> WinW<'_, IENrs> {
         WinW::new(self, 2)
     }
     ///Bit 3 - PEM0 Interrupt Enable
     #[inline(always)]
-    pub fn pem0(&mut self) -> Pem0W<IENrs> {
+    pub fn pem0(&mut self) -> Pem0W<'_, IENrs> {
         Pem0W::new(self, 3)
     }
     ///Bit 4 - PEM1 Interrupt Enable
     #[inline(always)]
-    pub fn pem1(&mut self) -> Pem1W<IENrs> {
+    pub fn pem1(&mut self) -> Pem1W<'_, IENrs> {
         Pem1W::new(self, 4)
     }
 }
@@ -99,10 +99,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

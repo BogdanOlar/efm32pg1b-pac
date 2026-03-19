@@ -282,42 +282,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - DTI Enable
     #[inline(always)]
-    pub fn dten(&mut self) -> DtenW<DTCTRLrs> {
+    pub fn dten(&mut self) -> DtenW<'_, DTCTRLrs> {
         DtenW::new(self, 0)
     }
     ///Bit 1 - DTI Automatic Start-up Functionality
     #[inline(always)]
-    pub fn dtdas(&mut self) -> DtdasW<DTCTRLrs> {
+    pub fn dtdas(&mut self) -> DtdasW<'_, DTCTRLrs> {
         DtdasW::new(self, 1)
     }
     ///Bit 2 - DTI Inactive Polarity
     #[inline(always)]
-    pub fn dtipol(&mut self) -> DtipolW<DTCTRLrs> {
+    pub fn dtipol(&mut self) -> DtipolW<'_, DTCTRLrs> {
         DtipolW::new(self, 2)
     }
     ///Bit 3 - DTI Complementary Output Invert
     #[inline(always)]
-    pub fn dtcinv(&mut self) -> DtcinvW<DTCTRLrs> {
+    pub fn dtcinv(&mut self) -> DtcinvW<'_, DTCTRLrs> {
         DtcinvW::new(self, 3)
     }
     ///Bits 4:7 - DTI PRS Source Channel Select
     #[inline(always)]
-    pub fn dtprssel(&mut self) -> DtprsselW<DTCTRLrs> {
+    pub fn dtprssel(&mut self) -> DtprsselW<'_, DTCTRLrs> {
         DtprsselW::new(self, 4)
     }
     ///Bit 9 - DTI Always Run
     #[inline(always)]
-    pub fn dtar(&mut self) -> DtarW<DTCTRLrs> {
+    pub fn dtar(&mut self) -> DtarW<'_, DTCTRLrs> {
         DtarW::new(self, 9)
     }
     ///Bit 10 - DTI Fault Action on Timer Stop
     #[inline(always)]
-    pub fn dtfats(&mut self) -> DtfatsW<DTCTRLrs> {
+    pub fn dtfats(&mut self) -> DtfatsW<'_, DTCTRLrs> {
         DtfatsW::new(self, 10)
     }
     ///Bit 24 - DTI PRS Source Enable
     #[inline(always)]
-    pub fn dtprsen(&mut self) -> DtprsenW<DTCTRLrs> {
+    pub fn dtprsen(&mut self) -> DtprsenW<'_, DTCTRLrs> {
         DtprsenW::new(self, 24)
     }
 }
@@ -333,10 +333,6 @@ impl crate::Readable for DTCTRLrs {}
 ///`write(|w| ..)` method takes [`dtctrl::W`](W) writer structure
 impl crate::Writable for DTCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DTCTRL to value 0
-impl crate::Resettable for DTCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DTCTRLrs {}

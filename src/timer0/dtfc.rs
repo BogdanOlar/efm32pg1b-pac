@@ -546,37 +546,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - DTI PRS Fault Source 0 Select
     #[inline(always)]
-    pub fn dtprs0fsel(&mut self) -> Dtprs0fselW<DTFCrs> {
+    pub fn dtprs0fsel(&mut self) -> Dtprs0fselW<'_, DTFCrs> {
         Dtprs0fselW::new(self, 0)
     }
     ///Bits 8:11 - DTI PRS Fault Source 1 Select
     #[inline(always)]
-    pub fn dtprs1fsel(&mut self) -> Dtprs1fselW<DTFCrs> {
+    pub fn dtprs1fsel(&mut self) -> Dtprs1fselW<'_, DTFCrs> {
         Dtprs1fselW::new(self, 8)
     }
     ///Bits 16:17 - DTI Fault Action
     #[inline(always)]
-    pub fn dtfa(&mut self) -> DtfaW<DTFCrs> {
+    pub fn dtfa(&mut self) -> DtfaW<'_, DTFCrs> {
         DtfaW::new(self, 16)
     }
     ///Bit 24 - DTI PRS 0 Fault Enable
     #[inline(always)]
-    pub fn dtprs0fen(&mut self) -> Dtprs0fenW<DTFCrs> {
+    pub fn dtprs0fen(&mut self) -> Dtprs0fenW<'_, DTFCrs> {
         Dtprs0fenW::new(self, 24)
     }
     ///Bit 25 - DTI PRS 1 Fault Enable
     #[inline(always)]
-    pub fn dtprs1fen(&mut self) -> Dtprs1fenW<DTFCrs> {
+    pub fn dtprs1fen(&mut self) -> Dtprs1fenW<'_, DTFCrs> {
         Dtprs1fenW::new(self, 25)
     }
     ///Bit 26 - DTI Debugger Fault Enable
     #[inline(always)]
-    pub fn dtdbgfen(&mut self) -> DtdbgfenW<DTFCrs> {
+    pub fn dtdbgfen(&mut self) -> DtdbgfenW<'_, DTFCrs> {
         DtdbgfenW::new(self, 26)
     }
     ///Bit 27 - DTI Lockup Fault Enable
     #[inline(always)]
-    pub fn dtlockupfen(&mut self) -> DtlockupfenW<DTFCrs> {
+    pub fn dtlockupfen(&mut self) -> DtlockupfenW<'_, DTFCrs> {
         DtlockupfenW::new(self, 27)
     }
 }
@@ -592,10 +592,6 @@ impl crate::Readable for DTFCrs {}
 ///`write(|w| ..)` method takes [`dtfc::W`](W) writer structure
 impl crate::Writable for DTFCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DTFC to value 0
-impl crate::Resettable for DTFCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DTFCrs {}

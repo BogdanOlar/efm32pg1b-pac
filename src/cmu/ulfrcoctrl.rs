@@ -128,17 +128,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - ULFRCO TUNING Value
     #[inline(always)]
-    pub fn tuning(&mut self) -> TuningW<ULFRCOCTRLrs> {
+    pub fn tuning(&mut self) -> TuningW<'_, ULFRCOCTRLrs> {
         TuningW::new(self, 0)
     }
     ///Bits 10:11 - ULFRCO Mode
     #[inline(always)]
-    pub fn mode(&mut self) -> ModeW<ULFRCOCTRLrs> {
+    pub fn mode(&mut self) -> ModeW<'_, ULFRCOCTRLrs> {
         ModeW::new(self, 10)
     }
     ///Bits 16:17 - ULFRCO Resistor Trim Value (for Resistor in Bias Circuit; NOT for USE as FREQUENCY CALIBRATION)
     #[inline(always)]
-    pub fn restrim(&mut self) -> RestrimW<ULFRCOCTRLrs> {
+    pub fn restrim(&mut self) -> RestrimW<'_, ULFRCOCTRLrs> {
         RestrimW::new(self, 16)
     }
 }
@@ -154,8 +154,6 @@ impl crate::Readable for ULFRCOCTRLrs {}
 ///`write(|w| ..)` method takes [`ulfrcoctrl::W`](W) writer structure
 impl crate::Writable for ULFRCOCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ULFRCOCTRL to value 0x0002_0020
 impl crate::Resettable for ULFRCOCTRLrs {

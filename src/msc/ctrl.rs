@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Invalid Address Bus Fault Response Enable
     #[inline(always)]
-    pub fn addrfaulten(&mut self) -> AddrfaultenW<CTRLrs> {
+    pub fn addrfaulten(&mut self) -> AddrfaultenW<'_, CTRLrs> {
         AddrfaultenW::new(self, 0)
     }
     ///Bit 1 - Clock-disabled Bus Fault Response Enable
     #[inline(always)]
-    pub fn clkdisfaulten(&mut self) -> ClkdisfaultenW<CTRLrs> {
+    pub fn clkdisfaulten(&mut self) -> ClkdisfaultenW<'_, CTRLrs> {
         ClkdisfaultenW::new(self, 1)
     }
     ///Bit 2 - Power Up on Demand During Wake Up
     #[inline(always)]
-    pub fn pwrupondemand(&mut self) -> PwrupondemandW<CTRLrs> {
+    pub fn pwrupondemand(&mut self) -> PwrupondemandW<'_, CTRLrs> {
         PwrupondemandW::new(self, 2)
     }
     ///Bit 3 - IFC Read Clears IF
     #[inline(always)]
-    pub fn ifcreadclear(&mut self) -> IfcreadclearW<CTRLrs> {
+    pub fn ifcreadclear(&mut self) -> IfcreadclearW<'_, CTRLrs> {
         IfcreadclearW::new(self, 3)
     }
 }
@@ -84,8 +84,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0x01
 impl crate::Resettable for CTRLrs {

@@ -21,7 +21,7 @@ impl core::fmt::Debug for crate::generic::Reg<DDATA0BIGrs> {
 impl W {
     ///Bits 0:31 - Double Data 0 Big Endian Access
     #[inline(always)]
-    pub fn ddata0big(&mut self) -> Ddata0bigW<DDATA0BIGrs> {
+    pub fn ddata0big(&mut self) -> Ddata0bigW<'_, DDATA0BIGrs> {
         Ddata0bigW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for DDATA0BIGrs {}
 ///`write(|w| ..)` method takes [`ddata0big::W`](W) writer structure
 impl crate::Writable for DDATA0BIGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DDATA0BIG to value 0
-impl crate::Resettable for DDATA0BIGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DDATA0BIGrs {}

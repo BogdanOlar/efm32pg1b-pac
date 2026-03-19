@@ -10,7 +10,7 @@ impl core::fmt::Debug for crate::generic::Reg<REQCLEARrs> {
 impl W {
     ///Bits 0:7 - DMA Request Clear
     #[inline(always)]
-    pub fn reqclear(&mut self) -> ReqclearW<REQCLEARrs> {
+    pub fn reqclear(&mut self) -> ReqclearW<'_, REQCLEARrs> {
         ReqclearW::new(self, 0)
     }
 }
@@ -24,10 +24,6 @@ impl crate::RegisterSpec for REQCLEARrs {
 ///`write(|w| ..)` method takes [`reqclear::W`](W) writer structure
 impl crate::Writable for REQCLEARrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets REQCLEAR to value 0
-impl crate::Resettable for REQCLEARrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for REQCLEARrs {}

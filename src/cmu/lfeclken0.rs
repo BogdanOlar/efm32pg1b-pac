@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Real-Time Counter and Calendar Clock Enable
     #[inline(always)]
-    pub fn rtcc(&mut self) -> RtccW<LFECLKEN0rs> {
+    pub fn rtcc(&mut self) -> RtccW<'_, LFECLKEN0rs> {
         RtccW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for LFECLKEN0rs {}
 ///`write(|w| ..)` method takes [`lfeclken0::W`](W) writer structure
 impl crate::Writable for LFECLKEN0rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets LFECLKEN0 to value 0
-impl crate::Resettable for LFECLKEN0rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LFECLKEN0rs {}

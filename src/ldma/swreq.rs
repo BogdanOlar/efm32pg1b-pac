@@ -10,7 +10,7 @@ impl core::fmt::Debug for crate::generic::Reg<SWREQrs> {
 impl W {
     ///Bits 0:7 - Software Transfer Requests
     #[inline(always)]
-    pub fn swreq(&mut self) -> SwreqW<SWREQrs> {
+    pub fn swreq(&mut self) -> SwreqW<'_, SWREQrs> {
         SwreqW::new(self, 0)
     }
 }
@@ -24,10 +24,6 @@ impl crate::RegisterSpec for SWREQrs {
 ///`write(|w| ..)` method takes [`swreq::W`](W) writer structure
 impl crate::Writable for SWREQrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SWREQ to value 0
-impl crate::Resettable for SWREQrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SWREQrs {}

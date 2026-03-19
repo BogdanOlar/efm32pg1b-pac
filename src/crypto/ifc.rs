@@ -12,12 +12,12 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear INSTRDONE Interrupt Flag
     #[inline(always)]
-    pub fn instrdone(&mut self) -> InstrdoneW<IFCrs> {
+    pub fn instrdone(&mut self) -> InstrdoneW<'_, IFCrs> {
         InstrdoneW::new(self, 0)
     }
     ///Bit 1 - Clear SEQDONE Interrupt Flag
     #[inline(always)]
-    pub fn seqdone(&mut self) -> SeqdoneW<IFCrs> {
+    pub fn seqdone(&mut self) -> SeqdoneW<'_, IFCrs> {
         SeqdoneW::new(self, 1)
     }
 }
@@ -31,10 +31,6 @@ impl crate::RegisterSpec for IFCrs {
 ///`write(|w| ..)` method takes [`ifc::W`](W) writer structure
 impl crate::Writable for IFCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFC to value 0
-impl crate::Resettable for IFCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFCrs {}

@@ -27,22 +27,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Execute Instruction
     #[inline(always)]
-    pub fn instr(&mut self) -> InstrW<CMDrs> {
+    pub fn instr(&mut self) -> InstrW<'_, CMDrs> {
         InstrW::new(self, 0)
     }
     ///Bit 9 - Encryption/Decryption SEQUENCE Start
     #[inline(always)]
-    pub fn seqstart(&mut self) -> SeqstartW<CMDrs> {
+    pub fn seqstart(&mut self) -> SeqstartW<'_, CMDrs> {
         SeqstartW::new(self, 9)
     }
     ///Bit 10 - Sequence Stop
     #[inline(always)]
-    pub fn seqstop(&mut self) -> SeqstopW<CMDrs> {
+    pub fn seqstop(&mut self) -> SeqstopW<'_, CMDrs> {
         SeqstopW::new(self, 10)
     }
     ///Bit 11 - Sequence Step
     #[inline(always)]
-    pub fn seqstep(&mut self) -> SeqstepW<CMDrs> {
+    pub fn seqstep(&mut self) -> SeqstepW<'_, CMDrs> {
         SeqstepW::new(self, 11)
     }
 }
@@ -58,10 +58,6 @@ impl crate::Readable for CMDrs {}
 ///`write(|w| ..)` method takes [`cmd::W`](W) writer structure
 impl crate::Writable for CMDrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CMD to value 0
-impl crate::Resettable for CMDrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CMDrs {}

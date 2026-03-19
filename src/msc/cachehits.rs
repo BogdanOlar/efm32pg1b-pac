@@ -26,6 +26,4 @@ impl crate::RegisterSpec for CACHEHITSrs {
 ///`read()` method returns [`cachehits::R`](R) reader structure
 impl crate::Readable for CACHEHITSrs {}
 ///`reset()` method sets CACHEHITS to value 0
-impl crate::Resettable for CACHEHITSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CACHEHITSrs {}

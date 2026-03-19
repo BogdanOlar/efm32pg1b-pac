@@ -403,27 +403,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - WDOG Reset Mode
     #[inline(always)]
-    pub fn wdogrmode(&mut self) -> WdogrmodeW<CTRLrs> {
+    pub fn wdogrmode(&mut self) -> WdogrmodeW<'_, CTRLrs> {
         WdogrmodeW::new(self, 0)
     }
     ///Bits 4:6 - Core LOCKUP Reset Mode
     #[inline(always)]
-    pub fn lockuprmode(&mut self) -> LockuprmodeW<CTRLrs> {
+    pub fn lockuprmode(&mut self) -> LockuprmodeW<'_, CTRLrs> {
         LockuprmodeW::new(self, 4)
     }
     ///Bits 8:10 - Core Sysreset Reset Mode
     #[inline(always)]
-    pub fn sysrmode(&mut self) -> SysrmodeW<CTRLrs> {
+    pub fn sysrmode(&mut self) -> SysrmodeW<'_, CTRLrs> {
         SysrmodeW::new(self, 8)
     }
     ///Bits 12:14 - PIN Reset Mode
     #[inline(always)]
-    pub fn pinrmode(&mut self) -> PinrmodeW<CTRLrs> {
+    pub fn pinrmode(&mut self) -> PinrmodeW<'_, CTRLrs> {
         PinrmodeW::new(self, 12)
     }
     ///Bits 24:25 - System Software Reset State
     #[inline(always)]
-    pub fn resetstate(&mut self) -> ResetstateW<CTRLrs> {
+    pub fn resetstate(&mut self) -> ResetstateW<'_, CTRLrs> {
         ResetstateW::new(self, 24)
     }
 }
@@ -439,8 +439,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0x4224
 impl crate::Resettable for CTRLrs {

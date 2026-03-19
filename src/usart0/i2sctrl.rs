@@ -210,32 +210,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable I2S Mode
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<I2SCTRLrs> {
+    pub fn en(&mut self) -> EnW<'_, I2SCTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 1 - Stero or Mono
     #[inline(always)]
-    pub fn mono(&mut self) -> MonoW<I2SCTRLrs> {
+    pub fn mono(&mut self) -> MonoW<'_, I2SCTRLrs> {
         MonoW::new(self, 1)
     }
     ///Bit 2 - Justification of I2S Data
     #[inline(always)]
-    pub fn justify(&mut self) -> JustifyW<I2SCTRLrs> {
+    pub fn justify(&mut self) -> JustifyW<'_, I2SCTRLrs> {
         JustifyW::new(self, 2)
     }
     ///Bit 3 - Separate DMA Request for Left/Right Data
     #[inline(always)]
-    pub fn dmasplit(&mut self) -> DmasplitW<I2SCTRLrs> {
+    pub fn dmasplit(&mut self) -> DmasplitW<'_, I2SCTRLrs> {
         DmasplitW::new(self, 3)
     }
     ///Bit 4 - Delay on I2S Data
     #[inline(always)]
-    pub fn delay(&mut self) -> DelayW<I2SCTRLrs> {
+    pub fn delay(&mut self) -> DelayW<'_, I2SCTRLrs> {
         DelayW::new(self, 4)
     }
     ///Bits 8:10 - I2S Word Format
     #[inline(always)]
-    pub fn format(&mut self) -> FormatW<I2SCTRLrs> {
+    pub fn format(&mut self) -> FormatW<'_, I2SCTRLrs> {
         FormatW::new(self, 8)
     }
 }
@@ -251,10 +251,6 @@ impl crate::Readable for I2SCTRLrs {}
 ///`write(|w| ..)` method takes [`i2sctrl::W`](W) writer structure
 impl crate::Writable for I2SCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets I2SCTRL to value 0
-impl crate::Resettable for I2SCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for I2SCTRLrs {}

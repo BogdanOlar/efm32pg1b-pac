@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Serial Wire Clock and JTAG Test Clock Pin Enable
     #[inline(always)]
-    pub fn swclktckpen(&mut self) -> SwclktckpenW<ROUTEPENrs> {
+    pub fn swclktckpen(&mut self) -> SwclktckpenW<'_, ROUTEPENrs> {
         SwclktckpenW::new(self, 0)
     }
     ///Bit 1 - Serial Wire Data and JTAG Test Mode Select Pin Enable
     #[inline(always)]
-    pub fn swdiotmspen(&mut self) -> SwdiotmspenW<ROUTEPENrs> {
+    pub fn swdiotmspen(&mut self) -> SwdiotmspenW<'_, ROUTEPENrs> {
         SwdiotmspenW::new(self, 1)
     }
     ///Bit 2 - JTAG Test Debug Output Pin Enable
     #[inline(always)]
-    pub fn tdopen(&mut self) -> TdopenW<ROUTEPENrs> {
+    pub fn tdopen(&mut self) -> TdopenW<'_, ROUTEPENrs> {
         TdopenW::new(self, 2)
     }
     ///Bit 3 - JTAG Test Debug Input Pin Enable
     #[inline(always)]
-    pub fn tdipen(&mut self) -> TdipenW<ROUTEPENrs> {
+    pub fn tdipen(&mut self) -> TdipenW<'_, ROUTEPENrs> {
         TdipenW::new(self, 3)
     }
     ///Bit 4 - Serial Wire Viewer Output Pin Enable
     #[inline(always)]
-    pub fn swvpen(&mut self) -> SwvpenW<ROUTEPENrs> {
+    pub fn swvpen(&mut self) -> SwvpenW<'_, ROUTEPENrs> {
         SwvpenW::new(self, 4)
     }
 }
@@ -99,8 +99,6 @@ impl crate::Readable for ROUTEPENrs {}
 ///`write(|w| ..)` method takes [`routepen::W`](W) writer structure
 impl crate::Writable for ROUTEPENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ROUTEPEN to value 0x0f
 impl crate::Resettable for ROUTEPENrs {

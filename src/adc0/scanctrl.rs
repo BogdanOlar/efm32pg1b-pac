@@ -478,42 +478,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Scan Sequence Repetitive Mode
     #[inline(always)]
-    pub fn rep(&mut self) -> RepW<SCANCTRLrs> {
+    pub fn rep(&mut self) -> RepW<'_, SCANCTRLrs> {
         RepW::new(self, 0)
     }
     ///Bit 1 - Scan Sequence Differential Mode
     #[inline(always)]
-    pub fn diff(&mut self) -> DiffW<SCANCTRLrs> {
+    pub fn diff(&mut self) -> DiffW<'_, SCANCTRLrs> {
         DiffW::new(self, 1)
     }
     ///Bit 2 - Scan Sequence Result Adjustment
     #[inline(always)]
-    pub fn adj(&mut self) -> AdjW<SCANCTRLrs> {
+    pub fn adj(&mut self) -> AdjW<'_, SCANCTRLrs> {
         AdjW::new(self, 2)
     }
     ///Bits 3:4 - Scan Sequence Resolution Select
     #[inline(always)]
-    pub fn res(&mut self) -> ResW<SCANCTRLrs> {
+    pub fn res(&mut self) -> ResW<'_, SCANCTRLrs> {
         ResW::new(self, 3)
     }
     ///Bits 5:7 - Scan Sequence Reference Selection
     #[inline(always)]
-    pub fn ref_(&mut self) -> RefW<SCANCTRLrs> {
+    pub fn ref_(&mut self) -> RefW<'_, SCANCTRLrs> {
         RefW::new(self, 5)
     }
     ///Bits 24:27 - Scan Acquisition Time
     #[inline(always)]
-    pub fn at(&mut self) -> AtW<SCANCTRLrs> {
+    pub fn at(&mut self) -> AtW<'_, SCANCTRLrs> {
         AtW::new(self, 24)
     }
     ///Bit 29 - Scan Sequence PRS Trigger Enable
     #[inline(always)]
-    pub fn prsen(&mut self) -> PrsenW<SCANCTRLrs> {
+    pub fn prsen(&mut self) -> PrsenW<'_, SCANCTRLrs> {
         PrsenW::new(self, 29)
     }
     ///Bit 31 - Compare Logic Enable for Scan
     #[inline(always)]
-    pub fn cmpen(&mut self) -> CmpenW<SCANCTRLrs> {
+    pub fn cmpen(&mut self) -> CmpenW<'_, SCANCTRLrs> {
         CmpenW::new(self, 31)
     }
 }
@@ -529,10 +529,6 @@ impl crate::Readable for SCANCTRLrs {}
 ///`write(|w| ..)` method takes [`scanctrl::W`](W) writer structure
 impl crate::Writable for SCANCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SCANCTRL to value 0
-impl crate::Resettable for SCANCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCANCTRLrs {}

@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - TX Data
     #[inline(always)]
-    pub fn txdata(&mut self) -> TxdataW<TXDATArs> {
+    pub fn txdata(&mut self) -> TxdataW<'_, TXDATArs> {
         TxdataW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for TXDATArs {}
 ///`write(|w| ..)` method takes [`txdata::W`](W) writer structure
 impl crate::Writable for TXDATArs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TXDATA to value 0
-impl crate::Resettable for TXDATArs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TXDATArs {}

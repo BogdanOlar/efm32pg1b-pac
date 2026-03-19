@@ -21,7 +21,7 @@ impl core::fmt::Debug for crate::generic::Reg<DATA0BYTErs> {
 impl W {
     ///Bits 0:7 - Data 0 Byte Access
     #[inline(always)]
-    pub fn data0byte(&mut self) -> Data0byteW<DATA0BYTErs> {
+    pub fn data0byte(&mut self) -> Data0byteW<'_, DATA0BYTErs> {
         Data0byteW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for DATA0BYTErs {}
 ///`write(|w| ..)` method takes [`data0byte::W`](W) writer structure
 impl crate::Writable for DATA0BYTErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DATA0BYTE to value 0
-impl crate::Resettable for DATA0BYTErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DATA0BYTErs {}

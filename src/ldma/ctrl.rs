@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Synchronization PRS Set Enable
     #[inline(always)]
-    pub fn syncprsseten(&mut self) -> SyncprssetenW<CTRLrs> {
+    pub fn syncprsseten(&mut self) -> SyncprssetenW<'_, CTRLrs> {
         SyncprssetenW::new(self, 0)
     }
     ///Bits 8:15 - Synchronization PRS Clear Enable
     #[inline(always)]
-    pub fn syncprsclren(&mut self) -> SyncprsclrenW<CTRLrs> {
+    pub fn syncprsclren(&mut self) -> SyncprsclrenW<'_, CTRLrs> {
         SyncprsclrenW::new(self, 8)
     }
     ///Bits 24:26 - Number of Fixed Priority Channels
     #[inline(always)]
-    pub fn numfixed(&mut self) -> NumfixedW<CTRLrs> {
+    pub fn numfixed(&mut self) -> NumfixedW<'_, CTRLrs> {
         NumfixedW::new(self, 24)
     }
 }
@@ -69,8 +69,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0x0700_0000
 impl crate::Resettable for CTRLrs {

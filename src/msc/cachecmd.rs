@@ -14,17 +14,17 @@ impl core::fmt::Debug for crate::generic::Reg<CACHECMDrs> {
 impl W {
     ///Bit 0 - Invalidate Instruction Cache
     #[inline(always)]
-    pub fn invcache(&mut self) -> InvcacheW<CACHECMDrs> {
+    pub fn invcache(&mut self) -> InvcacheW<'_, CACHECMDrs> {
         InvcacheW::new(self, 0)
     }
     ///Bit 1 - Start Performance Counters
     #[inline(always)]
-    pub fn startpc(&mut self) -> StartpcW<CACHECMDrs> {
+    pub fn startpc(&mut self) -> StartpcW<'_, CACHECMDrs> {
         StartpcW::new(self, 1)
     }
     ///Bit 2 - Stop Performance Counters
     #[inline(always)]
-    pub fn stoppc(&mut self) -> StoppcW<CACHECMDrs> {
+    pub fn stoppc(&mut self) -> StoppcW<'_, CACHECMDrs> {
         StoppcW::new(self, 2)
     }
 }
@@ -38,10 +38,6 @@ impl crate::RegisterSpec for CACHECMDrs {
 ///`write(|w| ..)` method takes [`cachecmd::W`](W) writer structure
 impl crate::Writable for CACHECMDrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CACHECMD to value 0
-impl crate::Resettable for CACHECMDrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CACHECMDrs {}

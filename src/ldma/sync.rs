@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Synchronization Trigger
     #[inline(always)]
-    pub fn synctrig(&mut self) -> SynctrigW<SYNCrs> {
+    pub fn synctrig(&mut self) -> SynctrigW<'_, SYNCrs> {
         SynctrigW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for SYNCrs {}
 ///`write(|w| ..)` method takes [`sync::W`](W) writer structure
 impl crate::Writable for SYNCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SYNC to value 0
-impl crate::Resettable for SYNCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SYNCrs {}

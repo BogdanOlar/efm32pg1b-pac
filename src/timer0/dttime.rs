@@ -219,17 +219,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - DTI Prescaler Setting
     #[inline(always)]
-    pub fn dtpresc(&mut self) -> DtprescW<DTTIMErs> {
+    pub fn dtpresc(&mut self) -> DtprescW<'_, DTTIMErs> {
         DtprescW::new(self, 0)
     }
     ///Bits 8:13 - DTI Rise-time
     #[inline(always)]
-    pub fn dtriset(&mut self) -> DtrisetW<DTTIMErs> {
+    pub fn dtriset(&mut self) -> DtrisetW<'_, DTTIMErs> {
         DtrisetW::new(self, 8)
     }
     ///Bits 16:21 - DTI Fall-time
     #[inline(always)]
-    pub fn dtfallt(&mut self) -> DtfalltW<DTTIMErs> {
+    pub fn dtfallt(&mut self) -> DtfalltW<'_, DTTIMErs> {
         DtfalltW::new(self, 16)
     }
 }
@@ -245,10 +245,6 @@ impl crate::Readable for DTTIMErs {}
 ///`write(|w| ..)` method takes [`dttime::W`](W) writer structure
 impl crate::Writable for DTTIMErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DTTIME to value 0
-impl crate::Resettable for DTTIMErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DTTIMErs {}

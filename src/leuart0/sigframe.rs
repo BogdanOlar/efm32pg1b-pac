@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - Signal Frame
     #[inline(always)]
-    pub fn sigframe(&mut self) -> SigframeW<SIGFRAMErs> {
+    pub fn sigframe(&mut self) -> SigframeW<'_, SIGFRAMErs> {
         SigframeW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for SIGFRAMErs {}
 ///`write(|w| ..)` method takes [`sigframe::W`](W) writer structure
 impl crate::Writable for SIGFRAMErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SIGFRAME to value 0
-impl crate::Resettable for SIGFRAMErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SIGFRAMErs {}

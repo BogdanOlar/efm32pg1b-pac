@@ -10,7 +10,7 @@ impl core::fmt::Debug for crate::generic::Reg<DOUT_TGLrs> {
 impl W {
     ///Bits 0:15 - Data Out Toggle for pins 0:15
     #[inline(always)]
-    pub fn pins_dout_tgl(&mut self) -> PinsDoutTglW<DOUT_TGLrs> {
+    pub fn pins_dout_tgl(&mut self) -> PinsDoutTglW<'_, DOUT_TGLrs> {
         PinsDoutTglW::new(self, 0)
     }
 }
@@ -24,10 +24,6 @@ impl crate::RegisterSpec for DOUT_TGLrs {
 ///`write(|w| ..)` method takes [`dout_tgl::W`](W) writer structure
 impl crate::Writable for DOUT_TGLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DOUT_TGL to value 0
-impl crate::Resettable for DOUT_TGLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DOUT_TGLrs {}

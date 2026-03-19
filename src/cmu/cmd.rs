@@ -16,22 +16,22 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Calibration Start
     #[inline(always)]
-    pub fn calstart(&mut self) -> CalstartW<CMDrs> {
+    pub fn calstart(&mut self) -> CalstartW<'_, CMDrs> {
         CalstartW::new(self, 0)
     }
     ///Bit 1 - Calibration Stop
     #[inline(always)]
-    pub fn calstop(&mut self) -> CalstopW<CMDrs> {
+    pub fn calstop(&mut self) -> CalstopW<'_, CMDrs> {
         CalstopW::new(self, 1)
     }
     ///Bit 4 - HFXO Peak Detection Start
     #[inline(always)]
-    pub fn hfxopeakdetstart(&mut self) -> HfxopeakdetstartW<CMDrs> {
+    pub fn hfxopeakdetstart(&mut self) -> HfxopeakdetstartW<'_, CMDrs> {
         HfxopeakdetstartW::new(self, 4)
     }
     ///Bit 5 - HFXO Shunt Current Optimization Start
     #[inline(always)]
-    pub fn hfxoshuntoptstart(&mut self) -> HfxoshuntoptstartW<CMDrs> {
+    pub fn hfxoshuntoptstart(&mut self) -> HfxoshuntoptstartW<'_, CMDrs> {
         HfxoshuntoptstartW::new(self, 5)
     }
 }
@@ -45,10 +45,6 @@ impl crate::RegisterSpec for CMDrs {
 ///`write(|w| ..)` method takes [`cmd::W`](W) writer structure
 impl crate::Writable for CMDrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CMD to value 0
-impl crate::Resettable for CMDrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CMDrs {}

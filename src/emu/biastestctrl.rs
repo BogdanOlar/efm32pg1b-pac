@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 3 - Reset Bias Ripple Counter
     #[inline(always)]
-    pub fn bias_rip_reset(&mut self) -> BiasRipResetW<BIASTESTCTRLrs> {
+    pub fn bias_rip_reset(&mut self) -> BiasRipResetW<'_, BIASTESTCTRLrs> {
         BiasRipResetW::new(self, 3)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for BIASTESTCTRLrs {}
 ///`write(|w| ..)` method takes [`biastestctrl::W`](W) writer structure
 impl crate::Writable for BIASTESTCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets BIASTESTCTRL to value 0
-impl crate::Resettable for BIASTESTCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BIASTESTCTRLrs {}

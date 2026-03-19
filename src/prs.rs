@@ -145,8 +145,7 @@ impl RegisterBlock {
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`swpulse::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@swpulse`]
-///module
+///For information about available fields see [`mod@swpulse`] module
 #[doc(alias = "SWPULSE")]
 pub type Swpulse = crate::Reg<swpulse::SWPULSErs>;
 ///Software Pulse Register
@@ -155,8 +154,7 @@ pub mod swpulse;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`swlevel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`swlevel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@swlevel`]
-///module
+///For information about available fields see [`mod@swlevel`] module
 #[doc(alias = "SWLEVEL")]
 pub type Swlevel = crate::Reg<swlevel::SWLEVELrs>;
 ///Software Level Register
@@ -165,8 +163,7 @@ pub mod swlevel;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`routepen::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routepen::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@routepen`]
-///module
+///For information about available fields see [`mod@routepen`] module
 #[doc(alias = "ROUTEPEN")]
 pub type Routepen = crate::Reg<routepen::ROUTEPENrs>;
 ///I/O Routing Pin Enable Register
@@ -175,8 +172,7 @@ pub mod routepen;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`routeloc0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routeloc0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@routeloc0`]
-///module
+///For information about available fields see [`mod@routeloc0`] module
 #[doc(alias = "ROUTELOC0")]
 pub type Routeloc0 = crate::Reg<routeloc0::ROUTELOC0rs>;
 ///I/O Routing Location Register
@@ -185,8 +181,7 @@ pub mod routeloc0;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`routeloc1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routeloc1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@routeloc1`]
-///module
+///For information about available fields see [`mod@routeloc1`] module
 #[doc(alias = "ROUTELOC1")]
 pub type Routeloc1 = crate::Reg<routeloc1::ROUTELOC1rs>;
 ///I/O Routing Location Register
@@ -195,8 +190,7 @@ pub mod routeloc1;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`routeloc2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`routeloc2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@routeloc2`]
-///module
+///For information about available fields see [`mod@routeloc2`] module
 #[doc(alias = "ROUTELOC2")]
 pub type Routeloc2 = crate::Reg<routeloc2::ROUTELOC2rs>;
 ///I/O Routing Location Register
@@ -205,8 +199,7 @@ pub mod routeloc2;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ctrl`]
-///module
+///For information about available fields see [`mod@ctrl`] module
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CTRLrs>;
 ///Control Register
@@ -215,8 +208,7 @@ pub mod ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`dmareq0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmareq0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@dmareq0`]
-///module
+///For information about available fields see [`mod@dmareq0`] module
 #[doc(alias = "DMAREQ0")]
 pub type Dmareq0 = crate::Reg<dmareq0::DMAREQ0rs>;
 ///DMA Request 0 Register
@@ -225,8 +217,7 @@ pub mod dmareq0;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`dmareq1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmareq1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@dmareq1`]
-///module
+///For information about available fields see [`mod@dmareq1`] module
 #[doc(alias = "DMAREQ1")]
 pub type Dmareq1 = crate::Reg<dmareq1::DMAREQ1rs>;
 ///DMA Request 1 Register
@@ -235,8 +226,7 @@ pub mod dmareq1;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`peek::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@peek`]
-///module
+///For information about available fields see [`mod@peek`] module
 #[doc(alias = "PEEK")]
 pub type Peek = crate::Reg<peek::PEEKrs>;
 ///PRS Channel Values
@@ -245,8 +235,7 @@ pub mod peek;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch0_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch0_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch0_ctrl`]
-///module
+///For information about available fields see [`mod@ch0_ctrl`] module
 #[doc(alias = "CH0_CTRL")]
 pub type Ch0Ctrl = crate::Reg<ch0_ctrl::CH0_CTRLrs>;
 ///Channel Control Register
@@ -255,8 +244,7 @@ pub mod ch0_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch1_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch1_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch1_ctrl`]
-///module
+///For information about available fields see [`mod@ch1_ctrl`] module
 #[doc(alias = "CH1_CTRL")]
 pub type Ch1Ctrl = crate::Reg<ch1_ctrl::CH1_CTRLrs>;
 ///Channel Control Register
@@ -265,8 +253,7 @@ pub mod ch1_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch2_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch2_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch2_ctrl`]
-///module
+///For information about available fields see [`mod@ch2_ctrl`] module
 #[doc(alias = "CH2_CTRL")]
 pub type Ch2Ctrl = crate::Reg<ch2_ctrl::CH2_CTRLrs>;
 ///Channel Control Register
@@ -275,8 +262,7 @@ pub mod ch2_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch3_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch3_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch3_ctrl`]
-///module
+///For information about available fields see [`mod@ch3_ctrl`] module
 #[doc(alias = "CH3_CTRL")]
 pub type Ch3Ctrl = crate::Reg<ch3_ctrl::CH3_CTRLrs>;
 ///Channel Control Register
@@ -285,8 +271,7 @@ pub mod ch3_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch4_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch4_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch4_ctrl`]
-///module
+///For information about available fields see [`mod@ch4_ctrl`] module
 #[doc(alias = "CH4_CTRL")]
 pub type Ch4Ctrl = crate::Reg<ch4_ctrl::CH4_CTRLrs>;
 ///Channel Control Register
@@ -295,8 +280,7 @@ pub mod ch4_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch5_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch5_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch5_ctrl`]
-///module
+///For information about available fields see [`mod@ch5_ctrl`] module
 #[doc(alias = "CH5_CTRL")]
 pub type Ch5Ctrl = crate::Reg<ch5_ctrl::CH5_CTRLrs>;
 ///Channel Control Register
@@ -305,8 +289,7 @@ pub mod ch5_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch6_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch6_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch6_ctrl`]
-///module
+///For information about available fields see [`mod@ch6_ctrl`] module
 #[doc(alias = "CH6_CTRL")]
 pub type Ch6Ctrl = crate::Reg<ch6_ctrl::CH6_CTRLrs>;
 ///Channel Control Register
@@ -315,8 +298,7 @@ pub mod ch6_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch7_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch7_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch7_ctrl`]
-///module
+///For information about available fields see [`mod@ch7_ctrl`] module
 #[doc(alias = "CH7_CTRL")]
 pub type Ch7Ctrl = crate::Reg<ch7_ctrl::CH7_CTRLrs>;
 ///Channel Control Register
@@ -325,8 +307,7 @@ pub mod ch7_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch8_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch8_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch8_ctrl`]
-///module
+///For information about available fields see [`mod@ch8_ctrl`] module
 #[doc(alias = "CH8_CTRL")]
 pub type Ch8Ctrl = crate::Reg<ch8_ctrl::CH8_CTRLrs>;
 ///Channel Control Register
@@ -335,8 +316,7 @@ pub mod ch8_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch9_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch9_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch9_ctrl`]
-///module
+///For information about available fields see [`mod@ch9_ctrl`] module
 #[doc(alias = "CH9_CTRL")]
 pub type Ch9Ctrl = crate::Reg<ch9_ctrl::CH9_CTRLrs>;
 ///Channel Control Register
@@ -345,8 +325,7 @@ pub mod ch9_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch10_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch10_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch10_ctrl`]
-///module
+///For information about available fields see [`mod@ch10_ctrl`] module
 #[doc(alias = "CH10_CTRL")]
 pub type Ch10Ctrl = crate::Reg<ch10_ctrl::CH10_CTRLrs>;
 ///Channel Control Register
@@ -355,8 +334,7 @@ pub mod ch10_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ch11_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch11_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ch11_ctrl`]
-///module
+///For information about available fields see [`mod@ch11_ctrl`] module
 #[doc(alias = "CH11_CTRL")]
 pub type Ch11Ctrl = crate::Reg<ch11_ctrl::CH11_CTRLrs>;
 ///Channel Control Register

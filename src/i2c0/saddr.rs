@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 1:7 - Slave Address
     #[inline(always)]
-    pub fn addr(&mut self) -> AddrW<SADDRrs> {
+    pub fn addr(&mut self) -> AddrW<'_, SADDRrs> {
         AddrW::new(self, 1)
     }
 }
@@ -37,10 +37,6 @@ impl crate::Readable for SADDRrs {}
 ///`write(|w| ..)` method takes [`saddr::W`](W) writer structure
 impl crate::Writable for SADDRrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SADDR to value 0
-impl crate::Resettable for SADDRrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SADDRrs {}

@@ -69,7 +69,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 8:12 - HFEXPCLK Prescaler
     #[inline(always)]
-    pub fn presc(&mut self) -> PrescW<HFEXPPRESCrs> {
+    pub fn presc(&mut self) -> PrescW<'_, HFEXPPRESCrs> {
         PrescW::new(self, 8)
     }
 }
@@ -85,10 +85,6 @@ impl crate::Readable for HFEXPPRESCrs {}
 ///`write(|w| ..)` method takes [`hfexppresc::W`](W) writer structure
 impl crate::Writable for HFEXPPRESCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HFEXPPRESC to value 0
-impl crate::Resettable for HFEXPPRESCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HFEXPPRESCrs {}

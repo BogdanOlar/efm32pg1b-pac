@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:6 - Sets the Startup Oscillator Core Bias Current
     #[inline(always)]
-    pub fn ibtrimxocore(&mut self) -> IbtrimxocoreW<HFXOSTARTUPCTRLrs> {
+    pub fn ibtrimxocore(&mut self) -> IbtrimxocoreW<'_, HFXOSTARTUPCTRLrs> {
         IbtrimxocoreW::new(self, 0)
     }
     ///Bits 11:19 - Sets Oscillator Tuning Capacitance
     #[inline(always)]
-    pub fn ctune(&mut self) -> CtuneW<HFXOSTARTUPCTRLrs> {
+    pub fn ctune(&mut self) -> CtuneW<'_, HFXOSTARTUPCTRLrs> {
         CtuneW::new(self, 11)
     }
     ///Bits 21:27 - This Field is Reserved. It Should Be Set to 0x9
     #[inline(always)]
-    pub fn reserved0(&mut self) -> Reserved0W<HFXOSTARTUPCTRLrs> {
+    pub fn reserved0(&mut self) -> Reserved0W<'_, HFXOSTARTUPCTRLrs> {
         Reserved0W::new(self, 21)
     }
     ///Bits 28:31 - Sets the Regulator Output Current Level (shunt Regulator)
     #[inline(always)]
-    pub fn reserved1(&mut self) -> Reserved1W<HFXOSTARTUPCTRLrs> {
+    pub fn reserved1(&mut self) -> Reserved1W<'_, HFXOSTARTUPCTRLrs> {
         Reserved1W::new(self, 28)
     }
 }
@@ -84,8 +84,6 @@ impl crate::Readable for HFXOSTARTUPCTRLrs {}
 ///`write(|w| ..)` method takes [`hfxostartupctrl::W`](W) writer structure
 impl crate::Writable for HFXOSTARTUPCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HFXOSTARTUPCTRL to value 0xa125_0060
 impl crate::Resettable for HFXOSTARTUPCTRLrs {

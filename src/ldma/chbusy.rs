@@ -26,6 +26,4 @@ impl crate::RegisterSpec for CHBUSYrs {
 ///`read()` method returns [`chbusy::R`](R) reader structure
 impl crate::Readable for CHBUSYrs {}
 ///`reset()` method sets CHBUSY to value 0
-impl crate::Resettable for CHBUSYrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CHBUSYrs {}

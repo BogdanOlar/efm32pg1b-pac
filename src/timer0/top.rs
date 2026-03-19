@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Counter Top Value
     #[inline(always)]
-    pub fn top(&mut self) -> TopW<TOPrs> {
+    pub fn top(&mut self) -> TopW<'_, TOPrs> {
         TopW::new(self, 0)
     }
 }
@@ -37,8 +37,6 @@ impl crate::Readable for TOPrs {}
 ///`write(|w| ..)` method takes [`top::W`](W) writer structure
 impl crate::Writable for TOPrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TOP to value 0xffff
 impl crate::Resettable for TOPrs {

@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Unlocked Pins for pins 0:15
     #[inline(always)]
-    pub fn pins_pinlockn(&mut self) -> PinsPinlocknW<PINLOCKNrs> {
+    pub fn pins_pinlockn(&mut self) -> PinsPinlocknW<'_, PINLOCKNrs> {
         PinsPinlocknW::new(self, 0)
     }
 }
@@ -39,8 +39,6 @@ impl crate::Readable for PINLOCKNrs {}
 ///`write(|w| ..)` method takes [`pinlockn::W`](W) writer structure
 impl crate::Writable for PINLOCKNrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PINLOCKN to value 0xffff
 impl crate::Resettable for PINLOCKNrs {

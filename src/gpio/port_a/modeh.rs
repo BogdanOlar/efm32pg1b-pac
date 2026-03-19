@@ -109,42 +109,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Pin 8 Mode
     #[inline(always)]
-    pub fn mode8(&mut self) -> Mode8W<MODEHrs> {
+    pub fn mode8(&mut self) -> Mode8W<'_, MODEHrs> {
         Mode8W::new(self, 0)
     }
     ///Bits 4:7 - Pin 9 Mode
     #[inline(always)]
-    pub fn mode9(&mut self) -> Mode9W<MODEHrs> {
+    pub fn mode9(&mut self) -> Mode9W<'_, MODEHrs> {
         Mode9W::new(self, 4)
     }
     ///Bits 8:11 - Pin 10 Mode
     #[inline(always)]
-    pub fn mode10(&mut self) -> Mode10W<MODEHrs> {
+    pub fn mode10(&mut self) -> Mode10W<'_, MODEHrs> {
         Mode10W::new(self, 8)
     }
     ///Bits 12:15 - Pin 11 Mode
     #[inline(always)]
-    pub fn mode11(&mut self) -> Mode11W<MODEHrs> {
+    pub fn mode11(&mut self) -> Mode11W<'_, MODEHrs> {
         Mode11W::new(self, 12)
     }
     ///Bits 16:19 - Pin 12 Mode
     #[inline(always)]
-    pub fn mode12(&mut self) -> Mode12W<MODEHrs> {
+    pub fn mode12(&mut self) -> Mode12W<'_, MODEHrs> {
         Mode12W::new(self, 16)
     }
     ///Bits 20:23 - Pin 13 Mode
     #[inline(always)]
-    pub fn mode13(&mut self) -> Mode13W<MODEHrs> {
+    pub fn mode13(&mut self) -> Mode13W<'_, MODEHrs> {
         Mode13W::new(self, 20)
     }
     ///Bits 24:27 - Pin 14 Mode
     #[inline(always)]
-    pub fn mode14(&mut self) -> Mode14W<MODEHrs> {
+    pub fn mode14(&mut self) -> Mode14W<'_, MODEHrs> {
         Mode14W::new(self, 24)
     }
     ///Bits 28:31 - Pin 15 Mode
     #[inline(always)]
-    pub fn mode15(&mut self) -> Mode15W<MODEHrs> {
+    pub fn mode15(&mut self) -> Mode15W<'_, MODEHrs> {
         Mode15W::new(self, 28)
     }
 }
@@ -160,10 +160,6 @@ impl crate::Readable for MODEHrs {}
 ///`write(|w| ..)` method takes [`modeh::W`](W) writer structure
 impl crate::Writable for MODEHrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets MODEH to value 0
-impl crate::Resettable for MODEHrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MODEHrs {}

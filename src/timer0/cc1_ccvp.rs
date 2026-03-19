@@ -26,6 +26,4 @@ impl crate::RegisterSpec for CC1_CCVPrs {
 ///`read()` method returns [`cc1_ccvp::R`](R) reader structure
 impl crate::Readable for CC1_CCVPrs {}
 ///`reset()` method sets CC1_CCVP to value 0
-impl crate::Resettable for CC1_CCVPrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CC1_CCVPrs {}

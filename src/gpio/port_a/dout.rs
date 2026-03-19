@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Data Out for pins 0:15
     #[inline(always)]
-    pub fn pins_dout(&mut self) -> PinsDoutW<DOUTrs> {
+    pub fn pins_dout(&mut self) -> PinsDoutW<'_, DOUTrs> {
         PinsDoutW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for DOUTrs {}
 ///`write(|w| ..)` method takes [`dout::W`](W) writer structure
 impl crate::Writable for DOUTrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DOUT to value 0
-impl crate::Resettable for DOUTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DOUTrs {}

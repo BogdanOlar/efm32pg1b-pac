@@ -154,17 +154,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Bias Programming Value of Analog ADC Block
     #[inline(always)]
-    pub fn adcbiasprog(&mut self) -> AdcbiasprogW<BIASPROGrs> {
+    pub fn adcbiasprog(&mut self) -> AdcbiasprogW<'_, BIASPROGrs> {
         AdcbiasprogW::new(self, 0)
     }
     ///Bit 12 - Clear VREFOF Flag
     #[inline(always)]
-    pub fn vfaultclr(&mut self) -> VfaultclrW<BIASPROGrs> {
+    pub fn vfaultclr(&mut self) -> VfaultclrW<'_, BIASPROGrs> {
         VfaultclrW::new(self, 12)
     }
     ///Bit 16 - Accuracy Setting for the System Bias During ADC Operation
     #[inline(always)]
-    pub fn gpbiasacc(&mut self) -> GpbiasaccW<BIASPROGrs> {
+    pub fn gpbiasacc(&mut self) -> GpbiasaccW<'_, BIASPROGrs> {
         GpbiasaccW::new(self, 16)
     }
 }
@@ -180,10 +180,6 @@ impl crate::Readable for BIASPROGrs {}
 ///`write(|w| ..)` method takes [`biasprog::W`](W) writer structure
 impl crate::Writable for BIASPROGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets BIASPROG to value 0
-impl crate::Resettable for BIASPROGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BIASPROGrs {}

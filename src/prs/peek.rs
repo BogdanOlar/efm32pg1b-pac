@@ -114,6 +114,4 @@ impl crate::RegisterSpec for PEEKrs {
 ///`read()` method returns [`peek::R`](R) reader structure
 impl crate::Readable for PEEKrs {}
 ///`reset()` method sets PEEK to value 0
-impl crate::Resettable for PEEKrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PEEKrs {}

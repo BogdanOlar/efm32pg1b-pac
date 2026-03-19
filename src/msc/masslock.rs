@@ -82,7 +82,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Mass Erase Lock
     #[inline(always)]
-    pub fn lockkey(&mut self) -> LockkeyW<MASSLOCKrs> {
+    pub fn lockkey(&mut self) -> LockkeyW<'_, MASSLOCKrs> {
         LockkeyW::new(self, 0)
     }
 }
@@ -98,8 +98,6 @@ impl crate::Readable for MASSLOCKrs {}
 ///`write(|w| ..)` method takes [`masslock::W`](W) writer structure
 impl crate::Writable for MASSLOCKrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets MASSLOCK to value 0x01
 impl crate::Resettable for MASSLOCKrs {

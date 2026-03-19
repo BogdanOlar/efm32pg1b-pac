@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Drive strength setting for port pins not using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)
     #[inline(always)]
-    pub fn drive_strength(&mut self) -> DriveStrengthW<CTRLrs> {
+    pub fn drive_strength(&mut self) -> DriveStrengthW<'_, CTRLrs> {
         DriveStrengthW::new(self, 0)
     }
     ///Bits 4:6 - Slewrate limit for port pins not using alternate modes. Higher values represent faster slewrates
     #[inline(always)]
-    pub fn slew_rate(&mut self) -> SlewRateW<CTRLrs> {
+    pub fn slew_rate(&mut self) -> SlewRateW<'_, CTRLrs> {
         SlewRateW::new(self, 4)
     }
     ///Bit 12 - Data in Disable
     #[inline(always)]
-    pub fn din_dis(&mut self) -> DinDisW<CTRLrs> {
+    pub fn din_dis(&mut self) -> DinDisW<'_, CTRLrs> {
         DinDisW::new(self, 12)
     }
     ///Bit 16 - Drive strength setting for port pins using alternate modes. Value `0` is STRONG (10mA), value `1` is WEAK (1mA)
     #[inline(always)]
-    pub fn drive_strength_alt(&mut self) -> DriveStrengthAltW<CTRLrs> {
+    pub fn drive_strength_alt(&mut self) -> DriveStrengthAltW<'_, CTRLrs> {
         DriveStrengthAltW::new(self, 16)
     }
     ///Bits 20:22 - Slewrate limit for port pins using alternate modes. Higher values represent faster slewrates
     #[inline(always)]
-    pub fn slew_rate_alt(&mut self) -> SlewRateAltW<CTRLrs> {
+    pub fn slew_rate_alt(&mut self) -> SlewRateAltW<'_, CTRLrs> {
         SlewRateAltW::new(self, 20)
     }
     ///Bit 28 - Alternate Data in Disable
     #[inline(always)]
-    pub fn din_dis_alt(&mut self) -> DinDisAltW<CTRLrs> {
+    pub fn din_dis_alt(&mut self) -> DinDisAltW<'_, CTRLrs> {
         DinDisAltW::new(self, 28)
     }
 }
@@ -114,8 +114,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0x0050_0050
 impl crate::Resettable for CTRLrs {

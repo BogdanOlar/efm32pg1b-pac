@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Source Data Address
     #[inline(always)]
-    pub fn srcaddr(&mut self) -> SrcaddrW<CH3_SRCrs> {
+    pub fn srcaddr(&mut self) -> SrcaddrW<'_, CH3_SRCrs> {
         SrcaddrW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for CH3_SRCrs {}
 ///`write(|w| ..)` method takes [`ch3_src::W`](W) writer structure
 impl crate::Writable for CH3_SRCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CH3_SRC to value 0
-impl crate::Resettable for CH3_SRCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH3_SRCrs {}

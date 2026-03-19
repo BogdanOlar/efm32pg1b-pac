@@ -302,52 +302,52 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 4 - Receive Trigger Enable
     #[inline(always)]
-    pub fn rxten(&mut self) -> RxtenW<TRIGCTRLrs> {
+    pub fn rxten(&mut self) -> RxtenW<'_, TRIGCTRLrs> {
         RxtenW::new(self, 4)
     }
     ///Bit 5 - Transmit Trigger Enable
     #[inline(always)]
-    pub fn txten(&mut self) -> TxtenW<TRIGCTRLrs> {
+    pub fn txten(&mut self) -> TxtenW<'_, TRIGCTRLrs> {
         TxtenW::new(self, 5)
     }
     ///Bit 6 - AUTOTX Trigger Enable
     #[inline(always)]
-    pub fn autotxten(&mut self) -> AutotxtenW<TRIGCTRLrs> {
+    pub fn autotxten(&mut self) -> AutotxtenW<'_, TRIGCTRLrs> {
         AutotxtenW::new(self, 6)
     }
     ///Bit 7 - Enable Transmit Trigger After RX End of Frame Plus TCMP0VAL
     #[inline(always)]
-    pub fn txarx0en(&mut self) -> Txarx0enW<TRIGCTRLrs> {
+    pub fn txarx0en(&mut self) -> Txarx0enW<'_, TRIGCTRLrs> {
         Txarx0enW::new(self, 7)
     }
     ///Bit 8 - Enable Transmit Trigger After RX End of Frame Plus TCMP1VAL
     #[inline(always)]
-    pub fn txarx1en(&mut self) -> Txarx1enW<TRIGCTRLrs> {
+    pub fn txarx1en(&mut self) -> Txarx1enW<'_, TRIGCTRLrs> {
         Txarx1enW::new(self, 8)
     }
     ///Bit 9 - Enable Transmit Trigger After RX End of Frame Plus TCMP2VAL
     #[inline(always)]
-    pub fn txarx2en(&mut self) -> Txarx2enW<TRIGCTRLrs> {
+    pub fn txarx2en(&mut self) -> Txarx2enW<'_, TRIGCTRLrs> {
         Txarx2enW::new(self, 9)
     }
     ///Bit 10 - Enable Receive Trigger After TX End of Frame Plus TCMPVAL0 Baud-times
     #[inline(always)]
-    pub fn rxatx0en(&mut self) -> Rxatx0enW<TRIGCTRLrs> {
+    pub fn rxatx0en(&mut self) -> Rxatx0enW<'_, TRIGCTRLrs> {
         Rxatx0enW::new(self, 10)
     }
     ///Bit 11 - Enable Receive Trigger After TX End of Frame Plus TCMPVAL1 Baud-times
     #[inline(always)]
-    pub fn rxatx1en(&mut self) -> Rxatx1enW<TRIGCTRLrs> {
+    pub fn rxatx1en(&mut self) -> Rxatx1enW<'_, TRIGCTRLrs> {
         Rxatx1enW::new(self, 11)
     }
     ///Bit 12 - Enable Receive Trigger After TX End of Frame Plus TCMPVAL2 Baud-times
     #[inline(always)]
-    pub fn rxatx2en(&mut self) -> Rxatx2enW<TRIGCTRLrs> {
+    pub fn rxatx2en(&mut self) -> Rxatx2enW<'_, TRIGCTRLrs> {
         Rxatx2enW::new(self, 12)
     }
     ///Bits 16:19 - Trigger PRS Channel Select
     #[inline(always)]
-    pub fn tsel(&mut self) -> TselW<TRIGCTRLrs> {
+    pub fn tsel(&mut self) -> TselW<'_, TRIGCTRLrs> {
         TselW::new(self, 16)
     }
 }
@@ -363,10 +363,6 @@ impl crate::Readable for TRIGCTRLrs {}
 ///`write(|w| ..)` method takes [`trigctrl::W`](W) writer structure
 impl crate::Writable for TRIGCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TRIGCTRL to value 0
-impl crate::Resettable for TRIGCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TRIGCTRLrs {}

@@ -445,42 +445,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Signal Select
     #[inline(always)]
-    pub fn sigsel(&mut self) -> SigselW<CH10_CTRLrs> {
+    pub fn sigsel(&mut self) -> SigselW<'_, CH10_CTRLrs> {
         SigselW::new(self, 0)
     }
     ///Bits 8:14 - Source Select
     #[inline(always)]
-    pub fn sourcesel(&mut self) -> SourceselW<CH10_CTRLrs> {
+    pub fn sourcesel(&mut self) -> SourceselW<'_, CH10_CTRLrs> {
         SourceselW::new(self, 8)
     }
     ///Bits 20:21 - Edge Detect Select
     #[inline(always)]
-    pub fn edsel(&mut self) -> EdselW<CH10_CTRLrs> {
+    pub fn edsel(&mut self) -> EdselW<'_, CH10_CTRLrs> {
         EdselW::new(self, 20)
     }
     ///Bit 25 - Stretch Channel Output
     #[inline(always)]
-    pub fn stretch(&mut self) -> StretchW<CH10_CTRLrs> {
+    pub fn stretch(&mut self) -> StretchW<'_, CH10_CTRLrs> {
         StretchW::new(self, 25)
     }
     ///Bit 26 - Invert Channel
     #[inline(always)]
-    pub fn inv(&mut self) -> InvW<CH10_CTRLrs> {
+    pub fn inv(&mut self) -> InvW<'_, CH10_CTRLrs> {
         InvW::new(self, 26)
     }
     ///Bit 27 - Or Previous
     #[inline(always)]
-    pub fn orprev(&mut self) -> OrprevW<CH10_CTRLrs> {
+    pub fn orprev(&mut self) -> OrprevW<'_, CH10_CTRLrs> {
         OrprevW::new(self, 27)
     }
     ///Bit 28 - And Next
     #[inline(always)]
-    pub fn andnext(&mut self) -> AndnextW<CH10_CTRLrs> {
+    pub fn andnext(&mut self) -> AndnextW<'_, CH10_CTRLrs> {
         AndnextW::new(self, 28)
     }
     ///Bit 30 - Asynchronous Reflex
     #[inline(always)]
-    pub fn asyncrefl(&mut self) -> AsyncreflW<CH10_CTRLrs> {
+    pub fn asyncrefl(&mut self) -> AsyncreflW<'_, CH10_CTRLrs> {
         AsyncreflW::new(self, 30)
     }
 }
@@ -496,10 +496,6 @@ impl crate::Readable for CH10_CTRLrs {}
 ///`write(|w| ..)` method takes [`ch10_ctrl::W`](W) writer structure
 impl crate::Writable for CH10_CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CH10_CTRL to value 0
-impl crate::Resettable for CH10_CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH10_CTRLrs {}

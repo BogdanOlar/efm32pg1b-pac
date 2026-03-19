@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - INSTRDONE Interrupt Enable
     #[inline(always)]
-    pub fn instrdone(&mut self) -> InstrdoneW<IENrs> {
+    pub fn instrdone(&mut self) -> InstrdoneW<'_, IENrs> {
         InstrdoneW::new(self, 0)
     }
     ///Bit 1 - SEQDONE Interrupt Enable
     #[inline(always)]
-    pub fn seqdone(&mut self) -> SeqdoneW<IENrs> {
+    pub fn seqdone(&mut self) -> SeqdoneW<'_, IENrs> {
         SeqdoneW::new(self, 1)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

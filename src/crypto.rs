@@ -293,8 +293,7 @@ impl RegisterBlock {
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ctrl`]
-///module
+///For information about available fields see [`mod@ctrl`] module
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CTRLrs>;
 ///Control Register
@@ -303,8 +302,7 @@ pub mod ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`wac::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wac::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@wac`]
-///module
+///For information about available fields see [`mod@wac`] module
 #[doc(alias = "WAC")]
 pub type Wac = crate::Reg<wac::WACrs>;
 ///Wide Arithmetic Configuration
@@ -313,8 +311,7 @@ pub mod wac;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cmd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cmd`]
-///module
+///For information about available fields see [`mod@cmd`] module
 #[doc(alias = "CMD")]
 pub type Cmd = crate::Reg<cmd::CMDrs>;
 ///Command Register
@@ -323,8 +320,7 @@ pub mod cmd;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@status`]
-///module
+///For information about available fields see [`mod@status`] module
 #[doc(alias = "STATUS")]
 pub type Status = crate::Reg<status::STATUSrs>;
 ///Status Register
@@ -333,8 +329,7 @@ pub mod status;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`dstatus::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@dstatus`]
-///module
+///For information about available fields see [`mod@dstatus`] module
 #[doc(alias = "DSTATUS")]
 pub type Dstatus = crate::Reg<dstatus::DSTATUSrs>;
 ///Data Status Register
@@ -343,8 +338,7 @@ pub mod dstatus;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cstatus::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cstatus`]
-///module
+///For information about available fields see [`mod@cstatus`] module
 #[doc(alias = "CSTATUS")]
 pub type Cstatus = crate::Reg<cstatus::CSTATUSrs>;
 ///Control Status Register
@@ -355,8 +349,7 @@ pub mod cstatus;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@key`]
-///module
+///For information about available fields see [`mod@key`] module
 #[doc(alias = "KEY")]
 pub type Key = crate::Reg<key::KEYrs>;
 ///KEY Register Access
@@ -367,8 +360,7 @@ pub mod key;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@keybuf`]
-///module
+///For information about available fields see [`mod@keybuf`] module
 #[doc(alias = "KEYBUF")]
 pub type Keybuf = crate::Reg<keybuf::KEYBUFrs>;
 ///KEY Buffer Register Access
@@ -377,8 +369,7 @@ pub mod keybuf;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`seqctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seqctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@seqctrl`]
-///module
+///For information about available fields see [`mod@seqctrl`] module
 #[doc(alias = "SEQCTRL")]
 pub type Seqctrl = crate::Reg<seqctrl::SEQCTRLrs>;
 ///Sequence Control
@@ -387,8 +378,7 @@ pub mod seqctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`seqctrlb::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seqctrlb::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@seqctrlb`]
-///module
+///For information about available fields see [`mod@seqctrlb`] module
 #[doc(alias = "SEQCTRLB")]
 pub type Seqctrlb = crate::Reg<seqctrlb::SEQCTRLBrs>;
 ///Sequence Control B
@@ -397,8 +387,7 @@ pub mod seqctrlb;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`if_::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@if_`]
-///module
+///For information about available fields see [`mod@if_`] module
 #[doc(alias = "IF")]
 pub type If = crate::Reg<if_::IFrs>;
 ///AES Interrupt Flags
@@ -407,8 +396,7 @@ pub mod if_;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifs`]
-///module
+///For information about available fields see [`mod@ifs`] module
 #[doc(alias = "IFS")]
 pub type Ifs = crate::Reg<ifs::IFSrs>;
 ///Interrupt Flag Set Register
@@ -417,8 +405,7 @@ pub mod ifs;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifc`]
-///module
+///For information about available fields see [`mod@ifc`] module
 #[doc(alias = "IFC")]
 pub type Ifc = crate::Reg<ifc::IFCrs>;
 ///Interrupt Flag Clear Register
@@ -427,8 +414,7 @@ pub mod ifc;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ien::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ien`]
-///module
+///For information about available fields see [`mod@ien`] module
 #[doc(alias = "IEN")]
 pub type Ien = crate::Reg<ien::IENrs>;
 ///Interrupt Enable Register
@@ -437,8 +423,7 @@ pub mod ien;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`seq0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seq0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@seq0`]
-///module
+///For information about available fields see [`mod@seq0`] module
 #[doc(alias = "SEQ0")]
 pub type Seq0 = crate::Reg<seq0::SEQ0rs>;
 ///Sequence Register 0
@@ -447,8 +432,7 @@ pub mod seq0;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`seq1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seq1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@seq1`]
-///module
+///For information about available fields see [`mod@seq1`] module
 #[doc(alias = "SEQ1")]
 pub type Seq1 = crate::Reg<seq1::SEQ1rs>;
 ///Sequence Register 1
@@ -457,8 +441,7 @@ pub mod seq1;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`seq2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seq2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@seq2`]
-///module
+///For information about available fields see [`mod@seq2`] module
 #[doc(alias = "SEQ2")]
 pub type Seq2 = crate::Reg<seq2::SEQ2rs>;
 ///Sequence Register 2
@@ -467,8 +450,7 @@ pub mod seq2;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`seq3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seq3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@seq3`]
-///module
+///For information about available fields see [`mod@seq3`] module
 #[doc(alias = "SEQ3")]
 pub type Seq3 = crate::Reg<seq3::SEQ3rs>;
 ///Sequence Register 3
@@ -477,8 +459,7 @@ pub mod seq3;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`seq4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`seq4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@seq4`]
-///module
+///For information about available fields see [`mod@seq4`] module
 #[doc(alias = "SEQ4")]
 pub type Seq4 = crate::Reg<seq4::SEQ4rs>;
 ///Sequence Register 4
@@ -489,8 +470,7 @@ pub mod seq4;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@data0`]
-///module
+///For information about available fields see [`mod@data0`] module
 #[doc(alias = "DATA0")]
 pub type Data0 = crate::Reg<data0::DATA0rs>;
 ///DATA0 Register Access
@@ -501,8 +481,7 @@ pub mod data0;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@data1`]
-///module
+///For information about available fields see [`mod@data1`] module
 #[doc(alias = "DATA1")]
 pub type Data1 = crate::Reg<data1::DATA1rs>;
 ///DATA1 Register Access
@@ -513,8 +492,7 @@ pub mod data1;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@data2`]
-///module
+///For information about available fields see [`mod@data2`] module
 #[doc(alias = "DATA2")]
 pub type Data2 = crate::Reg<data2::DATA2rs>;
 ///DATA2 Register Access
@@ -525,8 +503,7 @@ pub mod data2;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@data3`]
-///module
+///For information about available fields see [`mod@data3`] module
 #[doc(alias = "DATA3")]
 pub type Data3 = crate::Reg<data3::DATA3rs>;
 ///DATA3 Register Access
@@ -537,8 +514,7 @@ pub mod data3;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@data0xor`]
-///module
+///For information about available fields see [`mod@data0xor`] module
 #[doc(alias = "DATA0XOR")]
 pub type Data0xor = crate::Reg<data0xor::DATA0XORrs>;
 ///DATA0XOR Register Access
@@ -549,8 +525,7 @@ pub mod data0xor;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@data0byte`]
-///module
+///For information about available fields see [`mod@data0byte`] module
 #[doc(alias = "DATA0BYTE")]
 pub type Data0byte = crate::Reg<data0byte::DATA0BYTErs>;
 ///DATA0 Register Byte Access
@@ -561,8 +536,7 @@ pub mod data0byte;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@data1byte`]
-///module
+///For information about available fields see [`mod@data1byte`] module
 #[doc(alias = "DATA1BYTE")]
 pub type Data1byte = crate::Reg<data1byte::DATA1BYTErs>;
 ///DATA1 Register Byte Access
@@ -573,8 +547,7 @@ pub mod data1byte;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@data0xorbyte`]
-///module
+///For information about available fields see [`mod@data0xorbyte`] module
 #[doc(alias = "DATA0XORBYTE")]
 pub type Data0xorbyte = crate::Reg<data0xorbyte::DATA0XORBYTErs>;
 ///DATA0 Register Byte XOR Access
@@ -583,8 +556,7 @@ pub mod data0xorbyte;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`data0byte12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`data0byte12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@data0byte12`]
-///module
+///For information about available fields see [`mod@data0byte12`] module
 #[doc(alias = "DATA0BYTE12")]
 pub type Data0byte12 = crate::Reg<data0byte12::DATA0BYTE12rs>;
 ///DATA0 Register Byte 12 Access
@@ -593,8 +565,7 @@ pub mod data0byte12;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`data0byte13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`data0byte13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@data0byte13`]
-///module
+///For information about available fields see [`mod@data0byte13`] module
 #[doc(alias = "DATA0BYTE13")]
 pub type Data0byte13 = crate::Reg<data0byte13::DATA0BYTE13rs>;
 ///DATA0 Register Byte 13 Access
@@ -603,8 +574,7 @@ pub mod data0byte13;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`data0byte14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`data0byte14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@data0byte14`]
-///module
+///For information about available fields see [`mod@data0byte14`] module
 #[doc(alias = "DATA0BYTE14")]
 pub type Data0byte14 = crate::Reg<data0byte14::DATA0BYTE14rs>;
 ///DATA0 Register Byte 14 Access
@@ -613,8 +583,7 @@ pub mod data0byte14;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`data0byte15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`data0byte15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@data0byte15`]
-///module
+///For information about available fields see [`mod@data0byte15`] module
 #[doc(alias = "DATA0BYTE15")]
 pub type Data0byte15 = crate::Reg<data0byte15::DATA0BYTE15rs>;
 ///DATA0 Register Byte 15 Access
@@ -625,8 +594,7 @@ pub mod data0byte15;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@ddata0`]
-///module
+///For information about available fields see [`mod@ddata0`] module
 #[doc(alias = "DDATA0")]
 pub type Ddata0 = crate::Reg<ddata0::DDATA0rs>;
 ///DDATA0 Register Access
@@ -637,8 +605,7 @@ pub mod ddata0;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@ddata1`]
-///module
+///For information about available fields see [`mod@ddata1`] module
 #[doc(alias = "DDATA1")]
 pub type Ddata1 = crate::Reg<ddata1::DDATA1rs>;
 ///DDATA1 Register Access
@@ -649,8 +616,7 @@ pub mod ddata1;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@ddata2`]
-///module
+///For information about available fields see [`mod@ddata2`] module
 #[doc(alias = "DDATA2")]
 pub type Ddata2 = crate::Reg<ddata2::DDATA2rs>;
 ///DDATA2 Register Access
@@ -661,8 +627,7 @@ pub mod ddata2;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@ddata3`]
-///module
+///For information about available fields see [`mod@ddata3`] module
 #[doc(alias = "DDATA3")]
 pub type Ddata3 = crate::Reg<ddata3::DDATA3rs>;
 ///DDATA3 Register Access
@@ -673,8 +638,7 @@ pub mod ddata3;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@ddata4`]
-///module
+///For information about available fields see [`mod@ddata4`] module
 #[doc(alias = "DDATA4")]
 pub type Ddata4 = crate::Reg<ddata4::DDATA4rs>;
 ///DDATA4 Register Access
@@ -685,8 +649,7 @@ pub mod ddata4;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@ddata0big`]
-///module
+///For information about available fields see [`mod@ddata0big`] module
 #[doc(alias = "DDATA0BIG")]
 pub type Ddata0big = crate::Reg<ddata0big::DDATA0BIGrs>;
 ///DDATA0 Register Big Endian Access
@@ -697,8 +660,7 @@ pub mod ddata0big;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@ddata0byte`]
-///module
+///For information about available fields see [`mod@ddata0byte`] module
 #[doc(alias = "DDATA0BYTE")]
 pub type Ddata0byte = crate::Reg<ddata0byte::DDATA0BYTErs>;
 ///DDATA0 Register Byte Access
@@ -709,8 +671,7 @@ pub mod ddata0byte;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@ddata1byte`]
-///module
+///For information about available fields see [`mod@ddata1byte`] module
 #[doc(alias = "DDATA1BYTE")]
 pub type Ddata1byte = crate::Reg<ddata1byte::DDATA1BYTErs>;
 ///DDATA1 Register Byte Access
@@ -719,8 +680,7 @@ pub mod ddata1byte;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ddata0byte32::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ddata0byte32::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ddata0byte32`]
-///module
+///For information about available fields see [`mod@ddata0byte32`] module
 #[doc(alias = "DDATA0BYTE32")]
 pub type Ddata0byte32 = crate::Reg<ddata0byte32::DDATA0BYTE32rs>;
 ///DDATA0 Register Byte 32 Access
@@ -731,8 +691,7 @@ pub mod ddata0byte32;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@qdata0`]
-///module
+///For information about available fields see [`mod@qdata0`] module
 #[doc(alias = "QDATA0")]
 pub type Qdata0 = crate::Reg<qdata0::QDATA0rs>;
 ///QDATA0 Register Access
@@ -743,8 +702,7 @@ pub mod qdata0;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@qdata1`]
-///module
+///For information about available fields see [`mod@qdata1`] module
 #[doc(alias = "QDATA1")]
 pub type Qdata1 = crate::Reg<qdata1::QDATA1rs>;
 ///QDATA1 Register Access
@@ -755,8 +713,7 @@ pub mod qdata1;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@qdata1big`]
-///module
+///For information about available fields see [`mod@qdata1big`] module
 #[doc(alias = "QDATA1BIG")]
 pub type Qdata1big = crate::Reg<qdata1big::QDATA1BIGrs>;
 ///QDATA1 Register Big Endian Access
@@ -767,8 +724,7 @@ pub mod qdata1big;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@qdata0byte`]
-///module
+///For information about available fields see [`mod@qdata0byte`] module
 #[doc(alias = "QDATA0BYTE")]
 pub type Qdata0byte = crate::Reg<qdata0byte::QDATA0BYTErs>;
 ///QDATA0 Register Byte Access
@@ -779,8 +735,7 @@ pub mod qdata0byte;
 ///
 ///<div class="warning">One or more dependent resources other than the current register are immediately affected by a read operation.</div>
 ///
-///For information about available fields see [`mod@qdata1byte`]
-///module
+///For information about available fields see [`mod@qdata1byte`] module
 #[doc(alias = "QDATA1BYTE")]
 pub type Qdata1byte = crate::Reg<qdata1byte::QDATA1BYTErs>;
 ///QDATA1 Register Byte Access

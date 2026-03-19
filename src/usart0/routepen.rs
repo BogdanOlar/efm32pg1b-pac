@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - RX Pin Enable
     #[inline(always)]
-    pub fn rxpen(&mut self) -> RxpenW<ROUTEPENrs> {
+    pub fn rxpen(&mut self) -> RxpenW<'_, ROUTEPENrs> {
         RxpenW::new(self, 0)
     }
     ///Bit 1 - TX Pin Enable
     #[inline(always)]
-    pub fn txpen(&mut self) -> TxpenW<ROUTEPENrs> {
+    pub fn txpen(&mut self) -> TxpenW<'_, ROUTEPENrs> {
         TxpenW::new(self, 1)
     }
     ///Bit 2 - CS Pin Enable
     #[inline(always)]
-    pub fn cspen(&mut self) -> CspenW<ROUTEPENrs> {
+    pub fn cspen(&mut self) -> CspenW<'_, ROUTEPENrs> {
         CspenW::new(self, 2)
     }
     ///Bit 3 - CLK Pin Enable
     #[inline(always)]
-    pub fn clkpen(&mut self) -> ClkpenW<ROUTEPENrs> {
+    pub fn clkpen(&mut self) -> ClkpenW<'_, ROUTEPENrs> {
         ClkpenW::new(self, 3)
     }
     ///Bit 4 - CTS Pin Enable
     #[inline(always)]
-    pub fn ctspen(&mut self) -> CtspenW<ROUTEPENrs> {
+    pub fn ctspen(&mut self) -> CtspenW<'_, ROUTEPENrs> {
         CtspenW::new(self, 4)
     }
     ///Bit 5 - RTS Pin Enable
     #[inline(always)]
-    pub fn rtspen(&mut self) -> RtspenW<ROUTEPENrs> {
+    pub fn rtspen(&mut self) -> RtspenW<'_, ROUTEPENrs> {
         RtspenW::new(self, 5)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for ROUTEPENrs {}
 ///`write(|w| ..)` method takes [`routepen::W`](W) writer structure
 impl crate::Writable for ROUTEPENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ROUTEPEN to value 0
-impl crate::Resettable for ROUTEPENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ROUTEPENrs {}

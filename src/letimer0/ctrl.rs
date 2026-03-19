@@ -348,42 +348,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - Repeat Mode
     #[inline(always)]
-    pub fn repmode(&mut self) -> RepmodeW<CTRLrs> {
+    pub fn repmode(&mut self) -> RepmodeW<'_, CTRLrs> {
         RepmodeW::new(self, 0)
     }
     ///Bits 2:3 - Underflow Output Action 0
     #[inline(always)]
-    pub fn ufoa0(&mut self) -> Ufoa0W<CTRLrs> {
+    pub fn ufoa0(&mut self) -> Ufoa0W<'_, CTRLrs> {
         Ufoa0W::new(self, 2)
     }
     ///Bits 4:5 - Underflow Output Action 1
     #[inline(always)]
-    pub fn ufoa1(&mut self) -> Ufoa1W<CTRLrs> {
+    pub fn ufoa1(&mut self) -> Ufoa1W<'_, CTRLrs> {
         Ufoa1W::new(self, 4)
     }
     ///Bit 6 - Output 0 Polarity
     #[inline(always)]
-    pub fn opol0(&mut self) -> Opol0W<CTRLrs> {
+    pub fn opol0(&mut self) -> Opol0W<'_, CTRLrs> {
         Opol0W::new(self, 6)
     }
     ///Bit 7 - Output 1 Polarity
     #[inline(always)]
-    pub fn opol1(&mut self) -> Opol1W<CTRLrs> {
+    pub fn opol1(&mut self) -> Opol1W<'_, CTRLrs> {
         Opol1W::new(self, 7)
     }
     ///Bit 8 - Buffered Top
     #[inline(always)]
-    pub fn buftop(&mut self) -> BuftopW<CTRLrs> {
+    pub fn buftop(&mut self) -> BuftopW<'_, CTRLrs> {
         BuftopW::new(self, 8)
     }
     ///Bit 9 - Compare Value 0 is Top Value
     #[inline(always)]
-    pub fn comp0top(&mut self) -> Comp0topW<CTRLrs> {
+    pub fn comp0top(&mut self) -> Comp0topW<'_, CTRLrs> {
         Comp0topW::new(self, 9)
     }
     ///Bit 12 - Debug Mode Run Enable
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DebugrunW<CTRLrs> {
+    pub fn debugrun(&mut self) -> DebugrunW<'_, CTRLrs> {
         DebugrunW::new(self, 12)
     }
 }
@@ -399,10 +399,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

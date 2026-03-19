@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<VMONAVDDCTRLrs> {
+    pub fn en(&mut self) -> EnW<'_, VMONAVDDCTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 2 - Rise Wakeup
     #[inline(always)]
-    pub fn risewu(&mut self) -> RisewuW<VMONAVDDCTRLrs> {
+    pub fn risewu(&mut self) -> RisewuW<'_, VMONAVDDCTRLrs> {
         RisewuW::new(self, 2)
     }
     ///Bit 3 - Fall Wakeup
     #[inline(always)]
-    pub fn fallwu(&mut self) -> FallwuW<VMONAVDDCTRLrs> {
+    pub fn fallwu(&mut self) -> FallwuW<'_, VMONAVDDCTRLrs> {
         FallwuW::new(self, 3)
     }
     ///Bits 8:11 - Falling Threshold Fine Adjust
     #[inline(always)]
-    pub fn fallthresfine(&mut self) -> FallthresfineW<VMONAVDDCTRLrs> {
+    pub fn fallthresfine(&mut self) -> FallthresfineW<'_, VMONAVDDCTRLrs> {
         FallthresfineW::new(self, 8)
     }
     ///Bits 12:15 - Falling Threshold Coarse Adjust
     #[inline(always)]
-    pub fn fallthrescoarse(&mut self) -> FallthrescoarseW<VMONAVDDCTRLrs> {
+    pub fn fallthrescoarse(&mut self) -> FallthrescoarseW<'_, VMONAVDDCTRLrs> {
         FallthrescoarseW::new(self, 12)
     }
     ///Bits 16:19 - Rising Threshold Fine Adjust
     #[inline(always)]
-    pub fn risethresfine(&mut self) -> RisethresfineW<VMONAVDDCTRLrs> {
+    pub fn risethresfine(&mut self) -> RisethresfineW<'_, VMONAVDDCTRLrs> {
         RisethresfineW::new(self, 16)
     }
     ///Bits 20:23 - Rising Threshold Coarse Adjust
     #[inline(always)]
-    pub fn risethrescoarse(&mut self) -> RisethrescoarseW<VMONAVDDCTRLrs> {
+    pub fn risethrescoarse(&mut self) -> RisethrescoarseW<'_, VMONAVDDCTRLrs> {
         RisethrescoarseW::new(self, 20)
     }
 }
@@ -129,10 +129,6 @@ impl crate::Readable for VMONAVDDCTRLrs {}
 ///`write(|w| ..)` method takes [`vmonavddctrl::W`](W) writer structure
 impl crate::Writable for VMONAVDDCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets VMONAVDDCTRL to value 0
-impl crate::Resettable for VMONAVDDCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for VMONAVDDCTRLrs {}

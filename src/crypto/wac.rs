@@ -425,22 +425,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Modular Operation Modulus
     #[inline(always)]
-    pub fn modulus(&mut self) -> ModulusW<WACrs> {
+    pub fn modulus(&mut self) -> ModulusW<'_, WACrs> {
         ModulusW::new(self, 0)
     }
     ///Bit 4 - Modular Operation Field Type
     #[inline(always)]
-    pub fn modop(&mut self) -> ModopW<WACrs> {
+    pub fn modop(&mut self) -> ModopW<'_, WACrs> {
         ModopW::new(self, 4)
     }
     ///Bits 8:9 - Multiply Width
     #[inline(always)]
-    pub fn mulwidth(&mut self) -> MulwidthW<WACrs> {
+    pub fn mulwidth(&mut self) -> MulwidthW<'_, WACrs> {
         MulwidthW::new(self, 8)
     }
     ///Bits 10:11 - Result Width
     #[inline(always)]
-    pub fn resultwidth(&mut self) -> ResultwidthW<WACrs> {
+    pub fn resultwidth(&mut self) -> ResultwidthW<'_, WACrs> {
         ResultwidthW::new(self, 10)
     }
 }
@@ -456,10 +456,6 @@ impl crate::Readable for WACrs {}
 ///`write(|w| ..)` method takes [`wac::W`](W) writer structure
 impl crate::Writable for WACrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets WAC to value 0
-impl crate::Resettable for WACrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for WACrs {}

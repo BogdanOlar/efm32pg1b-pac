@@ -20,32 +20,32 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear UF Interrupt Flag
     #[inline(always)]
-    pub fn uf(&mut self) -> UfW<IFCrs> {
+    pub fn uf(&mut self) -> UfW<'_, IFCrs> {
         UfW::new(self, 0)
     }
     ///Bit 1 - Clear OF Interrupt Flag
     #[inline(always)]
-    pub fn of(&mut self) -> OfW<IFCrs> {
+    pub fn of(&mut self) -> OfW<'_, IFCrs> {
         OfW::new(self, 1)
     }
     ///Bit 2 - Clear DIRCNG Interrupt Flag
     #[inline(always)]
-    pub fn dircng(&mut self) -> DircngW<IFCrs> {
+    pub fn dircng(&mut self) -> DircngW<'_, IFCrs> {
         DircngW::new(self, 2)
     }
     ///Bit 3 - Clear AUXOF Interrupt Flag
     #[inline(always)]
-    pub fn auxof(&mut self) -> AuxofW<IFCrs> {
+    pub fn auxof(&mut self) -> AuxofW<'_, IFCrs> {
         AuxofW::new(self, 3)
     }
     ///Bit 4 - Clear TCC Interrupt Flag
     #[inline(always)]
-    pub fn tcc(&mut self) -> TccW<IFCrs> {
+    pub fn tcc(&mut self) -> TccW<'_, IFCrs> {
         TccW::new(self, 4)
     }
     ///Bit 5 - Clear OQSTERR Interrupt Flag
     #[inline(always)]
-    pub fn oqsterr(&mut self) -> OqsterrW<IFCrs> {
+    pub fn oqsterr(&mut self) -> OqsterrW<'_, IFCrs> {
         OqsterrW::new(self, 5)
     }
 }
@@ -59,10 +59,6 @@ impl crate::RegisterSpec for IFCrs {
 ///`write(|w| ..)` method takes [`ifc::W`](W) writer structure
 impl crate::Writable for IFCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFC to value 0
-impl crate::Resettable for IFCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFCrs {}

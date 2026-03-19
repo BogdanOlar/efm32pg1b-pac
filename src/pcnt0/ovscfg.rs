@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN
     #[inline(always)]
-    pub fn filtlen(&mut self) -> FiltlenW<OVSCFGrs> {
+    pub fn filtlen(&mut self) -> FiltlenW<'_, OVSCFGrs> {
         FiltlenW::new(self, 0)
     }
     ///Bit 12 - Flutter Remove
     #[inline(always)]
-    pub fn flutterrm(&mut self) -> FlutterrmW<OVSCFGrs> {
+    pub fn flutterrm(&mut self) -> FlutterrmW<'_, OVSCFGrs> {
         FlutterrmW::new(self, 12)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for OVSCFGrs {}
 ///`write(|w| ..)` method takes [`ovscfg::W`](W) writer structure
 impl crate::Writable for OVSCFGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets OVSCFG to value 0
-impl crate::Resettable for OVSCFGrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for OVSCFGrs {}

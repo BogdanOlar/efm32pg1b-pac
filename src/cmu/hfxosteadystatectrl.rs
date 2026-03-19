@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:6 - Sets the Steady State Oscillator Core Bias Current.
     #[inline(always)]
-    pub fn ibtrimxocore(&mut self) -> IbtrimxocoreW<HFXOSTEADYSTATECTRLrs> {
+    pub fn ibtrimxocore(&mut self) -> IbtrimxocoreW<'_, HFXOSTEADYSTATECTRLrs> {
         IbtrimxocoreW::new(self, 0)
     }
     ///Bits 7:10 - Sets the Steady State Regulator Output Current Level (shunt Regulator)
     #[inline(always)]
-    pub fn regish(&mut self) -> RegishW<HFXOSTEADYSTATECTRLrs> {
+    pub fn regish(&mut self) -> RegishW<'_, HFXOSTEADYSTATECTRLrs> {
         RegishW::new(self, 7)
     }
     ///Bits 11:19 - Sets Oscillator Tuning Capacitance
     #[inline(always)]
-    pub fn ctune(&mut self) -> CtuneW<HFXOSTEADYSTATECTRLrs> {
+    pub fn ctune(&mut self) -> CtuneW<'_, HFXOSTEADYSTATECTRLrs> {
         CtuneW::new(self, 11)
     }
     ///Bits 24:25 - Controls Regulator Minimum Shunt Current Detection Relative to Nominal
     #[inline(always)]
-    pub fn regselilow(&mut self) -> RegselilowW<HFXOSTEADYSTATECTRLrs> {
+    pub fn regselilow(&mut self) -> RegselilowW<'_, HFXOSTEADYSTATECTRLrs> {
         RegselilowW::new(self, 24)
     }
     ///Bit 26 - Enables Oscillator Peak Detectors
     #[inline(always)]
-    pub fn peakdeten(&mut self) -> PeakdetenW<HFXOSTEADYSTATECTRLrs> {
+    pub fn peakdeten(&mut self) -> PeakdetenW<'_, HFXOSTEADYSTATECTRLrs> {
         PeakdetenW::new(self, 26)
     }
     ///Bits 28:31 - Set Regulator Output Current Level (shunt Regulator). Ish = 120uA + REGISHUPPER X 120uA
     #[inline(always)]
-    pub fn regishupper(&mut self) -> RegishupperW<HFXOSTEADYSTATECTRLrs> {
+    pub fn regishupper(&mut self) -> RegishupperW<'_, HFXOSTEADYSTATECTRLrs> {
         RegishupperW::new(self, 28)
     }
 }
@@ -114,8 +114,6 @@ impl crate::Readable for HFXOSTEADYSTATECTRLrs {}
 ///`write(|w| ..)` method takes [`hfxosteadystatectrl::W`](W) writer structure
 impl crate::Writable for HFXOSTEADYSTATECTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HFXOSTEADYSTATECTRL to value 0xa30a_ad09
 impl crate::Resettable for HFXOSTEADYSTATECTRLrs {

@@ -767,27 +767,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Wait Duration in HFXO Startup Enable Wait State
     #[inline(always)]
-    pub fn startuptimeout(&mut self) -> StartuptimeoutW<HFXOTIMEOUTCTRLrs> {
+    pub fn startuptimeout(&mut self) -> StartuptimeoutW<'_, HFXOTIMEOUTCTRLrs> {
         StartuptimeoutW::new(self, 0)
     }
     ///Bits 4:7 - Wait Duration in HFXO Startup Steady Wait State
     #[inline(always)]
-    pub fn steadytimeout(&mut self) -> SteadytimeoutW<HFXOTIMEOUTCTRLrs> {
+    pub fn steadytimeout(&mut self) -> SteadytimeoutW<'_, HFXOTIMEOUTCTRLrs> {
         SteadytimeoutW::new(self, 4)
     }
     ///Bits 8:11 - Wait Duration in HFXO Warm Startup Steady Wait State
     #[inline(always)]
-    pub fn reserved2(&mut self) -> Reserved2W<HFXOTIMEOUTCTRLrs> {
+    pub fn reserved2(&mut self) -> Reserved2W<'_, HFXOTIMEOUTCTRLrs> {
         Reserved2W::new(self, 8)
     }
     ///Bits 12:15 - Wait Duration in HFXO Peak Detection Wait State
     #[inline(always)]
-    pub fn peakdettimeout(&mut self) -> PeakdettimeoutW<HFXOTIMEOUTCTRLrs> {
+    pub fn peakdettimeout(&mut self) -> PeakdettimeoutW<'_, HFXOTIMEOUTCTRLrs> {
         PeakdettimeoutW::new(self, 12)
     }
     ///Bits 16:19 - Wait Duration in HFXO Shunt Current Optimization Wait State
     #[inline(always)]
-    pub fn shuntopttimeout(&mut self) -> ShuntopttimeoutW<HFXOTIMEOUTCTRLrs> {
+    pub fn shuntopttimeout(&mut self) -> ShuntopttimeoutW<'_, HFXOTIMEOUTCTRLrs> {
         ShuntopttimeoutW::new(self, 16)
     }
 }
@@ -803,8 +803,6 @@ impl crate::Readable for HFXOTIMEOUTCTRLrs {}
 ///`write(|w| ..)` method takes [`hfxotimeoutctrl::W`](W) writer structure
 impl crate::Writable for HFXOTIMEOUTCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HFXOTIMEOUTCTRL to value 0x0002_6667
 impl crate::Resettable for HFXOTIMEOUTCTRLrs {

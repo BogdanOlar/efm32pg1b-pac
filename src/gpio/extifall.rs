@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Pin 0 Falling Edge
     #[inline(always)]
-    pub fn extifall0(&mut self) -> Extifall0W<EXTIFALLrs> {
+    pub fn extifall0(&mut self) -> Extifall0W<'_, EXTIFALLrs> {
         Extifall0W::new(self, 0)
     }
     ///Bit 1 - Pin 1 Falling Edge
     #[inline(always)]
-    pub fn extifall1(&mut self) -> Extifall1W<EXTIFALLrs> {
+    pub fn extifall1(&mut self) -> Extifall1W<'_, EXTIFALLrs> {
         Extifall1W::new(self, 1)
     }
     ///Bit 2 - Pin 2 Falling Edge
     #[inline(always)]
-    pub fn extifall2(&mut self) -> Extifall2W<EXTIFALLrs> {
+    pub fn extifall2(&mut self) -> Extifall2W<'_, EXTIFALLrs> {
         Extifall2W::new(self, 2)
     }
     ///Bit 3 - Pin 3 Falling Edge
     #[inline(always)]
-    pub fn extifall3(&mut self) -> Extifall3W<EXTIFALLrs> {
+    pub fn extifall3(&mut self) -> Extifall3W<'_, EXTIFALLrs> {
         Extifall3W::new(self, 3)
     }
     ///Bit 4 - Pin 4 Falling Edge
     #[inline(always)]
-    pub fn extifall4(&mut self) -> Extifall4W<EXTIFALLrs> {
+    pub fn extifall4(&mut self) -> Extifall4W<'_, EXTIFALLrs> {
         Extifall4W::new(self, 4)
     }
     ///Bit 5 - Pin 5 Falling Edge
     #[inline(always)]
-    pub fn extifall5(&mut self) -> Extifall5W<EXTIFALLrs> {
+    pub fn extifall5(&mut self) -> Extifall5W<'_, EXTIFALLrs> {
         Extifall5W::new(self, 5)
     }
     ///Bit 6 - Pin 6 Falling Edge
     #[inline(always)]
-    pub fn extifall6(&mut self) -> Extifall6W<EXTIFALLrs> {
+    pub fn extifall6(&mut self) -> Extifall6W<'_, EXTIFALLrs> {
         Extifall6W::new(self, 6)
     }
     ///Bit 7 - Pin 7 Falling Edge
     #[inline(always)]
-    pub fn extifall7(&mut self) -> Extifall7W<EXTIFALLrs> {
+    pub fn extifall7(&mut self) -> Extifall7W<'_, EXTIFALLrs> {
         Extifall7W::new(self, 7)
     }
     ///Bit 8 - Pin 8 Falling Edge
     #[inline(always)]
-    pub fn extifall8(&mut self) -> Extifall8W<EXTIFALLrs> {
+    pub fn extifall8(&mut self) -> Extifall8W<'_, EXTIFALLrs> {
         Extifall8W::new(self, 8)
     }
     ///Bit 9 - Pin 9 Falling Edge
     #[inline(always)]
-    pub fn extifall9(&mut self) -> Extifall9W<EXTIFALLrs> {
+    pub fn extifall9(&mut self) -> Extifall9W<'_, EXTIFALLrs> {
         Extifall9W::new(self, 9)
     }
     ///Bit 10 - Pin 10 Falling Edge
     #[inline(always)]
-    pub fn extifall10(&mut self) -> Extifall10W<EXTIFALLrs> {
+    pub fn extifall10(&mut self) -> Extifall10W<'_, EXTIFALLrs> {
         Extifall10W::new(self, 10)
     }
     ///Bit 11 - Pin 11 Falling Edge
     #[inline(always)]
-    pub fn extifall11(&mut self) -> Extifall11W<EXTIFALLrs> {
+    pub fn extifall11(&mut self) -> Extifall11W<'_, EXTIFALLrs> {
         Extifall11W::new(self, 11)
     }
     ///Bit 12 - Pin 12 Falling Edge
     #[inline(always)]
-    pub fn extifall12(&mut self) -> Extifall12W<EXTIFALLrs> {
+    pub fn extifall12(&mut self) -> Extifall12W<'_, EXTIFALLrs> {
         Extifall12W::new(self, 12)
     }
     ///Bit 13 - Pin 13 Falling Edge
     #[inline(always)]
-    pub fn extifall13(&mut self) -> Extifall13W<EXTIFALLrs> {
+    pub fn extifall13(&mut self) -> Extifall13W<'_, EXTIFALLrs> {
         Extifall13W::new(self, 13)
     }
     ///Bit 14 - Pin 14 Falling Edge
     #[inline(always)]
-    pub fn extifall14(&mut self) -> Extifall14W<EXTIFALLrs> {
+    pub fn extifall14(&mut self) -> Extifall14W<'_, EXTIFALLrs> {
         Extifall14W::new(self, 14)
     }
     ///Bit 15 - Pin 15 Falling Edge
     #[inline(always)]
-    pub fn extifall15(&mut self) -> Extifall15W<EXTIFALLrs> {
+    pub fn extifall15(&mut self) -> Extifall15W<'_, EXTIFALLrs> {
         Extifall15W::new(self, 15)
     }
 }
@@ -264,10 +264,6 @@ impl crate::Readable for EXTIFALLrs {}
 ///`write(|w| ..)` method takes [`extifall::W`](W) writer structure
 impl crate::Writable for EXTIFALLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets EXTIFALL to value 0
-impl crate::Resettable for EXTIFALLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EXTIFALLrs {}

@@ -20,32 +20,32 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set ERASE Interrupt Flag
     #[inline(always)]
-    pub fn erase(&mut self) -> EraseW<IFSrs> {
+    pub fn erase(&mut self) -> EraseW<'_, IFSrs> {
         EraseW::new(self, 0)
     }
     ///Bit 1 - Set WRITE Interrupt Flag
     #[inline(always)]
-    pub fn write(&mut self) -> WriteW<IFSrs> {
+    pub fn write(&mut self) -> WriteW<'_, IFSrs> {
         WriteW::new(self, 1)
     }
     ///Bit 2 - Set CHOF Interrupt Flag
     #[inline(always)]
-    pub fn chof(&mut self) -> ChofW<IFSrs> {
+    pub fn chof(&mut self) -> ChofW<'_, IFSrs> {
         ChofW::new(self, 2)
     }
     ///Bit 3 - Set CMOF Interrupt Flag
     #[inline(always)]
-    pub fn cmof(&mut self) -> CmofW<IFSrs> {
+    pub fn cmof(&mut self) -> CmofW<'_, IFSrs> {
         CmofW::new(self, 3)
     }
     ///Bit 4 - Set PWRUPF Interrupt Flag
     #[inline(always)]
-    pub fn pwrupf(&mut self) -> PwrupfW<IFSrs> {
+    pub fn pwrupf(&mut self) -> PwrupfW<'_, IFSrs> {
         PwrupfW::new(self, 4)
     }
     ///Bit 5 - Set ICACHERR Interrupt Flag
     #[inline(always)]
-    pub fn icacherr(&mut self) -> IcacherrW<IFSrs> {
+    pub fn icacherr(&mut self) -> IcacherrW<'_, IFSrs> {
         IcacherrW::new(self, 5)
     }
 }
@@ -59,10 +59,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

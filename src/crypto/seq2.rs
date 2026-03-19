@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Sequence Instruction 8
     #[inline(always)]
-    pub fn instr8(&mut self) -> Instr8W<SEQ2rs> {
+    pub fn instr8(&mut self) -> Instr8W<'_, SEQ2rs> {
         Instr8W::new(self, 0)
     }
     ///Bits 8:15 - Sequence Instruction 9
     #[inline(always)]
-    pub fn instr9(&mut self) -> Instr9W<SEQ2rs> {
+    pub fn instr9(&mut self) -> Instr9W<'_, SEQ2rs> {
         Instr9W::new(self, 8)
     }
     ///Bits 16:23 - Sequence Instruction 10
     #[inline(always)]
-    pub fn instr10(&mut self) -> Instr10W<SEQ2rs> {
+    pub fn instr10(&mut self) -> Instr10W<'_, SEQ2rs> {
         Instr10W::new(self, 16)
     }
     ///Bits 24:31 - Sequence Instruction 11
     #[inline(always)]
-    pub fn instr11(&mut self) -> Instr11W<SEQ2rs> {
+    pub fn instr11(&mut self) -> Instr11W<'_, SEQ2rs> {
         Instr11W::new(self, 24)
     }
 }
@@ -84,10 +84,6 @@ impl crate::Readable for SEQ2rs {}
 ///`write(|w| ..)` method takes [`seq2::W`](W) writer structure
 impl crate::Writable for SEQ2rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SEQ2 to value 0
-impl crate::Resettable for SEQ2rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SEQ2rs {}

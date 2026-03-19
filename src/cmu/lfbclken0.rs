@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Low Energy UART 0 Clock Enable
     #[inline(always)]
-    pub fn leuart0(&mut self) -> Leuart0W<LFBCLKEN0rs> {
+    pub fn leuart0(&mut self) -> Leuart0W<'_, LFBCLKEN0rs> {
         Leuart0W::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for LFBCLKEN0rs {}
 ///`write(|w| ..)` method takes [`lfbclken0::W`](W) writer structure
 impl crate::Writable for LFBCLKEN0rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets LFBCLKEN0 to value 0
-impl crate::Resettable for LFBCLKEN0rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LFBCLKEN0rs {}

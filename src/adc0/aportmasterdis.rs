@@ -93,42 +93,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 2 - APORT1X Master Disable
     #[inline(always)]
-    pub fn aport1xmasterdis(&mut self) -> Aport1xmasterdisW<APORTMASTERDISrs> {
+    pub fn aport1xmasterdis(&mut self) -> Aport1xmasterdisW<'_, APORTMASTERDISrs> {
         Aport1xmasterdisW::new(self, 2)
     }
     ///Bit 3 - APORT1Y Master Disable
     #[inline(always)]
-    pub fn aport1ymasterdis(&mut self) -> Aport1ymasterdisW<APORTMASTERDISrs> {
+    pub fn aport1ymasterdis(&mut self) -> Aport1ymasterdisW<'_, APORTMASTERDISrs> {
         Aport1ymasterdisW::new(self, 3)
     }
     ///Bit 4 - APORT2X Master Disable
     #[inline(always)]
-    pub fn aport2xmasterdis(&mut self) -> Aport2xmasterdisW<APORTMASTERDISrs> {
+    pub fn aport2xmasterdis(&mut self) -> Aport2xmasterdisW<'_, APORTMASTERDISrs> {
         Aport2xmasterdisW::new(self, 4)
     }
     ///Bit 5 - APORT2Y Master Disable
     #[inline(always)]
-    pub fn aport2ymasterdis(&mut self) -> Aport2ymasterdisW<APORTMASTERDISrs> {
+    pub fn aport2ymasterdis(&mut self) -> Aport2ymasterdisW<'_, APORTMASTERDISrs> {
         Aport2ymasterdisW::new(self, 5)
     }
     ///Bit 6 - APORT3X Master Disable
     #[inline(always)]
-    pub fn aport3xmasterdis(&mut self) -> Aport3xmasterdisW<APORTMASTERDISrs> {
+    pub fn aport3xmasterdis(&mut self) -> Aport3xmasterdisW<'_, APORTMASTERDISrs> {
         Aport3xmasterdisW::new(self, 6)
     }
     ///Bit 7 - APORT3Y Master Disable
     #[inline(always)]
-    pub fn aport3ymasterdis(&mut self) -> Aport3ymasterdisW<APORTMASTERDISrs> {
+    pub fn aport3ymasterdis(&mut self) -> Aport3ymasterdisW<'_, APORTMASTERDISrs> {
         Aport3ymasterdisW::new(self, 7)
     }
     ///Bit 8 - APORT4X Master Disable
     #[inline(always)]
-    pub fn aport4xmasterdis(&mut self) -> Aport4xmasterdisW<APORTMASTERDISrs> {
+    pub fn aport4xmasterdis(&mut self) -> Aport4xmasterdisW<'_, APORTMASTERDISrs> {
         Aport4xmasterdisW::new(self, 8)
     }
     ///Bit 9 - APORT4Y Master Disable
     #[inline(always)]
-    pub fn aport4ymasterdis(&mut self) -> Aport4ymasterdisW<APORTMASTERDISrs> {
+    pub fn aport4ymasterdis(&mut self) -> Aport4ymasterdisW<'_, APORTMASTERDISrs> {
         Aport4ymasterdisW::new(self, 9)
     }
 }
@@ -144,10 +144,6 @@ impl crate::Readable for APORTMASTERDISrs {}
 ///`write(|w| ..)` method takes [`aportmasterdis::W`](W) writer structure
 impl crate::Writable for APORTMASTERDISrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets APORTMASTERDIS to value 0
-impl crate::Resettable for APORTMASTERDISrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for APORTMASTERDISrs {}

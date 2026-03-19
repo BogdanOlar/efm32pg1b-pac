@@ -21,7 +21,7 @@ impl core::fmt::Debug for crate::generic::Reg<KEYBUFrs> {
 impl W {
     ///Bits 0:31 - Key Buffer Access
     #[inline(always)]
-    pub fn keybuf(&mut self) -> KeybufW<KEYBUFrs> {
+    pub fn keybuf(&mut self) -> KeybufW<'_, KEYBUFrs> {
         KeybufW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for KEYBUFrs {}
 ///`write(|w| ..)` method takes [`keybuf::W`](W) writer structure
 impl crate::Writable for KEYBUFrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets KEYBUF to value 0
-impl crate::Resettable for KEYBUFrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for KEYBUFrs {}

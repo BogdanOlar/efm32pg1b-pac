@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - CC Channel 0 Pin Enable
     #[inline(always)]
-    pub fn cc0pen(&mut self) -> Cc0penW<ROUTEPENrs> {
+    pub fn cc0pen(&mut self) -> Cc0penW<'_, ROUTEPENrs> {
         Cc0penW::new(self, 0)
     }
     ///Bit 1 - CC Channel 1 Pin Enable
     #[inline(always)]
-    pub fn cc1pen(&mut self) -> Cc1penW<ROUTEPENrs> {
+    pub fn cc1pen(&mut self) -> Cc1penW<'_, ROUTEPENrs> {
         Cc1penW::new(self, 1)
     }
     ///Bit 2 - CC Channel 2 Pin Enable
     #[inline(always)]
-    pub fn cc2pen(&mut self) -> Cc2penW<ROUTEPENrs> {
+    pub fn cc2pen(&mut self) -> Cc2penW<'_, ROUTEPENrs> {
         Cc2penW::new(self, 2)
     }
     ///Bit 3 - CC Channel 3 Pin Enable
     #[inline(always)]
-    pub fn cc3pen(&mut self) -> Cc3penW<ROUTEPENrs> {
+    pub fn cc3pen(&mut self) -> Cc3penW<'_, ROUTEPENrs> {
         Cc3penW::new(self, 3)
     }
     ///Bit 8 - CC Channel 0 Complementary Dead-Time Insertion Pin Enable
     #[inline(always)]
-    pub fn cdti0pen(&mut self) -> Cdti0penW<ROUTEPENrs> {
+    pub fn cdti0pen(&mut self) -> Cdti0penW<'_, ROUTEPENrs> {
         Cdti0penW::new(self, 8)
     }
     ///Bit 9 - CC Channel 1 Complementary Dead-Time Insertion Pin Enable
     #[inline(always)]
-    pub fn cdti1pen(&mut self) -> Cdti1penW<ROUTEPENrs> {
+    pub fn cdti1pen(&mut self) -> Cdti1penW<'_, ROUTEPENrs> {
         Cdti1penW::new(self, 9)
     }
     ///Bit 10 - CC Channel 2 Complementary Dead-Time Insertion Pin Enable
     #[inline(always)]
-    pub fn cdti2pen(&mut self) -> Cdti2penW<ROUTEPENrs> {
+    pub fn cdti2pen(&mut self) -> Cdti2penW<'_, ROUTEPENrs> {
         Cdti2penW::new(self, 10)
     }
 }
@@ -129,10 +129,6 @@ impl crate::Readable for ROUTEPENrs {}
 ///`write(|w| ..)` method takes [`routepen::W`](W) writer structure
 impl crate::Writable for ROUTEPENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ROUTEPEN to value 0
-impl crate::Resettable for ROUTEPENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ROUTEPENrs {}

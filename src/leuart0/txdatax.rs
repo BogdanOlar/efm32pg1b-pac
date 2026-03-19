@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:8 - TX Data
     #[inline(always)]
-    pub fn txdata(&mut self) -> TxdataW<TXDATAXrs> {
+    pub fn txdata(&mut self) -> TxdataW<'_, TXDATAXrs> {
         TxdataW::new(self, 0)
     }
     ///Bit 13 - Transmit Data as Break
     #[inline(always)]
-    pub fn txbreak(&mut self) -> TxbreakW<TXDATAXrs> {
+    pub fn txbreak(&mut self) -> TxbreakW<'_, TXDATAXrs> {
         TxbreakW::new(self, 13)
     }
     ///Bit 14 - Disable TX After Transmission
     #[inline(always)]
-    pub fn txdisat(&mut self) -> TxdisatW<TXDATAXrs> {
+    pub fn txdisat(&mut self) -> TxdisatW<'_, TXDATAXrs> {
         TxdisatW::new(self, 14)
     }
     ///Bit 15 - Enable RX After Transmission
     #[inline(always)]
-    pub fn rxenat(&mut self) -> RxenatW<TXDATAXrs> {
+    pub fn rxenat(&mut self) -> RxenatW<'_, TXDATAXrs> {
         RxenatW::new(self, 15)
     }
 }
@@ -84,10 +84,6 @@ impl crate::Readable for TXDATAXrs {}
 ///`write(|w| ..)` method takes [`txdatax::W`](W) writer structure
 impl crate::Writable for TXDATAXrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TXDATAX to value 0
-impl crate::Resettable for TXDATAXrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TXDATAXrs {}

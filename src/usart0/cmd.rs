@@ -32,62 +32,62 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Receiver Enable
     #[inline(always)]
-    pub fn rxen(&mut self) -> RxenW<CMDrs> {
+    pub fn rxen(&mut self) -> RxenW<'_, CMDrs> {
         RxenW::new(self, 0)
     }
     ///Bit 1 - Receiver Disable
     #[inline(always)]
-    pub fn rxdis(&mut self) -> RxdisW<CMDrs> {
+    pub fn rxdis(&mut self) -> RxdisW<'_, CMDrs> {
         RxdisW::new(self, 1)
     }
     ///Bit 2 - Transmitter Enable
     #[inline(always)]
-    pub fn txen(&mut self) -> TxenW<CMDrs> {
+    pub fn txen(&mut self) -> TxenW<'_, CMDrs> {
         TxenW::new(self, 2)
     }
     ///Bit 3 - Transmitter Disable
     #[inline(always)]
-    pub fn txdis(&mut self) -> TxdisW<CMDrs> {
+    pub fn txdis(&mut self) -> TxdisW<'_, CMDrs> {
         TxdisW::new(self, 3)
     }
     ///Bit 4 - Master Enable
     #[inline(always)]
-    pub fn masteren(&mut self) -> MasterenW<CMDrs> {
+    pub fn masteren(&mut self) -> MasterenW<'_, CMDrs> {
         MasterenW::new(self, 4)
     }
     ///Bit 5 - Master Disable
     #[inline(always)]
-    pub fn masterdis(&mut self) -> MasterdisW<CMDrs> {
+    pub fn masterdis(&mut self) -> MasterdisW<'_, CMDrs> {
         MasterdisW::new(self, 5)
     }
     ///Bit 6 - Receiver Block Enable
     #[inline(always)]
-    pub fn rxblocken(&mut self) -> RxblockenW<CMDrs> {
+    pub fn rxblocken(&mut self) -> RxblockenW<'_, CMDrs> {
         RxblockenW::new(self, 6)
     }
     ///Bit 7 - Receiver Block Disable
     #[inline(always)]
-    pub fn rxblockdis(&mut self) -> RxblockdisW<CMDrs> {
+    pub fn rxblockdis(&mut self) -> RxblockdisW<'_, CMDrs> {
         RxblockdisW::new(self, 7)
     }
     ///Bit 8 - Transmitter Tristate Enable
     #[inline(always)]
-    pub fn txtrien(&mut self) -> TxtrienW<CMDrs> {
+    pub fn txtrien(&mut self) -> TxtrienW<'_, CMDrs> {
         TxtrienW::new(self, 8)
     }
     ///Bit 9 - Transmitter Tristate Disable
     #[inline(always)]
-    pub fn txtridis(&mut self) -> TxtridisW<CMDrs> {
+    pub fn txtridis(&mut self) -> TxtridisW<'_, CMDrs> {
         TxtridisW::new(self, 9)
     }
     ///Bit 10 - Clear TX
     #[inline(always)]
-    pub fn cleartx(&mut self) -> CleartxW<CMDrs> {
+    pub fn cleartx(&mut self) -> CleartxW<'_, CMDrs> {
         CleartxW::new(self, 10)
     }
     ///Bit 11 - Clear RX
     #[inline(always)]
-    pub fn clearrx(&mut self) -> ClearrxW<CMDrs> {
+    pub fn clearrx(&mut self) -> ClearrxW<'_, CMDrs> {
         ClearrxW::new(self, 11)
     }
 }
@@ -101,10 +101,6 @@ impl crate::RegisterSpec for CMDrs {
 ///`write(|w| ..)` method takes [`cmd::W`](W) writer structure
 impl crate::Writable for CMDrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CMD to value 0
-impl crate::Resettable for CMDrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CMDrs {}

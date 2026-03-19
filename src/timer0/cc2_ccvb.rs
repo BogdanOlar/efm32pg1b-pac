@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - CC Channel Value Buffer
     #[inline(always)]
-    pub fn ccvb(&mut self) -> CcvbW<CC2_CCVBrs> {
+    pub fn ccvb(&mut self) -> CcvbW<'_, CC2_CCVBrs> {
         CcvbW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for CC2_CCVBrs {}
 ///`write(|w| ..)` method takes [`cc2_ccvb::W`](W) writer structure
 impl crate::Writable for CC2_CCVBrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CC2_CCVB to value 0
-impl crate::Resettable for CC2_CCVBrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CC2_CCVBrs {}

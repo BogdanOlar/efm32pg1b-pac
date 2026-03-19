@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - EDGE Interrupt Enable
     #[inline(always)]
-    pub fn edge(&mut self) -> EdgeW<IENrs> {
+    pub fn edge(&mut self) -> EdgeW<'_, IENrs> {
         EdgeW::new(self, 0)
     }
     ///Bit 1 - WARMUP Interrupt Enable
     #[inline(always)]
-    pub fn warmup(&mut self) -> WarmupW<IENrs> {
+    pub fn warmup(&mut self) -> WarmupW<'_, IENrs> {
         WarmupW::new(self, 1)
     }
     ///Bit 2 - APORTCONFLICT Interrupt Enable
     #[inline(always)]
-    pub fn aportconflict(&mut self) -> AportconflictW<IENrs> {
+    pub fn aportconflict(&mut self) -> AportconflictW<'_, IENrs> {
         AportconflictW::new(self, 2)
     }
 }
@@ -69,10 +69,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

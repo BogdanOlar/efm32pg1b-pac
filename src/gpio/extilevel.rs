@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 16 - EM4 Wake Up Level for EM4WU0 Pin
     #[inline(always)]
-    pub fn em4wu0(&mut self) -> Em4wu0W<EXTILEVELrs> {
+    pub fn em4wu0(&mut self) -> Em4wu0W<'_, EXTILEVELrs> {
         Em4wu0W::new(self, 16)
     }
     ///Bit 17 - EM4 Wake Up Level for EM4WU1 Pin
     #[inline(always)]
-    pub fn em4wu1(&mut self) -> Em4wu1W<EXTILEVELrs> {
+    pub fn em4wu1(&mut self) -> Em4wu1W<'_, EXTILEVELrs> {
         Em4wu1W::new(self, 17)
     }
     ///Bit 20 - EM4 Wake Up Level for EM4WU4 Pin
     #[inline(always)]
-    pub fn em4wu4(&mut self) -> Em4wu4W<EXTILEVELrs> {
+    pub fn em4wu4(&mut self) -> Em4wu4W<'_, EXTILEVELrs> {
         Em4wu4W::new(self, 20)
     }
     ///Bit 24 - EM4 Wake Up Level for EM4WU8 Pin
     #[inline(always)]
-    pub fn em4wu8(&mut self) -> Em4wu8W<EXTILEVELrs> {
+    pub fn em4wu8(&mut self) -> Em4wu8W<'_, EXTILEVELrs> {
         Em4wu8W::new(self, 24)
     }
     ///Bit 25 - EM4 Wake Up Level for EM4WU9 Pin
     #[inline(always)]
-    pub fn em4wu9(&mut self) -> Em4wu9W<EXTILEVELrs> {
+    pub fn em4wu9(&mut self) -> Em4wu9W<'_, EXTILEVELrs> {
         Em4wu9W::new(self, 25)
     }
     ///Bit 28 - EM4 Wake Up Level for EM4WU12 Pin
     #[inline(always)]
-    pub fn em4wu12(&mut self) -> Em4wu12W<EXTILEVELrs> {
+    pub fn em4wu12(&mut self) -> Em4wu12W<'_, EXTILEVELrs> {
         Em4wu12W::new(self, 28)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for EXTILEVELrs {}
 ///`write(|w| ..)` method takes [`extilevel::W`](W) writer structure
 impl crate::Writable for EXTILEVELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets EXTILEVEL to value 0
-impl crate::Resettable for EXTILEVELrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EXTILEVELrs {}

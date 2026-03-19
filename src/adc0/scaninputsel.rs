@@ -1121,22 +1121,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:4 - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK
     #[inline(always)]
-    pub fn input0to7sel(&mut self) -> Input0to7selW<SCANINPUTSELrs> {
+    pub fn input0to7sel(&mut self) -> Input0to7selW<'_, SCANINPUTSELrs> {
         Input0to7selW::new(self, 0)
     }
     ///Bits 8:12 - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK
     #[inline(always)]
-    pub fn input8to15sel(&mut self) -> Input8to15selW<SCANINPUTSELrs> {
+    pub fn input8to15sel(&mut self) -> Input8to15selW<'_, SCANINPUTSELrs> {
         Input8to15selW::new(self, 8)
     }
     ///Bits 16:20 - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK
     #[inline(always)]
-    pub fn input16to23sel(&mut self) -> Input16to23selW<SCANINPUTSELrs> {
+    pub fn input16to23sel(&mut self) -> Input16to23selW<'_, SCANINPUTSELrs> {
         Input16to23selW::new(self, 16)
     }
     ///Bits 24:28 - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK
     #[inline(always)]
-    pub fn input24to31sel(&mut self) -> Input24to31selW<SCANINPUTSELrs> {
+    pub fn input24to31sel(&mut self) -> Input24to31selW<'_, SCANINPUTSELrs> {
         Input24to31selW::new(self, 24)
     }
 }
@@ -1152,10 +1152,6 @@ impl crate::Readable for SCANINPUTSELrs {}
 ///`write(|w| ..)` method takes [`scaninputsel::W`](W) writer structure
 impl crate::Writable for SCANINPUTSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SCANINPUTSEL to value 0
-impl crate::Resettable for SCANINPUTSELrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCANINPUTSELrs {}

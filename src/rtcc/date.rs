@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Day of Month, Units
     #[inline(always)]
-    pub fn dayomu(&mut self) -> DayomuW<DATErs> {
+    pub fn dayomu(&mut self) -> DayomuW<'_, DATErs> {
         DayomuW::new(self, 0)
     }
     ///Bits 4:5 - Day of Month, Tens
     #[inline(always)]
-    pub fn dayomt(&mut self) -> DayomtW<DATErs> {
+    pub fn dayomt(&mut self) -> DayomtW<'_, DATErs> {
         DayomtW::new(self, 4)
     }
     ///Bits 8:11 - Month, Units
     #[inline(always)]
-    pub fn monthu(&mut self) -> MonthuW<DATErs> {
+    pub fn monthu(&mut self) -> MonthuW<'_, DATErs> {
         MonthuW::new(self, 8)
     }
     ///Bit 12 - Month, Tens
     #[inline(always)]
-    pub fn montht(&mut self) -> MonthtW<DATErs> {
+    pub fn montht(&mut self) -> MonthtW<'_, DATErs> {
         MonthtW::new(self, 12)
     }
     ///Bits 16:19 - Year, Units
     #[inline(always)]
-    pub fn yearu(&mut self) -> YearuW<DATErs> {
+    pub fn yearu(&mut self) -> YearuW<'_, DATErs> {
         YearuW::new(self, 16)
     }
     ///Bits 20:23 - Year, Tens
     #[inline(always)]
-    pub fn yeart(&mut self) -> YeartW<DATErs> {
+    pub fn yeart(&mut self) -> YeartW<'_, DATErs> {
         YeartW::new(self, 20)
     }
     ///Bits 24:26 - Day of Week
     #[inline(always)]
-    pub fn dayow(&mut self) -> DayowW<DATErs> {
+    pub fn dayow(&mut self) -> DayowW<'_, DATErs> {
         DayowW::new(self, 24)
     }
 }
@@ -129,10 +129,6 @@ impl crate::Readable for DATErs {}
 ///`write(|w| ..)` method takes [`date::W`](W) writer structure
 impl crate::Writable for DATErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DATE to value 0
-impl crate::Resettable for DATErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DATErs {}

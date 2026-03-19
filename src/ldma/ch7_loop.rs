@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Linked Structure Sequence Loop Counter
     #[inline(always)]
-    pub fn loopcnt(&mut self) -> LoopcntW<CH7_LOOPrs> {
+    pub fn loopcnt(&mut self) -> LoopcntW<'_, CH7_LOOPrs> {
         LoopcntW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for CH7_LOOPrs {}
 ///`write(|w| ..)` method takes [`ch7_loop::W`](W) writer structure
 impl crate::Writable for CH7_LOOPrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CH7_LOOP to value 0
-impl crate::Resettable for CH7_LOOPrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH7_LOOPrs {}

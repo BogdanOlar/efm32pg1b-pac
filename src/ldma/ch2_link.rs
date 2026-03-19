@@ -41,12 +41,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Link Next Structure
     #[inline(always)]
-    pub fn link(&mut self) -> LinkW<CH2_LINKrs> {
+    pub fn link(&mut self) -> LinkW<'_, CH2_LINKrs> {
         LinkW::new(self, 1)
     }
     ///Bits 2:31 - Link Structure Address
     #[inline(always)]
-    pub fn linkaddr(&mut self) -> LinkaddrW<CH2_LINKrs> {
+    pub fn linkaddr(&mut self) -> LinkaddrW<'_, CH2_LINKrs> {
         LinkaddrW::new(self, 2)
     }
 }
@@ -62,10 +62,6 @@ impl crate::Readable for CH2_LINKrs {}
 ///`write(|w| ..)` method takes [`ch2_link::W`](W) writer structure
 impl crate::Writable for CH2_LINKrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CH2_LINK to value 0
-impl crate::Resettable for CH2_LINKrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH2_LINKrs {}

@@ -24,6 +24,4 @@ impl crate::RegisterSpec for CNTrs {
 ///`read()` method returns [`cnt::R`](R) reader structure
 impl crate::Readable for CNTrs {}
 ///`reset()` method sets CNT to value 0
-impl crate::Resettable for CNTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CNTrs {}

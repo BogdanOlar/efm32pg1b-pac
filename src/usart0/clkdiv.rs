@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 3:22 - Fractional Clock Divider
     #[inline(always)]
-    pub fn div(&mut self) -> DivW<CLKDIVrs> {
+    pub fn div(&mut self) -> DivW<'_, CLKDIVrs> {
         DivW::new(self, 3)
     }
     ///Bit 31 - AUTOBAUD Detection Enable
     #[inline(always)]
-    pub fn autobauden(&mut self) -> AutobaudenW<CLKDIVrs> {
+    pub fn autobauden(&mut self) -> AutobaudenW<'_, CLKDIVrs> {
         AutobaudenW::new(self, 31)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for CLKDIVrs {}
 ///`write(|w| ..)` method takes [`clkdiv::W`](W) writer structure
 impl crate::Writable for CLKDIVrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CLKDIV to value 0
-impl crate::Resettable for CLKDIVrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CLKDIVrs {}

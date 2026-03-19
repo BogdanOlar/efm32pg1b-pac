@@ -457,22 +457,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Clock Output Select 0
     #[inline(always)]
-    pub fn clkoutsel0(&mut self) -> Clkoutsel0W<CTRLrs> {
+    pub fn clkoutsel0(&mut self) -> Clkoutsel0W<'_, CTRLrs> {
         Clkoutsel0W::new(self, 0)
     }
     ///Bits 5:8 - Clock Output Select 1
     #[inline(always)]
-    pub fn clkoutsel1(&mut self) -> Clkoutsel1W<CTRLrs> {
+    pub fn clkoutsel1(&mut self) -> Clkoutsel1W<'_, CTRLrs> {
         Clkoutsel1W::new(self, 5)
     }
     ///Bit 16 - Wait State for High-Frequency LE Interface
     #[inline(always)]
-    pub fn wshfle(&mut self) -> WshfleW<CTRLrs> {
+    pub fn wshfle(&mut self) -> WshfleW<'_, CTRLrs> {
         WshfleW::new(self, 16)
     }
     ///Bit 20 - HFPERCLK Enable
     #[inline(always)]
-    pub fn hfperclken(&mut self) -> HfperclkenW<CTRLrs> {
+    pub fn hfperclken(&mut self) -> HfperclkenW<'_, CTRLrs> {
         HfperclkenW::new(self, 20)
     }
 }
@@ -488,8 +488,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0x0010_0000
 impl crate::Resettable for CTRLrs {

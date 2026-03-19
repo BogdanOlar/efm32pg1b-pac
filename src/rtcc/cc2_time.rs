@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Seconds, Units
     #[inline(always)]
-    pub fn secu(&mut self) -> SecuW<CC2_TIMErs> {
+    pub fn secu(&mut self) -> SecuW<'_, CC2_TIMErs> {
         SecuW::new(self, 0)
     }
     ///Bits 4:6 - Seconds, Tens
     #[inline(always)]
-    pub fn sect(&mut self) -> SectW<CC2_TIMErs> {
+    pub fn sect(&mut self) -> SectW<'_, CC2_TIMErs> {
         SectW::new(self, 4)
     }
     ///Bits 8:11 - Minutes, Units
     #[inline(always)]
-    pub fn minu(&mut self) -> MinuW<CC2_TIMErs> {
+    pub fn minu(&mut self) -> MinuW<'_, CC2_TIMErs> {
         MinuW::new(self, 8)
     }
     ///Bits 12:14 - Minutes, Tens
     #[inline(always)]
-    pub fn mint(&mut self) -> MintW<CC2_TIMErs> {
+    pub fn mint(&mut self) -> MintW<'_, CC2_TIMErs> {
         MintW::new(self, 12)
     }
     ///Bits 16:19 - Hours, Units
     #[inline(always)]
-    pub fn houru(&mut self) -> HouruW<CC2_TIMErs> {
+    pub fn houru(&mut self) -> HouruW<'_, CC2_TIMErs> {
         HouruW::new(self, 16)
     }
     ///Bits 20:21 - Hours, Tens
     #[inline(always)]
-    pub fn hourt(&mut self) -> HourtW<CC2_TIMErs> {
+    pub fn hourt(&mut self) -> HourtW<'_, CC2_TIMErs> {
         HourtW::new(self, 20)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for CC2_TIMErs {}
 ///`write(|w| ..)` method takes [`cc2_time::W`](W) writer structure
 impl crate::Writable for CC2_TIMErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CC2_TIME to value 0
-impl crate::Resettable for CC2_TIMErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CC2_TIMErs {}

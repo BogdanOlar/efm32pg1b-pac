@@ -33,6 +33,4 @@ impl crate::RegisterSpec for RXDOUBLErs {
 ///`read()` method returns [`rxdouble::R`](R) reader structure
 impl crate::Readable for RXDOUBLErs {}
 ///`reset()` method sets RXDOUBLE to value 0
-impl crate::Resettable for RXDOUBLErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXDOUBLErs {}

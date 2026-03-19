@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Channel Enables
     #[inline(always)]
-    pub fn chen(&mut self) -> ChenW<CHENrs> {
+    pub fn chen(&mut self) -> ChenW<'_, CHENrs> {
         ChenW::new(self, 0)
     }
 }
@@ -37,10 +37,6 @@ impl crate::Readable for CHENrs {}
 ///`write(|w| ..)` method takes [`chen::W`](W) writer structure
 impl crate::Writable for CHENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CHEN to value 0
-impl crate::Resettable for CHENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CHENrs {}

@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 16:31 - EM4 Wake Up Enable
     #[inline(always)]
-    pub fn em4wuen(&mut self) -> Em4wuenW<EM4WUENrs> {
+    pub fn em4wuen(&mut self) -> Em4wuenW<'_, EM4WUENrs> {
         Em4wuenW::new(self, 16)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for EM4WUENrs {}
 ///`write(|w| ..)` method takes [`em4wuen::W`](W) writer structure
 impl crate::Writable for EM4WUENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets EM4WUEN to value 0
-impl crate::Resettable for EM4WUENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EM4WUENrs {}

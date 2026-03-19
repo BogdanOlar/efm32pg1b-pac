@@ -12,12 +12,12 @@ impl core::fmt::Debug for crate::generic::Reg<CMDrs> {
 impl W {
     ///Bit 0 - Start Timer
     #[inline(always)]
-    pub fn start(&mut self) -> StartW<CMDrs> {
+    pub fn start(&mut self) -> StartW<'_, CMDrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - Stop Timer
     #[inline(always)]
-    pub fn stop(&mut self) -> StopW<CMDrs> {
+    pub fn stop(&mut self) -> StopW<'_, CMDrs> {
         StopW::new(self, 1)
     }
 }
@@ -31,10 +31,6 @@ impl crate::RegisterSpec for CMDrs {
 ///`write(|w| ..)` method takes [`cmd::W`](W) writer structure
 impl crate::Writable for CMDrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CMD to value 0
-impl crate::Resettable for CMDrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CMDrs {}

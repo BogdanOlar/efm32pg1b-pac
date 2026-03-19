@@ -514,37 +514,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:1 - CC Channel Mode
     #[inline(always)]
-    pub fn mode(&mut self) -> ModeW<CC2_CTRLrs> {
+    pub fn mode(&mut self) -> ModeW<'_, CC2_CTRLrs> {
         ModeW::new(self, 0)
     }
     ///Bits 2:3 - Compare Match Output Action
     #[inline(always)]
-    pub fn cmoa(&mut self) -> CmoaW<CC2_CTRLrs> {
+    pub fn cmoa(&mut self) -> CmoaW<'_, CC2_CTRLrs> {
         CmoaW::new(self, 2)
     }
     ///Bits 4:5 - Input Capture Edge Select
     #[inline(always)]
-    pub fn icedge(&mut self) -> IcedgeW<CC2_CTRLrs> {
+    pub fn icedge(&mut self) -> IcedgeW<'_, CC2_CTRLrs> {
         IcedgeW::new(self, 4)
     }
     ///Bits 6:9 - Compare/Capture Channel PRS Input Channel Selection
     #[inline(always)]
-    pub fn prssel(&mut self) -> PrsselW<CC2_CTRLrs> {
+    pub fn prssel(&mut self) -> PrsselW<'_, CC2_CTRLrs> {
         PrsselW::new(self, 6)
     }
     ///Bit 11 - Capture Compare Channel Comparison Base
     #[inline(always)]
-    pub fn compbase(&mut self) -> CompbaseW<CC2_CTRLrs> {
+    pub fn compbase(&mut self) -> CompbaseW<'_, CC2_CTRLrs> {
         CompbaseW::new(self, 11)
     }
     ///Bits 12:16 - Capture Compare Channel Comparison Mask
     #[inline(always)]
-    pub fn compmask(&mut self) -> CompmaskW<CC2_CTRLrs> {
+    pub fn compmask(&mut self) -> CompmaskW<'_, CC2_CTRLrs> {
         CompmaskW::new(self, 12)
     }
     ///Bit 17 - Day Capture/Compare Selection
     #[inline(always)]
-    pub fn daycc(&mut self) -> DayccW<CC2_CTRLrs> {
+    pub fn daycc(&mut self) -> DayccW<'_, CC2_CTRLrs> {
         DayccW::new(self, 17)
     }
 }
@@ -560,10 +560,6 @@ impl crate::Readable for CC2_CTRLrs {}
 ///`write(|w| ..)` method takes [`cc2_ctrl::W`](W) writer structure
 impl crate::Writable for CC2_CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CC2_CTRL to value 0
-impl crate::Resettable for CC2_CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CC2_CTRLrs {}

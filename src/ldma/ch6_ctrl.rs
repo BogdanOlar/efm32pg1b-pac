@@ -647,57 +647,57 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 3 - Structure DMA Transfer Request
     #[inline(always)]
-    pub fn structreq(&mut self) -> StructreqW<CH6_CTRLrs> {
+    pub fn structreq(&mut self) -> StructreqW<'_, CH6_CTRLrs> {
         StructreqW::new(self, 3)
     }
     ///Bits 4:14 - DMA Unit Data Transfer Count
     #[inline(always)]
-    pub fn xfercnt(&mut self) -> XfercntW<CH6_CTRLrs> {
+    pub fn xfercnt(&mut self) -> XfercntW<'_, CH6_CTRLrs> {
         XfercntW::new(self, 4)
     }
     ///Bit 15 - Endian Byte Swap
     #[inline(always)]
-    pub fn byteswap(&mut self) -> ByteswapW<CH6_CTRLrs> {
+    pub fn byteswap(&mut self) -> ByteswapW<'_, CH6_CTRLrs> {
         ByteswapW::new(self, 15)
     }
     ///Bits 16:19 - Block Transfer Size
     #[inline(always)]
-    pub fn blocksize(&mut self) -> BlocksizeW<CH6_CTRLrs> {
+    pub fn blocksize(&mut self) -> BlocksizeW<'_, CH6_CTRLrs> {
         BlocksizeW::new(self, 16)
     }
     ///Bit 20 - DMA Operation Done Interrupt Flag Set Enable
     #[inline(always)]
-    pub fn doneifsen(&mut self) -> DoneifsenW<CH6_CTRLrs> {
+    pub fn doneifsen(&mut self) -> DoneifsenW<'_, CH6_CTRLrs> {
         DoneifsenW::new(self, 20)
     }
     ///Bit 21 - DMA Request Transfer Mode Select
     #[inline(always)]
-    pub fn reqmode(&mut self) -> ReqmodeW<CH6_CTRLrs> {
+    pub fn reqmode(&mut self) -> ReqmodeW<'_, CH6_CTRLrs> {
         ReqmodeW::new(self, 21)
     }
     ///Bit 22 - Decrement Loop Count
     #[inline(always)]
-    pub fn decloopcnt(&mut self) -> DecloopcntW<CH6_CTRLrs> {
+    pub fn decloopcnt(&mut self) -> DecloopcntW<'_, CH6_CTRLrs> {
         DecloopcntW::new(self, 22)
     }
     ///Bit 23 - Ignore Sreq
     #[inline(always)]
-    pub fn ignoresreq(&mut self) -> IgnoresreqW<CH6_CTRLrs> {
+    pub fn ignoresreq(&mut self) -> IgnoresreqW<'_, CH6_CTRLrs> {
         IgnoresreqW::new(self, 23)
     }
     ///Bits 24:25 - Source Address Increment Size
     #[inline(always)]
-    pub fn srcinc(&mut self) -> SrcincW<CH6_CTRLrs> {
+    pub fn srcinc(&mut self) -> SrcincW<'_, CH6_CTRLrs> {
         SrcincW::new(self, 24)
     }
     ///Bits 26:27 - Unit Data Transfer Size
     #[inline(always)]
-    pub fn size(&mut self) -> SizeW<CH6_CTRLrs> {
+    pub fn size(&mut self) -> SizeW<'_, CH6_CTRLrs> {
         SizeW::new(self, 26)
     }
     ///Bits 28:29 - Destination Address Increment Size
     #[inline(always)]
-    pub fn dstinc(&mut self) -> DstincW<CH6_CTRLrs> {
+    pub fn dstinc(&mut self) -> DstincW<'_, CH6_CTRLrs> {
         DstincW::new(self, 28)
     }
 }
@@ -713,10 +713,6 @@ impl crate::Readable for CH6_CTRLrs {}
 ///`write(|w| ..)` method takes [`ch6_ctrl::W`](W) writer structure
 impl crate::Writable for CH6_CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CH6_CTRL to value 0
-impl crate::Resettable for CH6_CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH6_CTRLrs {}

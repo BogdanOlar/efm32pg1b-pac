@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - CRC Functionality Enable
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<CTRLrs> {
+    pub fn en(&mut self) -> EnW<'_, CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 4 - Polynomial Select
     #[inline(always)]
-    pub fn polysel(&mut self) -> PolyselW<CTRLrs> {
+    pub fn polysel(&mut self) -> PolyselW<'_, CTRLrs> {
         PolyselW::new(self, 4)
     }
     ///Bit 8 - Byte Mode Enable
     #[inline(always)]
-    pub fn bytemode(&mut self) -> BytemodeW<CTRLrs> {
+    pub fn bytemode(&mut self) -> BytemodeW<'_, CTRLrs> {
         BytemodeW::new(self, 8)
     }
     ///Bit 9 - Byte-level Bit Reverse Enable
     #[inline(always)]
-    pub fn bitreverse(&mut self) -> BitreverseW<CTRLrs> {
+    pub fn bitreverse(&mut self) -> BitreverseW<'_, CTRLrs> {
         BitreverseW::new(self, 9)
     }
     ///Bit 10 - Byte Reverse Mode
     #[inline(always)]
-    pub fn bytereverse(&mut self) -> BytereverseW<CTRLrs> {
+    pub fn bytereverse(&mut self) -> BytereverseW<'_, CTRLrs> {
         BytereverseW::new(self, 10)
     }
     ///Bit 13 - Auto Init Enable
     #[inline(always)]
-    pub fn autoinit(&mut self) -> AutoinitW<CTRLrs> {
+    pub fn autoinit(&mut self) -> AutoinitW<'_, CTRLrs> {
         AutoinitW::new(self, 13)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

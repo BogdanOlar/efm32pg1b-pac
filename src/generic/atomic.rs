@@ -42,7 +42,7 @@ where
         F: FnOnce(&mut W<REG>) -> &mut W<REG>,
     {
         let bits = f(&mut W {
-            bits: Default::default(),
+            bits: REG::Ux::ZERO,
             _reg: marker::PhantomData,
         })
         .bits;
@@ -60,7 +60,7 @@ where
         F: FnOnce(&mut W<REG>) -> &mut W<REG>,
     {
         let bits = f(&mut W {
-            bits: !REG::Ux::default(),
+            bits: !REG::Ux::ZERO,
             _reg: marker::PhantomData,
         })
         .bits;
@@ -78,7 +78,7 @@ where
         F: FnOnce(&mut W<REG>) -> &mut W<REG>,
     {
         let bits = f(&mut W {
-            bits: Default::default(),
+            bits: REG::Ux::ZERO,
             _reg: marker::PhantomData,
         })
         .bits;

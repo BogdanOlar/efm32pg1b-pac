@@ -10,7 +10,7 @@ impl core::fmt::Debug for crate::generic::Reg<SINGLEFIFOCLEARrs> {
 impl W {
     ///Bit 0 - Clear Single FIFO Content
     #[inline(always)]
-    pub fn singlefifoclear(&mut self) -> SinglefifoclearW<SINGLEFIFOCLEARrs> {
+    pub fn singlefifoclear(&mut self) -> SinglefifoclearW<'_, SINGLEFIFOCLEARrs> {
         SinglefifoclearW::new(self, 0)
     }
 }
@@ -24,10 +24,6 @@ impl crate::RegisterSpec for SINGLEFIFOCLEARrs {
 ///`write(|w| ..)` method takes [`singlefifoclear::W`](W) writer structure
 impl crate::Writable for SINGLEFIFOCLEARrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SINGLEFIFOCLEAR to value 0
-impl crate::Resettable for SINGLEFIFOCLEARrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SINGLEFIFOCLEARrs {}

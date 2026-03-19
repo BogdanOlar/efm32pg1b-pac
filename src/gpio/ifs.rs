@@ -12,12 +12,12 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bits 0:15 - Set EXT Interrupt Flag
     #[inline(always)]
-    pub fn ext(&mut self) -> ExtW<IFSrs> {
+    pub fn ext(&mut self) -> ExtW<'_, IFSrs> {
         ExtW::new(self, 0)
     }
     ///Bits 16:31 - Set EM4WU Interrupt Flag
     #[inline(always)]
-    pub fn em4wu(&mut self) -> Em4wuW<IFSrs> {
+    pub fn em4wu(&mut self) -> Em4wuW<'_, IFSrs> {
         Em4wuW::new(self, 16)
     }
 }
@@ -31,10 +31,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

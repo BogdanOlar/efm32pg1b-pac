@@ -236,22 +236,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Timer Comparator 1
     #[inline(always)]
-    pub fn tcmpval(&mut self) -> TcmpvalW<TIMECMP1rs> {
+    pub fn tcmpval(&mut self) -> TcmpvalW<'_, TIMECMP1rs> {
         TcmpvalW::new(self, 0)
     }
     ///Bits 16:18 - Timer Start Source
     #[inline(always)]
-    pub fn tstart(&mut self) -> TstartW<TIMECMP1rs> {
+    pub fn tstart(&mut self) -> TstartW<'_, TIMECMP1rs> {
         TstartW::new(self, 16)
     }
     ///Bits 20:22 - Source Used to Disable Comparator 1
     #[inline(always)]
-    pub fn tstop(&mut self) -> TstopW<TIMECMP1rs> {
+    pub fn tstop(&mut self) -> TstopW<'_, TIMECMP1rs> {
         TstopW::new(self, 20)
     }
     ///Bit 24 - Restart Timer on TCMP1
     #[inline(always)]
-    pub fn restarten(&mut self) -> RestartenW<TIMECMP1rs> {
+    pub fn restarten(&mut self) -> RestartenW<'_, TIMECMP1rs> {
         RestartenW::new(self, 24)
     }
 }
@@ -267,10 +267,6 @@ impl crate::Readable for TIMECMP1rs {}
 ///`write(|w| ..)` method takes [`timecmp1::W`](W) writer structure
 impl crate::Writable for TIMECMP1rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TIMECMP1 to value 0
-impl crate::Resettable for TIMECMP1rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TIMECMP1rs {}

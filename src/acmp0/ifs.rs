@@ -14,17 +14,17 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set EDGE Interrupt Flag
     #[inline(always)]
-    pub fn edge(&mut self) -> EdgeW<IFSrs> {
+    pub fn edge(&mut self) -> EdgeW<'_, IFSrs> {
         EdgeW::new(self, 0)
     }
     ///Bit 1 - Set WARMUP Interrupt Flag
     #[inline(always)]
-    pub fn warmup(&mut self) -> WarmupW<IFSrs> {
+    pub fn warmup(&mut self) -> WarmupW<'_, IFSrs> {
         WarmupW::new(self, 1)
     }
     ///Bit 2 - Set APORTCONFLICT Interrupt Flag
     #[inline(always)]
-    pub fn aportconflict(&mut self) -> AportconflictW<IFSrs> {
+    pub fn aportconflict(&mut self) -> AportconflictW<'_, IFSrs> {
         AportconflictW::new(self, 2)
     }
 }
@@ -38,10 +38,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

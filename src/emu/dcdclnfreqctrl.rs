@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - LN Mode RCO Frequency Band Selection
     #[inline(always)]
-    pub fn rcoband(&mut self) -> RcobandW<DCDCLNFREQCTRLrs> {
+    pub fn rcoband(&mut self) -> RcobandW<'_, DCDCLNFREQCTRLrs> {
         RcobandW::new(self, 0)
     }
     ///Bits 24:28 - Reserved for internal use. Do not change.
     #[inline(always)]
-    pub fn rcotrim(&mut self) -> RcotrimW<DCDCLNFREQCTRLrs> {
+    pub fn rcotrim(&mut self) -> RcotrimW<'_, DCDCLNFREQCTRLrs> {
         RcotrimW::new(self, 24)
     }
 }
@@ -54,8 +54,6 @@ impl crate::Readable for DCDCLNFREQCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdclnfreqctrl::W`](W) writer structure
 impl crate::Writable for DCDCLNFREQCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCLNFREQCTRL to value 0x1000_0000
 impl crate::Resettable for DCDCLNFREQCTRLrs {

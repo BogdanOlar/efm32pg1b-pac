@@ -401,62 +401,62 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - I2C Enable
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<CTRLrs> {
+    pub fn en(&mut self) -> EnW<'_, CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 1 - Addressable as Slave
     #[inline(always)]
-    pub fn slave(&mut self) -> SlaveW<CTRLrs> {
+    pub fn slave(&mut self) -> SlaveW<'_, CTRLrs> {
         SlaveW::new(self, 1)
     }
     ///Bit 2 - Automatic Acknowledge
     #[inline(always)]
-    pub fn autoack(&mut self) -> AutoackW<CTRLrs> {
+    pub fn autoack(&mut self) -> AutoackW<'_, CTRLrs> {
         AutoackW::new(self, 2)
     }
     ///Bit 3 - Automatic STOP When Empty
     #[inline(always)]
-    pub fn autose(&mut self) -> AutoseW<CTRLrs> {
+    pub fn autose(&mut self) -> AutoseW<'_, CTRLrs> {
         AutoseW::new(self, 3)
     }
     ///Bit 4 - Automatic STOP on NACK
     #[inline(always)]
-    pub fn autosn(&mut self) -> AutosnW<CTRLrs> {
+    pub fn autosn(&mut self) -> AutosnW<'_, CTRLrs> {
         AutosnW::new(self, 4)
     }
     ///Bit 5 - Arbitration Disable
     #[inline(always)]
-    pub fn arbdis(&mut self) -> ArbdisW<CTRLrs> {
+    pub fn arbdis(&mut self) -> ArbdisW<'_, CTRLrs> {
         ArbdisW::new(self, 5)
     }
     ///Bit 6 - General Call Address Match Enable
     #[inline(always)]
-    pub fn gcamen(&mut self) -> GcamenW<CTRLrs> {
+    pub fn gcamen(&mut self) -> GcamenW<'_, CTRLrs> {
         GcamenW::new(self, 6)
     }
     ///Bit 7 - TX Buffer Interrupt Level
     #[inline(always)]
-    pub fn txbil(&mut self) -> TxbilW<CTRLrs> {
+    pub fn txbil(&mut self) -> TxbilW<'_, CTRLrs> {
         TxbilW::new(self, 7)
     }
     ///Bits 8:9 - Clock Low High Ratio
     #[inline(always)]
-    pub fn clhr(&mut self) -> ClhrW<CTRLrs> {
+    pub fn clhr(&mut self) -> ClhrW<'_, CTRLrs> {
         ClhrW::new(self, 8)
     }
     ///Bits 12:13 - Bus Idle Timeout
     #[inline(always)]
-    pub fn bito(&mut self) -> BitoW<CTRLrs> {
+    pub fn bito(&mut self) -> BitoW<'_, CTRLrs> {
         BitoW::new(self, 12)
     }
     ///Bit 15 - Go Idle on Bus Idle Timeout
     #[inline(always)]
-    pub fn gibito(&mut self) -> GibitoW<CTRLrs> {
+    pub fn gibito(&mut self) -> GibitoW<'_, CTRLrs> {
         GibitoW::new(self, 15)
     }
     ///Bits 16:18 - Clock Low Timeout
     #[inline(always)]
-    pub fn clto(&mut self) -> CltoW<CTRLrs> {
+    pub fn clto(&mut self) -> CltoW<'_, CTRLrs> {
         CltoW::new(self, 16)
     }
 }
@@ -472,10 +472,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

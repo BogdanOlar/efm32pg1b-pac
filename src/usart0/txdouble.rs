@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - TX Data
     #[inline(always)]
-    pub fn txdata0(&mut self) -> Txdata0W<TXDOUBLErs> {
+    pub fn txdata0(&mut self) -> Txdata0W<'_, TXDOUBLErs> {
         Txdata0W::new(self, 0)
     }
     ///Bits 8:15 - TX Data
     #[inline(always)]
-    pub fn txdata1(&mut self) -> Txdata1W<TXDOUBLErs> {
+    pub fn txdata1(&mut self) -> Txdata1W<'_, TXDOUBLErs> {
         Txdata1W::new(self, 8)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for TXDOUBLErs {}
 ///`write(|w| ..)` method takes [`txdouble::W`](W) writer structure
 impl crate::Writable for TXDOUBLErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TXDOUBLE to value 0
-impl crate::Resettable for TXDOUBLErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TXDOUBLErs {}

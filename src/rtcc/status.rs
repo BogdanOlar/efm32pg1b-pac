@@ -15,6 +15,4 @@ impl crate::RegisterSpec for STATUSrs {
 ///`read()` method returns [`status::R`](R) reader structure
 impl crate::Readable for STATUSrs {}
 ///`reset()` method sets STATUS to value 0
-impl crate::Resettable for STATUSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for STATUSrs {}

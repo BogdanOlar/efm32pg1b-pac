@@ -82,7 +82,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - DTI Lock Key
     #[inline(always)]
-    pub fn lockkey(&mut self) -> LockkeyW<DTLOCKrs> {
+    pub fn lockkey(&mut self) -> LockkeyW<'_, DTLOCKrs> {
         LockkeyW::new(self, 0)
     }
 }
@@ -98,10 +98,6 @@ impl crate::Readable for DTLOCKrs {}
 ///`write(|w| ..)` method takes [`dtlock::W`](W) writer structure
 impl crate::Writable for DTLOCKrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DTLOCK to value 0
-impl crate::Resettable for DTLOCKrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DTLOCKrs {}

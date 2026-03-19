@@ -209,12 +209,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Signal Select
     #[inline(always)]
-    pub fn sigsel(&mut self) -> SigselW<CH6_REQSELrs> {
+    pub fn sigsel(&mut self) -> SigselW<'_, CH6_REQSELrs> {
         SigselW::new(self, 0)
     }
     ///Bits 16:21 - Source Select
     #[inline(always)]
-    pub fn sourcesel(&mut self) -> SourceselW<CH6_REQSELrs> {
+    pub fn sourcesel(&mut self) -> SourceselW<'_, CH6_REQSELrs> {
         SourceselW::new(self, 16)
     }
 }
@@ -230,10 +230,6 @@ impl crate::Readable for CH6_REQSELrs {}
 ///`write(|w| ..)` method takes [`ch6_reqsel::W`](W) writer structure
 impl crate::Writable for CH6_REQSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CH6_REQSEL to value 0
-impl crate::Resettable for CH6_REQSELrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH6_REQSELrs {}

@@ -344,47 +344,47 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - RTCC Enable
     #[inline(always)]
-    pub fn enable(&mut self) -> EnableW<CTRLrs> {
+    pub fn enable(&mut self) -> EnableW<'_, CTRLrs> {
         EnableW::new(self, 0)
     }
     ///Bit 2 - Debug Mode Run Enable
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DebugrunW<CTRLrs> {
+    pub fn debugrun(&mut self) -> DebugrunW<'_, CTRLrs> {
         DebugrunW::new(self, 2)
     }
     ///Bit 4 - Pre-counter CCV0 Top Value Enable
     #[inline(always)]
-    pub fn preccv0top(&mut self) -> Preccv0topW<CTRLrs> {
+    pub fn preccv0top(&mut self) -> Preccv0topW<'_, CTRLrs> {
         Preccv0topW::new(self, 4)
     }
     ///Bit 5 - CCV1 Top Value Enable
     #[inline(always)]
-    pub fn ccv1top(&mut self) -> Ccv1topW<CTRLrs> {
+    pub fn ccv1top(&mut self) -> Ccv1topW<'_, CTRLrs> {
         Ccv1topW::new(self, 5)
     }
     ///Bits 8:11 - Counter Prescaler Value
     #[inline(always)]
-    pub fn cntpresc(&mut self) -> CntprescW<CTRLrs> {
+    pub fn cntpresc(&mut self) -> CntprescW<'_, CTRLrs> {
         CntprescW::new(self, 8)
     }
     ///Bit 12 - Counter Prescaler Mode
     #[inline(always)]
-    pub fn cnttick(&mut self) -> CnttickW<CTRLrs> {
+    pub fn cnttick(&mut self) -> CnttickW<'_, CTRLrs> {
         CnttickW::new(self, 12)
     }
     ///Bit 15 - Oscillator Failure Detection Enable
     #[inline(always)]
-    pub fn oscfdeten(&mut self) -> OscfdetenW<CTRLrs> {
+    pub fn oscfdeten(&mut self) -> OscfdetenW<'_, CTRLrs> {
         OscfdetenW::new(self, 15)
     }
     ///Bit 16 - Main Counter Mode
     #[inline(always)]
-    pub fn cntmode(&mut self) -> CntmodeW<CTRLrs> {
+    pub fn cntmode(&mut self) -> CntmodeW<'_, CTRLrs> {
         CntmodeW::new(self, 16)
     }
     ///Bit 17 - Leap Year Correction Disabled
     #[inline(always)]
-    pub fn lyearcorrdis(&mut self) -> LyearcorrdisW<CTRLrs> {
+    pub fn lyearcorrdis(&mut self) -> LyearcorrdisW<'_, CTRLrs> {
         LyearcorrdisW::new(self, 17)
     }
 }
@@ -400,10 +400,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

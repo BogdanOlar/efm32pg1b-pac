@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Page Erase or Write Address Buffer
     #[inline(always)]
-    pub fn addrb(&mut self) -> AddrbW<ADDRBrs> {
+    pub fn addrb(&mut self) -> AddrbW<'_, ADDRBrs> {
         AddrbW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for ADDRBrs {}
 ///`write(|w| ..)` method takes [`addrb::W`](W) writer structure
 impl crate::Writable for ADDRBrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ADDRB to value 0
-impl crate::Resettable for ADDRBrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ADDRBrs {}

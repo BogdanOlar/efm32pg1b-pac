@@ -123,57 +123,57 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - OF Interrupt Enable
     #[inline(always)]
-    pub fn of(&mut self) -> OfW<IENrs> {
+    pub fn of(&mut self) -> OfW<'_, IENrs> {
         OfW::new(self, 0)
     }
     ///Bit 1 - CC0 Interrupt Enable
     #[inline(always)]
-    pub fn cc0(&mut self) -> Cc0W<IENrs> {
+    pub fn cc0(&mut self) -> Cc0W<'_, IENrs> {
         Cc0W::new(self, 1)
     }
     ///Bit 2 - CC1 Interrupt Enable
     #[inline(always)]
-    pub fn cc1(&mut self) -> Cc1W<IENrs> {
+    pub fn cc1(&mut self) -> Cc1W<'_, IENrs> {
         Cc1W::new(self, 2)
     }
     ///Bit 3 - CC2 Interrupt Enable
     #[inline(always)]
-    pub fn cc2(&mut self) -> Cc2W<IENrs> {
+    pub fn cc2(&mut self) -> Cc2W<'_, IENrs> {
         Cc2W::new(self, 3)
     }
     ///Bit 4 - OSCFAIL Interrupt Enable
     #[inline(always)]
-    pub fn oscfail(&mut self) -> OscfailW<IENrs> {
+    pub fn oscfail(&mut self) -> OscfailW<'_, IENrs> {
         OscfailW::new(self, 4)
     }
     ///Bit 5 - CNTTICK Interrupt Enable
     #[inline(always)]
-    pub fn cnttick(&mut self) -> CnttickW<IENrs> {
+    pub fn cnttick(&mut self) -> CnttickW<'_, IENrs> {
         CnttickW::new(self, 5)
     }
     ///Bit 6 - MINTICK Interrupt Enable
     #[inline(always)]
-    pub fn mintick(&mut self) -> MintickW<IENrs> {
+    pub fn mintick(&mut self) -> MintickW<'_, IENrs> {
         MintickW::new(self, 6)
     }
     ///Bit 7 - HOURTICK Interrupt Enable
     #[inline(always)]
-    pub fn hourtick(&mut self) -> HourtickW<IENrs> {
+    pub fn hourtick(&mut self) -> HourtickW<'_, IENrs> {
         HourtickW::new(self, 7)
     }
     ///Bit 8 - DAYTICK Interrupt Enable
     #[inline(always)]
-    pub fn daytick(&mut self) -> DaytickW<IENrs> {
+    pub fn daytick(&mut self) -> DaytickW<'_, IENrs> {
         DaytickW::new(self, 8)
     }
     ///Bit 9 - DAYOWOF Interrupt Enable
     #[inline(always)]
-    pub fn dayowof(&mut self) -> DayowofW<IENrs> {
+    pub fn dayowof(&mut self) -> DayowofW<'_, IENrs> {
         DayowofW::new(self, 9)
     }
     ///Bit 10 - MONTHTICK Interrupt Enable
     #[inline(always)]
-    pub fn monthtick(&mut self) -> MonthtickW<IENrs> {
+    pub fn monthtick(&mut self) -> MonthtickW<'_, IENrs> {
         MonthtickW::new(self, 10)
     }
 }
@@ -189,10 +189,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

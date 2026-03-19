@@ -431,22 +431,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - S0IN PRS Channel Select
     #[inline(always)]
-    pub fn s0prssel(&mut self) -> S0prsselW<INPUTrs> {
+    pub fn s0prssel(&mut self) -> S0prsselW<'_, INPUTrs> {
         S0prsselW::new(self, 0)
     }
     ///Bit 5 - S0IN PRS Enable
     #[inline(always)]
-    pub fn s0prsen(&mut self) -> S0prsenW<INPUTrs> {
+    pub fn s0prsen(&mut self) -> S0prsenW<'_, INPUTrs> {
         S0prsenW::new(self, 5)
     }
     ///Bits 6:9 - S1IN PRS Channel Select
     #[inline(always)]
-    pub fn s1prssel(&mut self) -> S1prsselW<INPUTrs> {
+    pub fn s1prssel(&mut self) -> S1prsselW<'_, INPUTrs> {
         S1prsselW::new(self, 6)
     }
     ///Bit 11 - S1IN PRS Enable
     #[inline(always)]
-    pub fn s1prsen(&mut self) -> S1prsenW<INPUTrs> {
+    pub fn s1prsen(&mut self) -> S1prsenW<'_, INPUTrs> {
         S1prsenW::new(self, 11)
     }
 }
@@ -462,10 +462,6 @@ impl crate::Readable for INPUTrs {}
 ///`write(|w| ..)` method takes [`input::W`](W) writer structure
 impl crate::Writable for INPUTrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets INPUT to value 0
-impl crate::Resettable for INPUTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INPUTrs {}

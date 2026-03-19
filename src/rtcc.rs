@@ -370,8 +370,7 @@ impl RegisterBlock {
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ctrl`]
-///module
+///For information about available fields see [`mod@ctrl`] module
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CTRLrs>;
 ///Control Register
@@ -380,8 +379,7 @@ pub mod ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`precnt::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`precnt::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@precnt`]
-///module
+///For information about available fields see [`mod@precnt`] module
 #[doc(alias = "PRECNT")]
 pub type Precnt = crate::Reg<precnt::PRECNTrs>;
 ///Pre-Counter Value Register
@@ -390,8 +388,7 @@ pub mod precnt;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cnt::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cnt::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cnt`]
-///module
+///For information about available fields see [`mod@cnt`] module
 #[doc(alias = "CNT")]
 pub type Cnt = crate::Reg<cnt::CNTrs>;
 ///Counter Value Register
@@ -400,8 +397,7 @@ pub mod cnt;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`combcnt::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@combcnt`]
-///module
+///For information about available fields see [`mod@combcnt`] module
 #[doc(alias = "COMBCNT")]
 pub type Combcnt = crate::Reg<combcnt::COMBCNTrs>;
 ///Combined Pre-Counter and Counter Value Register
@@ -410,8 +406,7 @@ pub mod combcnt;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`time::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`time::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@time`]
-///module
+///For information about available fields see [`mod@time`] module
 #[doc(alias = "TIME")]
 pub type Time = crate::Reg<time::TIMErs>;
 ///Time of Day Register
@@ -420,8 +415,7 @@ pub mod time;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`date::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`date::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@date`]
-///module
+///For information about available fields see [`mod@date`] module
 #[doc(alias = "DATE")]
 pub type Date = crate::Reg<date::DATErs>;
 ///Date Register
@@ -430,8 +424,7 @@ pub mod date;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`if_::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@if_`]
-///module
+///For information about available fields see [`mod@if_`] module
 #[doc(alias = "IF")]
 pub type If = crate::Reg<if_::IFrs>;
 ///RTCC Interrupt Flags
@@ -440,8 +433,7 @@ pub mod if_;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifs::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifs`]
-///module
+///For information about available fields see [`mod@ifs`] module
 #[doc(alias = "IFS")]
 pub type Ifs = crate::Reg<ifs::IFSrs>;
 ///Interrupt Flag Set Register
@@ -450,8 +442,7 @@ pub mod ifs;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ifc`]
-///module
+///For information about available fields see [`mod@ifc`] module
 #[doc(alias = "IFC")]
 pub type Ifc = crate::Reg<ifc::IFCrs>;
 ///Interrupt Flag Clear Register
@@ -460,8 +451,7 @@ pub mod ifc;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ien::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ien::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ien`]
-///module
+///For information about available fields see [`mod@ien`] module
 #[doc(alias = "IEN")]
 pub type Ien = crate::Reg<ien::IENrs>;
 ///Interrupt Enable Register
@@ -470,8 +460,7 @@ pub mod ien;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@status`]
-///module
+///For information about available fields see [`mod@status`] module
 #[doc(alias = "STATUS")]
 pub type Status = crate::Reg<status::STATUSrs>;
 ///Status Register
@@ -480,8 +469,7 @@ pub mod status;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmd::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cmd`]
-///module
+///For information about available fields see [`mod@cmd`] module
 #[doc(alias = "CMD")]
 pub type Cmd = crate::Reg<cmd::CMDrs>;
 ///Command Register
@@ -490,8 +478,7 @@ pub mod cmd;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`syncbusy::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@syncbusy`]
-///module
+///For information about available fields see [`mod@syncbusy`] module
 #[doc(alias = "SYNCBUSY")]
 pub type Syncbusy = crate::Reg<syncbusy::SYNCBUSYrs>;
 ///Synchronization Busy Register
@@ -500,8 +487,7 @@ pub mod syncbusy;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`powerdown::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`powerdown::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@powerdown`]
-///module
+///For information about available fields see [`mod@powerdown`] module
 #[doc(alias = "POWERDOWN")]
 pub type Powerdown = crate::Reg<powerdown::POWERDOWNrs>;
 ///Retention RAM Power-down Register
@@ -510,8 +496,7 @@ pub mod powerdown;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`lock::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`lock::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@lock`]
-///module
+///For information about available fields see [`mod@lock`] module
 #[doc(alias = "LOCK")]
 pub type Lock = crate::Reg<lock::LOCKrs>;
 ///Configuration Lock Register
@@ -520,8 +505,7 @@ pub mod lock;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`em4wuen::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`em4wuen::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@em4wuen`]
-///module
+///For information about available fields see [`mod@em4wuen`] module
 #[doc(alias = "EM4WUEN")]
 pub type Em4wuen = crate::Reg<em4wuen::EM4WUENrs>;
 ///Wake Up Enable
@@ -530,8 +514,7 @@ pub mod em4wuen;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc0_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc0_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc0_ctrl`]
-///module
+///For information about available fields see [`mod@cc0_ctrl`] module
 #[doc(alias = "CC0_CTRL")]
 pub type Cc0Ctrl = crate::Reg<cc0_ctrl::CC0_CTRLrs>;
 ///CC Channel Control Register
@@ -540,8 +523,7 @@ pub mod cc0_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc0_ccv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc0_ccv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc0_ccv`]
-///module
+///For information about available fields see [`mod@cc0_ccv`] module
 #[doc(alias = "CC0_CCV")]
 pub type Cc0Ccv = crate::Reg<cc0_ccv::CC0_CCVrs>;
 ///Capture/Compare Value Register
@@ -550,8 +532,7 @@ pub mod cc0_ccv;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc0_time::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc0_time::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc0_time`]
-///module
+///For information about available fields see [`mod@cc0_time`] module
 #[doc(alias = "CC0_TIME")]
 pub type Cc0Time = crate::Reg<cc0_time::CC0_TIMErs>;
 ///Capture/Compare Time Register
@@ -560,8 +541,7 @@ pub mod cc0_time;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc0_date::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc0_date::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc0_date`]
-///module
+///For information about available fields see [`mod@cc0_date`] module
 #[doc(alias = "CC0_DATE")]
 pub type Cc0Date = crate::Reg<cc0_date::CC0_DATErs>;
 ///Capture/Compare Date Register
@@ -570,8 +550,7 @@ pub mod cc0_date;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc1_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc1_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc1_ctrl`]
-///module
+///For information about available fields see [`mod@cc1_ctrl`] module
 #[doc(alias = "CC1_CTRL")]
 pub type Cc1Ctrl = crate::Reg<cc1_ctrl::CC1_CTRLrs>;
 ///CC Channel Control Register
@@ -580,8 +559,7 @@ pub mod cc1_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc1_ccv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc1_ccv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc1_ccv`]
-///module
+///For information about available fields see [`mod@cc1_ccv`] module
 #[doc(alias = "CC1_CCV")]
 pub type Cc1Ccv = crate::Reg<cc1_ccv::CC1_CCVrs>;
 ///Capture/Compare Value Register
@@ -590,8 +568,7 @@ pub mod cc1_ccv;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc1_time::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc1_time::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc1_time`]
-///module
+///For information about available fields see [`mod@cc1_time`] module
 #[doc(alias = "CC1_TIME")]
 pub type Cc1Time = crate::Reg<cc1_time::CC1_TIMErs>;
 ///Capture/Compare Time Register
@@ -600,8 +577,7 @@ pub mod cc1_time;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc1_date::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc1_date::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc1_date`]
-///module
+///For information about available fields see [`mod@cc1_date`] module
 #[doc(alias = "CC1_DATE")]
 pub type Cc1Date = crate::Reg<cc1_date::CC1_DATErs>;
 ///Capture/Compare Date Register
@@ -610,8 +586,7 @@ pub mod cc1_date;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc2_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc2_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc2_ctrl`]
-///module
+///For information about available fields see [`mod@cc2_ctrl`] module
 #[doc(alias = "CC2_CTRL")]
 pub type Cc2Ctrl = crate::Reg<cc2_ctrl::CC2_CTRLrs>;
 ///CC Channel Control Register
@@ -620,8 +595,7 @@ pub mod cc2_ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc2_ccv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc2_ccv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc2_ccv`]
-///module
+///For information about available fields see [`mod@cc2_ccv`] module
 #[doc(alias = "CC2_CCV")]
 pub type Cc2Ccv = crate::Reg<cc2_ccv::CC2_CCVrs>;
 ///Capture/Compare Value Register
@@ -630,8 +604,7 @@ pub mod cc2_ccv;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc2_time::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc2_time::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc2_time`]
-///module
+///For information about available fields see [`mod@cc2_time`] module
 #[doc(alias = "CC2_TIME")]
 pub type Cc2Time = crate::Reg<cc2_time::CC2_TIMErs>;
 ///Capture/Compare Time Register
@@ -640,8 +613,7 @@ pub mod cc2_time;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`cc2_date::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cc2_date::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@cc2_date`]
-///module
+///For information about available fields see [`mod@cc2_date`] module
 #[doc(alias = "CC2_DATE")]
 pub type Cc2Date = crate::Reg<cc2_date::CC2_DATErs>;
 ///Capture/Compare Date Register
@@ -650,8 +622,7 @@ pub mod cc2_date;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret0_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret0_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret0_reg`]
-///module
+///For information about available fields see [`mod@ret0_reg`] module
 #[doc(alias = "RET0_REG")]
 pub type Ret0Reg = crate::Reg<ret0_reg::RET0_REGrs>;
 ///Retention Register
@@ -660,8 +631,7 @@ pub mod ret0_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret1_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret1_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret1_reg`]
-///module
+///For information about available fields see [`mod@ret1_reg`] module
 #[doc(alias = "RET1_REG")]
 pub type Ret1Reg = crate::Reg<ret1_reg::RET1_REGrs>;
 ///Retention Register
@@ -670,8 +640,7 @@ pub mod ret1_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret2_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret2_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret2_reg`]
-///module
+///For information about available fields see [`mod@ret2_reg`] module
 #[doc(alias = "RET2_REG")]
 pub type Ret2Reg = crate::Reg<ret2_reg::RET2_REGrs>;
 ///Retention Register
@@ -680,8 +649,7 @@ pub mod ret2_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret3_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret3_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret3_reg`]
-///module
+///For information about available fields see [`mod@ret3_reg`] module
 #[doc(alias = "RET3_REG")]
 pub type Ret3Reg = crate::Reg<ret3_reg::RET3_REGrs>;
 ///Retention Register
@@ -690,8 +658,7 @@ pub mod ret3_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret4_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret4_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret4_reg`]
-///module
+///For information about available fields see [`mod@ret4_reg`] module
 #[doc(alias = "RET4_REG")]
 pub type Ret4Reg = crate::Reg<ret4_reg::RET4_REGrs>;
 ///Retention Register
@@ -700,8 +667,7 @@ pub mod ret4_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret5_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret5_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret5_reg`]
-///module
+///For information about available fields see [`mod@ret5_reg`] module
 #[doc(alias = "RET5_REG")]
 pub type Ret5Reg = crate::Reg<ret5_reg::RET5_REGrs>;
 ///Retention Register
@@ -710,8 +676,7 @@ pub mod ret5_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret6_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret6_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret6_reg`]
-///module
+///For information about available fields see [`mod@ret6_reg`] module
 #[doc(alias = "RET6_REG")]
 pub type Ret6Reg = crate::Reg<ret6_reg::RET6_REGrs>;
 ///Retention Register
@@ -720,8 +685,7 @@ pub mod ret6_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret7_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret7_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret7_reg`]
-///module
+///For information about available fields see [`mod@ret7_reg`] module
 #[doc(alias = "RET7_REG")]
 pub type Ret7Reg = crate::Reg<ret7_reg::RET7_REGrs>;
 ///Retention Register
@@ -730,8 +694,7 @@ pub mod ret7_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret8_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret8_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret8_reg`]
-///module
+///For information about available fields see [`mod@ret8_reg`] module
 #[doc(alias = "RET8_REG")]
 pub type Ret8Reg = crate::Reg<ret8_reg::RET8_REGrs>;
 ///Retention Register
@@ -740,8 +703,7 @@ pub mod ret8_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret9_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret9_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret9_reg`]
-///module
+///For information about available fields see [`mod@ret9_reg`] module
 #[doc(alias = "RET9_REG")]
 pub type Ret9Reg = crate::Reg<ret9_reg::RET9_REGrs>;
 ///Retention Register
@@ -750,8 +712,7 @@ pub mod ret9_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret10_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret10_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret10_reg`]
-///module
+///For information about available fields see [`mod@ret10_reg`] module
 #[doc(alias = "RET10_REG")]
 pub type Ret10Reg = crate::Reg<ret10_reg::RET10_REGrs>;
 ///Retention Register
@@ -760,8 +721,7 @@ pub mod ret10_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret11_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret11_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret11_reg`]
-///module
+///For information about available fields see [`mod@ret11_reg`] module
 #[doc(alias = "RET11_REG")]
 pub type Ret11Reg = crate::Reg<ret11_reg::RET11_REGrs>;
 ///Retention Register
@@ -770,8 +730,7 @@ pub mod ret11_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret12_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret12_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret12_reg`]
-///module
+///For information about available fields see [`mod@ret12_reg`] module
 #[doc(alias = "RET12_REG")]
 pub type Ret12Reg = crate::Reg<ret12_reg::RET12_REGrs>;
 ///Retention Register
@@ -780,8 +739,7 @@ pub mod ret12_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret13_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret13_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret13_reg`]
-///module
+///For information about available fields see [`mod@ret13_reg`] module
 #[doc(alias = "RET13_REG")]
 pub type Ret13Reg = crate::Reg<ret13_reg::RET13_REGrs>;
 ///Retention Register
@@ -790,8 +748,7 @@ pub mod ret13_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret14_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret14_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret14_reg`]
-///module
+///For information about available fields see [`mod@ret14_reg`] module
 #[doc(alias = "RET14_REG")]
 pub type Ret14Reg = crate::Reg<ret14_reg::RET14_REGrs>;
 ///Retention Register
@@ -800,8 +757,7 @@ pub mod ret14_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret15_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret15_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret15_reg`]
-///module
+///For information about available fields see [`mod@ret15_reg`] module
 #[doc(alias = "RET15_REG")]
 pub type Ret15Reg = crate::Reg<ret15_reg::RET15_REGrs>;
 ///Retention Register
@@ -810,8 +766,7 @@ pub mod ret15_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret16_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret16_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret16_reg`]
-///module
+///For information about available fields see [`mod@ret16_reg`] module
 #[doc(alias = "RET16_REG")]
 pub type Ret16Reg = crate::Reg<ret16_reg::RET16_REGrs>;
 ///Retention Register
@@ -820,8 +775,7 @@ pub mod ret16_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret17_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret17_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret17_reg`]
-///module
+///For information about available fields see [`mod@ret17_reg`] module
 #[doc(alias = "RET17_REG")]
 pub type Ret17Reg = crate::Reg<ret17_reg::RET17_REGrs>;
 ///Retention Register
@@ -830,8 +784,7 @@ pub mod ret17_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret18_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret18_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret18_reg`]
-///module
+///For information about available fields see [`mod@ret18_reg`] module
 #[doc(alias = "RET18_REG")]
 pub type Ret18Reg = crate::Reg<ret18_reg::RET18_REGrs>;
 ///Retention Register
@@ -840,8 +793,7 @@ pub mod ret18_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret19_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret19_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret19_reg`]
-///module
+///For information about available fields see [`mod@ret19_reg`] module
 #[doc(alias = "RET19_REG")]
 pub type Ret19Reg = crate::Reg<ret19_reg::RET19_REGrs>;
 ///Retention Register
@@ -850,8 +802,7 @@ pub mod ret19_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret20_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret20_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret20_reg`]
-///module
+///For information about available fields see [`mod@ret20_reg`] module
 #[doc(alias = "RET20_REG")]
 pub type Ret20Reg = crate::Reg<ret20_reg::RET20_REGrs>;
 ///Retention Register
@@ -860,8 +811,7 @@ pub mod ret20_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret21_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret21_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret21_reg`]
-///module
+///For information about available fields see [`mod@ret21_reg`] module
 #[doc(alias = "RET21_REG")]
 pub type Ret21Reg = crate::Reg<ret21_reg::RET21_REGrs>;
 ///Retention Register
@@ -870,8 +820,7 @@ pub mod ret21_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret22_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret22_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret22_reg`]
-///module
+///For information about available fields see [`mod@ret22_reg`] module
 #[doc(alias = "RET22_REG")]
 pub type Ret22Reg = crate::Reg<ret22_reg::RET22_REGrs>;
 ///Retention Register
@@ -880,8 +829,7 @@ pub mod ret22_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret23_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret23_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret23_reg`]
-///module
+///For information about available fields see [`mod@ret23_reg`] module
 #[doc(alias = "RET23_REG")]
 pub type Ret23Reg = crate::Reg<ret23_reg::RET23_REGrs>;
 ///Retention Register
@@ -890,8 +838,7 @@ pub mod ret23_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret24_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret24_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret24_reg`]
-///module
+///For information about available fields see [`mod@ret24_reg`] module
 #[doc(alias = "RET24_REG")]
 pub type Ret24Reg = crate::Reg<ret24_reg::RET24_REGrs>;
 ///Retention Register
@@ -900,8 +847,7 @@ pub mod ret24_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret25_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret25_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret25_reg`]
-///module
+///For information about available fields see [`mod@ret25_reg`] module
 #[doc(alias = "RET25_REG")]
 pub type Ret25Reg = crate::Reg<ret25_reg::RET25_REGrs>;
 ///Retention Register
@@ -910,8 +856,7 @@ pub mod ret25_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret26_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret26_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret26_reg`]
-///module
+///For information about available fields see [`mod@ret26_reg`] module
 #[doc(alias = "RET26_REG")]
 pub type Ret26Reg = crate::Reg<ret26_reg::RET26_REGrs>;
 ///Retention Register
@@ -920,8 +865,7 @@ pub mod ret26_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret27_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret27_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret27_reg`]
-///module
+///For information about available fields see [`mod@ret27_reg`] module
 #[doc(alias = "RET27_REG")]
 pub type Ret27Reg = crate::Reg<ret27_reg::RET27_REGrs>;
 ///Retention Register
@@ -930,8 +874,7 @@ pub mod ret27_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret28_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret28_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret28_reg`]
-///module
+///For information about available fields see [`mod@ret28_reg`] module
 #[doc(alias = "RET28_REG")]
 pub type Ret28Reg = crate::Reg<ret28_reg::RET28_REGrs>;
 ///Retention Register
@@ -940,8 +883,7 @@ pub mod ret28_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret29_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret29_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret29_reg`]
-///module
+///For information about available fields see [`mod@ret29_reg`] module
 #[doc(alias = "RET29_REG")]
 pub type Ret29Reg = crate::Reg<ret29_reg::RET29_REGrs>;
 ///Retention Register
@@ -950,8 +892,7 @@ pub mod ret29_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret30_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret30_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret30_reg`]
-///module
+///For information about available fields see [`mod@ret30_reg`] module
 #[doc(alias = "RET30_REG")]
 pub type Ret30Reg = crate::Reg<ret30_reg::RET30_REGrs>;
 ///Retention Register
@@ -960,8 +901,7 @@ pub mod ret30_reg;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ret31_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ret31_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ret31_reg`]
-///module
+///For information about available fields see [`mod@ret31_reg`] module
 #[doc(alias = "RET31_REG")]
 pub type Ret31Reg = crate::Reg<ret31_reg::RET31_REGrs>;
 ///Retention Register

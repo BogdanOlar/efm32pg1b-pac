@@ -10,7 +10,7 @@ impl core::fmt::Debug for crate::generic::Reg<LINKLOADrs> {
 impl W {
     ///Bits 0:7 - DMA Link Loads
     #[inline(always)]
-    pub fn linkload(&mut self) -> LinkloadW<LINKLOADrs> {
+    pub fn linkload(&mut self) -> LinkloadW<'_, LINKLOADrs> {
         LinkloadW::new(self, 0)
     }
 }
@@ -24,10 +24,6 @@ impl crate::RegisterSpec for LINKLOADrs {
 ///`write(|w| ..)` method takes [`linkload::W`](W) writer structure
 impl crate::Writable for LINKLOADrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets LINKLOAD to value 0
-impl crate::Resettable for LINKLOADrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LINKLOADrs {}

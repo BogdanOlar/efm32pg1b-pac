@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:31 - Destination Data Address
     #[inline(always)]
-    pub fn dstaddr(&mut self) -> DstaddrW<CH5_DSTrs> {
+    pub fn dstaddr(&mut self) -> DstaddrW<'_, CH5_DSTrs> {
         DstaddrW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for CH5_DSTrs {}
 ///`write(|w| ..)` method takes [`ch5_dst::W`](W) writer structure
 impl crate::Writable for CH5_DSTrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CH5_DST to value 0
-impl crate::Resettable for CH5_DSTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH5_DSTrs {}

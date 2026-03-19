@@ -538,52 +538,52 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - AES Mode
     #[inline(always)]
-    pub fn aes(&mut self) -> AesW<CTRLrs> {
+    pub fn aes(&mut self) -> AesW<'_, CTRLrs> {
         AesW::new(self, 0)
     }
     ///Bit 1 - Key Buffer Disable
     #[inline(always)]
-    pub fn keybufdis(&mut self) -> KeybufdisW<CTRLrs> {
+    pub fn keybufdis(&mut self) -> KeybufdisW<'_, CTRLrs> {
         KeybufdisW::new(self, 1)
     }
     ///Bit 2 - SHA Mode
     #[inline(always)]
-    pub fn sha(&mut self) -> ShaW<CTRLrs> {
+    pub fn sha(&mut self) -> ShaW<'_, CTRLrs> {
         ShaW::new(self, 2)
     }
     ///Bit 10 - No Stalling of Bus When Busy
     #[inline(always)]
-    pub fn nobusystall(&mut self) -> NobusystallW<CTRLrs> {
+    pub fn nobusystall(&mut self) -> NobusystallW<'_, CTRLrs> {
         NobusystallW::new(self, 10)
     }
     ///Bits 14:15 - Increment Width
     #[inline(always)]
-    pub fn incwidth(&mut self) -> IncwidthW<CTRLrs> {
+    pub fn incwidth(&mut self) -> IncwidthW<'_, CTRLrs> {
         IncwidthW::new(self, 14)
     }
     ///Bits 16:17 - DMA0 Read Mode
     #[inline(always)]
-    pub fn dma0mode(&mut self) -> Dma0modeW<CTRLrs> {
+    pub fn dma0mode(&mut self) -> Dma0modeW<'_, CTRLrs> {
         Dma0modeW::new(self, 16)
     }
     ///Bits 20:21 - DMA0 Read Register Select
     #[inline(always)]
-    pub fn dma0rsel(&mut self) -> Dma0rselW<CTRLrs> {
+    pub fn dma0rsel(&mut self) -> Dma0rselW<'_, CTRLrs> {
         Dma0rselW::new(self, 20)
     }
     ///Bits 24:25 - DMA1 Read Mode
     #[inline(always)]
-    pub fn dma1mode(&mut self) -> Dma1modeW<CTRLrs> {
+    pub fn dma1mode(&mut self) -> Dma1modeW<'_, CTRLrs> {
         Dma1modeW::new(self, 24)
     }
     ///Bits 28:29 - DATA0 DMA Unaligned Read Register Select
     #[inline(always)]
-    pub fn dma1rsel(&mut self) -> Dma1rselW<CTRLrs> {
+    pub fn dma1rsel(&mut self) -> Dma1rselW<'_, CTRLrs> {
         Dma1rselW::new(self, 28)
     }
     ///Bit 31 - Combined Data0 Write DMA Request
     #[inline(always)]
-    pub fn combdma0wereq(&mut self) -> Combdma0wereqW<CTRLrs> {
+    pub fn combdma0wereq(&mut self) -> Combdma0wereqW<'_, CTRLrs> {
         Combdma0wereqW::new(self, 31)
     }
 }
@@ -599,10 +599,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0
-impl crate::Resettable for CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLrs {}

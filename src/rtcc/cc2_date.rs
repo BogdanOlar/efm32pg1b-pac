@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Day of Month/week, Units
     #[inline(always)]
-    pub fn dayu(&mut self) -> DayuW<CC2_DATErs> {
+    pub fn dayu(&mut self) -> DayuW<'_, CC2_DATErs> {
         DayuW::new(self, 0)
     }
     ///Bits 4:5 - Day of Month/week, Tens
     #[inline(always)]
-    pub fn dayt(&mut self) -> DaytW<CC2_DATErs> {
+    pub fn dayt(&mut self) -> DaytW<'_, CC2_DATErs> {
         DaytW::new(self, 4)
     }
     ///Bits 8:11 - Month, Units
     #[inline(always)]
-    pub fn monthu(&mut self) -> MonthuW<CC2_DATErs> {
+    pub fn monthu(&mut self) -> MonthuW<'_, CC2_DATErs> {
         MonthuW::new(self, 8)
     }
     ///Bit 12 - Month, Tens
     #[inline(always)]
-    pub fn montht(&mut self) -> MonthtW<CC2_DATErs> {
+    pub fn montht(&mut self) -> MonthtW<'_, CC2_DATErs> {
         MonthtW::new(self, 12)
     }
 }
@@ -84,10 +84,6 @@ impl crate::Readable for CC2_DATErs {}
 ///`write(|w| ..)` method takes [`cc2_date::W`](W) writer structure
 impl crate::Writable for CC2_DATErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CC2_DATE to value 0
-impl crate::Resettable for CC2_DATErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CC2_DATErs {}

@@ -42,87 +42,87 @@ impl core::fmt::Debug for crate::generic::Reg<IFSrs> {
 impl W {
     ///Bit 0 - Set START Interrupt Flag
     #[inline(always)]
-    pub fn start(&mut self) -> StartW<IFSrs> {
+    pub fn start(&mut self) -> StartW<'_, IFSrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - Set RSTART Interrupt Flag
     #[inline(always)]
-    pub fn rstart(&mut self) -> RstartW<IFSrs> {
+    pub fn rstart(&mut self) -> RstartW<'_, IFSrs> {
         RstartW::new(self, 1)
     }
     ///Bit 2 - Set ADDR Interrupt Flag
     #[inline(always)]
-    pub fn addr(&mut self) -> AddrW<IFSrs> {
+    pub fn addr(&mut self) -> AddrW<'_, IFSrs> {
         AddrW::new(self, 2)
     }
     ///Bit 3 - Set TXC Interrupt Flag
     #[inline(always)]
-    pub fn txc(&mut self) -> TxcW<IFSrs> {
+    pub fn txc(&mut self) -> TxcW<'_, IFSrs> {
         TxcW::new(self, 3)
     }
     ///Bit 6 - Set ACK Interrupt Flag
     #[inline(always)]
-    pub fn ack(&mut self) -> AckW<IFSrs> {
+    pub fn ack(&mut self) -> AckW<'_, IFSrs> {
         AckW::new(self, 6)
     }
     ///Bit 7 - Set NACK Interrupt Flag
     #[inline(always)]
-    pub fn nack(&mut self) -> NackW<IFSrs> {
+    pub fn nack(&mut self) -> NackW<'_, IFSrs> {
         NackW::new(self, 7)
     }
     ///Bit 8 - Set MSTOP Interrupt Flag
     #[inline(always)]
-    pub fn mstop(&mut self) -> MstopW<IFSrs> {
+    pub fn mstop(&mut self) -> MstopW<'_, IFSrs> {
         MstopW::new(self, 8)
     }
     ///Bit 9 - Set ARBLOST Interrupt Flag
     #[inline(always)]
-    pub fn arblost(&mut self) -> ArblostW<IFSrs> {
+    pub fn arblost(&mut self) -> ArblostW<'_, IFSrs> {
         ArblostW::new(self, 9)
     }
     ///Bit 10 - Set BUSERR Interrupt Flag
     #[inline(always)]
-    pub fn buserr(&mut self) -> BuserrW<IFSrs> {
+    pub fn buserr(&mut self) -> BuserrW<'_, IFSrs> {
         BuserrW::new(self, 10)
     }
     ///Bit 11 - Set BUSHOLD Interrupt Flag
     #[inline(always)]
-    pub fn bushold(&mut self) -> BusholdW<IFSrs> {
+    pub fn bushold(&mut self) -> BusholdW<'_, IFSrs> {
         BusholdW::new(self, 11)
     }
     ///Bit 12 - Set TXOF Interrupt Flag
     #[inline(always)]
-    pub fn txof(&mut self) -> TxofW<IFSrs> {
+    pub fn txof(&mut self) -> TxofW<'_, IFSrs> {
         TxofW::new(self, 12)
     }
     ///Bit 13 - Set RXUF Interrupt Flag
     #[inline(always)]
-    pub fn rxuf(&mut self) -> RxufW<IFSrs> {
+    pub fn rxuf(&mut self) -> RxufW<'_, IFSrs> {
         RxufW::new(self, 13)
     }
     ///Bit 14 - Set BITO Interrupt Flag
     #[inline(always)]
-    pub fn bito(&mut self) -> BitoW<IFSrs> {
+    pub fn bito(&mut self) -> BitoW<'_, IFSrs> {
         BitoW::new(self, 14)
     }
     ///Bit 15 - Set CLTO Interrupt Flag
     #[inline(always)]
-    pub fn clto(&mut self) -> CltoW<IFSrs> {
+    pub fn clto(&mut self) -> CltoW<'_, IFSrs> {
         CltoW::new(self, 15)
     }
     ///Bit 16 - Set SSTOP Interrupt Flag
     #[inline(always)]
-    pub fn sstop(&mut self) -> SstopW<IFSrs> {
+    pub fn sstop(&mut self) -> SstopW<'_, IFSrs> {
         SstopW::new(self, 16)
     }
     ///Bit 17 - Set RXFULL Interrupt Flag
     #[inline(always)]
-    pub fn rxfull(&mut self) -> RxfullW<IFSrs> {
+    pub fn rxfull(&mut self) -> RxfullW<'_, IFSrs> {
         RxfullW::new(self, 17)
     }
     ///Bit 18 - Set CLERR Interrupt Flag
     #[inline(always)]
-    pub fn clerr(&mut self) -> ClerrW<IFSrs> {
+    pub fn clerr(&mut self) -> ClerrW<'_, IFSrs> {
         ClerrW::new(self, 18)
     }
 }
@@ -136,10 +136,6 @@ impl crate::RegisterSpec for IFSrs {
 ///`write(|w| ..)` method takes [`ifs::W`](W) writer structure
 impl crate::Writable for IFSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFS to value 0
-impl crate::Resettable for IFSrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFSrs {}

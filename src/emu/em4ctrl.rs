@@ -137,32 +137,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Energy Mode 4 State
     #[inline(always)]
-    pub fn em4state(&mut self) -> Em4stateW<EM4CTRLrs> {
+    pub fn em4state(&mut self) -> Em4stateW<'_, EM4CTRLrs> {
         Em4stateW::new(self, 0)
     }
     ///Bit 1 - LFRCO Retain During EM4
     #[inline(always)]
-    pub fn retainlfrco(&mut self) -> RetainlfrcoW<EM4CTRLrs> {
+    pub fn retainlfrco(&mut self) -> RetainlfrcoW<'_, EM4CTRLrs> {
         RetainlfrcoW::new(self, 1)
     }
     ///Bit 2 - LFXO Retain During EM4
     #[inline(always)]
-    pub fn retainlfxo(&mut self) -> RetainlfxoW<EM4CTRLrs> {
+    pub fn retainlfxo(&mut self) -> RetainlfxoW<'_, EM4CTRLrs> {
         RetainlfxoW::new(self, 2)
     }
     ///Bit 3 - ULFRCO Retain During EM4S
     #[inline(always)]
-    pub fn retainulfrco(&mut self) -> RetainulfrcoW<EM4CTRLrs> {
+    pub fn retainulfrco(&mut self) -> RetainulfrcoW<'_, EM4CTRLrs> {
         RetainulfrcoW::new(self, 3)
     }
     ///Bits 4:5 - EM4 IO Retention Disable
     #[inline(always)]
-    pub fn em4ioretmode(&mut self) -> Em4ioretmodeW<EM4CTRLrs> {
+    pub fn em4ioretmode(&mut self) -> Em4ioretmodeW<'_, EM4CTRLrs> {
         Em4ioretmodeW::new(self, 4)
     }
     ///Bits 16:17 - Energy Mode 4 Entry
     #[inline(always)]
-    pub fn em4entry(&mut self) -> Em4entryW<EM4CTRLrs> {
+    pub fn em4entry(&mut self) -> Em4entryW<'_, EM4CTRLrs> {
         Em4entryW::new(self, 16)
     }
 }
@@ -178,10 +178,6 @@ impl crate::Readable for EM4CTRLrs {}
 ///`write(|w| ..)` method takes [`em4ctrl::W`](W) writer structure
 impl crate::Writable for EM4CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets EM4CTRL to value 0
-impl crate::Resettable for EM4CTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EM4CTRLrs {}

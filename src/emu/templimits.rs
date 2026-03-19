@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Temperature Low Limit
     #[inline(always)]
-    pub fn templow(&mut self) -> TemplowW<TEMPLIMITSrs> {
+    pub fn templow(&mut self) -> TemplowW<'_, TEMPLIMITSrs> {
         TemplowW::new(self, 0)
     }
     ///Bits 8:15 - Temperature High Limit
     #[inline(always)]
-    pub fn temphigh(&mut self) -> TemphighW<TEMPLIMITSrs> {
+    pub fn temphigh(&mut self) -> TemphighW<'_, TEMPLIMITSrs> {
         TemphighW::new(self, 8)
     }
     ///Bit 16 - Enable EM4 Wakeup Due to Low/high Temperature
     #[inline(always)]
-    pub fn em4wuen(&mut self) -> Em4wuenW<TEMPLIMITSrs> {
+    pub fn em4wuen(&mut self) -> Em4wuenW<'_, TEMPLIMITSrs> {
         Em4wuenW::new(self, 16)
     }
 }
@@ -69,8 +69,6 @@ impl crate::Readable for TEMPLIMITSrs {}
 ///`write(|w| ..)` method takes [`templimits::W`](W) writer structure
 impl crate::Writable for TEMPLIMITSrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets TEMPLIMITS to value 0xff00
 impl crate::Resettable for TEMPLIMITSrs {

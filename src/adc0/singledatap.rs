@@ -26,6 +26,4 @@ impl crate::RegisterSpec for SINGLEDATAPrs {
 ///`read()` method returns [`singledatap::R`](R) reader structure
 impl crate::Readable for SINGLEDATAPrs {}
 ///`reset()` method sets SINGLEDATAP to value 0
-impl crate::Resettable for SINGLEDATAPrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SINGLEDATAPrs {}

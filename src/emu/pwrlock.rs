@@ -82,7 +82,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Regulator and Supply Configuration Lock Key
     #[inline(always)]
-    pub fn lockkey(&mut self) -> LockkeyW<PWRLOCKrs> {
+    pub fn lockkey(&mut self) -> LockkeyW<'_, PWRLOCKrs> {
         LockkeyW::new(self, 0)
     }
 }
@@ -98,10 +98,6 @@ impl crate::Readable for PWRLOCKrs {}
 ///`write(|w| ..)` method takes [`pwrlock::W`](W) writer structure
 impl crate::Writable for PWRLOCKrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PWRLOCK to value 0
-impl crate::Resettable for PWRLOCKrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PWRLOCKrs {}

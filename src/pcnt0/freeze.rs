@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Register Update Freeze
     #[inline(always)]
-    pub fn regfreeze(&mut self) -> RegfreezeW<FREEZErs> {
+    pub fn regfreeze(&mut self) -> RegfreezeW<'_, FREEZErs> {
         RegfreezeW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for FREEZErs {}
 ///`write(|w| ..)` method takes [`freeze::W`](W) writer structure
 impl crate::Writable for FREEZErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets FREEZE to value 0
-impl crate::Resettable for FREEZErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FREEZErs {}

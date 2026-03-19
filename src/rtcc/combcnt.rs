@@ -34,6 +34,4 @@ impl crate::RegisterSpec for COMBCNTrs {
 ///`read()` method returns [`combcnt::R`](R) reader structure
 impl crate::Readable for COMBCNTrs {}
 ///`reset()` method sets COMBCNT to value 0
-impl crate::Resettable for COMBCNTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for COMBCNTrs {}

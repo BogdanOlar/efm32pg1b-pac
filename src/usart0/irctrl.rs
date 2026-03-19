@@ -337,27 +337,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Enable IrDA Module
     #[inline(always)]
-    pub fn iren(&mut self) -> IrenW<IRCTRLrs> {
+    pub fn iren(&mut self) -> IrenW<'_, IRCTRLrs> {
         IrenW::new(self, 0)
     }
     ///Bits 1:2 - IrDA TX Pulse Width
     #[inline(always)]
-    pub fn irpw(&mut self) -> IrpwW<IRCTRLrs> {
+    pub fn irpw(&mut self) -> IrpwW<'_, IRCTRLrs> {
         IrpwW::new(self, 1)
     }
     ///Bit 3 - IrDA RX Filter
     #[inline(always)]
-    pub fn irfilt(&mut self) -> IrfiltW<IRCTRLrs> {
+    pub fn irfilt(&mut self) -> IrfiltW<'_, IRCTRLrs> {
         IrfiltW::new(self, 3)
     }
     ///Bit 7 - IrDA PRS Channel Enable
     #[inline(always)]
-    pub fn irprsen(&mut self) -> IrprsenW<IRCTRLrs> {
+    pub fn irprsen(&mut self) -> IrprsenW<'_, IRCTRLrs> {
         IrprsenW::new(self, 7)
     }
     ///Bits 8:11 - IrDA PRS Channel Select
     #[inline(always)]
-    pub fn irprssel(&mut self) -> IrprsselW<IRCTRLrs> {
+    pub fn irprssel(&mut self) -> IrprsselW<'_, IRCTRLrs> {
         IrprsselW::new(self, 8)
     }
 }
@@ -373,10 +373,6 @@ impl crate::Readable for IRCTRLrs {}
 ///`write(|w| ..)` method takes [`irctrl::W`](W) writer structure
 impl crate::Writable for IRCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IRCTRL to value 0
-impl crate::Resettable for IRCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IRCTRLrs {}

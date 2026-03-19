@@ -890,37 +890,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Positive Input Select
     #[inline(always)]
-    pub fn possel(&mut self) -> PosselW<INPUTSELrs> {
+    pub fn possel(&mut self) -> PosselW<'_, INPUTSELrs> {
         PosselW::new(self, 0)
     }
     ///Bits 8:15 - Negative Input Select
     #[inline(always)]
-    pub fn negsel(&mut self) -> NegselW<INPUTSELrs> {
+    pub fn negsel(&mut self) -> NegselW<'_, INPUTSELrs> {
         NegselW::new(self, 8)
     }
     ///Bits 16:21 - VA Selection
     #[inline(always)]
-    pub fn vasel(&mut self) -> VaselW<INPUTSELrs> {
+    pub fn vasel(&mut self) -> VaselW<'_, INPUTSELrs> {
         VaselW::new(self, 16)
     }
     ///Bit 22 - VB Selection
     #[inline(always)]
-    pub fn vbsel(&mut self) -> VbselW<INPUTSELrs> {
+    pub fn vbsel(&mut self) -> VbselW<'_, INPUTSELrs> {
         VbselW::new(self, 22)
     }
     ///Bit 24 - Low-Power Sampled Voltage Selection
     #[inline(always)]
-    pub fn vlpsel(&mut self) -> VlpselW<INPUTSELrs> {
+    pub fn vlpsel(&mut self) -> VlpselW<'_, INPUTSELrs> {
         VlpselW::new(self, 24)
     }
     ///Bit 26 - Capacitive Sense Mode Internal Resistor Enable
     #[inline(always)]
-    pub fn csresen(&mut self) -> CsresenW<INPUTSELrs> {
+    pub fn csresen(&mut self) -> CsresenW<'_, INPUTSELrs> {
         CsresenW::new(self, 26)
     }
     ///Bits 28:30 - Capacitive Sense Mode Internal Resistor Select
     #[inline(always)]
-    pub fn csressel(&mut self) -> CsresselW<INPUTSELrs> {
+    pub fn csressel(&mut self) -> CsresselW<'_, INPUTSELrs> {
         CsresselW::new(self, 28)
     }
 }
@@ -936,10 +936,6 @@ impl crate::Readable for INPUTSELrs {}
 ///`write(|w| ..)` method takes [`inputsel::W`](W) writer structure
 impl crate::Writable for INPUTSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets INPUTSEL to value 0
-impl crate::Resettable for INPUTSELrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INPUTSELrs {}

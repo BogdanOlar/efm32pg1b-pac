@@ -307,12 +307,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - I/O Location
     #[inline(always)]
-    pub fn clkout0loc(&mut self) -> Clkout0locW<ROUTELOC0rs> {
+    pub fn clkout0loc(&mut self) -> Clkout0locW<'_, ROUTELOC0rs> {
         Clkout0locW::new(self, 0)
     }
     ///Bits 8:13 - I/O Location
     #[inline(always)]
-    pub fn clkout1loc(&mut self) -> Clkout1locW<ROUTELOC0rs> {
+    pub fn clkout1loc(&mut self) -> Clkout1locW<'_, ROUTELOC0rs> {
         Clkout1locW::new(self, 8)
     }
 }
@@ -328,10 +328,6 @@ impl crate::Readable for ROUTELOC0rs {}
 ///`write(|w| ..)` method takes [`routeloc0::W`](W) writer structure
 impl crate::Writable for ROUTELOC0rs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ROUTELOC0 to value 0
-impl crate::Resettable for ROUTELOC0rs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ROUTELOC0rs {}

@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - COMP0 Interrupt Enable
     #[inline(always)]
-    pub fn comp0(&mut self) -> Comp0W<IENrs> {
+    pub fn comp0(&mut self) -> Comp0W<'_, IENrs> {
         Comp0W::new(self, 0)
     }
     ///Bit 1 - COMP1 Interrupt Enable
     #[inline(always)]
-    pub fn comp1(&mut self) -> Comp1W<IENrs> {
+    pub fn comp1(&mut self) -> Comp1W<'_, IENrs> {
         Comp1W::new(self, 1)
     }
     ///Bit 2 - UF Interrupt Enable
     #[inline(always)]
-    pub fn uf(&mut self) -> UfW<IENrs> {
+    pub fn uf(&mut self) -> UfW<'_, IENrs> {
         UfW::new(self, 2)
     }
     ///Bit 3 - REP0 Interrupt Enable
     #[inline(always)]
-    pub fn rep0(&mut self) -> Rep0W<IENrs> {
+    pub fn rep0(&mut self) -> Rep0W<'_, IENrs> {
         Rep0W::new(self, 3)
     }
     ///Bit 4 - REP1 Interrupt Enable
     #[inline(always)]
-    pub fn rep1(&mut self) -> Rep1W<IENrs> {
+    pub fn rep1(&mut self) -> Rep1W<'_, IENrs> {
         Rep1W::new(self, 4)
     }
 }
@@ -99,10 +99,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

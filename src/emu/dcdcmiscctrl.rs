@@ -168,37 +168,37 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Force DCDC Into CCM Mode in Low Noise Operation
     #[inline(always)]
-    pub fn lnforceccm(&mut self) -> LnforceccmW<DCDCMISCCTRLrs> {
+    pub fn lnforceccm(&mut self) -> LnforceccmW<'_, DCDCMISCCTRLrs> {
         LnforceccmW::new(self, 0)
     }
     ///Bits 8:11 - PFET Switch Number Selection
     #[inline(always)]
-    pub fn pfetcnt(&mut self) -> PfetcntW<DCDCMISCCTRLrs> {
+    pub fn pfetcnt(&mut self) -> PfetcntW<'_, DCDCMISCCTRLrs> {
         PfetcntW::new(self, 8)
     }
     ///Bits 12:15 - NFET Switch Number Selection
     #[inline(always)]
-    pub fn nfetcnt(&mut self) -> NfetcntW<DCDCMISCCTRLrs> {
+    pub fn nfetcnt(&mut self) -> NfetcntW<'_, DCDCMISCCTRLrs> {
         NfetcntW::new(self, 12)
     }
     ///Bits 16:19 - Current Limit in Bypass Mode
     #[inline(always)]
-    pub fn byplimsel(&mut self) -> ByplimselW<DCDCMISCCTRLrs> {
+    pub fn byplimsel(&mut self) -> ByplimselW<'_, DCDCMISCCTRLrs> {
         ByplimselW::new(self, 16)
     }
     ///Bits 20:22 - Current Limit Level Selection for Current Limiter in LP Mode
     #[inline(always)]
-    pub fn lpclimilimsel(&mut self) -> LpclimilimselW<DCDCMISCCTRLrs> {
+    pub fn lpclimilimsel(&mut self) -> LpclimilimselW<'_, DCDCMISCCTRLrs> {
         LpclimilimselW::new(self, 20)
     }
     ///Bits 24:26 - Current Limit Level Selection for Current Limiter in LN Mode
     #[inline(always)]
-    pub fn lnclimilimsel(&mut self) -> LnclimilimselW<DCDCMISCCTRLrs> {
+    pub fn lnclimilimsel(&mut self) -> LnclimilimselW<'_, DCDCMISCCTRLrs> {
         LnclimilimselW::new(self, 24)
     }
     ///Bits 28:29 - LP Mode Comparator Bias Selection
     #[inline(always)]
-    pub fn lpcmpbias(&mut self) -> LpcmpbiasW<DCDCMISCCTRLrs> {
+    pub fn lpcmpbias(&mut self) -> LpcmpbiasW<'_, DCDCMISCCTRLrs> {
         LpcmpbiasW::new(self, 28)
     }
 }
@@ -214,8 +214,6 @@ impl crate::Readable for DCDCMISCCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdcmiscctrl::W`](W) writer structure
 impl crate::Writable for DCDCMISCCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCMISCCTRL to value 0x3330_7700
 impl crate::Resettable for DCDCMISCCTRLrs {

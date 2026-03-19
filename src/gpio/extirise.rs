@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Pin 0 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise0(&mut self) -> Extirise0W<EXTIRISErs> {
+    pub fn extirise0(&mut self) -> Extirise0W<'_, EXTIRISErs> {
         Extirise0W::new(self, 0)
     }
     ///Bit 1 - Pin 1 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise1(&mut self) -> Extirise1W<EXTIRISErs> {
+    pub fn extirise1(&mut self) -> Extirise1W<'_, EXTIRISErs> {
         Extirise1W::new(self, 1)
     }
     ///Bit 2 - Pin 2 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise2(&mut self) -> Extirise2W<EXTIRISErs> {
+    pub fn extirise2(&mut self) -> Extirise2W<'_, EXTIRISErs> {
         Extirise2W::new(self, 2)
     }
     ///Bit 3 - Pin 3 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise3(&mut self) -> Extirise3W<EXTIRISErs> {
+    pub fn extirise3(&mut self) -> Extirise3W<'_, EXTIRISErs> {
         Extirise3W::new(self, 3)
     }
     ///Bit 4 - Pin 4 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise4(&mut self) -> Extirise4W<EXTIRISErs> {
+    pub fn extirise4(&mut self) -> Extirise4W<'_, EXTIRISErs> {
         Extirise4W::new(self, 4)
     }
     ///Bit 5 - Pin 5 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise5(&mut self) -> Extirise5W<EXTIRISErs> {
+    pub fn extirise5(&mut self) -> Extirise5W<'_, EXTIRISErs> {
         Extirise5W::new(self, 5)
     }
     ///Bit 6 - Pin 6 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise6(&mut self) -> Extirise6W<EXTIRISErs> {
+    pub fn extirise6(&mut self) -> Extirise6W<'_, EXTIRISErs> {
         Extirise6W::new(self, 6)
     }
     ///Bit 7 - Pin 7 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise7(&mut self) -> Extirise7W<EXTIRISErs> {
+    pub fn extirise7(&mut self) -> Extirise7W<'_, EXTIRISErs> {
         Extirise7W::new(self, 7)
     }
     ///Bit 8 - Pin 8 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise8(&mut self) -> Extirise8W<EXTIRISErs> {
+    pub fn extirise8(&mut self) -> Extirise8W<'_, EXTIRISErs> {
         Extirise8W::new(self, 8)
     }
     ///Bit 9 - Pin 9 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise9(&mut self) -> Extirise9W<EXTIRISErs> {
+    pub fn extirise9(&mut self) -> Extirise9W<'_, EXTIRISErs> {
         Extirise9W::new(self, 9)
     }
     ///Bit 10 - Pin 10 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise10(&mut self) -> Extirise10W<EXTIRISErs> {
+    pub fn extirise10(&mut self) -> Extirise10W<'_, EXTIRISErs> {
         Extirise10W::new(self, 10)
     }
     ///Bit 11 - Pin 11 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise11(&mut self) -> Extirise11W<EXTIRISErs> {
+    pub fn extirise11(&mut self) -> Extirise11W<'_, EXTIRISErs> {
         Extirise11W::new(self, 11)
     }
     ///Bit 12 - Pin 12 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise12(&mut self) -> Extirise12W<EXTIRISErs> {
+    pub fn extirise12(&mut self) -> Extirise12W<'_, EXTIRISErs> {
         Extirise12W::new(self, 12)
     }
     ///Bit 13 - Pin 13 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise13(&mut self) -> Extirise13W<EXTIRISErs> {
+    pub fn extirise13(&mut self) -> Extirise13W<'_, EXTIRISErs> {
         Extirise13W::new(self, 13)
     }
     ///Bit 14 - Pin 14 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise14(&mut self) -> Extirise14W<EXTIRISErs> {
+    pub fn extirise14(&mut self) -> Extirise14W<'_, EXTIRISErs> {
         Extirise14W::new(self, 14)
     }
     ///Bit 15 - Pin 15 Rising Edge Enable
     #[inline(always)]
-    pub fn extirise15(&mut self) -> Extirise15W<EXTIRISErs> {
+    pub fn extirise15(&mut self) -> Extirise15W<'_, EXTIRISErs> {
         Extirise15W::new(self, 15)
     }
 }
@@ -264,10 +264,6 @@ impl crate::Readable for EXTIRISErs {}
 ///`write(|w| ..)` method takes [`extirise::W`](W) writer structure
 impl crate::Writable for EXTIRISErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets EXTIRISE to value 0
-impl crate::Resettable for EXTIRISErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EXTIRISErs {}

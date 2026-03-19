@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 4:6 - Reverse Current Limit Level Selection for Zero Detector
     #[inline(always)]
-    pub fn zdetilimsel(&mut self) -> ZdetilimselW<DCDCZDETCTRLrs> {
+    pub fn zdetilimsel(&mut self) -> ZdetilimselW<'_, DCDCZDETCTRLrs> {
         ZdetilimselW::new(self, 4)
     }
     ///Bits 8:9 - Reserved for internal use. Do not change.
     #[inline(always)]
-    pub fn zdetblankdly(&mut self) -> ZdetblankdlyW<DCDCZDETCTRLrs> {
+    pub fn zdetblankdly(&mut self) -> ZdetblankdlyW<'_, DCDCZDETCTRLrs> {
         ZdetblankdlyW::new(self, 8)
     }
 }
@@ -54,8 +54,6 @@ impl crate::Readable for DCDCZDETCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdczdetctrl::W`](W) writer structure
 impl crate::Writable for DCDCZDETCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCZDETCTRL to value 0x0130
 impl crate::Resettable for DCDCZDETCTRLrs {

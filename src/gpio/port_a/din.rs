@@ -26,6 +26,4 @@ impl crate::RegisterSpec for DINrs {
 ///`read()` method returns [`din::R`](R) reader structure
 impl crate::Readable for DINrs {}
 ///`reset()` method sets DIN to value 0
-impl crate::Resettable for DINrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DINrs {}

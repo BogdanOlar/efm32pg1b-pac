@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Less Than Compare Threshold
     #[inline(always)]
-    pub fn adlt(&mut self) -> AdltW<CMPTHRrs> {
+    pub fn adlt(&mut self) -> AdltW<'_, CMPTHRrs> {
         AdltW::new(self, 0)
     }
     ///Bits 16:31 - Greater Than Compare Threshold
     #[inline(always)]
-    pub fn adgt(&mut self) -> AdgtW<CMPTHRrs> {
+    pub fn adgt(&mut self) -> AdgtW<'_, CMPTHRrs> {
         AdgtW::new(self, 16)
     }
 }
@@ -54,10 +54,6 @@ impl crate::Readable for CMPTHRrs {}
 ///`write(|w| ..)` method takes [`cmpthr::W`](W) writer structure
 impl crate::Writable for CMPTHRrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CMPTHR to value 0
-impl crate::Resettable for CMPTHRrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CMPTHRrs {}

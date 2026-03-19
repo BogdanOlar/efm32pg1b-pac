@@ -21,7 +21,7 @@ impl core::fmt::Debug for crate::generic::Reg<KEYrs> {
 impl W {
     ///Bits 0:31 - Key Access
     #[inline(always)]
-    pub fn key(&mut self) -> KeyW<KEYrs> {
+    pub fn key(&mut self) -> KeyW<'_, KEYrs> {
         KeyW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for KEYrs {}
 ///`write(|w| ..)` method takes [`key::W`](W) writer structure
 impl crate::Writable for KEYrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets KEY to value 0
-impl crate::Resettable for KEYrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for KEYrs {}

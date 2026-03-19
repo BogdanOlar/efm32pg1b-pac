@@ -426,52 +426,52 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Scan Channel Reference Selection
     #[inline(always)]
-    pub fn vrefsel(&mut self) -> VrefselW<SCANCTRLXrs> {
+    pub fn vrefsel(&mut self) -> VrefselW<'_, SCANCTRLXrs> {
         VrefselW::new(self, 0)
     }
     ///Bit 3 - Enable Fixed Scaling on VREF
     #[inline(always)]
-    pub fn vrefattfix(&mut self) -> VrefattfixW<SCANCTRLXrs> {
+    pub fn vrefattfix(&mut self) -> VrefattfixW<'_, SCANCTRLXrs> {
         VrefattfixW::new(self, 3)
     }
     ///Bits 4:7 - Code for VREF Attenuation Factor When VREFSEL is 1, 2 or 5
     #[inline(always)]
-    pub fn vrefatt(&mut self) -> VrefattW<SCANCTRLXrs> {
+    pub fn vrefatt(&mut self) -> VrefattW<'_, SCANCTRLXrs> {
         VrefattW::new(self, 4)
     }
     ///Bits 8:11 - Code for VIN Attenuation Factor
     #[inline(always)]
-    pub fn vinatt(&mut self) -> VinattW<SCANCTRLXrs> {
+    pub fn vinatt(&mut self) -> VinattW<'_, SCANCTRLXrs> {
         VinattW::new(self, 8)
     }
     ///Bits 12:13 - Scan DV Level Select
     #[inline(always)]
-    pub fn dvl(&mut self) -> DvlW<SCANCTRLXrs> {
+    pub fn dvl(&mut self) -> DvlW<'_, SCANCTRLXrs> {
         DvlW::new(self, 12)
     }
     ///Bit 14 - Scan FIFO Overflow Action
     #[inline(always)]
-    pub fn fifoofact(&mut self) -> FifoofactW<SCANCTRLXrs> {
+    pub fn fifoofact(&mut self) -> FifoofactW<'_, SCANCTRLXrs> {
         FifoofactW::new(self, 14)
     }
     ///Bit 16 - Scan PRS Trigger Mode
     #[inline(always)]
-    pub fn prsmode(&mut self) -> PrsmodeW<SCANCTRLXrs> {
+    pub fn prsmode(&mut self) -> PrsmodeW<'_, SCANCTRLXrs> {
         PrsmodeW::new(self, 16)
     }
     ///Bits 17:20 - Scan Sequence PRS Trigger Select
     #[inline(always)]
-    pub fn prssel(&mut self) -> PrsselW<SCANCTRLXrs> {
+    pub fn prssel(&mut self) -> PrsselW<'_, SCANCTRLXrs> {
         PrsselW::new(self, 17)
     }
     ///Bits 24:26 - Delay Next Conversion Start If CONVSTARTDELAYEN is Set
     #[inline(always)]
-    pub fn convstartdelay(&mut self) -> ConvstartdelayW<SCANCTRLXrs> {
+    pub fn convstartdelay(&mut self) -> ConvstartdelayW<'_, SCANCTRLXrs> {
         ConvstartdelayW::new(self, 24)
     }
     ///Bit 27 - Enable Delaying Next Conversion Start
     #[inline(always)]
-    pub fn convstartdelayen(&mut self) -> ConvstartdelayenW<SCANCTRLXrs> {
+    pub fn convstartdelayen(&mut self) -> ConvstartdelayenW<'_, SCANCTRLXrs> {
         ConvstartdelayenW::new(self, 27)
     }
 }
@@ -487,10 +487,6 @@ impl crate::Readable for SCANCTRLXrs {}
 ///`write(|w| ..)` method takes [`scanctrlx::W`](W) writer structure
 impl crate::Writable for SCANCTRLXrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets SCANCTRLX to value 0
-impl crate::Resettable for SCANCTRLXrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCANCTRLXrs {}

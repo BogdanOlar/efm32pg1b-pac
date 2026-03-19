@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:15 - Disable Over Voltage Capability for pins 0:15
     #[inline(always)]
-    pub fn pins_ovt_dis(&mut self) -> PinsOvtDisW<OVT_DISrs> {
+    pub fn pins_ovt_dis(&mut self) -> PinsOvtDisW<'_, OVT_DISrs> {
         PinsOvtDisW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for OVT_DISrs {}
 ///`write(|w| ..)` method takes [`ovt_dis::W`](W) writer structure
 impl crate::Writable for OVT_DISrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets OVT_DIS to value 0
-impl crate::Resettable for OVT_DISrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for OVT_DISrs {}

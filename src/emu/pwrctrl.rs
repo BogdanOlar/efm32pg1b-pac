@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 5 - Analog Switch Selection
     #[inline(always)]
-    pub fn anasw(&mut self) -> AnaswW<PWRCTRLrs> {
+    pub fn anasw(&mut self) -> AnaswW<'_, PWRCTRLrs> {
         AnaswW::new(self, 5)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for PWRCTRLrs {}
 ///`write(|w| ..)` method takes [`pwrctrl::W`](W) writer structure
 impl crate::Writable for PWRCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PWRCTRL to value 0
-impl crate::Resettable for PWRCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PWRCTRLrs {}

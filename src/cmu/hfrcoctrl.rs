@@ -165,42 +165,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:6 - HFRCO Tuning Value
     #[inline(always)]
-    pub fn tuning(&mut self) -> TuningW<HFRCOCTRLrs> {
+    pub fn tuning(&mut self) -> TuningW<'_, HFRCOCTRLrs> {
         TuningW::new(self, 0)
     }
     ///Bits 8:13 - HFRCO Fine Tuning Value
     #[inline(always)]
-    pub fn finetuning(&mut self) -> FinetuningW<HFRCOCTRLrs> {
+    pub fn finetuning(&mut self) -> FinetuningW<'_, HFRCOCTRLrs> {
         FinetuningW::new(self, 8)
     }
     ///Bits 16:20 - HFRCO Frequency Range
     #[inline(always)]
-    pub fn freqrange(&mut self) -> FreqrangeW<HFRCOCTRLrs> {
+    pub fn freqrange(&mut self) -> FreqrangeW<'_, HFRCOCTRLrs> {
         FreqrangeW::new(self, 16)
     }
     ///Bits 21:23 - HFRCO Comparator Bias Current
     #[inline(always)]
-    pub fn cmpbias(&mut self) -> CmpbiasW<HFRCOCTRLrs> {
+    pub fn cmpbias(&mut self) -> CmpbiasW<'_, HFRCOCTRLrs> {
         CmpbiasW::new(self, 21)
     }
     ///Bit 24 - HFRCO LDO High Power Mode
     #[inline(always)]
-    pub fn ldohp(&mut self) -> LdohpW<HFRCOCTRLrs> {
+    pub fn ldohp(&mut self) -> LdohpW<'_, HFRCOCTRLrs> {
         LdohpW::new(self, 24)
     }
     ///Bits 25:26 - Locally Divide HFRCO Clock Output
     #[inline(always)]
-    pub fn clkdiv(&mut self) -> ClkdivW<HFRCOCTRLrs> {
+    pub fn clkdiv(&mut self) -> ClkdivW<'_, HFRCOCTRLrs> {
         ClkdivW::new(self, 25)
     }
     ///Bit 27 - Enable Reference for Fine Tuning
     #[inline(always)]
-    pub fn finetuningen(&mut self) -> FinetuningenW<HFRCOCTRLrs> {
+    pub fn finetuningen(&mut self) -> FinetuningenW<'_, HFRCOCTRLrs> {
         FinetuningenW::new(self, 27)
     }
     ///Bits 28:31 - HFRCO Temperature Coefficient Trim on Comparator Reference
     #[inline(always)]
-    pub fn vreftc(&mut self) -> VreftcW<HFRCOCTRLrs> {
+    pub fn vreftc(&mut self) -> VreftcW<'_, HFRCOCTRLrs> {
         VreftcW::new(self, 28)
     }
 }
@@ -216,8 +216,6 @@ impl crate::Readable for HFRCOCTRLrs {}
 ///`write(|w| ..)` method takes [`hfrcoctrl::W`](W) writer structure
 impl crate::Writable for HFRCOCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HFRCOCTRL to value 0xb148_1f3c
 impl crate::Resettable for HFRCOCTRLrs {

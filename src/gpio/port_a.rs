@@ -60,8 +60,7 @@ impl PortA {
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ctrl`]
-///module
+///For information about available fields see [`mod@ctrl`] module
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CTRLrs>;
 ///Port Control Register
@@ -70,8 +69,7 @@ pub mod ctrl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`model::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`model::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@model`]
-///module
+///For information about available fields see [`mod@model`] module
 #[doc(alias = "MODEL")]
 pub type Model = crate::Reg<model::MODELrs>;
 ///Port Pin Mode Low Register
@@ -80,8 +78,7 @@ pub mod model;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`modeh::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`modeh::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@modeh`]
-///module
+///For information about available fields see [`mod@modeh`] module
 #[doc(alias = "MODEH")]
 pub type Modeh = crate::Reg<modeh::MODEHrs>;
 ///Port Pin Mode High Register
@@ -90,8 +87,7 @@ pub mod modeh;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`dout::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dout::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@dout`]
-///module
+///For information about available fields see [`mod@dout`] module
 #[doc(alias = "DOUT")]
 pub type Dout = crate::Reg<dout::DOUTrs>;
 ///Port Data Out Register
@@ -100,8 +96,7 @@ pub mod dout;
 ///
 ///You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dout_tgl::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@dout_tgl`]
-///module
+///For information about available fields see [`mod@dout_tgl`] module
 #[doc(alias = "DOUT_TGL")]
 pub type DoutTgl = crate::Reg<dout_tgl::DOUT_TGLrs>;
 ///Port Data Out Toggle Register. Write bits to 1 to toggle corresponding bits in GPIO_Px_DOUT. Bits written to 0 will have no effect.
@@ -110,8 +105,7 @@ pub mod dout_tgl;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`din::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@din`]
-///module
+///For information about available fields see [`mod@din`] module
 #[doc(alias = "DIN")]
 pub type Din = crate::Reg<din::DINrs>;
 ///Port Data in Register
@@ -120,8 +114,7 @@ pub mod din;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`pinlockn::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pinlockn::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@pinlockn`]
-///module
+///For information about available fields see [`mod@pinlockn`] module
 #[doc(alias = "PINLOCKN")]
 pub type Pinlockn = crate::Reg<pinlockn::PINLOCKNrs>;
 ///Port Unlocked Pins Register. Shows unlocked pins in the port. To lock pin n, clear bit n. The pin is then locked until reset.
@@ -130,8 +123,7 @@ pub mod pinlockn;
 ///
 ///You can [`read`](crate::Reg::read) this register and get [`ovt_dis::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ovt_dis::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
 ///
-///For information about available fields see [`mod@ovt_dis`]
-///module
+///For information about available fields see [`mod@ovt_dis`] module
 #[doc(alias = "OVT_DIS")]
 pub type OvtDis = crate::Reg<ovt_dis::OVT_DISrs>;
 ///Over Voltage Disable for All Modes

@@ -21,7 +21,7 @@ impl core::fmt::Debug for crate::generic::Reg<QDATA1BYTErs> {
 impl W {
     ///Bits 0:7 - Qdata 1 Byte Access
     #[inline(always)]
-    pub fn qdata1byte(&mut self) -> Qdata1byteW<QDATA1BYTErs> {
+    pub fn qdata1byte(&mut self) -> Qdata1byteW<'_, QDATA1BYTErs> {
         Qdata1byteW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for QDATA1BYTErs {}
 ///`write(|w| ..)` method takes [`qdata1byte::W`](W) writer structure
 impl crate::Writable for QDATA1BYTErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets QDATA1BYTE to value 0
-impl crate::Resettable for QDATA1BYTErs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for QDATA1BYTErs {}

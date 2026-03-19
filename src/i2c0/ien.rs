@@ -203,97 +203,97 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - START Interrupt Enable
     #[inline(always)]
-    pub fn start(&mut self) -> StartW<IENrs> {
+    pub fn start(&mut self) -> StartW<'_, IENrs> {
         StartW::new(self, 0)
     }
     ///Bit 1 - RSTART Interrupt Enable
     #[inline(always)]
-    pub fn rstart(&mut self) -> RstartW<IENrs> {
+    pub fn rstart(&mut self) -> RstartW<'_, IENrs> {
         RstartW::new(self, 1)
     }
     ///Bit 2 - ADDR Interrupt Enable
     #[inline(always)]
-    pub fn addr(&mut self) -> AddrW<IENrs> {
+    pub fn addr(&mut self) -> AddrW<'_, IENrs> {
         AddrW::new(self, 2)
     }
     ///Bit 3 - TXC Interrupt Enable
     #[inline(always)]
-    pub fn txc(&mut self) -> TxcW<IENrs> {
+    pub fn txc(&mut self) -> TxcW<'_, IENrs> {
         TxcW::new(self, 3)
     }
     ///Bit 4 - TXBL Interrupt Enable
     #[inline(always)]
-    pub fn txbl(&mut self) -> TxblW<IENrs> {
+    pub fn txbl(&mut self) -> TxblW<'_, IENrs> {
         TxblW::new(self, 4)
     }
     ///Bit 5 - RXDATAV Interrupt Enable
     #[inline(always)]
-    pub fn rxdatav(&mut self) -> RxdatavW<IENrs> {
+    pub fn rxdatav(&mut self) -> RxdatavW<'_, IENrs> {
         RxdatavW::new(self, 5)
     }
     ///Bit 6 - ACK Interrupt Enable
     #[inline(always)]
-    pub fn ack(&mut self) -> AckW<IENrs> {
+    pub fn ack(&mut self) -> AckW<'_, IENrs> {
         AckW::new(self, 6)
     }
     ///Bit 7 - NACK Interrupt Enable
     #[inline(always)]
-    pub fn nack(&mut self) -> NackW<IENrs> {
+    pub fn nack(&mut self) -> NackW<'_, IENrs> {
         NackW::new(self, 7)
     }
     ///Bit 8 - MSTOP Interrupt Enable
     #[inline(always)]
-    pub fn mstop(&mut self) -> MstopW<IENrs> {
+    pub fn mstop(&mut self) -> MstopW<'_, IENrs> {
         MstopW::new(self, 8)
     }
     ///Bit 9 - ARBLOST Interrupt Enable
     #[inline(always)]
-    pub fn arblost(&mut self) -> ArblostW<IENrs> {
+    pub fn arblost(&mut self) -> ArblostW<'_, IENrs> {
         ArblostW::new(self, 9)
     }
     ///Bit 10 - BUSERR Interrupt Enable
     #[inline(always)]
-    pub fn buserr(&mut self) -> BuserrW<IENrs> {
+    pub fn buserr(&mut self) -> BuserrW<'_, IENrs> {
         BuserrW::new(self, 10)
     }
     ///Bit 11 - BUSHOLD Interrupt Enable
     #[inline(always)]
-    pub fn bushold(&mut self) -> BusholdW<IENrs> {
+    pub fn bushold(&mut self) -> BusholdW<'_, IENrs> {
         BusholdW::new(self, 11)
     }
     ///Bit 12 - TXOF Interrupt Enable
     #[inline(always)]
-    pub fn txof(&mut self) -> TxofW<IENrs> {
+    pub fn txof(&mut self) -> TxofW<'_, IENrs> {
         TxofW::new(self, 12)
     }
     ///Bit 13 - RXUF Interrupt Enable
     #[inline(always)]
-    pub fn rxuf(&mut self) -> RxufW<IENrs> {
+    pub fn rxuf(&mut self) -> RxufW<'_, IENrs> {
         RxufW::new(self, 13)
     }
     ///Bit 14 - BITO Interrupt Enable
     #[inline(always)]
-    pub fn bito(&mut self) -> BitoW<IENrs> {
+    pub fn bito(&mut self) -> BitoW<'_, IENrs> {
         BitoW::new(self, 14)
     }
     ///Bit 15 - CLTO Interrupt Enable
     #[inline(always)]
-    pub fn clto(&mut self) -> CltoW<IENrs> {
+    pub fn clto(&mut self) -> CltoW<'_, IENrs> {
         CltoW::new(self, 15)
     }
     ///Bit 16 - SSTOP Interrupt Enable
     #[inline(always)]
-    pub fn sstop(&mut self) -> SstopW<IENrs> {
+    pub fn sstop(&mut self) -> SstopW<'_, IENrs> {
         SstopW::new(self, 16)
     }
     ///Bit 17 - RXFULL Interrupt Enable
     #[inline(always)]
-    pub fn rxfull(&mut self) -> RxfullW<IENrs> {
+    pub fn rxfull(&mut self) -> RxfullW<'_, IENrs> {
         RxfullW::new(self, 17)
     }
     ///Bit 18 - CLERR Interrupt Enable
     #[inline(always)]
-    pub fn clerr(&mut self) -> ClerrW<IENrs> {
+    pub fn clerr(&mut self) -> ClerrW<'_, IENrs> {
         ClerrW::new(self, 18)
     }
 }
@@ -309,10 +309,6 @@ impl crate::Readable for IENrs {}
 ///`write(|w| ..)` method takes [`ien::W`](W) writer structure
 impl crate::Writable for IENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IEN to value 0
-impl crate::Resettable for IENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IENrs {}

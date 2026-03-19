@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:5 - Interrupts/Wakeup Events Period Setting
     #[inline(always)]
-    pub fn periodsel(&mut self) -> PeriodselW<PERIODSELrs> {
+    pub fn periodsel(&mut self) -> PeriodselW<'_, PERIODSELrs> {
         PeriodselW::new(self, 0)
     }
 }
@@ -39,8 +39,6 @@ impl crate::Readable for PERIODSELrs {}
 ///`write(|w| ..)` method takes [`periodsel::W`](W) writer structure
 impl crate::Writable for PERIODSELrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PERIODSEL to value 0x20
 impl crate::Resettable for PERIODSELrs {

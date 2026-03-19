@@ -50,6 +50,4 @@ impl crate::RegisterSpec for DTFAULTrs {
 ///`read()` method returns [`dtfault::R`](R) reader structure
 impl crate::Readable for DTFAULTrs {}
 ///`reset()` method sets DTFAULT to value 0
-impl crate::Resettable for DTFAULTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DTFAULTrs {}

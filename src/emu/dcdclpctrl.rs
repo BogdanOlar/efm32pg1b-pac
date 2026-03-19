@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 12:15 - LP Mode Hysteresis Selection
     #[inline(always)]
-    pub fn lpcmphyssel(&mut self) -> LpcmphysselW<DCDCLPCTRLrs> {
+    pub fn lpcmphyssel(&mut self) -> LpcmphysselW<'_, DCDCLPCTRLrs> {
         LpcmphysselW::new(self, 12)
     }
     ///Bit 24 - LP Mode Duty Cycling Enable
     #[inline(always)]
-    pub fn lpvrefdutyen(&mut self) -> LpvrefdutyenW<DCDCLPCTRLrs> {
+    pub fn lpvrefdutyen(&mut self) -> LpvrefdutyenW<'_, DCDCLPCTRLrs> {
         LpvrefdutyenW::new(self, 24)
     }
     ///Bits 25:26 - Reserved for internal use. Do not change.
     #[inline(always)]
-    pub fn lpblank(&mut self) -> LpblankW<DCDCLPCTRLrs> {
+    pub fn lpblank(&mut self) -> LpblankW<'_, DCDCLPCTRLrs> {
         LpblankW::new(self, 25)
     }
 }
@@ -69,8 +69,6 @@ impl crate::Readable for DCDCLPCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdclpctrl::W`](W) writer structure
 impl crate::Writable for DCDCLPCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCLPCTRL to value 0x7000
 impl crate::Resettable for DCDCLPCTRLrs {

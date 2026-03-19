@@ -18,27 +18,27 @@ impl core::fmt::Debug for crate::generic::Reg<IFCrs> {
 impl W {
     ///Bit 0 - Clear COMP0 Interrupt Flag
     #[inline(always)]
-    pub fn comp0(&mut self) -> Comp0W<IFCrs> {
+    pub fn comp0(&mut self) -> Comp0W<'_, IFCrs> {
         Comp0W::new(self, 0)
     }
     ///Bit 1 - Clear COMP1 Interrupt Flag
     #[inline(always)]
-    pub fn comp1(&mut self) -> Comp1W<IFCrs> {
+    pub fn comp1(&mut self) -> Comp1W<'_, IFCrs> {
         Comp1W::new(self, 1)
     }
     ///Bit 2 - Clear UF Interrupt Flag
     #[inline(always)]
-    pub fn uf(&mut self) -> UfW<IFCrs> {
+    pub fn uf(&mut self) -> UfW<'_, IFCrs> {
         UfW::new(self, 2)
     }
     ///Bit 3 - Clear REP0 Interrupt Flag
     #[inline(always)]
-    pub fn rep0(&mut self) -> Rep0W<IFCrs> {
+    pub fn rep0(&mut self) -> Rep0W<'_, IFCrs> {
         Rep0W::new(self, 3)
     }
     ///Bit 4 - Clear REP1 Interrupt Flag
     #[inline(always)]
-    pub fn rep1(&mut self) -> Rep1W<IFCrs> {
+    pub fn rep1(&mut self) -> Rep1W<'_, IFCrs> {
         Rep1W::new(self, 4)
     }
 }
@@ -52,10 +52,6 @@ impl crate::RegisterSpec for IFCrs {
 ///`write(|w| ..)` method takes [`ifc::W`](W) writer structure
 impl crate::Writable for IFCrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets IFC to value 0
-impl crate::Resettable for IFCrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IFCrs {}

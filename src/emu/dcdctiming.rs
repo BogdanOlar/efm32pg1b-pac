@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:7 - Low Power Initialization Wait Time
     #[inline(always)]
-    pub fn lpinitwait(&mut self) -> LpinitwaitW<DCDCTIMINGrs> {
+    pub fn lpinitwait(&mut self) -> LpinitwaitW<'_, DCDCTIMINGrs> {
         LpinitwaitW::new(self, 0)
     }
     ///Bit 11 - LN Mode Precharge Enable
     #[inline(always)]
-    pub fn compenprchgen(&mut self) -> CompenprchgenW<DCDCTIMINGrs> {
+    pub fn compenprchgen(&mut self) -> CompenprchgenW<'_, DCDCTIMINGrs> {
         CompenprchgenW::new(self, 11)
     }
     ///Bits 12:16 - Low Noise Controller Initialization Wait Time
     #[inline(always)]
-    pub fn lnwait(&mut self) -> LnwaitW<DCDCTIMINGrs> {
+    pub fn lnwait(&mut self) -> LnwaitW<'_, DCDCTIMINGrs> {
         LnwaitW::new(self, 12)
     }
     ///Bits 20:27 - Bypass Mode Transition From Low Power or Low Noise Modes Wait Wait
     #[inline(always)]
-    pub fn bypwait(&mut self) -> BypwaitW<DCDCTIMINGrs> {
+    pub fn bypwait(&mut self) -> BypwaitW<'_, DCDCTIMINGrs> {
         BypwaitW::new(self, 20)
     }
     ///Bits 29:30 - Select Bias Duty Cycle Clock
     #[inline(always)]
-    pub fn dutyscale(&mut self) -> DutyscaleW<DCDCTIMINGrs> {
+    pub fn dutyscale(&mut self) -> DutyscaleW<'_, DCDCTIMINGrs> {
         DutyscaleW::new(self, 29)
     }
 }
@@ -99,8 +99,6 @@ impl crate::Readable for DCDCTIMINGrs {}
 ///`write(|w| ..)` method takes [`dcdctiming::W`](W) writer structure
 impl crate::Writable for DCDCTIMINGrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCTIMING to value 0x0ff1_f8ff
 impl crate::Resettable for DCDCTIMINGrs {

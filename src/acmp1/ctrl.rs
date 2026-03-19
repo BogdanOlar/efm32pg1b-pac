@@ -300,67 +300,67 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - Analog Comparator Enable
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<CTRLrs> {
+    pub fn en(&mut self) -> EnW<'_, CTRLrs> {
         EnW::new(self, 0)
     }
     ///Bit 2 - Inactive Value
     #[inline(always)]
-    pub fn inactval(&mut self) -> InactvalW<CTRLrs> {
+    pub fn inactval(&mut self) -> InactvalW<'_, CTRLrs> {
         InactvalW::new(self, 2)
     }
     ///Bit 3 - Comparator GPIO Output Invert
     #[inline(always)]
-    pub fn gpioinv(&mut self) -> GpioinvW<CTRLrs> {
+    pub fn gpioinv(&mut self) -> GpioinvW<'_, CTRLrs> {
         GpioinvW::new(self, 3)
     }
     ///Bit 8 - APORT Bus X Master Disable
     #[inline(always)]
-    pub fn aportxmasterdis(&mut self) -> AportxmasterdisW<CTRLrs> {
+    pub fn aportxmasterdis(&mut self) -> AportxmasterdisW<'_, CTRLrs> {
         AportxmasterdisW::new(self, 8)
     }
     ///Bit 9 - APORT Bus Y Master Disable
     #[inline(always)]
-    pub fn aportymasterdis(&mut self) -> AportymasterdisW<CTRLrs> {
+    pub fn aportymasterdis(&mut self) -> AportymasterdisW<'_, CTRLrs> {
         AportymasterdisW::new(self, 9)
     }
     ///Bit 10 - APORT Bus Master Disable for Bus Selected By VASEL
     #[inline(always)]
-    pub fn aportvmasterdis(&mut self) -> AportvmasterdisW<CTRLrs> {
+    pub fn aportvmasterdis(&mut self) -> AportvmasterdisW<'_, CTRLrs> {
         AportvmasterdisW::new(self, 10)
     }
     ///Bits 12:14 - Power Select
     #[inline(always)]
-    pub fn pwrsel(&mut self) -> PwrselW<CTRLrs> {
+    pub fn pwrsel(&mut self) -> PwrselW<'_, CTRLrs> {
         PwrselW::new(self, 12)
     }
     ///Bit 15 - ACMP Accuracy Mode
     #[inline(always)]
-    pub fn accuracy(&mut self) -> AccuracyW<CTRLrs> {
+    pub fn accuracy(&mut self) -> AccuracyW<'_, CTRLrs> {
         AccuracyW::new(self, 15)
     }
     ///Bits 18:19 - Input Range
     #[inline(always)]
-    pub fn inputrange(&mut self) -> InputrangeW<CTRLrs> {
+    pub fn inputrange(&mut self) -> InputrangeW<'_, CTRLrs> {
         InputrangeW::new(self, 18)
     }
     ///Bit 20 - Rising Edge Interrupt Sense
     #[inline(always)]
-    pub fn irise(&mut self) -> IriseW<CTRLrs> {
+    pub fn irise(&mut self) -> IriseW<'_, CTRLrs> {
         IriseW::new(self, 20)
     }
     ///Bit 21 - Falling Edge Interrupt Sense
     #[inline(always)]
-    pub fn ifall(&mut self) -> IfallW<CTRLrs> {
+    pub fn ifall(&mut self) -> IfallW<'_, CTRLrs> {
         IfallW::new(self, 21)
     }
     ///Bits 24:29 - Bias Configuration
     #[inline(always)]
-    pub fn biasprog(&mut self) -> BiasprogW<CTRLrs> {
+    pub fn biasprog(&mut self) -> BiasprogW<'_, CTRLrs> {
         BiasprogW::new(self, 24)
     }
     ///Bit 31 - Full Bias Current
     #[inline(always)]
-    pub fn fullbias(&mut self) -> FullbiasW<CTRLrs> {
+    pub fn fullbias(&mut self) -> FullbiasW<'_, CTRLrs> {
         FullbiasW::new(self, 31)
     }
 }
@@ -376,8 +376,6 @@ impl crate::Readable for CTRLrs {}
 ///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
 impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CTRL to value 0x0700_0000
 impl crate::Resettable for CTRLrs {

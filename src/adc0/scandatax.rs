@@ -33,6 +33,4 @@ impl crate::RegisterSpec for SCANDATAXrs {
 ///`read()` method returns [`scandatax::R`](R) reader structure
 impl crate::Readable for SCANDATAXrs {}
 ///`reset()` method sets SCANDATAX to value 0
-impl crate::Resettable for SCANDATAXrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCANDATAXrs {}

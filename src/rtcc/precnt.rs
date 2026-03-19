@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:14 - Pre-Counter Value
     #[inline(always)]
-    pub fn precnt(&mut self) -> PrecntW<PRECNTrs> {
+    pub fn precnt(&mut self) -> PrecntW<'_, PRECNTrs> {
         PrecntW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for PRECNTrs {}
 ///`write(|w| ..)` method takes [`precnt::W`](W) writer structure
 impl crate::Writable for PRECNTrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PRECNT to value 0
-impl crate::Resettable for PRECNTrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRECNTrs {}

@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - DTI CC0 Output Generation Enable
     #[inline(always)]
-    pub fn dtogcc0en(&mut self) -> Dtogcc0enW<DTOGENrs> {
+    pub fn dtogcc0en(&mut self) -> Dtogcc0enW<'_, DTOGENrs> {
         Dtogcc0enW::new(self, 0)
     }
     ///Bit 1 - DTI CC1 Output Generation Enable
     #[inline(always)]
-    pub fn dtogcc1en(&mut self) -> Dtogcc1enW<DTOGENrs> {
+    pub fn dtogcc1en(&mut self) -> Dtogcc1enW<'_, DTOGENrs> {
         Dtogcc1enW::new(self, 1)
     }
     ///Bit 2 - DTI CC2 Output Generation Enable
     #[inline(always)]
-    pub fn dtogcc2en(&mut self) -> Dtogcc2enW<DTOGENrs> {
+    pub fn dtogcc2en(&mut self) -> Dtogcc2enW<'_, DTOGENrs> {
         Dtogcc2enW::new(self, 2)
     }
     ///Bit 3 - DTI CDTI0 Output Generation Enable
     #[inline(always)]
-    pub fn dtogcdti0en(&mut self) -> Dtogcdti0enW<DTOGENrs> {
+    pub fn dtogcdti0en(&mut self) -> Dtogcdti0enW<'_, DTOGENrs> {
         Dtogcdti0enW::new(self, 3)
     }
     ///Bit 4 - DTI CDTI1 Output Generation Enable
     #[inline(always)]
-    pub fn dtogcdti1en(&mut self) -> Dtogcdti1enW<DTOGENrs> {
+    pub fn dtogcdti1en(&mut self) -> Dtogcdti1enW<'_, DTOGENrs> {
         Dtogcdti1enW::new(self, 4)
     }
     ///Bit 5 - DTI CDTI2 Output Generation Enable
     #[inline(always)]
-    pub fn dtogcdti2en(&mut self) -> Dtogcdti2enW<DTOGENrs> {
+    pub fn dtogcdti2en(&mut self) -> Dtogcdti2enW<'_, DTOGENrs> {
         Dtogcdti2enW::new(self, 5)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for DTOGENrs {}
 ///`write(|w| ..)` method takes [`dtogen::W`](W) writer structure
 impl crate::Writable for DTOGENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DTOGEN to value 0
-impl crate::Resettable for DTOGENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DTOGENrs {}

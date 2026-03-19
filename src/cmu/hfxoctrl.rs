@@ -302,42 +302,42 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - HFXO Mode
     #[inline(always)]
-    pub fn mode(&mut self) -> ModeW<HFXOCTRLrs> {
+    pub fn mode(&mut self) -> ModeW<'_, HFXOCTRLrs> {
         ModeW::new(self, 0)
     }
     ///Bits 4:5 - HFXO Automatic Peak Detection and Shunt Current Optimization Mode
     #[inline(always)]
-    pub fn peakdetshuntoptmode(&mut self) -> PeakdetshuntoptmodeW<HFXOCTRLrs> {
+    pub fn peakdetshuntoptmode(&mut self) -> PeakdetshuntoptmodeW<'_, HFXOCTRLrs> {
         PeakdetshuntoptmodeW::new(self, 4)
     }
     ///Bit 8 - Low Power Mode Control
     #[inline(always)]
-    pub fn lowpower(&mut self) -> LowpowerW<HFXOCTRLrs> {
+    pub fn lowpower(&mut self) -> LowpowerW<'_, HFXOCTRLrs> {
         LowpowerW::new(self, 8)
     }
     ///Bit 9 - Clamp HFXTAL_N Pin to Ground When HFXO Oscillator is Off
     #[inline(always)]
-    pub fn xti2gnd(&mut self) -> Xti2gndW<HFXOCTRLrs> {
+    pub fn xti2gnd(&mut self) -> Xti2gndW<'_, HFXOCTRLrs> {
         Xti2gndW::new(self, 9)
     }
     ///Bit 10 - Clamp HFXTAL_P Pin to Ground When HFXO Oscillator is Off
     #[inline(always)]
-    pub fn xto2gnd(&mut self) -> Xto2gndW<HFXOCTRLrs> {
+    pub fn xto2gnd(&mut self) -> Xto2gndW<'_, HFXOCTRLrs> {
         Xto2gndW::new(self, 10)
     }
     ///Bits 24:26 - HFXO Low Frequency Timeout
     #[inline(always)]
-    pub fn lftimeout(&mut self) -> LftimeoutW<HFXOCTRLrs> {
+    pub fn lftimeout(&mut self) -> LftimeoutW<'_, HFXOCTRLrs> {
         LftimeoutW::new(self, 24)
     }
     ///Bit 28 - Automatically Start of HFXO Upon EM0/EM1 Entry From EM2/EM3
     #[inline(always)]
-    pub fn autostartem0em1(&mut self) -> Autostartem0em1W<HFXOCTRLrs> {
+    pub fn autostartem0em1(&mut self) -> Autostartem0em1W<'_, HFXOCTRLrs> {
         Autostartem0em1W::new(self, 28)
     }
     ///Bit 29 - Automatically Start and Select of HFXO Upon EM0/EM1 Entry From EM2/EM3
     #[inline(always)]
-    pub fn autostartselem0em1(&mut self) -> Autostartselem0em1W<HFXOCTRLrs> {
+    pub fn autostartselem0em1(&mut self) -> Autostartselem0em1W<'_, HFXOCTRLrs> {
         Autostartselem0em1W::new(self, 29)
     }
 }
@@ -353,10 +353,6 @@ impl crate::Readable for HFXOCTRLrs {}
 ///`write(|w| ..)` method takes [`hfxoctrl::W`](W) writer structure
 impl crate::Writable for HFXOCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets HFXOCTRL to value 0
-impl crate::Resettable for HFXOCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HFXOCTRLrs {}

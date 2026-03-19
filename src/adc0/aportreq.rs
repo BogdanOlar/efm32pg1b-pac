@@ -98,6 +98,4 @@ impl crate::RegisterSpec for APORTREQrs {
 ///`read()` method returns [`aportreq::R`](R) reader structure
 impl crate::Readable for APORTREQrs {}
 ///`reset()` method sets APORTREQ to value 0
-impl crate::Resettable for APORTREQrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for APORTREQrs {}

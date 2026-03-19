@@ -676,27 +676,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:2 - Calibration Up-counter Select
     #[inline(always)]
-    pub fn upsel(&mut self) -> UpselW<CALCTRLrs> {
+    pub fn upsel(&mut self) -> UpselW<'_, CALCTRLrs> {
         UpselW::new(self, 0)
     }
     ///Bits 4:6 - Calibration Down-counter Select
     #[inline(always)]
-    pub fn downsel(&mut self) -> DownselW<CALCTRLrs> {
+    pub fn downsel(&mut self) -> DownselW<'_, CALCTRLrs> {
         DownselW::new(self, 4)
     }
     ///Bit 8 - Continuous Calibration
     #[inline(always)]
-    pub fn cont(&mut self) -> ContW<CALCTRLrs> {
+    pub fn cont(&mut self) -> ContW<'_, CALCTRLrs> {
         ContW::new(self, 8)
     }
     ///Bits 16:19 - PRS Select for PRS Input When Selected in UPSEL
     #[inline(always)]
-    pub fn prsupsel(&mut self) -> PrsupselW<CALCTRLrs> {
+    pub fn prsupsel(&mut self) -> PrsupselW<'_, CALCTRLrs> {
         PrsupselW::new(self, 16)
     }
     ///Bits 24:27 - PRS Select for PRS Input When Selected in DOWNSEL
     #[inline(always)]
-    pub fn prsdownsel(&mut self) -> PrsdownselW<CALCTRLrs> {
+    pub fn prsdownsel(&mut self) -> PrsdownselW<'_, CALCTRLrs> {
         PrsdownselW::new(self, 24)
     }
 }
@@ -712,10 +712,6 @@ impl crate::Readable for CALCTRLrs {}
 ///`write(|w| ..)` method takes [`calctrl::W`](W) writer structure
 impl crate::Writable for CALCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets CALCTRL to value 0
-impl crate::Resettable for CALCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CALCTRLrs {}

@@ -222,12 +222,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - PRS Channel PRS Select
     #[inline(always)]
-    pub fn prssel(&mut self) -> PrsselW<PCH1_PRSCTRLrs> {
+    pub fn prssel(&mut self) -> PrsselW<'_, PCH1_PRSCTRLrs> {
         PrsselW::new(self, 0)
     }
     ///Bit 8 - PRS Missing Event Will Trigger a Watchdog Reset
     #[inline(always)]
-    pub fn prsmissrsten(&mut self) -> PrsmissrstenW<PCH1_PRSCTRLrs> {
+    pub fn prsmissrsten(&mut self) -> PrsmissrstenW<'_, PCH1_PRSCTRLrs> {
         PrsmissrstenW::new(self, 8)
     }
 }
@@ -243,10 +243,6 @@ impl crate::Readable for PCH1_PRSCTRLrs {}
 ///`write(|w| ..)` method takes [`pch1_prsctrl::W`](W) writer structure
 impl crate::Writable for PCH1_PRSCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets PCH1_PRSCTRL to value 0
-impl crate::Resettable for PCH1_PRSCTRLrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PCH1_PRSCTRLrs {}

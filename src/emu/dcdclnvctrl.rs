@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Low Noise Mode Feedback Attenuation
     #[inline(always)]
-    pub fn lnatt(&mut self) -> LnattW<DCDCLNVCTRLrs> {
+    pub fn lnatt(&mut self) -> LnattW<'_, DCDCLNVCTRLrs> {
         LnattW::new(self, 1)
     }
     ///Bits 8:14 - Low Noise Mode VREF Trim
     #[inline(always)]
-    pub fn lnvref(&mut self) -> LnvrefW<DCDCLNVCTRLrs> {
+    pub fn lnvref(&mut self) -> LnvrefW<'_, DCDCLNVCTRLrs> {
         LnvrefW::new(self, 8)
     }
 }
@@ -54,8 +54,6 @@ impl crate::Readable for DCDCLNVCTRLrs {}
 ///`write(|w| ..)` method takes [`dcdclnvctrl::W`](W) writer structure
 impl crate::Writable for DCDCLNVCTRLrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets DCDCLNVCTRL to value 0x7100
 impl crate::Resettable for DCDCLNVCTRLrs {

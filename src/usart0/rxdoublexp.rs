@@ -66,6 +66,4 @@ impl crate::RegisterSpec for RXDOUBLEXPrs {
 ///`read()` method returns [`rxdoublexp::R`](R) reader structure
 impl crate::Readable for RXDOUBLEXPrs {}
 ///`reset()` method sets RXDOUBLEXP to value 0
-impl crate::Resettable for RXDOUBLEXPrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXDOUBLEXPrs {}

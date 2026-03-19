@@ -402,17 +402,17 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Data-Bit Mode
     #[inline(always)]
-    pub fn databits(&mut self) -> DatabitsW<FRAMErs> {
+    pub fn databits(&mut self) -> DatabitsW<'_, FRAMErs> {
         DatabitsW::new(self, 0)
     }
     ///Bits 8:9 - Parity-Bit Mode
     #[inline(always)]
-    pub fn parity(&mut self) -> ParityW<FRAMErs> {
+    pub fn parity(&mut self) -> ParityW<'_, FRAMErs> {
         ParityW::new(self, 8)
     }
     ///Bits 12:13 - Stop-Bit Mode
     #[inline(always)]
-    pub fn stopbits(&mut self) -> StopbitsW<FRAMErs> {
+    pub fn stopbits(&mut self) -> StopbitsW<'_, FRAMErs> {
         StopbitsW::new(self, 12)
     }
 }
@@ -428,8 +428,6 @@ impl crate::Readable for FRAMErs {}
 ///`write(|w| ..)` method takes [`frame::W`](W) writer structure
 impl crate::Writable for FRAMErs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets FRAME to value 0x1005
 impl crate::Resettable for FRAMErs {

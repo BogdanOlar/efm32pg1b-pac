@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 0 - ACMP Output Pin Enable
     #[inline(always)]
-    pub fn outpen(&mut self) -> OutpenW<ROUTEPENrs> {
+    pub fn outpen(&mut self) -> OutpenW<'_, ROUTEPENrs> {
         OutpenW::new(self, 0)
     }
 }
@@ -39,10 +39,6 @@ impl crate::Readable for ROUTEPENrs {}
 ///`write(|w| ..)` method takes [`routepen::W`](W) writer structure
 impl crate::Writable for ROUTEPENrs {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 ///`reset()` method sets ROUTEPEN to value 0
-impl crate::Resettable for ROUTEPENrs {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ROUTEPENrs {}
