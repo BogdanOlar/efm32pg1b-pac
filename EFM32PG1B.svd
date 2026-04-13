@@ -13477,8 +13477,10 @@
                     </fields>
                 </register>
                 <cluster>
-                    <name>CH0</name>
-                    <description>Channel 0</description>
+                    <dim>8</dim>
+                    <dimIncrement>0x30</dimIncrement>
+                    <name>CH[%s]</name>
+                    <description>Channel</description>
                     <addressOffset>0x080</addressOffset>
                     <size>32</size>
 
@@ -13975,48 +13977,6 @@
                             </field>
                         </fields>
                     </register>
-                </cluster>
-                <cluster derivedFrom="LDMA.CH0">
-                    <name>CH1</name>
-                    <description>Channel 1</description>
-                    <addressOffset>0x0B0</addressOffset>
-                    <size>32</size>
-                </cluster>
-                <cluster derivedFrom="LDMA.CH0">
-                    <name>CH2</name>
-                    <description>Channel 2</description>
-                    <addressOffset>0x0E0</addressOffset>
-                    <size>32</size>
-                </cluster>
-                <cluster derivedFrom="LDMA.CH0">
-                    <name>CH3</name>
-                    <description>Channel 3</description>
-                    <addressOffset>0x110</addressOffset>
-                    <size>32</size>
-                </cluster>
-                <cluster derivedFrom="LDMA.CH0">
-                    <name>CH4</name>
-                    <description>Channel 4</description>
-                    <addressOffset>0x140</addressOffset>
-                    <size>32</size>
-                </cluster>
-                <cluster derivedFrom="LDMA.CH0">
-                    <name>CH5</name>
-                    <description>Channel 5</description>
-                    <addressOffset>0x170</addressOffset>
-                    <size>32</size>
-                </cluster>
-                <cluster derivedFrom="LDMA.CH0">
-                    <name>CH6</name>
-                    <description>Channel 6</description>
-                    <addressOffset>0x1A0</addressOffset>
-                    <size>32</size>
-                </cluster>
-                <cluster derivedFrom="LDMA.CH0">
-                    <name>CH7</name>
-                    <description>Channel 7</description>
-                    <addressOffset>0x1D0</addressOffset>
-                    <size>32</size>
                 </cluster>
             </registers>
         </peripheral>

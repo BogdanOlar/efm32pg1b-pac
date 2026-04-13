@@ -1,8 +1,8 @@
 #[repr(C)]
 #[derive(Debug)]
-///Channel 0
-#[doc(alias = "CH0")]
-pub struct Ch0 {
+///Channel
+#[doc(alias = "CH")]
+pub struct Ch {
     reqsel: Reqsel,
     cfg: Cfg,
     loop_: Loop,
@@ -10,8 +10,9 @@ pub struct Ch0 {
     src: Src,
     dst: Dst,
     link: Link,
+    _reserved_end: [u8; 0x14],
 }
-impl Ch0 {
+impl Ch {
     ///0x00 - Channel Peripheral Request Select Register
     #[inline(always)]
     pub const fn reqsel(&self) -> &Reqsel {

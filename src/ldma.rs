@@ -21,21 +21,7 @@ pub struct RegisterBlock {
     ifc: Ifc,
     ien: Ien,
     _reserved16: [u8; 0x10],
-    ch0: Ch0,
-    _reserved17: [u8; 0x14],
-    ch1: Ch1,
-    _reserved18: [u8; 0x14],
-    ch2: Ch2,
-    _reserved19: [u8; 0x14],
-    ch3: Ch3,
-    _reserved20: [u8; 0x14],
-    ch4: Ch4,
-    _reserved21: [u8; 0x14],
-    ch5: Ch5,
-    _reserved22: [u8; 0x14],
-    ch6: Ch6,
-    _reserved23: [u8; 0x14],
-    ch7: Ch7,
+    ch: [Ch; 8],
 }
 impl RegisterBlock {
     ///0x00 - DMA Control Register
@@ -118,45 +104,16 @@ impl RegisterBlock {
     pub const fn ien(&self) -> &Ien {
         &self.ien
     }
-    ///0x80..0x9c - Channel 0
+    ///0x80..0x200 - Channel
     #[inline(always)]
-    pub const fn ch0(&self) -> &Ch0 {
-        &self.ch0
+    pub const fn ch(&self, n: usize) -> &Ch {
+        &self.ch[n]
     }
-    ///0xb0..0xcc - Channel 1
+    ///Iterator for array of:
+    ///0x80..0x200 - Channel
     #[inline(always)]
-    pub const fn ch1(&self) -> &Ch1 {
-        &self.ch1
-    }
-    ///0xe0..0xfc - Channel 2
-    #[inline(always)]
-    pub const fn ch2(&self) -> &Ch2 {
-        &self.ch2
-    }
-    ///0x110..0x12c - Channel 3
-    #[inline(always)]
-    pub const fn ch3(&self) -> &Ch3 {
-        &self.ch3
-    }
-    ///0x140..0x15c - Channel 4
-    #[inline(always)]
-    pub const fn ch4(&self) -> &Ch4 {
-        &self.ch4
-    }
-    ///0x170..0x18c - Channel 5
-    #[inline(always)]
-    pub const fn ch5(&self) -> &Ch5 {
-        &self.ch5
-    }
-    ///0x1a0..0x1bc - Channel 6
-    #[inline(always)]
-    pub const fn ch6(&self) -> &Ch6 {
-        &self.ch6
-    }
-    ///0x1d0..0x1ec - Channel 7
-    #[inline(always)]
-    pub const fn ch7(&self) -> &Ch7 {
-        &self.ch7
+    pub fn ch_iter(&self) -> impl Iterator<Item = &Ch> {
+        self.ch.iter()
     }
 }
 ///CTRL (rw) register accessor: DMA Control Register
@@ -303,29 +260,8 @@ pub mod ifc;
 pub type Ien = crate::Reg<ien::IENrs>;
 ///Interrupt Enable Register
 pub mod ien;
-///Channel 0
-pub use self::ch0::Ch0;
+///Channel
+pub use self::ch::Ch;
 ///Cluster
-///Channel 0
-pub mod ch0;
-pub use ch0 as ch1;
-pub use ch0 as ch2;
-pub use ch0 as ch3;
-pub use ch0 as ch4;
-pub use ch0 as ch5;
-pub use ch0 as ch6;
-pub use ch0 as ch7;
-///Channel 1
-pub use Ch0 as Ch1;
-///Channel 2
-pub use Ch0 as Ch2;
-///Channel 3
-pub use Ch0 as Ch3;
-///Channel 4
-pub use Ch0 as Ch4;
-///Channel 5
-pub use Ch0 as Ch5;
-///Channel 6
-pub use Ch0 as Ch6;
-///Channel 7
-pub use Ch0 as Ch7;
+///Channel
+pub mod ch;
