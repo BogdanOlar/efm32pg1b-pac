@@ -1,7 +1,7 @@
-///Register `CH1_LINK` reader
-pub type R = crate::R<CH1_LINKrs>;
-///Register `CH1_LINK` writer
-pub type W = crate::W<CH1_LINKrs>;
+///Register `LINK` reader
+pub type R = crate::R<LINKrs>;
+///Register `LINK` writer
+pub type W = crate::W<LINKrs>;
 ///Field `LINKMODE` reader - Link Structure Addressing Mode
 pub type LinkmodeR = crate::BitReader;
 ///Field `LINK` reader - Link Next Structure
@@ -31,7 +31,7 @@ impl R {
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CH1_LINK")
+        f.debug_struct("LINK")
             .field("linkmode", &self.linkmode())
             .field("link", &self.link())
             .field("linkaddr", &self.linkaddr())
@@ -41,27 +41,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 1 - Link Next Structure
     #[inline(always)]
-    pub fn link(&mut self) -> LinkW<'_, CH1_LINKrs> {
+    pub fn link(&mut self) -> LinkW<'_, LINKrs> {
         LinkW::new(self, 1)
     }
     ///Bits 2:31 - Link Structure Address
     #[inline(always)]
-    pub fn linkaddr(&mut self) -> LinkaddrW<'_, CH1_LINKrs> {
+    pub fn linkaddr(&mut self) -> LinkaddrW<'_, LINKrs> {
         LinkaddrW::new(self, 2)
     }
 }
 ///Channel Descriptor Link Structure Address Register
 ///
-///You can [`read`](crate::Reg::read) this register and get [`ch1_link::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch1_link::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-pub struct CH1_LINKrs;
-impl crate::RegisterSpec for CH1_LINKrs {
+///You can [`read`](crate::Reg::read) this register and get [`link::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`link::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+pub struct LINKrs;
+impl crate::RegisterSpec for LINKrs {
     type Ux = u32;
 }
-///`read()` method returns [`ch1_link::R`](R) reader structure
-impl crate::Readable for CH1_LINKrs {}
-///`write(|w| ..)` method takes [`ch1_link::W`](W) writer structure
-impl crate::Writable for CH1_LINKrs {
+///`read()` method returns [`link::R`](R) reader structure
+impl crate::Readable for LINKrs {}
+///`write(|w| ..)` method takes [`link::W`](W) writer structure
+impl crate::Writable for LINKrs {
     type Safety = crate::Unsafe;
 }
-///`reset()` method sets CH1_LINK to value 0
-impl crate::Resettable for CH1_LINKrs {}
+///`reset()` method sets LINK to value 0
+impl crate::Resettable for LINKrs {}

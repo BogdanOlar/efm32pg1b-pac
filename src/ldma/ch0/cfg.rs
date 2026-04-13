@@ -1,7 +1,7 @@
-///Register `CH1_CFG` reader
-pub type R = crate::R<CH1_CFGrs>;
-///Register `CH1_CFG` writer
-pub type W = crate::W<CH1_CFGrs>;
+///Register `CFG` reader
+pub type R = crate::R<CFGrs>;
+///Register `CFG` writer
+pub type W = crate::W<CFGrs>;
 ///Arbitration Slot Number Select
 ///
 ///Value on reset: 0
@@ -118,7 +118,7 @@ impl R {
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CH1_CFG")
+        f.debug_struct("CFG")
             .field("arbslots", &self.arbslots())
             .field("srcincsign", &self.srcincsign())
             .field("dstincsign", &self.dstincsign())
@@ -128,32 +128,32 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 16:17 - Arbitration Slot Number Select
     #[inline(always)]
-    pub fn arbslots(&mut self) -> ArbslotsW<'_, CH1_CFGrs> {
+    pub fn arbslots(&mut self) -> ArbslotsW<'_, CFGrs> {
         ArbslotsW::new(self, 16)
     }
     ///Bit 20 - Source Address Increment Sign
     #[inline(always)]
-    pub fn srcincsign(&mut self) -> SrcincsignW<'_, CH1_CFGrs> {
+    pub fn srcincsign(&mut self) -> SrcincsignW<'_, CFGrs> {
         SrcincsignW::new(self, 20)
     }
     ///Bit 21 - Destination Address Increment Sign
     #[inline(always)]
-    pub fn dstincsign(&mut self) -> DstincsignW<'_, CH1_CFGrs> {
+    pub fn dstincsign(&mut self) -> DstincsignW<'_, CFGrs> {
         DstincsignW::new(self, 21)
     }
 }
 ///Channel Configuration Register
 ///
-///You can [`read`](crate::Reg::read) this register and get [`ch1_cfg::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch1_cfg::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-pub struct CH1_CFGrs;
-impl crate::RegisterSpec for CH1_CFGrs {
+///You can [`read`](crate::Reg::read) this register and get [`cfg::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cfg::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+pub struct CFGrs;
+impl crate::RegisterSpec for CFGrs {
     type Ux = u32;
 }
-///`read()` method returns [`ch1_cfg::R`](R) reader structure
-impl crate::Readable for CH1_CFGrs {}
-///`write(|w| ..)` method takes [`ch1_cfg::W`](W) writer structure
-impl crate::Writable for CH1_CFGrs {
+///`read()` method returns [`cfg::R`](R) reader structure
+impl crate::Readable for CFGrs {}
+///`write(|w| ..)` method takes [`cfg::W`](W) writer structure
+impl crate::Writable for CFGrs {
     type Safety = crate::Unsafe;
 }
-///`reset()` method sets CH1_CFG to value 0
-impl crate::Resettable for CH1_CFGrs {}
+///`reset()` method sets CFG to value 0
+impl crate::Resettable for CFGrs {}

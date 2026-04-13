@@ -1,7 +1,7 @@
-///Register `CH2_REQSEL` reader
-pub type R = crate::R<CH2_REQSELrs>;
-///Register `CH2_REQSEL` writer
-pub type W = crate::W<CH2_REQSELrs>;
+///Register `REQSEL` reader
+pub type R = crate::R<REQSELrs>;
+///Register `REQSEL` writer
+pub type W = crate::W<REQSELrs>;
 ///Field `SIGSEL` reader - Signal Select
 pub type SigselR = crate::FieldReader;
 ///Field `SIGSEL` writer - Signal Select
@@ -200,7 +200,7 @@ impl R {
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CH2_REQSEL")
+        f.debug_struct("REQSEL")
             .field("sigsel", &self.sigsel())
             .field("sourcesel", &self.sourcesel())
             .finish()
@@ -209,27 +209,27 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bits 0:3 - Signal Select
     #[inline(always)]
-    pub fn sigsel(&mut self) -> SigselW<'_, CH2_REQSELrs> {
+    pub fn sigsel(&mut self) -> SigselW<'_, REQSELrs> {
         SigselW::new(self, 0)
     }
     ///Bits 16:21 - Source Select
     #[inline(always)]
-    pub fn sourcesel(&mut self) -> SourceselW<'_, CH2_REQSELrs> {
+    pub fn sourcesel(&mut self) -> SourceselW<'_, REQSELrs> {
         SourceselW::new(self, 16)
     }
 }
 ///Channel Peripheral Request Select Register
 ///
-///You can [`read`](crate::Reg::read) this register and get [`ch2_reqsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch2_reqsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-pub struct CH2_REQSELrs;
-impl crate::RegisterSpec for CH2_REQSELrs {
+///You can [`read`](crate::Reg::read) this register and get [`reqsel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reqsel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+pub struct REQSELrs;
+impl crate::RegisterSpec for REQSELrs {
     type Ux = u32;
 }
-///`read()` method returns [`ch2_reqsel::R`](R) reader structure
-impl crate::Readable for CH2_REQSELrs {}
-///`write(|w| ..)` method takes [`ch2_reqsel::W`](W) writer structure
-impl crate::Writable for CH2_REQSELrs {
+///`read()` method returns [`reqsel::R`](R) reader structure
+impl crate::Readable for REQSELrs {}
+///`write(|w| ..)` method takes [`reqsel::W`](W) writer structure
+impl crate::Writable for REQSELrs {
     type Safety = crate::Unsafe;
 }
-///`reset()` method sets CH2_REQSEL to value 0
-impl crate::Resettable for CH2_REQSELrs {}
+///`reset()` method sets REQSEL to value 0
+impl crate::Resettable for REQSELrs {}

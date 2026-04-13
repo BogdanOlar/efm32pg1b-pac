@@ -1,7 +1,7 @@
-///Register `CH0_CTRL` reader
-pub type R = crate::R<CH0_CTRLrs>;
-///Register `CH0_CTRL` writer
-pub type W = crate::W<CH0_CTRLrs>;
+///Register `CTRL` reader
+pub type R = crate::R<CTRLrs>;
+///Register `CTRL` writer
+pub type W = crate::W<CTRLrs>;
 ///DMA Structure Type
 ///
 ///Value on reset: 0
@@ -627,7 +627,7 @@ impl R {
 }
 impl core::fmt::Debug for R {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CH0_CTRL")
+        f.debug_struct("CTRL")
             .field("structtype", &self.structtype())
             .field("xfercnt", &self.xfercnt())
             .field("byteswap", &self.byteswap())
@@ -647,72 +647,72 @@ impl core::fmt::Debug for R {
 impl W {
     ///Bit 3 - Structure DMA Transfer Request
     #[inline(always)]
-    pub fn structreq(&mut self) -> StructreqW<'_, CH0_CTRLrs> {
+    pub fn structreq(&mut self) -> StructreqW<'_, CTRLrs> {
         StructreqW::new(self, 3)
     }
     ///Bits 4:14 - DMA Unit Data Transfer Count
     #[inline(always)]
-    pub fn xfercnt(&mut self) -> XfercntW<'_, CH0_CTRLrs> {
+    pub fn xfercnt(&mut self) -> XfercntW<'_, CTRLrs> {
         XfercntW::new(self, 4)
     }
     ///Bit 15 - Endian Byte Swap
     #[inline(always)]
-    pub fn byteswap(&mut self) -> ByteswapW<'_, CH0_CTRLrs> {
+    pub fn byteswap(&mut self) -> ByteswapW<'_, CTRLrs> {
         ByteswapW::new(self, 15)
     }
     ///Bits 16:19 - Block Transfer Size
     #[inline(always)]
-    pub fn blocksize(&mut self) -> BlocksizeW<'_, CH0_CTRLrs> {
+    pub fn blocksize(&mut self) -> BlocksizeW<'_, CTRLrs> {
         BlocksizeW::new(self, 16)
     }
     ///Bit 20 - DMA Operation Done Interrupt Flag Set Enable
     #[inline(always)]
-    pub fn doneifsen(&mut self) -> DoneifsenW<'_, CH0_CTRLrs> {
+    pub fn doneifsen(&mut self) -> DoneifsenW<'_, CTRLrs> {
         DoneifsenW::new(self, 20)
     }
     ///Bit 21 - DMA Request Transfer Mode Select
     #[inline(always)]
-    pub fn reqmode(&mut self) -> ReqmodeW<'_, CH0_CTRLrs> {
+    pub fn reqmode(&mut self) -> ReqmodeW<'_, CTRLrs> {
         ReqmodeW::new(self, 21)
     }
     ///Bit 22 - Decrement Loop Count
     #[inline(always)]
-    pub fn decloopcnt(&mut self) -> DecloopcntW<'_, CH0_CTRLrs> {
+    pub fn decloopcnt(&mut self) -> DecloopcntW<'_, CTRLrs> {
         DecloopcntW::new(self, 22)
     }
     ///Bit 23 - Ignore Sreq
     #[inline(always)]
-    pub fn ignoresreq(&mut self) -> IgnoresreqW<'_, CH0_CTRLrs> {
+    pub fn ignoresreq(&mut self) -> IgnoresreqW<'_, CTRLrs> {
         IgnoresreqW::new(self, 23)
     }
     ///Bits 24:25 - Source Address Increment Size
     #[inline(always)]
-    pub fn srcinc(&mut self) -> SrcincW<'_, CH0_CTRLrs> {
+    pub fn srcinc(&mut self) -> SrcincW<'_, CTRLrs> {
         SrcincW::new(self, 24)
     }
     ///Bits 26:27 - Unit Data Transfer Size
     #[inline(always)]
-    pub fn size(&mut self) -> SizeW<'_, CH0_CTRLrs> {
+    pub fn size(&mut self) -> SizeW<'_, CTRLrs> {
         SizeW::new(self, 26)
     }
     ///Bits 28:29 - Destination Address Increment Size
     #[inline(always)]
-    pub fn dstinc(&mut self) -> DstincW<'_, CH0_CTRLrs> {
+    pub fn dstinc(&mut self) -> DstincW<'_, CTRLrs> {
         DstincW::new(self, 28)
     }
 }
 ///Channel Descriptor Control Word Register
 ///
-///You can [`read`](crate::Reg::read) this register and get [`ch0_ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ch0_ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-pub struct CH0_CTRLrs;
-impl crate::RegisterSpec for CH0_CTRLrs {
+///You can [`read`](crate::Reg::read) this register and get [`ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+pub struct CTRLrs;
+impl crate::RegisterSpec for CTRLrs {
     type Ux = u32;
 }
-///`read()` method returns [`ch0_ctrl::R`](R) reader structure
-impl crate::Readable for CH0_CTRLrs {}
-///`write(|w| ..)` method takes [`ch0_ctrl::W`](W) writer structure
-impl crate::Writable for CH0_CTRLrs {
+///`read()` method returns [`ctrl::R`](R) reader structure
+impl crate::Readable for CTRLrs {}
+///`write(|w| ..)` method takes [`ctrl::W`](W) writer structure
+impl crate::Writable for CTRLrs {
     type Safety = crate::Unsafe;
 }
-///`reset()` method sets CH0_CTRL to value 0
-impl crate::Resettable for CH0_CTRLrs {}
+///`reset()` method sets CTRL to value 0
+impl crate::Resettable for CTRLrs {}
